@@ -8,13 +8,43 @@ VeritasMed is a React + FastAPI + LangGraph research showcase. It retrieves lite
 
 The selected model is **Flash for every Agent role**, currently `DeepSeek-V4.1-Flash` through the configured compatible gateway. There is no automatic Pro fallback. The [v0.4 effect report](docs/agent-v0.4-flash-report.md) records actual answers, failures, evaluation status and source-based assessments. Model self-checks and evidence labels are not accuracy scores.
 
-**v0.5 development:** [technical route](docs/verification-roadmap.md) · [implementation plan](docs/plans/v0.5-text-verification.md). The next milestone measures claim-level textual support against public annotations before connecting an audit panel to answer generation. Clinical evidence grading and cross-study comparability are separate research tasks.
+**v0.5 development:** [technical route](docs/verification-roadmap.md) · [implementation plan](docs/plans/v0.5-text-verification.md) · [whole-answer audit](docs/plans/v0.5-answer-audit.md). An independent audit panel now maps answer claims to exact source passages, with real saved inference, missing checks and JSON export. Clinical evidence grading and cross-study comparability remain separate research tasks.
 
 The [first controlled comparison](docs/verification-v0.5-diagnostics.md) is available: three Flash verification variants each matched all 48 constructed diagnostic labels. Structured checking used more tokens without improving this small development set; it is not evidence of clinical reliability or Agent superiority. [Reproduce the comparison offline](data/verification/controlled_v1/README.md).
 
 ![Guided example: partial evidence coverage and source-linked answer](docs/assets/v04-evidence-coverage.png)
 
 *Actual interface in Guided mode. The answer and animated steps are authored examples, not live inference or benchmark results.*
+
+## Try the new audit panel (development branch)
+
+The `/audit` page accepts an answer and supplied source texts, then shows each claim's judgment and
+exact quotations. Replay uses real saved Flash outputs on public RAGTruth training answers;
+it is distinct from the authored Guided examples below. [Measured results and limits](docs/verification-v0.5-answer-audit.md).
+
+In the 24-answer development pilot, direct and split audits each overlapped 14/15 annotated error spans,
+but flagged 9/12 and 7/12 unmarked answers. Split used 2.55× the reported tokens. This exposes
+substantial annotation disagreements and false alarms; it does not establish a reliable verifier or Agent superiority.
+
+On `feature/veritasmed-audit-v0.5`, install the small audit environment with Python 3.12 and uv:
+
+```sh
+uv venv --python 3.12
+uv pip install -r requirements-audit.txt
+uv pip install --no-deps -e .
+```
+
+Activate it (`.\.venv\Scripts\Activate.ps1` on PowerShell; `source .venv/bin/activate` on macOS/Linux), then:
+
+```sh
+python scripts/verification/answer_benchmark.py download
+python scripts/run_audit_demo.py
+```
+
+Open **http://127.0.0.1:5174/audit**. Node.js 22.12+ is required; the launcher installs frontend
+dependencies if needed. Saved inference needs no key, GPU or Qdrant after the one-time data download.
+New audits use the Flash profile from `.env`. [Walkthrough and screenshots](docs/audit-demo.md).
+This development feature is not in the fixed `v0.4.0` tag and does not yet control Ask's answer repair.
 
 ## Try it without a key
 

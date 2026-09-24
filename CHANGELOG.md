@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.5.0 — in development (not released)
+
+- Add independent source-bound text verification, SciFact adaptation and controlled diagnostics; keep all historical v0.4 artifacts intact.
+- Add whole-answer direct and extract-then-verify Flash audits, exact answer/source anchors, uncovered text and distinct failure states.
+- Freeze a 24-answer RAGTruth training pilot and a metadata-only reserve of 60 test source groups. Count missed and unextracted reference errors in the evaluation denominator.
+- Add a real `/audit` panel with saved inference replay, new input, source navigation and JSON export; no uncalibrated confidence percentages.
+- Add a lightweight local audit service and launcher without retrieval/GPU dependencies. See the [audit guide](docs/audit-demo.md) and [experiment report](docs/verification-v0.5-answer-audit.md).
+
 ## 0.4.0 — 2026-09-23 (published research showcase)
 
 - Add the OpenHub backend with streaming and per-question model selection for the complete Agent.

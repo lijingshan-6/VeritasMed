@@ -4,8 +4,11 @@ import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-ro
 import { AnswerPage } from './pages/AnswerPage'
 import { ExplorerPage } from './pages/ExplorerPage'
 import { DocumentPage } from './pages/DocumentPage'
+import { AuditPage } from './pages/AuditPage'
 import { fetchCorpusStats, fetchHealth, loadRecentThreads, saveThread } from './api/client'
 import { useStore } from './store'
+
+const auditOnly = import.meta.env.VITE_AUDIT_ONLY === '1'
 
 // ── SVG base ───────────────────────────────────────────────────────────────
 function I({ size = 16, sw = 1.6, children, style }: {
@@ -342,13 +345,13 @@ function Header({ theme, setTheme }: { theme: Theme; setTheme: (t: Theme) => voi
       borderBottom: '1px solid var(--rule)',
     }}>
       <BrandMark />
-      <a href={isGuidedDemo ? "/" : "/?demo=1"} style={{fontSize: 12, color: "var(--accent)"}}>{isGuidedDemo ? "Live mode" : "Guided demo"}</a>
+      {!auditOnly && <a href={isGuidedDemo ? "/" : "/?demo=1"} style={{fontSize: 12, color: "var(--accent)"}}>{isGuidedDemo ? "Live mode" : "Guided demo"}</a>}
       <span className="vm-research-label" style={{ fontSize: 11, color: "var(--muted)" }}>Research demo · not clinical advice</span>
 
       <span style={{ width: 1, height: 22, background: 'var(--rule)', margin: '0 2px' }} />
 
       <nav style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-        <NavTab
+        {!auditOnly && <><NavTab
           active={isAsk}
           label="Ask"
           sub="⌘K"
@@ -360,14 +363,16 @@ function Header({ theme, setTheme }: { theme: Theme; setTheme: (t: Theme) => voi
           label="Explore"
           icon={IconCompass}
           onClick={() => navigate('/explore' + demoSuffix)}
-        />
+        /></>}
+        <NavTab active={location.pathname === '/audit' || auditOnly} label="Audit" icon={IconBook}
+          onClick={() => { window.location.href = '/audit' }} />
       </nav>
 
       <span style={{ flex: 1 }} />
 
-      {isAsk && <StatusPill />}
+      {isAsk && !auditOnly && <StatusPill />}
 
-      <ThreadHistoryButton />
+      {!auditOnly && <ThreadHistoryButton />}
 
       <ThemePopover theme={theme} setTheme={setTheme} />
     </header>
@@ -402,7 +407,8 @@ export default function App() {
         {isGuidedDemo && <div role="status" style={{padding: "8px 16px", background: "var(--accent-soft)", color: "var(--ink)", fontSize: 12, textAlign: "center"}}>GUIDED DEMO · Authored fixed examples and illustrative steps. No live retrieval, model calls or measured scores.</div>}
         <main style={{ flex: 1, overflow: 'hidden' }}>
           <Routes>
-            <Route path="/"                   element={<AnswerPage />} />
+            <Route path="/"                   element={auditOnly ? <AuditPage /> : <AnswerPage />} />
+            <Route path="/audit"              element={<AuditPage />} />
             <Route path="/explore"            element={<ExplorerPage />} />
             <Route path="/document/:citation" element={<DocumentPage />} />
           </Routes>

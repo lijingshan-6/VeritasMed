@@ -267,10 +267,187 @@
           }
         }
       }
+    },
+    "/api/audit/examples": {
+      "get": {
+        "tags": [
+          "answer audit"
+        ],
+        "summary": "Examples",
+        "operationId": "examples_api_audit_examples_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/audit/examples/{response_id}": {
+      "get": {
+        "tags": [
+          "answer audit"
+        ],
+        "summary": "Replay",
+        "operationId": "replay_api_audit_examples__response_id__get",
+        "parameters": [
+          {
+            "name": "response_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Response Id"
+            }
+          },
+          {
+            "name": "strategy",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "direct",
+                "split"
+              ],
+              "type": "string",
+              "default": "direct",
+              "title": "Strategy"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/audit": {
+      "post": {
+        "tags": [
+          "answer audit"
+        ],
+        "summary": "Live Audit",
+        "operationId": "live_audit_api_audit_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuditInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "AuditInput": {
+        "properties": {
+          "answer": {
+            "type": "string",
+            "maxLength": 12000,
+            "minLength": 1,
+            "title": "Answer"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/AuditSource"
+            },
+            "type": "array",
+            "maxItems": 4,
+            "minItems": 1,
+            "title": "Sources"
+          },
+          "strategy": {
+            "type": "string",
+            "enum": [
+              "direct",
+              "split"
+            ],
+            "title": "Strategy",
+            "default": "direct"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "answer",
+          "sources"
+        ],
+        "title": "AuditInput"
+      },
+      "AuditSource": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Title"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 50000,
+            "minLength": 1,
+            "title": "Text"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "text"
+        ],
+        "title": "AuditSource"
+      },
       "ChunkContextResponse": {
         "properties": {
           "chunk": {

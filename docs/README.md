@@ -17,6 +17,10 @@ Qwen 修复报告与 Pro/Flash 对比记录的是不同运行，不能互相替�
 三方案均为 48/48，尚未发现结构化核查增益。使用 [标注规范](verification-label-policy.md)
 解释标签边界，[网关观测](verification-gateway-observations.md)记录模型标识和用量限制。
 
+整段回答阶段见 [执行协议](plans/v0.5-answer-audit.md)、[研究报告](verification-v0.5-answer-audit.md)
+及 [真实审计面板](audit-demo.md)。这一轮提前接入面板，用自然回答的人工错误范围测量漏审，
+不把简单构造题的高分外推成应用可靠性。
+
 ## 持续维护的入口
 
 | 文档 | 回答什么 | 什么时候更新 |

@@ -1,0 +1,553 @@
+{
+  "dataset": "RAGTruth",
+  "revision": "c103204b9ce28d6bbad859304bf30de72b8ed8fe",
+  "files": {
+    "response.jsonl": "e4c2e4ac24fff676d8984cc61c35d791612fadc58015335d97dd632375e18073",
+    "source_info.jsonl": "0dffc26ea9f3c1c3d7c7e8336b56ef1646e3cec876edffcca3c9c624d12d578b"
+  },
+  "split": "official train development pilot",
+  "seed": "veritasmed-answer-audit-v1-2026-09-24",
+  "task_type": "Summary",
+  "candidate_responses": 4755,
+  "selected_counts": {
+    "unmarked": 12,
+    "annotated_error": 12
+  },
+  "implicit_true_policy": "Counts as unsupported in supplied sources; never relabelled from world knowledge",
+  "cases": [
+    {
+      "response_id": "341",
+      "source_id": "15649",
+      "input_sha256": "b23af576ad81adc915a0905e187b7b22d9932b01dc2f0f7a76e15c832d44608f",
+      "gold_spans": []
+    },
+    {
+      "response_id": "2978",
+      "source_id": "11962",
+      "input_sha256": "4736b52beb93319d15a55eadcf2f928cfe71a7ec6385886142069380e0d69e7b",
+      "gold_spans": [
+        {
+          "start": 152,
+          "end": 221,
+          "text": "Nepalese Prime Minister Sushil Koirala declared a state of emergency.",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  Nepalese Prime Minister Sushil Koirala declared a state of emergency. \nOriginal:  No mentioned of Nepalese Prime MinisterSushil Koirala and him stating a state of emergency.\n\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 358,
+          "end": 423,
+          "text": "The United Nations has launched an appeal for $1.6 billion in aid",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  The United Nations has launched an appeal for $1.6 billion in aid\nOriginal: This info is not mentioned in the source content.\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "1119",
+      "source_id": "15780",
+      "input_sha256": "4768b9bcb3db0439ea9e83445bf90bb8b648ad3d073c938cc627c4653fcc668d",
+      "gold_spans": [
+        {
+          "start": 330,
+          "end": 392,
+          "text": "the remaining five likely to be in the Midwest and West Coast.",
+          "meta": "LOW INTRO OF NEW INFO\nThis might be true that the states in the passages are part of Midwest and West Coast but it was not explicitly mentioned in the passage",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "3650",
+      "source_id": "12075",
+      "input_sha256": "9b0a1c61111fc9d7d77c59a082ffd6349552715b9c11e0d9e60d9418ac9ca11a",
+      "gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "707",
+      "source_id": "15710",
+      "input_sha256": "84ad3e9a1daafb9941dba4337127f3f6b48fc892741cd4f4069f61de8c7b7d74",
+      "gold_spans": []
+    },
+    {
+      "response_id": "2505",
+      "source_id": "11883",
+      "input_sha256": "8e4e7b047b5d5e404f456981463ab210075318b7e33fa1178d07a5d2f40ce35f",
+      "gold_spans": []
+    },
+    {
+      "response_id": "2804",
+      "source_id": "11933",
+      "input_sha256": "710b54eb2a39a72bcebf8868f4ea2c3bfe08ef88c7fa691ee1481e2bf6f6207a",
+      "gold_spans": []
+    },
+    {
+      "response_id": "1439",
+      "source_id": "15833",
+      "input_sha256": "9011fc9ac7407e05c79b06412294441ef9bf08daeda0cacb1be96c8ce71801fd",
+      "gold_spans": []
+    },
+    {
+      "response_id": "1565",
+      "source_id": "11348",
+      "input_sha256": "4fa4b77f506a1ded512afcd0f26c9d63d281a71c529b1d703104eceb8cb47d6f",
+      "gold_spans": [
+        {
+          "start": 427,
+          "end": 440,
+          "text": "Hicks' lawyer",
+          "meta": "EVIDENT CONFLICT\nOriginal: \"attorney for Hicks' wife\"\nGenerative: \"Hicks' lawyer\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "5195",
+      "source_id": "13521",
+      "input_sha256": "9f1e6969e3259c1a1d48130d8ea616d7f1c93292f71df07d870abc1e4e2d80f5",
+      "gold_spans": []
+    },
+    {
+      "response_id": "4253",
+      "source_id": "13879",
+      "input_sha256": "cd6a49c28a911a373eb203296910ea9618aadf1c2d94905770c97fd22c3fe8d8",
+      "gold_spans": []
+    },
+    {
+      "response_id": "5175",
+      "source_id": "13518",
+      "input_sha256": "2c67f1cfaac1aa115ad5d40f2cd572bc9a44a80f8a2f7bc249a6f7228e598d98",
+      "gold_spans": [
+        {
+          "start": 0,
+          "end": 85,
+          "text": "A Michigan church group of 26 people, including Pastor Jon Morales and his wife Anna,",
+          "meta": "EVIDENT CONFLICT\nOriginal: Pastor Jon Morales, his wife Anna, and an additional 25 members\nGenerated: A Michigan church group of 26 people, including Pastor Jon Morales and his wife Anna,",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "4272",
+      "source_id": "13883",
+      "input_sha256": "61758912a8b40b21bb1fb9b828cd85003f4fa5932d0689e7e7c0a68ebc8be215",
+      "gold_spans": []
+    },
+    {
+      "response_id": "3552",
+      "source_id": "12059",
+      "input_sha256": "6761e6c3d5c81819b59b1dab8465858c62f541babce5bcd1c0c4d3e5461edab0",
+      "gold_spans": [
+        {
+          "start": 453,
+          "end": 473,
+          "text": "in the whole of Iraq",
+          "meta": "LOW INTRODUCTION OF NEW INFORMATION\n\"in the whole of Iraq\" was not mentioned in the source content",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "5049",
+      "source_id": "13497",
+      "input_sha256": "2c09e0a4b06cc28f1f0bbdb8bc68037c3febe867b9a416fe29d847e311bb31d6",
+      "gold_spans": []
+    },
+    {
+      "response_id": "4306",
+      "source_id": "13888",
+      "input_sha256": "a740b692e1ca2b49b0f3f9f8433107cc052b8d8e6a4f6ad7d494093dcdad83c1",
+      "gold_spans": []
+    },
+    {
+      "response_id": "2986",
+      "source_id": "11963",
+      "input_sha256": "52a5b08c39130785cdc376d6e9e99112ae45dc888f12506b8170bd92a5c8b05a",
+      "gold_spans": [
+        {
+          "start": 682,
+          "end": 696,
+          "text": "five Nigerians",
+          "meta": "EVIDENT CONFLICT\nOriginal: \"Nigerians Raheem Salami, Silvester Obiekwe Nwolise, Okwudil Oyatanze and Martin Anderson\" (4 Nigerians)\nGenerative: \"five Nigerians\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "4492",
+      "source_id": "13919",
+      "input_sha256": "845003e559db3785975d0c49e13f963a38f79c9278cafb0c7196d5d098e9d823",
+      "gold_spans": [
+        {
+          "start": 454,
+          "end": 486,
+          "text": "weather forecast for Los Angeles",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC: weather forecast for Los Angeles\nOriginal: Source content did not mention any specific location for the weather forecast.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "3758",
+      "source_id": "12093",
+      "input_sha256": "b44c953a81442c0077eebdf46225f95488dcb1a513595e89c0cac9643180be13",
+      "gold_spans": []
+    },
+    {
+      "response_id": "5330",
+      "source_id": "13544",
+      "input_sha256": "85b337184d23940061496b11b3d668e73e0f0f79ede8a1cd9b8415b89070ab9b",
+      "gold_spans": []
+    },
+    {
+      "response_id": "4624",
+      "source_id": "13941",
+      "input_sha256": "bc655968105b589db455223a6876c3abde90aa3bb6d0a5301306cf8a1baa2c44",
+      "gold_spans": [
+        {
+          "start": 269,
+          "end": 292,
+          "text": "already have a daughter",
+          "meta": "LOW INTRO OF NEW INFO\nIt is true that they had their daughter (Brynley) but it is not mentioned in the original source.",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "296",
+      "source_id": "15642",
+      "input_sha256": "56cc004a13c3188d6311d3db6fd30456d902898b9cf1be8c49bccb061b463a36",
+      "gold_spans": [
+        {
+          "start": 122,
+          "end": 138,
+          "text": "had just retired",
+          "meta": "Original: \"...a prosecutor in Centre County, Pennsylvania...\"\nGenerative: \"...had just retired.\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 186,
+          "end": 206,
+          "text": "26-year-old daughter",
+          "meta": "Original: \"a beautiful and successful daughter\"\nGenerative: \"26-year-old daughter\"\n(The original article does not specify the age of Ray's daughter)",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "4899",
+      "source_id": "13988",
+      "input_sha256": "d3221c37316053552d6d7a54d3f30810644358f06b9218aefa2c91bbe139507e",
+      "gold_spans": [
+        {
+          "start": 358,
+          "end": 406,
+          "text": "resulted in both teams sharing the championship,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nOriginal: *not mentioned*\nGenerative: \"resulted in both teams sharing the championship,\"",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "response_id": "4990",
+      "source_id": "13487",
+      "input_sha256": "2a83194cb64fa1373f697e953b01a7bb714ff4fe6ee7eb16026a401f8496fb62",
+      "gold_spans": [
+        {
+          "start": 43,
+          "end": 155,
+          "text": "On The Young and the Restless, Kyle betrays Tucker and Audra by refusing to help them take over Jabot Cosmetics.",
+          "meta": "EVIDENT CONFLICT:\nAIGC:  On The Young and the Restless, Kyle betrays Tucker and Audra by refusing to help them take over Jabot Cosmetics. \nOriginal: The Young and the Restless (Y&R) spoilers tease that Kyle Abbott (Michael Mealor) will betray Tucker McCall (Trevor St. John) and Audra Charles (Zuleyka Silver) in their quest to take over Jabot Cosmetics. \n\n\n",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    }
+  ],
+  "reserved_official_test": [
+    {
+      "source_id": "15700",
+      "response_id": "646"
+    },
+    {
+      "source_id": "15634",
+      "response_id": "250"
+    },
+    {
+      "source_id": "11877",
+      "response_id": "2467"
+    },
+    {
+      "source_id": "11911",
+      "response_id": "2670"
+    },
+    {
+      "source_id": "11870",
+      "response_id": "2425"
+    },
+    {
+      "source_id": "15601",
+      "response_id": "55"
+    },
+    {
+      "source_id": "15617",
+      "response_id": "146"
+    },
+    {
+      "source_id": "15735",
+      "response_id": "855"
+    },
+    {
+      "source_id": "13972",
+      "response_id": "4805"
+    },
+    {
+      "source_id": "15651",
+      "response_id": "352"
+    },
+    {
+      "source_id": "15819",
+      "response_id": "1354"
+    },
+    {
+      "source_id": "15661",
+      "response_id": "413"
+    },
+    {
+      "source_id": "15740",
+      "response_id": "887"
+    },
+    {
+      "source_id": "13887",
+      "response_id": "4301"
+    },
+    {
+      "source_id": "15713",
+      "response_id": "723"
+    },
+    {
+      "source_id": "15769",
+      "response_id": "1052"
+    },
+    {
+      "source_id": "11873",
+      "response_id": "2442"
+    },
+    {
+      "source_id": "15733",
+      "response_id": "842"
+    },
+    {
+      "source_id": "13815",
+      "response_id": "3869"
+    },
+    {
+      "source_id": "11395",
+      "response_id": "1700"
+    },
+    {
+      "source_id": "13492",
+      "response_id": "5017"
+    },
+    {
+      "source_id": "13842",
+      "response_id": "4030"
+    },
+    {
+      "source_id": "15800",
+      "response_id": "1238"
+    },
+    {
+      "source_id": "15694",
+      "response_id": "606"
+    },
+    {
+      "source_id": "11908",
+      "response_id": "2652"
+    },
+    {
+      "source_id": "15759",
+      "response_id": "997"
+    },
+    {
+      "source_id": "15778",
+      "response_id": "1109"
+    },
+    {
+      "source_id": "15702",
+      "response_id": "657"
+    },
+    {
+      "source_id": "11356",
+      "response_id": "1606"
+    },
+    {
+      "source_id": "13872",
+      "response_id": "4210"
+    },
+    {
+      "source_id": "13870",
+      "response_id": "4199"
+    },
+    {
+      "source_id": "13968",
+      "response_id": "4779"
+    },
+    {
+      "source_id": "13925",
+      "response_id": "4525"
+    },
+    {
+      "source_id": "15604",
+      "response_id": "71"
+    },
+    {
+      "source_id": "15645",
+      "response_id": "312"
+    },
+    {
+      "source_id": "13495",
+      "response_id": "5038"
+    },
+    {
+      "source_id": "11858",
+      "response_id": "2362"
+    },
+    {
+      "source_id": "15693",
+      "response_id": "600"
+    },
+    {
+      "source_id": "15667",
+      "response_id": "448"
+    },
+    {
+      "source_id": "11945",
+      "response_id": "2876"
+    },
+    {
+      "source_id": "11875",
+      "response_id": "2456"
+    },
+    {
+      "source_id": "13894",
+      "response_id": "4340"
+    },
+    {
+      "source_id": "11317",
+      "response_id": "1476"
+    },
+    {
+      "source_id": "13840",
+      "response_id": "4015"
+    },
+    {
+      "source_id": "11355",
+      "response_id": "1597"
+    },
+    {
+      "source_id": "15789",
+      "response_id": "1171"
+    },
+    {
+      "source_id": "11979",
+      "response_id": "3080"
+    },
+    {
+      "source_id": "15638",
+      "response_id": "275"
+    },
+    {
+      "source_id": "15696",
+      "response_id": "622"
+    },
+    {
+      "source_id": "15648",
+      "response_id": "333"
+    },
+    {
+      "source_id": "15627",
+      "response_id": "207"
+    },
+    {
+      "source_id": "13848",
+      "response_id": "4066"
+    },
+    {
+      "source_id": "15747",
+      "response_id": "927"
+    },
+    {
+      "source_id": "11991",
+      "response_id": "3148"
+    },
+    {
+      "source_id": "13806",
+      "response_id": "3810"
+    },
+    {
+      "source_id": "11948",
+      "response_id": "2892"
+    },
+    {
+      "source_id": "12060",
+      "response_id": "3559"
+    },
+    {
+      "source_id": "13881",
+      "response_id": "4265"
+    },
+    {
+      "source_id": "11323",
+      "response_id": "1516"
+    },
+    {
+      "source_id": "13843",
+      "response_id": "4036"
+    }
+  ],
+  "note": "24 curated-by-rule development answers; 60 test source IDs reserved but not executed. Public data may be in pretraining."
+}

@@ -27,7 +27,7 @@ import sentence_transformers  # noqa: F401
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from medrag.api.routes import ask, chunk, corpus, document, history, search
+from medrag.api.routes import ask, audit, chunk, corpus, document, history, search
 
 app = FastAPI(
     title="VeritasMed API",
@@ -54,3 +54,4 @@ app.include_router(document.router)
 app.include_router(chunk.router)
 app.include_router(history.router)
 app.include_router(corpus.router)
+app.include_router(audit.router)

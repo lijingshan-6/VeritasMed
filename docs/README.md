@@ -21,6 +21,11 @@ Qwen 修复报告与 Pro/Flash 对比记录的是不同运行，不能互相替�
 及 [真实审计面板](audit-demo.md)。这一轮提前接入面板，用自然回答的人工错误范围测量漏审，
 不把简单构造题的高分外推成应用可靠性。
 
+已完成 [语境保留与元文本分流计划](plans/v0.5-context-audit.md)：126 次真实调用、旧样本消融、
+新来源对照及重复，接通 Ask → Audit。见 [效果与测量局限](verification-v0.5-context-audit.md)。
+新来源定位指标有所提升，但不能据标红范围扩大宣称语义核查变强；保留 Direct 默认。
+固定输入、逐条分歧台账和运行记录见 [Context 工件](../data/verification/context_v1/README.md)；60 个 test 来源继续保留。
+
 ## 持续维护的入口
 
 | 文档 | 回答什么 | 什么时候更新 |

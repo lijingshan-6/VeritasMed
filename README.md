@@ -46,6 +46,17 @@ dependencies if needed. Saved inference needs no key, GPU or Qdrant after the on
 New audits use the Flash profile from `.env`. [Walkthrough and screenshots](docs/audit-demo.md).
 This development feature is not in the fixed `v0.4.0` tag and does not yet control Ask's answer repair.
 
+In the full application, **Ask → Audit** copies the original answer and every returned evidence passage
+into the audit form; running the audit remains a separate action. The optional **Context + meta**
+method exposes each claim's surrounding answer paragraph and separates response-format descriptions
+from source judgments. Direct remains the default.
+
+[The next 126-call experiment is complete](docs/verification-v0.5-context-audit.md): on 24 new-source
+answers, half-span hits rose from 13/18 to 15/18 and unmarked-answer warnings fell from 9/12 to 7/12.
+However, broader warning spans account for the added hits, and one new-source audit was incomplete.
+These numbers do **not** establish better semantic verification. All three partial failures across the
+experiment and repeat instability remain in the report. The 60 reserved test sources are still unused.
+
 ## Try it without a key
 
 Get the fixed milestone with Git, or download its

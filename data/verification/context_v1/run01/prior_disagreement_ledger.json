@@ -1,0 +1,4420 @@
+{
+  "status": "development diagnostics, not new gold labels",
+  "source_run": "data/verification/ragtruth_v1/run01",
+  "counts": {
+    "flag_without_gold_overlap": 72,
+    "flag_overlapping_gold": 32,
+    "gold_below_half_coverage": 3,
+    "gold_missed": 2
+  },
+  "entries": [
+    {
+      "case_id": "341",
+      "source_id": "15649",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-7",
+        "quote": "Five service members have been identified since 2003",
+        "relation": "insufficient",
+        "explanation": "Source says five more were identified in 2003, not 'since 2003'; the broader time frame is not established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 443,
+          "end": 495,
+          "text": "Five service members have been identified since 2003",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1100,
+            "end": 1230,
+            "text": "In 2003, five more service members were identified, with the help of historical evidence from Pearl Harbor survivor Ray Emory, 93.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15649",
+            "source_sha256": "dcd5675b385871c87210558ff766c2f3b8f3ba39c319fa2b564df96fc7a1aaa7"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 45,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "2978",
+      "source_id": "11962",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-4",
+        "quote": "Nepalese Prime Minister Sushil Koirala declared a state of emergency",
+        "relation": "insufficient",
+        "explanation": "The source does not mention Prime Minister Sushil Koirala or any declaration of a state of emergency, so the claim is not established by the supplied text.",
+        "status": "ok",
+        "answer_span": {
+          "start": 152,
+          "end": 220,
+          "text": "Nepalese Prime Minister Sushil Koirala declared a state of emergency",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 59,
+      "flagged_characters": 59,
+      "original_gold_spans": [
+        {
+          "start": 152,
+          "end": 221,
+          "text": "Nepalese Prime Minister Sushil Koirala declared a state of emergency.",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  Nepalese Prime Minister Sushil Koirala declared a state of emergency. \nOriginal:  No mentioned of Nepalese Prime MinisterSushil Koirala and him stating a state of emergency.\n\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 358,
+          "end": 423,
+          "text": "The United Nations has launched an appeal for $1.6 billion in aid",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  The United Nations has launched an appeal for $1.6 billion in aid\nOriginal: This info is not mentioned in the source content.\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "2978",
+      "source_id": "11962",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-5",
+        "quote": "The quake and its aftershocks have destroyed thousands of homes and businesses and caused widespread devastation throughout the region",
+        "relation": "insufficient",
+        "explanation": "The source supports widespread devastation from the earthquake and aftershocks, but it does not state that thousands of homes and businesses were destroyed; it only reports general damage and some houses/buildings torn apart or toppled. The full target claim is therefore not established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 222,
+          "end": 356,
+          "text": "The quake and its aftershocks have destroyed thousands of homes and businesses and caused widespread devastation throughout the region",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1733,
+            "end": 1850,
+            "text": "The earthquake and its aftershocks have turned one of the world's most scenic regions into a panorama of devastation.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11962",
+            "source_sha256": "e50b14d8235b655592802c920453f8876438ea69b16334a815cbb5b9cb629094"
+          },
+          {
+            "start": 714,
+            "end": 740,
+            "text": "The damage was everywhere.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11962",
+            "source_sha256": "e50b14d8235b655592802c920453f8876438ea69b16334a815cbb5b9cb629094"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 116,
+      "original_gold_spans": [
+        {
+          "start": 152,
+          "end": 221,
+          "text": "Nepalese Prime Minister Sushil Koirala declared a state of emergency.",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  Nepalese Prime Minister Sushil Koirala declared a state of emergency. \nOriginal:  No mentioned of Nepalese Prime MinisterSushil Koirala and him stating a state of emergency.\n\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 358,
+          "end": 423,
+          "text": "The United Nations has launched an appeal for $1.6 billion in aid",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  The United Nations has launched an appeal for $1.6 billion in aid\nOriginal: This info is not mentioned in the source content.\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "2978",
+      "source_id": "11962",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-6",
+        "quote": "The United Nations has launched an appeal for $1.6 billion in aid",
+        "relation": "insufficient",
+        "explanation": "The supplied source does not mention the United Nations launching an appeal or any $1.6 billion aid amount, so this claim is not established by the source.",
+        "status": "ok",
+        "answer_span": {
+          "start": 358,
+          "end": 423,
+          "text": "The United Nations has launched an appeal for $1.6 billion in aid",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 54,
+      "flagged_characters": 54,
+      "original_gold_spans": [
+        {
+          "start": 152,
+          "end": 221,
+          "text": "Nepalese Prime Minister Sushil Koirala declared a state of emergency.",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  Nepalese Prime Minister Sushil Koirala declared a state of emergency. \nOriginal:  No mentioned of Nepalese Prime MinisterSushil Koirala and him stating a state of emergency.\n\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 358,
+          "end": 423,
+          "text": "The United Nations has launched an appeal for $1.6 billion in aid",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  The United Nations has launched an appeal for $1.6 billion in aid\nOriginal: This info is not mentioned in the source content.\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "2978",
+      "source_id": "11962",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-8",
+        "quote": "Despite the challenges, the Nepali people continue to band together and work towards recovery",
+        "relation": "insufficient",
+        "explanation": "The source supports that Kathmandu residents banded together to get by amid shortages, but it does not establish that Nepali people generally continued to do so or that they were working toward recovery.",
+        "status": "ok",
+        "answer_span": {
+          "start": 506,
+          "end": 599,
+          "text": "Despite the challenges, the Nepali people continue to band together and work towards recovery",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 3507,
+            "end": 3633,
+            "text": "Residents of Kathmandu are banding together to get by, with stores shuttered and very few sources of food and drinkable water.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11962",
+            "source_sha256": "e50b14d8235b655592802c920453f8876438ea69b16334a815cbb5b9cb629094"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 80,
+      "original_gold_spans": [
+        {
+          "start": 152,
+          "end": 221,
+          "text": "Nepalese Prime Minister Sushil Koirala declared a state of emergency.",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  Nepalese Prime Minister Sushil Koirala declared a state of emergency. \nOriginal:  No mentioned of Nepalese Prime MinisterSushil Koirala and him stating a state of emergency.\n\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 358,
+          "end": 423,
+          "text": "The United Nations has launched an appeal for $1.6 billion in aid",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  The United Nations has launched an appeal for $1.6 billion in aid\nOriginal: This info is not mentioned in the source content.\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "2978",
+      "source_id": "11962",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-4",
+        "quote": "Nepalese Prime Minister Sushil Koirala declared a state of emergency.",
+        "relation": "insufficient",
+        "explanation": "The source does not mention Prime Minister Sushil Koirala or a state of emergency declaration.",
+        "status": "ok",
+        "answer_span": {
+          "start": 152,
+          "end": 221,
+          "text": "Nepalese Prime Minister Sushil Koirala declared a state of emergency.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 60,
+      "flagged_characters": 60,
+      "original_gold_spans": [
+        {
+          "start": 152,
+          "end": 221,
+          "text": "Nepalese Prime Minister Sushil Koirala declared a state of emergency.",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  Nepalese Prime Minister Sushil Koirala declared a state of emergency. \nOriginal:  No mentioned of Nepalese Prime MinisterSushil Koirala and him stating a state of emergency.\n\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 358,
+          "end": 423,
+          "text": "The United Nations has launched an appeal for $1.6 billion in aid",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  The United Nations has launched an appeal for $1.6 billion in aid\nOriginal: This info is not mentioned in the source content.\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "2978",
+      "source_id": "11962",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-5",
+        "quote": "The quake and its aftershocks have destroyed thousands of homes and businesses",
+        "relation": "insufficient",
+        "explanation": "The source describes damage and collapsed buildings or houses, but does not state that thousands of homes and businesses were destroyed.",
+        "status": "ok",
+        "answer_span": {
+          "start": 222,
+          "end": 300,
+          "text": "The quake and its aftershocks have destroyed thousands of homes and businesses",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 67,
+      "original_gold_spans": [
+        {
+          "start": 152,
+          "end": 221,
+          "text": "Nepalese Prime Minister Sushil Koirala declared a state of emergency.",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  Nepalese Prime Minister Sushil Koirala declared a state of emergency. \nOriginal:  No mentioned of Nepalese Prime MinisterSushil Koirala and him stating a state of emergency.\n\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 358,
+          "end": 423,
+          "text": "The United Nations has launched an appeal for $1.6 billion in aid",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  The United Nations has launched an appeal for $1.6 billion in aid\nOriginal: This info is not mentioned in the source content.\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "2978",
+      "source_id": "11962",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-7",
+        "quote": "The United Nations has launched an appeal for $1.6 billion in aid",
+        "relation": "insufficient",
+        "explanation": "The source does not mention a United Nations appeal or $1.6 billion in aid.",
+        "status": "ok",
+        "answer_span": {
+          "start": 358,
+          "end": 423,
+          "text": "The United Nations has launched an appeal for $1.6 billion in aid",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 54,
+      "flagged_characters": 54,
+      "original_gold_spans": [
+        {
+          "start": 152,
+          "end": 221,
+          "text": "Nepalese Prime Minister Sushil Koirala declared a state of emergency.",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  Nepalese Prime Minister Sushil Koirala declared a state of emergency. \nOriginal:  No mentioned of Nepalese Prime MinisterSushil Koirala and him stating a state of emergency.\n\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 358,
+          "end": 423,
+          "text": "The United Nations has launched an appeal for $1.6 billion in aid",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  The United Nations has launched an appeal for $1.6 billion in aid\nOriginal: This info is not mentioned in the source content.\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "2978",
+      "source_id": "11962",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-10",
+        "quote": "and work towards recovery",
+        "relation": "insufficient",
+        "explanation": "The source describes residents banding together to get by, but does not state they are working towards recovery.",
+        "status": "ok",
+        "answer_span": {
+          "start": 574,
+          "end": 599,
+          "text": "and work towards recovery",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 3507,
+            "end": 3633,
+            "text": "Residents of Kathmandu are banding together to get by, with stores shuttered and very few sources of food and drinkable water.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11962",
+            "source_sha256": "e50b14d8235b655592802c920453f8876438ea69b16334a815cbb5b9cb629094"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 22,
+      "original_gold_spans": [
+        {
+          "start": 152,
+          "end": 221,
+          "text": "Nepalese Prime Minister Sushil Koirala declared a state of emergency.",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  Nepalese Prime Minister Sushil Koirala declared a state of emergency. \nOriginal:  No mentioned of Nepalese Prime MinisterSushil Koirala and him stating a state of emergency.\n\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 358,
+          "end": 423,
+          "text": "The United Nations has launched an appeal for $1.6 billion in aid",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC:  The United Nations has launched an appeal for $1.6 billion in aid\nOriginal: This info is not mentioned in the source content.\n",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1119",
+      "source_id": "15780",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-1",
+        "quote": "in 85 words",
+        "relation": "insufficient",
+        "explanation": "The supplied source texts do not establish the word count of the summary.",
+        "status": "ok",
+        "answer_span": {
+          "start": 38,
+          "end": 49,
+          "text": "in 85 words",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 9,
+      "original_gold_spans": [
+        {
+          "start": 330,
+          "end": 392,
+          "text": "the remaining five likely to be in the Midwest and West Coast.",
+          "meta": "LOW INTRO OF NEW INFO\nThis might be true that the states in the passages are part of Midwest and West Coast but it was not explicitly mentioned in the passage",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1119",
+      "source_id": "15780",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-2",
+        "quote": "Jack White announced a surprise acoustic tour",
+        "relation": "insufficient",
+        "explanation": "The source confirms an announced first-ever acoustic tour and unannounced shows, but it does not say the tour itself was a surprise.",
+        "status": "ok",
+        "answer_span": {
+          "start": 52,
+          "end": 97,
+          "text": "Jack White announced a surprise acoustic tour",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 140,
+            "end": 302,
+            "text": "rocker Jack White announced he'll take a hiatus from touring. White will wrap his touring efforts in support of \"Lazeretto\" with a brief, first-ever acoustic tour",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15780",
+            "source_sha256": "3203257edca6020abf68fe57769abbba3888f72f921aea33a71819eafac71caa"
+          },
+          {
+            "start": 512,
+            "end": 559,
+            "text": "The shows will be unannounced until day-of-show",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15780",
+            "source_sha256": "3203257edca6020abf68fe57769abbba3888f72f921aea33a71819eafac71caa"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 39,
+      "original_gold_spans": [
+        {
+          "start": 330,
+          "end": 392,
+          "text": "the remaining five likely to be in the Midwest and West Coast.",
+          "meta": "LOW INTRO OF NEW INFO\nThis might be true that the states in the passages are part of Midwest and West Coast but it was not explicitly mentioned in the passage",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1119",
+      "source_id": "15780",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-8",
+        "quote": "with the remaining five likely to be in the Midwest and West Coast",
+        "relation": "contradicted",
+        "explanation": "The source's guess includes Vermont and Puerto Rico, which are not Midwest or West Coast, and Wyoming is not West Coast, so the regional characterization conflicts with the source's speculation.",
+        "status": "ok",
+        "answer_span": {
+          "start": 325,
+          "end": 391,
+          "text": "with the remaining five likely to be in the Midwest and West Coast",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1657,
+            "end": 1797,
+            "text": "our guess as to which five \"states\" White will play on the brief acoustic run: South and North Dakota, Wyoming, Vermont and ... Puerto Rico?",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15780",
+            "source_sha256": "3203257edca6020abf68fe57769abbba3888f72f921aea33a71819eafac71caa"
+          }
+        ]
+      },
+      "gold_overlap_characters": 50,
+      "flagged_characters": 54,
+      "original_gold_spans": [
+        {
+          "start": 330,
+          "end": 392,
+          "text": "the remaining five likely to be in the Midwest and West Coast.",
+          "meta": "LOW INTRO OF NEW INFO\nThis might be true that the states in the passages are part of Midwest and West Coast but it was not explicitly mentioned in the passage",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1119",
+      "source_id": "15780",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-1",
+        "quote": "Here's a summary of the article in 85 words:",
+        "relation": "insufficient",
+        "explanation": "The source article does not mention or establish that a summary of the article exists or that it is 85 words long.",
+        "status": "ok",
+        "answer_span": {
+          "start": 6,
+          "end": 50,
+          "text": "Here's a summary of the article in 85 words:",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 36,
+      "original_gold_spans": [
+        {
+          "start": 330,
+          "end": 392,
+          "text": "the remaining five likely to be in the Midwest and West Coast.",
+          "meta": "LOW INTRO OF NEW INFO\nThis might be true that the states in the passages are part of Midwest and West Coast but it was not explicitly mentioned in the passage",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1119",
+      "source_id": "15780",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-2",
+        "quote": "Jack White announced a surprise acoustic tour",
+        "relation": "insufficient",
+        "explanation": "The sources establish that Jack White announced he will take a hiatus from touring and will wrap his touring efforts with a brief, first-ever acoustic tour whose shows are unannounced until day-of-show. The announcement and the acoustic-tour element are therefore covered, but the descriptor \"surprise\" is never stated or otherwise established by the source text (unannounced shows are not the same as the source calling the tour a surprise), so this material content remains unsupported.",
+        "status": "ok",
+        "answer_span": {
+          "start": 52,
+          "end": 97,
+          "text": "Jack White announced a surprise acoustic tour",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 140,
+            "end": 200,
+            "text": "rocker Jack White announced he'll take a hiatus from touring",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15780",
+            "source_sha256": "3203257edca6020abf68fe57769abbba3888f72f921aea33a71819eafac71caa"
+          },
+          {
+            "start": 202,
+            "end": 411,
+            "text": "White will wrap his touring efforts in support of \"Lazeretto\" with a brief, first-ever acoustic tour that will hit \"the only five states left in the U.S. that he has yet to play,\" according to White's website.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15780",
+            "source_sha256": "3203257edca6020abf68fe57769abbba3888f72f921aea33a71819eafac71caa"
+          },
+          {
+            "start": 512,
+            "end": 695,
+            "text": "The shows will be unannounced until day-of-show, with tickets priced at $3 and limited to one ticket per person, to be purchased only at the venue on a first-come, first-served basis.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15780",
+            "source_sha256": "3203257edca6020abf68fe57769abbba3888f72f921aea33a71819eafac71caa"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 39,
+      "original_gold_spans": [
+        {
+          "start": 330,
+          "end": 392,
+          "text": "the remaining five likely to be in the Midwest and West Coast.",
+          "meta": "LOW INTRO OF NEW INFO\nThis might be true that the states in the passages are part of Midwest and West Coast but it was not explicitly mentioned in the passage",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1119",
+      "source_id": "15780",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-8",
+        "quote": "with the remaining five likely to be in the Midwest and West Coast",
+        "relation": "contradicted",
+        "explanation": "The source does not say the remaining five are likely in the Midwest and West Coast; it instead guesses South and North Dakota, Wyoming, Vermont, and Puerto Rico, which contradicts a West Coast/Midwest characterization.",
+        "status": "ok",
+        "answer_span": {
+          "start": 325,
+          "end": 391,
+          "text": "with the remaining five likely to be in the Midwest and West Coast",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1563,
+            "end": 1797,
+            "text": "Through the process of elimination (surely he has played Boise, Little Rock, and Salt Lake?), our guess as to which five \"states\" White will play on the brief acoustic run: South and North Dakota, Wyoming, Vermont and ... Puerto Rico?",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15780",
+            "source_sha256": "3203257edca6020abf68fe57769abbba3888f72f921aea33a71819eafac71caa"
+          },
+          {
+            "start": 1280,
+            "end": 1483,
+            "text": "That leaves nine states for which we could not find a show for White: Hawaii (where a show is scheduled for tomorrow, April 15), Arkansas, Idaho, Utah, Wyoming, Vermont, Iowa, and North and South Dakota.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15780",
+            "source_sha256": "3203257edca6020abf68fe57769abbba3888f72f921aea33a71819eafac71caa"
+          }
+        ]
+      },
+      "gold_overlap_characters": 50,
+      "flagged_characters": 54,
+      "original_gold_spans": [
+        {
+          "start": 330,
+          "end": 392,
+          "text": "the remaining five likely to be in the Midwest and West Coast.",
+          "meta": "LOW INTRO OF NEW INFO\nThis might be true that the states in the passages are part of Midwest and West Coast but it was not explicitly mentioned in the passage",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-5",
+        "quote": "including surgery",
+        "relation": "insufficient",
+        "explanation": "The source does not mention surgery.",
+        "status": "ok",
+        "answer_span": {
+          "start": 225,
+          "end": 242,
+          "text": "including surgery",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 16,
+      "flagged_characters": 16,
+      "original_gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-8",
+        "quote": "spends much of her time",
+        "relation": "insufficient",
+        "explanation": "The source describes Melissa providing care but does not quantify how much time she spends.",
+        "status": "ok",
+        "answer_span": {
+          "start": 320,
+          "end": 343,
+          "text": "spends much of her time",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 19,
+      "original_gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-10",
+        "quote": "including monitoring her blood pressure and heart rate during treatment",
+        "relation": "insufficient",
+        "explanation": "The source reports blood pressure and heart rate readings during treatment, but does not state that Melissa monitors them.",
+        "status": "ok",
+        "answer_span": {
+          "start": 385,
+          "end": 456,
+          "text": "including monitoring her blood pressure and heart rate during treatment",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1534,
+            "end": 1629,
+            "text": "The disinfectant burns, and Brynn's blood pressure hits 150/102. Her heart rate rockets to 128.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12075",
+            "source_sha256": "6a1b353be124b1f44210eb462d649bda0ed6529dd4078521d818ed38a491ca09"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 62,
+      "original_gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-11",
+        "quote": "Melissa's husband",
+        "relation": "insufficient",
+        "explanation": "The source identifies Barry as Brynn's father, not as Melissa's husband.",
+        "status": "ok",
+        "answer_span": {
+          "start": 458,
+          "end": 475,
+          "text": "Melissa's husband",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 2024,
+            "end": 2085,
+            "text": "Her father, Barry, jokingly rues the day she learned to talk.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12075",
+            "source_sha256": "6a1b353be124b1f44210eb462d649bda0ed6529dd4078521d818ed38a491ca09"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 16,
+      "original_gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-18",
+        "quote": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing.",
+        "relation": "insufficient",
+        "explanation": "The source does not state that many people with mast cell activation syndrome experience this symptom set, and it does not mention hives or itching.",
+        "status": "ok",
+        "answer_span": {
+          "start": 1041,
+          "end": 1192,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 131,
+      "flagged_characters": 131,
+      "original_gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-19",
+        "quote": "Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+        "relation": "insufficient",
+        "explanation": "The source does not describe typical treatment for mast cell activation syndrome.",
+        "status": "ok",
+        "answer_span": {
+          "start": 1193,
+          "end": 1330,
+          "text": "Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 121,
+      "flagged_characters": 121,
+      "original_gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "direct",
+      "kind": "gold_below_half_coverage",
+      "original_gold_span": {
+        "start": 181,
+        "end": 243,
+        "text": "going through countless medical procedures, including surgery,",
+        "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+        "label_type": "Evident Baseless Info",
+        "implicit_true": false,
+        "due_to_null": false
+      },
+      "overlap_characters": 16
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-5",
+        "quote": "going through countless medical procedures, including surgery",
+        "relation": "insufficient",
+        "explanation": "The source describes some medical interventions, such as chest port access, feeding tube use, and casts, but it does not state that Brynn went through countless medical procedures or that any procedure was surgery.",
+        "status": "ok",
+        "answer_span": {
+          "start": 181,
+          "end": 242,
+          "text": "going through countless medical procedures, including surgery",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 55,
+      "flagged_characters": 55,
+      "original_gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-7",
+        "quote": "Her mother, Melissa Duncan, spends much of her time caring for her daughter's medical needs",
+        "relation": "insufficient",
+        "explanation": "The source identifies Melissa Duncan as Brynn's mother and shows her performing some medical care, but it does not establish that she spends much of her time doing so.",
+        "status": "ok",
+        "answer_span": {
+          "start": 292,
+          "end": 383,
+          "text": "Her mother, Melissa Duncan, spends much of her time caring for her daughter's medical needs",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 77,
+      "original_gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-8",
+        "quote": "including monitoring her blood pressure and heart rate during treatment",
+        "relation": "insufficient",
+        "explanation": "The source reports Brynn's blood pressure and heart rate during chest-port care, but it does not state that Melissa or anyone was monitoring those vital signs, nor that monitoring was part of the treatment described.",
+        "status": "ok",
+        "answer_span": {
+          "start": 385,
+          "end": 456,
+          "text": "including monitoring her blood pressure and heart rate during treatment",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1534,
+            "end": 1629,
+            "text": "The disinfectant burns, and Brynn's blood pressure hits 150/102. Her heart rate rockets to 128.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12075",
+            "source_sha256": "6a1b353be124b1f44210eb462d649bda0ed6529dd4078521d818ed38a491ca09"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 62,
+      "original_gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-9",
+        "quote": "Melissa's husband, Barry",
+        "relation": "insufficient",
+        "explanation": "The source identifies Barry as Brynn's father and Melissa as Brynn's mother, but it does not state that Barry is Melissa's husband. The marital relationship asserted by the target quote is therefore not established by the provided text.",
+        "status": "ok",
+        "answer_span": {
+          "start": 458,
+          "end": 482,
+          "text": "Melissa's husband, Barry",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 22,
+      "original_gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-16",
+        "quote": "Many people with mast cell activation syndrome experience a wide range of symptoms",
+        "relation": "insufficient",
+        "explanation": "The source discusses mast cell activation syndrome and its possible symptoms, but it does not establish that many people with the condition experience a wide range of symptoms.",
+        "status": "ok",
+        "answer_span": {
+          "start": 1041,
+          "end": 1123,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 4896,
+            "end": 4972,
+            "text": "Not everyone with mast cell activation syndrome has it as bad as Brynn does.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12075",
+            "source_sha256": "6a1b353be124b1f44210eb462d649bda0ed6529dd4078521d818ed38a491ca09"
+          },
+          {
+            "start": 5148,
+            "end": 5274,
+            "text": "They can affect every system in the body, Afrin says, so the disease is capable of causing all the symptoms Brynn experiences.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12075",
+            "source_sha256": "6a1b353be124b1f44210eb462d649bda0ed6529dd4078521d818ed38a491ca09"
+          }
+        ]
+      },
+      "gold_overlap_characters": 70,
+      "flagged_characters": 70,
+      "original_gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-17",
+        "quote": "including hives, itching, abdominal pain, and difficulty breathing",
+        "relation": "insufficient",
+        "explanation": "The source describes Brynn's severe allergic reactions and mast cell activation syndrome, but it does not list hives, itching, or abdominal pain as symptoms. It mentions hard to breathe and stomach stabbing for Brynn, but that does not establish the full symptom list in the target.",
+        "status": "ok",
+        "answer_span": {
+          "start": 1125,
+          "end": 1191,
+          "text": "including hives, itching, abdominal pain, and difficulty breathing",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 59,
+      "flagged_characters": 59,
+      "original_gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3650",
+      "source_id": "12075",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-18",
+        "quote": "Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions",
+        "relation": "insufficient",
+        "explanation": "The source discusses Brynn Duncan's medications, eating difficulties, and symptoms related to mast cell activation syndrome, but it does not state that treatment typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+        "status": "ok",
+        "answer_span": {
+          "start": 1193,
+          "end": 1329,
+          "text": "Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 120,
+      "flagged_characters": 120,
+      "original_gold_spans": [
+        {
+          "start": 181,
+          "end": 243,
+          "text": "going through countless medical procedures, including surgery,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\n\"going through countless medical procedures, including surgery, \" was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 1041,
+          "end": 1330,
+          "text": "Many people with mast cell activation syndrome experience a wide range of symptoms, including hives, itching, abdominal pain, and difficulty breathing. Treatment for mast cell activation syndrome typically involves a combination of medications, lifestyle changes, and dietary restrictions.",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis was not mentioned in the source content",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "707",
+      "source_id": "15710",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-6",
+        "quote": "has already gained over 26,000 followers",
+        "relation": "insufficient",
+        "explanation": "The source states Manning posted to her nearly 26,000-plus followers, which is ambiguous about whether the follower count is actually over 26,000. It does not clearly establish the target's claim that she has already gained over 26,000 followers.",
+        "status": "ok",
+        "answer_span": {
+          "start": 227,
+          "end": 267,
+          "text": "has already gained over 26,000 followers",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 611,
+            "end": 662,
+            "text": "Manning posted to her nearly 26,000-plus followers.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15710",
+            "source_sha256": "c6e2605db2a215153c3ceae8a7f99935958f08dbe868db1523b8a296fdf36683"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 35,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "707",
+      "source_id": "15710",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-6",
+        "quote": "has already gained over 26,000 followers",
+        "relation": "insufficient",
+        "explanation": "The source's phrase 'nearly 26,000-plus' is ambiguous and does not clearly establish that she has over 26,000 followers.",
+        "status": "ok",
+        "answer_span": {
+          "start": 227,
+          "end": 267,
+          "text": "has already gained over 26,000 followers",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 611,
+            "end": 662,
+            "text": "Manning posted to her nearly 26,000-plus followers.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15710",
+            "source_sha256": "c6e2605db2a215153c3ceae8a7f99935958f08dbe868db1523b8a296fdf36683"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 35,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "2804",
+      "source_id": "11933",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-9",
+        "quote": "Additionally, hidden cameras at the airport have revealed airport workers stealing from luggage.",
+        "relation": "insufficient",
+        "explanation": "Source states hidden cameras reveal airport workers stealing from luggage, but does not identify the airport as Denver International Airport or tie it to the prior incident; the location qualifier 'at the airport' is not established if it refers to Denver.",
+        "status": "ok",
+        "answer_span": {
+          "start": 754,
+          "end": 850,
+          "text": "Additionally, hidden cameras at the airport have revealed airport workers stealing from luggage.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1982,
+            "end": 2042,
+            "text": "Hidden cameras reveal airport workers stealing from luggage.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11933",
+            "source_sha256": "94cd2b78fa67091f85aa5e3e33bcbae39d5ef938b1cef865399727716b820f3f"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 84,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1439",
+      "source_id": "15833",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-9",
+        "quote": "well-preserved architecture",
+        "relation": "contradicted",
+        "explanation": "Source describes crumbled ruins black with age, not well-preserved architecture.",
+        "status": "ok",
+        "answer_span": {
+          "start": 482,
+          "end": 509,
+          "text": "well-preserved architecture",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 303,
+            "end": 425,
+            "text": "Before him rise the crumbled ruins of an enormous portal of rock, black with age but with a colossal grandeur not yet lost",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15833",
+            "source_sha256": "7aea1223425de39549941628cdbfa92f8e4486fc097361e30cffe9dedf4dedaa"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 26,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1439",
+      "source_id": "15833",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-10",
+        "quote": "unique zoomorphic design",
+        "relation": "insufficient",
+        "explanation": "Source supports a zoomorphic portal/monster mouth gate, but does not establish that the design is unique.",
+        "status": "ok",
+        "answer_span": {
+          "start": 514,
+          "end": 538,
+          "text": "unique zoomorphic design",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 429,
+            "end": 537,
+            "text": "a fine example of what archaeologists call a \"zoomorphic portal\" or, more popularly, a \"monster mouth gate.\"",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15833",
+            "source_sha256": "7aea1223425de39549941628cdbfa92f8e4486fc097361e30cffe9dedf4dedaa"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 22,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1439",
+      "source_id": "15833",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-14",
+        "quote": "leaving behind a legacy of rediscovered history for future generations to study and understand",
+        "relation": "insufficient",
+        "explanation": "Source says sites/structures are left for others to survey, excavate, and analyze, but does not mention a legacy or future generations specifically.",
+        "status": "ok",
+        "answer_span": {
+          "start": 853,
+          "end": 947,
+          "text": "leaving behind a legacy of rediscovered history for future generations to study and understand",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 4052,
+            "end": 4117,
+            "text": "hundreds of structures are left for others to survey and excavate",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15833",
+            "source_sha256": "7aea1223425de39549941628cdbfa92f8e4486fc097361e30cffe9dedf4dedaa"
+          },
+          {
+            "start": 4293,
+            "end": 4421,
+            "text": "preferring to let other research teams dive in to the sites he has found to slowly excavate, catalogue and analyze what he finds",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15833",
+            "source_sha256": "7aea1223425de39549941628cdbfa92f8e4486fc097361e30cffe9dedf4dedaa"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 81,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1439",
+      "source_id": "15833",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-8",
+        "quote": "due to its well-preserved architecture and unique zoomorphic design",
+        "relation": "contradicted",
+        "explanation": "The source describes Lagunita's portal as \"crumbled ruins\" and \"black with age,\" which is incompatible with \"well-preserved architecture,\" and calls it a \"fine example\" of a zoomorphic portal rather than stating it is unique or that the discovery's significance was due to these features.",
+        "status": "ok",
+        "answer_span": {
+          "start": 471,
+          "end": 538,
+          "text": "due to its well-preserved architecture and unique zoomorphic design",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 303,
+            "end": 716,
+            "text": "Before him rise the crumbled ruins of an enormous portal of rock, black with age but with a colossal grandeur not yet lost -- a fine example of what archaeologists call a \"zoomorphic portal\" or, more popularly, a \"monster mouth gate.\" What was once the gateway to an ancient Mayan city, built circa 700 AD and mysteriously abandoned four centuries later, stands before him. He has found the lost city of Lagunita.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15833",
+            "source_sha256": "7aea1223425de39549941628cdbfa92f8e4486fc097361e30cffe9dedf4dedaa"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 59,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1439",
+      "source_id": "15833",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-14",
+        "quote": "leaving behind a legacy of rediscovered history for future generations to study and understand",
+        "relation": "insufficient",
+        "explanation": "The source says Šprajc leaves sites and structures for other research teams to survey, excavate, catalogue, and analyze, but it does not establish the target's claim about a legacy for future generations to study and understand.",
+        "status": "ok",
+        "answer_span": {
+          "start": 853,
+          "end": 947,
+          "text": "leaving behind a legacy of rediscovered history for future generations to study and understand",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 81,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1565",
+      "source_id": "11348",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-6",
+        "quote": "Hicks' lawyer says he should face the consequences of his actions.",
+        "relation": "contradicted",
+        "explanation": "The source attributes the statement that Hicks must face consequences to Rob Maitland, an attorney for Hicks' wife, not to Hicks' lawyer. Thus the target misattributes the speaker; the consequence language is present, but the claim that Hicks' lawyer said it is contradicted.",
+        "status": "ok",
+        "answer_span": {
+          "start": 427,
+          "end": 493,
+          "text": "Hicks' lawyer says he should face the consequences of his actions.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1488,
+            "end": 1766,
+            "text": "\"It has always been our position that Mr. Hicks should be held responsible for his actions to the full extent of the law. His killing of three college students was despicable, and now he must face the consequences of his actions,\" said Rob Maitland, an attorney for Hicks' wife.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11348",
+            "source_sha256": "2de23f364b5e08b706d908b3fa3ba3a9f3a4b883907496c57d1a876f18699561"
+          },
+          {
+            "start": 1767,
+            "end": 1819,
+            "text": "Karen and Craig Hicks are in the process of divorce.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11348",
+            "source_sha256": "2de23f364b5e08b706d908b3fa3ba3a9f3a4b883907496c57d1a876f18699561"
+          }
+        ]
+      },
+      "gold_overlap_characters": 12,
+      "flagged_characters": 56,
+      "original_gold_spans": [
+        {
+          "start": 427,
+          "end": 440,
+          "text": "Hicks' lawyer",
+          "meta": "EVIDENT CONFLICT\nOriginal: \"attorney for Hicks' wife\"\nGenerative: \"Hicks' lawyer\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1565",
+      "source_id": "11348",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-6",
+        "quote": "The victims' family believes it was a hate crime",
+        "relation": "insufficient",
+        "explanation": "The source says family members called for a hate-crime investigation, but it does not explicitly state they believe it was a hate crime.",
+        "status": "ok",
+        "answer_span": {
+          "start": 326,
+          "end": 374,
+          "text": "The victims' family believes it was a hate crime",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1056,
+            "end": 1155,
+            "text": "The victims' family members have called on authorities to investigate the slayings as a hate crime.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11348",
+            "source_sha256": "2de23f364b5e08b706d908b3fa3ba3a9f3a4b883907496c57d1a876f18699561"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 40,
+      "original_gold_spans": [
+        {
+          "start": 427,
+          "end": 440,
+          "text": "Hicks' lawyer",
+          "meta": "EVIDENT CONFLICT\nOriginal: \"attorney for Hicks' wife\"\nGenerative: \"Hicks' lawyer\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "1565",
+      "source_id": "11348",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-8",
+        "quote": "Hicks' lawyer says",
+        "relation": "contradicted",
+        "explanation": "The source attributes the statement to Rob Maitland, an attorney for Hicks' wife, not to Hicks' lawyer.",
+        "status": "ok",
+        "answer_span": {
+          "start": 427,
+          "end": 445,
+          "text": "Hicks' lawyer says",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1488,
+            "end": 1766,
+            "text": "\"It has always been our position that Mr. Hicks should be held responsible for his actions to the full extent of the law. His killing of three college students was despicable, and now he must face the consequences of his actions,\" said Rob Maitland, an attorney for Hicks' wife.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11348",
+            "source_sha256": "2de23f364b5e08b706d908b3fa3ba3a9f3a4b883907496c57d1a876f18699561"
+          }
+        ]
+      },
+      "gold_overlap_characters": 12,
+      "flagged_characters": 16,
+      "original_gold_spans": [
+        {
+          "start": 427,
+          "end": 440,
+          "text": "Hicks' lawyer",
+          "meta": "EVIDENT CONFLICT\nOriginal: \"attorney for Hicks' wife\"\nGenerative: \"Hicks' lawyer\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4253",
+      "source_id": "13879",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-2",
+        "quote": "the comedian robot set to make jokes about the players during the Veto Competition",
+        "relation": "contradicted",
+        "explanation": "The source supports that the comedian robot/Zingbot will joke about the players and is linked to the Week 10 Veto Competition, but it places the joking/filming before six houseguests take part in the Veto Competition. Thus the target’s claim that the jokes occur during the Veto Competition is contradicted.",
+        "status": "ok",
+        "answer_span": {
+          "start": 58,
+          "end": 140,
+          "text": "the comedian robot set to make jokes about the players during the Veto Competition",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 98,
+            "end": 174,
+            "text": "The comedian robot will arrive at the house to make jokes about the players.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13879",
+            "source_sha256": "77f89ccb7bda14e8d1d232e439bdad4d93fec56cade33468924c69097c59ec45"
+          },
+          {
+            "start": 489,
+            "end": 533,
+            "text": "Zingbot will arrive for the Veto Competition",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13879",
+            "source_sha256": "77f89ccb7bda14e8d1d232e439bdad4d93fec56cade33468924c69097c59ec45"
+          },
+          {
+            "start": 606,
+            "end": 667,
+            "text": "This time, he will be linked to the Week 10 Veto Competition.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13879",
+            "source_sha256": "77f89ccb7bda14e8d1d232e439bdad4d93fec56cade33468924c69097c59ec45"
+          },
+          {
+            "start": 790,
+            "end": 894,
+            "text": "The robot will joke about each houseguest and film a segment for the Tuesday night episode (October 10).",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13879",
+            "source_sha256": "77f89ccb7bda14e8d1d232e439bdad4d93fec56cade33468924c69097c59ec45"
+          },
+          {
+            "start": 895,
+            "end": 960,
+            "text": "After that, six houseguests will take part in a Veto Competition.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13879",
+            "source_sha256": "77f89ccb7bda14e8d1d232e439bdad4d93fec56cade33468924c69097c59ec45"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 69,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4253",
+      "source_id": "13879",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-9",
+        "quote": "with the winner having the chance to save themselves or someone else from eviction",
+        "relation": "insufficient",
+        "explanation": "The source mentions a Veto Competition and Veto Meeting but does not state that the Veto Competition winner can save themselves or someone else from eviction.",
+        "status": "ok",
+        "answer_span": {
+          "start": 425,
+          "end": 507,
+          "text": "with the winner having the chance to save themselves or someone else from eviction",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 69,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4253",
+      "source_id": "13879",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-7",
+        "quote": "with the winner having the chance to save themselves or someone else from eviction",
+        "relation": "insufficient",
+        "explanation": "The sources do not state that the Veto Competition winner can save themselves or someone else from eviction.",
+        "status": "ok",
+        "answer_span": {
+          "start": 425,
+          "end": 507,
+          "text": "with the winner having the chance to save themselves or someone else from eviction",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 69,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "5175",
+      "source_id": "13518",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-2",
+        "quote": "of 26 people",
+        "relation": "contradicted",
+        "explanation": "Source says Pastor Morales, his wife Anna, and 25 additional members are in the country, totaling 27 people, not 26.",
+        "status": "ok",
+        "answer_span": {
+          "start": 24,
+          "end": 36,
+          "text": "of 26 people",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 727,
+            "end": 835,
+            "text": "Pastor Jon Morales, his wife Anna, and an additional 25 members of the Oak Pointe Church are in the country.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13518",
+            "source_sha256": "824e5b68356997fa62da84e2cd481fd02e3f75136f2a21978d6ba20dfdd4050c"
+          }
+        ]
+      },
+      "gold_overlap_characters": 10,
+      "flagged_characters": 10,
+      "original_gold_spans": [
+        {
+          "start": 0,
+          "end": 85,
+          "text": "A Michigan church group of 26 people, including Pastor Jon Morales and his wife Anna,",
+          "meta": "EVIDENT CONFLICT\nOriginal: Pastor Jon Morales, his wife Anna, and an additional 25 members\nGenerated: A Michigan church group of 26 people, including Pastor Jon Morales and his wife Anna,",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "5175",
+      "source_id": "13518",
+      "strategy": "direct",
+      "kind": "gold_below_half_coverage",
+      "original_gold_span": {
+        "start": 0,
+        "end": 85,
+        "text": "A Michigan church group of 26 people, including Pastor Jon Morales and his wife Anna,",
+        "meta": "EVIDENT CONFLICT\nOriginal: Pastor Jon Morales, his wife Anna, and an additional 25 members\nGenerated: A Michigan church group of 26 people, including Pastor Jon Morales and his wife Anna,",
+        "label_type": "Evident Conflict",
+        "implicit_true": false,
+        "due_to_null": false
+      },
+      "overlap_characters": 10
+    },
+    {
+      "case_id": "5175",
+      "source_id": "13518",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-1",
+        "quote": "A Michigan church group of 26 people",
+        "relation": "contradicted",
+        "explanation": "The source supports that a Michigan church group is in Israel, but it identifies Pastor Jon Morales, his wife Anna, and an additional 25 members, which totals 27 people, not 26.",
+        "status": "ok",
+        "answer_span": {
+          "start": 0,
+          "end": 36,
+          "text": "A Michigan church group of 26 people",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 506,
+            "end": 554,
+            "text": "Now, a Michigan church group is stuck in Israel.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13518",
+            "source_sha256": "824e5b68356997fa62da84e2cd481fd02e3f75136f2a21978d6ba20dfdd4050c"
+          },
+          {
+            "start": 727,
+            "end": 835,
+            "text": "Pastor Jon Morales, his wife Anna, and an additional 25 members of the Oak Pointe Church are in the country.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13518",
+            "source_sha256": "824e5b68356997fa62da84e2cd481fd02e3f75136f2a21978d6ba20dfdd4050c"
+          }
+        ]
+      },
+      "gold_overlap_characters": 30,
+      "flagged_characters": 30,
+      "original_gold_spans": [
+        {
+          "start": 0,
+          "end": 85,
+          "text": "A Michigan church group of 26 people, including Pastor Jon Morales and his wife Anna,",
+          "meta": "EVIDENT CONFLICT\nOriginal: Pastor Jon Morales, his wife Anna, and an additional 25 members\nGenerated: A Michigan church group of 26 people, including Pastor Jon Morales and his wife Anna,",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "5175",
+      "source_id": "13518",
+      "strategy": "split",
+      "kind": "gold_below_half_coverage",
+      "original_gold_span": {
+        "start": 0,
+        "end": 85,
+        "text": "A Michigan church group of 26 people, including Pastor Jon Morales and his wife Anna,",
+        "meta": "EVIDENT CONFLICT\nOriginal: Pastor Jon Morales, his wife Anna, and an additional 25 members\nGenerated: A Michigan church group of 26 people, including Pastor Jon Morales and his wife Anna,",
+        "label_type": "Evident Conflict",
+        "implicit_true": false,
+        "due_to_null": false
+      },
+      "overlap_characters": 30
+    },
+    {
+      "case_id": "3552",
+      "source_id": "12059",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-2",
+        "quote": "after a full day of fighting",
+        "relation": "contradicted",
+        "explanation": "The source describes an hours-long assault, not a full day of fighting.",
+        "status": "ok",
+        "answer_span": {
+          "start": 82,
+          "end": 110,
+          "text": "after a full day of fighting",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 0,
+            "end": 170,
+            "text": "ISIS fighters seized several districts in the Iraqi city of Ramadi in an hours-long assault Friday that included suicide and car bombs, an Iraqi provincial official said.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12059",
+            "source_sha256": "0b3e14b7509fc4aa6ba117ee9d478270ce06042df884c07e30647e97807c85ef"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 23,
+      "original_gold_spans": [
+        {
+          "start": 453,
+          "end": 473,
+          "text": "in the whole of Iraq",
+          "meta": "LOW INTRODUCTION OF NEW INFORMATION\n\"in the whole of Iraq\" was not mentioned in the source content",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3552",
+      "source_id": "12059",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-3",
+        "quote": "yesterday",
+        "relation": "insufficient",
+        "explanation": "The source places the assault on Friday; it does not establish that this was yesterday.",
+        "status": "ok",
+        "answer_span": {
+          "start": 111,
+          "end": 120,
+          "text": "yesterday",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 67,
+            "end": 98,
+            "text": "in an hours-long assault Friday",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12059",
+            "source_sha256": "0b3e14b7509fc4aa6ba117ee9d478270ce06042df884c07e30647e97807c85ef"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 9,
+      "original_gold_spans": [
+        {
+          "start": 453,
+          "end": 473,
+          "text": "in the whole of Iraq",
+          "meta": "LOW INTRODUCTION OF NEW INFORMATION\n\"in the whole of Iraq\" was not mentioned in the source content",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3552",
+      "source_id": "12059",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-8",
+        "quote": "has seen some of the most intense and persistent fighting in the whole of Iraq",
+        "relation": "insufficient",
+        "explanation": "The source says Ramadi has seen intense and persistent fighting for months, but it does not say it is among the most intense in all of Iraq.",
+        "status": "ok",
+        "answer_span": {
+          "start": 395,
+          "end": 473,
+          "text": "has seen some of the most intense and persistent fighting in the whole of Iraq",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 601,
+            "end": 660,
+            "text": "Ramadi has seen intense and persistent fighting for months.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12059",
+            "source_sha256": "0b3e14b7509fc4aa6ba117ee9d478270ce06042df884c07e30647e97807c85ef"
+          }
+        ]
+      },
+      "gold_overlap_characters": 16,
+      "flagged_characters": 64,
+      "original_gold_spans": [
+        {
+          "start": 453,
+          "end": 473,
+          "text": "in the whole of Iraq",
+          "meta": "LOW INTRODUCTION OF NEW INFORMATION\n\"in the whole of Iraq\" was not mentioned in the source content",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3552",
+      "source_id": "12059",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-9",
+        "quote": "it is now largely under ISIS control",
+        "relation": "insufficient",
+        "explanation": "The source says ISIS took over parts of Ramadi and control has been contested; it does not establish that Ramadi is now largely under ISIS control.",
+        "status": "ok",
+        "answer_span": {
+          "start": 475,
+          "end": 511,
+          "text": "it is now largely under ISIS control",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 661,
+            "end": 782,
+            "text": "ISIS took over parts of that western Anbar city in the first half of 2014, and it's been part of a tug of war ever since.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12059",
+            "source_sha256": "0b3e14b7509fc4aa6ba117ee9d478270ce06042df884c07e30647e97807c85ef"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 30,
+      "original_gold_spans": [
+        {
+          "start": 453,
+          "end": 473,
+          "text": "in the whole of Iraq",
+          "meta": "LOW INTRODUCTION OF NEW INFORMATION\n\"in the whole of Iraq\" was not mentioned in the source content",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3552",
+      "source_id": "12059",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-10",
+        "quote": "despite the best efforts of the US-led airstrikes",
+        "relation": "insufficient",
+        "explanation": "The source says U.S.-led airstrikes have made a difference, not that Ramadi remains under ISIS control despite their best efforts.",
+        "status": "ok",
+        "answer_span": {
+          "start": 513,
+          "end": 562,
+          "text": "despite the best efforts of the US-led airstrikes",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1469,
+            "end": 1573,
+            "text": "And U.S.-led airstrikes have already made a difference, according to officials in Washington and beyond.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12059",
+            "source_sha256": "0b3e14b7509fc4aa6ba117ee9d478270ce06042df884c07e30647e97807c85ef"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 42,
+      "original_gold_spans": [
+        {
+          "start": 453,
+          "end": 473,
+          "text": "in the whole of Iraq",
+          "meta": "LOW INTRODUCTION OF NEW INFORMATION\n\"in the whole of Iraq\" was not mentioned in the source content",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3552",
+      "source_id": "12059",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-2",
+        "quote": "after a full day of fighting yesterday",
+        "relation": "insufficient",
+        "explanation": "The source describes an hours-long assault on Friday, not a full day of fighting yesterday; it does not establish the duration \"full day\" or the relative time \"yesterday.\"",
+        "status": "ok",
+        "answer_span": {
+          "start": 82,
+          "end": 120,
+          "text": "after a full day of fighting yesterday",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 0,
+            "end": 170,
+            "text": "ISIS fighters seized several districts in the Iraqi city of Ramadi in an hours-long assault Friday that included suicide and car bombs, an Iraqi provincial official said.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12059",
+            "source_sha256": "0b3e14b7509fc4aa6ba117ee9d478270ce06042df884c07e30647e97807c85ef"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 32,
+      "original_gold_spans": [
+        {
+          "start": 453,
+          "end": 473,
+          "text": "in the whole of Iraq",
+          "meta": "LOW INTRODUCTION OF NEW INFORMATION\n\"in the whole of Iraq\" was not mentioned in the source content",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3552",
+      "source_id": "12059",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-7",
+        "quote": "has seen some of the most intense and persistent fighting in the whole of Iraq",
+        "relation": "insufficient",
+        "explanation": "The source supports that Ramadi saw intense and persistent fighting, but it does not establish the target's added superlative claim that this was some of the most intense and persistent fighting in the whole of Iraq.",
+        "status": "ok",
+        "answer_span": {
+          "start": 395,
+          "end": 473,
+          "text": "has seen some of the most intense and persistent fighting in the whole of Iraq",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 601,
+            "end": 660,
+            "text": "Ramadi has seen intense and persistent fighting for months.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12059",
+            "source_sha256": "0b3e14b7509fc4aa6ba117ee9d478270ce06042df884c07e30647e97807c85ef"
+          }
+        ]
+      },
+      "gold_overlap_characters": 16,
+      "flagged_characters": 64,
+      "original_gold_spans": [
+        {
+          "start": 453,
+          "end": 473,
+          "text": "in the whole of Iraq",
+          "meta": "LOW INTRODUCTION OF NEW INFORMATION\n\"in the whole of Iraq\" was not mentioned in the source content",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3552",
+      "source_id": "12059",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-8",
+        "quote": "it is now largely under ISIS control",
+        "relation": "insufficient",
+        "explanation": "The source supports that ISIS seized several northern districts and parts of Ramadi, but it does not establish that Ramadi is now largely under ISIS control; the broader extent claim is not stated.",
+        "status": "ok",
+        "answer_span": {
+          "start": 475,
+          "end": 511,
+          "text": "it is now largely under ISIS control",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 0,
+            "end": 170,
+            "text": "ISIS fighters seized several districts in the Iraqi city of Ramadi in an hours-long assault Friday that included suicide and car bombs, an Iraqi provincial official said.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12059",
+            "source_sha256": "0b3e14b7509fc4aa6ba117ee9d478270ce06042df884c07e30647e97807c85ef"
+          },
+          {
+            "start": 418,
+            "end": 543,
+            "text": "The northern Ramadi districts of Albu Faraj, Albu Essa and Albu Risha were in the hands of ISIS by the time the day was done.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12059",
+            "source_sha256": "0b3e14b7509fc4aa6ba117ee9d478270ce06042df884c07e30647e97807c85ef"
+          },
+          {
+            "start": 661,
+            "end": 782,
+            "text": "ISIS took over parts of that western Anbar city in the first half of 2014, and it's been part of a tug of war ever since.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12059",
+            "source_sha256": "0b3e14b7509fc4aa6ba117ee9d478270ce06042df884c07e30647e97807c85ef"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 30,
+      "original_gold_spans": [
+        {
+          "start": 453,
+          "end": 473,
+          "text": "in the whole of Iraq",
+          "meta": "LOW INTRODUCTION OF NEW INFORMATION\n\"in the whole of Iraq\" was not mentioned in the source content",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3552",
+      "source_id": "12059",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-9",
+        "quote": "despite the best efforts of the US-led airstrikes",
+        "relation": "insufficient",
+        "explanation": "The source mentions U.S.-led airstrikes made a difference, but it does not state they made their “best efforts” or that any outcome occurred “despite” those efforts. The evaluative/causal claim in the target is not established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 513,
+          "end": 562,
+          "text": "despite the best efforts of the US-led airstrikes",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 42,
+      "original_gold_spans": [
+        {
+          "start": 453,
+          "end": 473,
+          "text": "in the whole of Iraq",
+          "meta": "LOW INTRODUCTION OF NEW INFORMATION\n\"in the whole of Iraq\" was not mentioned in the source content",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "5049",
+      "source_id": "13497",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-3",
+        "quote": "in a now-deleted Instagram post",
+        "relation": "insufficient",
+        "explanation": "The source says the Instagram story post was \"removed or expired,\" not specifically that it was deleted. Thus the \"now-deleted\" characterization is not fully established by the supplied source.",
+        "status": "ok",
+        "answer_span": {
+          "start": 120,
+          "end": 151,
+          "text": "in a now-deleted Instagram post",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 339,
+            "end": 441,
+            "text": "The post, which has since been removed or expired, contained derogatory language directed at Israelis.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13497",
+            "source_sha256": "7094aea0f6478806c2d614de8467671bc9d7721a0b6a53213b1211755c9d28fa"
+          },
+          {
+            "start": 157,
+            "end": 338,
+            "text": "Dr. Mika Tosca, an associate professor of climate science at the School of the Art Institute of Chicago, has issued an apology for inflammatory comments made on her Instagram story.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13497",
+            "source_sha256": "7094aea0f6478806c2d614de8467671bc9d7721a0b6a53213b1211755c9d28fa"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 27,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "5049",
+      "source_id": "13497",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-10",
+        "quote": "This incident highlights the growing concern about anti-Semitic rhetoric among academics",
+        "relation": "insufficient",
+        "explanation": "The source describes Tosca's apology, public outrage, the school's distancing, and that other professors have faced criticism, but it does not establish a growing concern specifically about anti-Semitic rhetoric among academics.",
+        "status": "ok",
+        "answer_span": {
+          "start": 457,
+          "end": 545,
+          "text": "This incident highlights the growing concern about anti-Semitic rhetoric among academics",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 78,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "5049",
+      "source_id": "13497",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-11",
+        "quote": "and the need for accountability",
+        "relation": "insufficient",
+        "explanation": "The source describes outrage, calls for removal, and the school distancing itself from Tosca's views, but it does not state or establish a general need for accountability. The target fragment is therefore not supported by the provided source.",
+        "status": "ok",
+        "answer_span": {
+          "start": 546,
+          "end": 577,
+          "text": "and the need for accountability",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 27,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "5049",
+      "source_id": "13497",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-3",
+        "quote": "in a now-deleted Instagram post",
+        "relation": "insufficient",
+        "explanation": "The source says the post was removed or expired, not definitively that it was deleted; the deletion detail is not fully established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 120,
+          "end": 151,
+          "text": "in a now-deleted Instagram post",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 339,
+            "end": 441,
+            "text": "The post, which has since been removed or expired, contained derogatory language directed at Israelis.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13497",
+            "source_sha256": "7094aea0f6478806c2d614de8467671bc9d7721a0b6a53213b1211755c9d28fa"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 27,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "5049",
+      "source_id": "13497",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-10",
+        "quote": "This incident highlights the growing concern about anti-Semitic rhetoric among academics and the need for accountability.",
+        "relation": "insufficient",
+        "explanation": "The source notes StopAntisemitism's involvement and other professors' criticism, but it does not establish a growing concern among academics or a general need for accountability.",
+        "status": "ok",
+        "answer_span": {
+          "start": 457,
+          "end": 578,
+          "text": "This incident highlights the growing concern about anti-Semitic rhetoric among academics and the need for accountability.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1844,
+            "end": 1948,
+            "text": "The offensive post was first brought to public attention by the nonprofit organization StopAntisemitism.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13497",
+            "source_sha256": "7094aea0f6478806c2d614de8467671bc9d7721a0b6a53213b1211755c9d28fa"
+          },
+          {
+            "start": 2130,
+            "end": 2257,
+            "text": "Tosca's case is not isolated, as several other professors have faced criticism for their comments on the Israel-Hamas conflict.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13497",
+            "source_sha256": "7094aea0f6478806c2d614de8467671bc9d7721a0b6a53213b1211755c9d28fa"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 106,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4306",
+      "source_id": "13888",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-5",
+        "quote": "they previously expressed curiosity about its contents",
+        "relation": "insufficient",
+        "explanation": "Source supports curiosity by Joy-Anna and Austin, not Jessa; the answer’s 'they' refers to Joy-Anna and Jessa, so the claim is not fully established for Jessa.",
+        "status": "ok",
+        "answer_span": {
+          "start": 371,
+          "end": 425,
+          "text": "they previously expressed curiosity about its contents",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1859,
+            "end": 2117,
+            "text": "During a Q&A session that Austin Forsyth and Joy-Anna Duggar participated in while camping, they revealed they would read Jill’s book. Both admitted curiosity but didn’t expand beyond that. Austin said he wanted to know what was written, and Joy-Anna agreed.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13888",
+            "source_sha256": "2455db2a0ae18ea4628e14e6514d1cf3297a2edc965c7b9dc1d96010f27958d3"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 48,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4306",
+      "source_id": "13888",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-6",
+        "quote": "Jill's absence from the gathering suggests strained relations.",
+        "relation": "insufficient",
+        "explanation": "Source mentions limited contact and strained relationships, and Jill missing from a separate Destin vacation, but does not state Jill was absent from the Instagram Story fire gathering or that her absence there suggests strain.",
+        "status": "ok",
+        "answer_span": {
+          "start": 427,
+          "end": 489,
+          "text": "Jill's absence from the gathering suggests strained relations.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 2118,
+            "end": 2176,
+            "text": "There doesn’t appear to be much contact with Jill, though.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13888",
+            "source_sha256": "2455db2a0ae18ea4628e14e6514d1cf3297a2edc965c7b9dc1d96010f27958d3"
+          },
+          {
+            "start": 2472,
+            "end": 2584,
+            "text": "Jill knew the book could cost her relationships, and it looks like it added some strained ones to the list, too.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13888",
+            "source_sha256": "2455db2a0ae18ea4628e14e6514d1cf3297a2edc965c7b9dc1d96010f27958d3"
+          },
+          {
+            "start": 288,
+            "end": 445,
+            "text": "Jim Bob and Michelle Duggar hosted a family vacation in Destin, Florida, where nearly the siblings showed up. Noticeably missing were Jill and Jinger Duggar.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13888",
+            "source_sha256": "2455db2a0ae18ea4628e14e6514d1cf3297a2edc965c7b9dc1d96010f27958d3"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 55,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4306",
+      "source_id": "13888",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-1",
+        "quote": "Here is a summary of the article in 108 words:",
+        "relation": "insufficient",
+        "explanation": "The supplied source does not mention producing a summary or a 108-word count, so it neither supports nor contradicts this meta statement.",
+        "status": "ok",
+        "answer_span": {
+          "start": 0,
+          "end": 46,
+          "text": "Here is a summary of the article in 108 words:",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 37,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4306",
+      "source_id": "13888",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-9",
+        "quote": "they previously expressed curiosity about its contents",
+        "relation": "insufficient",
+        "explanation": "The answer resolves “they” as Joy-Anna and Jessa. The source supports that Joy-Anna, along with Austin, expressed curiosity about Jill’s book, but it does not state that Jessa did so. Therefore the full target claim is not established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 371,
+          "end": 425,
+          "text": "they previously expressed curiosity about its contents",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1859,
+            "end": 2117,
+            "text": "During a Q&A session that Austin Forsyth and Joy-Anna Duggar participated in while camping, they revealed they would read Jill’s book. Both admitted curiosity but didn’t expand beyond that. Austin said he wanted to know what was written, and Joy-Anna agreed.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13888",
+            "source_sha256": "2455db2a0ae18ea4628e14e6514d1cf3297a2edc965c7b9dc1d96010f27958d3"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 48,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4306",
+      "source_id": "13888",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-10",
+        "quote": "Jill's absence from the gathering",
+        "relation": "insufficient",
+        "explanation": "The source does not state that Jill was absent from Joy-Anna's firepit gathering. It only says Jill and Jinger were missing from a separate Destin family vacation, and its list of people at the firepit gathering is not exhaustive.",
+        "status": "ok",
+        "answer_span": {
+          "start": 427,
+          "end": 460,
+          "text": "Jill's absence from the gathering",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 29,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4306",
+      "source_id": "13888",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-11",
+        "quote": "Jill's absence from the gathering suggests strained relations",
+        "relation": "insufficient",
+        "explanation": "The source says Jill and Jinger were missing from a Destin family vacation and that strained relationships may have resulted from Jill's book, but it does not state that Jill was absent from the Instagram Story firepit gathering summarized; the attendee list is non-exhaustive. Thus the specific absence-from-that-gathering inference is not established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 427,
+          "end": 488,
+          "text": "Jill's absence from the gathering suggests strained relations",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 54,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "2986",
+      "source_id": "11963",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-7",
+        "quote": "The Indonesian government confirmed that six other prisoners",
+        "relation": "insufficient",
+        "explanation": "Source reports six other inmates were executed, but does not state the Indonesian government confirmed those six executions; it only notes government confirmation that executions were to go ahead.",
+        "status": "ok",
+        "answer_span": {
+          "start": 610,
+          "end": 670,
+          "text": "The Indonesian government confirmed that six other prisoners",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 5668,
+            "end": 5765,
+            "text": "The Indonesian government didn't confirm until late Tuesday that the executions were to go ahead.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11963",
+            "source_sha256": "a0a2c65d0d912e31e9ddc73160c3c14fd6c27a227363fb1a6115d870d1dded01"
+          },
+          {
+            "start": 1117,
+            "end": 1338,
+            "text": "Six other inmates were executed, including Nigerians Raheem Salami, Silvester Obiekwe Nwolise, Okwudil Oyatanze and Martin Anderson; Indonesian Zainal Abidin and Brazilian Rodrigo Gularte, who was said to be mentally ill.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11963",
+            "source_sha256": "a0a2c65d0d912e31e9ddc73160c3c14fd6c27a227363fb1a6115d870d1dded01"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 53,
+      "original_gold_spans": [
+        {
+          "start": 682,
+          "end": 696,
+          "text": "five Nigerians",
+          "meta": "EVIDENT CONFLICT\nOriginal: \"Nigerians Raheem Salami, Silvester Obiekwe Nwolise, Okwudil Oyatanze and Martin Anderson\" (4 Nigerians)\nGenerative: \"five Nigerians\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "2986",
+      "source_id": "11963",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-8",
+        "quote": "including five Nigerians and one Brazilian",
+        "relation": "contradicted",
+        "explanation": "Source lists four Nigerians, one Indonesian, and one Brazilian among the six other inmates, not five Nigerians and one Brazilian.",
+        "status": "ok",
+        "answer_span": {
+          "start": 672,
+          "end": 714,
+          "text": "including five Nigerians and one Brazilian",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1117,
+            "end": 1338,
+            "text": "Six other inmates were executed, including Nigerians Raheem Salami, Silvester Obiekwe Nwolise, Okwudil Oyatanze and Martin Anderson; Indonesian Zainal Abidin and Brazilian Rodrigo Gularte, who was said to be mentally ill.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11963",
+            "source_sha256": "a0a2c65d0d912e31e9ddc73160c3c14fd6c27a227363fb1a6115d870d1dded01"
+          }
+        ]
+      },
+      "gold_overlap_characters": 13,
+      "flagged_characters": 37,
+      "original_gold_spans": [
+        {
+          "start": 682,
+          "end": 696,
+          "text": "five Nigerians",
+          "meta": "EVIDENT CONFLICT\nOriginal: \"Nigerians Raheem Salami, Silvester Obiekwe Nwolise, Okwudil Oyatanze and Martin Anderson\" (4 Nigerians)\nGenerative: \"five Nigerians\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "2986",
+      "source_id": "11963",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-11",
+        "quote": "within 200 words",
+        "relation": "insufficient",
+        "explanation": "The supplied source does not establish the word count of the answer; no source evidence for this meta-claim.",
+        "status": "ok",
+        "answer_span": {
+          "start": 25,
+          "end": 41,
+          "text": "within 200 words",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 14,
+      "original_gold_spans": [
+        {
+          "start": 682,
+          "end": 696,
+          "text": "five Nigerians",
+          "meta": "EVIDENT CONFLICT\nOriginal: \"Nigerians Raheem Salami, Silvester Obiekwe Nwolise, Okwudil Oyatanze and Martin Anderson\" (4 Nigerians)\nGenerative: \"five Nigerians\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "2986",
+      "source_id": "11963",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-8",
+        "quote": "The Indonesian government confirmed that six other prisoners, including five Nigerians and one Brazilian, were also executed",
+        "relation": "contradicted",
+        "explanation": "The source says six other inmates were executed, but identifies four Nigerians, one Indonesian, and one Brazilian, not five Nigerians and one Brazilian. It also does not attribute confirmation of that detail to the Indonesian government.",
+        "status": "ok",
+        "answer_span": {
+          "start": 610,
+          "end": 734,
+          "text": "The Indonesian government confirmed that six other prisoners, including five Nigerians and one Brazilian, were also executed",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1117,
+            "end": 1338,
+            "text": "Six other inmates were executed, including Nigerians Raheem Salami, Silvester Obiekwe Nwolise, Okwudil Oyatanze and Martin Anderson; Indonesian Zainal Abidin and Brazilian Rodrigo Gularte, who was said to be mentally ill.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11963",
+            "source_sha256": "a0a2c65d0d912e31e9ddc73160c3c14fd6c27a227363fb1a6115d870d1dded01"
+          },
+          {
+            "start": 0,
+            "end": 164,
+            "text": "Australia has recalled its ambassador to Indonesia for consultations after two Australians were among eight drug smugglers executed by firing squad early Wednesday.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11963",
+            "source_sha256": "a0a2c65d0d912e31e9ddc73160c3c14fd6c27a227363fb1a6115d870d1dded01"
+          }
+        ]
+      },
+      "gold_overlap_characters": 13,
+      "flagged_characters": 108,
+      "original_gold_spans": [
+        {
+          "start": 682,
+          "end": 696,
+          "text": "five Nigerians",
+          "meta": "EVIDENT CONFLICT\nOriginal: \"Nigerians Raheem Salami, Silvester Obiekwe Nwolise, Okwudil Oyatanze and Martin Anderson\" (4 Nigerians)\nGenerative: \"five Nigerians\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4492",
+      "source_id": "13919",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-1",
+        "quote": "within 93 words",
+        "relation": "insufficient",
+        "explanation": "The supplied source texts do not establish the word count of the answer's summary.",
+        "status": "ok",
+        "answer_span": {
+          "start": 39,
+          "end": 54,
+          "text": "within 93 words",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 13,
+      "original_gold_spans": [
+        {
+          "start": 454,
+          "end": 486,
+          "text": "weather forecast for Los Angeles",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC: weather forecast for Los Angeles\nOriginal: Source content did not mention any specific location for the weather forecast.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4492",
+      "source_id": "13919",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-5",
+        "quote": "while over 1,400 Israelis were killed",
+        "relation": "insufficient",
+        "explanation": "The source says over 1,400 people in Israel are said to have been killed, not specifically Israelis.",
+        "status": "ok",
+        "answer_span": {
+          "start": 205,
+          "end": 242,
+          "text": "while over 1,400 Israelis were killed",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 647,
+            "end": 703,
+            "text": "over 1,400 people in Israel are said to have been killed",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13919",
+            "source_sha256": "541126ad8e03f2c8d249610a073311b5c75123a6ffa9acde512367310866a0f3"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 32,
+      "original_gold_spans": [
+        {
+          "start": 454,
+          "end": 486,
+          "text": "weather forecast for Los Angeles",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC: weather forecast for Los Angeles\nOriginal: Source content did not mention any specific location for the weather forecast.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4492",
+      "source_id": "13919",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-7",
+        "quote": "with a new labor contract",
+        "relation": "insufficient",
+        "explanation": "The source only documents a tentative agreement between GM and the UAW, not a new contract with Ford and Stellantis or that such a contract ended the strike against all three.",
+        "status": "ok",
+        "answer_span": {
+          "start": 343,
+          "end": 368,
+          "text": "with a new labor contract",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 889,
+            "end": 967,
+            "text": "On Monday, GM and the UAW reached tentative agreement on a new labor contract.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13919",
+            "source_sha256": "541126ad8e03f2c8d249610a073311b5c75123a6ffa9acde512367310866a0f3"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 21,
+      "original_gold_spans": [
+        {
+          "start": 454,
+          "end": 486,
+          "text": "weather forecast for Los Angeles",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC: weather forecast for Los Angeles\nOriginal: Source content did not mention any specific location for the weather forecast.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4492",
+      "source_id": "13919",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-9",
+        "quote": "The weather forecast for Los Angeles includes sunny skies",
+        "relation": "insufficient",
+        "explanation": "The source forecasts sunny skies but does not state that the forecast is for Los Angeles.",
+        "status": "ok",
+        "answer_span": {
+          "start": 450,
+          "end": 507,
+          "text": "The weather forecast for Los Angeles includes sunny skies",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1854,
+            "end": 1945,
+            "text": "Tuesday is forecast for a daytime high of 88 and and overnight low of 54 under sunny skies.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13919",
+            "source_sha256": "541126ad8e03f2c8d249610a073311b5c75123a6ffa9acde512367310866a0f3"
+          }
+        ]
+      },
+      "gold_overlap_characters": 28,
+      "flagged_characters": 49,
+      "original_gold_spans": [
+        {
+          "start": 454,
+          "end": 486,
+          "text": "weather forecast for Los Angeles",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC: weather forecast for Los Angeles\nOriginal: Source content did not mention any specific location for the weather forecast.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4492",
+      "source_id": "13919",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-10",
+        "quote": "pleasant temperatures for the next few days",
+        "relation": "insufficient",
+        "explanation": "The source provides temperatures for the next few days but does not characterize them as pleasant.",
+        "status": "ok",
+        "answer_span": {
+          "start": 512,
+          "end": 555,
+          "text": "pleasant temperatures for the next few days",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1854,
+            "end": 2127,
+            "text": "Tuesday is forecast for a daytime high of 88 and and overnight low of 54 under sunny skies. Wednesday will cool to 85 (53) with morning clouds and afternoon sun. Thursday should be sunny with a high of 81 (55), with partly cloudy conditions on Friday and a high of 79 (56).",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13919",
+            "source_sha256": "541126ad8e03f2c8d249610a073311b5c75123a6ffa9acde512367310866a0f3"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 37,
+      "original_gold_spans": [
+        {
+          "start": 454,
+          "end": 486,
+          "text": "weather forecast for Los Angeles",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC: weather forecast for Los Angeles\nOriginal: Source content did not mention any specific location for the weather forecast.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4492",
+      "source_id": "13919",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-1",
+        "quote": "Here is a summary of the provided text within 93 words:",
+        "relation": "insufficient",
+        "explanation": "The supplied source does not contain this meta-summary statement or provide evidence about the word count of any summary, so the claim is not established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 0,
+          "end": 55,
+          "text": "Here is a summary of the provided text within 93 words:",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 45,
+      "original_gold_spans": [
+        {
+          "start": 454,
+          "end": 486,
+          "text": "weather forecast for Los Angeles",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC: weather forecast for Los Angeles\nOriginal: Source content did not mention any specific location for the weather forecast.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4492",
+      "source_id": "13919",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-4",
+        "quote": "The Palestinian death toll rose to 8,306",
+        "relation": "insufficient",
+        "explanation": "The source states new death tolls were released and that Palestinian deaths were put at 8,306, but it does not establish that the toll rose to that number.",
+        "status": "ok",
+        "answer_span": {
+          "start": 163,
+          "end": 203,
+          "text": "The Palestinian death toll rose to 8,306",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 34,
+      "original_gold_spans": [
+        {
+          "start": 454,
+          "end": 486,
+          "text": "weather forecast for Los Angeles",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC: weather forecast for Los Angeles\nOriginal: Source content did not mention any specific location for the weather forecast.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4492",
+      "source_id": "13919",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-5",
+        "quote": "over 1,400 Israelis were killed",
+        "relation": "insufficient",
+        "explanation": "The source reports that over 1,400 people in Israel are said to have been killed and that the death tolls could not be independently verified. It does not establish that those killed were Israelis or that the deaths were confirmed, so the target claim is not fully supported.",
+        "status": "ok",
+        "answer_span": {
+          "start": 211,
+          "end": 242,
+          "text": "over 1,400 Israelis were killed",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 513,
+            "end": 603,
+            "text": "New death tolls were released on Monday, although neither could be verified independently.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13919",
+            "source_sha256": "541126ad8e03f2c8d249610a073311b5c75123a6ffa9acde512367310866a0f3"
+          },
+          {
+            "start": 604,
+            "end": 704,
+            "text": "Palestinian deaths were put at 8,306 while over 1,400 people in Israel are said to have been killed.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13919",
+            "source_sha256": "541126ad8e03f2c8d249610a073311b5c75123a6ffa9acde512367310866a0f3"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 27,
+      "original_gold_spans": [
+        {
+          "start": 454,
+          "end": 486,
+          "text": "weather forecast for Los Angeles",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC: weather forecast for Los Angeles\nOriginal: Source content did not mention any specific location for the weather forecast.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4492",
+      "source_id": "13919",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-15",
+        "quote": "The weather forecast for Los Angeles includes sunny skies and pleasant temperatures for the next few days",
+        "relation": "insufficient",
+        "explanation": "The source's weather section gives a multi-day forecast with sunny/partly cloudy conditions and highs of 88, 85, 81, and 79, but it does not identify the forecast as being for Los Angeles or characterize the temperatures as pleasant. Thus the target's location and 'pleasant' characterization are not established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 450,
+          "end": 555,
+          "text": "The weather forecast for Los Angeles includes sunny skies and pleasant temperatures for the next few days",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 28,
+      "flagged_characters": 89,
+      "original_gold_spans": [
+        {
+          "start": 454,
+          "end": 486,
+          "text": "weather forecast for Los Angeles",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC: weather forecast for Los Angeles\nOriginal: Source content did not mention any specific location for the weather forecast.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4492",
+      "source_id": "13919",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-16",
+        "quote": "The weather forecast for Los Angeles includes sunny skies",
+        "relation": "insufficient",
+        "explanation": "The source contains a weather forecast with sunny skies, but it does not state that this forecast is for Los Angeles. Los Angeles is mentioned only in connection with the Lakers, so the location component of the target is not established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 450,
+          "end": 507,
+          "text": "The weather forecast for Los Angeles includes sunny skies",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 28,
+      "flagged_characters": 49,
+      "original_gold_spans": [
+        {
+          "start": 454,
+          "end": 486,
+          "text": "weather forecast for Los Angeles",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC: weather forecast for Los Angeles\nOriginal: Source content did not mention any specific location for the weather forecast.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4492",
+      "source_id": "13919",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-17",
+        "quote": "sunny skies and pleasant temperatures for the next few days",
+        "relation": "insufficient",
+        "explanation": "The source gives a mixed forecast with some sun and specified highs/lows, but it does not establish “pleasant temperatures,” and it reports clouds/partly cloudy conditions on some days rather than unqualified sunny skies for the next few days.",
+        "status": "ok",
+        "answer_span": {
+          "start": 496,
+          "end": 555,
+          "text": "sunny skies and pleasant temperatures for the next few days",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1782,
+            "end": 2127,
+            "text": "We’re closing out October and starting November with a bit of sunshine. Tuesday is forecast for a daytime high of 88 and and overnight low of 54 under sunny skies. Wednesday will cool to 85 (53) with morning clouds and afternoon sun. Thursday should be sunny with a high of 81 (55), with partly cloudy conditions on Friday and a high of 79 (56).",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13919",
+            "source_sha256": "541126ad8e03f2c8d249610a073311b5c75123a6ffa9acde512367310866a0f3"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 50,
+      "original_gold_spans": [
+        {
+          "start": 454,
+          "end": 486,
+          "text": "weather forecast for Los Angeles",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC: weather forecast for Los Angeles\nOriginal: Source content did not mention any specific location for the weather forecast.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4492",
+      "source_id": "13919",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-18",
+        "quote": "pleasant temperatures for the next few days",
+        "relation": "insufficient",
+        "explanation": "The source gives a multi-day forecast with highs, lows, and sky conditions, but it does not state or establish that the temperatures are pleasant.",
+        "status": "ok",
+        "answer_span": {
+          "start": 512,
+          "end": 555,
+          "text": "pleasant temperatures for the next few days",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 37,
+      "original_gold_spans": [
+        {
+          "start": 454,
+          "end": 486,
+          "text": "weather forecast for Los Angeles",
+          "meta": "HIGH INTRO OF NEW INFO\nAIGC: weather forecast for Los Angeles\nOriginal: Source content did not mention any specific location for the weather forecast.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3758",
+      "source_id": "12093",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-4",
+        "quote": "lawyer Alan Dershowitz had sex with minors with the help of billionaire Jeffrey Epstein",
+        "relation": "insufficient",
+        "explanation": "The source reports only that Dershowitz was accused of having sex with minors with Epstein's help, and it also reports Dershowitz's denial; it does not establish as fact that he had sex with minors.",
+        "status": "ok",
+        "answer_span": {
+          "start": 183,
+          "end": 270,
+          "text": "lawyer Alan Dershowitz had sex with minors with the help of billionaire Jeffrey Epstein",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 148,
+            "end": 253,
+            "text": "Lawyer Alan Dershowitz  was accused of having sex with minors with help from billionaire Jeffrey Epstein.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12093",
+            "source_sha256": "17c6f6fa75e153ea81b946f044196a3d6df5dacecb6187dd67c6cae415bf68d7"
+          },
+          {
+            "start": 3848,
+            "end": 4013,
+            "text": "\"Never under any circumstance have I ever had any sexual contact of any kind, which includes massages or any physical contact whatsoever, with Jane Doe #3,\" he said.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "12093",
+            "source_sha256": "17c6f6fa75e153ea81b946f044196a3d6df5dacecb6187dd67c6cae415bf68d7"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 74,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3758",
+      "source_id": "12093",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-10",
+        "quote": "along with several other individuals, including other British royals and politicians",
+        "relation": "insufficient",
+        "explanation": "The source does not state that Virginia Roberts made allegations against several other individuals including other British royals and politicians. It refers to Prince Andrew, Dershowitz, unnamed others, and politically connected or financially powerful people, so the specific detail about other British royals and politicians is unsupported.",
+        "status": "ok",
+        "answer_span": {
+          "start": 618,
+          "end": 702,
+          "text": "along with several other individuals, including other British royals and politicians",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 74,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "3758",
+      "source_id": "12093",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-7",
+        "quote": "including other British royals and politicians",
+        "relation": "insufficient",
+        "explanation": "Source does not state that other British royals or politicians were among the individuals named; it only refers generally to others and to politically connected and financially powerful people.",
+        "status": "ok",
+        "answer_span": {
+          "start": 656,
+          "end": 702,
+          "text": "including other British royals and politicians",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 41,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "5330",
+      "source_id": "13544",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-7",
+        "quote": "the royal family is grappling with the aftermath of the Sussexes' departure from Frogmore Cottage",
+        "relation": "insufficient",
+        "explanation": "The source supports that Harry and Meghan received an eviction notice from Frogmore Cottage and no longer have an official UK residence, but it does not state that the royal family is grappling with the aftermath of their departure.",
+        "status": "ok",
+        "answer_span": {
+          "start": 456,
+          "end": 553,
+          "text": "the royal family is grappling with the aftermath of the Sussexes' departure from Frogmore Cottage",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 990,
+            "end": 1171,
+            "text": "The King sent Harry, 39, and Meghan, 42, with an eviction notice from their previous royal house, Frogmore Cottage, meaning they no longer have an official place to dwell in the UK.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13544",
+            "source_sha256": "f5c7921f88056c5173196f838017d4ea20ebec7224285e9574c7c0349fa520d6"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 83,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "5330",
+      "source_id": "13544",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-5",
+        "quote": "but the move may lead to marital tension between the couple",
+        "relation": "insufficient",
+        "explanation": "The source mentions marital tension as subtext, but does not establish that the move to buy a home may lead to marital tension.",
+        "status": "ok",
+        "answer_span": {
+          "start": 384,
+          "end": 443,
+          "text": "but the move may lead to marital tension between the couple",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1319,
+            "end": 1398,
+            "text": "Marital tension is the subtext here, as it is with so many rumors about Sussex,",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13544",
+            "source_sha256": "f5c7921f88056c5173196f838017d4ea20ebec7224285e9574c7c0349fa520d6"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 49,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "5330",
+      "source_id": "13544",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-6",
+        "quote": "Meanwhile, the royal family is grappling with the aftermath",
+        "relation": "insufficient",
+        "explanation": "The source reports an eviction notice from Frogmore Cottage and loss of an official UK residence, but it does not say the royal family is grappling with the aftermath.",
+        "status": "ok",
+        "answer_span": {
+          "start": 445,
+          "end": 504,
+          "text": "Meanwhile, the royal family is grappling with the aftermath",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 51,
+      "original_gold_spans": [],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4624",
+      "source_id": "13941",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-4",
+        "quote": "already have a daughter, Brynley",
+        "relation": "insufficient",
+        "explanation": "The source establishes they have a baby/child named Brynley, but it does not state Brynley is a daughter or specify her sex.",
+        "status": "ok",
+        "answer_span": {
+          "start": 269,
+          "end": 301,
+          "text": "already have a daughter, Brynley",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 763,
+            "end": 885,
+            "text": "Jeremiah Duggar and Hannah Wissmann have been married just over a year and welcomed their honeymoon baby in December 2022.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13941",
+            "source_sha256": "5ccfb4390485c81fcb3062f599ebbe1bf913edb22752de51098a8dc572320da3"
+          },
+          {
+            "start": 514,
+            "end": 630,
+            "text": "Brynley was born on Christmas day last year, so it’s entirely possible that Hannah and Jeremiah are expecting again.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13941",
+            "source_sha256": "5ccfb4390485c81fcb3062f599ebbe1bf913edb22752de51098a8dc572320da3"
+          },
+          {
+            "start": 227,
+            "end": 429,
+            "text": "She did a good job keeping most of the sisters-in-law out of the video or in very small doses, but Jeremiah Duggar’s wife was seen in the kitchen with Brynley as Jason Duggar and Austin Forsyth chatted.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13941",
+            "source_sha256": "5ccfb4390485c81fcb3062f599ebbe1bf913edb22752de51098a8dc572320da3"
+          }
+        ]
+      },
+      "gold_overlap_characters": 20,
+      "flagged_characters": 28,
+      "original_gold_spans": [
+        {
+          "start": 269,
+          "end": 292,
+          "text": "already have a daughter",
+          "meta": "LOW INTRO OF NEW INFO\nIt is true that they had their daughter (Brynley) but it is not mentioned in the original source.",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4624",
+      "source_id": "13941",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-6",
+        "quote": "If Hannah is pregnant again, it would be the second time the couple have announced a pregnancy within a year of getting married.",
+        "relation": "insufficient",
+        "explanation": "The source notes a honeymoon baby and possible new pregnancy but does not state announcement timing or that a second announcement would be within a year of marriage.",
+        "status": "ok",
+        "answer_span": {
+          "start": 344,
+          "end": 472,
+          "text": "If Hannah is pregnant again, it would be the second time the couple have announced a pregnancy within a year of getting married.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 763,
+            "end": 885,
+            "text": "Jeremiah Duggar and Hannah Wissmann have been married just over a year and welcomed their honeymoon baby in December 2022.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13941",
+            "source_sha256": "5ccfb4390485c81fcb3062f599ebbe1bf913edb22752de51098a8dc572320da3"
+          },
+          {
+            "start": 2377,
+            "end": 2534,
+            "text": "They have not confirmed a pregnancy, but it wouldn’t be surprising if the next couple of weeks brought one from the couple or another of the Duggar siblings.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13941",
+            "source_sha256": "5ccfb4390485c81fcb3062f599ebbe1bf913edb22752de51098a8dc572320da3"
+          },
+          {
+            "start": 514,
+            "end": 630,
+            "text": "Brynley was born on Christmas day last year, so it’s entirely possible that Hannah and Jeremiah are expecting again.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13941",
+            "source_sha256": "5ccfb4390485c81fcb3062f599ebbe1bf913edb22752de51098a8dc572320da3"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 106,
+      "original_gold_spans": [
+        {
+          "start": 269,
+          "end": 292,
+          "text": "already have a daughter",
+          "meta": "LOW INTRO OF NEW INFO\nIt is true that they had their daughter (Brynley) but it is not mentioned in the original source.",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4624",
+      "source_id": "13941",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-1",
+        "quote": "Here is a summary of the article in 107 words",
+        "relation": "insufficient",
+        "explanation": "The source article does not contain this framing sentence or any statement that the following text is a 107-word summary, so the claim is not established by the supplied evidence.",
+        "status": "ok",
+        "answer_span": {
+          "start": 0,
+          "end": 45,
+          "text": "Here is a summary of the article in 107 words",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 36,
+      "original_gold_spans": [
+        {
+          "start": 269,
+          "end": 292,
+          "text": "already have a daughter",
+          "meta": "LOW INTRO OF NEW INFO\nIt is true that they had their daughter (Brynley) but it is not mentioned in the original source.",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4624",
+      "source_id": "13941",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-6",
+        "quote": "already have a daughter, Brynley",
+        "relation": "insufficient",
+        "explanation": "The source indicates Jeremiah and Hannah have a baby and mentions Brynley in connection with them, but it never states that Brynley is their daughter or gives Brynley’s gender, so the full claim is not established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 269,
+          "end": 301,
+          "text": "already have a daughter, Brynley",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 763,
+            "end": 885,
+            "text": "Jeremiah Duggar and Hannah Wissmann have been married just over a year and welcomed their honeymoon baby in December 2022.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13941",
+            "source_sha256": "5ccfb4390485c81fcb3062f599ebbe1bf913edb22752de51098a8dc572320da3"
+          },
+          {
+            "start": 514,
+            "end": 630,
+            "text": "Brynley was born on Christmas day last year, so it’s entirely possible that Hannah and Jeremiah are expecting again.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13941",
+            "source_sha256": "5ccfb4390485c81fcb3062f599ebbe1bf913edb22752de51098a8dc572320da3"
+          }
+        ]
+      },
+      "gold_overlap_characters": 20,
+      "flagged_characters": 28,
+      "original_gold_spans": [
+        {
+          "start": 269,
+          "end": 292,
+          "text": "already have a daughter",
+          "meta": "LOW INTRO OF NEW INFO\nIt is true that they had their daughter (Brynley) but it is not mentioned in the original source.",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4624",
+      "source_id": "13941",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-8",
+        "quote": "If Hannah is pregnant again, it would be the second time the couple have announced a pregnancy within a year of getting married.",
+        "relation": "insufficient",
+        "explanation": "The source establishes that Hannah and Jeremiah have been married just over a year and had a honeymoon baby, but it does not state that they announced the first pregnancy within a year of marriage or that a second announcement would be within a year. It also says a current pregnancy is unconfirmed, so the target’s announcement-timing claim is not fully established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 344,
+          "end": 472,
+          "text": "If Hannah is pregnant again, it would be the second time the couple have announced a pregnancy within a year of getting married.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 763,
+            "end": 885,
+            "text": "Jeremiah Duggar and Hannah Wissmann have been married just over a year and welcomed their honeymoon baby in December 2022.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13941",
+            "source_sha256": "5ccfb4390485c81fcb3062f599ebbe1bf913edb22752de51098a8dc572320da3"
+          },
+          {
+            "start": 514,
+            "end": 630,
+            "text": "Brynley was born on Christmas day last year, so it’s entirely possible that Hannah and Jeremiah are expecting again.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13941",
+            "source_sha256": "5ccfb4390485c81fcb3062f599ebbe1bf913edb22752de51098a8dc572320da3"
+          },
+          {
+            "start": 2377,
+            "end": 2534,
+            "text": "They have not confirmed a pregnancy, but it wouldn’t be surprising if the next couple of weeks brought one from the couple or another of the Duggar siblings.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13941",
+            "source_sha256": "5ccfb4390485c81fcb3062f599ebbe1bf913edb22752de51098a8dc572320da3"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 106,
+      "original_gold_spans": [
+        {
+          "start": 269,
+          "end": 292,
+          "text": "already have a daughter",
+          "meta": "LOW INTRO OF NEW INFO\nIt is true that they had their daughter (Brynley) but it is not mentioned in the original source.",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": true,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "296",
+      "source_id": "15642",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-3",
+        "quote": "had just retired",
+        "relation": "contradicted",
+        "explanation": "Source indicates retirement was fast-approaching, not that Gricar had already just retired.",
+        "status": "ok",
+        "answer_span": {
+          "start": 122,
+          "end": 138,
+          "text": "had just retired",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 723,
+            "end": 793,
+            "text": "a bank account that was supposed to fund a fast-approaching retirement",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15642",
+            "source_sha256": "0b1986052a612fc446ab1c64cdb4500f1ee3a4d3d46f92343c62a3711230ffe7"
+          }
+        ]
+      },
+      "gold_overlap_characters": 14,
+      "flagged_characters": 14,
+      "original_gold_spans": [
+        {
+          "start": 122,
+          "end": 138,
+          "text": "had just retired",
+          "meta": "Original: \"...a prosecutor in Centre County, Pennsylvania...\"\nGenerative: \"...had just retired.\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 186,
+          "end": 206,
+          "text": "26-year-old daughter",
+          "meta": "Original: \"a beautiful and successful daughter\"\nGenerative: \"26-year-old daughter\"\n(The original article does not specify the age of Ray's daughter)",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "296",
+      "source_id": "15642",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-5",
+        "quote": "his 26-year-old daughter",
+        "relation": "insufficient",
+        "explanation": "Source mentions a daughter but does not provide her age.",
+        "status": "ok",
+        "answer_span": {
+          "start": 182,
+          "end": 206,
+          "text": "his 26-year-old daughter",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 19,
+      "flagged_characters": 22,
+      "original_gold_spans": [
+        {
+          "start": 122,
+          "end": 138,
+          "text": "had just retired",
+          "meta": "Original: \"...a prosecutor in Centre County, Pennsylvania...\"\nGenerative: \"...had just retired.\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 186,
+          "end": 206,
+          "text": "26-year-old daughter",
+          "meta": "Original: \"a beautiful and successful daughter\"\nGenerative: \"26-year-old daughter\"\n(The original article does not specify the age of Ray's daughter)",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "296",
+      "source_id": "15642",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-2",
+        "quote": "Gricar was 59 years old and had just retired.",
+        "relation": "contradicted",
+        "explanation": "The source supports that Gricar was 59 when he disappeared, but it describes his retirement as fast-approaching at the time he went missing, not as something he had just done; this contradicts the target's claim that he had just retired.",
+        "status": "ok",
+        "answer_span": {
+          "start": 94,
+          "end": 139,
+          "text": "Gricar was 59 years old and had just retired.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 490,
+            "end": 585,
+            "text": "But no one has been able to find the veteran district attorney, who was 59 when he disappeared.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15642",
+            "source_sha256": "0b1986052a612fc446ab1c64cdb4500f1ee3a4d3d46f92343c62a3711230ffe7"
+          },
+          {
+            "start": 586,
+            "end": 794,
+            "text": "When he went missing that Friday morning on April 15, 2005, he left behind a live-in girlfriend, a beautiful and successful daughter and a bank account that was supposed to fund a fast-approaching retirement.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15642",
+            "source_sha256": "0b1986052a612fc446ab1c64cdb4500f1ee3a4d3d46f92343c62a3711230ffe7"
+          }
+        ]
+      },
+      "gold_overlap_characters": 14,
+      "flagged_characters": 37,
+      "original_gold_spans": [
+        {
+          "start": 122,
+          "end": 138,
+          "text": "had just retired",
+          "meta": "Original: \"...a prosecutor in Centre County, Pennsylvania...\"\nGenerative: \"...had just retired.\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 186,
+          "end": 206,
+          "text": "26-year-old daughter",
+          "meta": "Original: \"a beautiful and successful daughter\"\nGenerative: \"26-year-old daughter\"\n(The original article does not specify the age of Ray's daughter)",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "296",
+      "source_id": "15642",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-3",
+        "quote": "He left behind his live-in girlfriend and his 26-year-old daughter.",
+        "relation": "insufficient",
+        "explanation": "The source supports that Gricar left behind a live-in girlfriend and a daughter, but it does not state that the daughter was 26 years old, so the full target quote is not established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 140,
+          "end": 207,
+          "text": "He left behind his live-in girlfriend and his 26-year-old daughter.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 586,
+            "end": 794,
+            "text": "When he went missing that Friday morning on April 15, 2005, he left behind a live-in girlfriend, a beautiful and successful daughter and a bank account that was supposed to fund a fast-approaching retirement.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "15642",
+            "source_sha256": "0b1986052a612fc446ab1c64cdb4500f1ee3a4d3d46f92343c62a3711230ffe7"
+          }
+        ]
+      },
+      "gold_overlap_characters": 19,
+      "flagged_characters": 58,
+      "original_gold_spans": [
+        {
+          "start": 122,
+          "end": 138,
+          "text": "had just retired",
+          "meta": "Original: \"...a prosecutor in Centre County, Pennsylvania...\"\nGenerative: \"...had just retired.\"",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 186,
+          "end": 206,
+          "text": "26-year-old daughter",
+          "meta": "Original: \"a beautiful and successful daughter\"\nGenerative: \"26-year-old daughter\"\n(The original article does not specify the age of Ray's daughter)",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4899",
+      "source_id": "13988",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-1",
+        "quote": "local high school football leagues in Southern California",
+        "relation": "insufficient",
+        "explanation": "The source discusses area high school football and CIF-SS, but it does not explicitly state Southern California.",
+        "status": "ok",
+        "answer_span": {
+          "start": 25,
+          "end": 82,
+          "text": "local high school football leagues in Southern California",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 50,
+      "original_gold_spans": [
+        {
+          "start": 358,
+          "end": 406,
+          "text": "resulted in both teams sharing the championship,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nOriginal: *not mentioned*\nGenerative: \"resulted in both teams sharing the championship,\"",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4899",
+      "source_id": "13988",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-3",
+        "quote": "while the Chargers are also heading to the playoffs",
+        "relation": "insufficient",
+        "explanation": "The source only says the Chargers are second; it does not state they advance to the playoffs.",
+        "status": "ok",
+        "answer_span": {
+          "start": 241,
+          "end": 292,
+          "text": "while the Chargers are also heading to the playoffs",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 525,
+            "end": 549,
+            "text": "The Chargers are second.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13988",
+            "source_sha256": "e719666c68070baeed94a458a47bcdab88bfc3ab32dee660b3d5b14f15097719"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 43,
+      "original_gold_spans": [
+        {
+          "start": 358,
+          "end": 406,
+          "text": "resulted in both teams sharing the championship,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nOriginal: *not mentioned*\nGenerative: \"resulted in both teams sharing the championship,\"",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4899",
+      "source_id": "13988",
+      "strategy": "direct",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-4",
+        "quote": "Garden Grove League: A tie between Bolsa Grande and La Quinta resulted in both teams sharing the championship",
+        "relation": "contradicted",
+        "explanation": "The source says Bolsa Grande beat La Quinta 42-35, and Bolsa and La Quinta tied for third; the first-place tie was Rancho Alamitos and Los Amigos.",
+        "status": "ok",
+        "answer_span": {
+          "start": 296,
+          "end": 405,
+          "text": "Garden Grove League: A tie between Bolsa Grande and La Quinta resulted in both teams sharing the championship",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 550,
+            "end": 778,
+            "text": "Garden Grove League: A tie for the GGL crown emerged on Friday after Bolsa Grande beat La Quinta 42-35. Rancho Alamitos and Los Amigos each finished in a deadlock for first at 4-1 while Bolsa and La Quinta tied for third at 3-2.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13988",
+            "source_sha256": "e719666c68070baeed94a458a47bcdab88bfc3ab32dee660b3d5b14f15097719"
+          }
+        ]
+      },
+      "gold_overlap_characters": 41,
+      "flagged_characters": 92,
+      "original_gold_spans": [
+        {
+          "start": 358,
+          "end": 406,
+          "text": "resulted in both teams sharing the championship,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nOriginal: *not mentioned*\nGenerative: \"resulted in both teams sharing the championship,\"",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4899",
+      "source_id": "13988",
+      "strategy": "direct",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-5",
+        "quote": "with Rancho Alamitos and Los Amigos also advancing to the playoffs",
+        "relation": "insufficient",
+        "explanation": "The source says they tied for first and discusses possible playoff spots, but it does not explicitly say they advance.",
+        "status": "ok",
+        "answer_span": {
+          "start": 407,
+          "end": 473,
+          "text": "with Rancho Alamitos and Los Amigos also advancing to the playoffs",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 654,
+            "end": 913,
+            "text": "Rancho Alamitos and Los Amigos each finished in a deadlock for first at 4-1 while Bolsa and La Quinta tied for third at 3-2. Six-team leagues usually get three playoff spots, but there could be an at-large slot for this bunch after an unusually strong season.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13988",
+            "source_sha256": "e719666c68070baeed94a458a47bcdab88bfc3ab32dee660b3d5b14f15097719"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 56,
+      "original_gold_spans": [
+        {
+          "start": 358,
+          "end": 406,
+          "text": "resulted in both teams sharing the championship,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nOriginal: *not mentioned*\nGenerative: \"resulted in both teams sharing the championship,\"",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4899",
+      "source_id": "13988",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-1",
+        "quote": "Here is a summary of the local high school football leagues in Southern California, including the number of champions and teams advancing to the playoffs",
+        "relation": "insufficient",
+        "explanation": "The source describes an area high school football wrap-up and playoffs, but it never identifies the leagues as Southern California and does not provide a comprehensive count of champions and playoff teams. Thus the target's location and summary scope are not fully established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 0,
+          "end": 153,
+          "text": "Here is a summary of the local high school football leagues in Southern California, including the number of champions and teams advancing to the playoffs",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 93,
+            "end": 181,
+            "text": "The 2023 regular season for area high school football finally drew to a close on Friday.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13988",
+            "source_sha256": "e719666c68070baeed94a458a47bcdab88bfc3ab32dee660b3d5b14f15097719"
+          },
+          {
+            "start": 182,
+            "end": 280,
+            "text": "Most teams will put away their helmets but some can look forward to a “second season” of playoffs.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13988",
+            "source_sha256": "e719666c68070baeed94a458a47bcdab88bfc3ab32dee660b3d5b14f15097719"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 129,
+      "original_gold_spans": [
+        {
+          "start": 358,
+          "end": 406,
+          "text": "resulted in both teams sharing the championship,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nOriginal: *not mentioned*\nGenerative: \"resulted in both teams sharing the championship,\"",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4899",
+      "source_id": "13988",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-3",
+        "quote": "the Chargers are also heading to the playoffs",
+        "relation": "insufficient",
+        "explanation": "The source says the Chargers are second, but it does not state that they are heading to the playoffs or that they earned a playoff berth.",
+        "status": "ok",
+        "answer_span": {
+          "start": 247,
+          "end": 292,
+          "text": "the Chargers are also heading to the playoffs",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 525,
+            "end": 549,
+            "text": "The Chargers are second.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13988",
+            "source_sha256": "e719666c68070baeed94a458a47bcdab88bfc3ab32dee660b3d5b14f15097719"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 38,
+      "original_gold_spans": [
+        {
+          "start": 358,
+          "end": 406,
+          "text": "resulted in both teams sharing the championship,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nOriginal: *not mentioned*\nGenerative: \"resulted in both teams sharing the championship,\"",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4899",
+      "source_id": "13988",
+      "strategy": "split",
+      "kind": "flag_overlapping_gold",
+      "claim": {
+        "id": "claim-4",
+        "quote": "Garden Grove League: A tie between Bolsa Grande and La Quinta resulted in both teams sharing the championship",
+        "relation": "contradicted",
+        "explanation": "The source says Bolsa Grande beat La Quinta 42-35, and that Rancho Alamitos and Los Amigos tied for first while Bolsa Grande and La Quinta tied for third, so the target’s claim that Bolsa Grande and La Quinta shared the championship is contradicted.",
+        "status": "ok",
+        "answer_span": {
+          "start": 296,
+          "end": 405,
+          "text": "Garden Grove League: A tie between Bolsa Grande and La Quinta resulted in both teams sharing the championship",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 550,
+            "end": 653,
+            "text": "Garden Grove League: A tie for the GGL crown emerged on Friday after Bolsa Grande beat La Quinta 42-35.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13988",
+            "source_sha256": "e719666c68070baeed94a458a47bcdab88bfc3ab32dee660b3d5b14f15097719"
+          },
+          {
+            "start": 654,
+            "end": 778,
+            "text": "Rancho Alamitos and Los Amigos each finished in a deadlock for first at 4-1 while Bolsa and La Quinta tied for third at 3-2.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13988",
+            "source_sha256": "e719666c68070baeed94a458a47bcdab88bfc3ab32dee660b3d5b14f15097719"
+          }
+        ]
+      },
+      "gold_overlap_characters": 41,
+      "flagged_characters": 92,
+      "original_gold_spans": [
+        {
+          "start": 358,
+          "end": 406,
+          "text": "resulted in both teams sharing the championship,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nOriginal: *not mentioned*\nGenerative: \"resulted in both teams sharing the championship,\"",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4899",
+      "source_id": "13988",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-5",
+        "quote": "Rancho Alamitos and Los Amigos also advancing to the playoffs",
+        "relation": "insufficient",
+        "explanation": "The source says Rancho Alamitos and Los Amigos tied for first and that the league might receive playoff spots, but it does not state that those teams are advancing to the playoffs. The playoff berth is only suggested as possible, so the target claim is not fully supported.",
+        "status": "ok",
+        "answer_span": {
+          "start": 412,
+          "end": 473,
+          "text": "Rancho Alamitos and Los Amigos also advancing to the playoffs",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 654,
+            "end": 778,
+            "text": "Rancho Alamitos and Los Amigos each finished in a deadlock for first at 4-1 while Bolsa and La Quinta tied for third at 3-2.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13988",
+            "source_sha256": "e719666c68070baeed94a458a47bcdab88bfc3ab32dee660b3d5b14f15097719"
+          },
+          {
+            "start": 779,
+            "end": 913,
+            "text": "Six-team leagues usually get three playoff spots, but there could be an at-large slot for this bunch after an unusually strong season.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "13988",
+            "source_sha256": "e719666c68070baeed94a458a47bcdab88bfc3ab32dee660b3d5b14f15097719"
+          }
+        ]
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 52,
+      "original_gold_spans": [
+        {
+          "start": 358,
+          "end": 406,
+          "text": "resulted in both teams sharing the championship,",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nOriginal: *not mentioned*\nGenerative: \"resulted in both teams sharing the championship,\"",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4990",
+      "source_id": "13487",
+      "strategy": "direct",
+      "kind": "gold_missed",
+      "original_gold_span": {
+        "start": 43,
+        "end": 155,
+        "text": "On The Young and the Restless, Kyle betrays Tucker and Audra by refusing to help them take over Jabot Cosmetics.",
+        "meta": "EVIDENT CONFLICT:\nAIGC:  On The Young and the Restless, Kyle betrays Tucker and Audra by refusing to help them take over Jabot Cosmetics. \nOriginal: The Young and the Restless (Y&R) spoilers tease that Kyle Abbott (Michael Mealor) will betray Tucker McCall (Trevor St. John) and Audra Charles (Zuleyka Silver) in their quest to take over Jabot Cosmetics. \n\n\n",
+        "label_type": "Evident Conflict",
+        "implicit_true": false,
+        "due_to_null": false
+      },
+      "overlap_characters": 0
+    },
+    {
+      "case_id": "4990",
+      "source_id": "13487",
+      "strategy": "split",
+      "kind": "flag_without_gold_overlap",
+      "claim": {
+        "id": "claim-1",
+        "quote": "Here's the summary within 90 words:",
+        "relation": "insufficient",
+        "explanation": "The supplied source text is a news article about The Young and the Restless and does not contain this meta statement or establish that a 90-word summary exists.",
+        "status": "ok",
+        "answer_span": {
+          "start": 6,
+          "end": 41,
+          "text": "Here's the summary within 90 words:",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      "gold_overlap_characters": 0,
+      "flagged_characters": 30,
+      "original_gold_spans": [
+        {
+          "start": 43,
+          "end": 155,
+          "text": "On The Young and the Restless, Kyle betrays Tucker and Audra by refusing to help them take over Jabot Cosmetics.",
+          "meta": "EVIDENT CONFLICT:\nAIGC:  On The Young and the Restless, Kyle betrays Tucker and Audra by refusing to help them take over Jabot Cosmetics. \nOriginal: The Young and the Restless (Y&R) spoilers tease that Kyle Abbott (Michael Mealor) will betray Tucker McCall (Trevor St. John) and Audra Charles (Zuleyka Silver) in their quest to take over Jabot Cosmetics. \n\n\n",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ],
+      "note": "Overlap is mechanical. No overlap is a disagreement with the reference, not an expert ruling that the model is wrong."
+    },
+    {
+      "case_id": "4990",
+      "source_id": "13487",
+      "strategy": "split",
+      "kind": "gold_missed",
+      "original_gold_span": {
+        "start": 43,
+        "end": 155,
+        "text": "On The Young and the Restless, Kyle betrays Tucker and Audra by refusing to help them take over Jabot Cosmetics.",
+        "meta": "EVIDENT CONFLICT:\nAIGC:  On The Young and the Restless, Kyle betrays Tucker and Audra by refusing to help them take over Jabot Cosmetics. \nOriginal: The Young and the Restless (Y&R) spoilers tease that Kyle Abbott (Michael Mealor) will betray Tucker McCall (Trevor St. John) and Audra Charles (Zuleyka Silver) in their quest to take over Jabot Cosmetics. \n\n\n",
+        "label_type": "Evident Conflict",
+        "implicit_true": false,
+        "due_to_null": false
+      },
+      "overlap_characters": 0
+    }
+  ]
+}

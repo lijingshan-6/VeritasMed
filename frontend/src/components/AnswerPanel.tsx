@@ -1,5 +1,7 @@
 import { isGuidedDemo } from '../demo'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { makeAuditHandoff } from '../api/auditHandoff'
 import { useStore } from '../store'
 import type { AnswerOut } from '../types/ws'
 
@@ -397,6 +399,15 @@ export function AnswerPanel({
 }) {
   const { result, isStreaming, errorMessage } = useStore()
   const [copyLabel, setCopyLabel] = React.useState('Copy')
+  const [auditError, setAuditError] = React.useState('')
+  const navigate = useNavigate()
+  function openAudit() {
+    if (!result || isStreaming) return
+    try {
+      const handoff = makeAuditHandoff(result, query, isGuidedDemo)
+      navigate('/audit', { state: { handoff } })
+    } catch (e) { setAuditError(e instanceof Error ? e.message : 'Could not transfer this answer.') }
+  }
   function downloadAnswer() {
     if (!result) return
     const text = `${isGuidedDemo ? 'GUIDED DEMO — authored fixed example; no live model.\n\n' : ''}# ${query}\n\n${result.answer}\n\nResearch demonstration; not clinical advice.\n`
@@ -467,11 +478,14 @@ export function AnswerPanel({
           }}>
             <span className="vm-eyebrow">Answer</span>
             <span style={{ flex: 1 }} />
+            {!isStreaming && <ToolbarButton label="Audit" onClick={openAudit}><IconCheck size={13} sw={2} /></ToolbarButton>}
             <ToolbarButton label={copyLabel} onClick={() => { navigator.clipboard.writeText(result.answer).then(() => setCopyLabel("Copied")).catch(() => setCopyLabel("Copy failed")) }}><IconCopy size={13} sw={2} /></ToolbarButton>
             <ToolbarButton label="Download" onClick={downloadAnswer}><IconBookmark size={13} sw={2} /></ToolbarButton>
             <ToolbarButton label="Re-run" onClick={() => onPickQuery(query)}><IconRefresh size={13} sw={2} /></ToolbarButton>
           </div>
         )}
+
+        {auditError && <p role="alert" style={{ color: 'var(--error)', fontSize: 13 }}>{auditError}</p>}
 
         {/* Streaming placeholder */}
         {isStreaming && !displayText && (

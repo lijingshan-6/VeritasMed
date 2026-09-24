@@ -39,3 +39,24 @@ def test_replay_checks_inputs_and_never_calls_model(monkeypatch):
     assert client.get("/api/audit/examples/1?strategy=split").status_code == 404
     result["answer_sha256"] = "modified"
     assert client.get("/api/audit/examples/1").status_code == 409
+
+
+def test_context_api_keeps_all_ask_passages_and_separates_meta(monkeypatch):
+    import json
+
+    class FakeGateway:
+        def invoke(self, messages):
+            payload = json.loads(messages[1].content)
+            assert len(payload["sources"]) == 8
+            assert payload["answer_contexts"][0]["text"] == "Here is a summary."
+            return SimpleNamespace(content=json.dumps({"claims": [], "meta_text": [{
+                "quote": "Here is a summary.", "occurrence": 0, "kind": "introduction", "explanation": "Introduction."}]}),
+                usage_metadata=None, response_metadata={})
+    monkeypatch.setattr(audit, "FlashGateway", FakeGateway)
+    payload = {"answer": "Here is a summary.", "strategy": "context", "sources": [
+        {"id": str(i), "title": "Source", "text": f"Passage {i}."} for i in range(8)]}
+    response = TestClient(app).post("/api/audit", json=payload)
+    assert response.status_code == 200
+    assert response.json()["input"] == payload
+    assert response.json()["audit"]["summary"]["supported"] == 0
+    assert response.json()["audit"]["meta_text"][0]["status"] == "not_source_checked"

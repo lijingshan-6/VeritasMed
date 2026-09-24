@@ -8,12 +8,14 @@ from typing import Literal
 from fastapi import APIRouter, HTTPException
 
 from medrag.verification.answer_audit import AuditInput, audit_answer, text_hash
+from medrag.verification.context_audit import AuditRequest, audit_context
 from medrag.verification.gateway import FlashGateway
 from medrag.verification.ragtruth import prepare
-from medrag.verification.scifact import object_hash
+from medrag.verification.scifact import object_hash, read_jsonl
 
 ROOT = Path(__file__).resolve().parents[4]
 RUN = ROOT / "data/verification/ragtruth_v1/run01"
+CONTEXT_RUN = ROOT / "data/verification/context_v1/run01"
 CACHE = ROOT / ".benchmark-runtime/ragtruth"
 router = APIRouter(prefix="/api/audit", tags=["answer audit"])
 _slots = BoundedSemaphore(3)
@@ -25,7 +27,13 @@ def saved_rows():
         return []
     # A benchmark can still be appending its current row. Expose complete records only.
     lines = path.read_text(encoding="utf8").splitlines(keepends=True)
-    return [json.loads(line) for line in lines if line.endswith("\n")]
+    rows = [json.loads(line) for line in lines if line.endswith("\n")]
+    context_path = CONTEXT_RUN / "predictions.jsonl"
+    if context_path.exists():
+        rows.extend({**row, "run": "context_v1/run01"} for line in context_path.read_text(encoding="utf8").splitlines(keepends=True)
+                    if line.endswith("\n") for row in [json.loads(line)]
+                    if row["group"] != "repeat" and row["strategy"] in ("direct", "context"))
+    return rows
 
 
 @lru_cache(maxsize=1)
@@ -39,7 +47,19 @@ def saved_cases():
         raise HTTPException(409, "Source cache failed its content check; restore the pinned files.") from None
     if object_hash(manifest) != object_hash(expected):
         raise HTTPException(409, "Saved research inputs do not match the source cache.")
-    return {case["id"]: case for case in cases}
+    by_id = {case["id"]: case for case in cases}
+    if (CONTEXT_RUN / "manifest.json").exists():
+        manifest = json.loads((CONTEXT_RUN / "manifest.json").read_text(encoding="utf8"))
+        sources = {s["source_id"]: s for s in read_jsonl(CACHE / "source_info.jsonl")}
+        responses = {r["id"]: r for r in read_jsonl(CACHE / "response.jsonl")}
+        for case in manifest["groups"]["development"]:
+            response, source = responses[case["response_id"]], sources[case["source_id"]]
+            item = AuditInput(answer=response["response"], sources=[{"id": source["source_id"],
+                              "title": f"RAGTruth {source['source']} · source {source['source_id']}", "text": source["source_info"]}])
+            if object_hash(item.model_dump()) != case["input_sha256"]:
+                raise HTTPException(409, "Context experiment inputs do not match the frozen manifest.")
+            by_id[case["response_id"]] = {"input": item}
+    return by_id
 
 
 @router.get("/examples")
@@ -56,7 +76,7 @@ def examples():
 
 
 @router.get("/examples/{response_id}")
-def replay(response_id: str, strategy: Literal["direct", "split"] = "direct"):
+def replay(response_id: str, strategy: Literal["direct", "split", "context"] = "direct"):
     row = next((r for r in saved_rows() if r["case_id"] == response_id and r["strategy"] == strategy), None)
     if row is None:
         raise HTTPException(404, "No saved audit for this answer and strategy.")
@@ -69,11 +89,12 @@ def replay(response_id: str, strategy: Literal["direct", "split"] = "direct"):
         raise HTTPException(409, "Audit anchors belong to different input texts.")
     return {"input": item.model_dump(), "audit": result, "mode": "saved",
             "provenance": {"dataset": "RAGTruth", "split": "train", "response_id": response_id,
-                           "run": "ragtruth_v1/run01", "note": "Saved inference, no new model call. Human error labels are not model inputs."}}
+                           "run": row.get("run", "ragtruth_v1/run01"), "group": row.get("group", "original pilot"),
+                           "note": "Saved inference, no new model call. Human error labels are not model inputs."}}
 
 
 @router.post("")
-def live_audit(item: AuditInput):
+def live_audit(item: AuditRequest):
     if not _slots.acquire(blocking=False):
         raise HTTPException(429, "Three audits are already running; try again after one finishes.")
     try:
@@ -81,7 +102,8 @@ def live_audit(item: AuditInput):
             gateway = FlashGateway()
         except Exception:
             raise HTTPException(503, "Configure the Flash profile and key in the local .env before running a live audit.") from None
-        return {"input": item.model_dump(), "audit": audit_answer(item, gateway), "mode": "live",
+        result = audit_context(item, gateway) if item.strategy == "context" else audit_answer(item, gateway)
+        return {"input": item.model_dump(), "audit": result, "mode": "live",
                 "provenance": {"note": "New Flash inference on the supplied texts. Input and output are not saved on the server."}}
     finally:
         _slots.release()

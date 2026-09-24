@@ -2,6 +2,9 @@
 
 ## 0.5.0 — in development (not released)
 
+- Add an opt-in, one-call Context + meta audit with exact paragraph bindings and separately visible presentation text; preserve the original Direct implementation and default.
+- Connect the Ask toolbar to Audit with the unchanged answer, every returned source passage and citation/chunk provenance. No automatic call, truncation or answer replacement; distinguish authored demo transfers.
+- Complete 126 preregistered Flash development calls: context/metatext ablations, 24 new source groups and 6 repeated answers. Preserve 123 fully bound audits and all 3 partial failures, unchanged error denominators and a full prior disagreement ledger. Span-metric gains do not establish better semantic verification; Direct remains the default. The 60 official test sources remain unused. See the [context experiment](docs/verification-v0.5-context-audit.md).
 - Add independent source-bound text verification, SciFact adaptation and controlled diagnostics; keep all historical v0.4 artifacts intact.
 - Add whole-answer direct and extract-then-verify Flash audits, exact answer/source anchors, uncovered text and distinct failure states.
 - Freeze a 24-answer RAGTruth training pilot and a metadata-only reserve of 60 test source groups. Count missed and unextracted reference errors in the evaluation denominator.

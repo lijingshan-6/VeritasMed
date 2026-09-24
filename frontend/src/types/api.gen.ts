@@ -181,8 +181,8 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        /** AuditInput */
-        AuditInput: {
+        /** AuditRequest */
+        AuditRequest: {
             /** Answer */
             answer: string;
             /** Sources */
@@ -192,7 +192,7 @@ export interface components {
              * @default direct
              * @enum {string}
              */
-            strategy: "direct" | "split";
+            strategy: "direct" | "split" | "context";
         };
         /** AuditSource */
         AuditSource: {
@@ -596,7 +596,7 @@ export interface operations {
     replay_api_audit_examples__response_id__get: {
         parameters: {
             query?: {
-                strategy?: "direct" | "split";
+                strategy?: "direct" | "split" | "context";
             };
             header?: never;
             path: {
@@ -635,7 +635,7 @@ export interface operations {
         };
         requestBody: {
             content: {
-                "application/json": components["schemas"]["AuditInput"];
+                "application/json": components["schemas"]["AuditRequest"];
             };
         };
         responses: {

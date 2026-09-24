@@ -380,6 +380,12 @@ function Header({ theme, setTheme }: { theme: Theme; setTheme: (t: Theme) => voi
 }
 
 // ── App ─────────────────────────────────────────────────────────────────────
+function GuidedBanner() {
+  const location = useLocation()
+  if (!isGuidedDemo || location.pathname === '/audit') return null
+  return <div role="status" style={{padding: '8px 16px', background: 'var(--accent-soft)', color: 'var(--ink)', fontSize: 12, textAlign: 'center'}}>GUIDED DEMO · Authored fixed examples and illustrative steps. No live retrieval, model calls or measured scores.</div>
+}
+
 export default function App() {
   const [theme, setTheme] = useState<Theme>('paper')
 
@@ -404,7 +410,7 @@ export default function App() {
     <BrowserRouter>
       <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', background: 'var(--canvas)' }}>
         <Header theme={theme} setTheme={setTheme} />
-        {isGuidedDemo && <div role="status" style={{padding: "8px 16px", background: "var(--accent-soft)", color: "var(--ink)", fontSize: 12, textAlign: "center"}}>GUIDED DEMO · Authored fixed examples and illustrative steps. No live retrieval, model calls or measured scores.</div>}
+        <GuidedBanner />
         <main style={{ flex: 1, overflow: 'hidden' }}>
           <Routes>
             <Route path="/"                   element={auditOnly ? <AuditPage /> : <AnswerPage />} />

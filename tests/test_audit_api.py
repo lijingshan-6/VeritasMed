@@ -60,3 +60,20 @@ def test_context_api_keeps_all_ask_passages_and_separates_meta(monkeypatch):
     assert response.json()["input"] == payload
     assert response.json()["audit"]["summary"]["supported"] == 0
     assert response.json()["audit"]["meta_text"][0]["status"] == "not_source_checked"
+
+
+def test_quote_api_returns_ambiguity_without_accepting_supported_claim(monkeypatch):
+    import json
+
+    class FakeGateway:
+        def invoke(self, _):
+            return SimpleNamespace(content=json.dumps({"claims": [{"quote": "A.", "relation": "supported",
+                "evidence": [{"source_id": "s", "quote": "A."}], "explanation": "Same text."}], "meta_text": []}),
+                usage_metadata=None, response_metadata={})
+    monkeypatch.setattr(audit, "FlashGateway", FakeGateway)
+    response = TestClient(app).post("/api/audit", json={"answer": "A. A.", "strategy": "quote_v2",
+        "sources": [{"id": "s", "title": "Source", "text": "A."}]})
+    assert response.status_code == 200
+    result = response.json()["audit"]
+    assert result["status"] == "partial_error" and result["summary"]["supported"] == 0
+    assert result["claims"][0]["bindings"]["answer"]["match_count"] == 2

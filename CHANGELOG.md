@@ -2,6 +2,10 @@
 
 ## 0.5.0 — in development (not released)
 
+- Add 33 explicit AI development error reviews separating specific issue identification from incidental span overlap; preserve public annotations and historical scores.
+- Add an optional quote-v2 audit with program-derived locations/context and visible repeated/missing quotations. Offline binding-only replay completes 125/126 original outputs versus historical 123/126; never overwrites original failures.
+- Complete 36 Flash calls on 8 new sources with separate whole-answer and fixed-target tasks. Whole-answer hits remain 3/5 for both, fixed binary agreement is 8/8 for both including easy copy controls, and repeated whole-answer judgments vary. Keep Direct default; see the [full interpretation](docs/verification-v0.5-specific-errors.md).
+
 - Add an opt-in, one-call Context + meta audit with exact paragraph bindings and separately visible presentation text; preserve the original Direct implementation and default.
 - Connect the Ask toolbar to Audit with the unchanged answer, every returned source passage and citation/chunk provenance. No automatic call, truncation or answer replacement; distinguish authored demo transfers.
 - Complete 126 preregistered Flash development calls: context/metatext ablations, 24 new source groups and 6 repeated answers. Preserve 123 fully bound audits and all 3 partial failures, unchanged error denominators and a full prior disagreement ledger. Span-metric gains do not establish better semantic verification; Direct remains the default. The 60 official test sources remain unused. See the [context experiment](docs/verification-v0.5-context-audit.md).

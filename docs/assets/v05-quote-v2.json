@@ -1,0 +1,951 @@
+{
+  "input": {
+    "answer": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+    "sources": [
+      {
+        "id": "11854",
+        "title": "RAGTruth CNN/DM · source 11854",
+        "text": "Buckle up for another Mercedes battle in the Formula One world championship. Lewis Hamilton took victory for the Silver Arrows at the Chinese Grand Prix -- only for his teammate Nico Rosberg to later claim he had ruined his race by driving slowly. The reigning world champion captured his 35th grand prix win with a peerless pole-to-flag win under Shanghai's sunny skies. \"It was great to have a smooth weekend,\" the British racer said before spraying the champagne on the podium. \"The team have done a fantastic job to up our pace and improve after our last race where we struggled a bit.\" F1 championship standings. Hamilton had lost the Malaysia Grand Prix in a strategic battle with the Ferrari of Sebastian Vettel but it was business as usual in Shanghai. Rosberg came home second for Mercedes to snuff out the threat from the chasing Italian racers and renew his rivalry with Hamilton. \"It was an important comeback for the team,\" said the 2014 championship runner-up. Ferrari continued to put pressure on the world champion team with Vettel finishing third to collect his third straight podium of 2015. \"We just wanted to bring the podium back home,\" said Vettel, a four-time world champion with Red Bull Racing. \"It's been three out of three so far so it feels pretty good. I feel happy in the team and hopefully we can get a little bit closer to challenge these guys.\" Vettel is just 13 points behind Hamilton in the world championship and four points ahead of Rosberg, after the first three races of the year. Rosberg unhappy. It was a disheartening weekend for Rosberg -- the son of 1982 world champion Keke -- and he allowed his frustrations to spill over for the first time this season. On Saturday, Hamilton beat him to pole position by just 0.042 seconds and Rosberg complained to his engineers on the pit to car radio: \"Oh, come on guys!\" Then the German insisted his race was hampered when he found himself sandwiched between race leader Hamilton and Vettel, both of whom had stopped for fresh tyres a few laps earlier. \"Lewis is driving very slowly. Tell him to speed up,\" Rosberg told the Mercedes pit wall. Mercedes then instructed Hamilton on the team radio: \"OK Lewis we'd like to pick the pace up a little bit.\" Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up, pushing him back into Vettel's thrall and taking life out of his tyres. \"It's interesting to hear from you Lewis about your pace up front,\" Rosberg said in the post-race media conference. \"That was compromising my race. Driving slowly, that was unnecessary, and meant Sebastian was closer to me. \"It cost me a lot of time ... I'm unhappy about that of course.\" Hamilton responded: \"It's not my job to look after Nico's race. It's my job to bring the car home. \"I didn't do anything intentionally to slow the cars down. If Nico had wanted to get by he could have tried, but he didn't.\" Bahrain. Hamilton has won two grands prix in 2015 while Rosberg has yet to climb onto the top step of the podium. If the German is to repeat his thrilling 2014 world title challenge, which went down to the final race in Abu Dhabi, he will need to turn things around soon. Rosberg has the chance to exorcise his frustrations on track at the Bahrain Grand Prix in just seven day's time. Ferrari will hope the hot track temperatures at the desert race will help them topple Mercedes again, as they did on Sepang's sizzling circuit. The Italian team have the horsepower. Vettel finished less than three seconds behind Hamilton in China with Ferrari teammate Kimi Raikkonen fourth. There was also a small feat further down the field as former Ferrari race winner Fernando Alonso finished his first race for the McLaren Honda partnership with 12th place in China. The Spanish double world champion missed the Australian Grand Prix because of a head injury sustained in testing and then retired in Malaysia.\n"
+      }
+    ],
+    "strategy": "quote_v2"
+  },
+  "audit": {
+    "id": "a142f040-d7a7-42d8-a117-00889367a34a",
+    "created_utc": "2026-09-24T15:39:48.282501+00:00",
+    "strategy": "quote_v2",
+    "task": "whole_answer",
+    "binding_version": "unique-exact-v2",
+    "status": "ok",
+    "answer_sha256": "70b39da5743b41a52c1bb6204db402533a53e96ca4239d9021defcc245955c3f",
+    "source_hashes": {
+      "11854": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+    },
+    "claims": [
+      {
+        "id": "claim-1",
+        "quote": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix",
+        "relation": "supported",
+        "explanation": "Source states Hamilton took victory at the Chinese Grand Prix and that it was his 35th grand prix win.",
+        "status": "ok",
+        "answer_span": {
+          "start": 0,
+          "end": 64,
+          "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 77,
+            "end": 152,
+            "text": "Lewis Hamilton took victory for the Silver Arrows at the Chinese Grand Prix",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11854",
+            "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+          },
+          {
+            "start": 248,
+            "end": 308,
+            "text": "The reigning world champion captured his 35th grand prix win",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11854",
+            "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+          }
+        ],
+        "bindings": {
+          "answer": {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 0,
+              "end": 64,
+              "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 0,
+                "end": 64,
+                "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false
+          },
+          "evidence": [
+            {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 77,
+                "end": 152,
+                "text": "Lewis Hamilton took victory for the Silver Arrows at the Chinese Grand Prix",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 77,
+                  "end": 152,
+                  "text": "Lewis Hamilton took victory for the Silver Arrows at the Chinese Grand Prix",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "source_id": "11854",
+              "quote": "Lewis Hamilton took victory for the Silver Arrows at the Chinese Grand Prix"
+            },
+            {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 248,
+                "end": 308,
+                "text": "The reigning world champion captured his 35th grand prix win",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 248,
+                  "end": 308,
+                  "text": "The reigning world champion captured his 35th grand prix win",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "source_id": "11854",
+              "quote": "The reigning world champion captured his 35th grand prix win"
+            }
+          ]
+        },
+        "context_spans": [
+          {
+            "id": "context-1",
+            "start": 0,
+            "end": 588,
+            "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "context_span": {
+          "start": 0,
+          "end": 588,
+          "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+          "offset_unit": "unicode_codepoint"
+        }
+      },
+      {
+        "id": "claim-2",
+        "quote": "leaving his teammate Nico Rosberg unhappy with his performance",
+        "relation": "supported",
+        "explanation": "Source reports Rosberg was unhappy and complained about Hamilton's slow driving; 'his performance' is read as Hamilton's driving.",
+        "status": "ok",
+        "answer_span": {
+          "start": 66,
+          "end": 128,
+          "text": "leaving his teammate Nico Rosberg unhappy with his performance",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1520,
+            "end": 1536,
+            "text": "Rosberg unhappy.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11854",
+            "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+          },
+          {
+            "start": 2235,
+            "end": 2332,
+            "text": "Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11854",
+            "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+          }
+        ],
+        "bindings": {
+          "answer": {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 66,
+              "end": 128,
+              "text": "leaving his teammate Nico Rosberg unhappy with his performance",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 66,
+                "end": 128,
+                "text": "leaving his teammate Nico Rosberg unhappy with his performance",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false
+          },
+          "evidence": [
+            {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 1520,
+                "end": 1536,
+                "text": "Rosberg unhappy.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 1520,
+                  "end": 1536,
+                  "text": "Rosberg unhappy.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "source_id": "11854",
+              "quote": "Rosberg unhappy."
+            },
+            {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 2235,
+                "end": 2332,
+                "text": "Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 2235,
+                  "end": 2332,
+                  "text": "Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "source_id": "11854",
+              "quote": "Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up"
+            }
+          ]
+        },
+        "context_spans": [
+          {
+            "id": "context-1",
+            "start": 0,
+            "end": 588,
+            "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "context_span": {
+          "start": 0,
+          "end": 588,
+          "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+          "offset_unit": "unicode_codepoint"
+        }
+      },
+      {
+        "id": "claim-3",
+        "quote": "The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly.",
+        "relation": "contradicted",
+        "explanation": "Source attributes the claim to Rosberg, who said Hamilton ruined Rosberg's race by driving slowly; the answer reverses the claimant and the slow driver.",
+        "status": "ok",
+        "answer_span": {
+          "start": 130,
+          "end": 213,
+          "text": "The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 156,
+            "end": 247,
+            "text": "only for his teammate Nico Rosberg to later claim he had ruined his race by driving slowly.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11854",
+            "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+          },
+          {
+            "start": 2235,
+            "end": 2332,
+            "text": "Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11854",
+            "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+          }
+        ],
+        "bindings": {
+          "answer": {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 130,
+              "end": 213,
+              "text": "The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 130,
+                "end": 213,
+                "text": "The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly.",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false
+          },
+          "evidence": [
+            {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 156,
+                "end": 247,
+                "text": "only for his teammate Nico Rosberg to later claim he had ruined his race by driving slowly.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 156,
+                  "end": 247,
+                  "text": "only for his teammate Nico Rosberg to later claim he had ruined his race by driving slowly.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "source_id": "11854",
+              "quote": "only for his teammate Nico Rosberg to later claim he had ruined his race by driving slowly."
+            },
+            {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 2235,
+                "end": 2332,
+                "text": "Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 2235,
+                  "end": 2332,
+                  "text": "Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "source_id": "11854",
+              "quote": "Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up"
+            }
+          ]
+        },
+        "context_spans": [
+          {
+            "id": "context-1",
+            "start": 0,
+            "end": 588,
+            "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "context_span": {
+          "start": 0,
+          "end": 588,
+          "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+          "offset_unit": "unicode_codepoint"
+        }
+      },
+      {
+        "id": "claim-4",
+        "quote": "The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel",
+        "relation": "supported",
+        "explanation": "Source states Vettel was 13 points behind Hamilton.",
+        "status": "ok",
+        "answer_span": {
+          "start": 214,
+          "end": 315,
+          "text": "The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1378,
+            "end": 1444,
+            "text": "Vettel is just 13 points behind Hamilton in the world championship",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11854",
+            "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+          }
+        ],
+        "bindings": {
+          "answer": {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 214,
+              "end": 315,
+              "text": "The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 214,
+                "end": 315,
+                "text": "The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false
+          },
+          "evidence": [
+            {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 1378,
+                "end": 1444,
+                "text": "Vettel is just 13 points behind Hamilton in the world championship",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 1378,
+                  "end": 1444,
+                  "text": "Vettel is just 13 points behind Hamilton in the world championship",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "source_id": "11854",
+              "quote": "Vettel is just 13 points behind Hamilton in the world championship"
+            }
+          ]
+        },
+        "context_spans": [
+          {
+            "id": "context-1",
+            "start": 0,
+            "end": 588,
+            "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "context_span": {
+          "start": 0,
+          "end": 588,
+          "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+          "offset_unit": "unicode_codepoint"
+        }
+      },
+      {
+        "id": "claim-5",
+        "quote": "with Rosberg just four points behind him",
+        "relation": "supported",
+        "explanation": "Source states Vettel was four points ahead of Rosberg, i.e. Rosberg four points behind Vettel; 'him' is read as Vettel.",
+        "status": "ok",
+        "answer_span": {
+          "start": 317,
+          "end": 357,
+          "text": "with Rosberg just four points behind him",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 1445,
+            "end": 1477,
+            "text": "and four points ahead of Rosberg",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11854",
+            "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+          }
+        ],
+        "bindings": {
+          "answer": {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 317,
+              "end": 357,
+              "text": "with Rosberg just four points behind him",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 317,
+                "end": 357,
+                "text": "with Rosberg just four points behind him",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false
+          },
+          "evidence": [
+            {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 1445,
+                "end": 1477,
+                "text": "and four points ahead of Rosberg",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 1445,
+                  "end": 1477,
+                  "text": "and four points ahead of Rosberg",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "source_id": "11854",
+              "quote": "and four points ahead of Rosberg"
+            }
+          ]
+        },
+        "context_spans": [
+          {
+            "id": "context-1",
+            "start": 0,
+            "end": 588,
+            "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "context_span": {
+          "start": 0,
+          "end": 588,
+          "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+          "offset_unit": "unicode_codepoint"
+        }
+      },
+      {
+        "id": "claim-6",
+        "quote": "The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress.",
+        "relation": "supported",
+        "explanation": "Source says Rosberg complained after the race that Hamilton's slow driving held him up and that his frustrations spilled over.",
+        "status": "ok",
+        "answer_span": {
+          "start": 359,
+          "end": 483,
+          "text": "The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 2235,
+            "end": 2332,
+            "text": "Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11854",
+            "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+          },
+          {
+            "start": 1622,
+            "end": 1699,
+            "text": "and he allowed his frustrations to spill over for the first time this season.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11854",
+            "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+          }
+        ],
+        "bindings": {
+          "answer": {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 359,
+              "end": 483,
+              "text": "The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 359,
+                "end": 483,
+                "text": "The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress.",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false
+          },
+          "evidence": [
+            {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 2235,
+                "end": 2332,
+                "text": "Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 2235,
+                  "end": 2332,
+                  "text": "Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "source_id": "11854",
+              "quote": "Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up"
+            },
+            {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 1622,
+                "end": 1699,
+                "text": "and he allowed his frustrations to spill over for the first time this season.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 1622,
+                  "end": 1699,
+                  "text": "and he allowed his frustrations to spill over for the first time this season.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "source_id": "11854",
+              "quote": "and he allowed his frustrations to spill over for the first time this season."
+            }
+          ]
+        },
+        "context_spans": [
+          {
+            "id": "context-1",
+            "start": 0,
+            "end": 588,
+            "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "context_span": {
+          "start": 0,
+          "end": 588,
+          "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+          "offset_unit": "unicode_codepoint"
+        }
+      },
+      {
+        "id": "claim-7",
+        "quote": "The next race will take place in Bahrain",
+        "relation": "supported",
+        "explanation": "Source places the Bahrain Grand Prix seven days after the Chinese GP, supporting that the next race is Bahrain.",
+        "status": "ok",
+        "answer_span": {
+          "start": 484,
+          "end": 524,
+          "text": "The next race will take place in Bahrain",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 3191,
+            "end": 3303,
+            "text": "Rosberg has the chance to exorcise his frustrations on track at the Bahrain Grand Prix in just seven day's time.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11854",
+            "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+          }
+        ],
+        "bindings": {
+          "answer": {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 484,
+              "end": 524,
+              "text": "The next race will take place in Bahrain",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 484,
+                "end": 524,
+                "text": "The next race will take place in Bahrain",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false
+          },
+          "evidence": [
+            {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 3191,
+                "end": 3303,
+                "text": "Rosberg has the chance to exorcise his frustrations on track at the Bahrain Grand Prix in just seven day's time.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 3191,
+                  "end": 3303,
+                  "text": "Rosberg has the chance to exorcise his frustrations on track at the Bahrain Grand Prix in just seven day's time.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "source_id": "11854",
+              "quote": "Rosberg has the chance to exorcise his frustrations on track at the Bahrain Grand Prix in just seven day's time."
+            }
+          ]
+        },
+        "context_spans": [
+          {
+            "id": "context-1",
+            "start": 0,
+            "end": 588,
+            "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "context_span": {
+          "start": 0,
+          "end": 588,
+          "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+          "offset_unit": "unicode_codepoint"
+        }
+      },
+      {
+        "id": "claim-8",
+        "quote": "where Rosberg hopes to turn things around and make a comeback.",
+        "relation": "insufficient",
+        "explanation": "Source says Rosberg needs to turn things around and has a chance at Bahrain, but does not state that he hopes to do so or that he hopes to make a comeback.",
+        "status": "ok",
+        "answer_span": {
+          "start": 526,
+          "end": 588,
+          "text": "where Rosberg hopes to turn things around and make a comeback.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 3033,
+            "end": 3190,
+            "text": "If the German is to repeat his thrilling 2014 world title challenge, which went down to the final race in Abu Dhabi, he will need to turn things around soon.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11854",
+            "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+          },
+          {
+            "start": 3191,
+            "end": 3303,
+            "text": "Rosberg has the chance to exorcise his frustrations on track at the Bahrain Grand Prix in just seven day's time.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "11854",
+            "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d"
+          }
+        ],
+        "bindings": {
+          "answer": {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 526,
+              "end": 588,
+              "text": "where Rosberg hopes to turn things around and make a comeback.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 526,
+                "end": 588,
+                "text": "where Rosberg hopes to turn things around and make a comeback.",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false
+          },
+          "evidence": [
+            {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 3033,
+                "end": 3190,
+                "text": "If the German is to repeat his thrilling 2014 world title challenge, which went down to the final race in Abu Dhabi, he will need to turn things around soon.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 3033,
+                  "end": 3190,
+                  "text": "If the German is to repeat his thrilling 2014 world title challenge, which went down to the final race in Abu Dhabi, he will need to turn things around soon.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "source_id": "11854",
+              "quote": "If the German is to repeat his thrilling 2014 world title challenge, which went down to the final race in Abu Dhabi, he will need to turn things around soon."
+            },
+            {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 3191,
+                "end": 3303,
+                "text": "Rosberg has the chance to exorcise his frustrations on track at the Bahrain Grand Prix in just seven day's time.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 3191,
+                  "end": 3303,
+                  "text": "Rosberg has the chance to exorcise his frustrations on track at the Bahrain Grand Prix in just seven day's time.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "source_id": "11854",
+              "quote": "Rosberg has the chance to exorcise his frustrations on track at the Bahrain Grand Prix in just seven day's time."
+            }
+          ]
+        },
+        "context_spans": [
+          {
+            "id": "context-1",
+            "start": 0,
+            "end": 588,
+            "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "context_span": {
+          "start": 0,
+          "end": 588,
+          "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback.",
+          "offset_unit": "unicode_codepoint"
+        }
+      }
+    ],
+    "meta_text": [],
+    "summary": {
+      "supported": 6,
+      "contradicted": 1,
+      "insufficient": 1,
+      "failed_or_unchecked": 0
+    },
+    "calls": [
+      {
+        "stage": "quote_v2",
+        "status": "ok",
+        "raw_output": "{\"claims\":[{\"quote\":\"Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix\",\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"11854\",\"quote\":\"Lewis Hamilton took victory for the Silver Arrows at the Chinese Grand Prix\"},{\"source_id\":\"11854\",\"quote\":\"The reigning world champion captured his 35th grand prix win\"}],\"explanation\":\"Source states Hamilton took victory at the Chinese Grand Prix and that it was his 35th grand prix win.\"},{\"quote\":\"leaving his teammate Nico Rosberg unhappy with his performance\",\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"11854\",\"quote\":\"Rosberg unhappy.\"},{\"source_id\":\"11854\",\"quote\":\"Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up\"}],\"explanation\":\"Source reports Rosberg was unhappy and complained about Hamilton's slow driving; 'his performance' is read as Hamilton's driving.\"},{\"quote\":\"The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly.\",\"relation\":\"contradicted\",\"evidence\":[{\"source_id\":\"11854\",\"quote\":\"only for his teammate Nico Rosberg to later claim he had ruined his race by driving slowly.\"},{\"source_id\":\"11854\",\"quote\":\"Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up\"}],\"explanation\":\"Source attributes the claim to Rosberg, who said Hamilton ruined Rosberg's race by driving slowly; the answer reverses the claimant and the slow driver.\"},{\"quote\":\"The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel\",\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"11854\",\"quote\":\"Vettel is just 13 points behind Hamilton in the world championship\"}],\"explanation\":\"Source states Vettel was 13 points behind Hamilton.\"},{\"quote\":\"with Rosberg just four points behind him\",\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"11854\",\"quote\":\"and four points ahead of Rosberg\"}],\"explanation\":\"Source states Vettel was four points ahead of Rosberg, i.e. Rosberg four points behind Vettel; 'him' is read as Vettel.\"},{\"quote\":\"The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress.\",\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"11854\",\"quote\":\"Rosberg complained after the race that Hamilton's lackadaisical Sunday driving was holding him up\"},{\"source_id\":\"11854\",\"quote\":\"and he allowed his frustrations to spill over for the first time this season.\"}],\"explanation\":\"Source says Rosberg complained after the race that Hamilton's slow driving held him up and that his frustrations spilled over.\"},{\"quote\":\"The next race will take place in Bahrain\",\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"11854\",\"quote\":\"Rosberg has the chance to exorcise his frustrations on track at the Bahrain Grand Prix in just seven day's time.\"}],\"explanation\":\"Source places the Bahrain Grand Prix seven days after the Chinese GP, supporting that the next race is Bahrain.\"},{\"quote\":\"where Rosberg hopes to turn things around and make a comeback.\",\"relation\":\"insufficient\",\"evidence\":[{\"source_id\":\"11854\",\"quote\":\"If the German is to repeat his thrilling 2014 world title challenge, which went down to the final race in Abu Dhabi, he will need to turn things around soon.\"},{\"source_id\":\"11854\",\"quote\":\"Rosberg has the chance to exorcise his frustrations on track at the Bahrain Grand Prix in just seven day's time.\"}],\"explanation\":\"Source says Rosberg needs to turn things around and has a chance at Bahrain, but does not state that he hopes to do so or that he hopes to make a comeback.\"}],\"meta_text\":[]}",
+        "usage": {
+          "input_tokens": 1449,
+          "output_tokens": 10791,
+          "total_tokens": 12240
+        },
+        "transport_metadata": {
+          "model": "deepseek-v4.1-flash",
+          "model_identifiers": [
+            "deepseek-v4.1-flash"
+          ],
+          "finish_reason": "stop",
+          "usage_snapshots": [
+            {
+              "input_tokens": 1449,
+              "output_tokens": 10791,
+              "total_tokens": 12240
+            }
+          ],
+          "reasoning_characters": 46165
+        },
+        "elapsed_seconds": 43.884
+      }
+    ],
+    "extraction_coverage": {
+      "covered_nonspace_characters": 489,
+      "total_nonspace_characters": 494,
+      "uncovered": [
+        {
+          "start": 64,
+          "end": 66,
+          "text": ", "
+        },
+        {
+          "start": 128,
+          "end": 130,
+          "text": ". "
+        },
+        {
+          "start": 315,
+          "end": 317,
+          "text": ", "
+        },
+        {
+          "start": 357,
+          "end": 359,
+          "text": ". "
+        },
+        {
+          "start": 524,
+          "end": 526,
+          "text": ", "
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "checked_coverage": {
+      "covered_nonspace_characters": 489,
+      "total_nonspace_characters": 494,
+      "uncovered": [
+        {
+          "start": 64,
+          "end": 66,
+          "text": ", "
+        },
+        {
+          "start": 128,
+          "end": 130,
+          "text": ". "
+        },
+        {
+          "start": 315,
+          "end": 317,
+          "text": ", "
+        },
+        {
+          "start": 357,
+          "end": 359,
+          "text": ". "
+        },
+        {
+          "start": 524,
+          "end": 526,
+          "text": ", "
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "meta_coverage": {
+      "covered_nonspace_characters": 0,
+      "total_nonspace_characters": 494,
+      "uncovered": [
+        {
+          "start": 0,
+          "end": 588,
+          "text": "Lewis Hamilton won his 35th grand prix at the Chinese Grand Prix, leaving his teammate Nico Rosberg unhappy with his performance. The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly. The championship standings show that Hamilton has a lead of 13 points over Ferrari's Sebastian Vettel, with Rosberg just four points behind him. The German driver expressed his frustration after the race, claiming that Hamilton's slow driving had hindered his progress. The next race will take place in Bahrain, where Rosberg hopes to turn things around and make a comeback."
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "claims_at_cap": false,
+    "elapsed_seconds": 43.884,
+    "scope": "Exact text location, not correctness or clinical grading. Fixed targets do not measure extraction recall."
+  },
+  "mode": "saved",
+  "provenance": {
+    "dataset": "RAGTruth",
+    "split": "train",
+    "response_id": "2336",
+    "run": "quote_v2/run01",
+    "group": "original pilot",
+    "note": "Saved inference, no new model call. Human error labels are not model inputs."
+  }
+}

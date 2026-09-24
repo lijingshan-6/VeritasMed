@@ -4,16 +4,25 @@ import { useLocation } from 'react-router-dom'
 import { inputProblem } from '../api/auditHandoff'
 import type { AuditHandoff } from '../api/auditHandoff'
 import { auditExamples, replayAudit, runAudit } from '../api/audit'
-import type { AuditClaim, AuditInput, AuditRecord, Catalogue, Span, Strategy } from '../api/audit'
+import type { AuditClaim, AuditInput, AuditRecord, Catalogue, QuoteBinding, Span, Strategy } from '../api/audit'
 import './audit.css'
 
 const labels: Record<string, string> = {
   supported: 'Supported', contradicted: 'Contradicted', insufficient: 'Insufficient evidence',
   invalid_reference: 'Unresolved quote', invalid_output: 'Invalid model output',
+  ambiguous_reference: 'Repeated quote · location unresolved',
   execution_error: 'Execution failed', not_checked: 'Not checked',
   not_source_checked: 'Presentation text · not source-checked',
 }
-const methodLabels: Record<Strategy, string> = { direct: 'Direct Flash', split: 'Extract → verify each claim', context: 'Context + meta · experimental' }
+const methodLabels: Record<Strategy, string> = { direct: 'Direct Flash', split: 'Extract → verify each claim', context: 'Context + meta · experimental', quote_v2: 'Exact quotes v2 · experimental' }
+function BindingDetail({ binding, label }: { binding: QuoteBinding; label: string }) {
+  const description: Record<string, string> = { unique: 'Unique exact passage', ambiguous: 'Repeated passage; no location chosen',
+    not_found: 'Quotation not found exactly', unknown_source: 'Source ID not provided', empty_quote: 'Empty quotation' }
+  return <div className={`audit-binding ${binding.status === 'unique' ? '' : 'audit-error-text'}`}>
+    <strong>{label}: {description[binding.status] ?? binding.status}</strong>
+    {binding.match_count > 0 && <span> · {binding.match_count} {binding.match_count === 1 ? 'match' : 'matches'} ({binding.candidates.map(s => `${s.start}–${s.end}`).join(', ')}{binding.candidates_truncated ? ', …' : ''})</span>}
+  </div>
+}
 function category(claim: AuditClaim) { return claim.status === 'ok' ? claim.relation ?? 'not_checked' : claim.status }
 function message(error: unknown) {
   const detail = (error as { response?: { data?: { detail?: unknown } } })?.response?.data?.detail
@@ -113,7 +122,7 @@ export function AuditPage() {
   const validSpans = [...(audit?.claims.flatMap(c => c.answer_span ? [{ ...c.answer_span, claimId: c.id, category: category(c) }] : []) ?? []),
     ...(audit?.meta_text?.flatMap(m => m.answer_span ? [{ ...m.answer_span, claimId: m.id, category: m.status }] : []) ?? [])]
   const models = [...new Set(audit?.calls.flatMap(c => c.transport_metadata?.model_identifiers ?? []) ?? [])]
-  const metaFailures = audit?.meta_text?.filter(m => m.status === 'invalid_reference').length ?? 0
+  const metaFailures = audit?.meta_text?.filter(m => m.status !== 'not_source_checked').length ?? 0
   const available = catalogue?.examples.filter(e => e.strategies[strategy]) ?? []
 
   return <div className="audit-page">
@@ -155,7 +164,7 @@ export function AuditPage() {
         <label>Method <select aria-label="New audit method" value={draft.strategy} onChange={e => setDraft({ ...draft, strategy: e.target.value as Strategy })}>{Object.entries(methodLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
         <button className="audit-button primary" disabled={!!pending}>Run new audit</button>
       </div>
-      <p className="audit-muted">Sends these texts to the Flash endpoint configured in your local .env. Split mode makes one extraction call plus a call per claim and can take several minutes. The server does not save this input. Up to 40 sources / 80,000 source characters; no automatic search. Context + meta is an experimental option; Direct remains the baseline.</p>
+      <p className="audit-muted">Sends these texts to the Flash endpoint configured in your local .env. Split mode makes one extraction call plus a call per claim and can take several minutes. The server does not save this input. Up to 40 sources / 80,000 source characters; no automatic search. Exact quotes v2 binds only unique original passages and exposes repeated or missing quotations. Direct remains the baseline.</p>
     </form>}
     {pending && <div className="audit-pending" role="status"><span className="audit-pulse" />{pending}<span className="audit-muted">The full result appears when the run finishes.</span></div>}
     {record && audit && <>
@@ -183,6 +192,11 @@ export function AuditPage() {
               <span className="audit-claim-number">{String(index + 1).padStart(2, '0')}</span><span><span className="audit-claim-quote">{claim.quote}</span><span className={`audit-verdict ${category(claim)}`}>{labels[category(claim)] ?? claim.status}</span></span><span aria-hidden="true">{selected === claim.id ? '−' : '+'}</span>
             </button>
             {selected === claim.id && <div className="audit-claim-body"><p>{claim.explanation || 'No usable judgment was returned.'}</p>
+              {claim.bindings && <details className="audit-context" open={claim.status !== 'ok'}><summary>Original text locations</summary>
+                <BindingDetail binding={claim.bindings.answer} label="Answer" />
+                {claim.bindings.evidence.map((b, i) => <div key={i}><BindingDetail binding={b} label={`Source ${b.source_id}`} />{b.status !== 'unique' && <blockquote>{b.quote}</blockquote>}</div>)}
+                <small>Only unique, unchanged quotations are linked. Ambiguous passages are not counted as completed checks.</small>
+              </details>}
               {claim.context_span && <details className="audit-context"><summary>Answer context · not source evidence</summary><blockquote>{claim.context_span.text}</blockquote><small>Characters {claim.context_span.start}–{claim.context_span.end}. Exact binding preserves the paragraph; it does not prove the model interpreted it correctly.</small></details>}
               {claim.status !== 'ok' && <p className="audit-error-text">This claim is not counted as a completed check. A returned relation with an invalid quote is not a pass.</p>}
               {claim.answer_span && <div className="audit-muted">Answer characters {claim.answer_span.start}–{claim.answer_span.end} · end exclusive</div>}
@@ -191,7 +205,7 @@ export function AuditPage() {
               </button>)}
             </div>}
           </article>)}</div>
-          {!!audit.meta_text?.length && <section className="audit-meta"><h2>Presentation text</h2><p className="audit-muted">These model-selected ranges describe the response itself. They are not counted as source-supported facts. Routing can be wrong; all ranges remain visible.</p>{audit.meta_text.map(m => <article key={m.id} id={`audit-${m.id}`} className={`audit-claim ${selected === m.id ? 'active' : ''}`}><button className="audit-claim-toggle" onClick={() => selectClaim(selected === m.id ? '' : m.id, false)} aria-expanded={selected === m.id}><span>↳</span><span className="audit-claim-quote">{m.quote}</span><span>{selected === m.id ? '−' : '+'}</span></button><div className="audit-claim-body"><span className="audit-verdict">{m.kind} · {labels[m.status] ?? m.status}</span>{selected === m.id && <p>{m.explanation}{m.answer_span && ` (${m.answer_span.start}–${m.answer_span.end})`}</p>}</div></article>)}{audit.presentation_counts && <p className="audit-muted">Full answer: {audit.presentation_counts.full_answer_whitespace_tokens} whitespace-separated tokens. Includes headings and presentation text; this is not a judgment that a claimed word limit was met.</p>}</section>}
+          {!!audit.meta_text?.length && <section className="audit-meta"><h2>Presentation text</h2><p className="audit-muted">These model-selected ranges describe the response itself. They are not counted as source-supported facts. Routing can be wrong; all ranges remain visible.</p>{audit.meta_text.map(m => <article key={m.id} id={`audit-${m.id}`} className={`audit-claim ${selected === m.id ? 'active' : ''}`}><button className="audit-claim-toggle" onClick={() => selectClaim(selected === m.id ? '' : m.id, false)} aria-expanded={selected === m.id}><span>↳</span><span className="audit-claim-quote">{m.quote}</span><span>{selected === m.id ? '−' : '+'}</span></button><div className="audit-claim-body"><span className="audit-verdict">{m.kind} · {labels[m.status] ?? m.status}</span>{selected === m.id && <><p>{m.explanation}{m.answer_span && ` (${m.answer_span.start}–${m.answer_span.end})`}</p>{m.binding && <BindingDetail binding={m.binding} label="Answer" />}</>}</div></article>)}{audit.presentation_counts && <p className="audit-muted">Full answer: {audit.presentation_counts.full_answer_whitespace_tokens} whitespace-separated tokens. Includes headings and presentation text; this is not a judgment that a claimed word limit was met.</p>}</section>}
           <details className="audit-details"><summary>Uncovered answer text ({audit.checked_coverage.uncovered.length} ranges)</summary><p>No completed claim judgment covers these characters. Some gaps may be punctuation or connective text; coverage alone cannot establish semantic completeness.</p>{audit.checked_coverage.uncovered.map(s => <blockquote key={s.start}><small>{s.start}–{s.end}</small> {s.text}</blockquote>)}</details>
           <details className="audit-details"><summary>Run provenance & execution</summary><p>{record.provenance.note} {record.provenance.run && `Run: ${record.provenance.run}.`}</p><p>Reported model identifiers: {models.join(', ') || 'unavailable'}. These are provider metadata.</p>{record.provenance.handoff && <p>Ask thread: {record.provenance.handoff.thread_id}. Original inputs and citation map are included in the JSON export.</p>}<code className="audit-hash">Answer SHA-256: {audit.answer_sha256}</code><ol>{audit.calls.map((c, i) => <li key={i}>{c.stage} · {c.status} · {c.elapsed_seconds.toFixed(1)} s · {c.usage?.total_tokens != null ? `${c.usage.total_tokens} reported tokens` : 'usage unavailable'}{c.error_type ? ` · ${c.error_type}` : ''}</li>)}</ol></details>
         </section>

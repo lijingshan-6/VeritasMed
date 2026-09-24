@@ -8,7 +8,8 @@ from typing import Literal
 from fastapi import APIRouter, HTTPException
 
 from medrag.verification.answer_audit import AuditInput, audit_answer, text_hash
-from medrag.verification.context_audit import AuditRequest, audit_context
+from medrag.verification.context_audit import audit_context
+from medrag.verification.quote_audit import QuoteAuditRequest, audit_quotes
 from medrag.verification.gateway import FlashGateway
 from medrag.verification.ragtruth import prepare
 from medrag.verification.scifact import object_hash, read_jsonl
@@ -16,6 +17,7 @@ from medrag.verification.scifact import object_hash, read_jsonl
 ROOT = Path(__file__).resolve().parents[4]
 RUN = ROOT / "data/verification/ragtruth_v1/run01"
 CONTEXT_RUN = ROOT / "data/verification/context_v1/run01"
+QUOTE_RUN = ROOT / "data/verification/quote_v2/run01"
 CACHE = ROOT / ".benchmark-runtime/ragtruth"
 router = APIRouter(prefix="/api/audit", tags=["answer audit"])
 _slots = BoundedSemaphore(3)
@@ -33,6 +35,11 @@ def saved_rows():
         rows.extend({**row, "run": "context_v1/run01"} for line in context_path.read_text(encoding="utf8").splitlines(keepends=True)
                     if line.endswith("\n") for row in [json.loads(line)]
                     if row["group"] != "repeat" and row["strategy"] in ("direct", "context"))
+    quote_path = QUOTE_RUN / "predictions.jsonl"
+    if quote_path.exists():
+        rows.extend({**row, "run": "quote_v2/run01"} for line in quote_path.read_text(encoding="utf8").splitlines(keepends=True)
+                    if line.endswith("\n") for row in [json.loads(line)]
+                    if row["task"] == "whole" and row["attempt"] == 1)
     return rows
 
 
@@ -59,6 +66,17 @@ def saved_cases():
             if object_hash(item.model_dump()) != case["input_sha256"]:
                 raise HTTPException(409, "Context experiment inputs do not match the frozen manifest.")
             by_id[case["response_id"]] = {"input": item}
+    if (QUOTE_RUN / "manifest.json").exists():
+        manifest = json.loads((QUOTE_RUN / "manifest.json").read_text(encoding="utf8"))
+        sources = {s["source_id"]: s for s in read_jsonl(CACHE / "source_info.jsonl")}
+        responses = {r["id"]: r for r in read_jsonl(CACHE / "response.jsonl")}
+        for case in manifest["whole"]:
+            response, source = responses[case["case_id"]], sources[case["source_id"]]
+            item = AuditInput(answer=response["response"], sources=[{"id": source["source_id"],
+                              "title": f"RAGTruth {source['source']} · source {source['source_id']}", "text": source["source_info"]}])
+            if object_hash(item.model_dump()) != case["input_sha256"]:
+                raise HTTPException(409, "Quote experiment inputs do not match the frozen manifest.")
+            by_id[case["case_id"]] = {"input": item}
     return by_id
 
 
@@ -76,7 +94,7 @@ def examples():
 
 
 @router.get("/examples/{response_id}")
-def replay(response_id: str, strategy: Literal["direct", "split", "context"] = "direct"):
+def replay(response_id: str, strategy: Literal["direct", "split", "context", "quote_v2"] = "direct"):
     row = next((r for r in saved_rows() if r["case_id"] == response_id and r["strategy"] == strategy), None)
     if row is None:
         raise HTTPException(404, "No saved audit for this answer and strategy.")
@@ -94,7 +112,7 @@ def replay(response_id: str, strategy: Literal["direct", "split", "context"] = "
 
 
 @router.post("")
-def live_audit(item: AuditRequest):
+def live_audit(item: QuoteAuditRequest):
     if not _slots.acquire(blocking=False):
         raise HTTPException(429, "Three audits are already running; try again after one finishes.")
     try:
@@ -102,7 +120,12 @@ def live_audit(item: AuditRequest):
             gateway = FlashGateway()
         except Exception:
             raise HTTPException(503, "Configure the Flash profile and key in the local .env before running a live audit.") from None
-        result = audit_context(item, gateway) if item.strategy == "context" else audit_answer(item, gateway)
+        if item.strategy == "quote_v2":
+            result = audit_quotes(item, gateway)
+        elif item.strategy == "context":
+            result = audit_context(item, gateway)
+        else:
+            result = audit_answer(item, gateway)
         return {"input": item.model_dump(), "audit": result, "mode": "live",
                 "provenance": {"note": "New Flash inference on the supplied texts. Input and output are not saved on the server."}}
     finally:

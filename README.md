@@ -57,6 +57,14 @@ However, broader warning spans account for the added hits, and one new-source au
 These numbers do **not** establish better semantic verification. All three partial failures across the
 experiment and repeat instability remain in the report. The 60 reserved test sources are still unused.
 
+[Specific-error diagnostics and exact quotes v2](docs/verification-v0.5-specific-errors.md) now separate
+identifying an error from merely overlapping its text. AI development review of the existing 33 errors
+found 26 specifically identified by each method; this is not independent semantic accuracy.
+A binding-only replay recovered two historical position failures without changing model judgments.
+In 36 new Flash calls, both whole-answer methods hit 3/5 public errors; both fixed-target verifiers
+matched 8/8 binary references, including four easy source-copy controls. All calls completed, but
+whole-answer judgments still varied across repeats. **Exact quotes v2** is optional; Direct stays default.
+
 ## Try it without a key
 
 Get the fixed milestone with Git, or download its

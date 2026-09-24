@@ -51,7 +51,7 @@ Agent 当次生成的原回答及返回的全部 2 个片段原样进入审计�
 
 ## 演示流程
 
-1. 在 **Real saved runs** 选择 RAGTruth 回答和 Direct / Extract → verify / Context + meta 方法。
+1. 在 **Real saved runs** 选择 RAGTruth 回答和 Direct / Extract → verify / Context + meta / Exact quotes v2 方法。
    标记 **SAVED INFERENCE** 的记录是既有真实模型调用，不是即时生成。
 2. 点击回答中带下划线的陈述，展开相应 claim；点引文的 **Locate in full source**，
    在完整来源中定位。点击来源里被标记的文字也能选中对应 claim。
@@ -90,6 +90,17 @@ Context + meta 也是一次调用，属实验选项：claim 展开后显示所�
 展示的 whitespace-separated tokens 是完整回答按空白切分的机械计数，不冒充自然语言字数或计数要求验收。
 Direct 保持默认；新增策略并不意味着可靠性已经提高。
 
+**Exact quotes v2** 让程序计算引用位置及回答段落，不要求模型填写段落编号或出现次数。
+展开 claim 的 **Original text locations** 可查看唯一匹配、重复位置不明确、引文不存在或未知来源。
+只有唯一且完全一致的原文才会绑定；重复引文保留候选位置，不自动猜测其中一处。
+若元文本定位失败，Presentation text 同样显示位置问题。它仍是可选实验方法。
+
+2026-09-24 已在浏览器回放 `RAGTruth #2336 / Exact quotes v2`，点击第 3 条误归因判断、
+展开位置、定位来源并完成 [真实 JSON 导出](assets/v05-quote-v2.json)。该记录来自已保存的
+新 8 来源开发实验；回放没有新模型请求，不能当临床正确性证明。
+
+![真实 quote-v2 记录：误归因判断、程序定位与来源原句](assets/v05-quote-v2.png)
+
 ![真实 Context 记录中的回答语境与来源原文](assets/v05-context-audit.png)
 
 截图为本轮 `RAGTruth #718 / Context + meta` 的保存输出；可展开回答段落，并在页面下方
@@ -112,6 +123,7 @@ Direct 保持默认；新增策略并不意味着可靠性已经提高。
 | Contradicted | 模型指出与所选陈述不相容的来源文字 |
 | Insufficient evidence | 给定文本不足以支持；不代表全世界没有证据 |
 | Unresolved quote | 模型的引文或回答范围不能精确绑定，不计为完成核查 |
+| Repeated quote · location unresolved | 精确引句出现多次，展示候选位置但不任选一处，不计为完成核查 |
 | Execution failed / Invalid model output | 调用或结构失败，保留原始执行状态 |
 | Not checked | 已抽取但未完成核查 |
 | Presentation text · not source-checked | 模型判断为回答自身的呈现说明；没有得到文献支持核查，也不代表内容正确 |
@@ -124,3 +136,5 @@ Direct 保持默认；新增策略并不意味着可靠性已经提高。
 本轮改进预先登记在 [语境与元文本计划](plans/v0.5-context-audit.md)，实验命令见
 [Context 工件说明](../data/verification/context_v1/README.md)，结论与失败见
 [效果报告](verification-v0.5-context-audit.md)。
+最新 [具体错误诊断与 quote-v2 报告](verification-v0.5-specific-errors.md)区分位置成功和语义判断，
+提供 36 次整段/固定目标调用及全部结果；离线命令见 [quote-v2 工件](../data/verification/quote_v2/README.md)。

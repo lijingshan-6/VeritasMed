@@ -1,0 +1,600 @@
+{
+  "version": "specific-error-review-v2",
+  "provenance": "Post-hoc AI development review of public human annotations and saved outputs; no independent expert or model-judge accuracy claim.",
+  "entries": [
+    {
+      "case_id": "2978",
+      "gold_index_1based": 1,
+      "issue": "编造总理宣布紧急状态",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-4"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-4"
+        ]
+      },
+      "reason": "两者都明确指出原文未提总理及紧急状态声明。"
+    },
+    {
+      "case_id": "2978",
+      "gold_index_1based": 2,
+      "issue": "编造联合国 16 亿美元援助呼吁",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-7"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-7"
+        ]
+      },
+      "reason": "两者均指出联合国呼吁及金额没有来源。"
+    },
+    {
+      "case_id": "1119",
+      "gold_index_1based": 1,
+      "issue": "加入原文未明示的中西部／西海岸区域概括",
+      "direct": {
+        "status": "unresolved",
+        "claim_ids": [
+          "claim-8"
+        ]
+      },
+      "context": {
+        "status": "unresolved",
+        "claim_ids": [
+          "claim-7"
+        ]
+      },
+      "reason": "两者找到了区域问题，但用 Vermont、Puerto Rico 的地理归属判矛盾；该知识不在给定来源。位置命中不能认证这种理由，保留为严格文本边界分歧。"
+    },
+    {
+      "case_id": "3650",
+      "gold_index_1based": 1,
+      "issue": "编造无数医疗操作及手术经历",
+      "direct": {
+        "status": "partial",
+        "claim_ids": [
+          "claim-5"
+        ]
+      },
+      "context": {
+        "status": "partial",
+        "claim_ids": [
+          "claim-6"
+        ]
+      },
+      "reason": "只明确指出 surgery 未提及，没有处理同一公开范围内的 countless medical procedures；只记部分具体问题。"
+    },
+    {
+      "case_id": "3650",
+      "gold_index_1based": 2,
+      "issue": "增加疾病普遍症状列表及常规治疗方案",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-18",
+          "claim-19"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-17",
+          "claim-18"
+        ]
+      },
+      "reason": "两条理由合起来覆盖原标注的症状推广和治疗方案；这只是文本支持问题，不裁决医学上是否正确。"
+    },
+    {
+      "case_id": "1565",
+      "gold_index_1based": 1,
+      "issue": "将妻子的律师误归为 Hicks 本人的律师",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-8"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-7"
+        ]
+      },
+      "reason": "两者均明确给出 attorney for Hicks' wife 的原文归属。"
+    },
+    {
+      "case_id": "5175",
+      "gold_index_1based": 1,
+      "issue": "总人数写为 26，原文为牧师、妻子及另 25 人",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-2"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-1"
+        ]
+      },
+      "reason": "两者明确算出 27 而不是 26；短警报不影响认出人数问题。"
+    },
+    {
+      "case_id": "3552",
+      "gold_index_1based": 1,
+      "issue": "将激烈战斗扩大为全伊拉克范围的排名",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-8"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-7"
+        ]
+      },
+      "reason": "两者区分 intense fighting 与 among the most intense in all Iraq。"
+    },
+    {
+      "case_id": "2986",
+      "gold_index_1based": 1,
+      "issue": "五名尼日利亚人，原文列出四名",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-8"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-8"
+        ]
+      },
+      "reason": "两者指出四名尼日利亚人、一名印尼人、一名巴西人。"
+    },
+    {
+      "case_id": "4492",
+      "gold_index_1based": 1,
+      "issue": "将未注明地点的天气预报归到洛杉矶",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-9"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-8"
+        ]
+      },
+      "reason": "两者准确指出地点缺失；Context 整次有元文本绑定失败，此条有效事实判断不因此删去，整次失败仍另列。"
+    },
+    {
+      "case_id": "4624",
+      "gold_index_1based": 1,
+      "issue": "将来源中的 baby/child 具体化为 daughter",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-4"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-5"
+        ]
+      },
+      "reason": "理由明确指出性别没有来源；不从外部事实补足。"
+    },
+    {
+      "case_id": "296",
+      "gold_index_1based": 1,
+      "issue": "把即将退休写成刚刚退休",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-3"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-3"
+        ]
+      },
+      "reason": "两者引用 fast-approaching retirement 并指出时态状态变化。"
+    },
+    {
+      "case_id": "296",
+      "gold_index_1based": 2,
+      "issue": "编造女儿 26 岁",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-5"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-5"
+        ]
+      },
+      "reason": "两者明确指出未提供女儿年龄。"
+    },
+    {
+      "case_id": "4899",
+      "gold_index_1based": 1,
+      "issue": "将第三名并列的球队写为分享冠军",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-4"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-4"
+        ]
+      },
+      "reason": "两者指出冠军为 Rancho Alamitos/Los Amigos，Bolsa/La Quinta 并列第三。官方类别为新增信息，模型为矛盾；本诊断不把二者当三分类相符。"
+    },
+    {
+      "case_id": "4990",
+      "gold_index_1based": 1,
+      "issue": "将剧透中的未来／条件事件概述为发生中的背叛",
+      "direct": {
+        "status": "missed",
+        "claim_ids": []
+      },
+      "context": {
+        "status": "missed",
+        "claim_ids": []
+      },
+      "reason": "两者无有效警报。按原公开标注记遗漏；剧集叙事现在时与未来剧透的解释边界保留，不据此独立断言现实真伪。"
+    },
+    {
+      "case_id": "4322",
+      "gold_index_1based": 1,
+      "issue": "编造在迪士尼新建体育场的提议",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-10"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-12"
+        ]
+      },
+      "reason": "明确区分在已有 Champions Stadium 比赛与新建球场提议。"
+    },
+    {
+      "case_id": "2108",
+      "gold_index_1based": 1,
+      "issue": "增加持续数十年的腐败、暴力与滥权记录",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-16"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-20"
+        ]
+      },
+      "reason": "两者区分自 2011 年的 misconduct 诉讼与新增的几十年及细分类别。"
+    },
+    {
+      "case_id": "2108",
+      "gold_index_1based": 2,
+      "issue": "编造许多人认为调查是一场骗局",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-19"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-24"
+        ]
+      },
+      "reason": "两者明确指出没有这种公众观点的记载。"
+    },
+    {
+      "case_id": "1778",
+      "gold_index_1based": 1,
+      "issue": "编造去世具体日期 2015 年 8 月 31 日",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-4"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-4"
+        ]
+      },
+      "reason": "来源只有 Monday，两者指出完整日期未提供。"
+    },
+    {
+      "case_id": "1778",
+      "gold_index_1based": 2,
+      "issue": "编造家属对反弹保持沉默",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-10"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-10"
+        ]
+      },
+      "reason": "两者明确说明来源未写 backlash 或家属对此的沉默。"
+    },
+    {
+      "case_id": "1778",
+      "gold_index_1based": 3,
+      "issue": "声称讣告引发争议",
+      "direct": {
+        "status": "missed",
+        "claim_ids": []
+      },
+      "context": {
+        "status": "missed",
+        "claim_ids": []
+      },
+      "reason": "两者在别处质疑 others criticizing，但未质疑 controversy 本身；不能用旁边的警报代替此问题。"
+    },
+    {
+      "case_id": "3596",
+      "gold_index_1based": 1,
+      "issue": "增加影片上映日期 2015 年 4 月 3 日",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-7"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-3"
+        ]
+      },
+      "reason": "两者明确指出来源没有上映日期。"
+    },
+    {
+      "case_id": "3596",
+      "gold_index_1based": 2,
+      "issue": "新增更先进飞机已存在及跨军种服役等整句概括",
+      "direct": {
+        "status": "partial",
+        "claim_ids": [
+          "claim-11",
+          "claim-14"
+        ]
+      },
+      "context": {
+        "status": "partial",
+        "claim_ids": [
+          "claim-6",
+          "claim-8"
+        ]
+      },
+      "reason": "两者指出已有新飞机、跨军种的具体缺口，但公开标注覆盖整句且说明笼统；不能据部分内容声称整个粗粒度标注均得到裁决。"
+    },
+    {
+      "case_id": "2756",
+      "gold_index_1based": 1,
+      "issue": "声称 Oz 缺乏正规医学资质",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-11"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-14"
+        ]
+      },
+      "reason": "两者针对资质主张引用 surgeon/professorship；公开类别为新增信息，模型用职业推断矛盾。只记问题对象识别，三分类和职业资质推理不在此认证。"
+    },
+    {
+      "case_id": "5420",
+      "gold_index_1based": 1,
+      "issue": "增加历次民调压倒性支持王室的说法",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-9"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-6"
+        ]
+      },
+      "reason": "两者明确指出先前民调的 overwhelming positive 描述未提供。"
+    },
+    {
+      "case_id": "5420",
+      "gold_index_1based": 2,
+      "issue": "编造 George 对比赛结果的贡献",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-4"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-3"
+        ]
+      },
+      "reason": "两者指出原文只有观赛及赛果，没有对赛果的贡献。"
+    },
+    {
+      "case_id": "898",
+      "gold_index_1based": 1,
+      "issue": "将免费婚礼的缘由换成给儿子起名 Burger King",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-7"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-7"
+        ]
+      },
+      "reason": "两者明确指出 Joel Burger/Ashley King 的姓名与没有儿子命名记载；原类别矛盾而模型不足，不能当三分类准确。"
+    },
+    {
+      "case_id": "699",
+      "gold_index_1based": 1,
+      "issue": "新增许多无辜者死亡的描述",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-10"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-10"
+        ]
+      },
+      "reason": "两者区分来源记载的 SAF/武装人员死亡与 innocent people 的新增概括。"
+    },
+    {
+      "case_id": "699",
+      "gold_index_1based": 2,
+      "issue": "将来源未解释的 IED 展开为 improvised explosive devices",
+      "direct": {
+        "status": "missed",
+        "claim_ids": []
+      },
+      "context": {
+        "status": "overlap_only",
+        "claim_ids": [
+          "claim-8"
+        ]
+      },
+      "reason": "Direct 未报警缩写展开；Context 引用覆盖该短语，但理由只讨论 key supplier 和 other organizations。新增字符命中不是新增具体错误识别。"
+    },
+    {
+      "case_id": "5583",
+      "gold_index_1based": 1,
+      "issue": "将奖章资格恢复日期解释为服役起算条件",
+      "direct": {
+        "status": "unresolved",
+        "claim_ids": [
+          "claim-4"
+        ]
+      },
+      "context": {
+        "status": "unresolved",
+        "claim_ids": [
+          "claim-3"
+        ]
+      },
+      "reason": "两者只质疑来源未写 2023，原人工说明谈的是 January 1 的资格恢复范围。年份缺口可追溯但不足以认证认对原说明；保留未裁定。"
+    },
+    {
+      "case_id": "5624",
+      "gold_index_1based": 1,
+      "issue": "将反对保释决定的发言归给检察官",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-12"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-12"
+        ]
+      },
+      "reason": "两者明确指出只有 public defender 被描述为试图改变法官决定。"
+    },
+    {
+      "case_id": "686",
+      "gold_index_1based": 1,
+      "issue": "增加特朗普参与批评及 disaster 措辞",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-13",
+          "claim-14"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-10",
+          "claim-12"
+        ]
+      },
+      "reason": "两条理由分别覆盖特朗普未出现与 disaster 未出现，合起来识别原复合问题。"
+    },
+    {
+      "case_id": "4630",
+      "gold_index_1based": 1,
+      "issue": "将戴安娜 1996 年离婚后佩表归为 Meghan",
+      "direct": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-8"
+        ]
+      },
+      "context": {
+        "status": "identified",
+        "claim_ids": [
+          "claim-8"
+        ]
+      },
+      "reason": "两者明确指出主体应是 Diana 而非 Meghan；警报短于整句也能认出误归因。"
+    }
+  ],
+  "source_predictions_text_sha256": {
+    "data/verification/ragtruth_v1/run01/predictions.jsonl": "949cccd9f1806deb1cf971c815900fc09c1aebfa7e63216757da7724d5bbb6f8",
+    "data/verification/context_v1/run01/predictions.jsonl": "309e6f879a1a78cc8a8d8f5b5ed3c78c677f9ba70408563307e89d165fb983fe"
+  }
+}

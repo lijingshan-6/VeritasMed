@@ -1,0 +1,17 @@
+{
+  "started_utc": "2026-09-24T15:34:49.778061+00:00",
+  "settings": {
+    "model": "DeepSeek-V4.1-Flash",
+    "base_url": "https://www.cun.ai/v1",
+    "reasoning_effort": "high",
+    "max_tokens": 32768,
+    "timeout_seconds": 240.0,
+    "streaming": true,
+    "sdk_max_retries": 1,
+    "transport": "openai_sdk_raw_stream"
+  },
+  "finished_utc": "2026-09-24T15:40:46.103976+00:00",
+  "attempted": 36,
+  "all_attempted": true,
+  "stop_reason": null
+}

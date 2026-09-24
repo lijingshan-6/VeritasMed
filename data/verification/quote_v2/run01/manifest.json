@@ -1,0 +1,930 @@
+{
+  "seed": "veritasmed-unique-quote-v2-2026-09-24",
+  "dataset_revision": "c103204b9ce28d6bbad859304bf30de72b8ed8fe",
+  "files": {
+    "response.jsonl": "e4c2e4ac24fff676d8984cc61c35d791612fadc58015335d97dd632375e18073",
+    "source_info.jsonl": "0dffc26ea9f3c1c3d7c7e8336b56ef1646e3cec876edffcca3c9c624d12d578b"
+  },
+  "official_split": "train",
+  "prior_manifest_sha256": "056ebf1566c7f7d429a7d24d6c5c339ce3ee726bb3b9c71f86afeb764305a479",
+  "excluded_source_ids": [
+    "11317",
+    "11323",
+    "11332",
+    "11348",
+    "11349",
+    "11353",
+    "11355",
+    "11356",
+    "11366",
+    "11370",
+    "11383",
+    "11384",
+    "11395",
+    "11400",
+    "11410",
+    "11415",
+    "11426",
+    "11768",
+    "11779",
+    "11791",
+    "11795",
+    "11808",
+    "11815",
+    "11817",
+    "11821",
+    "11826",
+    "11838",
+    "11839",
+    "11840",
+    "11842",
+    "11858",
+    "11860",
+    "11870",
+    "11873",
+    "11875",
+    "11877",
+    "11880",
+    "11883",
+    "11888",
+    "11900",
+    "11908",
+    "11910",
+    "11911",
+    "11922",
+    "11925",
+    "11932",
+    "11933",
+    "11945",
+    "11948",
+    "11962",
+    "11963",
+    "11979",
+    "11991",
+    "12008",
+    "12044",
+    "12059",
+    "12060",
+    "12066",
+    "12068",
+    "12073",
+    "12075",
+    "12093",
+    "12167",
+    "12177",
+    "12182",
+    "12183",
+    "12218",
+    "12228",
+    "12234",
+    "12236",
+    "12243",
+    "12252",
+    "12264",
+    "12269",
+    "12273",
+    "12287",
+    "12291",
+    "12300",
+    "12305",
+    "12307",
+    "12308",
+    "12309",
+    "12314",
+    "12334",
+    "12335",
+    "12342",
+    "12344",
+    "12358",
+    "12364",
+    "12367",
+    "12372",
+    "12391",
+    "12414",
+    "12422",
+    "12423",
+    "12455",
+    "13481",
+    "13487",
+    "13492",
+    "13495",
+    "13497",
+    "13499",
+    "13503",
+    "13518",
+    "13521",
+    "13522",
+    "13535",
+    "13544",
+    "13554",
+    "13558",
+    "13559",
+    "13569",
+    "13577",
+    "13583",
+    "13586",
+    "13593",
+    "13601",
+    "13603",
+    "13604",
+    "13613",
+    "13614",
+    "13619",
+    "13632",
+    "13633",
+    "13637",
+    "13669",
+    "13673",
+    "13688",
+    "13693",
+    "13706",
+    "13708",
+    "13709",
+    "13713",
+    "13714",
+    "13736",
+    "13737",
+    "13761",
+    "13775",
+    "13783",
+    "13785",
+    "13790",
+    "13799",
+    "13806",
+    "13814",
+    "13815",
+    "13816",
+    "13818",
+    "13823",
+    "13827",
+    "13829",
+    "13834",
+    "13836",
+    "13839",
+    "13840",
+    "13842",
+    "13843",
+    "13846",
+    "13848",
+    "13850",
+    "13857",
+    "13870",
+    "13872",
+    "13874",
+    "13875",
+    "13879",
+    "13881",
+    "13883",
+    "13887",
+    "13888",
+    "13891",
+    "13894",
+    "13895",
+    "13908",
+    "13911",
+    "13916",
+    "13917",
+    "13919",
+    "13925",
+    "13926",
+    "13933",
+    "13935",
+    "13941",
+    "13942",
+    "13947",
+    "13962",
+    "13968",
+    "13971",
+    "13972",
+    "13979",
+    "13988",
+    "13992",
+    "13994",
+    "13995",
+    "13996",
+    "14006",
+    "14008",
+    "14009",
+    "14017",
+    "14019",
+    "14020",
+    "14021",
+    "14022",
+    "14030",
+    "14031",
+    "14034",
+    "14035",
+    "14036",
+    "14037",
+    "14038",
+    "14039",
+    "14040",
+    "14043",
+    "14045",
+    "14051",
+    "14052",
+    "14053",
+    "14059",
+    "14060",
+    "14062",
+    "14063",
+    "14070",
+    "14072",
+    "14076",
+    "14077",
+    "14080",
+    "14081",
+    "14084",
+    "14086",
+    "14087",
+    "14090",
+    "14091",
+    "14113",
+    "14123",
+    "14135",
+    "14138",
+    "14169",
+    "14171",
+    "14194",
+    "14200",
+    "14205",
+    "14219",
+    "14223",
+    "14236",
+    "14249",
+    "14254",
+    "14268",
+    "14282",
+    "14289",
+    "14300",
+    "14318",
+    "14319",
+    "14323",
+    "14327",
+    "14334",
+    "14339",
+    "14347",
+    "14353",
+    "14355",
+    "14357",
+    "14360",
+    "14366",
+    "14373",
+    "14375",
+    "14390",
+    "14391",
+    "14392",
+    "14394",
+    "14396",
+    "14404",
+    "14405",
+    "14410",
+    "14418",
+    "14421",
+    "14433",
+    "14435",
+    "14445",
+    "14458",
+    "14468",
+    "14470",
+    "14496",
+    "14498",
+    "14504",
+    "14513",
+    "14515",
+    "14524",
+    "14530",
+    "14531",
+    "14532",
+    "14541",
+    "14542",
+    "14546",
+    "14548",
+    "14551",
+    "14552",
+    "14575",
+    "14580",
+    "14592",
+    "14603",
+    "14604",
+    "14605",
+    "14618",
+    "14625",
+    "14627",
+    "14680",
+    "14683",
+    "14685",
+    "14689",
+    "14690",
+    "14694",
+    "14710",
+    "14719",
+    "14726",
+    "14727",
+    "14737",
+    "14738",
+    "14745",
+    "14746",
+    "14752",
+    "14753",
+    "14756",
+    "14767",
+    "14769",
+    "14778",
+    "14785",
+    "14802",
+    "14825",
+    "14828",
+    "14830",
+    "14846",
+    "14860",
+    "14890",
+    "14894",
+    "14905",
+    "14907",
+    "14908",
+    "14918",
+    "14958",
+    "14972",
+    "14974",
+    "14990",
+    "14991",
+    "15018",
+    "15019",
+    "15020",
+    "15025",
+    "15031",
+    "15092",
+    "15097",
+    "15103",
+    "15107",
+    "15108",
+    "15111",
+    "15112",
+    "15120",
+    "15124",
+    "15130",
+    "15135",
+    "15138",
+    "15143",
+    "15147",
+    "15149",
+    "15158",
+    "15160",
+    "15164",
+    "15168",
+    "15175",
+    "15180",
+    "15206",
+    "15210",
+    "15238",
+    "15239",
+    "15243",
+    "15254",
+    "15262",
+    "15269",
+    "15275",
+    "15286",
+    "15288",
+    "15300",
+    "15301",
+    "15302",
+    "15308",
+    "15313",
+    "15315",
+    "15317",
+    "15320",
+    "15332",
+    "15338",
+    "15339",
+    "15369",
+    "15371",
+    "15373",
+    "15378",
+    "15379",
+    "15381",
+    "15383",
+    "15388",
+    "15390",
+    "15395",
+    "15397",
+    "15402",
+    "15420",
+    "15422",
+    "15438",
+    "15442",
+    "15450",
+    "15453",
+    "15454",
+    "15455",
+    "15466",
+    "15478",
+    "15497",
+    "15498",
+    "15501",
+    "15513",
+    "15525",
+    "15529",
+    "15533",
+    "15535",
+    "15539",
+    "15540",
+    "15542",
+    "15543",
+    "15546",
+    "15550",
+    "15551",
+    "15552",
+    "15572",
+    "15576",
+    "15577",
+    "15583",
+    "15596",
+    "15599",
+    "15601",
+    "15604",
+    "15613",
+    "15615",
+    "15616",
+    "15617",
+    "15623",
+    "15627",
+    "15628",
+    "15630",
+    "15634",
+    "15638",
+    "15642",
+    "15645",
+    "15648",
+    "15649",
+    "15651",
+    "15652",
+    "15661",
+    "15665",
+    "15667",
+    "15669",
+    "15670",
+    "15673",
+    "15683",
+    "15690",
+    "15691",
+    "15693",
+    "15694",
+    "15695",
+    "15696",
+    "15700",
+    "15702",
+    "15707",
+    "15708",
+    "15709",
+    "15710",
+    "15712",
+    "15713",
+    "15714",
+    "15715",
+    "15722",
+    "15732",
+    "15733",
+    "15735",
+    "15739",
+    "15740",
+    "15742",
+    "15744",
+    "15747",
+    "15750",
+    "15753",
+    "15759",
+    "15769",
+    "15778",
+    "15779",
+    "15780",
+    "15786",
+    "15789",
+    "15791",
+    "15800",
+    "15817",
+    "15819",
+    "15833",
+    "15836"
+  ],
+  "whole": [
+    {
+      "case_id": "1161",
+      "source_id": "15787",
+      "input_sha256": "89f43b0b8065cf40c5cd7554a96c153a9bdc6bca8febfce70035df7c37c885b8",
+      "source_sha256": "42de5af34b814a331c6af9430e073fb9aea75b5f3f335042a1c38248a44d6118",
+      "gold_spans": [
+        {
+          "start": 343,
+          "end": 353,
+          "text": "called 911",
+          "meta": "LOW INTRODUCTION OF NEW INFORMATION\n\"called 911\" was not mentioned in the business info",
+          "label_type": "Subtle Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "case_id": "5008",
+      "source_id": "13490",
+      "input_sha256": "d12b09b54e231101b736be732c310d883443ca87905e7695decaf26b5c051499",
+      "source_sha256": "601c9b2e4e4c4ad1100a052f14cf602d4afe513faed16277be720508ca6c835e",
+      "gold_spans": [
+        {
+          "start": 38,
+          "end": 103,
+          "text": "Tropical Storm Lidia is expected to turn westward towards Arizona",
+          "meta": "EVIDENT CONFLICT:\nAIGC:  Tropical Storm Lidia is expected to turn westward \"towards Arizona\"\nOriginal: Some continue moving it westward, and others are recurving the system back around \"toward Baja Mexico\".\n\n",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        },
+        {
+          "start": 483,
+          "end": 535,
+          "text": "the situation is likely to change over the next week",
+          "meta": "EVIDENT CONFLICT:\nAIGC: the situation is likely to change over the \"next week\"\nOriginal: however, this is \"a week\" out and is likely to change.\n",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "case_id": "3546",
+      "source_id": "12058",
+      "input_sha256": "cedfa679dcf03799b96d9e9873922f6be8b331e59dd98765238fcba582a54e76",
+      "source_sha256": "51d48b0ebba9fa25f90ea9e1fc4c90fe98bfd1f44363fe567cbabe2c79a857a4",
+      "gold_spans": []
+    },
+    {
+      "case_id": "4500",
+      "source_id": "13921",
+      "input_sha256": "67c484b16bccc19b759f5e61acdc3dc1e043d0f5cd403f27f5643e880799ac1f",
+      "source_sha256": "4ba7f65ec857f31a9880a90749a788e8b205645b9a1c18aa3c2ad14662f56bd4",
+      "gold_spans": []
+    },
+    {
+      "case_id": "2336",
+      "source_id": "11854",
+      "input_sha256": "44f1a0feac4aeef906a95bd81c8c468c89452034b3d0c4336e2e0cdd99368aaa",
+      "source_sha256": "4b82b966640b1bb87d3830ccf55a6a89f299c1b632b835b7958f70a5a3854e6d",
+      "gold_spans": [
+        {
+          "start": 130,
+          "end": 213,
+          "text": "The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly.",
+          "meta": "Original: It was Rosberg who is complaining about Hamilton driving too slow. \nGenerative: Suggests that it was Hamilton who complained that Rosberg is driving too slowly. ",
+          "label_type": "Evident Conflict",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "case_id": "5360",
+      "source_id": "13549",
+      "input_sha256": "01509cdf11bf54ed500d77f4f543d2f8f46d65a50f0502a028321d695b1ad1a0",
+      "source_sha256": "e7fb3d4fae01781347611db349819ffa0474ec6c09fc3b7e40098fcc680ba4b8",
+      "gold_spans": [
+        {
+          "start": 305,
+          "end": 367,
+          "text": "but Kyle warns them that Jack won't give up his control easily",
+          "meta": "HIGH INTRODUCTION OF NEW INFORMATION\nThis detail was not specified in the source content.",
+          "label_type": "Evident Baseless Info",
+          "implicit_true": false,
+          "due_to_null": false
+        }
+      ]
+    },
+    {
+      "case_id": "2915",
+      "source_id": "11951",
+      "input_sha256": "db3acef829549afcc731f53415a79b211e74c65629f70c8037051571b210c411",
+      "source_sha256": "60a7afc2097d676e67f7f93da5740d7ade3c1e2e3314c17d27d4f080a5adc5ab",
+      "gold_spans": []
+    },
+    {
+      "case_id": "2701",
+      "source_id": "11916",
+      "input_sha256": "7d0e76f406e1571ac04fe178e7f8f9986febd70f1c537cdaafa39f87c1ee6bc9",
+      "source_sha256": "9238c46e3ae17aa333f4d901fccdb49ae388928dd8642300536e28b880294def",
+      "gold_spans": []
+    }
+  ],
+  "fixed": [
+    {
+      "id": "1161",
+      "source_id": "15787",
+      "target": "called 911",
+      "expected_binary": "non_support",
+      "label_origin": "First original public error span in dataset order; full original answer retained as context. Binary mapping only.",
+      "input_sha256": "89f43b0b8065cf40c5cd7554a96c153a9bdc6bca8febfce70035df7c37c885b8"
+    },
+    {
+      "id": "5008",
+      "source_id": "13490",
+      "target": "Tropical Storm Lidia is expected to turn westward towards Arizona",
+      "expected_binary": "non_support",
+      "label_origin": "First original public error span in dataset order; full original answer retained as context. Binary mapping only.",
+      "input_sha256": "d12b09b54e231101b736be732c310d883443ca87905e7695decaf26b5c051499"
+    },
+    {
+      "id": "3546",
+      "source_id": "12058",
+      "target": "Late one night on Facebook, a girl with cystic fibrosis messaged a boy with cystic fibrosis, and both their lives were changed forever.",
+      "expected_binary": "supported",
+      "label_origin": "First 40..320 character unique source sentence/line, copied verbatim as an authored positive control. Not a human-labelled natural claim.",
+      "input_sha256": "8c70968647474dc20d1c174962e0c789dacfcd25ce669b853568bbcfedc48cbf"
+    },
+    {
+      "id": "4500",
+      "source_id": "13921",
+      "target": "Tigers Football: Win 27-0, Close Season 5-5",
+      "expected_binary": "supported",
+      "label_origin": "First 40..320 character unique source sentence/line, copied verbatim as an authored positive control. Not a human-labelled natural claim.",
+      "input_sha256": "0ba66257c1fd27605507b3027a30365c7d7191b3148f4212c41a46b3764b5156"
+    },
+    {
+      "id": "2336",
+      "source_id": "11854",
+      "target": "The Mercedes driver claimed that Rosberg had ruined his race by driving too slowly.",
+      "expected_binary": "non_support",
+      "label_origin": "First original public error span in dataset order; full original answer retained as context. Binary mapping only.",
+      "input_sha256": "44f1a0feac4aeef906a95bd81c8c468c89452034b3d0c4336e2e0cdd99368aaa"
+    },
+    {
+      "id": "5360",
+      "source_id": "13549",
+      "target": "but Kyle warns them that Jack won't give up his control easily",
+      "expected_binary": "non_support",
+      "label_origin": "First original public error span in dataset order; full original answer retained as context. Binary mapping only.",
+      "input_sha256": "01509cdf11bf54ed500d77f4f543d2f8f46d65a50f0502a028321d695b1ad1a0"
+    },
+    {
+      "id": "2915",
+      "source_id": "11951",
+      "target": "In July of 2013, the oldest of Jesus relics stories rose again when Turkish archaeologists discovered a stone chest in a 1,350-year-old church that appeared to contain a piece of Jesus' cross.",
+      "expected_binary": "supported",
+      "label_origin": "First 40..320 character unique source sentence/line, copied verbatim as an authored positive control. Not a human-labelled natural claim.",
+      "input_sha256": "f35c4a65465ed9dae1d3e0c06736b63117386dc981e65600c43710b22fc540a9"
+    },
+    {
+      "id": "2701",
+      "source_id": "11916",
+      "target": "Suzanne Crough, the child actress who portrayed youngest daughter Tracy on the '70s musical sitcom \"The Partridge Family,\" has died.",
+      "expected_binary": "supported",
+      "label_origin": "First 40..320 character unique source sentence/line, copied verbatim as an authored positive control. Not a human-labelled natural claim.",
+      "input_sha256": "caa89e3507a865f9e2d8a04f713bb029bbd9ef8f233a9036b16979fdd147e6b2"
+    }
+  ],
+  "repeat_ids": [
+    "1161",
+    "3546"
+  ],
+  "reserved_official_test": [
+    {
+      "source_id": "15700",
+      "response_id": "646"
+    },
+    {
+      "source_id": "15634",
+      "response_id": "250"
+    },
+    {
+      "source_id": "11877",
+      "response_id": "2467"
+    },
+    {
+      "source_id": "11911",
+      "response_id": "2670"
+    },
+    {
+      "source_id": "11870",
+      "response_id": "2425"
+    },
+    {
+      "source_id": "15601",
+      "response_id": "55"
+    },
+    {
+      "source_id": "15617",
+      "response_id": "146"
+    },
+    {
+      "source_id": "15735",
+      "response_id": "855"
+    },
+    {
+      "source_id": "13972",
+      "response_id": "4805"
+    },
+    {
+      "source_id": "15651",
+      "response_id": "352"
+    },
+    {
+      "source_id": "15819",
+      "response_id": "1354"
+    },
+    {
+      "source_id": "15661",
+      "response_id": "413"
+    },
+    {
+      "source_id": "15740",
+      "response_id": "887"
+    },
+    {
+      "source_id": "13887",
+      "response_id": "4301"
+    },
+    {
+      "source_id": "15713",
+      "response_id": "723"
+    },
+    {
+      "source_id": "15769",
+      "response_id": "1052"
+    },
+    {
+      "source_id": "11873",
+      "response_id": "2442"
+    },
+    {
+      "source_id": "15733",
+      "response_id": "842"
+    },
+    {
+      "source_id": "13815",
+      "response_id": "3869"
+    },
+    {
+      "source_id": "11395",
+      "response_id": "1700"
+    },
+    {
+      "source_id": "13492",
+      "response_id": "5017"
+    },
+    {
+      "source_id": "13842",
+      "response_id": "4030"
+    },
+    {
+      "source_id": "15800",
+      "response_id": "1238"
+    },
+    {
+      "source_id": "15694",
+      "response_id": "606"
+    },
+    {
+      "source_id": "11908",
+      "response_id": "2652"
+    },
+    {
+      "source_id": "15759",
+      "response_id": "997"
+    },
+    {
+      "source_id": "15778",
+      "response_id": "1109"
+    },
+    {
+      "source_id": "15702",
+      "response_id": "657"
+    },
+    {
+      "source_id": "11356",
+      "response_id": "1606"
+    },
+    {
+      "source_id": "13872",
+      "response_id": "4210"
+    },
+    {
+      "source_id": "13870",
+      "response_id": "4199"
+    },
+    {
+      "source_id": "13968",
+      "response_id": "4779"
+    },
+    {
+      "source_id": "13925",
+      "response_id": "4525"
+    },
+    {
+      "source_id": "15604",
+      "response_id": "71"
+    },
+    {
+      "source_id": "15645",
+      "response_id": "312"
+    },
+    {
+      "source_id": "13495",
+      "response_id": "5038"
+    },
+    {
+      "source_id": "11858",
+      "response_id": "2362"
+    },
+    {
+      "source_id": "15693",
+      "response_id": "600"
+    },
+    {
+      "source_id": "15667",
+      "response_id": "448"
+    },
+    {
+      "source_id": "11945",
+      "response_id": "2876"
+    },
+    {
+      "source_id": "11875",
+      "response_id": "2456"
+    },
+    {
+      "source_id": "13894",
+      "response_id": "4340"
+    },
+    {
+      "source_id": "11317",
+      "response_id": "1476"
+    },
+    {
+      "source_id": "13840",
+      "response_id": "4015"
+    },
+    {
+      "source_id": "11355",
+      "response_id": "1597"
+    },
+    {
+      "source_id": "15789",
+      "response_id": "1171"
+    },
+    {
+      "source_id": "11979",
+      "response_id": "3080"
+    },
+    {
+      "source_id": "15638",
+      "response_id": "275"
+    },
+    {
+      "source_id": "15696",
+      "response_id": "622"
+    },
+    {
+      "source_id": "15648",
+      "response_id": "333"
+    },
+    {
+      "source_id": "15627",
+      "response_id": "207"
+    },
+    {
+      "source_id": "13848",
+      "response_id": "4066"
+    },
+    {
+      "source_id": "15747",
+      "response_id": "927"
+    },
+    {
+      "source_id": "11991",
+      "response_id": "3148"
+    },
+    {
+      "source_id": "13806",
+      "response_id": "3810"
+    },
+    {
+      "source_id": "11948",
+      "response_id": "2892"
+    },
+    {
+      "source_id": "12060",
+      "response_id": "3559"
+    },
+    {
+      "source_id": "13881",
+      "response_id": "4265"
+    },
+    {
+      "source_id": "11323",
+      "response_id": "1516"
+    },
+    {
+      "source_id": "13843",
+      "response_id": "4036"
+    }
+  ],
+  "policy": "8 new development sources; 4+4 balanced, public nonmedical. All official test IDs and exact source duplicates excluded. No clinical, natural prevalence or independent semantic accuracy claim."
+}

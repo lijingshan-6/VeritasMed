@@ -1,13 +1,16 @@
 import { api } from './client'
 
-export type Strategy = 'direct' | 'split' | 'context'
+export type Strategy = 'direct' | 'split' | 'context' | 'quote_v2'
 export type Span = { start: number; end: number; text: string }
+export type QuoteBinding = { status: string; match_count: number; span: Span | null; candidates: Span[]; candidates_truncated?: boolean }
 export type Source = { id: string; title: string; text: string }
 export type AuditInput = { answer: string; sources: Source[]; strategy: Strategy }
 export type AuditClaim = {
   id: string; quote: string; relation: 'supported' | 'contradicted' | 'insufficient' | null
   status: string; explanation: string; answer_span: Span | null
   context_span?: Span | null
+  context_spans?: Span[]
+  bindings?: { answer: QuoteBinding; evidence: (QuoteBinding & { source_id: string; quote: string })[] }
   evidence: (Span & { source_id: string; source_sha256: string })[]
 }
 export type AuditRecord = {
@@ -15,7 +18,7 @@ export type AuditRecord = {
   audit: {
     id: string; status: string; created_utc: string; strategy: Strategy; elapsed_seconds: number
     claims: AuditClaim[]; summary: Record<string, number>; claims_at_cap: boolean
-    meta_text?: { id: string; quote: string; kind: string; status: string; explanation: string; answer_span: Span | null }[]
+    meta_text?: { id: string; quote: string; kind: string; status: string; explanation: string; answer_span: Span | null; binding?: QuoteBinding }[]
     presentation_counts?: { full_answer_whitespace_tokens: number; rule: string }
     answer_sha256: string; source_hashes: Record<string, string>
     checked_coverage: { covered_nonspace_characters: number; total_nonspace_characters: number; uncovered: Span[] }

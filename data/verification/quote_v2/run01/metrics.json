@@ -1,0 +1,492 @@
+{
+  "whole": {
+    "direct": {
+      "total_answers": 8,
+      "counts": {
+        "gold_spans": 5,
+        "span_hit_any": 3,
+        "span_hit_half": 3,
+        "extracted_gold_spans": 5,
+        "gold_characters": 229,
+        "predicted_characters": 547,
+        "overlap_characters": 127,
+        "labelled_error_answers": 4,
+        "unmarked_answers": 4,
+        "detected_error_answers": 3,
+        "false_positive_answers": 3,
+        "implicit_true_spans": 0,
+        "completed_answers": 8,
+        "logical_calls": 8,
+        "failed_calls": 0,
+        "calls_with_usage": 8
+      },
+      "answer_error_recall": 0.75,
+      "answer_error_precision": 0.5,
+      "unmarked_answer_false_positive_rate": 0.75,
+      "gold_span_recall_any_overlap": 0.6,
+      "gold_span_recall_half_overlap": 0.6,
+      "gold_span_extraction_coverage": 1.0,
+      "character_precision": 0.23217550274223034,
+      "character_recall": 0.5545851528384279,
+      "character_f1": 0.327319587628866,
+      "reported_tokens": {
+        "input_tokens": 10786,
+        "output_tokens": 104556,
+        "total_tokens": 115342
+      },
+      "response_models": {
+        "deepseek-v4.1-flash": 8
+      },
+      "per_answer": [
+        {
+          "response_id": "1161",
+          "source_id": "15787",
+          "status": "ok",
+          "gold_spans": 1,
+          "hit_any": 1,
+          "hit_half": 1,
+          "extracted_hit_any": 1,
+          "flagged_claims": 1,
+          "gold_characters": 9,
+          "predicted_characters": 12,
+          "overlap_characters": 9
+        },
+        {
+          "response_id": "5008",
+          "source_id": "13490",
+          "status": "ok",
+          "gold_spans": 2,
+          "hit_any": 0,
+          "hit_half": 0,
+          "extracted_hit_any": 2,
+          "flagged_claims": 0,
+          "gold_characters": 99,
+          "predicted_characters": 0,
+          "overlap_characters": 0
+        },
+        {
+          "response_id": "3546",
+          "source_id": "12058",
+          "status": "ok",
+          "gold_spans": 0,
+          "hit_any": 0,
+          "hit_half": 0,
+          "extracted_hit_any": 0,
+          "flagged_claims": 1,
+          "gold_characters": 0,
+          "predicted_characters": 7,
+          "overlap_characters": 0
+        },
+        {
+          "response_id": "4500",
+          "source_id": "13921",
+          "status": "ok",
+          "gold_spans": 0,
+          "hit_any": 0,
+          "hit_half": 0,
+          "extracted_hit_any": 0,
+          "flagged_claims": 1,
+          "gold_characters": 0,
+          "predicted_characters": 68,
+          "overlap_characters": 0
+        },
+        {
+          "response_id": "2336",
+          "source_id": "11854",
+          "status": "ok",
+          "gold_spans": 1,
+          "hit_any": 1,
+          "hit_half": 1,
+          "extracted_hit_any": 1,
+          "flagged_claims": 2,
+          "gold_characters": 70,
+          "predicted_characters": 121,
+          "overlap_characters": 70
+        },
+        {
+          "response_id": "5360",
+          "source_id": "13549",
+          "status": "ok",
+          "gold_spans": 1,
+          "hit_any": 1,
+          "hit_half": 1,
+          "extracted_hit_any": 1,
+          "flagged_claims": 2,
+          "gold_characters": 51,
+          "predicted_characters": 56,
+          "overlap_characters": 48
+        },
+        {
+          "response_id": "2915",
+          "source_id": "11951",
+          "status": "ok",
+          "gold_spans": 0,
+          "hit_any": 0,
+          "hit_half": 0,
+          "extracted_hit_any": 0,
+          "flagged_claims": 5,
+          "gold_characters": 0,
+          "predicted_characters": 283,
+          "overlap_characters": 0
+        },
+        {
+          "response_id": "2701",
+          "source_id": "11916",
+          "status": "ok",
+          "gold_spans": 0,
+          "hit_any": 0,
+          "hit_half": 0,
+          "extracted_hit_any": 0,
+          "flagged_claims": 0,
+          "gold_characters": 0,
+          "predicted_characters": 0,
+          "overlap_characters": 0
+        }
+      ],
+      "median_answer_seconds": 46.3055,
+      "summed_answer_seconds": 403.582,
+      "interpretation": "Public nonmedical development answers. Span overlap measures location, not semantic completeness; broad claims can flag extra characters. No three-class gold accuracy.",
+      "meta_routing": {
+        "routed_ranges": 0,
+        "gold_characters_routed_as_meta": 0,
+        "gold_spans_routed_as_meta": 0,
+        "invalid_meta_ranges": 0
+      },
+      "labelled_error_answers_with_located_error": 3
+    },
+    "quote_v2": {
+      "total_answers": 8,
+      "counts": {
+        "gold_spans": 5,
+        "span_hit_any": 3,
+        "span_hit_half": 3,
+        "extracted_gold_spans": 5,
+        "gold_characters": 229,
+        "predicted_characters": 673,
+        "overlap_characters": 127,
+        "labelled_error_answers": 4,
+        "unmarked_answers": 4,
+        "detected_error_answers": 3,
+        "false_positive_answers": 3,
+        "implicit_true_spans": 0,
+        "completed_answers": 8,
+        "logical_calls": 8,
+        "failed_calls": 0,
+        "calls_with_usage": 8
+      },
+      "answer_error_recall": 0.75,
+      "answer_error_precision": 0.5,
+      "unmarked_answer_false_positive_rate": 0.75,
+      "gold_span_recall_any_overlap": 0.6,
+      "gold_span_recall_half_overlap": 0.6,
+      "gold_span_extraction_coverage": 1.0,
+      "character_precision": 0.1887072808320951,
+      "character_recall": 0.5545851528384279,
+      "character_f1": 0.28159645232815966,
+      "reported_tokens": {
+        "input_tokens": 11698,
+        "output_tokens": 88503,
+        "total_tokens": 100201
+      },
+      "response_models": {
+        "deepseek-v4.1-flash": 8
+      },
+      "per_answer": [
+        {
+          "response_id": "1161",
+          "source_id": "15787",
+          "status": "ok",
+          "gold_spans": 1,
+          "hit_any": 1,
+          "hit_half": 1,
+          "extracted_hit_any": 1,
+          "flagged_claims": 1,
+          "gold_characters": 9,
+          "predicted_characters": 12,
+          "overlap_characters": 9
+        },
+        {
+          "response_id": "5008",
+          "source_id": "13490",
+          "status": "ok",
+          "gold_spans": 2,
+          "hit_any": 0,
+          "hit_half": 0,
+          "extracted_hit_any": 2,
+          "flagged_claims": 0,
+          "gold_characters": 99,
+          "predicted_characters": 0,
+          "overlap_characters": 0
+        },
+        {
+          "response_id": "3546",
+          "source_id": "12058",
+          "status": "ok",
+          "gold_spans": 0,
+          "hit_any": 0,
+          "hit_half": 0,
+          "extracted_hit_any": 0,
+          "flagged_claims": 2,
+          "gold_characters": 0,
+          "predicted_characters": 73,
+          "overlap_characters": 0
+        },
+        {
+          "response_id": "4500",
+          "source_id": "13921",
+          "status": "ok",
+          "gold_spans": 0,
+          "hit_any": 0,
+          "hit_half": 0,
+          "extracted_hit_any": 0,
+          "flagged_claims": 2,
+          "gold_characters": 0,
+          "predicted_characters": 123,
+          "overlap_characters": 0
+        },
+        {
+          "response_id": "2336",
+          "source_id": "11854",
+          "status": "ok",
+          "gold_spans": 1,
+          "hit_any": 1,
+          "hit_half": 1,
+          "extracted_hit_any": 1,
+          "flagged_claims": 2,
+          "gold_characters": 70,
+          "predicted_characters": 122,
+          "overlap_characters": 70
+        },
+        {
+          "response_id": "5360",
+          "source_id": "13549",
+          "status": "ok",
+          "gold_spans": 1,
+          "hit_any": 1,
+          "hit_half": 1,
+          "extracted_hit_any": 1,
+          "flagged_claims": 2,
+          "gold_characters": 51,
+          "predicted_characters": 92,
+          "overlap_characters": 48
+        },
+        {
+          "response_id": "2915",
+          "source_id": "11951",
+          "status": "ok",
+          "gold_spans": 0,
+          "hit_any": 0,
+          "hit_half": 0,
+          "extracted_hit_any": 0,
+          "flagged_claims": 4,
+          "gold_characters": 0,
+          "predicted_characters": 251,
+          "overlap_characters": 0
+        },
+        {
+          "response_id": "2701",
+          "source_id": "11916",
+          "status": "ok",
+          "gold_spans": 0,
+          "hit_any": 0,
+          "hit_half": 0,
+          "extracted_hit_any": 0,
+          "flagged_claims": 0,
+          "gold_characters": 0,
+          "predicted_characters": 0,
+          "overlap_characters": 0
+        }
+      ],
+      "median_answer_seconds": 42.6565,
+      "summed_answer_seconds": 352.798,
+      "interpretation": "Public nonmedical development answers. Span overlap measures location, not semantic completeness; broad claims can flag extra characters. No three-class gold accuracy.",
+      "meta_routing": {
+        "routed_ranges": 2,
+        "gold_characters_routed_as_meta": 0,
+        "gold_spans_routed_as_meta": 0,
+        "invalid_meta_ranges": 0
+      },
+      "labelled_error_answers_with_located_error": 3
+    }
+  },
+  "fixed": {
+    "direct": {
+      "counts": {
+        "total": 8,
+        "complete": 8,
+        "binary_agrees": 8,
+        "non_support": 4,
+        "non_support_accepted": 0,
+        "supported_control_flagged": 0
+      },
+      "cases": [
+        {
+          "case_id": "1161",
+          "expected_binary": "non_support",
+          "predicted_relation": "insufficient",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "5008",
+          "expected_binary": "non_support",
+          "predicted_relation": "contradicted",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "3546",
+          "expected_binary": "supported",
+          "predicted_relation": "supported",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "4500",
+          "expected_binary": "supported",
+          "predicted_relation": "supported",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "2336",
+          "expected_binary": "non_support",
+          "predicted_relation": "contradicted",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "5360",
+          "expected_binary": "non_support",
+          "predicted_relation": "insufficient",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "2915",
+          "expected_binary": "supported",
+          "predicted_relation": "supported",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "2701",
+          "expected_binary": "supported",
+          "predicted_relation": "supported",
+          "status": "ok",
+          "agrees": true
+        }
+      ],
+      "meaning": "Only binary public-error/copy-control agreement; no semantic rationale or three-class score."
+    },
+    "quote_v2": {
+      "counts": {
+        "total": 8,
+        "complete": 8,
+        "binary_agrees": 8,
+        "non_support": 4,
+        "non_support_accepted": 0,
+        "supported_control_flagged": 0
+      },
+      "cases": [
+        {
+          "case_id": "1161",
+          "expected_binary": "non_support",
+          "predicted_relation": "insufficient",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "5008",
+          "expected_binary": "non_support",
+          "predicted_relation": "insufficient",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "3546",
+          "expected_binary": "supported",
+          "predicted_relation": "supported",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "4500",
+          "expected_binary": "supported",
+          "predicted_relation": "supported",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "2336",
+          "expected_binary": "non_support",
+          "predicted_relation": "contradicted",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "5360",
+          "expected_binary": "non_support",
+          "predicted_relation": "insufficient",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "2915",
+          "expected_binary": "supported",
+          "predicted_relation": "supported",
+          "status": "ok",
+          "agrees": true
+        },
+        {
+          "case_id": "2701",
+          "expected_binary": "supported",
+          "predicted_relation": "supported",
+          "status": "ok",
+          "agrees": true
+        }
+      ],
+      "meaning": "Only binary public-error/copy-control agreement; no semantic rationale or three-class score."
+    }
+  },
+  "repeat": [
+    {
+      "task": "whole",
+      "case_id": "1161",
+      "first_status": "ok",
+      "repeat_status": "ok",
+      "exact_claim_signature_agrees": false
+    },
+    {
+      "task": "whole",
+      "case_id": "3546",
+      "first_status": "ok",
+      "repeat_status": "ok",
+      "exact_claim_signature_agrees": false
+    },
+    {
+      "task": "fixed",
+      "case_id": "1161",
+      "first_status": "ok",
+      "repeat_status": "ok",
+      "exact_claim_signature_agrees": true
+    },
+    {
+      "task": "fixed",
+      "case_id": "3546",
+      "first_status": "ok",
+      "repeat_status": "ok",
+      "exact_claim_signature_agrees": true
+    }
+  ],
+  "execution": {
+    "attempted": 36,
+    "planned": 36,
+    "complete": 36,
+    "calls_with_usage": 36,
+    "reported_tokens": 294320,
+    "reported_models": {
+      "deepseek-v4.1-flash": 36
+    }
+  }
+}

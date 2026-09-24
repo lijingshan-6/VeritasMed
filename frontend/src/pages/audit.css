@@ -57,6 +57,8 @@
 .audit-context { padding: 12px; border-left: 2px solid var(--rule); background: var(--panel-2); margin: 12px 0; }
 .audit-context blockquote { margin: 8px 0; white-space: pre-wrap; line-height: 1.5; }
 .audit-context small { color: var(--muted); }
+.audit-binding { margin: 8px 0; overflow-wrap: anywhere; font-size: 12px; }
+.audit-verdict.ambiguous_reference, .audit-text-link.ambiguous_reference { color: var(--muted); text-decoration-style: dotted; }
 .audit-meta { margin-top: 28px; }
 .audit-meta h2 { font: 24px var(--serif); }
 .audit-meta .audit-claim { margin-top: 8px; }

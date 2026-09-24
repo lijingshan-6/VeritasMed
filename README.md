@@ -8,6 +8,8 @@ VeritasMed is a React + FastAPI + LangGraph research showcase. It retrieves lite
 
 The selected model is **Flash for every Agent role**, currently `DeepSeek-V4.1-Flash` through the configured compatible gateway. There is no automatic Pro fallback. The [v0.4 effect report](docs/agent-v0.4-flash-report.md) records actual answers, failures, evaluation status and source-based assessments. Model self-checks and evidence labels are not accuracy scores.
 
+**v0.5 development:** [technical route](docs/verification-roadmap.md) · [implementation plan](docs/plans/v0.5-text-verification.md). The next milestone measures claim-level textual support against public annotations before connecting an audit panel to answer generation. Clinical evidence grading and cross-study comparability are separate research tasks.
+
 ![Guided example: partial evidence coverage and source-linked answer](docs/assets/v04-evidence-coverage.png)
 
 *Actual interface in Guided mode. The answer and animated steps are authored examples, not live inference or benchmark results.*

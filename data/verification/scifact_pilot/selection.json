@@ -1,0 +1,398 @@
+{
+  "dataset": "SciFact",
+  "purpose": "development pilot, not held-out evaluation",
+  "archive_url": "https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz",
+  "archive_sha256": "11c621288d41ac144d29b13b0f8503b3820b7d6e8b1f6ff24dff335c196d76be",
+  "file_sha256": {
+    "corpus.jsonl": "b8d6c89624cb2ed74dee8938effc4f5d8bd2086887880af8110d64be4ceade62",
+    "claims_train.jsonl": "f4c8fa82d8bd0653a9cc8d61a6ea48c25eacea64e90af5dbf390ebb1b74372f0",
+    "claims_dev.jsonl": "86f0435d08fdb65d1aa41d1472684f57e6e71930626497bdf4d7a9ec1a632217"
+  },
+  "selection": {
+    "seed": "veritasmed-v0.5-scifact-pilot-2026-09-24",
+    "per_label": 10,
+    "train_pairs": 919,
+    "eligible_pairs_after_dev_document_exclusion": 609,
+    "dev_document_count": 283,
+    "selected_counts": {
+      "contradicted": 10,
+      "insufficient": 10,
+      "supported": 10
+    },
+    "rule": "SHA256 sorted; official train only; all related docs disjoint from dev and other selected claims"
+  },
+  "cases": [
+    {
+      "case_id": "scifact-train-1373-21003930",
+      "claim_id": 1373,
+      "document_id": "21003930",
+      "relation": "contradicted",
+      "input_sha256": "b14953838b6c90abaf0dd0ee811075938b13525620c090bc9920c01a06a8c823",
+      "rationale_sets": [
+        [
+          10
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          15
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-877-313394",
+      "claim_id": 877,
+      "document_id": "313394",
+      "relation": "insufficient",
+      "input_sha256": "4b382a82e6f7e0c06a706b5b4ffbbfe94031781eebbcc074b222e9334a8ca491",
+      "rationale_sets": []
+    },
+    {
+      "case_id": "scifact-train-752-19800147",
+      "claim_id": 752,
+      "document_id": "19800147",
+      "relation": "supported",
+      "input_sha256": "24594ad2322551f95329f79bdbd34d3717242ef28e8872d09dc8e5a1ab34c01d",
+      "rationale_sets": [
+        [
+          4
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-938-26231129",
+      "claim_id": 938,
+      "document_id": "26231129",
+      "relation": "insufficient",
+      "input_sha256": "21ec2277708a09f64270d0c661f6f0b2c7ad3a4ae7ac8f46dbd3013c815307ef",
+      "rationale_sets": []
+    },
+    {
+      "case_id": "scifact-train-1258-12040627",
+      "claim_id": 1258,
+      "document_id": "12040627",
+      "relation": "supported",
+      "input_sha256": "c26a180a3617f9310243c69861e49f7df0d1263fa329876233733e30282b5866",
+      "rationale_sets": [
+        [
+          7
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-1171-18956141",
+      "claim_id": 1171,
+      "document_id": "18956141",
+      "relation": "supported",
+      "input_sha256": "e81108b4fdddb18aa54e623c5f1813e6f2614e4eabfb83552e00d59b2a583745",
+      "rationale_sets": [
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-330-9505448",
+      "claim_id": 330,
+      "document_id": "9505448",
+      "relation": "contradicted",
+      "input_sha256": "922fa70fad1e7e2b6da92f8b463a63e8afc9fdfb4b307394a32fef6bcc0c2cc3",
+      "rationale_sets": [
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-121-31460499",
+      "claim_id": 121,
+      "document_id": "31460499",
+      "relation": "supported",
+      "input_sha256": "1efcc5492cecdba0cea60ea0945ca7910d154e8e144de769feabe3d46c5a2f3c",
+      "rationale_sets": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-337-2097256",
+      "claim_id": 337,
+      "document_id": "2097256",
+      "relation": "insufficient",
+      "input_sha256": "b6c29853681a6e8fde2b01317fa0c79e92d7e93014fc29013119221c2019f84d",
+      "rationale_sets": []
+    },
+    {
+      "case_id": "scifact-train-1219-9393969",
+      "claim_id": 1219,
+      "document_id": "9393969",
+      "relation": "insufficient",
+      "input_sha256": "8769b1495f06105ce94f2e201fc4f33631c98f7e7ae8afa9e1de40a98b5bde28",
+      "rationale_sets": []
+    },
+    {
+      "case_id": "scifact-train-306-7821634",
+      "claim_id": 306,
+      "document_id": "7821634",
+      "relation": "contradicted",
+      "input_sha256": "227b4ce1f5a30e192ec2639d295d2dd4b5892b668e43fffa9f2a6ce60f128ea1",
+      "rationale_sets": [
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-1333-1649738",
+      "claim_id": 1333,
+      "document_id": "1649738",
+      "relation": "supported",
+      "input_sha256": "5df66e011a8cf5b6b80d2d3cb12fdd794fb2305328fea3d68f4bf32b2312c7a9",
+      "rationale_sets": [
+        [
+          1
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-738-33912020",
+      "claim_id": 738,
+      "document_id": "33912020",
+      "relation": "supported",
+      "input_sha256": "59903d64817b76f9f1d98b69c20abc4be4e8e33027f19b063fab4cad2ec96152",
+      "rationale_sets": [
+        [
+          2,
+          3,
+          5
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-481-14706752",
+      "claim_id": 481,
+      "document_id": "14706752",
+      "relation": "insufficient",
+      "input_sha256": "548774be1406fc992ff14b54e1dfaa03be0b8aecaae8c240d75f71e8a5e3e5b0",
+      "rationale_sets": []
+    },
+    {
+      "case_id": "scifact-train-1309-18231807",
+      "claim_id": 1309,
+      "document_id": "18231807",
+      "relation": "insufficient",
+      "input_sha256": "f2788eeb390df0fcdd282220671fbc02283caeeeecd284189940c3b760c69ea2",
+      "rationale_sets": []
+    },
+    {
+      "case_id": "scifact-train-1248-7209559",
+      "claim_id": 1248,
+      "document_id": "7209559",
+      "relation": "supported",
+      "input_sha256": "e5cf78b1c8b4a49218bb59ae24d809dadaeedc91df2f6c624f2ff142b8b69619",
+      "rationale_sets": [
+        [
+          0
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-969-19356271",
+      "claim_id": 969,
+      "document_id": "19356271",
+      "relation": "insufficient",
+      "input_sha256": "b760dc513fb379ad5fd60ebdd19385566d6e73a4c43249316925ebfc06469556",
+      "rationale_sets": []
+    },
+    {
+      "case_id": "scifact-train-917-34071621",
+      "claim_id": 917,
+      "document_id": "34071621",
+      "relation": "supported",
+      "input_sha256": "7dbd6a9d88fb93d38ebaeb24a3f868585171ca1436ec1a6ab27a41f5c9273f9a",
+      "rationale_sets": [
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-226-6944800",
+      "claim_id": 226,
+      "document_id": "6944800",
+      "relation": "insufficient",
+      "input_sha256": "af47a99ac20c1f8ee4f4f32ece53f50da79448fd973543de31d099e0f0201e6b",
+      "rationale_sets": []
+    },
+    {
+      "case_id": "scifact-train-375-1522647",
+      "claim_id": 375,
+      "document_id": "1522647",
+      "relation": "supported",
+      "input_sha256": "b70971ef80691794441ac5e665f0f1a323825edae0eb806c026cf3d262debfba",
+      "rationale_sets": [
+        [
+          5
+        ],
+        [
+          7
+        ],
+        [
+          9
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-954-3355397",
+      "claim_id": 954,
+      "document_id": "3355397",
+      "relation": "supported",
+      "input_sha256": "ecef60ac11c69ad6a3241d9398c904bcbaaf452fcf6fe5a6b224f487bb52a4bd",
+      "rationale_sets": [
+        [
+          12
+        ],
+        [
+          16
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-1027-3113630",
+      "claim_id": 1027,
+      "document_id": "3113630",
+      "relation": "insufficient",
+      "input_sha256": "f75958c0f67d4acb1865f3aed80b7a1beb07ff30771517dfad119d18f5e8de59",
+      "rationale_sets": []
+    },
+    {
+      "case_id": "scifact-train-40-13497630",
+      "claim_id": 40,
+      "document_id": "13497630",
+      "relation": "contradicted",
+      "input_sha256": "1dfcfd4f39bcc28a9a023a3c3a418091a382e32964e09e0d259c6259375b9b0e",
+      "rationale_sets": [
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          11
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-149-6227220",
+      "claim_id": 149,
+      "document_id": "6227220",
+      "relation": "contradicted",
+      "input_sha256": "ec225b2618b57b5ede6c88290838eb6eaa62d6e97a1b64333a5cfc8e1acf67ec",
+      "rationale_sets": [
+        [
+          2
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-1046-16712164",
+      "claim_id": 1046,
+      "document_id": "16712164",
+      "relation": "insufficient",
+      "input_sha256": "e38862acdc174df5e18b58aac3c21099c2a49b3d3c52655ef686581d333f434d",
+      "rationale_sets": []
+    },
+    {
+      "case_id": "scifact-train-635-1686997",
+      "claim_id": 635,
+      "document_id": "1686997",
+      "relation": "contradicted",
+      "input_sha256": "ac53f33e7cba007b82bc7f478af9f5362c325cd218684173b9948ac615ab4c00",
+      "rationale_sets": [
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-242-2212067",
+      "claim_id": 242,
+      "document_id": "2212067",
+      "relation": "contradicted",
+      "input_sha256": "3efa78de8f8a8a237e4ac97d956c5b51dd0be199c5d1e9f5cbfda01e1190959b",
+      "rationale_sets": [
+        [
+          3
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-592-14682243",
+      "claim_id": 592,
+      "document_id": "14682243",
+      "relation": "contradicted",
+      "input_sha256": "10d96530044c72265c3c1ea66c37f97aa34ffc2bbdd8f6d935e5dddc5ce8e4fe",
+      "rationale_sets": [
+        [
+          8
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-595-4824840",
+      "claim_id": 595,
+      "document_id": "4824840",
+      "relation": "contradicted",
+      "input_sha256": "14afbd73ee04a3c53cabaf619073a8c27ca00e428de85a8bdd29a19d863da2e7",
+      "rationale_sets": [
+        [
+          9
+        ],
+        [
+          13
+        ]
+      ]
+    },
+    {
+      "case_id": "scifact-train-1065-20418809",
+      "claim_id": 1065,
+      "document_id": "20418809",
+      "relation": "contradicted",
+      "input_sha256": "6dff926e71820a2fc3c379ad19c460076543cce0bfdec3f7cd79837711eb6db8",
+      "rationale_sets": [
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ]
+    }
+  ]
+}

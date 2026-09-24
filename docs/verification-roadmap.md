@@ -41,6 +41,10 @@ v0.5 只回答：**指定文献的文本是否支持这条陈述，依据在哪�
 字符范围以 `"\n".join(sentences)` 的 Unicode code point 计数。前端接入时必须显式
 转换为 JavaScript UTF-16 范围或按句 ID 渲染，不能直接混用偏移单位。
 
+当前标注规则见 [文本核查边界 v1](verification-label-policy.md)。[第二轮诊断](verification-v0.5-diagnostics.md)
+已完成直接 Flash 与结构化方案的比较：三组同为 48/48，未发现字段提示或聚合的准确率收益。
+继续保留 direct 主基线；结构化模式作研究选项。后续增加自然回答与复合 claim，再决定模块取舍。
+
 ## 三类证据，三套报告
 
 **公开人工标注。** 首先接入 SciFact 的 claim/文献对和依据句。只使用官方引用文献与

@@ -1,6 +1,6 @@
 # 文档索引与维护范围
 
-更新：2026-09-23。当前为 **v0.4.0 已发布研究展示里程碑，研究基线为 Flash**。
+更新：2026-09-24。当前为 **v0.4.0 已发布研究展示里程碑，研究基线为 Flash**；v0.5 开发中。
 主分支提供当前入口，固定版本见 [`v0.4.0` 标签](https://github.com/lijingshan-6/medrag-agent/tree/v0.4.0)。
 开发 15/15、独立重复 10/10、首次保留测试 31/35；详见 [版本说明](releases/v0.4.0.md)。
 模型选择及下一轮优先级以 [当前决定](decisions/2026-09-23-flash-research-baseline.md) 为准。
@@ -12,6 +12,10 @@ Qwen 修复报告与 Pro/Flash 对比记录的是不同运行，不能互相替�
 
 已完成的第一轮工作见 [v0.5 固定证据试跑报告](verification-v0.5-pilot.md)：独立核查模块与
 30 条公开标注样本已跑通，25/30 标签一致；局限、全部分歧和复现命令一并公开。
+
+[第二轮受控诊断与消融](verification-v0.5-diagnostics.md)已完成：12 个文献组、48 条构造样本，
+三方案均为 48/48，尚未发现结构化核查增益。使用 [标注规范](verification-label-policy.md)
+解释标签边界，[网关观测](verification-gateway-observations.md)记录模型标识和用量限制。
 
 ## 持续维护的入口
 

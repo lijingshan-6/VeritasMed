@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "label_provenance": "source-anchored construction with AI review; not independent expert annotation",
+  "split": "development",
+  "families": [
+    {
+      "family_id": "d01", "document_id": "12810152", "category": "cohort_count",
+      "anchor_sentence_ids": [4], "withheld_sentence_ids": [4], "control_removed_sentence_ids": [11],
+      "claims": {
+        "supported": "In 1980, 80082 women in the Nurses' Health Study completed the food frequency questionnaire.",
+        "equivalent": "The food frequency questionnaire was completed in 1980 by 80,082 women from the Nurses' Health Study.",
+        "contradicted": "In 1980, 80028 women in the Nurses' Health Study completed the food frequency questionnaire."
+      },
+      "changed_slot": "questionnaire respondent count: 80082 -> 80028",
+      "equivalence_basis": "Thousands separator and active/passive paraphrase preserve count and event.",
+      "label_basis": "Sentence 4 states the exact questionnaire count; the rest of the abstract does not recover it. Control removes the general conclusion, keeping the count."
+    },
+    {
+      "family_id": "d02", "document_id": "3654468", "category": "screened_vs_randomized",
+      "anchor_sentence_ids": [3], "withheld_sentence_ids": [3,5,9], "control_removed_sentence_ids": [0,14,15],
+      "claims": {
+        "supported": "This semaglutide trial randomized 632 participants.",
+        "equivalent": "The number of participants randomized in this semaglutide trial was six hundred and thirty-two.",
+        "contradicted": "This semaglutide trial randomized 1106 participants."
+      },
+      "changed_slot": "randomized count: 632 -> 1106 (the screened count)",
+      "equivalence_basis": "Integer written in words; same randomization event.",
+      "label_basis": "Sentence 3 distinguishes assessed from randomized; sentence 9 repeats 632. Remove sentence 5 too because its arm counts sum to 632. Remaining safety denominators refer to other stages and do not establish randomized enrollment."
+    },
+    {
+      "family_id": "d03", "document_id": "7098463", "category": "duration_conversion",
+      "anchor_sentence_ids": [8], "withheld_sentence_ids": [8,11], "control_removed_sentence_ids": [0,16],
+      "claims": {
+        "supported": "The reported follow-up duration for the 55 completers in this gastric banding trial was 2 years.",
+        "equivalent": "For the 55 patients reported as completing follow-up in this gastric banding trial, the follow-up duration was 24 months.",
+        "contradicted": "The reported follow-up duration for the 55 completers in this gastric banding trial was 2 months."
+      },
+      "changed_slot": "reported completion time: 2 years -> 2 months",
+      "equivalence_basis": "Exact calendar duration conversion: 2 years = 24 months.",
+      "label_basis": "Sentence 8 explicitly ties 55 completers to 2 years; sentence 11 repeats the outcome time. Diagnosis duration in sentence 3 is a different event, not follow-up completion. Claims refer to the reported completion assessment."
+    },
+    {
+      "family_id": "d04", "document_id": "19878070", "category": "dose_conversion",
+      "anchor_sentence_ids": [4], "withheld_sentence_ids": [4], "control_removed_sentence_ids": [0],
+      "claims": {
+        "supported": "All subjects in this risedronate trial received calcium at 1000 mg per day.",
+        "equivalent": "All subjects in this risedronate trial received calcium at 1 gram per day.",
+        "contradicted": "All subjects in this risedronate trial received calcium at 100 mg per day."
+      },
+      "changed_slot": "daily calcium amount: 1000 mg -> 100 mg",
+      "equivalence_basis": "Exact mass conversion: 1000 mg = 1 gram; daily frequency unchanged.",
+      "label_basis": "Sentence 4 gives calcium and its daily dose. Risedronate and vitamin D amounts describe different substances. Calcium dosing is absent after removing sentence 4."
+    },
+    {
+      "family_id": "d05", "document_id": "34139429", "category": "outcome_percentage",
+      "anchor_sentence_ids": [9], "withheld_sentence_ids": [9], "control_removed_sentence_ids": [16],
+      "claims": {
+        "supported": "Among patients assigned to carvedilol, the reported percentage who improved was 56%.",
+        "equivalent": "The study reported improvement in 56 percent of the patients assigned to carvedilol.",
+        "contradicted": "Among patients assigned to carvedilol, the reported percentage who improved was 24%."
+      },
+      "changed_slot": "improved percentage: 56% -> 24% (the worsened percentage)",
+      "equivalence_basis": "Percent symbol expanded without changing population or outcome.",
+      "label_basis": "Sentence 9 separately lists improvement, worsening and no change; the other sentences do not provide this percentage or the needed counts. This is a reported percentage, not a claim that 58/103 equals exactly 0.56."
+    },
+    {
+      "family_id": "d06", "document_id": "52874170", "category": "explicit_significance",
+      "anchor_sentence_ids": [10], "withheld_sentence_ids": [10], "control_removed_sentence_ids": [17],
+      "claims": {
+        "supported": "The comparison of atraumatic with standard needles found a decrease in headache odds that was not statistically significant.",
+        "equivalent": "For atraumatic versus standard needles, the reported decrease in headache odds was nonsignificant.",
+        "contradicted": "The comparison of atraumatic with standard needles found a decrease in headache odds that was statistically significant."
+      },
+      "changed_slot": "explicit statistical qualifier: nonsignificant -> significant",
+      "equivalence_basis": "Nonsignificant and not statistically significant describe the same reported statistical qualifier.",
+      "label_basis": "Sentence 10 explicitly uses nonsignificant; no inference from CI or evidence grading is needed. Statements about stylet reinsertion or mobilization concern different interventions. 'May decrease' in the conclusion does not specify statistical significance."
+    },
+    {
+      "family_id": "d07", "document_id": "3944632", "category": "arm_binding",
+      "anchor_sentence_ids": [3], "withheld_sentence_ids": [3], "control_removed_sentence_ids": [12],
+      "claims": {
+        "supported": "The WBRT plus SRS arm contained 65 randomly assigned patients.",
+        "equivalent": "Sixty-five patients were randomly assigned to receive WBRT plus SRS.",
+        "contradicted": "The WBRT plus SRS arm contained 67 randomly assigned patients."
+      },
+      "changed_slot": "combined-treatment arm count: 65 -> 67 (the SRS-only count)",
+      "equivalence_basis": "Integer written in words with the same treatment assignment.",
+      "label_basis": "Sentence 3 explicitly assigns 65 and 67 to different arms. Total enrollment of 132 alone does not determine arm sizes. Other counts concern outcomes, not randomization."
+    },
+    {
+      "family_id": "d08", "document_id": "8428935", "category": "population_age_range",
+      "anchor_sentence_ids": [3], "withheld_sentence_ids": [3], "control_removed_sentence_ids": [14],
+      "claims": {
+        "supported": "The reported age range of the examined children was 8 through 16 years.",
+        "equivalent": "The children examined in this survey were aged 8 to 16 years.",
+        "contradicted": "The reported age range of the examined children was 6 through 14 years."
+      },
+      "changed_slot": "reported age interval: 8-16 -> 6-14 years",
+      "equivalence_basis": "Equivalent inclusive age range wording.",
+      "label_basis": "Sentence 3 states the examined population's age range. The general term children elsewhere cannot establish these exact age bounds."
+    },
+    {
+      "family_id": "d09", "document_id": "11360768", "category": "studies_vs_participants",
+      "anchor_sentence_ids": [5], "withheld_sentence_ids": [5], "control_removed_sentence_ids": [12],
+      "claims": {
+        "supported": "The meta-analysis identified 44 relevant randomized controlled trials.",
+        "equivalent": "Forty-four relevant randomized controlled trials were identified in this meta-analysis.",
+        "contradicted": "The meta-analysis identified 7278 relevant randomized controlled trials."
+      },
+      "changed_slot": "trial count: 44 -> 7278 (the number of women)",
+      "equivalence_basis": "Integer written in words, retaining trials as the counted entity.",
+      "label_basis": "Sentence 5 distinguishes trials from women; other sentences establish study type but not trial count. No judgment of the quality of those trials is made."
+    },
+    {
+      "family_id": "d10", "document_id": "5691302", "category": "calendar_event_binding",
+      "anchor_sentence_ids": [3], "withheld_sentence_ids": [3], "control_removed_sentence_ids": [17],
+      "claims": {
+        "supported": "The reported follow-up cutoff date was 31 December 2008.",
+        "equivalent": "Follow-up in this study continued until 2008-12-31.",
+        "contradicted": "The reported follow-up cutoff date was 31 December 2007."
+      },
+      "changed_slot": "follow-up cutoff: 2008-12-31 -> 2007-12-31 (diagnosis inclusion cutoff)",
+      "equivalence_basis": "ISO date and written calendar date denote the same day.",
+      "label_basis": "Sentence 3 distinguishes diagnosis dates from follow-up cutoff. One-year absolute risks elsewhere do not define the final calendar cutoff."
+    },
+    {
+      "family_id": "d11", "document_id": "5558754", "category": "excluded_vs_retained",
+      "anchor_sentence_ids": [6], "withheld_sentence_ids": [6], "control_removed_sentence_ids": [0],
+      "claims": {
+        "supported": "The study excluded 286 patients because chest radiographs were missing or inadequate.",
+        "equivalent": "Missing or inadequate chest radiographs led to the exclusion of 286 patients.",
+        "contradicted": "The study excluded 2820 patients because chest radiographs were missing or inadequate."
+      },
+      "changed_slot": "exclusion count: 286 -> 2820 (the retained count)",
+      "equivalence_basis": "Same cause and count, with active/passive paraphrase.",
+      "label_basis": "Sentence 6 distinguishes eligible, excluded and retained patients. Other risk-group counts do not establish the number excluded for radiographs."
+    },
+    {
+      "family_id": "d12", "document_id": "6766459", "category": "direction_and_cell_context",
+      "anchor_sentence_ids": [2], "withheld_sentence_ids": [2], "control_removed_sentence_ids": [0],
+      "claims": {
+        "supported": "The study reported reduced RBM3 expression in THP-1-derived macrophages maintained at 40 degrees Celsius.",
+        "equivalent": "At 40 degrees Celsius, THP-1-derived macrophages showed lower RBM3 expression in this study.",
+        "contradicted": "The study reported increased RBM3 expression in THP-1-derived macrophages maintained at 40 degrees Celsius."
+      },
+      "changed_slot": "expression direction in the specified cell context: reduced -> increased",
+      "equivalence_basis": "Lower and reduced preserve the reported direction and exact cell context.",
+      "label_basis": "Sentence 2 explicitly states this cell context. Remaining statements about patients and normal PBMCs do not establish a result in THP-1-derived macrophages after it is removed."
+    }
+  ]
+}

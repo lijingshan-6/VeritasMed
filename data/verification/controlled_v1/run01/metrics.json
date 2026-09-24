@@ -1,0 +1,534 @@
+{
+  "arms": {
+    "direct": {
+      "total": 48,
+      "attempted": 48,
+      "statuses": {
+        "ok": 48
+      },
+      "correct": 48,
+      "accuracy_all_cases": 1.0,
+      "valid_output_coverage": 1.0,
+      "confusion_matrix": {
+        "supported": {
+          "supported": 24,
+          "contradicted": 0,
+          "insufficient": 0,
+          "error": 0,
+          "not_run": 0
+        },
+        "contradicted": {
+          "supported": 0,
+          "contradicted": 12,
+          "insufficient": 0,
+          "error": 0,
+          "not_run": 0
+        },
+        "insufficient": {
+          "supported": 0,
+          "contradicted": 0,
+          "insufficient": 12,
+          "error": 0,
+          "not_run": 0
+        }
+      },
+      "per_class": {
+        "supported": {
+          "gold_count": 24,
+          "predicted_count": 24,
+          "correct_count": 24,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "contradicted": {
+          "gold_count": 12,
+          "predicted_count": 12,
+          "correct_count": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "insufficient": {
+          "gold_count": 12,
+          "predicted_count": 12,
+          "correct_count": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "macro_f1": 1.0,
+      "unsupported_accepted": 0,
+      "gold_unsupported": 24,
+      "false_acceptance_rate": 0.0,
+      "label_and_exact_rationale_match": {
+        "matched": 36,
+        "eligible": 36
+      },
+      "exact_source_bindings": {
+        "matched": 36,
+        "eligible": 36
+      },
+      "latency_seconds": {
+        "mean": 3.4501458333333335,
+        "median": 3.046,
+        "max": 18.796
+      },
+      "usage": {
+        "reported_calls": 48,
+        "attempted_calls": 48,
+        "reported_token_totals": {
+          "input_tokens": 46243,
+          "output_tokens": 11813,
+          "total_tokens": 58056
+        }
+      },
+      "mismatches": [],
+      "interpretation": "Constructed development diagnostics, AI reviewed; source deletion and minimal edits, not independently expert-labelled clinical validation.",
+      "families": {
+        "d01": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d02": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d03": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d04": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d05": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d06": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d07": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d08": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d09": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d10": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d11": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d12": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        }
+      },
+      "quartets_all_correct": 12,
+      "equivalent_pair_both_supported": 12,
+      "withheld_correctly_insufficient": 12,
+      "response_models": {
+        "deepseek-v4.1-flash": 48
+      }
+    },
+    "structured": {
+      "total": 48,
+      "attempted": 48,
+      "statuses": {
+        "ok": 48
+      },
+      "correct": 48,
+      "accuracy_all_cases": 1.0,
+      "valid_output_coverage": 1.0,
+      "confusion_matrix": {
+        "supported": {
+          "supported": 24,
+          "contradicted": 0,
+          "insufficient": 0,
+          "error": 0,
+          "not_run": 0
+        },
+        "contradicted": {
+          "supported": 0,
+          "contradicted": 12,
+          "insufficient": 0,
+          "error": 0,
+          "not_run": 0
+        },
+        "insufficient": {
+          "supported": 0,
+          "contradicted": 0,
+          "insufficient": 12,
+          "error": 0,
+          "not_run": 0
+        }
+      },
+      "per_class": {
+        "supported": {
+          "gold_count": 24,
+          "predicted_count": 24,
+          "correct_count": 24,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "contradicted": {
+          "gold_count": 12,
+          "predicted_count": 12,
+          "correct_count": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "insufficient": {
+          "gold_count": 12,
+          "predicted_count": 12,
+          "correct_count": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "macro_f1": 1.0,
+      "unsupported_accepted": 0,
+      "gold_unsupported": 24,
+      "false_acceptance_rate": 0.0,
+      "label_and_exact_rationale_match": {
+        "matched": 28,
+        "eligible": 36
+      },
+      "exact_source_bindings": {
+        "matched": 36,
+        "eligible": 36
+      },
+      "latency_seconds": {
+        "mean": 6.501,
+        "median": 5.672,
+        "max": 20.551
+      },
+      "usage": {
+        "reported_calls": 48,
+        "attempted_calls": 48,
+        "reported_token_totals": {
+          "input_tokens": 51619,
+          "output_tokens": 47703,
+          "total_tokens": 99322
+        }
+      },
+      "mismatches": [],
+      "interpretation": "Constructed development diagnostics, AI reviewed; source deletion and minimal edits, not independently expert-labelled clinical validation.",
+      "families": {
+        "d01": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d02": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d03": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d04": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d05": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d06": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d07": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d08": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d09": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d10": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d11": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d12": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        }
+      },
+      "quartets_all_correct": 12,
+      "equivalent_pair_both_supported": 12,
+      "withheld_correctly_insufficient": 12,
+      "response_models": {
+        "deepseek-v4.1-flash": 48
+      },
+      "without_reducer": {
+        "correct": 48,
+        "total": 48,
+        "unsupported_accepted": 0,
+        "mismatches": []
+      },
+      "reducer_changed_cases": []
+    },
+    "structured_no_fields": {
+      "total": 48,
+      "attempted": 48,
+      "statuses": {
+        "ok": 48
+      },
+      "correct": 48,
+      "accuracy_all_cases": 1.0,
+      "valid_output_coverage": 1.0,
+      "confusion_matrix": {
+        "supported": {
+          "supported": 24,
+          "contradicted": 0,
+          "insufficient": 0,
+          "error": 0,
+          "not_run": 0
+        },
+        "contradicted": {
+          "supported": 0,
+          "contradicted": 12,
+          "insufficient": 0,
+          "error": 0,
+          "not_run": 0
+        },
+        "insufficient": {
+          "supported": 0,
+          "contradicted": 0,
+          "insufficient": 12,
+          "error": 0,
+          "not_run": 0
+        }
+      },
+      "per_class": {
+        "supported": {
+          "gold_count": 24,
+          "predicted_count": 24,
+          "correct_count": 24,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "contradicted": {
+          "gold_count": 12,
+          "predicted_count": 12,
+          "correct_count": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "insufficient": {
+          "gold_count": 12,
+          "predicted_count": 12,
+          "correct_count": 12,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "macro_f1": 1.0,
+      "unsupported_accepted": 0,
+      "gold_unsupported": 24,
+      "false_acceptance_rate": 0.0,
+      "label_and_exact_rationale_match": {
+        "matched": 29,
+        "eligible": 36
+      },
+      "exact_source_bindings": {
+        "matched": 36,
+        "eligible": 36
+      },
+      "latency_seconds": {
+        "mean": 5.2199375,
+        "median": 4.5745000000000005,
+        "max": 15.437
+      },
+      "usage": {
+        "reported_calls": 48,
+        "attempted_calls": 48,
+        "reported_token_totals": {
+          "input_tokens": 47827,
+          "output_tokens": 34146,
+          "total_tokens": 81973
+        }
+      },
+      "mismatches": [],
+      "interpretation": "Constructed development diagnostics, AI reviewed; source deletion and minimal edits, not independently expert-labelled clinical validation.",
+      "families": {
+        "d01": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d02": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d03": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d04": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d05": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d06": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d07": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d08": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d09": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d10": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d11": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        },
+        "d12": {
+          "supported": true,
+          "equivalent": true,
+          "contradicted": true,
+          "withheld": true
+        }
+      },
+      "quartets_all_correct": 12,
+      "equivalent_pair_both_supported": 12,
+      "withheld_correctly_insufficient": 12,
+      "response_models": {
+        "deepseek-v4.1-flash": 48
+      },
+      "without_reducer": {
+        "correct": 48,
+        "total": 48,
+        "unsupported_accepted": 0,
+        "mismatches": []
+      },
+      "reducer_changed_cases": []
+    }
+  },
+  "paired_with_direct": {
+    "structured": {
+      "counts": {
+        "both_correct": 48
+      },
+      "discordant": []
+    },
+    "structured_no_fields": {
+      "counts": {
+        "both_correct": 48
+      },
+      "discordant": []
+    }
+  },
+  "note": "Exploratory paired diagnostics on 12 source groups. No significance or superiority claim; gateway model identity is not independently authenticated."
+}

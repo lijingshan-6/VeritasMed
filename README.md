@@ -10,6 +10,8 @@ The selected model is **Flash for every Agent role**, currently `DeepSeek-V4.1-F
 
 **v0.5 development:** [technical route](docs/verification-roadmap.md) · [implementation plan](docs/plans/v0.5-text-verification.md). The next milestone measures claim-level textual support against public annotations before connecting an audit panel to answer generation. Clinical evidence grading and cross-study comparability are separate research tasks.
 
+The [first controlled comparison](docs/verification-v0.5-diagnostics.md) is available: three Flash verification variants each matched all 48 constructed diagnostic labels. Structured checking used more tokens without improving this small development set; it is not evidence of clinical reliability or Agent superiority. [Reproduce the comparison offline](data/verification/controlled_v1/README.md).
+
 ![Guided example: partial evidence coverage and source-linked answer](docs/assets/v04-evidence-coverage.png)
 
 *Actual interface in Guided mode. The answer and animated steps are authored examples, not live inference or benchmark results.*

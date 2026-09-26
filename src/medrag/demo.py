@@ -9,8 +9,10 @@ from medrag.index.qdrant_setup import create_collection
 from medrag.ingest.chunker import Chunk
 
 
-def bootstrap(client, embedder, corpus: Path | None = None) -> int:
-    """Upsert the bundled authored summaries into medrag_demo only."""
+def bootstrap(client, embedder, corpus: Path | None = None, *, collection: str = "medrag_demo") -> int:
+    """Upsert a bundled demo corpus into its separately named collection."""
+    if collection not in {"medrag_demo", "medrag_medical_demo"}:
+        raise ValueError("Demo indexing is restricted to demonstration collections")
     corpus = corpus or Path(__file__).resolve().parents[2] / "data/demo/corpus.jsonl"
     rows = [json.loads(line) for line in corpus.read_text(encoding="utf-8").splitlines() if line.strip()]
     chunks = [Chunk(
@@ -19,6 +21,6 @@ def bootstrap(client, embedder, corpus: Path | None = None) -> int:
                                    if key not in {"chunk_id", "doc_id", "text"}},
     ) for row in rows]
     encoded = embedder.encode([chunk.text for chunk in chunks], return_sparse=True)
-    create_collection(client, "medrag_demo")
-    index_chunks(client, chunks, encoded["dense"], encoded["sparse"], collection="medrag_demo")
-    return client.count("medrag_demo").count
+    create_collection(client, collection)
+    index_chunks(client, chunks, encoded["dense"], encoded["sparse"], collection=collection)
+    return client.count(collection).count

@@ -26,7 +26,7 @@ export type AuditRecord = {
       transport_metadata?: { model_identifiers?: string[] }; error_type?: string }[]
   }
 }
-export type Catalogue = { examples: { id: string; strategies: Partial<Record<Strategy, string>> }[]; sources_downloaded: boolean }
+export type Catalogue = { examples: { id: string; label: string; requires_download: boolean; strategies: Partial<Record<Strategy, string>> }[]; sources_downloaded: boolean }
 export async function auditExamples(): Promise<Catalogue> { return (await api.get('/api/audit/examples')).data }
 export async function replayAudit(id: string, strategy: Strategy): Promise<AuditRecord> {
   return (await api.get(`/api/audit/examples/${encodeURIComponent(id)}`, { params: { strategy } })).data

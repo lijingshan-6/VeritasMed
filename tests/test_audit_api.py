@@ -77,3 +77,37 @@ def test_quote_api_returns_ambiguity_without_accepting_supported_claim(monkeypat
     result = response.json()["audit"]
     assert result["status"] == "partial_error" and result["summary"]["supported"] == 0
     assert result["claims"][0]["bindings"]["answer"]["match_count"] == 2
+
+
+def test_bundled_medical_replay_without_cache_or_model(monkeypatch, tmp_path):
+    import json
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("Medical replay must not download research data or invoke a model")
+    monkeypatch.setattr(audit, "CACHE", tmp_path)
+    monkeypatch.setattr(audit, "prepare", forbidden)
+    monkeypatch.setattr(audit, "FlashGateway", forbidden)
+    client = TestClient(app)
+    catalogue = client.get("/api/audit/examples").json()
+    assert catalogue["sources_downloaded"] is False
+    assert catalogue["examples"][0]["id"] == "medical-grade"
+    response = client.get("/api/audit/examples/medical-grade")
+    assert response.status_code == 200
+    record = response.json()
+    assert record["mode"] == "saved"
+    assert "Single-paper" in record["provenance"]["note"]
+    events = json.loads((audit.MEDICAL.parent / "ask-events.json").read_text(encoding="utf8"))
+    original = next(e["data"] for e in events if e["event"] == "done")
+    assert record["input"]["answer"] == original["answer"]
+    assert [s["text"] for s in record["input"]["sources"]] == [c["text"] for c in original["chunks"]]
+    corpus = {r["chunk_id"]: r for r in audit.read_jsonl(audit.MEDICAL.parent / "corpus.jsonl")}
+    for chunk in original["chunks"]:
+        assert chunk["text"] == corpus[chunk["chunk_id"]]["text"]
+    for claim in record["audit"]["claims"]:
+        if claim["answer_span"]:
+            span = claim["answer_span"]
+            assert record["input"]["answer"][span["start"]:span["end"]] == span["text"]
+        for span in claim["evidence"]:
+            source = next(s for s in record["input"]["sources"] if s["id"] == span["source_id"])
+            assert source["text"][span["start"]:span["end"]] == span["text"]
+    assert client.get("/api/audit/examples/medical-grade?strategy=split").status_code == 404

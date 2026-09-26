@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--skip-index", action="store_true", help="Reuse an already initialized demo store")
+    parser.add_argument("--medical", action="store_true", help="Use the bundled original GRADE trial abstract")
     args = parser.parse_args()
     npm = shutil.which("npm.cmd" if os.name == "nt" else "npm")
     if not npm:
@@ -29,16 +30,19 @@ def main() -> None:
     env = os.environ.copy()
     env.update({
         "PYTHONPATH": str(ROOT / "src"),
-        "QDRANT_PATH": str(ROOT / ".demo-runtime/qdrant"),
-        "QDRANT_COLLECTION": "medrag_demo",
+        "QDRANT_PATH": str(ROOT / (".demo-runtime/medical-qdrant" if args.medical else ".demo-runtime/qdrant")),
+        "QDRANT_COLLECTION": "medrag_medical_demo" if args.medical else "medrag_demo",
         "MEDRAG_DATA_DIR": str(ROOT / ".demo-runtime"),
         "PYTHONIOENCODING": "utf-8",
         "PYTHONNOUSERSITE": "1",
         # Same-origin Vite proxy; don't inherit another project's .env.local URL.
         "VITE_API_URL": "",
+        "VITE_AUDIT_ONLY": "0",
+        "VITE_MEDICAL_DEMO": "1" if args.medical else "0",
     })
     if not args.skip_index:
-        subprocess.run([sys.executable, "scripts/bootstrap_demo.py"], cwd=ROOT, env=env, check=True)
+        command = [sys.executable, "scripts/bootstrap_demo.py"] + (["--medical"] if args.medical else [])
+        subprocess.run(command, cwd=ROOT, env=env, check=True)
     if not (ROOT / "frontend/node_modules").is_dir():
         subprocess.run([npm, "ci"], cwd=ROOT / "frontend", env=env, check=True)
     children = []

@@ -1,0 +1,1101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1d3 20150301//EN" "http://jats.nlm.nih.gov/publishing/1.1d3/JATS-journalpublishing1.dtd">
+<article article-type="research-article" dtd-version="1.1d3" xml:lang="en" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">PLoS ONE</journal-id>
+<journal-id journal-id-type="publisher-id">plos</journal-id>
+<journal-id journal-id-type="pmc">plosone</journal-id>
+<journal-title-group>
+<journal-title>PLOS ONE</journal-title>
+</journal-title-group>
+<issn pub-type="epub">1932-6203</issn>
+<publisher>
+<publisher-name>Public Library of Science</publisher-name>
+<publisher-loc>San Francisco, CA USA</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="doi">10.1371/journal.pone.0309907</article-id>
+<article-id pub-id-type="publisher-id">PONE-D-24-04433</article-id>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Research Article</subject>
+</subj-group>
+<subj-group subj-group-type="Discipline-v3">
+<subject>Medicine and health sciences</subject><subj-group><subject>Medical conditions</subject><subj-group><subject>Metabolic disorders</subject><subj-group><subject>Hypoglycemia</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3">
+<subject>Medicine and health sciences</subject><subj-group><subject>Pharmacology</subject><subj-group><subject>Drugs</subject><subj-group><subject>Hypoglycemics</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3">
+<subject>Medicine and health sciences</subject><subj-group><subject>Diagnostic medicine</subject><subj-group><subject>Diabetes diagnosis and management</subject><subj-group><subject>HbA1c</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3">
+<subject>Biology and life sciences</subject><subj-group><subject>Biochemistry</subject><subj-group><subject>Proteins</subject><subj-group><subject>Hemoglobin</subject><subj-group><subject>HbA1c</subject></subj-group></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3">
+<subject>Medicine and health sciences</subject><subj-group><subject>Endocrinology</subject><subj-group><subject>Endocrine disorders</subject><subj-group><subject>Diabetes mellitus</subject><subj-group><subject>Type 2 diabetes</subject></subj-group></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3">
+<subject>Medicine and health sciences</subject><subj-group><subject>Medical conditions</subject><subj-group><subject>Metabolic disorders</subject><subj-group><subject>Diabetes mellitus</subject><subj-group><subject>Type 2 diabetes</subject></subj-group></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3">
+<subject>Medicine and health sciences</subject><subj-group><subject>Endocrinology</subject><subj-group><subject>Diabetic endocrinology</subject><subj-group><subject>Insulin</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3">
+<subject>Biology and life sciences</subject><subj-group><subject>Biochemistry</subject><subj-group><subject>Hormones</subject><subj-group><subject>Insulin</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3">
+<subject>Medicine and health sciences</subject><subj-group><subject>Endocrinology</subject><subj-group><subject>Endocrine disorders</subject><subj-group><subject>Diabetes mellitus</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3">
+<subject>Medicine and health sciences</subject><subj-group><subject>Medical conditions</subject><subj-group><subject>Metabolic disorders</subject><subj-group><subject>Diabetes mellitus</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3">
+<subject>Physical sciences</subject><subj-group><subject>Chemistry</subject><subj-group><subject>Chemical compounds</subject><subj-group><subject>Organic compounds</subject><subj-group><subject>Carbohydrates</subject><subj-group><subject>Monosaccharides</subject><subj-group><subject>Glucose</subject></subj-group></subj-group></subj-group></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3">
+<subject>Physical sciences</subject><subj-group><subject>Chemistry</subject><subj-group><subject>Organic chemistry</subject><subj-group><subject>Organic compounds</subject><subj-group><subject>Carbohydrates</subject><subj-group><subject>Monosaccharides</subject><subj-group><subject>Glucose</subject></subj-group></subj-group></subj-group></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3">
+<subject>Medicine and health sciences</subject><subj-group><subject>Pharmaceutics</subject><subj-group><subject>Drug therapy</subject></subj-group></subj-group></subj-group></article-categories>
+<title-group>
+<article-title>Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial</article-title>
+<alt-title alt-title-type="running-head">Hypoglycemia outcomes in GRADE</alt-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes" equal-contrib="yes" xlink:type="simple">
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0002-1945-1034</contrib-id>
+<name name-style="western">
+<surname>Seaquist</surname>
+<given-names>Elizabeth R.</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role content-type="http://credit.niso.org/contributor-roles/project-administration/">Project administration</role>
+<role content-type="http://credit.niso.org/contributor-roles/supervision/">Supervision</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-original-draft/">Writing – original draft</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff001"><sup>1</sup></xref>
+<xref ref-type="corresp" rid="cor001">*</xref>
+</contrib>
+<contrib contrib-type="author" equal-contrib="yes" xlink:type="simple">
+<name name-style="western">
+<surname>Phillips</surname>
+<given-names>Lawrence S.</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/conceptualization/">Conceptualization</role>
+<role content-type="http://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role content-type="http://credit.niso.org/contributor-roles/methodology/">Methodology</role>
+<role content-type="http://credit.niso.org/contributor-roles/supervision/">Supervision</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-original-draft/">Writing – original draft</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff002"><sup>2</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0001-5311-056X</contrib-id>
+<name name-style="western">
+<surname>Ghosh</surname>
+<given-names>Alokananda</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/conceptualization/">Conceptualization</role>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/formal-analysis/">Formal analysis</role>
+<role content-type="http://credit.niso.org/contributor-roles/project-administration/">Project administration</role>
+<role content-type="http://credit.niso.org/contributor-roles/supervision/">Supervision</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-original-draft/">Writing – original draft</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff003"><sup>3</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0002-9807-7115</contrib-id>
+<name name-style="western">
+<surname>Baker</surname>
+<given-names>Chelsea</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role content-type="http://credit.niso.org/contributor-roles/project-administration/">Project administration</role>
+<role content-type="http://credit.niso.org/contributor-roles/supervision/">Supervision</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff004"><sup>4</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0002-9050-5584</contrib-id>
+<name name-style="western">
+<surname>Bergenstal</surname>
+<given-names>Richard M.</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/conceptualization/">Conceptualization</role>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff005"><sup>5</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Crandall</surname>
+<given-names>Jill P.</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role content-type="http://credit.niso.org/contributor-roles/project-administration/">Project administration</role>
+<role content-type="http://credit.niso.org/contributor-roles/supervision/">Supervision</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff006"><sup>6</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Goland</surname>
+<given-names>Robin S.</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role content-type="http://credit.niso.org/contributor-roles/project-administration/">Project administration</role>
+<role content-type="http://credit.niso.org/contributor-roles/supervision/">Supervision</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff007"><sup>7</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0009-0001-1662-7196</contrib-id>
+<name name-style="western">
+<surname>Gramzinski</surname>
+<given-names>Michaela R.</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/conceptualization/">Conceptualization</role>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role content-type="http://credit.niso.org/contributor-roles/project-administration/">Project administration</role>
+<role content-type="http://credit.niso.org/contributor-roles/supervision/">Supervision</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff003"><sup>3</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Hox</surname>
+<given-names>Sophia H.</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role content-type="http://credit.niso.org/contributor-roles/supervision/">Supervision</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff008"><sup>8</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<contrib-id authenticated="true" contrib-id-type="orcid">https://orcid.org/0000-0003-2832-3429</contrib-id>
+<name name-style="western">
+<surname>Hsia</surname>
+<given-names>Daniel S.</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff009"><sup>9</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Johnson</surname>
+<given-names>Mary L.</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role content-type="http://credit.niso.org/contributor-roles/project-administration/">Project administration</role>
+<role content-type="http://credit.niso.org/contributor-roles/supervision/">Supervision</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff005"><sup>5</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Lachin</surname>
+<given-names>John M.</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/conceptualization/">Conceptualization</role>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/formal-analysis/">Formal analysis</role>
+<role content-type="http://credit.niso.org/contributor-roles/funding-acquisition/">Funding acquisition</role>
+<role content-type="http://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role content-type="http://credit.niso.org/contributor-roles/methodology/">Methodology</role>
+<role content-type="http://credit.niso.org/contributor-roles/project-administration/">Project administration</role>
+<role content-type="http://credit.niso.org/contributor-roles/resources/">Resources</role>
+<role content-type="http://credit.niso.org/contributor-roles/supervision/">Supervision</role>
+<role content-type="http://credit.niso.org/contributor-roles/validation/">Validation</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff003"><sup>3</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Raskin</surname>
+<given-names>Philip</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/conceptualization/">Conceptualization</role>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role content-type="http://credit.niso.org/contributor-roles/project-administration/">Project administration</role>
+<role content-type="http://credit.niso.org/contributor-roles/supervision/">Supervision</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff010"><sup>10</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Valencia</surname>
+<given-names>Willy M.</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff011"><sup>11</sup></xref>
+<xref ref-type="aff" rid="aff012"><sup>12</sup></xref>
+<xref ref-type="aff" rid="aff013"><sup>13</sup></xref>
+<xref ref-type="aff" rid="aff014"><sup>14</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Waltje</surname>
+<given-names>Andrea H.</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff015"><sup>15</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Younes</surname>
+<given-names>Naji</given-names>
+</name>
+<role content-type="http://credit.niso.org/contributor-roles/data-curation/">Data curation</role>
+<role content-type="http://credit.niso.org/contributor-roles/formal-analysis/">Formal analysis</role>
+<role content-type="http://credit.niso.org/contributor-roles/validation/">Validation</role>
+<role content-type="http://credit.niso.org/contributor-roles/visualization/">Visualization</role>
+<role content-type="http://credit.niso.org/contributor-roles/writing-review-editing/">Writing – review &amp; editing</role>
+<xref ref-type="aff" rid="aff003"><sup>3</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<collab>for the GRADE Research Group</collab>
+<xref ref-type="fn" rid="fn001"><sup>¶</sup></xref>
+</contrib>
+</contrib-group>
+<aff id="aff001"><label>1</label> <addr-line>Department of Medicine, Division of Diabetes and Endocrinology, University of Minnesota Medical School, Minneapolis, MN, United States of America</addr-line></aff>
+<aff id="aff002"><label>2</label> <addr-line>Department of Medicine, Atlanta VA Medical Center, Decatur, GA and Division of Endocrinology and Metabolism, Emory University School of Medicine, Atlanta, GA, United States of America</addr-line></aff>
+<aff id="aff003"><label>3</label> <addr-line>Department of Biostatistics and Bioinformatics, Milken Institute of Public Health, The Biostatistics Center, The George Washington University, Rockville, MD, United States of America</addr-line></aff>
+<aff id="aff004"><label>4</label> <addr-line>Department of Medicine, Division of Endocrinology, Metabolism and Diabetes, University of Colorado School of Medicine, Aurora, CO, United States of America</addr-line></aff>
+<aff id="aff005"><label>5</label> <addr-line>Health Partners Institute, International Diabetes Center, Minneapolis, MN, United States of America</addr-line></aff>
+<aff id="aff006"><label>6</label> <addr-line>Division of Endocrinology and Fleischer Institute for Diabetes &amp; Metabolism, Albert Einstein College of Medicine, Bronx, NY, United States of America</addr-line></aff>
+<aff id="aff007"><label>7</label> <addr-line>Departments of Medicine and Pediatrics, Naomi Berrie Diabetes Center, Columbia University, New York, NY, United States of America</addr-line></aff>
+<aff id="aff008"><label>8</label> <addr-line>Department of Veterans Affairs Pacific Islands Health Care System, Honolulu, HI, United States of America</addr-line></aff>
+<aff id="aff009"><label>9</label> <addr-line>Clinical Trials Unit, Pennington Biomedical Research Center, Baton Rouge, LA, United States of America</addr-line></aff>
+<aff id="aff010"><label>10</label> <addr-line>University of Texas—Southwestern Medical Center, Dallas, TX, United States of America</addr-line></aff>
+<aff id="aff011"><label>11</label> <addr-line>Geriatric Research Education and Clinical Center, Bruce W. Carter Veterans Affairs Center, Miami, FL, United States of America</addr-line></aff>
+<aff id="aff012"><label>12</label> <addr-line>Department of Public Health Sciences, University of Miami, Miami, FL, United States of America</addr-line></aff>
+<aff id="aff013"><label>13</label> <addr-line>Robert Stempel College of Public Health, Florida International University, University Park, FL, United States of America</addr-line></aff>
+<aff id="aff014"><label>14</label> <addr-line>Endocrinology &amp; Metabolism Institute, Center for Geriatric Medicine, Cleveland Clinic, OH, United States of America</addr-line></aff>
+<aff id="aff015"><label>15</label> <addr-line>University of Michigan, Ann Arbor, MI, United States of America</addr-line></aff>
+<contrib-group>
+<contrib contrib-type="editor" xlink:type="simple">
+<name name-style="western">
+<surname>Sato</surname>
+<given-names>Yasunori</given-names>
+</name>
+<role>Editor</role>
+<xref ref-type="aff" rid="edit1"/>
+</contrib>
+</contrib-group>
+<aff id="edit1"><addr-line>Keio University School of Medicine, JAPAN</addr-line></aff>
+<author-notes>
+<fn fn-type="conflict" id="coi001">
+<p>Outside the submitted work, Dr. Elizabeth Seaquist reports grants or contracts from JDRF to her institution; consulting fees from Lily, NovoNordisk, Sanofi, and Zucara; honoraria from International Hypoglycemia study group; board membership with the American Diabetes Association; and receipt of sensors from Dexcom to her institution. Dr. Lawrence Phillips reports salary support from the Veterans Health Administration during the conduct of the study; grants from Janssen Pharmaceuticals, grants from Merck, Amylin, Eli Lilly, Novo Nordisk, Sanofi, PhaseBio, Roche, AbbVie, Vascular Pharmaceuticals, GlaxoSmithKline, Pfizer, AstraZeneca, Kowa, and Cystic Fibrosis Foundation; other support from DIASYST, outside the submitted work. Outside the submitted work, Dr. Richard M. Bergenstal reports consulting fees from Abbot Diabetes Care, Ascencia, Bigfoot Biomedical, Inc., DexCom, MannKind, Medtronic, Novo Nordisk, Sanofi, and United Health Care made to HealthPartners Institute; payments or honoraria from Sanofi and Vertex Pharmaceuticals made to Health Partners Institute; support for meetings or travel from Abbott Diabetes Care, Ascensia, CeQur, Eli Lilly, Embecta, MannKind, Novo Nordisk, Roche GmbH, Sanofi, Vertex Pharmaceuticals, and Zealand Pharma made to Health Partners Institute, and participation on a data safety monitoring or advisory board from Abbott Diabetes Care, CeQur, Eli Lilly, Embecta, Hygieia, Roche GmbH, and Zealand Pharma with payments made to HealthPartners Institute. Outside the submitted work, Dr. Jill Crandall reports non-financial support from Abbott. Outside the submitted work, Mary L Johnson reports research grants paid to Health Partners Institute from Sanofi, Novo Nordisk, and Lilly. Dr. Alokananda Ghosh, Dr. Naji Younes, Dr. John Lachin, Chelsea Baker, Dr. Robin S. Goland, Michaela R Gramzinski, Dr. Daniel S Hsia, Dr. Sophia H Hox, Dr. Philip Raskin, Dr. Willy M Valencia, and Andrea H Waltje have nothing to disclose. This does not alter our adherence to PLOS ONE policies on sharing data and materials.</p>
+</fn>
+<fn fn-type="other" id="fn001">
+<p>¶ Membership of the GRADE Research Group is provided in <xref ref-type="supplementary-material" rid="pone.0309907.s002">S1 Text</xref></p>
+</fn>
+<corresp id="cor001">* E-mail: <email xlink:type="simple">grademail@bsc.gwu.edu</email></corresp>
+</author-notes>
+<pub-date pub-type="epub">
+<day>15</day>
+<month>11</month>
+<year>2024</year>
+</pub-date>
+<pub-date pub-type="collection">
+<year>2024</year>
+</pub-date>
+<volume>19</volume>
+<issue>11</issue>
+<elocation-id>e0309907</elocation-id>
+<history>
+<date date-type="received">
+<day>26</day>
+<month>2</month>
+<year>2024</year>
+</date>
+<date date-type="accepted">
+<day>24</day>
+<month>7</month>
+<year>2024</year>
+</date>
+</history>
+<permissions>
+<license xlink:href="https://creativecommons.org/publicdomain/zero/1.0/" xlink:type="simple">
+<license-p>This is an open access article, free of all copyright, and may be freely reproduced, distributed, transmitted, modified, built upon, or otherwise used by anyone for any lawful purpose. The work is made available under the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/publicdomain/zero/1.0/" xlink:type="simple">Creative Commons CC0</ext-link> public domain dedication.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="info:doi/10.1371/journal.pone.0309907"/>
+<abstract>
+<sec id="sec001">
+<title>Objective</title>
+<p>Hypoglycemia is a major concern in type 2 diabetes (T2DM), but little is known about its likelihood compared across common therapies. We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.</p>
+</sec>
+<sec id="sec002">
+<title>Research design &amp; methods</title>
+<p>Randomized, controlled trial of 5,047 participants with T2DM of &lt;10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol). Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years. HbA1c was measured quarterly; if a level &gt;7.5% (&gt;58.5 mmol/mol) was confirmed, rescue glargine and/or aspart insulin was added. We conducted a per-protocol analysis of 4,830, who attended at least one post-baseline visit and took at least one dose of assigned study medication. We assessed severe hypoglycemia events reported throughout the entire study. At quarterly visits, all participants were asked about hypoglycemic symptoms within the last 30 days, and those in the glargine and glimepiride groups were asked for any measured glucose &lt;70 mg/dL (3.9 mmol/L) within this time period.</p>
+</sec>
+<sec id="sec003">
+<title>Results</title>
+<p>While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p&lt;0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p&lt;0.001).</p>
+</sec>
+<sec id="sec004">
+<title>Conclusions</title>
+<p>In metformin-treated patients with T2DM who add a second medication, hypoglycemia is most likely with addition of glimepiride, less with glargine, and least likely with liraglutide and sitagliptin.</p>
+</sec>
+<sec id="sec005">
+<title>Trial registration</title>
+<p>ClinicalTrials.gov Identifier: <ext-link ext-link-type="uri" xlink:href="https://clinicaltrials.gov/study/NCT01794143" xlink:type="simple">NCT01794143</ext-link>.</p>
+</sec>
+</abstract>
+<funding-group>
+<award-group id="award001">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="funder-id">http://dx.doi.org/10.13039/100000062</institution-id>
+<institution>National Institute of Diabetes and Digestive and Kidney Diseases</institution>
+</institution-wrap>
+</funding-source>
+<award-id>U01DK098246</award-id>
+</award-group>
+<award-group id="award002">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="funder-id">http://dx.doi.org/10.13039/100000062</institution-id>
+<institution>National Institute of Diabetes and Digestive and Kidney Diseases</institution>
+</institution-wrap>
+</funding-source>
+<award-id>U34DK088043</award-id>
+</award-group>
+<award-group id="award003">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="funder-id">http://dx.doi.org/10.13039/100000041</institution-id>
+<institution>American Diabetes Association</institution>
+</institution-wrap>
+</funding-source>
+</award-group>
+<award-group id="award004">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="funder-id">http://dx.doi.org/10.13039/100000050</institution-id>
+<institution>National Heart, Lung, and Blood Institute</institution>
+</institution-wrap>
+</funding-source>
+</award-group>
+<award-group id="award005">
+<funding-source>
+<institution-wrap>
+<institution-id institution-id-type="funder-id">http://dx.doi.org/10.13039/100000030</institution-id>
+<institution>Centers for Disease Control and Prevention</institution>
+</institution-wrap>
+</funding-source>
+</award-group>
+<funding-statement>The GRADE Study was supported by a grant from the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) of the National Institutes of Health under Award Number U01DK098246. <ext-link ext-link-type="uri" xlink:href="https://www.niddk.nih.gov/" xlink:type="simple">https://www.niddk.nih.gov/</ext-link> The planning of GRADE was supported by a U34 planning grant from the NIDDK (U34-DK-088043). <ext-link ext-link-type="uri" xlink:href="https://www.niddk.nih.gov/" xlink:type="simple">https://www.niddk.nih.gov/</ext-link> The American Diabetes Association supported the initial planning meeting for the U34 proposal. <ext-link ext-link-type="uri" xlink:href="https://diabetes.org/" xlink:type="simple">https://diabetes.org/</ext-link> The National Heart, Lung, and Blood Institute <ext-link ext-link-type="uri" xlink:href="https://www.nhlbi.nih.gov/and" xlink:type="simple">https://www.nhlbi.nih.gov/and</ext-link> the Centers for Disease Control and Prevention also provided funding support. <ext-link ext-link-type="uri" xlink:href="https://www.cdc.gov/" xlink:type="simple">https://www.cdc.gov/</ext-link> The content of this manuscript is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health. The GRADE Study Research Group is deeply grateful to our participants whose loyal dedication made GRADE possible. It is true that the funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.</funding-statement>
+</funding-group>
+<counts>
+<fig-count count="2"/>
+<table-count count="3"/>
+<page-count count="12"/>
+</counts>
+<custom-meta-group>
+<custom-meta id="data-availability">
+<meta-name>Data Availability</meta-name>
+<meta-value>The Glycemia Reduction Approaches in Diabetes: A Comparative Effectiveness Study (GRADE) is funded by the National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK). This manuscript is based on follow-up data and outcome assessments from the 5047 participants enrolled into the study. This database will be available in the NIDDK Central Repository by 2024. <ext-link ext-link-type="uri" xlink:href="https://repository.niddk.nih.gov/home/" xlink:type="simple">https://repository.niddk.nih.gov/home/</ext-link>.</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+</front>
+<body>
+<sec id="sec006" sec-type="intro">
+<title>Introduction</title>
+<p>Hypoglycemia can be the limiting factor in achieving acceptable target glycemic control in patients with diabetes. Hypoglycemia can be serious–more common than hyperglycemia as a cause of hospital admissions among Medicare beneficiaries in 1999–2011 [<xref ref-type="bibr" rid="pone.0309907.ref001">1</xref>], and hypoglycemia related to use of insulin or sulfonylureas was among the most frequent causes of drug-related adverse events in emergency departments in 2013–2014 [<xref ref-type="bibr" rid="pone.0309907.ref002">2</xref>]. Although less common, hypoglycemia has also been reported with standard dosages of metformin, liraglutide and sitagliptin monotherapy [<xref ref-type="bibr" rid="pone.0309907.ref003">3</xref>–<xref ref-type="bibr" rid="pone.0309907.ref005">5</xref>]. The relative risk of experiencing hypoglycemia with different classes of drugs used to treat type 2 diabetes has not been extensively studied. In the CAROLINA trial, subjects randomized to glipizide had significantly more hypoglycemia than did those randomized to linagliptin and in UKPDS those randomized to sulfonylurea [glipizide or chlorpropamide) plus ultralente insulin had less hypoglycemia than did those randomized to ultralente insulin alone [<xref ref-type="bibr" rid="pone.0309907.ref006">6</xref>,<xref ref-type="bibr" rid="pone.0309907.ref007">7</xref>]. Our understanding of the likelihood of hypoglycemia with commonly used drugs would be enhanced by high-quality, prospective studies.</p>
+<p>The Glycemia Reduction Approaches in Diabetes: A Comparative Effectiveness Study (GRADE) permits such a direct comparison. In GRADE, hypoglycemia was assessed in participants with type 2 diabetes treated only with metformin and then randomized to the addition of insulin glargine U100, glimepiride, liraglutide, or sitagliptin [<xref ref-type="bibr" rid="pone.0309907.ref008">8</xref>,<xref ref-type="bibr" rid="pone.0309907.ref009">9</xref>]. Participants were queried about episodes of hypoglycemia and related symptoms at regular intervals. As previously reported, severe hypoglycemia was more common in those randomized to glargine or glimepiride compared to liraglutide or sitagliptin [<xref ref-type="bibr" rid="pone.0309907.ref008">8</xref>]. In this analysis, we expand our observations to examine the comparative likelihood of different categories of hypoglycemic events across treatment groups in a randomized, controlled trial where medications were used as in usual clinical practice.</p>
+</sec>
+<sec id="sec007">
+<title>Research design and methods</title>
+<p>As described previously [<xref ref-type="bibr" rid="pone.0309907.ref008">8</xref>,<xref ref-type="bibr" rid="pone.0309907.ref009">9</xref>], GRADE examined the addition of a long-acting insulin (glargine U100), a long-acting sulfonylurea (glimepiride), a glucagon-like peptide-1 receptor agonist (GLP-1 RA, liraglutide), or a dipeptidyl peptidase-4 inhibitor (DPP4, sitagliptin), in people with type 2 diabetes who were taking only metformin at baseline. Eligibility included duration of diabetes &lt;10 years, age &gt;30 years at diagnosis (&gt;20 years in Native Americans), and baseline hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol). Additional details on randomization and masking are provided in <xref ref-type="supplementary-material" rid="pone.0309907.s003">S2 Text</xref>. Institutional Review Board approval was obtained at each participating institution, and all participants gave written informed consent. Recruitment began May 1, 2013, and ended August 31, 2017.</p>
+<p>Study medications were randomly assigned, and glargine and glimepiride were titrated with protocol-defined algorithms based on self-monitored blood glucose (SMBG) levels, aimed to achieve pre-breakfast glucose levels of 80–130 mg/dL (4.4–7.2 mmol/L) without hypoglycemic symptoms, or up to the maximum approved dose, whichever dose was lower. Liraglutide was titrated to 1.8 mg/day, unless limited by tolerability, and the sitagliptin dose was based on renal function according to the package insert. HbA1c was measured quarterly and if a value of &gt; 7.5% (&gt;58.5 mmol/mol) was confirmed, those randomized to glimepiride, liraglutide, or sitagliptin added “rescue” glargine, while those randomized to glargine added pre-prandial insulin aspart. Participants in the glargine and glimepiride groups were expected to perform SMBG with study-supplied strips and meters. During periods of glargine dose titration, participants were asked to check blood glucose in the morning when fasting. During periods of glimepiride dose titration, participants were asked to check blood glucose one to two times per day. Once doses of glargine and glimepiride were stabilized, both groups were asked to check blood glucose at least twice a week. Participants in these groups were also asked to perform SMBG if they had symptoms of hypoglycemia. At the discretion of study staff, SMBG could be performed more frequently and also used in the liraglutide and sitagliptin groups. SMBG was also implemented in participants who were given insulin after failing to maintain HbA1c ≤ 7.5% (≤ 58.5 mmol/mol).</p>
+<p>We enrolled 5,047 participants and report findings from a per-protocol subset of 4,830 (95.7%) participants, which excludes 217 participants who never took their assigned medication or never attended follow-up visits. The median observation period was 3.8 (range 0–7.4) years, 51% of the participants had at least 4 years and 68% had at least 3 years of follow-up (see CONSORT diagram, <xref ref-type="fig" rid="pone.0309907.g001">Fig 1</xref>).</p>
+<fig id="pone.0309907.g001" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0309907.g001</object-id>
+<label>Fig 1</label>
+<caption>
+<title>Consort diagram.</title>
+</caption>
+<graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0309907.g001" xlink:type="simple"/>
+</fig>
+<sec id="sec008">
+<title>Hypoglycemia definition</title>
+<p>The primary hypoglycemia outcome in GRADE was adjudicated severe hypoglycemia. All reports of severe hypoglycemia were collected throughout the study. In addition, at quarterly visits, all participants were asked about hypoglycemic symptoms within the last 30 days, and those in the glargine and glimepiride groups were asked for any measured glucose ≤70 mg/dL (3.9 mmol/L) within this time period. All reports of severe hypoglycemia triggered an adjudication process by investigators masked to treatment assignment (<xref ref-type="supplementary-material" rid="pone.0309907.s004">S3 Text</xref>). Only those episodes that were adjudicated as severe are included in this report.</p>
+</sec>
+<sec id="sec009">
+<title>Statistical analysis</title>
+<p>We conducted a "per-protocol" analysis of episodes of hypoglycemia occurring while participants were taking only metformin and their assigned study medication. This analysis was limited to the subset of participants who attended at least one post-baseline visit and took at least one dose of their assigned study medication (N = 4,830), and we censored any episode of hypoglycemia that occurred after the addition of rescue insulin, after any use of non-study diabetes medication, or the discontinuation of the assigned treatment. For categorical variables, differences in the counts and percentages by treatment group were evaluated with a chi-squared p-value comparing the groups. For continuous variables, differences in the mean ± standard deviation were evaluated with an F-test p-value comparing the groups.</p>
+<p>The probability that a participant reported hypoglycemia at a quarterly visit was estimated using a logistic Generalized Estimating Equations (GEE) model with treatment group as the sole covariate, and a first-order autoregressive (AR(1)) correlation structure. The estimated probabilities within each assigned medication treatment group (expressed as a percentage) are reported along with their 95% asymptotic confidence interval. Kaplan-Meier (KM) cumulative incidence plots with log-rank tests were used to compare the four treatment arms for time to first severe hypoglycemia.</p>
+<p>To assess the likelihood of hypoglycemia within each of seven pre-specified subgroups (age, sex, race, ethnicity, HbA1c, BMI, and diabetes duration), we again calculated the probability of a participant reporting hypoglycemic symptoms at a quarterly visit using logistic GEE models, with each medication treatment group, a single subgroup variable and a subgroup by treatment interaction. The estimated probability (expressed as a percentage) within treatment group and subgroup strata and its 95% asymptotic confidence interval are reported. The p-value is that of the treatment by subgroup interaction term in the GEE model using a multivariate Wald test.</p>
+<p>All analyses were conducted with R 4.2.1 (R Core Team 2022). All tests were two-sided, with statistical significance set at p&lt;0.05. All p-values were nominal with no adjustment for multiple comparisons.</p>
+</sec>
+<sec id="sec010">
+<title>Ethics</title>
+<p>Institutional Review Board approval was obtained at each participating institution, and all participants gave written informed consent. GRADE is a multi-center RCT, approved by each clinical site’s institutional review boards. Please refer to <xref ref-type="supplementary-material" rid="pone.0309907.s005">S1 Table</xref> for information on each clinical site’s review board. We have indicated the primary review board submission information from the most recent annual renewal: The George Washington University. Office of Human Research—Institutional Review Board; IRB Number: 071245; Last Approved: 7/25/2023; Expires: 8/23/2024.</p>
+</sec>
+</sec>
+<sec id="sec011" sec-type="results">
+<title>Results</title>
+<p>The 4,830 per-protocol participants randomized to the glargine, glimepiride, liraglutide and sitagliptin treatment groups had similar characteristics at baseline [<xref ref-type="bibr" rid="pone.0309907.ref008">8</xref>,<xref ref-type="bibr" rid="pone.0309907.ref009">9</xref>]. The cohort was 36.1% female, 66.3% White, 19.4% Black, and 18.3% Hispanic with an average age of 57.1 years, body mass index (BMI) 34.3 kg/m<sup>2</sup>, duration of diabetes 4.2 years, and HbA1c 7.5% (58.4 mmol/mol) (<xref ref-type="table" rid="pone.0309907.t001">Table 1</xref>).</p>
+<table-wrap id="pone.0309907.t001" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0309907.t001</object-id>
+<label>Table 1</label> <caption><title>Baseline characteristics of the 4830 GRADE participants included in the per-protocol analyses.</title></caption>
+<alternatives>
+<graphic id="pone.0309907.t001g" mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0309907.t001" xlink:type="simple"/>
+<table>
+<colgroup>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+</colgroup>
+<thead>
+<tr>
+<th align="left"><italic>Demographics</italic></th>
+<th align="left" colspan="6"/>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">N</td>
+<td align="center">4,830</td>
+<td align="center">1,216</td>
+<td align="center">1,219</td>
+<td align="center">1,156</td>
+<td align="center">1,239</td>
+<td align="center">p-value</td>
+</tr>
+<tr>
+<td align="right">Age at baseline visit (years)</td>
+<td align="center">57.1 <italic>±</italic> 10.0</td>
+<td align="center">57.0 <italic>±</italic> 9.9</td>
+<td align="center">57.0 <italic>±</italic> 10.0</td>
+<td align="center">57.3 <italic>±</italic> 9.9</td>
+<td align="center">57.3 <italic>±</italic> 10.1</td>
+<td align="center">0.855</td>
+</tr>
+<tr>
+<td align="left">Age group (years)</td>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center">0.423</td>
+</tr>
+<tr>
+<td align="left"><italic> &lt;</italic>45 years</td>
+<td align="center">593 (12.3%)</td>
+<td align="center">145 (11.9%)</td>
+<td align="center">159 (13.0%)</td>
+<td align="center">145 (12.5%)</td>
+<td align="center">144 (11.6%)</td>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>45–59 years</td>
+<td align="center">2,231 (46.2%)</td>
+<td align="center">585 (48.1%)</td>
+<td align="center">541 (44.4%)</td>
+<td align="center">515 (44.6%)</td>
+<td align="center">590 (47.6%)</td>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>60+ years</td>
+<td align="center">2,006 (41.5%)</td>
+<td align="center">486 (40.0%)</td>
+<td align="center">519 (42.6%)</td>
+<td align="center">496 (42.9%)</td>
+<td align="center">505 (40.8%)</td>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left">Female sex</td>
+<td align="center">1,743 (36.1%)</td>
+<td align="center">433 (35.6%)</td>
+<td align="center">463 (38.0%)</td>
+<td align="center">390 (33.7%)</td>
+<td align="center">457 (36.9%)</td>
+<td align="center">0.163</td>
+</tr>
+<tr>
+<td align="left">Race</td>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center">0.360</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>All others</td>
+<td align="center">691 (14.3%)</td>
+<td align="center">167 (13.7%)</td>
+<td align="center">170 (13.9%)</td>
+<td align="center">171 (14.8%)</td>
+<td align="center">183 (14.8%)</td>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Black</td>
+<td align="center">939 (19.4%)</td>
+<td align="center">235 (19.3%)</td>
+<td align="center">262 (21.5%)</td>
+<td align="center">224 (19.4%)</td>
+<td align="center">218 (17.6%)</td>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>White</td>
+<td align="center">3,200 (66.3%)</td>
+<td align="center">814 (66.9%)</td>
+<td align="center">787 (64.6%)</td>
+<td align="center">761 (65.8%)</td>
+<td align="center">838 (67.6%)</td>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left">Ethnicity</td>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center">0.668</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Non-Hispanic</td>
+<td align="center">3,919 (81.7%)</td>
+<td align="center">998 (82.7%)</td>
+<td align="center">978 (81.2%)</td>
+<td align="center">946 (82.1%)</td>
+<td align="center">997 (81.0%)</td>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Hispanic</td>
+<td align="center">876 (18.3%)</td>
+<td align="center">209 (17.3%)</td>
+<td align="center">227 (18.8%)</td>
+<td align="center">206 (17.9%)</td>
+<td align="center">234 (19.0%)</td>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left">Education completed</td>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center">0.149</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>&lt;High school</td>
+<td align="center">343 (7.1%)</td>
+<td align="center">88 (7.2%)</td>
+<td align="center">98 (8.0%)</td>
+<td align="center">72 (6.2%)</td>
+<td align="center">85 (6.9%)</td>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>HS graduate</td>
+<td align="center">980 (20.3%)</td>
+<td align="center">231 (19.0%)</td>
+<td align="center">246 (20.2%)</td>
+<td align="center">242 (20.9%)</td>
+<td align="center">261 (21.1%)</td>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Some <italic> </italic>college</td>
+<td align="center">1,403 (29.1%)</td>
+<td align="center">385 (31.7%)</td>
+<td align="center">342 (28.1%)</td>
+<td align="center">349 (30.2%)</td>
+<td align="center">327 (26.4%)</td>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>College degree or above</td>
+<td align="center">2,103 (43.5%)</td>
+<td align="center">512 (42.1%)</td>
+<td align="center">533 (43.7%)</td>
+<td align="center">493 (42.6%)</td>
+<td align="center">565 (45.6%)</td>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left">Blood pressure (BP)</td>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Systolic (mmHg)</td>
+<td align="center">128.3 ± 14.7</td>
+<td align="center">128.5 ± 14.9</td>
+<td align="center">128.2 ± 14.4</td>
+<td align="center">128.3 ± 14.9</td>
+<td align="center">128.3 ± 14.8</td>
+<td align="center">0.980</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Diastolic (mmHg)</td>
+<td align="center">77.3 ± 9.8</td>
+<td align="center">77.5 ± 10.0</td>
+<td align="center">77.1 ± 9.5</td>
+<td align="center">77.5 ± 9.9</td>
+<td align="center">77.3 ± 9.8</td>
+<td align="center">0.699</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>History of hypertension</td>
+<td align="center">3,195 (66.1%)</td>
+<td align="center">807 (66.4%)</td>
+<td align="center">814 (66.8%)</td>
+<td align="center">772 (66.8%)</td>
+<td align="center">802 (64.7%)</td>
+<td align="center">0.668</td>
+</tr>
+<tr>
+<td align="left">Diabetes</td>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>BMI (kg/m2)</td>
+<td align="center">34.3 ± 6.8</td>
+<td align="center">34.4 ± 6.8</td>
+<td align="center">34.3 ± 6.8</td>
+<td align="center">34.5 ± 6.7</td>
+<td align="center">34.1 ± 6.7</td>
+<td align="center">0.516</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Duration of diabetes (years)</td>
+<td align="center">4.2 ± 2.7</td>
+<td align="center">4.2 ± 2.7</td>
+<td align="center">4.3 ± 2.8</td>
+<td align="center">4.2 ± 2.7</td>
+<td align="center">4.2 ± 2.7</td>
+<td align="center">0.504</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>HbA1c (%)</td>
+<td align="center">7.5 ± 0.5</td>
+<td align="center">7.5 ± 0.5</td>
+<td align="center">7.5 ± 0.5</td>
+<td align="center">7.5 ± 0.5</td>
+<td align="center">7.5 ± 0.5</td>
+<td align="center">0.692</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>HbA1c (mmol/mol)</td>
+<td align="center">58.4 ± 5.3</td>
+<td align="center">58.4 ± 5.2</td>
+<td align="center">58.2 ± 5.2</td>
+<td align="center">58.5 ± 5.4</td>
+<td align="center">58.5 ± 5.3</td>
+<td align="center">0.692</td>
+</tr>
+<tr>
+<td align="left">Renal</td>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+<td align="center"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>eGFR (mL/min/1.73m2)</td>
+<td align="center">94.8 ± 16.8</td>
+<td align="center">94.6 ± 16.7</td>
+<td align="center">95.2 ± 16.9</td>
+<td align="center">94.3 ± 17.3</td>
+<td align="center">95.3 ± 16.3</td>
+<td align="center">0.360</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>eGFR &lt; 60</td>
+<td align="center">120 (2.5%)</td>
+<td align="center">34 (2.8%)</td>
+<td align="center">27 (2.2%)</td>
+<td align="center">32 (2.8%)</td>
+<td align="center">27 (2.2%)</td>
+<td align="center">0.634</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Urine ACR median/IQR (mg/g)</td>
+<td align="center">6.4 [3.0, 17.0]</td>
+<td align="center">6.7 [3.2, 18.0]</td>
+<td align="center">6.1 [2.9, 16.7]</td>
+<td align="center">6.6 [3.1, 18.7]</td>
+<td align="center">6.1 [3.1, 15.1]</td>
+<td align="center">0.525</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Moderately elevated albuminuria</td>
+<td align="center">688 (14.3%)</td>
+<td align="center">170 (14.0%)</td>
+<td align="center">170 (14.0%)</td>
+<td align="center">176 (15.3%)</td>
+<td align="center">172 (13.9%)</td>
+<td align="center">0.749</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Severely elevated albuminuria</td>
+<td align="center">83 (1.7%)</td>
+<td align="center">17 (1.4%)</td>
+<td align="center">27 (2.2%)</td>
+<td align="center">21 (1.8%)</td>
+<td align="center">18 (1.5%)</td>
+<td align="center">0.377</td>
+</tr>
+</tbody>
+</table>
+</alternatives>
+</table-wrap>
+<p>While participants were taking their assigned study medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%) participants randomized to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p&lt;0.05). Hypoglycemic symptoms occurred in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%), p&lt;0.001, of the glargine, glimepiride, liraglutide, and sitagliptin groups, respectively. In the glargine and glimepiride groups, any hypoglycemia (severe hypoglycemia, hypoglycemia symptoms or measured glucose &lt; 70 mg/dL) occurred in 765 (62.9%) and 915 (75.1%), respectively, p&lt;0.001. Among the four treatment groups, the probability of hypoglycemic symptoms being reported at a quarterly visit was higher with glimepiride than the other groups (18.8% vs. 10.6% with glargine, 5.1% with liraglutide, and 5.0% with sitagliptin [<xref ref-type="table" rid="pone.0309907.t002">Table 2</xref>]). A similar pattern was seen for severe hypoglycemia, albeit with much lower probabilities.</p>
+<table-wrap id="pone.0309907.t002" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0309907.t002</object-id>
+<label>Table 2</label> <caption><title>Participants who experienced different categories of hypoglycemia by treatment group, as determined by per-protocol analysis<xref ref-type="table-fn" rid="t002fn002">*</xref>.</title></caption>
+<alternatives>
+<graphic id="pone.0309907.t002g" mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0309907.t002" xlink:type="simple"/>
+<table>
+<colgroup>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+</colgroup>
+<thead>
+<tr>
+<th align="right"/>
+<th align="left">Glargine</th>
+<th align="left">Glimepiride</th>
+<th align="left">Liraglutide<xref ref-type="table-fn" rid="t002fn004">†</xref></th>
+<th align="left">Sitagliptin<xref ref-type="table-fn" rid="t002fn004">†</xref></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"/>
+<td align="left">(N = 1,216)</td>
+<td align="left">(N = 1,219)</td>
+<td align="left">(N = 1,156)</td>
+<td align="left">(N = 1,239)</td>
+</tr>
+<tr>
+<td align="left"><bold>Cases, N (%)</bold></td>
+<td align="left"/>
+<td align="left"/>
+<td align="left"/>
+<td align="left"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Severe hypoglycemia<xref ref-type="table-fn" rid="t002fn003"><sup>§</sup></xref><xref ref-type="table-fn" rid="t002fn005">‡</xref></td>
+<td align="left">10 (0.8%)</td>
+<td align="left">16 (1.3%)</td>
+<td align="left">6 (0.5%)</td>
+<td align="left">4 (0.3%)</td>
+</tr>
+<tr>
+<td align="left" colspan="5"><bold>Participants who experienced hypoglycemic events on at least one visit (not mutually exclusive)</bold></td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Hypoglycemic symptoms<xref ref-type="table-fn" rid="t002fn005">‡</xref></td>
+<td align="left">659 (54.2%)</td>
+<td align="left">833 (68.3%)</td>
+<td align="left">375 (32.4%)</td>
+<td align="left">361 (29.1%)</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>BG between 70 and 54<xref ref-type="table-fn" rid="t002fn005">‡</xref></td>
+<td align="left">522 (42.9%)</td>
+<td align="left">687 (56.4%)</td>
+<td align="left"/>
+<td align="left"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>BG less than 54<xref ref-type="table-fn" rid="t002fn005">‡</xref></td>
+<td align="left">73 (6.0%)</td>
+<td align="left">106 (8.7%)</td>
+<td align="left"/>
+<td align="left"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Symptoms only<xref ref-type="table-fn" rid="t002fn005">‡</xref></td>
+<td align="left">311 (25.6%)</td>
+<td align="left">311 (25.5%)</td>
+<td align="left"/>
+<td align="left"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>Any hypoglycemia<xref ref-type="table-fn" rid="t002fn005">‡</xref></td>
+<td align="left">765 (62.9%)</td>
+<td align="left">915 (75.1%)</td>
+<td align="left"/>
+<td align="left"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>No hypoglycemia<xref ref-type="table-fn" rid="t002fn005">‡</xref></td>
+<td align="left">451 (37.1%)</td>
+<td align="left">304 (24.9%)</td>
+<td align="left"/>
+<td align="left"/>
+</tr>
+<tr>
+<td align="left" colspan="5"><bold>Probability of at least one event being reported during the 30 days prior to a quarterly visit, % (95% CI)</bold></td>
+</tr>
+<tr>
+<td align="left">Hypoglycemic symptoms</td>
+<td align="left">10.6 (9.7, 11.5)</td>
+<td align="left">18.8 (17.6, 20.1)</td>
+<td align="left">5.1 (4.5, 5.8)</td>
+<td align="left">5.0 (4.4, 5.6)</td>
+</tr>
+</tbody>
+</table>
+</alternatives>
+<table-wrap-foot>
+<fn id="t002fn001"><p>Hypoglycemia events by subtype (including no hypoglycemia) are summarized as counts and column percentages for all participants. Since participants can experience multiple episodes of hypoglycemia of varying severity and type during the study, the rows in this table are not mutually exclusive. Refer to <xref ref-type="supplementary-material" rid="pone.0309907.s004">S3 Text</xref> for hypoglycemia definitions and data collection details.</p></fn>
+<fn id="t002fn002"><p>*Since participants can experience multiple episodes of hypoglycemia of varying severity and type during the study, the rows in this table are not mutually exclusive.</p></fn>
+<fn id="t002fn003"><p>§Severe hypoglycemia was collected at any time during the study, and was not limited to the 30 days prior to a visit.</p></fn>
+<fn id="t002fn004"><p>†Liraglutide and sitagliptin groups are not included in some categories due to differential blood glucose monitoring within the glargine U100 and glimepiride groups.</p></fn>
+<fn id="t002fn005"><p>‡Nominal p&lt;0.05.</p></fn>
+</table-wrap-foot>
+</table-wrap>
+<p>Since participants could experience multiple episodes of hypoglycemia of varying severity and type during the study, the rows in <xref ref-type="table" rid="pone.0309907.t002">Table 2</xref> are not mutually exclusive.</p>
+<p><xref ref-type="fig" rid="pone.0309907.g002">Fig 2</xref> shows the cumulative incidence of severe hypoglycemia. There was both more severe hypoglycemia and hypoglycemia occurring earlier in the study in those assigned to glimepiride compared to glargine, and less in those assigned to liraglutide and sitagliptin.</p>
+<fig id="pone.0309907.g002" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0309907.g002</object-id>
+<label>Fig 2</label>
+<caption>
+<title>Cumulative incidence of severe hypoglycemia, by treatment group with attendant log rank test p-value of treatment group differences while on the assigned medication (per-protocol).</title>
+<p>The numbers plotted below the x-axis are the participants at risk for severe hypoglycemia at each follow-up time point by adjudication (i.e., the number of participants who were not adjudicated as having had severe hypoglycemia by that time).</p>
+</caption>
+<graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0309907.g002" xlink:type="simple"/>
+</fig>
+<p>Of note, hypoglycemic symptoms were reported by participants in all groups (<xref ref-type="table" rid="pone.0309907.t002">Table 2</xref>). Participants in the glargine and glimepiride groups measured their blood glucose in 77% of the episodes in which they had symptoms, and most of these symptomatic episodes were associated with blood glucose values less than 70 mg/dL. Close to one third of the participants in the liraglutide and sitagliptin groups (32.4% and 29.1%, respectively) reported hypoglycemic symptoms, but many did not have corresponding glucose values since they were not provided with testing supplies.</p>
+<p>Subgroup analyses (<xref ref-type="table" rid="pone.0309907.t003">Table 3</xref>) were conducted to assess potential impact on treatment group differences in the likelihood of reporting hypoglycemic symptoms at a quarterly visit, stratified by seven baseline factors. Probabilities (expressed as percentages) within treatment groups and among strata are presented. The pattern of treatment group differences varied across HbA1c tertiles’ strata (p = 0.04 for test of interaction). Among those in the lowest HbA1c tertile (6.8–7.2%), the likelihood was lower with glargine or glimepiride (8.7% for glargine, 18.6% for glimepiride) than for the other treatment groups (around 5.0%). None of the other factors (age, sex, etc.) showed heterogeneity among strata.</p>
+<table-wrap id="pone.0309907.t003" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0309907.t003</object-id>
+<label>Table 3</label> <caption><title>Subgroup analyses of hypoglycemic symptoms stratified according to seven pre-specified baseline factors: age, sex, race, ethnicity, HbA1c, BMI, and diabetes duration.</title> <p>Here, <inline-formula id="pone.0309907.e001"><alternatives><graphic id="pone.0309907.e001g" mimetype="image" position="anchor" xlink:href="info:doi/10.1371/journal.pone.0309907.e001" xlink:type="simple"/><mml:math display="inline" id="M1"><mml:mi>N</mml:mi></mml:math></alternatives></inline-formula> denotes the total number of participants in the stratum and treatment group; <inline-formula id="pone.0309907.e002"><alternatives><graphic id="pone.0309907.e002g" mimetype="image" position="anchor" xlink:href="info:doi/10.1371/journal.pone.0309907.e002" xlink:type="simple"/><mml:math display="inline" id="M2"><mml:msub><mml:mrow><mml:mi>N</mml:mi></mml:mrow><mml:mrow><mml:mi>e</mml:mi></mml:mrow></mml:msub></mml:math></alternatives></inline-formula> denotes the number of participants in the stratum and treatment group that experienced the event at least once, i.e. the number of cases in that stratum and treatment group; estimated probability (as a percentage) of hypoglycemic symptoms occurring in the 30 days prior to a quarterly visit with its asymptotic 95% confidence interval (CI); and the nominal p-value for the treatment by subgroup interaction term. HbA1c was the only subgroup with a statistically significant interaction (other subgroups are omitted).</p></caption>
+<alternatives>
+<graphic id="pone.0309907.t003g" mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0309907.t003" xlink:type="simple"/>
+<table>
+<colgroup>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+</colgroup>
+<thead>
+<tr>
+<th align="left">Subgroup</th>
+<th align="left">Treatment</th>
+<th align="right"><inline-formula id="pone.0309907.e003"><alternatives><graphic id="pone.0309907.e003g" mimetype="image" position="anchor" xlink:href="info:doi/10.1371/journal.pone.0309907.e003" xlink:type="simple"/><mml:math display="inline" id="M3"><mml:mi mathvariant="bold-italic">N</mml:mi></mml:math></alternatives></inline-formula></th>
+<th align="right"><inline-formula id="pone.0309907.e004"><alternatives><graphic id="pone.0309907.e004g" mimetype="image" position="anchor" xlink:href="info:doi/10.1371/journal.pone.0309907.e004" xlink:type="simple"/><mml:math display="inline" id="M4"><mml:msub><mml:mrow><mml:mi mathvariant="bold-italic">N</mml:mi></mml:mrow><mml:mrow><mml:mi mathvariant="bold-italic">e</mml:mi></mml:mrow></mml:msub></mml:math></alternatives></inline-formula></th>
+<th align="right">Probability<xref ref-type="table-fn" rid="t003fn001">*</xref> of at least one event being reported at a quarterly visit, % (95% CI)</th>
+<th align="right">Heterogeneity p-value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><bold>HbA1c (%)</bold></td>
+<td align="left"/>
+<td align="right"/>
+<td align="right"/>
+<td align="right"/>
+<td align="right">0.040</td>
+</tr>
+<tr>
+<td align="left"><italic> </italic>6.8–7.2</td>
+<td align="left">Glargine</td>
+<td align="right">457</td>
+<td align="right">245</td>
+<td align="right">8.7 (7.5, 10.1)</td>
+<td align="right"/>
+</tr>
+<tr>
+<td align="left"/>
+<td align="left">Glimepiride</td>
+<td align="right">476</td>
+<td align="right">339</td>
+<td align="right">18.6 (16.7, 20.5)</td>
+<td align="right"/>
+</tr>
+<tr>
+<td align="left"/>
+<td align="left">Liraglutide</td>
+<td align="right">451</td>
+<td align="right">165</td>
+<td align="right">5.3 (4.4, 6.4)</td>
+<td align="right"/>
+</tr>
+<tr>
+<td align="left"/>
+<td align="left">Sitagliptin</td>
+<td align="right">455</td>
+<td align="right">146</td>
+<td align="right">4.9 (4.0, 6.1)</td>
+<td align="right"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>7.3–7.7</td>
+<td align="left">Glargine</td>
+<td align="right">377</td>
+<td align="right">211</td>
+<td align="right">10.8 (9.3, 12.5)</td>
+<td align="right"/>
+</tr>
+<tr>
+<td align="left"/>
+<td align="left">Glimepiride</td>
+<td align="right">394</td>
+<td align="right">286</td>
+<td align="right">19.7 (17.7, 21.9)</td>
+<td align="right"/>
+</tr>
+<tr>
+<td align="left"/>
+<td align="left">Liraglutide</td>
+<td align="right">344</td>
+<td align="right">112</td>
+<td align="right">4.6 (3.7, 5.7)</td>
+<td align="right"/>
+</tr>
+<tr>
+<td align="left"/>
+<td align="left">Sitagliptin</td>
+<td align="right">401</td>
+<td align="right">130</td>
+<td align="right">4.7 (3.8, 5.8)</td>
+<td align="right"/>
+</tr>
+<tr>
+<td align="left"><italic> </italic>7.8–8.5</td>
+<td align="left">Glargine</td>
+<td align="right">382</td>
+<td align="right">225</td>
+<td align="right">12.7 (11.0, 14.6)</td>
+<td align="right"/>
+</tr>
+<tr>
+<td align="left"/>
+<td align="left">Glimepiride</td>
+<td align="right">349</td>
+<td align="right">231</td>
+<td align="right">17.8 (15.6, 20.1)</td>
+<td align="right"/>
+</tr>
+<tr>
+<td align="left"/>
+<td align="left">Liraglutide</td>
+<td align="right">361</td>
+<td align="right">117</td>
+<td align="right">5.3 (4.2, 6.7)</td>
+<td align="right"/>
+</tr>
+<tr>
+<td align="left"/>
+<td align="left">Sitagliptin</td>
+<td align="right">383</td>
+<td align="right">110</td>
+<td align="right">5.4 (4.3, 6.7)</td>
+<td align="right"/>
+</tr>
+</tbody>
+</table>
+</alternatives>
+<table-wrap-foot>
+<fn id="t003fn001"><p>*Probabilities are expressed as percentage, i.e. multiplied by 100.</p></fn>
+</table-wrap-foot>
+</table-wrap>
+</sec>
+<sec id="sec012" sec-type="conclusions">
+<title>Conclusions</title>
+<p>In this study of 4,830 participants with type 2 diabetes taking only metformin at baseline and randomized to addition of glargine, glimepiride, liraglutide, or sitagliptin, we found that while participants were on their assigned medication, there was significantly more severe hypoglycemia in those assigned to glimepiride than to glargine. Both medications had higher rates than with liraglutide or sitagliptin.</p>
+<p>Severe hypoglycemia was rare, but hypoglycemic symptoms were common in the GRADE cohort. More than half of the participants assigned to addition of glargine and glimepiride and &gt;25% of the participants in the liraglutide and sitagliptin groups reported these symptoms while they were taking only metformin and their assigned study medication. Since the symptoms participants report are not specific for hypoglycemia, a report of symptoms could lead to classification error if not confirmed with a glucose measurement. Only participants in the glargine and glimepiride groups were given glucose testing materials and provided with instructions for when to use them prior to meeting the HbA1c &gt;7.5% (&gt;58.5 mmol/mol) outcome. Thus, we cannot determine if the symptoms reported by participants randomized to liraglutide and sitagliptin truly reflect low glucose levels. More accurate ascertainment of hypoglycemia in future studies would ideally include more extensive confirmatory glucose testing.</p>
+<p>Seven pre-specified baseline factors were examined to determine their potential contributions to the likelihood of reporting hypoglycemia symptoms at a quarterly visit, and only HbA1c was found to have a statistically significant interaction. This differs from results in the Action to Control Cardiovascular Risk in Diabetes (ACCORD) Study, where there was an increased risk of severe hypoglycemia in women and African Americans, and with advanced age, and higher baseline HbA1c [<xref ref-type="bibr" rid="pone.0309907.ref010">10</xref>]. However, ACCORD has not reported an association between baseline factors and the likelihood of hypoglycemic symptoms, and in GRADE the number of severe hypoglycemic events was too small to find a statistical relationship with baseline characteristics. Perhaps the reason we saw less hypoglycemia in those with the lowest baseline HbA1c levels is that they needed low dose glimepiride or glargine to achieve the treatment target.</p>
+<p>Use of sulfonylureas and insulin carries a greater risk of hypoglycemia than diabetes medications acting via alternative mechanisms, including GLP-1 RAs such as liraglutide and DPP4 inhibitors such as sitagliptin [<xref ref-type="bibr" rid="pone.0309907.ref011">11</xref>,<xref ref-type="bibr" rid="pone.0309907.ref012">12</xref>]. However, most previous comparisons have not classified hypoglycemia across a spectrum from severe hypoglycemia to symptoms alone. Our finding that severe hypoglycemia and hypoglycemic symptoms were less common with liraglutide and sitagliptin than with glargine and glimepiride is consistent with previous reports [<xref ref-type="bibr" rid="pone.0309907.ref011">11</xref>,<xref ref-type="bibr" rid="pone.0309907.ref012">12</xref>] and clinical experience. This observation, when coupled with the finding that those randomized to liraglutide experienced less weight gain than those randomized to other medications and had an efficacy essentially equal to glargine and better than sitagliptin and glimepiride [<xref ref-type="bibr" rid="pone.0309907.ref008">8</xref>], provides further evidence that liraglutide might be considered as a first line agent to add on top of metformin in adults with type 2 diabetes of less than 10 years in duration. The presence of severe hypoglycemia in participants treated with liraglutide or sitagliptin was unexpected and provides evidence that this outcome can occur when these drugs are used in combination with metformin. However, there may have been other causes for hypoglycemia that were not captured by our adjudication process.</p>
+<p>The strengths of this study include its large sample size; nationwide participation; and inclusion of individuals who may be at increased risk for iatrogenic hypoglycemia, including age 60+ years, lower level of education, and members of underrepresented racial/ethnic groups [<xref ref-type="bibr" rid="pone.0309907.ref010">10</xref>]. Further, treatment regimens were consistent with current clinical practice, and hypoglycemia was ascertained, categorized, and adjudicated using standardized procedures. The large sample size and successful randomization permitted a robust secondary analysis of an important clinical question.</p>
+<p>Limitations include reliance on participant self-report for ascertainment of hypoglycemia, and potential undercounting of episodes since non-severe hypoglycemic events were only collected for the 30 days prior to the quarterly visits. However, recall bias was likely reduced by restricting the assessment to the 30-day window. Also, timing and cost precluded study of sodium-glucose cotransporter-2 (SGLT-2) inhibitors [<xref ref-type="bibr" rid="pone.0309907.ref009">9</xref>]. Therefore, GRADE cannot provide insight into the impact of this agent compared to the four study medications.</p>
+<p>In conclusion, in adults with type 2 diabetes of less than 10 years duration using metformin monotherapy, the addition of glimepiride was associated with a greater risk of severe hypoglycemia by adjudication than addition of glargine, and both were associated with a greater risk than addition of liraglutide or sitagliptin. Parallel results were observed with less severe categories of hypoglycemia. If limiting the risk of hypoglycemia is a priority when optimizing glycemic management in patients with type 2 diabetes who are using only metformin, clinicians should consider adding a GLP-1 RA such as liraglutide, which has a low likelihood of hypoglycemia and high efficacy of glucose lowering [<xref ref-type="bibr" rid="pone.0309907.ref008">8</xref>]. If a sulfonylurea or insulin is needed, there may be less hypoglycemia with addition of glargine, compared to addition of glimepiride.</p>
+</sec>
+<sec id="sec013" sec-type="supplementary-material">
+<title>Supporting information</title>
+<supplementary-material id="pone.0309907.s001" mimetype="application/pdf" position="float" xlink:href="info:doi/10.1371/journal.pone.0309907.s001" xlink:type="simple">
+<label>S1 Checklist</label>
+<caption>
+<title/>
+<p>(PDF)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pone.0309907.s002" mimetype="application/pdf" position="float" xlink:href="info:doi/10.1371/journal.pone.0309907.s002" xlink:type="simple">
+<label>S1 Text</label>
+<caption>
+<title>GRADE research group listing.</title>
+<p>(PDF)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pone.0309907.s003" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document" position="float" xlink:href="info:doi/10.1371/journal.pone.0309907.s003" xlink:type="simple">
+<label>S2 Text</label>
+<caption>
+<title>GRADE masking and random assignment.</title>
+<p>(DOCX)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pone.0309907.s004" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document" position="float" xlink:href="info:doi/10.1371/journal.pone.0309907.s004" xlink:type="simple">
+<label>S3 Text</label>
+<caption>
+<title>Hypoglycemia data collection and definitions.</title>
+<p>A. Hypoglycemia data collection. B. Severe hypoglycemia adjudication. C. Hypoglycemia definitions.</p>
+<p>(DOCX)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pone.0309907.s005" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document" position="float" xlink:href="info:doi/10.1371/journal.pone.0309907.s005" xlink:type="simple">
+<label>S1 Table</label>
+<caption>
+<title>IRB approval information.</title>
+<p>(DOCX)</p>
+</caption>
+</supplementary-material>
+</sec>
+</body>
+<back>
+<ack>
+<p><bold>GRADE:</bold> The Department of Veterans Affairs provided resources and facilities. Additional support was provided by grant numbers P30 DK017047, P30 DK020541-44, P30 DK020572, P30 DK072476, P30 DK079626, P30 DK092926, U54 GM104940, UL1 TR000439, UL1 TR000445, UL1 TR001108, UL1 TR001409, 2UL1TR001425, UL1 TR001449, UL1 TR002243, UL1 TR002345, UL1 TR002378, UL1 TR002489, UL1 TR002529, UL1 TR002535, UL1 TR002537, 2UL1 TR001425 and UL1 TR002548. Educational materials were provided by the National Diabetes Education Program. Material support in the form of donated medications and supplies were provided by Becton, Dickinson and Company, Bristol-Myers Squibb, Merck &amp; Co., Inc., Novo Nordisk, Roche Diagnostics, and Sanofi. The content of this manuscript is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health. The GRADE Study Research Group is deeply grateful to our participants whose loyal dedication made GRADE possible.</p>
+<p><bold>Guarantors Statement:</bold> Naji Younes and Alokananda Ghosh are the guarantors of this work and as such, had full access to all the data in the study and take responsibility for the integrity of the data and the accuracy of the data analysis.</p>
+<p><bold>Disclosures:</bold> Outside the submitted work, Dr. Elizabeth Seaquist reports grants or contracts from JDRF to her institution; consulting fees from Lily, NovoNordisk, Sanofi, and Zucara; honoraria from International Hypoglycemia study group; board membership with the American Diabetes Association; and receipt of sensors from Dexcom to her institution. Dr. Lawrence Phillips reports salary support from the Veterans Health Administration during the conduct of the study; grants from Janssen Pharmaceuticals, grants from Merck, Amylin, Eli Lilly, Novo Nordisk, Sanofi, PhaseBio, Roche, AbbVie, Vascular Pharmaceuticals, GlaxoSmithKline, Pfizer, AstraZeneca, Kowa, and Cystic Fibrosis Foundation; other support from DIASYST, outside the submitted work. Outside the submitted work, Dr. Richard M. Bergenstal reports consulting fees from Abbot Diabetes Care, Ascencia, Bigfoot Biomedical, Inc., DexCom, MannKind, Medtronic, Novo Nordisk, Sanofi, and United Health Care made to HealthPartners Institute; payments or honoraria from Sanofi and Vertex Pharmaceuticals made to Health Partners Institute; support for meetings or travel from Abbott Diabetes Care, Ascensia, CeQur, Eli Lilly, Embecta, MannKind, Novo Nordisk, Roche GmbH, Sanofi, Vertex Pharmaceuticals, and Zealand Pharma made to Health Partners Institute, and participation on a data safety monitoring or advisory board from Abbott Diabetes Care, CeQur, Eli Lilly, Embecta, Hygieia, Roche GmbH, and Zealand Pharma with payments made to HealthPartners Institute. Outside the submitted work, Dr. Jill Crandall reports non-financial support from Abbott. Outside the submitted work, Mary L Johnson reports research grants paid to Health Partners Institute from Sanofi, Novo Nordisk, and Lilly. Dr. Alokananda Ghosh, Dr. Naji Younes, Dr. John Lachin, Chelsea Baker, Dr. Robin S. Goland, Michaela R Gramzinski, Dr. Daniel S Hsia, Dr. Sophia H Hox, Dr. Philip Raskin, Dr. Willy M Valencia, and Andrea H Waltje have nothing to disclose.</p>
+<p><bold>Prior Presentation:</bold> The abstract for this manuscript was presented at the American Diabetes Association’s 82nd Scientific Sessions in New Orleans, Louisiana, June 3–7, 2022, and at the International Hypoglycemia Study Group 2<sup>nd</sup> Annual Advances in Hypoglycemia Conference, Virtual Meeting, November 16–17, 2022.</p>
+</ack>
+<ref-list>
+<title>References</title>
+<ref id="pone.0309907.ref001"><label>1</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Lipska</surname> <given-names>KJ</given-names></name>, <name name-style="western"><surname>Ross</surname> <given-names>JS</given-names></name>, <name name-style="western"><surname>Wang</surname> <given-names>Y</given-names></name>, <name name-style="western"><surname>Inzucchi</surname> <given-names>SE</given-names></name>, <name name-style="western"><surname>Minges</surname> <given-names>K</given-names></name>, <name name-style="western"><surname>Karter</surname> <given-names>AJ</given-names></name>, <etal>et al</etal>. <article-title>National trends in US hospital admissions for hyperglycemia and hypoglycemia among Medicare beneficiaries, 1999 to 2011</article-title>. <source>Jama Internal Medicine</source>. <year>2014</year>;<volume>174</volume>(<issue>7</issue>):<fpage>1116</fpage>–<lpage>24</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1001/jamainternmed.2014.1824" xlink:type="simple">10.1001/jamainternmed.2014.1824</ext-link></comment> <object-id pub-id-type="pmid">24838229</object-id></mixed-citation></ref>
+<ref id="pone.0309907.ref002"><label>2</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Shehab</surname> <given-names>N</given-names></name>, <name name-style="western"><surname>Lovegrove</surname> <given-names>MC</given-names></name>, <name name-style="western"><surname>Geller</surname> <given-names>AI</given-names></name>, <name name-style="western"><surname>Rose</surname> <given-names>KO</given-names></name>, <name name-style="western"><surname>Weidle</surname> <given-names>NJ</given-names></name>, <name name-style="western"><surname>Budnitz</surname> <given-names>DS</given-names></name>. <article-title>US emergency department visits for outpatient adverse drug events, 2013–2014</article-title>. <source>JAMA</source>. <year>2016</year>;<volume>316</volume>(<issue>20</issue>):<fpage>2115</fpage>–<lpage>25</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1001/jama.2016.16201" xlink:type="simple">10.1001/jama.2016.16201</ext-link></comment> <object-id pub-id-type="pmid">27893129</object-id></mixed-citation></ref>
+<ref id="pone.0309907.ref003"><label>3</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Buse</surname> <given-names>JB</given-names></name>, <name name-style="western"><surname>Rosenstock</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Sesti</surname> <given-names>G</given-names></name>, <name name-style="western"><surname>Schmidt</surname> <given-names>WE</given-names></name>, <name name-style="western"><surname>Montanya</surname> <given-names>E</given-names></name>, <name name-style="western"><surname>Brett</surname> <given-names>JH</given-names></name>, <etal>et al</etal>. <article-title>Liraglutide once a day versus exenatide twice a day for type 2 diabetes: a 26-week randomised, parallel-group, multinational, open-label trial (LEAD-6)</article-title>. <source>Lancet</source>. <year>2009</year>;<volume>374</volume>(<issue>9683</issue>):<fpage>39</fpage>–<lpage>47</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1016/S0140-6736%2809%2960659-0" xlink:type="simple">10.1016/S0140-6736(09)60659-0</ext-link></comment> <object-id pub-id-type="pmid">19515413</object-id></mixed-citation></ref>
+<ref id="pone.0309907.ref004"><label>4</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Fukuda</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Doi</surname> <given-names>K</given-names></name>, <name name-style="western"><surname>Sugawara</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Mochizuki</surname> <given-names>K</given-names></name>. <article-title>Efficacy and safety of sitagliptin in elderly patients with type 2 diabetes mellitus: A focus on hypoglycemia</article-title>. <source>Journal of Diabetes Investigation</source>. <year>2019</year>;<volume>10</volume>(<issue>2</issue>):<fpage>383</fpage>–<lpage>91</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1111/jdi.12915" xlink:type="simple">10.1111/jdi.12915</ext-link></comment> <object-id pub-id-type="pmid">30136435</object-id></mixed-citation></ref>
+<ref id="pone.0309907.ref005"><label>5</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Joseph</surname> <given-names>CMC</given-names></name>. <article-title>Symptomatic hypoglycemia during treatment with a therapeutic dose of metformin</article-title>. <source>American Journal of Case Reports</source>. <year>2021</year>;<volume>22</volume>:<fpage>e931311</fpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.12659/AJCR.931311" xlink:type="simple">10.12659/AJCR.931311</ext-link></comment> <object-id pub-id-type="pmid">34075013</object-id></mixed-citation></ref>
+<ref id="pone.0309907.ref006"><label>6</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Wright</surname> <given-names>A</given-names></name>, <name name-style="western"><surname>Burden</surname> <given-names>AC</given-names></name>, <name name-style="western"><surname>Paisey</surname> <given-names>RB</given-names></name>, <name name-style="western"><surname>Cull</surname> <given-names>CA</given-names></name>, <name name-style="western"><surname>Holman</surname> <given-names>RR</given-names></name>, <collab>U. K. Prospective Diabetes Study Group</collab>. <article-title>Sulfonylurea inadequacy: efficacy of addition of insulin over 6 years in patients with type 2 diabetes in the U.K. Prospective Diabetes Study (UKPDS 57)</article-title>. <source>Diabetes Care</source>. <year>2002</year>;<volume>25</volume>(<issue>2</issue>):<fpage>330</fpage>–<lpage>6</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.2337/diacare.25.2.330" xlink:type="simple">10.2337/diacare.25.2.330</ext-link></comment> <object-id pub-id-type="pmid">11815505</object-id></mixed-citation></ref>
+<ref id="pone.0309907.ref007"><label>7</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Rosenstock</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Kahn</surname> <given-names>SE</given-names></name>, <name name-style="western"><surname>Johansen</surname> <given-names>OE</given-names></name>, <name name-style="western"><surname>Zinman</surname> <given-names>B</given-names></name>, <name name-style="western"><surname>Espeland</surname> <given-names>MA</given-names></name>, <name name-style="western"><surname>Woerle</surname> <given-names>HJ</given-names></name>, <etal>et al</etal>. <article-title>Effect of linagliptin vs glimepiride on major adverse cardiovascular outcomes in patients with type 2 diabetes: The CAROLINA randomized clinical trial</article-title>. <source>JAMA</source>. <year>2019</year>;<volume>322</volume>(<issue>12</issue>):<fpage>1155</fpage>–<lpage>66</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1001/jama.2019.13772" xlink:type="simple">10.1001/jama.2019.13772</ext-link></comment> <object-id pub-id-type="pmid">31536101</object-id></mixed-citation></ref>
+<ref id="pone.0309907.ref008"><label>8</label><mixed-citation publication-type="journal" xlink:type="simple"><collab>GRADE Study Research Group</collab>, <name name-style="western"><surname>Nathan</surname> <given-names>DM</given-names></name>, <name name-style="western"><surname>Lachin</surname> <given-names>JM</given-names></name>, <name name-style="western"><surname>Balasubramanyam</surname> <given-names>A</given-names></name>, <name name-style="western"><surname>Burch</surname> <given-names>HB</given-names></name>, <name name-style="western"><surname>Buse</surname> <given-names>JB</given-names></name>, <etal>et al</etal>. <article-title>Glycemia reduction in type 2 diabetes—glycemic outcomes</article-title>. <source>N Engl J Med</source>. <year>2022</year>;<volume>387</volume>(<issue>12</issue>):<fpage>1063</fpage>–<lpage>74</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1056/NEJMoa2200433" xlink:type="simple">10.1056/NEJMoa2200433</ext-link></comment> <object-id pub-id-type="pmid">36129996</object-id></mixed-citation></ref>
+<ref id="pone.0309907.ref009"><label>9</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Nathan</surname> <given-names>DM</given-names></name>, <name name-style="western"><surname>Buse</surname> <given-names>JB</given-names></name>, <name name-style="western"><surname>Kahn</surname> <given-names>SE</given-names></name>, <name name-style="western"><surname>Krause-Steinrauf</surname> <given-names>H</given-names></name>, <name name-style="western"><surname>Larkin</surname> <given-names>ME</given-names></name>, <name name-style="western"><surname>Staten</surname> <given-names>M</given-names></name>, <etal>et al</etal>. <article-title>Rationale and design of the glycemia reduction approaches in diabetes: A comparative effectiveness study (GRADE)</article-title>. <source>Diabetes Care</source>. <year>2013</year>;<volume>36</volume>(<issue>8</issue>):<fpage>2254</fpage>–<lpage>61</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.2337/dc13-0356" xlink:type="simple">10.2337/dc13-0356</ext-link></comment> <object-id pub-id-type="pmid">23690531</object-id></mixed-citation></ref>
+<ref id="pone.0309907.ref010"><label>10</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Miller</surname> <given-names>ME</given-names></name>, <name name-style="western"><surname>Bonds</surname> <given-names>DE</given-names></name>, <name name-style="western"><surname>Gerstein</surname> <given-names>HC</given-names></name>, <name name-style="western"><surname>Seaquist</surname> <given-names>ER</given-names></name>, <name name-style="western"><surname>Bergenstal</surname> <given-names>RM</given-names></name>, <name name-style="western"><surname>Calles-Escandon</surname> <given-names>J</given-names></name>, <etal>et al</etal>. <article-title>The effects of baseline characteristics, glycaemia treatment approach, and glycated haemoglobin concentration on the risk of severe hypoglycaemia: post hoc epidemiological analysis of the ACCORD study</article-title>. <source>BMJ</source>. <year>2010</year>;<volume>340</volume>:<fpage>b5444</fpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.1136/bmj.b5444" xlink:type="simple">10.1136/bmj.b5444</ext-link></comment> <object-id pub-id-type="pmid">20061360</object-id></mixed-citation></ref>
+<ref id="pone.0309907.ref011"><label>11</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Lipska</surname> <given-names>KJ</given-names></name>, <name name-style="western"><surname>Yao</surname> <given-names>XX</given-names></name>, <name name-style="western"><surname>Herrin</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>McCoy</surname> <given-names>RG</given-names></name>, <name name-style="western"><surname>Ross</surname> <given-names>JS</given-names></name>, <name name-style="western"><surname>Steinman</surname> <given-names>MA</given-names></name>, <etal>et al</etal>. <article-title>Trends in drug utilization, glycemic control, and rates of severe hypoglycemia, 2006–2013</article-title>. <source>Diabetes Care</source>. <year>2017</year>;<volume>40</volume>(<issue>4</issue>):<fpage>468</fpage>–<lpage>75</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="https://doi.org/10.2337/dc16-0985" xlink:type="simple">10.2337/dc16-0985</ext-link></comment> <object-id pub-id-type="pmid">27659408</object-id></mixed-citation></ref>
+<ref id="pone.0309907.ref012"><label>12</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Pathak</surname> <given-names>RD</given-names></name>, <name name-style="western"><surname>Schroeder</surname> <given-names>EB</given-names></name>, <name name-style="western"><surname>Seaquist</surname> <given-names>ER</given-names></name>, <name name-style="western"><surname>Zeng</surname> <given-names>C</given-names></name>, <name name-style="western"><surname>Lafata</surname> <given-names>JE</given-names></name>, <name name-style="western"><surname>Thomas</surname> <given-names>A</given-names></name>, <etal>et al</etal>. <article-title>Severe hypoglycemia requiring medical intervention in a large cohort of adults with diabetes receiving care in US integrated health care delivery systems: 2005–2011</article-title>. <source>Diabetes Care</source>. <year>2016</year>;<volume>39</volume>(<issue>3</issue>):<fpage>363</fpage>–<lpage>70</lpage>.</mixed-citation></ref>
+</ref-list>
+</back>
+</article>

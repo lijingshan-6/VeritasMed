@@ -1,4 +1,10 @@
-# Current Agent workflow (v0.4.0 research showcase)
+# Current Agent workflow (v0.5.0; Ask graph inherited from v0.4)
+
+v0.5 adds a separate **Ask → Audit** action. The browser transfers the unchanged answer and
+all returned source texts to `/audit`; the user then runs Direct Flash or an experimental audit.
+It does not feed the new audit into the graph's repair loop. Exact answer/source bindings,
+unresolved quotes, uncovered text and JSON export are described in the [audit guide](audit-demo.md).
+The [medical walkthrough](medical-demo.md) records this flow on original article text.
 
 The production Ask graph answers one standalone question using retrieved literature.
 The browser API, the Ollama runner `scripts/benchmark/run_agent.py`, and the OpenHub runner

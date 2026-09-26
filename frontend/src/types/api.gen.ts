@@ -181,19 +181,6 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        /** AuditRequest */
-        AuditRequest: {
-            /** Answer */
-            answer: string;
-            /** Sources */
-            sources: components["schemas"]["AuditSource"][];
-            /**
-             * Strategy
-             * @default direct
-             * @enum {string}
-             */
-            strategy: "direct" | "split" | "context";
-        };
         /** AuditSource */
         AuditSource: {
             /** Id */
@@ -348,6 +335,19 @@ export interface components {
             citations: string[];
             /** Timestamp */
             timestamp: string;
+        };
+        /** QuoteAuditRequest */
+        QuoteAuditRequest: {
+            /** Answer */
+            answer: string;
+            /** Sources */
+            sources: components["schemas"]["AuditSource"][];
+            /**
+             * Strategy
+             * @default direct
+             * @enum {string}
+             */
+            strategy: "direct" | "split" | "context" | "quote_v2";
         };
         /** SearchResponse */
         SearchResponse: {
@@ -596,7 +596,7 @@ export interface operations {
     replay_api_audit_examples__response_id__get: {
         parameters: {
             query?: {
-                strategy?: "direct" | "split" | "context";
+                strategy?: "direct" | "split" | "context" | "quote_v2";
             };
             header?: never;
             path: {
@@ -635,7 +635,7 @@ export interface operations {
         };
         requestBody: {
             content: {
-                "application/json": components["schemas"]["AuditRequest"];
+                "application/json": components["schemas"]["QuoteAuditRequest"];
             };
         };
         responses: {

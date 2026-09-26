@@ -1,4 +1,4 @@
-import { isGuidedDemo } from '../demo'
+import { isGuidedDemo, isMedicalDemo } from '../demo'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { makeAuditHandoff } from '../api/auditHandoff'
@@ -344,7 +344,7 @@ function EmptyState({ suggestedQueries, onPickQuery }: {
         }}>
           Ask a standalone literature question. Inspect retrieved passages,
           follow citations to their sources, and review the model’s evidence check.
-          The bundled examples use labelled summaries, not original article text.
+          {isMedicalDemo ? 'This demo searches the original GRADE hypoglycemia trial abstract (Seaquist et al., 2024; CC0). It is a single-paper demonstration, not a literature review.' : 'The bundled examples use labelled summaries, not original article text.'}
         </p>
 
         <div className="vm-eyebrow" style={{ marginBottom: 12 }}>Try a query</div>

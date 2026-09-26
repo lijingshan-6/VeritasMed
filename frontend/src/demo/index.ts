@@ -3,9 +3,12 @@ import type { ChunkOut } from '../types'
 import type { AgentEvent, AnswerOut } from '../types/ws'
 
 export const isGuidedDemo = new URLSearchParams(window.location.search).get('demo') === '1'
+export const isMedicalDemo = !isGuidedDemo && import.meta.env.VITE_MEDICAL_DEMO === '1'
 export const demoSuffix = isGuidedDemo ? '?demo=1' : ''
 export const demoChunks = fixtures.chunks as ChunkOut[]
-export const demoQuestions = fixtures.examples.map((example) => example.query)
+export const demoQuestions = isMedicalDemo ? [
+  'In the GRADE trial report on hypoglycemia, what were the severe hypoglycemia rates for glargine, glimepiride, liraglutide and sitagliptin while participants were taking their assigned medications, and which population and analysis do these results describe?',
+] : fixtures.examples.map((example) => example.query)
 let pending: ReturnType<typeof setTimeout> | undefined
 
 export function cancelDemo() { clearTimeout(pending) }

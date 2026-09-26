@@ -3,7 +3,7 @@
   "info": {
     "title": "VeritasMed API",
     "description": "Self-verifying medical literature QA backend",
-    "version": "0.4.0"
+    "version": "0.5.0"
   },
   "paths": {
     "/api/search": {
@@ -312,7 +312,8 @@
               "enum": [
                 "direct",
                 "split",
-                "context"
+                "context",
+                "quote_v2"
               ],
               "type": "string",
               "default": "direct",
@@ -353,7 +354,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AuditRequest"
+                "$ref": "#/components/schemas/QuoteAuditRequest"
               }
             }
           },
@@ -384,42 +385,6 @@
   },
   "components": {
     "schemas": {
-      "AuditRequest": {
-        "properties": {
-          "answer": {
-            "type": "string",
-            "maxLength": 12000,
-            "minLength": 1,
-            "title": "Answer"
-          },
-          "sources": {
-            "items": {
-              "$ref": "#/components/schemas/AuditSource"
-            },
-            "type": "array",
-            "maxItems": 40,
-            "minItems": 1,
-            "title": "Sources"
-          },
-          "strategy": {
-            "type": "string",
-            "enum": [
-              "direct",
-              "split",
-              "context"
-            ],
-            "title": "Strategy",
-            "default": "direct"
-          }
-        },
-        "additionalProperties": false,
-        "type": "object",
-        "required": [
-          "answer",
-          "sources"
-        ],
-        "title": "AuditRequest"
-      },
       "AuditSource": {
         "properties": {
           "id": {
@@ -873,6 +838,43 @@
           "timestamp"
         ],
         "title": "HistoryTurn"
+      },
+      "QuoteAuditRequest": {
+        "properties": {
+          "answer": {
+            "type": "string",
+            "maxLength": 12000,
+            "minLength": 1,
+            "title": "Answer"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/AuditSource"
+            },
+            "type": "array",
+            "maxItems": 40,
+            "minItems": 1,
+            "title": "Sources"
+          },
+          "strategy": {
+            "type": "string",
+            "enum": [
+              "direct",
+              "split",
+              "context",
+              "quote_v2"
+            ],
+            "title": "Strategy",
+            "default": "direct"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "answer",
+          "sources"
+        ],
+        "title": "QuoteAuditRequest"
       },
       "SearchResponse": {
         "properties": {

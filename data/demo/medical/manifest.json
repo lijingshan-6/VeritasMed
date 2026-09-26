@@ -1,0 +1,19 @@
+{
+  "title": "Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+  "authors": "Seaquist ER et al.; GRADE Research Group",
+  "published": "2024-11-15",
+  "retrieved_utc": "2026-09-26",
+  "doi": "10.1371/journal.pone.0309907",
+  "pmid": "39546502",
+  "pmcid": "PMC11567630",
+  "article_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0309907",
+  "xml_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0309907&type=manuscript",
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "license_statement": "This is an open access article, free of all copyright, and may be freely reproduced, distributed, transmitted, modified, built upon, or otherwise used by anyone for any lawful purpose. The work is made available under the Creative Commons CC0 public domain dedication.",
+  "article_xml_sha256": "b55d6fc595dcd5d977a54caefa07534666c92b5390fc0bf01310b06f538e10fe",
+  "normalization": "XML itertext in original order; whitespace collapsed within each paragraph; paragraphs joined by two newlines. All five abstract sections included. No paraphrases or clinical additions. Unicode code-point anchors refer to these normalized passages, not PDF coordinates.",
+  "corpus_text_sha256": "6d9e292681be5f3fd5d331b173894920920b72aa9d190a8ff6285bff94e1f78f",
+  "question": "In the GRADE trial report on hypoglycemia, what were the severe hypoglycemia rates for glargine, glimepiride, liraglutide and sitagliptin while participants were taking their assigned medications, and which population and analysis do these results describe?",
+  "purpose": "One-paper software demonstration, not gold labels or a reliability evaluation."
+}

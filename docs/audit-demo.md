@@ -1,12 +1,12 @@
 # 真实回答审计面板
 
-当前为 v0.5 开发功能，入口 `/audit`。它接收一份完整回答和 1–40 份来源文本，
+当前为 v0.5.0 功能，入口 `/audit`。它接收一份完整回答和 1–40 份来源文本，
 逐条展示模型判定、回答原文范围、来源原文范围和未覆盖文本。
 只判断提供文本的支持关系，不自动搜索、修复回答或判定临床证据等级。
 
 ## 轻量启动
 
-在包含本功能的开发分支运行以下命令；`v0.4.0` 标签不包含它。
+在 `main` 或固定 `v0.5.0` 标签运行以下命令；`v0.4.0` 标签不包含它。
 需要 Python 3.12、Node.js 22.12+ 和 uv，不需要 Ollama、Qdrant 或 GPU。
 已有完整项目环境可以直接使用，省略安装步骤。
 
@@ -20,7 +20,6 @@ uv pip install --no-deps -e .
 `source .venv/bin/activate`。随后从仓库根目录运行：
 
 ```sh
-python scripts/verification/answer_benchmark.py download
 python scripts/run_audit_demo.py
 ```
 
@@ -28,9 +27,12 @@ python scripts/run_audit_demo.py
 `npm ci`，然后开启前端与端口 8001 的轻量 API。Ctrl+C 停止两者。两个端口须空闲。
 若不能激活 PowerShell 环境，用 `.\.venv\Scripts\python.exe` 替代命令中的 `python`。
 
-下载步骤取得约 37 MB 的固定版 RAGTruth 数据，只放在忽略的 `.benchmark-runtime/ragtruth/`。
-面板用这份缓存恢复来源全文；仓库保存的模型判断不是编写的演示答案。
-首次下载及依赖安装需网络；此后保存记录回放无需模型密钥、模型请求或 GPU。
+默认直接回放 [GRADE 医学演示](medical-demo.md)：仓库已包含原文、真实 Ask 回答和实际审计，
+不需要密钥、GPU、Qdrant 或额外数据下载。点击陈述、定位原文、打开论文和 JSON 导出均可使用。
+
+RAGTruth 是另一个非医学开发研究入口。可选运行
+`python scripts/verification/answer_benchmark.py download` 取得约 37 MB 固定数据，
+只放在忽略的 `.benchmark-runtime/ragtruth/`。首次下载及依赖安装需网络；此后回放无需模型请求。
 缺少缓存、缓存内容变化、记录与输入哈希不符时显示错误，不拼凑来源。
 
 轻量服务只提供审计功能，因此启动器隐藏 Ask/Explore 导航。完整 FastAPI 应用也注册了
@@ -39,9 +41,11 @@ python scripts/run_audit_demo.py
 保留会话、问题、citation → chunk 映射。此按钮只传递文本，之后点击 **Run new audit** 才会调用模型。
 超过 40 个片段、单段/总字符上限时明确报错，不静默截断。没有自动修复或替换原回答。
 从 Guided demo 传递的内容会显示 **Authored demo input**，不能当成真实 Agent 答案。
-轻量启动器不提供 Ask；需要走完整流程时使用原有 `python scripts/run_demo.py`。
+轻量启动器不提供 Ask；真实医学完整流程用 `python scripts/run_demo.py --medical`。
+原有 `python scripts/run_demo.py` 仍为自拟 fastMRI 摘要语料。
 
-2026-09-24 已实际走通 Live Ask → Audit：问题为 “What kinds of data does the fastMRI knee dataset provide?”。
+以下为保留的 2026-09-24 历史自拟摘要演示；当前原始医学论文演示见 [新记录](medical-demo.md)。
+当时已实际走通 Live Ask → Audit：问题为 “What kinds of data does the fastMRI knee dataset provide?”。
 Agent 当次生成的原回答及返回的全部 2 个片段原样进入审计；手动选择 Context + meta 后，
 一次 Flash 调用耗时 8.5 秒，输出 3 条 Supported，并导出
 [原始 JSON](assets/v05-ask-audit.json)。其中 `handoff` 保留原回答、来源和 citation/chunk 映射，

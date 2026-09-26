@@ -19,6 +19,7 @@ RUN = ROOT / "data/verification/ragtruth_v1/run01"
 CONTEXT_RUN = ROOT / "data/verification/context_v1/run01"
 QUOTE_RUN = ROOT / "data/verification/quote_v2/run01"
 CACHE = ROOT / ".benchmark-runtime/ragtruth"
+MEDICAL = ROOT / "data/demo/medical/audit.json"
 router = APIRouter(prefix="/api/audit", tags=["answer audit"])
 _slots = BoundedSemaphore(3)
 
@@ -88,13 +89,31 @@ def examples():
         case_id = row["case_id"]
         entry = grouped.setdefault(case_id, {"id": case_id, "strategies": {}})
         entry["strategies"][row["strategy"]] = row["audit"]["status"]
-    return {"examples": sorted(grouped.values(), key=lambda r: int(r["id"])),
+    entries = sorted(grouped.values(), key=lambda r: int(r["id"]))
+    for entry in entries:
+        entry["label"] = f"RAGTruth #{entry['id']}"
+        entry["requires_download"] = True
+    if MEDICAL.exists():
+        record = json.loads(MEDICAL.read_text(encoding="utf8"))
+        entries.insert(0, {"id": "medical-grade", "label": "Medical · GRADE hypoglycemia trial",
+                           "requires_download": False,
+                           "strategies": {record["input"]["strategy"]: record["audit"]["status"]}})
+    return {"examples": entries,
             "sources_downloaded": all((CACHE / name).exists() for name in ("response.jsonl", "source_info.jsonl")),
-            "description": "Actual saved Flash calls on RAGTruth training answers; public nonmedical development data."}
+            "description": "Actual saved Flash inference: bundled original-paper medical demo and optional nonmedical RAGTruth development examples."}
 
 
 @router.get("/examples/{response_id}")
 def replay(response_id: str, strategy: Literal["direct", "split", "context", "quote_v2"] = "direct"):
+    if response_id == "medical-grade" and MEDICAL.exists():
+        record = json.loads(MEDICAL.read_text(encoding="utf8"))
+        if record["input"]["strategy"] != strategy:
+            raise HTTPException(404, "No saved medical audit for this strategy.")
+        item = QuoteAuditRequest.model_validate(record["input"])
+        if record["audit"]["answer_sha256"] != text_hash(item.answer) or record["audit"]["source_hashes"] != {s.id: text_hash(s.text) for s in item.sources}:
+            raise HTTPException(409, "Medical demo anchors belong to different input texts.")
+        return {**record, "mode": "saved", "provenance": {**record["provenance"],
+                "note": "Saved actual Ask → Direct audit of the GRADE hypoglycemia trial abstract (Seaquist et al., 2024; CC0). No new model call. Single-paper software demonstration, not a reliability evaluation."}}
     row = next((r for r in saved_rows() if r["case_id"] == response_id and r["strategy"] == strategy), None)
     if row is None:
         raise HTTPException(404, "No saved audit for this answer and strategy.")

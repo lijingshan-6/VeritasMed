@@ -1,6 +1,9 @@
 # Changelog
 
-## 0.5.0 — in development (not released)
+## 0.5.0 — 2026-09-26 (text audit research showcase)
+
+- Bundle a genuine CC0 medical-paper snapshot and its original abstract, an actual Flash Ask → Direct Audit recording, source links and JSON export. The default audit replay needs no key or dataset download; this demo is not an accuracy evaluation.
+- Add an isolated `--medical` Ask profile, synchronize version metadata and startup documentation, and separate v0.6 reliability/calibration work from the v0.7 autonomous-tools comparison. See the [release notes](docs/releases/v0.5.0.md).
 
 - Add 33 explicit AI development error reviews separating specific issue identification from incidental span overlap; preserve public annotations and historical scores.
 - Add an optional quote-v2 audit with program-derived locations/context and visible repeated/missing quotations. Offline binding-only replay completes 125/126 original outputs versus historical 123/126; never overwrites original failures.

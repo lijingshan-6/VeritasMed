@@ -78,8 +78,8 @@ export function AuditPage() {
     auditExamples().then(async data => {
       if (!alive) return
       setCatalogue(data)
-      const first = data.examples.find(e => e.strategies.direct)
-      if (!incoming && first && data.sources_downloaded) {
+      const first = data.examples.find(e => e.strategies.direct && (!e.requires_download || data.sources_downloaded))
+      if (!incoming && first) {
         setExample(first.id); setPending('Loading saved audit…')
         try { const value = await replayAudit(first.id, 'direct'); if (alive) show(value) }
         catch (e) { if (alive) setError(message(e)) }
@@ -135,16 +135,17 @@ export function AuditPage() {
       <span className="vm-eyebrow">Real saved runs</span>
       <label>Method <select aria-label="Audit method" disabled={!!pending} value={strategy} onChange={e => {
         const value = e.target.value as Strategy; setStrategy(value)
-        const next = catalogue?.examples.find(c => c.id === example && c.strategies[value]) ?? catalogue?.examples.find(c => c.strategies[value])
+        const ready = catalogue?.examples.filter(c => !c.requires_download || catalogue.sources_downloaded)
+        const next = ready?.find(c => c.id === example && c.strategies[value]) ?? ready?.find(c => c.strategies[value])
         setExample(next?.id ?? ''); setRecord(null)
         if (next) void load(next.id, value)
       }}>{Object.entries(methodLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
       <label>Answer <select aria-label="Saved answer" disabled={!!pending || !available.length} value={example} onChange={e => {
         setExample(e.target.value); void load(e.target.value, strategy)
-      }}><option value="" disabled>Select a saved answer</option>{available.map(e => <option key={e.id} value={e.id}>RAGTruth #{e.id} · {e.strategies[strategy]}</option>)}</select></label>
-      <span className="audit-muted">Public, nonmedical training data · no new API call</span>
+      }}><option value="" disabled>Select a saved answer</option>{available.map(e => <option key={e.id} value={e.id} disabled={e.requires_download && !catalogue?.sources_downloaded}>{e.label} · {e.strategies[strategy]}</option>)}</select></label>
+      <span className="audit-muted">Real saved inference · no new API call</span>
     </div>
-    {catalogue && !catalogue.sources_downloaded && <div className="audit-notice">Download original texts once to replay: <code>python scripts/verification/answer_benchmark.py download</code>. Then reload this page.</div>}
+    {catalogue && !catalogue.sources_downloaded && <div className="audit-notice">The medical demo is bundled and ready to replay. Optional nonmedical RAGTruth research examples require <code>python scripts/verification/answer_benchmark.py download</code>, then reload.</div>}
     {catalogue && !catalogue.examples.length && <div className="audit-notice">No saved run is available yet. You can audit supplied texts using the input below.</div>}
     {error && <div role="alert" className="audit-notice error">{error}</div>}
     {handoff && formOpen && <div className="audit-notice">
@@ -175,6 +176,7 @@ export function AuditPage() {
         <span className="audit-muted">{new Date(audit.created_utc).toLocaleString()}</span>
         <button className="audit-button" onClick={exportRecord}>Export audit JSON</button>
       </div>
+      <p className="audit-muted">{record.provenance.note}</p>
       {record.provenance.handoff && <div className="audit-notice"><strong>{record.provenance.handoff.kind === 'live_ask' ? 'Ask answer' : 'Authored demo input'}</strong> · {record.provenance.input_edited ? 'Inputs edited after transfer; originals retained in export.' : 'Original answer and source passages preserved.'}<p>{record.provenance.handoff.question}</p></div>}
       <div className="audit-layout">
         <section className="audit-answer-column">

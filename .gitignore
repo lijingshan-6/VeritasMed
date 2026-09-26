@@ -256,6 +256,7 @@ data/eval/pipeline_comparison.json
 
 # Isolated release checks and local demo runtime
 .venv-release/
+.research-venv/
 .demo-runtime/
 .benchmark-runtime/
 .playwright-cli/

@@ -1,84 +1,61 @@
 # 文档索引与维护范围
 
-更新：2026-09-26。当前为 **v0.5.0 文本审计研究展示里程碑，基线为 Flash / Direct**。
-固定版本见 [`v0.5.0` 标签](https://github.com/lijingshan-6/medrag-agent/tree/v0.5.0) 与
-[版本说明](releases/v0.5.0.md)。先读 [真实医学演示](medical-demo.md)：无密钥回放真实推理，
-或从原始论文摘要重跑 Ask → Audit。模型判断不等于可信度校准或临床正确率。
-历史 v0.4 的开发 15/15、重复 10/10、首次保留测试 31/35 见 [原版本说明](releases/v0.4.0.md)，
-这些不是 v0.5 核查器的准确率。
-模型选择及下一轮优先级以 [当前决定](decisions/2026-09-23-flash-research-baseline.md) 为准。
-Qwen 修复报告与 Pro/Flash 对比记录的是不同运行，不能互相替代成绩。
+当前版本为 [v0.7.0](releases/v0.7.0.md)，合并交付 v0.6 审计研究与 v0.7 受限工作流比较。
+Flash / Direct 保持默认；本轮没有证明更复杂流程的效果优势。逐次研究过程与修订见
+[实施记录](research-v0.6-v0.7-worklog.md)，当前结果以两份研究报告和版本说明为准。
 
-当前阶段及后续：[技术路线](verification-roadmap.md) 与
-[v0.5 文本审计完成范围](plans/v0.5-text-verification.md)。先验证文本忠实性核查，
-复用公开人工标注；医学证据分级与跨文献可比性不作为首期交付门槛。
+## 使用与演示
 
-已完成的第一轮工作见 [v0.5 固定证据试跑报告](verification-v0.5-pilot.md)：独立核查模块与
-30 条公开标注样本已跑通，25/30 标签一致；局限、全部分歧和复现命令一并公开。
+| 入口 | 内容 |
+|---|---|
+| [项目 README](../README.md) | 获取固定版本、轻量启动、实际能力及关键结果 |
+| [原子审计与工作流比较](research-demo.md) | GRADE 三类输入、方法/分歧展示、工具 trace、导出与回答传递 |
+| [真实医学 Ask → Audit](medical-demo.md) | 原始 CC0 论文、实际 Agent 记录和完整检索演示 |
+| [审计指南](audit-demo.md) | 方法、输入上限、原文位置、状态及新审计 |
+| [原完整 Agent 工作流](agent-workflow.md) | 历史 Ask graph 的实际处理步骤，不与受限研究模块混称 |
+| [配置示例](../.env.example) / [演示配置](demo.md) | Flash、本地模型、轻量审计与完整检索的不同依赖 |
 
-[第二轮受控诊断与消融](verification-v0.5-diagnostics.md)已完成：12 个文献组、48 条构造样本，
-三方案均为 48/48，尚未发现结构化核查增益。使用 [标注规范](verification-label-policy.md)
-解释标签边界，[网关观测](verification-gateway-observations.md)记录模型标识和用量限制。
+## 当前研究与决定
 
-整段回答阶段见 [执行协议](plans/v0.5-answer-audit.md)、[研究报告](verification-v0.5-answer-audit.md)
-及 [真实审计面板](audit-demo.md)。这一轮提前接入面板，用自然回答的人工错误范围测量漏审，
-不把简单构造题的高分外推成应用可靠性。
+| 入口 | 内容 |
+|---|---|
+| [整体路线](verification-roadmap.md) | 最终形态、当前边界及后续任务 |
+| [v0.6 协议](plans/v0.6-audit-reliability.md) | 数据、原子审计、MiniCheck、消融、校准与默认升级条件 |
+| [v0.6 研究报告](verification-v0.6-report.md) | 339 对固定目标、医学开发/转移、自然回答、消融、重复与校准的完整结果 |
+| [v0.7 协议](plans/v0.7-agent-comparison.md) | 同工具、同模型的三臂文献事实查询 |
+| [v0.7 研究报告](verification-v0.7-report.md) / [全部最终案例](verification-v0.7-cases.md) | 40 题三臂原答、正确接受/错误接受、实际成本与开发协议修订 |
+| [v0.7 范围决定](decisions/2026-09-26-v07-research-scope.md) | 为什么先做受限对照，完整开放检索/自动修复如何后移 |
+| [提取保真度开发复核](verification-v0.6-extraction-review.md) | 预选 12 条的具体限定词/重复问题，明确为 AI 诊断 |
+| [构造标签勘误](../data/verification/v06/medical-label-review.json) / [敏感性明细](../data/verification/v06/medical-label-sensitivity.json) | Natsal-3 来源范围疑点；原记录不变，事后分析与主表分开 |
+| [研究复现](research-reproduction.md) | 无付费调用的重算、原始输出、另存新运行 |
+| [MiniCheck](minicheck-research.md) | 可选隔离环境、模型 revision、输入上限及分数含义 |
+| [研究来源归属](research-sources.md) | SciFact、RAGTruth、GRADE 与 MiniCheck 的出处、许可和本项目变换 |
+| [v06 工件](../data/verification/v06/README.md) / [v07 工件](../data/verification/v07/README.md) | 冻结清单、逐次结果、全部失败和数据来源 |
+| [Flash 基线决定](decisions/2026-09-23-flash-research-baseline.md) | 用户选择 Flash；不加入例行 Pro 回退或 Pro 裁判 |
+| [标签边界](verification-label-policy.md) | 公开人工标注、构造诊断和 AI 复核的不同证据地位 |
 
-已完成 [语境保留与元文本分流计划](plans/v0.5-context-audit.md)：126 次真实调用、旧样本消融、
-新来源对照及重复，接通 Ask → Audit。见 [效果与测量局限](verification-v0.5-context-audit.md)。
-新来源定位指标有所提升，但不能据标红范围扩大宣称语义核查变强；保留 Direct 默认。
-固定输入、逐条分歧台账和运行记录见 [Context 工件](../data/verification/context_v1/README.md)；60 个 test 来源继续保留。
+原文定位不等于语义正确，核查器分歧不等于文献冲突。没有合格校准规则就不显示可信度百分比。
+不同任务、模型配置和样本分母的数字不能合并成一项“系统可靠率”。
 
-最新完成 [具体错误诊断与程序定位](verification-v0.5-specific-errors.md)：33 处逐项开发审阅，
-旧输出只换定位器的离线复放，以及 8 个新来源上的 36 次 Flash 调用。
-整段与固定目标任务已分开，新增 quote-v2 可回放；位置处理有明确收益，语义优势尚未建立。
+## 保留的历史记录
 
-## 持续维护的入口
-
-| 文档 | 回答什么 | 什么时候更新 |
+| 阶段 | 入口 | 性质 |
 |---|---|---|
-| [项目 README](../README.md) | 做什么、如何启动、目前效果与限制 | 功能、启动方法或最新结果变化时 |
-| [演示与研究配置](demo.md) / [配置示例](../.env.example) | 怎么演示、怎样选择本地或 Flash 后端、怎样运行开发题 | 配置或运行入口变化时，两处同步 |
-| [Agent 工作流](agent-workflow.md) | 当前实际执行的步骤、证据处理和失败边界 | Agent 行为变化时，按源码更新 |
-| [Flash 效果报告](agent-v0.4-flash-report.md) / [工作记录](agent-v0.4-flash-worklog.md) | 当前修复、逐轮失败、开发/重复/保留测试状态 | 每轮完成并对照原文审阅后更新 |
-| [Flash 基线决定](decisions/2026-09-23-flash-research-baseline.md) | 为什么选 Flash、下一轮先解决什么 | 新决定以新的日期记录，旧决定注明被替代 |
-| [Pro/Flash 对比报告](agent-model-comparison-report.md) | 已完成的对比说明了什么、哪些问题仍在 Agent 中 | 发现解读错误时注明修正；新运行另存报告 |
-| [题集说明](../data/benchmark/veritasmed_v1_1/dataset_card.md) / [审阅指南](benchmark-review-guide.md) | 黄金题集的来源、划分、证据和评分标准 | 题集新版本或审阅协议变化时；冻结版本保留 |
-| [v0.5 版本说明](releases/v0.5.0.md) / [变更记录](../CHANGELOG.md) | 当前交付状态、剩余限制、实际发布了什么 | 一轮修复完成或实际发布时 |
-| [医学演示](medical-demo.md) / [审计指南](audit-demo.md) | 无密钥回放、原文来源、完整 Ask → Audit | 产品入口、来源或记录变化时 |
+| v0.3 | [效果报告](agent-v0.3-report.md) / [发布说明](releases/v0.3.0.md) | 当时配置的历史结果 |
+| v0.4 Qwen | [初轮](agent-v0.4-report.md) / [修复](agent-v0.4-repaired-report.md) | 不同候选的失败与修复记录 |
+| Pro / Flash 比较 | [报告](agent-model-comparison-report.md) | 两轮 44 个真实 Agent 答案及来源审阅 |
+| v0.4 Flash | [报告](agent-v0.4-flash-report.md) / [发布](releases/v0.4.0.md) | 开发 15/15、重复 10/10、首次保留 31/35；这些不是新核查器的准确率 |
+| v0.5 固定目标 | [试跑](verification-v0.5-pilot.md) / [构造消融](verification-v0.5-diagnostics.md) | 公开标签适配与简单控制 |
+| v0.5 完整回答 | [Direct/Split](verification-v0.5-answer-audit.md) / [Context](verification-v0.5-context-audit.md) | 自然回答定位与重复，不等于语义正确率 |
+| v0.5 quote-v2 | [具体错误与定位](verification-v0.5-specific-errors.md) / [发布](releases/v0.5.0.md) | AI 开发复核、精确引句与真实医学面板 |
 
-修改功能后，只同步相关说明。最新状态放在上述入口，逐次实验细节放在对应报告，
-不再把完整工作流、所有成绩和下一轮任务复制到每一份文档。
+历史最终题已经曝光，后续只能用于回归。保留原标签、首次失败和原始输出；不以一次成功重试替换。
+旧方案与数字保留历史含义，不逐段改写成今天的实现。
 
-## 保留的实验记录
+## 维护规则
 
-| 阶段 | 阅读入口 | 性质 |
-|---|---|---|
-| 已发布 v0.3 | [报告](agent-v0.3-report.md) / [发布说明](releases/v0.3.0.md) | 发布时的结果，不是当前模型成绩 |
-| v0.4 首轮 Qwen | [报告](agent-v0.4-report.md) / [实施记录](agent-v0.4-worklog.md) | 首轮候选的失败和限制 |
-| v0.4 Qwen 修复 | [报告](agent-v0.4-repaired-report.md) / [修复记录](agent-v0.4-repair-worklog.md) | 指定 Qwen 配置下的开发集结果 |
-| OpenHub Pro/Flash | [对比报告](agent-model-comparison-report.md) / [实验计划](superpowers/plans/2026-09-22-deepseek-agent-comparison.md) | 两轮共 44 个真实 Agent 答案及逐题判定 |
-| 已发布 v0.4 Flash | [效果报告](agent-v0.4-flash-report.md) / [工作记录](agent-v0.4-flash-worklog.md) / [版本说明](releases/v0.4.0.md) | 冻结实现、开发/重复/首次保留测试与真实演示 |
+功能改变时同步 README、相应使用指南、OpenAPI/types 和 CHANGELOG；研究变化时更新对应协议、
+工件说明和由保存输出生成的报告。当前状态集中在这些入口，逐次实验细节放在实施记录。
 
-报告链接到相应逐题页面和原始数据。`*-cases.md` 等生成页面应通过报告中的脚本重新生成，
-不要手改分数或用一次成功重试覆盖失败。新答案需要重新对照原文审阅；离线重算已有分数
-不会生成新答案，也不是新一轮效果评测。
-
-## 历史设计与专项说明
-
-[原始项目规格](project_spec.md)、[早期架构](architecture.md)、
-[v0.4 初始计划](superpowers/plans/2026-09-22-veritasmed-agent-v0.4.md) 以及
-`superpowers/` 下其他带日期方案保留设计背景，不作为当前配置或成绩入口。
-旧模型名、旧指标和未完成设想不逐段改写成今天的实现。
-
-前端设计、MCP、安全、端口和旧审计文档在修改对应功能时再维护；它们描述的范围与
-阶段不应扩大为当前整套系统的保证。日常使用先看项目 README 和演示指南。
-
-## 本次交付与后续维护
-
-- Flash 收敛报告、开发/重复/保留测试逐题案例、真实界面截图与导出示例已齐备，历史候选说明保留。
-- 工作流或界面行为改变后：更新工作流及相关演示步骤；截图注明真实运行还是固定示例。
-- v0.5 已同步 README 获取方式、包/API 版本、版本说明和真实医学演示；v0.4 记录保留为历史结果。
-
-35 道保留题已经用于本次冻结后的评测，后续可用于回归，但不能再次称为未见测试。
-下一轮以新报告记录对遗漏、证据标签和可读性的改进，保留本次四道失败的原始判定。
+[原始规格](project_spec.md)、[早期架构](architecture.md) 和 `superpowers/` 下的日期方案是历史设计。
+MCP 安全、端口或旧前端专项文档按实际修改范围维护，不能扩大成整套 Web 应用的保证。

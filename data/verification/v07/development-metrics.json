@@ -1,0 +1,1078 @@
+{
+  "split": "development",
+  "planned_queries": 20,
+  "task": "named-paper fixed-corpus claim verification",
+  "action_protocol": "v2_explicit_finish_and_recorded_format_normalization",
+  "methods": {
+    "direct_reader": {
+      "accepted": {
+        "counts": {
+          "total": 20,
+          "completed": 20,
+          "support": 9,
+          "nonsupport": 11,
+          "correct": 19,
+          "false_accept": 0,
+          "true_accept": 8,
+          "true_reject": 11,
+          "predicted_support": 8
+        },
+        "group_count": 20,
+        "completion": 1.0,
+        "all_case_accuracy": 0.95,
+        "false_acceptance_rate": 0.0,
+        "support_precision": 1.0,
+        "support_recall": 0.8888888888888888,
+        "balanced_accuracy": 0.9444444444444444,
+        "interpretation": "Missing/failed/review decisions reduce completion and useful-decision accuracy; never count as correct non-support.",
+        "details": [
+          {
+            "case_id": "scifact-train-640-6503185",
+            "group_id": "18d115ad106fd54e",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1393-12440953",
+            "group_id": "1d8285627aa7cb27",
+            "gold": 1,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-568-23418635",
+            "group_id": "201e2621fce3836f",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-346-11902109",
+            "group_id": "23af49af3a2d4833",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1182-14541844",
+            "group_id": "2c950287bf09f9a2",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-161-6903077",
+            "group_id": "2ef60e952a254b5b",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1006-4926049",
+            "group_id": "31c995b484f621e2",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1350-5377642",
+            "group_id": "345458a942d57b7c",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1215-16355392",
+            "group_id": "408f11acbfa07c89",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1325-40476126",
+            "group_id": "46d1b072c1fd69a0",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-566-16120395",
+            "group_id": "5020dcb3d351ebfd",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-345-4394817",
+            "group_id": "60c258f934382c36",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-899-5572127",
+            "group_id": "700058fc1491f135",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-43-7224723",
+            "group_id": "80499da769dc39dd",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-305-14797520",
+            "group_id": "95d679f93bd3c1c9",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1314-16237005",
+            "group_id": "a08750b04b357035",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-643-15535511",
+            "group_id": "acf004446221685d",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-189-4421578",
+            "group_id": "b6923cf5eebc52c7",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-432-8002887",
+            "group_id": "c5e6a40abe6067c4",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1118-23351136",
+            "group_id": "e709b1e09b7f2177",
+            "gold": 0,
+            "prediction": 0
+          }
+        ]
+      },
+      "original_draft": {
+        "counts": {
+          "total": 20,
+          "completed": 20,
+          "support": 9,
+          "nonsupport": 11,
+          "correct": 19,
+          "false_accept": 0,
+          "true_accept": 8,
+          "true_reject": 11,
+          "predicted_support": 8
+        },
+        "group_count": 20,
+        "completion": 1.0,
+        "all_case_accuracy": 0.95,
+        "false_acceptance_rate": 0.0,
+        "support_precision": 1.0,
+        "support_recall": 0.8888888888888888,
+        "balanced_accuracy": 0.9444444444444444,
+        "interpretation": "Missing/failed/review decisions reduce completion and useful-decision accuracy; never count as correct non-support.",
+        "details": [
+          {
+            "case_id": "scifact-train-640-6503185",
+            "group_id": "18d115ad106fd54e",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1393-12440953",
+            "group_id": "1d8285627aa7cb27",
+            "gold": 1,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-568-23418635",
+            "group_id": "201e2621fce3836f",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-346-11902109",
+            "group_id": "23af49af3a2d4833",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1182-14541844",
+            "group_id": "2c950287bf09f9a2",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-161-6903077",
+            "group_id": "2ef60e952a254b5b",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1006-4926049",
+            "group_id": "31c995b484f621e2",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1350-5377642",
+            "group_id": "345458a942d57b7c",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1215-16355392",
+            "group_id": "408f11acbfa07c89",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1325-40476126",
+            "group_id": "46d1b072c1fd69a0",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-566-16120395",
+            "group_id": "5020dcb3d351ebfd",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-345-4394817",
+            "group_id": "60c258f934382c36",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-899-5572127",
+            "group_id": "700058fc1491f135",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-43-7224723",
+            "group_id": "80499da769dc39dd",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-305-14797520",
+            "group_id": "95d679f93bd3c1c9",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1314-16237005",
+            "group_id": "a08750b04b357035",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-643-15535511",
+            "group_id": "acf004446221685d",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-189-4421578",
+            "group_id": "b6923cf5eebc52c7",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-432-8002887",
+            "group_id": "c5e6a40abe6067c4",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1118-23351136",
+            "group_id": "e709b1e09b7f2177",
+            "gold": 0,
+            "prediction": 0
+          }
+        ]
+      },
+      "workflow_counts": {
+        "replies_with_dsml_marker": 0,
+        "target_read": 20,
+        "model_calls": 20,
+        "tool_calls": 0,
+        "needs_review": 0,
+        "budget_exhausted": 0,
+        "correct_three_class": 17,
+        "reported_tokens": 105280,
+        "sum_elapsed_seconds": 174.813
+      },
+      "execution_statuses": {
+        "ok": 20
+      },
+      "call_statuses": {
+        "ok": 20
+      },
+      "call_error_types": {},
+      "action_adaptations": {},
+      "three_class_matrix": [
+        {
+          "gold": "contradicted",
+          "prediction": "insufficient",
+          "n": 1
+        },
+        {
+          "gold": "insufficient",
+          "prediction": "insufficient",
+          "n": 8
+        },
+        {
+          "gold": "supported",
+          "prediction": "supported",
+          "n": 8
+        },
+        {
+          "gold": "insufficient",
+          "prediction": "contradicted",
+          "n": 1
+        },
+        {
+          "gold": "supported",
+          "prediction": "insufficient",
+          "n": 1
+        },
+        {
+          "gold": "contradicted",
+          "prediction": "contradicted",
+          "n": 1
+        }
+      ]
+    },
+    "autonomous_tools": {
+      "accepted": {
+        "counts": {
+          "total": 20,
+          "completed": 20,
+          "support": 9,
+          "nonsupport": 11,
+          "correct": 19,
+          "false_accept": 1,
+          "true_accept": 9,
+          "true_reject": 10,
+          "predicted_support": 10
+        },
+        "group_count": 20,
+        "completion": 1.0,
+        "all_case_accuracy": 0.95,
+        "false_acceptance_rate": 0.09090909090909091,
+        "support_precision": 0.9,
+        "support_recall": 1.0,
+        "balanced_accuracy": 0.9545454545454546,
+        "interpretation": "Missing/failed/review decisions reduce completion and useful-decision accuracy; never count as correct non-support.",
+        "details": [
+          {
+            "case_id": "scifact-train-640-6503185",
+            "group_id": "18d115ad106fd54e",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1393-12440953",
+            "group_id": "1d8285627aa7cb27",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-568-23418635",
+            "group_id": "201e2621fce3836f",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-346-11902109",
+            "group_id": "23af49af3a2d4833",
+            "gold": 0,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1182-14541844",
+            "group_id": "2c950287bf09f9a2",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-161-6903077",
+            "group_id": "2ef60e952a254b5b",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1006-4926049",
+            "group_id": "31c995b484f621e2",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1350-5377642",
+            "group_id": "345458a942d57b7c",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1215-16355392",
+            "group_id": "408f11acbfa07c89",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1325-40476126",
+            "group_id": "46d1b072c1fd69a0",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-566-16120395",
+            "group_id": "5020dcb3d351ebfd",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-345-4394817",
+            "group_id": "60c258f934382c36",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-899-5572127",
+            "group_id": "700058fc1491f135",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-43-7224723",
+            "group_id": "80499da769dc39dd",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-305-14797520",
+            "group_id": "95d679f93bd3c1c9",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1314-16237005",
+            "group_id": "a08750b04b357035",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-643-15535511",
+            "group_id": "acf004446221685d",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-189-4421578",
+            "group_id": "b6923cf5eebc52c7",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-432-8002887",
+            "group_id": "c5e6a40abe6067c4",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1118-23351136",
+            "group_id": "e709b1e09b7f2177",
+            "gold": 0,
+            "prediction": 0
+          }
+        ]
+      },
+      "original_draft": {
+        "counts": {
+          "total": 20,
+          "completed": 20,
+          "support": 9,
+          "nonsupport": 11,
+          "correct": 19,
+          "false_accept": 1,
+          "true_accept": 9,
+          "true_reject": 10,
+          "predicted_support": 10
+        },
+        "group_count": 20,
+        "completion": 1.0,
+        "all_case_accuracy": 0.95,
+        "false_acceptance_rate": 0.09090909090909091,
+        "support_precision": 0.9,
+        "support_recall": 1.0,
+        "balanced_accuracy": 0.9545454545454546,
+        "interpretation": "Missing/failed/review decisions reduce completion and useful-decision accuracy; never count as correct non-support.",
+        "details": [
+          {
+            "case_id": "scifact-train-640-6503185",
+            "group_id": "18d115ad106fd54e",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1393-12440953",
+            "group_id": "1d8285627aa7cb27",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-568-23418635",
+            "group_id": "201e2621fce3836f",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-346-11902109",
+            "group_id": "23af49af3a2d4833",
+            "gold": 0,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1182-14541844",
+            "group_id": "2c950287bf09f9a2",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-161-6903077",
+            "group_id": "2ef60e952a254b5b",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1006-4926049",
+            "group_id": "31c995b484f621e2",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1350-5377642",
+            "group_id": "345458a942d57b7c",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1215-16355392",
+            "group_id": "408f11acbfa07c89",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1325-40476126",
+            "group_id": "46d1b072c1fd69a0",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-566-16120395",
+            "group_id": "5020dcb3d351ebfd",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-345-4394817",
+            "group_id": "60c258f934382c36",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-899-5572127",
+            "group_id": "700058fc1491f135",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-43-7224723",
+            "group_id": "80499da769dc39dd",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-305-14797520",
+            "group_id": "95d679f93bd3c1c9",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1314-16237005",
+            "group_id": "a08750b04b357035",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-643-15535511",
+            "group_id": "acf004446221685d",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-189-4421578",
+            "group_id": "b6923cf5eebc52c7",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-432-8002887",
+            "group_id": "c5e6a40abe6067c4",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1118-23351136",
+            "group_id": "e709b1e09b7f2177",
+            "gold": 0,
+            "prediction": 0
+          }
+        ]
+      },
+      "workflow_counts": {
+        "replies_with_dsml_marker": 13,
+        "target_read": 20,
+        "model_calls": 70,
+        "tool_calls": 42,
+        "needs_review": 0,
+        "budget_exhausted": 0,
+        "correct_three_class": 18,
+        "reported_tokens": 121900,
+        "sum_elapsed_seconds": 348.526
+      },
+      "execution_statuses": {
+        "ok": 20
+      },
+      "call_statuses": {
+        "invalid_output": 13,
+        "ok": 57
+      },
+      "call_error_types": {
+        "JSONDecodeError": 13
+      },
+      "action_adaptations": {
+        "ignored_dsml_suffix": 13
+      },
+      "three_class_matrix": [
+        {
+          "gold": "supported",
+          "prediction": "supported",
+          "n": 9
+        },
+        {
+          "gold": "insufficient",
+          "prediction": "insufficient",
+          "n": 8
+        },
+        {
+          "gold": "insufficient",
+          "prediction": "contradicted",
+          "n": 1
+        },
+        {
+          "gold": "contradicted",
+          "prediction": "supported",
+          "n": 1
+        },
+        {
+          "gold": "contradicted",
+          "prediction": "contradicted",
+          "n": 1
+        }
+      ]
+    },
+    "structured_workflow": {
+      "accepted": {
+        "counts": {
+          "total": 20,
+          "completed": 15,
+          "support": 9,
+          "nonsupport": 11,
+          "correct": 15,
+          "false_accept": 0,
+          "true_accept": 6,
+          "true_reject": 9,
+          "predicted_support": 6
+        },
+        "group_count": 20,
+        "completion": 0.75,
+        "all_case_accuracy": 0.75,
+        "false_acceptance_rate": 0.0,
+        "support_precision": 1.0,
+        "support_recall": 0.6666666666666666,
+        "balanced_accuracy": 0.7424242424242424,
+        "interpretation": "Missing/failed/review decisions reduce completion and useful-decision accuracy; never count as correct non-support.",
+        "details": [
+          {
+            "case_id": "scifact-train-640-6503185",
+            "group_id": "18d115ad106fd54e",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1393-12440953",
+            "group_id": "1d8285627aa7cb27",
+            "gold": 1,
+            "prediction": null
+          },
+          {
+            "case_id": "scifact-train-568-23418635",
+            "group_id": "201e2621fce3836f",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-346-11902109",
+            "group_id": "23af49af3a2d4833",
+            "gold": 0,
+            "prediction": null
+          },
+          {
+            "case_id": "scifact-train-1182-14541844",
+            "group_id": "2c950287bf09f9a2",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-161-6903077",
+            "group_id": "2ef60e952a254b5b",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1006-4926049",
+            "group_id": "31c995b484f621e2",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1350-5377642",
+            "group_id": "345458a942d57b7c",
+            "gold": 0,
+            "prediction": null
+          },
+          {
+            "case_id": "scifact-train-1215-16355392",
+            "group_id": "408f11acbfa07c89",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1325-40476126",
+            "group_id": "46d1b072c1fd69a0",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-566-16120395",
+            "group_id": "5020dcb3d351ebfd",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-345-4394817",
+            "group_id": "60c258f934382c36",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-899-5572127",
+            "group_id": "700058fc1491f135",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-43-7224723",
+            "group_id": "80499da769dc39dd",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-305-14797520",
+            "group_id": "95d679f93bd3c1c9",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1314-16237005",
+            "group_id": "a08750b04b357035",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-643-15535511",
+            "group_id": "acf004446221685d",
+            "gold": 1,
+            "prediction": null
+          },
+          {
+            "case_id": "scifact-train-189-4421578",
+            "group_id": "b6923cf5eebc52c7",
+            "gold": 1,
+            "prediction": null
+          },
+          {
+            "case_id": "scifact-train-432-8002887",
+            "group_id": "c5e6a40abe6067c4",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1118-23351136",
+            "group_id": "e709b1e09b7f2177",
+            "gold": 0,
+            "prediction": 0
+          }
+        ]
+      },
+      "original_draft": {
+        "counts": {
+          "total": 20,
+          "completed": 20,
+          "support": 9,
+          "nonsupport": 11,
+          "correct": 19,
+          "false_accept": 0,
+          "true_accept": 8,
+          "true_reject": 11,
+          "predicted_support": 8
+        },
+        "group_count": 20,
+        "completion": 1.0,
+        "all_case_accuracy": 0.95,
+        "false_acceptance_rate": 0.0,
+        "support_precision": 1.0,
+        "support_recall": 0.8888888888888888,
+        "balanced_accuracy": 0.9444444444444444,
+        "interpretation": "Missing/failed/review decisions reduce completion and useful-decision accuracy; never count as correct non-support.",
+        "details": [
+          {
+            "case_id": "scifact-train-640-6503185",
+            "group_id": "18d115ad106fd54e",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1393-12440953",
+            "group_id": "1d8285627aa7cb27",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-568-23418635",
+            "group_id": "201e2621fce3836f",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-346-11902109",
+            "group_id": "23af49af3a2d4833",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1182-14541844",
+            "group_id": "2c950287bf09f9a2",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-161-6903077",
+            "group_id": "2ef60e952a254b5b",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1006-4926049",
+            "group_id": "31c995b484f621e2",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1350-5377642",
+            "group_id": "345458a942d57b7c",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1215-16355392",
+            "group_id": "408f11acbfa07c89",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-1325-40476126",
+            "group_id": "46d1b072c1fd69a0",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-566-16120395",
+            "group_id": "5020dcb3d351ebfd",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-345-4394817",
+            "group_id": "60c258f934382c36",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-899-5572127",
+            "group_id": "700058fc1491f135",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-43-7224723",
+            "group_id": "80499da769dc39dd",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-305-14797520",
+            "group_id": "95d679f93bd3c1c9",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1314-16237005",
+            "group_id": "a08750b04b357035",
+            "gold": 0,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-643-15535511",
+            "group_id": "acf004446221685d",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-189-4421578",
+            "group_id": "b6923cf5eebc52c7",
+            "gold": 1,
+            "prediction": 0
+          },
+          {
+            "case_id": "scifact-train-432-8002887",
+            "group_id": "c5e6a40abe6067c4",
+            "gold": 1,
+            "prediction": 1
+          },
+          {
+            "case_id": "scifact-train-1118-23351136",
+            "group_id": "e709b1e09b7f2177",
+            "gold": 0,
+            "prediction": 0
+          }
+        ]
+      },
+      "workflow_counts": {
+        "replies_with_dsml_marker": 0,
+        "target_read": 20,
+        "model_calls": 40,
+        "tool_calls": 40,
+        "needs_review": 5,
+        "budget_exhausted": 0,
+        "correct_three_class": 15,
+        "reported_tokens": 63685,
+        "sum_elapsed_seconds": 282.919
+      },
+      "execution_statuses": {
+        "ok": 15,
+        "needs_review": 5
+      },
+      "call_statuses": {
+        "ok": 40
+      },
+      "call_error_types": {},
+      "action_adaptations": {},
+      "three_class_matrix": [
+        {
+          "gold": "supported",
+          "prediction": "supported",
+          "n": 6
+        },
+        {
+          "gold": "insufficient",
+          "prediction": "insufficient",
+          "n": 8
+        },
+        {
+          "gold": "supported",
+          "prediction": "needs_review",
+          "n": 3
+        },
+        {
+          "gold": "contradicted",
+          "prediction": "contradicted",
+          "n": 1
+        },
+        {
+          "gold": "insufficient",
+          "prediction": "needs_review",
+          "n": 1
+        },
+        {
+          "gold": "contradicted",
+          "prediction": "needs_review",
+          "n": 1
+        }
+      ]
+    }
+  },
+  "paired_differences": {
+    "structured_minus_direct_reader": {
+      "direction": "right minus left",
+      "source_groups": 20,
+      "replicates": 2000,
+      "seed": 260926,
+      "false_acceptance_rate": {
+        "difference": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "degenerate": true,
+        "valid_replicates": 2000
+      },
+      "support_recall": {
+        "difference": -0.2222222222222222,
+        "ci95": [
+          -0.5555555555555556,
+          0.0
+        ],
+        "degenerate": false,
+        "valid_replicates": 2000
+      }
+    },
+    "structured_minus_autonomous_tools": {
+      "direction": "right minus left",
+      "source_groups": 20,
+      "replicates": 2000,
+      "seed": 260926,
+      "false_acceptance_rate": {
+        "difference": -0.09090909090909091,
+        "ci95": [
+          -0.3,
+          0.0
+        ],
+        "degenerate": false,
+        "valid_replicates": 2000
+      },
+      "support_recall": {
+        "difference": -0.33333333333333337,
+        "ci95": [
+          -0.6666666666666667,
+          0.0
+        ],
+        "degenerate": false,
+        "valid_replicates": 2000
+      }
+    }
+  },
+  "scope": "Public source labels evaluate the specified paper relation, not every sentence of the generated explanation. Fixed candidate sets and named-paper questions do not establish broad Ask/clinical superiority.",
+  "protocol_diagnostic": "Execution/call error breakdown was added during first development. Before final inference, a second development run repaired conflicting finish instructions and explicitly normalized a leading JSON object with discarded DSML suffix or a complete bare answer. Original replies and initial parse errors remain recorded; suffix content is never a tool result or model history. The first development run is retained separately. This is an application-protocol comparison, not isolated model reasoning."
+}

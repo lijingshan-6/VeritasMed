@@ -3,6 +3,9 @@
 本例使用 Seaquist 等（2024）报告的 GRADE 低血糖结局，展示检索、实际回答、逐条审计、
 原文定位和导出。它是一篇论文上的软件演示，不计入评测分数，也不是用药建议。
 
+这里保留 v0.5 当次完整 Ask 与审计记录。v0.7 在不改写该原答的基础上新增 Direct / Atomic
+核查，并另列组别数值交换、证据移除两个明确构造的输入，见 [三类医学演示](research-demo.md)。
+
 [PLOS 原文](https://doi.org/10.1371/journal.pone.0309907) ·
 [PMC11567630](https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/) ·
 [来源快照、许可、提取方式](../data/demo/medical/README.md)

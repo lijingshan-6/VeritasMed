@@ -12,9 +12,13 @@ const labels: Record<string, string> = {
   invalid_reference: 'Unresolved quote', invalid_output: 'Invalid model output',
   ambiguous_reference: 'Repeated quote · location unresolved',
   execution_error: 'Execution failed', not_checked: 'Not checked',
+  needs_review: 'Needs review · parsing unresolved',
   not_source_checked: 'Presentation text · not source-checked',
 }
-const methodLabels: Record<Strategy, string> = { direct: 'Direct Flash', split: 'Extract → verify each claim', context: 'Context + meta · experimental', quote_v2: 'Exact quotes v2 · experimental' }
+const methodLabels: Record<Strategy, string> = { direct: 'Direct Flash', split: 'Extract → verify each claim', context: 'Context + meta · experimental', quote_v2: 'Exact quotes v2 · experimental', atomic_v1: 'Atomic facts · experimental' }
+function handoffLabel(kind: AuditHandoff['kind']) {
+  return kind === 'live_ask' ? 'Actual Ask answer' : kind === 'research_workflow' ? 'Actual controlled research answer' : 'Authored demo · not a real Agent answer'
+}
 function BindingDetail({ binding, label }: { binding: QuoteBinding; label: string }) {
   const description: Record<string, string> = { unique: 'Unique exact passage', ambiguous: 'Repeated passage; no location chosen',
     not_found: 'Quotation not found exactly', unknown_source: 'Source ID not provided', empty_quote: 'Empty quotation' }
@@ -119,7 +123,7 @@ export function AuditPage() {
   }
   const audit = record?.audit
   const active = audit?.claims.find(c => c.id === selected)
-  const validSpans = [...(audit?.claims.flatMap(c => c.answer_span ? [{ ...c.answer_span, claimId: c.id, category: category(c) }] : []) ?? []),
+  const validSpans = [...(audit?.claims.flatMap(c => (c.answer_spans ?? (c.answer_span ? [c.answer_span] : [])).map(s => ({ ...s, claimId: c.id, category: category(c) }))) ?? []),
     ...(audit?.meta_text?.flatMap(m => m.answer_span ? [{ ...m.answer_span, claimId: m.id, category: m.status }] : []) ?? [])]
   const models = [...new Set(audit?.calls.flatMap(c => c.transport_metadata?.model_identifiers ?? []) ?? [])]
   const metaFailures = audit?.meta_text?.filter(m => m.status !== 'not_source_checked').length ?? 0
@@ -149,7 +153,7 @@ export function AuditPage() {
     {catalogue && !catalogue.examples.length && <div className="audit-notice">No saved run is available yet. You can audit supplied texts using the input below.</div>}
     {error && <div role="alert" className="audit-notice error">{error}</div>}
     {handoff && formOpen && <div className="audit-notice">
-      <strong>{handoff.kind === 'live_ask' ? 'Transferred from Ask' : 'Transferred from authored demo · not a real Agent answer'}</strong>
+      <strong>{handoffLabel(handoff.kind)}</strong>
       <p>{handoff.question}</p><p>{handoff.input.sources.length} complete source passages copied with their original text. Review the inputs below; no audit call has been made by this transfer. The original answer stays unchanged.</p>
     </div>}
     {formOpen && <form className="audit-form" onSubmit={submit}>
@@ -177,13 +181,16 @@ export function AuditPage() {
         <button className="audit-button" onClick={exportRecord}>Export audit JSON</button>
       </div>
       <p className="audit-muted">{record.provenance.note}</p>
-      {record.provenance.handoff && <div className="audit-notice"><strong>{record.provenance.handoff.kind === 'live_ask' ? 'Ask answer' : 'Authored demo input'}</strong> · {record.provenance.input_edited ? 'Inputs edited after transfer; originals retained in export.' : 'Original answer and source passages preserved.'}<p>{record.provenance.handoff.question}</p></div>}
+      {record.provenance.paper && /^https?:\/\//i.test(record.provenance.paper) && <p><a href={record.provenance.paper} target="_blank" rel="noreferrer">Open original paper ↗</a></p>}
+      {audit.supplemental_checkers && <div className="audit-notice">Separate local checker: {audit.supplemental_checkers.judgments}/{audit.supplemental_checkers.attempts} standalone fact checks completed in {audit.supplemental_checkers.elapsed_seconds.toFixed(1)} s, in addition to the recorded Flash calls. Disagreements remain visible; no vote or combined confidence score is applied.</div>}
+      {record.provenance.handoff && <div className="audit-notice"><strong>{handoffLabel(record.provenance.handoff.kind)}</strong> · {record.provenance.input_edited ? 'Inputs edited after transfer; originals retained in export.' : 'Original answer and source passages preserved.'}<p>{record.provenance.handoff.question}</p></div>}
       <div className="audit-layout">
         <section className="audit-answer-column">
           <div className="vm-eyebrow">Original answer · click an underlined passage</div>
           <div className="audit-answer-text"><LinkedText text={record.input.answer} spans={validSpans} selected={selected} onSelect={selectClaim} /></div>
           <div className="audit-summary">
-            <div className="audit-summary-counts">{(['supported', 'contradicted', 'insufficient'] as const).map(k => <span key={k} className={k}><b>{audit.summary[k] ?? 0}</b> {labels[k]}</span>)}<span><b>{audit.summary.failed_or_unchecked ?? 0}</b> failed / unchecked claims</span>{metaFailures > 0 && <span className="audit-error-text"><b>{metaFailures}</b> invalid presentation ranges</span>}</div>
+            {audit.strategy === 'atomic_v1' && <p><strong>{audit.parent_count ?? 0} original passages → {audit.claims.length} parsed facts.</strong> These are model interpretations. All parsed facts passing does not establish that every assertion was extracted. {audit.extraction?.completeness_note}</p>}
+            <div className="audit-summary-counts">{(['supported', 'contradicted', 'insufficient'] as const).map(k => <span key={k} className={k}><b>{audit.summary[k] ?? 0}</b> {labels[k]}</span>)}{!!audit.summary.needs_review && <span><b>{audit.summary.needs_review}</b> parsing needs review</span>}<span><b>{(audit.summary.failed_or_unchecked ?? 0) - (audit.summary.needs_review ?? 0)}</b> failed / unchecked claims</span>{metaFailures > 0 && <span className="audit-error-text"><b>{metaFailures}</b> invalid presentation ranges</span>}</div>
             <p>{audit.checked_coverage.covered_nonspace_characters} / {audit.checked_coverage.total_nonspace_characters} non-space answer characters received a validly anchored judgment. Text coverage does not measure correctness or completeness of meaning.</p>
             <p>Run: <strong>{audit.status}</strong>{audit.claims_at_cap ? ' · Claim limit reached; additional assertions may be omitted.' : ''}. These are model judgments about the supplied texts, not confidence scores or clinical evidence grades.</p>
           </div>
@@ -191,9 +198,15 @@ export function AuditPage() {
           {!audit.claims.length && <div className="audit-notice">No claims were successfully extracted. The answer is unreviewed.</div>}
           <div className="audit-claims">{audit.claims.map((claim, index) => <article key={claim.id} id={`audit-${claim.id}`} className={`audit-claim ${selected === claim.id ? 'active' : ''}`}>
             <button className="audit-claim-toggle" aria-expanded={selected === claim.id} onClick={() => selectClaim(selected === claim.id ? '' : claim.id, false)}>
-              <span className="audit-claim-number">{String(index + 1).padStart(2, '0')}</span><span><span className="audit-claim-quote">{claim.quote}</span><span className={`audit-verdict ${category(claim)}`}>{labels[category(claim)] ?? claim.status}</span></span><span aria-hidden="true">{selected === claim.id ? '−' : '+'}</span>
+              <span className="audit-claim-number">{String(index + 1).padStart(2, '0')}</span><span><span className="audit-claim-quote">{claim.normalized_claim ?? claim.quote}</span>{claim.normalized_claim && <small className="audit-muted">Model-parsed fact · {claim.parent_claim_id}</small>}<span className={`audit-verdict ${category(claim)}`}>{labels[category(claim)] ?? claim.status}</span>{claim.checker_disagreement && <span className="audit-verdict insufficient">Checkers disagree</span>}</span><span aria-hidden="true">{selected === claim.id ? '−' : '+'}</span>
             </button>
             {selected === claim.id && <div className="audit-claim-body"><p>{claim.explanation || 'No usable judgment was returned.'}</p>
+              {claim.checker_disagreement && <div className="audit-notice">Checkers disagree on support. This is a reason to inspect the original text, not an automatic contradiction or a calibrated risk estimate. The original Flash judgment is retained.</div>}
+              {claim.answer_spans && <details className="audit-context" open><summary>Original answer fragments · unchanged text</summary>{claim.answer_spans.map((s, i) => <blockquote key={i}>{s.text}<small> · {s.start}–{s.end}</small></blockquote>)}</details>}
+              {claim.slots && <details className="audit-context"><summary>Explicit qualifications · model parsing</summary><dl>{Object.entries(claim.slots).map(([name, value]) => <div key={name}><dt>{name}</dt><dd>{value ?? 'Not explicitly extracted'}</dd></div>)}</dl><p>Parsing status: {claim.decomposition_status}. Recording population or conditions is not a clinical evidence grade.</p></details>}
+              {claim.answer_bindings && <details className="audit-context" open={claim.status === 'invalid_reference'}><summary>Fragment and evidence locations</summary>{claim.parent_binding && <BindingDetail binding={claim.parent_binding} label="Parent answer passage" />}{claim.answer_bindings.map((b, i) => <BindingDetail key={i} binding={b} label={`Answer fragment ${i + 1}`} />)}{claim.evidence_bindings?.map((b, i) => <BindingDetail key={i} binding={b} label={`Source ${b.source_id}`} />)}</details>}
+              {claim.numeric_diagnostic && claim.numeric_diagnostic.status !== 'not_applicable' && <details className="audit-context"><summary>Numeric diagnostic · {claim.numeric_diagnostic.status}</summary><p>{claim.numeric_diagnostic.reason ?? claim.numeric_diagnostic.scope} This does not override the judgment.</p></details>}
+              {claim.checker_results && <details className="audit-context"><summary>Recorded checker outputs</summary><pre className="audit-checker-json">{JSON.stringify(claim.checker_results, null, 2)}</pre><p>Raw scores and model agreement are not probabilities of truth.</p></details>}
               {claim.bindings && <details className="audit-context" open={claim.status !== 'ok'}><summary>Original text locations</summary>
                 <BindingDetail binding={claim.bindings.answer} label="Answer" />
                 {claim.bindings.evidence.map((b, i) => <div key={i}><BindingDetail binding={b} label={`Source ${b.source_id}`} />{b.status !== 'unique' && <blockquote>{b.quote}</blockquote>}</div>)}
@@ -219,7 +232,7 @@ export function AuditPage() {
             const origin = record.provenance.handoff?.source_map.find(s => s.id === source.id)
             return <article className="audit-source" id={`audit-source-${source.id}`} key={source.id}>
               <header><span className="vm-eyebrow">{source.id} / supplied text</span><h3>{source.title}</h3></header>
-              {origin && <p className="audit-muted">Original Ask passage: {origin.chunk_id}{origin.section ? ` · ${origin.section}` : ''}{/^https?:\/\//i.test(origin.external_url) && <> · <a href={origin.external_url} target="_blank" rel="noreferrer">Open source ↗</a></>}</p>}
+              {origin && <p className="audit-muted">Original source passage: {origin.chunk_id}{origin.section ? ` · ${origin.section}` : ''}{/^https?:\/\//i.test(origin.external_url) && <> · <a href={origin.external_url} target="_blank" rel="noreferrer">Open source ↗</a></>}</p>}
               <div className="audit-source-text"><LinkedText text={source.text} spans={refs} selected={selected} onSelect={selectClaim} /></div>
               <details><summary>Source fingerprint</summary><code className="audit-hash">SHA-256 {audit.source_hashes[source.id]}</code><p>Positions use Unicode code points, with an exclusive end.</p></details>
             </article>

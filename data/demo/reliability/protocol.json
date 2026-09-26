@@ -1,0 +1,13 @@
+{
+  "inputs": {
+    "grade-original": "c0032d6d94fff74e5ee5d47de667844bbf78722332082c4a0e40cc9cb9a3aa20",
+    "grade-arm-swap": "0687f30afcc1030c6515507c3e6a6f62c735f89428413df741a4f5c9e30c8008",
+    "grade-evidence-gap": "509f65f71f04de3aa756e2ef67b2416eebfc07ef6938645c93652d7994233331"
+  },
+  "methods": [
+    "direct",
+    "atomic_v1"
+  ],
+  "origin": "Seaquist et al. 2024, PMC11567630, CC0",
+  "note": "Demonstration only; no selection from multiple attempts"
+}

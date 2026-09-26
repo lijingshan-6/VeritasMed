@@ -1,0 +1,29 @@
+[
+  {
+    "id": "grade-original",
+    "label": "GRADE · unchanged real Agent answer",
+    "requires_download": false,
+    "strategies": {
+      "direct": "ok",
+      "atomic_v1": "partial_error"
+    }
+  },
+  {
+    "id": "grade-arm-swap",
+    "label": "GRADE · deliberately swapped arm values",
+    "requires_download": false,
+    "strategies": {
+      "direct": "ok",
+      "atomic_v1": "partial_error"
+    }
+  },
+  {
+    "id": "grade-evidence-gap",
+    "label": "GRADE · result evidence deliberately removed",
+    "requires_download": false,
+    "strategies": {
+      "direct": "ok",
+      "atomic_v1": "partial_error"
+    }
+  }
+]

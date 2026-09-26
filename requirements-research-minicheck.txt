@@ -1,0 +1,12 @@
+# Optional isolated research environment. Not needed for Ask/Audit/Research replay.
+# Install the desired torch 2.6.0 CPU/CUDA wheel separately for your platform.
+torch==2.6.0
+transformers==4.57.3
+sentencepiece==0.2.1
+scikit-learn==1.7.2
+scipy==1.16.2
+matplotlib==3.10.6
+pydantic==2.12.5
+numpy>=1.26,<3
+huggingface-hub>=0.34,<1
+# API experiments run in the lightweight environment from requirements-audit.txt.

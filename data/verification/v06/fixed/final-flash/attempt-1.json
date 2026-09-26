@@ -1,0 +1,17 @@
+{
+  "started_utc": "2026-09-26T22:50:58.225808+00:00",
+  "pending": 339,
+  "settings": {
+    "model": "DeepSeek-V4.1-Flash",
+    "base_url": "https://www.cun.ai/v1",
+    "reasoning_effort": "high",
+    "max_tokens": 32768,
+    "timeout_seconds": 240.0,
+    "streaming": true,
+    "sdk_max_retries": 0,
+    "transport": "openai_sdk_raw_stream"
+  },
+  "dispatch": "bounded continuous queue; launch frozen order, save completion order",
+  "finished_utc": "2026-09-26T23:04:16.028083+00:00",
+  "completed_total": 339
+}

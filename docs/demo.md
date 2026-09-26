@@ -1,6 +1,7 @@
 # VeritasMed demonstration guide
 
-**v0.5 starting point:** [real medical Ask → Audit](medical-demo.md) and
+**Current starting point:** [atomic audits and workflow comparisons](research-demo.md),
+[real medical Ask → Audit](medical-demo.md) and
 [no-key audit replay](audit-demo.md). The medical profile uses original CC0 paper passages:
 `python scripts/run_demo.py --medical`. The older summaries and Guided fixture documented
 below remain separate; the dated v0.4 browser runs are historical recordings.

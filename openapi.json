@@ -3,7 +3,7 @@
   "info": {
     "title": "VeritasMed API",
     "description": "Self-verifying medical literature QA backend",
-    "version": "0.5.0"
+    "version": "0.7.0"
   },
   "paths": {
     "/api/search": {
@@ -313,7 +313,8 @@
                 "direct",
                 "split",
                 "context",
-                "quote_v2"
+                "quote_v2",
+                "atomic_v1"
               ],
               "type": "string",
               "default": "direct",
@@ -354,7 +355,124 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/QuoteAuditRequest"
+                "$ref": "#/components/schemas/AtomicAuditRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/research/examples": {
+      "get": {
+        "tags": [
+          "research comparison"
+        ],
+        "summary": "Examples",
+        "operationId": "examples_api_research_examples_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/research/examples/{case_id}": {
+      "get": {
+        "tags": [
+          "research comparison"
+        ],
+        "summary": "Replay",
+        "operationId": "replay_api_research_examples__case_id__get",
+        "parameters": [
+          {
+            "name": "case_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Case Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/research/results": {
+      "get": {
+        "tags": [
+          "research comparison"
+        ],
+        "summary": "Results",
+        "operationId": "results_api_research_results_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/research": {
+      "post": {
+        "tags": [
+          "research comparison"
+        ],
+        "summary": "Live",
+        "operationId": "live_api_research_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResearchRequest"
               }
             }
           },
@@ -385,6 +503,44 @@
   },
   "components": {
     "schemas": {
+      "AtomicAuditRequest": {
+        "properties": {
+          "answer": {
+            "type": "string",
+            "maxLength": 12000,
+            "minLength": 1,
+            "title": "Answer"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/AuditSource"
+            },
+            "type": "array",
+            "maxItems": 40,
+            "minItems": 1,
+            "title": "Sources"
+          },
+          "strategy": {
+            "type": "string",
+            "enum": [
+              "direct",
+              "split",
+              "context",
+              "quote_v2",
+              "atomic_v1"
+            ],
+            "title": "Strategy",
+            "default": "direct"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "answer",
+          "sources"
+        ],
+        "title": "AtomicAuditRequest"
+      },
       "AuditSource": {
         "properties": {
           "id": {
@@ -746,6 +902,34 @@
         ],
         "title": "DocumentResponse"
       },
+      "EvidenceDocument": {
+        "properties": {
+          "document_id": {
+            "type": "string",
+            "title": "Document Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "sentences": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Sentences"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "document_id",
+          "title",
+          "sentences"
+        ],
+        "title": "EvidenceDocument"
+      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -839,42 +1023,55 @@
         ],
         "title": "HistoryTurn"
       },
-      "QuoteAuditRequest": {
+      "ResearchRequest": {
         "properties": {
-          "answer": {
+          "question": {
             "type": "string",
-            "maxLength": 12000,
+            "maxLength": 4000,
             "minLength": 1,
-            "title": "Answer"
+            "title": "Question"
           },
-          "sources": {
+          "target_title": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "title": "Target Title"
+          },
+          "claim": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Claim"
+          },
+          "documents": {
             "items": {
-              "$ref": "#/components/schemas/AuditSource"
+              "$ref": "#/components/schemas/EvidenceDocument"
             },
             "type": "array",
-            "maxItems": 40,
+            "maxItems": 12,
             "minItems": 1,
-            "title": "Sources"
+            "title": "Documents"
           },
-          "strategy": {
+          "method": {
             "type": "string",
             "enum": [
-              "direct",
-              "split",
-              "context",
-              "quote_v2"
+              "direct_reader",
+              "autonomous_tools",
+              "structured_workflow"
             ],
-            "title": "Strategy",
-            "default": "direct"
+            "title": "Method",
+            "default": "structured_workflow"
           }
         },
         "additionalProperties": false,
         "type": "object",
         "required": [
-          "answer",
-          "sources"
+          "question",
+          "target_title",
+          "claim",
+          "documents"
         ],
-        "title": "QuoteAuditRequest"
+        "title": "ResearchRequest"
       },
       "SearchResponse": {
         "properties": {

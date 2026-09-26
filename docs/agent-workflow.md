@@ -1,4 +1,9 @@
-# Current Agent workflow (v0.5.0; Ask graph inherited from v0.4)
+# Medical Ask workflow (inherited from v0.4)
+
+This document describes the full retrieval/answer graph, which v0.7 preserves. The new
+`/research` comparison uses a separate bounded named-paper workflow with shared tools;
+it does not measure this entire graph. See the [research demonstration](research-demo.md)
+and [scope decision](decisions/2026-09-26-v07-research-scope.md).
 
 v0.5 adds a separate **Ask → Audit** action. The browser transfers the unchanged answer and
 all returned source texts to `/audit`; the user then runs Direct Flash or an experimental audit.

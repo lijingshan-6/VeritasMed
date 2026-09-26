@@ -1,0 +1,17 @@
+{
+  "started_utc": "2026-09-26T20:32:26.567693+00:00",
+  "pending": 91,
+  "settings": {
+    "model": "lytang/MiniCheck-Flan-T5-Large",
+    "revision": "96eafd01cee2d16cf81aaa2fb226b14f422a37b3",
+    "device": "cuda",
+    "precision": "float32",
+    "max_input_tokens": 2048,
+    "overflow": "execution failure, no truncation or auto-chunking",
+    "input": "title + newline + complete abstract; predict: doc</s>claim",
+    "binary_threshold": 0.5,
+    "score": "raw_support_score, not truth probability"
+  },
+  "finished_utc": "2026-09-26T20:32:37.508157+00:00",
+  "completed_total": 91
+}

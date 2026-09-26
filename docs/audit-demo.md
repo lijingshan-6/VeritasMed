@@ -1,12 +1,13 @@
 # 真实回答审计面板
 
-当前为 v0.5.0 功能，入口 `/audit`。它接收一份完整回答和 1–40 份来源文本，
+入口 `/audit`，v0.7 在原有面板上增加原子事实、限定词和独立核查器分歧展示。
+它接收一份完整回答和 1–40 份来源文本，
 逐条展示模型判定、回答原文范围、来源原文范围和未覆盖文本。
 只判断提供文本的支持关系，不自动搜索、修复回答或判定临床证据等级。
 
 ## 轻量启动
 
-在 `main` 或固定 `v0.5.0` 标签运行以下命令；`v0.4.0` 标签不包含它。
+在 `main` 运行以下命令。`v0.5.0` 仅包含旧面板，新增功能随 `v0.7.0` 交付。
 需要 Python 3.12、Node.js 22.12+ 和 uv，不需要 Ollama、Qdrant 或 GPU。
 已有完整项目环境可以直接使用，省略安装步骤。
 
@@ -35,7 +36,7 @@ RAGTruth 是另一个非医学开发研究入口。可选运行
 只放在忽略的 `.benchmark-runtime/ragtruth/`。首次下载及依赖安装需网络；此后回放无需模型请求。
 缺少缓存、缓存内容变化、记录与输入哈希不符时显示错误，不拼凑来源。
 
-轻量服务只提供审计功能，因此启动器隐藏 Ask/Explore 导航。完整 FastAPI 应用也注册了
+轻量服务提供 Audit 和 Research，启动器隐藏 Ask/Explore 导航。完整 FastAPI 应用也注册了
 相同 `/api/audit` 路由；原本的 Ask、Explore 和 Guided demo 使用原有启动方式。
 完整应用的 Ask 回答工具栏新增 **Audit**：将原回答与全部检索片段带入审计输入页，
 保留会话、问题、citation → chunk 映射。此按钮只传递文本，之后点击 **Run new audit** 才会调用模型。
@@ -55,7 +56,8 @@ Agent 当次生成的原回答及返回的全部 2 个片段原样进入审计�
 
 ## 演示流程
 
-1. 在 **Real saved runs** 选择 RAGTruth 回答和 Direct / Extract → verify / Context + meta / Exact quotes v2 方法。
+1. 在 **Real saved runs** 选择医学或 RAGTruth 回答及保存的方法。v0.7 的医学三类输入和
+   **Atomic facts · experimental** 操作见 [新演示指南](research-demo.md)；旧记录仍可回放。
    标记 **SAVED INFERENCE** 的记录是既有真实模型调用，不是即时生成。
 2. 点击回答中带下划线的陈述，展开相应 claim；点引文的 **Locate in full source**，
    在完整来源中定位。点击来源里被标记的文字也能选中对应 claim。
@@ -83,7 +85,8 @@ LLM_TIMEOUT_SECONDS=240
 ```
 
 点击 **Audit your own answer**，填入回答、来源标题和原文，再点 **Run new audit**。
-每个来源最多 50,000 字符、合计最多 80,000，回答最多 12,000；最多提取 24 条 claim。
+每个来源最多 50,000 字符、合计最多 80,000，回答最多 12,000；原有方法最多提取 24 条 claim，
+Atomic 最多 48 条事实。
 达到 claim 上限会显示提示。来源只能判断你粘贴的范围，摘要不能当成全文证据。
 
 Direct 发出一次审计调用。Split 先提取，再对每条陈述发出一次调用，可能耗时数分钟且
@@ -93,6 +96,16 @@ Context + meta 也是一次调用，属实验选项：claim 展开后显示所�
 不显示为 Supported。模型可能分流错误，因此其原文仍可点击定位，仍计入研究的参考错误分母。
 展示的 whitespace-separated tokens 是完整回答按空白切分的机械计数，不冒充自然语言字数或计数要求验收。
 Direct 保持默认；新增策略并不意味着可靠性已经提高。
+
+**Atomic facts · experimental** 先拆出带限定词的事实，再批量核查，最多三次模型调用。
+面板分别保留原回答片段、父句、模型规范化表述、人群/组别/数字/时间槽位和来源原句。
+规范化表述与槽位是模型解释，可能丢失限定词或仍然复合，不能冒充原文。
+`Needs review`、未返回事实、未绑定片段和达到上限都单独显示；字符覆盖不是语义完整性。
+
+医学保存演示还包含 MiniCheck 的独立补充评分。出现 **Checkers disagree** 时可查看两个
+原始结果及各自输入范围；不通过投票改写 Flash 判断。`raw_support_score` 是模型原始分数，
+不是经过验证的临床可信度。实时审计不自动下载或运行 MiniCheck。
+有限数字检查只提示明确的单数量失配，多个数字、区间或缺少语境时保留未解决，不自动裁决。
 
 **Exact quotes v2** 让程序计算引用位置及回答段落，不要求模型填写段落编号或出现次数。
 展开 claim 的 **Original text locations** 可查看唯一匹配、重复位置不明确、引文不存在或未知来源。
@@ -130,6 +143,8 @@ Direct 保持默认；新增策略并不意味着可靠性已经提高。
 | Repeated quote · location unresolved | 精确引句出现多次，展示候选位置但不任选一处，不计为完成核查 |
 | Execution failed / Invalid model output | 调用或结构失败，保留原始执行状态 |
 | Not checked | 已抽取但未完成核查 |
+| Needs review | 事实解析仍然复合或不确定等，保留模型输出但不计为完成核查 |
+| Checkers disagree | 已保存的两种核查器在支持/非支持上不同；不等于文献之间冲突 |
 | Presentation text · not source-checked | 模型判断为回答自身的呈现说明；没有得到文献支持核查，也不代表内容正确 |
 
 字符覆盖计数只反映多少非空白字符被有效定位的判断覆盖，不是语义完整性或正确率。

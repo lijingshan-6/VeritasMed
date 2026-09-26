@@ -1,0 +1,273 @@
+{
+  "split": "development",
+  "schedule": [
+    {
+      "case_id": "scifact-train-1182-14541844",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-345-4394817",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-346-11902109",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-1314-16237005",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-643-15535511",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-1393-12440953",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-899-5572127",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-1006-4926049",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-1006-4926049",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-1325-40476126",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-1118-23351136",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-43-7224723",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-161-6903077",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-43-7224723",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-1314-16237005",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-640-6503185",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-305-14797520",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-1215-16355392",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-899-5572127",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-305-14797520",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-568-23418635",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-1118-23351136",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-1350-5377642",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-568-23418635",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-346-11902109",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-345-4394817",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-305-14797520",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-432-8002887",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-345-4394817",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-1393-12440953",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-568-23418635",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-432-8002887",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-1325-40476126",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-1215-16355392",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-161-6903077",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-1350-5377642",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-566-16120395",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-189-4421578",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-1182-14541844",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-43-7224723",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-1325-40476126",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-1118-23351136",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-640-6503185",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-161-6903077",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-1215-16355392",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-899-5572127",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-1393-12440953",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-432-8002887",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-189-4421578",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-643-15535511",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-566-16120395",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-189-4421578",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-643-15535511",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-1182-14541844",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-1314-16237005",
+      "method": "autonomous_tools"
+    },
+    {
+      "case_id": "scifact-train-566-16120395",
+      "method": "direct_reader"
+    },
+    {
+      "case_id": "scifact-train-640-6503185",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-1350-5377642",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-346-11902109",
+      "method": "structured_workflow"
+    },
+    {
+      "case_id": "scifact-train-1006-4926049",
+      "method": "structured_workflow"
+    }
+  ],
+  "input_hashes": {
+    "scifact-train-640-6503185": "65f72d50c5ba80e396b9833e7ba3a5727b2cb0b08f4dac0059038afa6b70b808",
+    "scifact-train-1393-12440953": "18b15d4ecabb7de7789182f2db7236e05b3e4e3501ca4090b110533e78c70356",
+    "scifact-train-568-23418635": "1a9a89614dd053a7f061e306cadd7cb7d2e8a6b053f8f9b333f3fe410561c1e8",
+    "scifact-train-346-11902109": "d4fe26d9b6cca919f7ecd8a3f73aef40b99ae68f3a429d768a4ac9e1538b828f",
+    "scifact-train-1182-14541844": "52d03275beb88e1c8cf52b3434395f491c7ed87e54dd358d6379578e4dbce20a",
+    "scifact-train-161-6903077": "a4c36c2ccff2b8e2d070476157cf597e09b64d363d5b7b750cebdf5a9cd2a001",
+    "scifact-train-1006-4926049": "b597b0f43a72c4cd5cb61d146a192fc0bfaf3fd5f20d3f810c20169ebf71ec50",
+    "scifact-train-1350-5377642": "716e9625110c6484f54df0dc31af877f4146f45df0517abadac6002d008fd8e3",
+    "scifact-train-1215-16355392": "a28e805b182345baf8ed2c2d2861c60d4fdc0cb91b13007d9f7ec040af0b7040",
+    "scifact-train-1325-40476126": "6bdf629147af5bad101551fbbfd0451d34f0b9feee881b7127e46c8cfc5ffb0f",
+    "scifact-train-566-16120395": "b18c1e05a3a6a3e8ac645f9086018d34d2b973963cbb9b45ba7556ffd2941731",
+    "scifact-train-345-4394817": "cebe9dc20a3d27c6cee6ace2e26088483b62a7167b2e635ae4542978dfe6178d",
+    "scifact-train-899-5572127": "54694a5123feb5100dfeb32594cd78e7b7e14518e145c89c20f636489c55a764",
+    "scifact-train-43-7224723": "dd864f4372cc68dc11a8086f880fa6fc5111d0faa9d0d2e0e236a1bc2072f727",
+    "scifact-train-305-14797520": "8976aefa4b3b8d9a090178055d503f9481926f1122e9573be0864674cc1aab7e",
+    "scifact-train-1314-16237005": "e389867e315a8eb0e10dca8cfc84e4d7a7cc03b86d4d4d52273d14b540726409",
+    "scifact-train-643-15535511": "3ec8a7330d7722444fb271967f4fae6f53f0b24c31266453924e248b5468e9b9",
+    "scifact-train-189-4421578": "f37ac067745165c613ddec12be4e41e2c051bc60311d401bb1535494bd65b768",
+    "scifact-train-432-8002887": "22701ce6c7a98cb366801d12513576b19da285b026a0f8a906834a883c5b8524",
+    "scifact-train-1118-23351136": "c84bd9d58671c64d783947171444e79b4ea5a012734bd62e7acf698ce2585290"
+  },
+  "code_hashes": {
+    "src/medrag/agent/research_workflow.py": "6fdac5349f1d4f2e8c2c6d899ddc8073be3acff8a5f063bf5baed37ab9b11b41",
+    "src/medrag/verification/verifier.py": "65618cc05d01a6d2d3dcfc5b895a283982e71be030fa6a54d83df9cfe3a13d8b",
+    "src/medrag/verification/gateway.py": "ca942913d85dbc95e882ba401ea48c360b4faa6469066ee2ff71406f56a0ba8d"
+  },
+  "scoring": "Named target doc ID, public relation label, bound sentence IDs; review/failures not counted correct; independently report original draft."
+}

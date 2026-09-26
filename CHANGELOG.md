@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.7.0 — 2026-09-27 (audits measured, workflows compared)
+
+- Add experimental atomic answer audits with parent/fragment bindings, explicit qualification
+  slots, unresolved decomposition and independent checker outputs. Keep Direct as the audit default.
+- Add an optional pinned MiniCheck adapter and source-grouped fixed-target, medical, natural-answer,
+  repeat, calibration and ablation research. Preserve original outputs and a documented constructed-label correction.
+- Add a bounded shared-tool workflow study and `/research` replay, public reference labels,
+  actual traces, cost/denominator tables and unchanged answer transfer into Audit.
+- Bundle six actual Flash audits and 69 local MiniCheck scores across three explicitly distinguished
+  GRADE inputs, with standalone startup, actual screenshots, JSON exports and source attribution.
+- Complete 339 fixed-pair checks per model, medical/natural-answer diagnostics, calibration,
+  ablations and repeats. No eligible MiniCheck acceptance threshold was found; preserve that result.
+- Complete the frozen 40-query workflow comparison: direct reading and autonomous tools each make
+  35/40 correct accepted binary decisions, versus 31/40 for the structured workflow. False acceptance
+  is unchanged. Keep the simple default and publish every final answer, cost and failure.
+- Preserve the first development round's action-protocol failures, document the repair before final
+  inference and retain both complete development rounds. See the [release notes](docs/releases/v0.7.0.md).
+
 ## 0.5.0 — 2026-09-26 (text audit research showcase)
 
 - Bundle a genuine CC0 medical-paper snapshot and its original abstract, an actual Flash Ask → Direct Audit recording, source links and JSON export. The default audit replay needs no key or dataset download; this demo is not an accuracy evaluation.

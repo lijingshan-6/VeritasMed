@@ -1,0 +1,221 @@
+{
+  "protocol_sha256": "021858395d42544175cd2bc1816b29ff290027265b754648997c9d3159af8163",
+  "methods": {
+    "direct_three": {
+      "planned": 12,
+      "alarm": 7,
+      "no_alarm": 2,
+      "needs_review": 3,
+      "annotated_error_answers": 6,
+      "alarms_on_annotated_error_answers": 4,
+      "unmarked_answers": 6,
+      "alarms_on_unmarked_answers": 3,
+      "runtime": {
+        "recorded_answers": 36,
+        "audit_statuses": {
+          "ok": 31,
+          "partial_error": 5
+        },
+        "claim_statuses": {
+          "ok": 306,
+          "invalid_reference": 5
+        },
+        "decomposition_statuses": {
+          "not_applicable": 311
+        },
+        "binding_states": {
+          "parent": {},
+          "answer_fragment": {},
+          "evidence": {}
+        },
+        "answers_at_cap": 0,
+        "logical_calls": 36,
+        "reported_tokens": 530134,
+        "calls_without_token_usage": 0,
+        "sum_elapsed_seconds": 1978.515,
+        "note": "Latency is summed per-answer elapsed time, not batch wall time. Missing usage is not zero cost. Claim states and coverage do not measure semantic fidelity."
+      }
+    },
+    "atomic_first": {
+      "planned": 12,
+      "alarm": 3,
+      "no_alarm": 1,
+      "needs_review": 8,
+      "annotated_error_answers": 6,
+      "alarms_on_annotated_error_answers": 3,
+      "unmarked_answers": 6,
+      "alarms_on_unmarked_answers": 0,
+      "runtime": {
+        "recorded_answers": 12,
+        "audit_statuses": {
+          "partial_error": 8,
+          "ok": 4
+        },
+        "claim_statuses": {
+          "invalid_reference": 15,
+          "ok": 138,
+          "needs_review": 12
+        },
+        "decomposition_statuses": {
+          "atomic": 153,
+          "still_compound": 7,
+          "uncertain": 5
+        },
+        "binding_states": {
+          "parent": {
+            "unique": 160,
+            "not_found": 5
+          },
+          "answer_fragment": {
+            "unique": 274,
+            "ambiguous": 14
+          },
+          "evidence": {
+            "unique": 197
+          }
+        },
+        "answers_at_cap": 0,
+        "logical_calls": 25,
+        "reported_tokens": 337885,
+        "calls_without_token_usage": 0,
+        "sum_elapsed_seconds": 1141.02,
+        "note": "Latency is summed per-answer elapsed time, not batch wall time. Missing usage is not zero cost. Claim states and coverage do not measure semantic fidelity."
+      }
+    }
+  },
+  "details": [
+    {
+      "case_id": "3263",
+      "public_errors": 1,
+      "direct_signals": [
+        "no_alarm",
+        "no_alarm",
+        "no_alarm"
+      ],
+      "direct_three": "no_alarm",
+      "atomic_first": "needs_review"
+    },
+    {
+      "case_id": "4850",
+      "public_errors": 1,
+      "direct_signals": [
+        "alarm",
+        "alarm",
+        "alarm"
+      ],
+      "direct_three": "alarm",
+      "atomic_first": "alarm"
+    },
+    {
+      "case_id": "1581",
+      "public_errors": 1,
+      "direct_signals": [
+        "alarm",
+        "needs_review",
+        "needs_review"
+      ],
+      "direct_three": "needs_review",
+      "atomic_first": "needs_review"
+    },
+    {
+      "case_id": "3003",
+      "public_errors": 0,
+      "direct_signals": [
+        "alarm",
+        "alarm",
+        "alarm"
+      ],
+      "direct_three": "alarm",
+      "atomic_first": "needs_review"
+    },
+    {
+      "case_id": "1616",
+      "public_errors": 1,
+      "direct_signals": [
+        "alarm",
+        "alarm",
+        "alarm"
+      ],
+      "direct_three": "alarm",
+      "atomic_first": "alarm"
+    },
+    {
+      "case_id": "2259",
+      "public_errors": 0,
+      "direct_signals": [
+        "alarm",
+        "alarm",
+        "alarm"
+      ],
+      "direct_three": "alarm",
+      "atomic_first": "needs_review"
+    },
+    {
+      "case_id": "3943",
+      "public_errors": 0,
+      "direct_signals": [
+        "no_alarm",
+        "no_alarm",
+        "alarm"
+      ],
+      "direct_three": "needs_review",
+      "atomic_first": "needs_review"
+    },
+    {
+      "case_id": "871",
+      "public_errors": 0,
+      "direct_signals": [
+        "no_alarm",
+        "no_alarm",
+        "no_alarm"
+      ],
+      "direct_three": "no_alarm",
+      "atomic_first": "no_alarm"
+    },
+    {
+      "case_id": "3679",
+      "public_errors": 0,
+      "direct_signals": [
+        "alarm",
+        "alarm",
+        "alarm"
+      ],
+      "direct_three": "alarm",
+      "atomic_first": "needs_review"
+    },
+    {
+      "case_id": "630",
+      "public_errors": 0,
+      "direct_signals": [
+        "needs_review",
+        "needs_review",
+        "needs_review"
+      ],
+      "direct_three": "needs_review",
+      "atomic_first": "needs_review"
+    },
+    {
+      "case_id": "3153",
+      "public_errors": 1,
+      "direct_signals": [
+        "alarm",
+        "alarm",
+        "alarm"
+      ],
+      "direct_three": "alarm",
+      "atomic_first": "alarm"
+    },
+    {
+      "case_id": "5326",
+      "public_errors": 1,
+      "direct_signals": [
+        "alarm",
+        "alarm",
+        "alarm"
+      ],
+      "direct_three": "alarm",
+      "atomic_first": "needs_review"
+    }
+  ],
+  "scope": "Budget control of answer-level alarm presence only; no claim-level semantic accuracy or assertion of complete auditing. Unmarked alarms are not all false positives."
+}

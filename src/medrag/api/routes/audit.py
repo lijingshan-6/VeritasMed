@@ -10,6 +10,8 @@ from fastapi import APIRouter, HTTPException
 from medrag.verification.answer_audit import AuditInput, audit_answer, text_hash
 from medrag.verification.context_audit import audit_context
 from medrag.verification.quote_audit import QuoteAuditRequest, audit_quotes
+from medrag.verification.atomic_schema import AtomicAuditRequest
+from medrag.verification.atomic_audit import audit_atomic
 from medrag.verification.gateway import FlashGateway
 from medrag.verification.ragtruth import prepare
 from medrag.verification.scifact import object_hash, read_jsonl
@@ -20,27 +22,33 @@ CONTEXT_RUN = ROOT / "data/verification/context_v1/run01"
 QUOTE_RUN = ROOT / "data/verification/quote_v2/run01"
 CACHE = ROOT / ".benchmark-runtime/ragtruth"
 MEDICAL = ROOT / "data/demo/medical/audit.json"
+RELIABILITY = ROOT / "data/demo/reliability"
+V06 = ROOT / "data/verification/v06"
 router = APIRouter(prefix="/api/audit", tags=["answer audit"])
 _slots = BoundedSemaphore(3)
 
 
-def saved_rows():
-    path = RUN / "predictions.jsonl"
+def complete_rows(path):
     if not path.exists():
         return []
-    # A benchmark can still be appending its current row. Expose complete records only.
-    lines = path.read_text(encoding="utf8").splitlines(keepends=True)
-    rows = [json.loads(line) for line in lines if line.endswith("\n")]
+    # Actual file newlines only: Unicode separators inside JSON strings are data.
+    with path.open(encoding="utf8") as stream:
+        return [json.loads(line) for line in stream if line.endswith("\n") and line.strip()]
+
+
+def saved_rows():
+    rows = complete_rows(RUN / "predictions.jsonl")
     context_path = CONTEXT_RUN / "predictions.jsonl"
     if context_path.exists():
-        rows.extend({**row, "run": "context_v1/run01"} for line in context_path.read_text(encoding="utf8").splitlines(keepends=True)
-                    if line.endswith("\n") for row in [json.loads(line)]
+        rows.extend({**row, "run": "context_v1/run01"} for row in complete_rows(context_path)
                     if row["group"] != "repeat" and row["strategy"] in ("direct", "context"))
     quote_path = QUOTE_RUN / "predictions.jsonl"
     if quote_path.exists():
-        rows.extend({**row, "run": "quote_v2/run01"} for line in quote_path.read_text(encoding="utf8").splitlines(keepends=True)
-                    if line.endswith("\n") for row in [json.loads(line)]
+        rows.extend({**row, "run": "quote_v2/run01"} for row in complete_rows(quote_path)
                     if row["task"] == "whole" and row["attempt"] == 1)
+    if (V06 / "method-freeze.json").exists():
+        rows.extend({**row, "run": "v06/whole/natural", "group": "v0.6 natural development"}
+                    for row in complete_rows(V06 / "whole/natural/predictions.jsonl"))
     return rows
 
 
@@ -78,6 +86,17 @@ def saved_cases():
             if object_hash(item.model_dump()) != case["input_sha256"]:
                 raise HTTPException(409, "Quote experiment inputs do not match the frozen manifest.")
             by_id[case["case_id"]] = {"input": item}
+    if (V06 / "method-freeze.json").exists():
+        manifest = json.loads((V06 / "natural.json").read_text(encoding="utf8"))
+        sources = {s["source_id"]: s for s in read_jsonl(CACHE / "source_info.jsonl")}
+        responses = {r["id"]: r for r in read_jsonl(CACHE / "response.jsonl")}
+        for case in manifest["cases"]:
+            response, source = responses[case["case_id"]], sources[case["source_id"]]
+            item = AtomicAuditRequest(answer=response["response"], sources=[{"id": source["source_id"],
+                                      "title": f"RAGTruth {source['source']} · source {source['source_id']}", "text": source["source_info"]}])
+            if object_hash(item.model_dump()) != case["input_sha256"]:
+                raise HTTPException(409, "Atomic experiment inputs do not match the frozen manifest.")
+            by_id[case["case_id"]] = {"input": item}
     return by_id
 
 
@@ -98,13 +117,43 @@ def examples():
         entries.insert(0, {"id": "medical-grade", "label": "Medical · GRADE hypoglycemia trial",
                            "requires_download": False,
                            "strategies": {record["input"]["strategy"]: record["audit"]["status"]}})
+    if (RELIABILITY / "catalogue.json").exists():
+        entries.extend(json.loads((RELIABILITY / "catalogue.json").read_text(encoding="utf8")))
     return {"examples": entries,
             "sources_downloaded": all((CACHE / name).exists() for name in ("response.jsonl", "source_info.jsonl")),
             "description": "Actual saved Flash inference: bundled original-paper medical demo and optional nonmedical RAGTruth development examples."}
 
 
 @router.get("/examples/{response_id}")
-def replay(response_id: str, strategy: Literal["direct", "split", "context", "quote_v2"] = "direct"):
+def replay(response_id: str, strategy: Literal["direct", "split", "context", "quote_v2", "atomic_v1"] = "direct"):
+    catalogue_path = RELIABILITY / "catalogue.json"
+    if catalogue_path.exists():
+        catalogue = json.loads(catalogue_path.read_text(encoding="utf8"))
+        entry = next((e for e in catalogue if e["id"] == response_id), None)
+        if entry and strategy in entry["strategies"]:
+            # Only IDs from the bundled catalogue are used as paths.
+            record = json.loads((RELIABILITY / f"{entry['id']}-{strategy}.json").read_text(encoding="utf8"))
+            item = AtomicAuditRequest.model_validate(record["input"])
+            if record["audit"]["answer_sha256"] != text_hash(item.answer) or record["audit"]["source_hashes"] != {s.id: text_hash(s.text) for s in item.sources}:
+                raise HTTPException(409, "Saved audit input fingerprint mismatch.")
+            supplemental_path = RELIABILITY / f"{entry['id']}-minicheck.json"
+            if strategy == "atomic_v1" and supplemental_path.exists():
+                supplemental = json.loads(supplemental_path.read_text(encoding="utf8"))
+                if supplemental["base_record_sha256"] != object_hash(record):
+                    raise HTTPException(409, "Supplemental checker belongs to a different saved audit.")
+                by_id = {f["fact_id"]: f for f in supplemental["facts"]}
+                for claim in record["audit"]["claims"]:
+                    extra = by_id.get(claim["id"])
+                    if extra and extra["normalized_claim_sha256"] == object_hash(claim["normalized_claim"]):
+                        claim["checker_results"]["minicheck"] = extra["result"]
+                        score = extra["result"].get("binary_prediction")
+                        claim["checker_disagreement"] = score is not None and claim["relation"] is not None and score != int(claim["relation"] == "supported")
+                record["audit"]["supplemental_checkers"] = {
+                    "judgments": sum(f["result"].get("status") == "ok" for f in supplemental["facts"]),
+                    "attempts": len(supplemental["facts"]),
+                    "elapsed_seconds": supplemental["elapsed_seconds"], "scope": supplemental["scope"],
+                }
+            return {**record, "mode": "saved"}
     if response_id == "medical-grade" and MEDICAL.exists():
         record = json.loads(MEDICAL.read_text(encoding="utf8"))
         if record["input"]["strategy"] != strategy:
@@ -131,7 +180,7 @@ def replay(response_id: str, strategy: Literal["direct", "split", "context", "qu
 
 
 @router.post("")
-def live_audit(item: QuoteAuditRequest):
+def live_audit(item: AtomicAuditRequest):
     if not _slots.acquire(blocking=False):
         raise HTTPException(429, "Three audits are already running; try again after one finishes.")
     try:
@@ -139,7 +188,9 @@ def live_audit(item: QuoteAuditRequest):
             gateway = FlashGateway()
         except Exception:
             raise HTTPException(503, "Configure the Flash profile and key in the local .env before running a live audit.") from None
-        if item.strategy == "quote_v2":
+        if item.strategy == "atomic_v1":
+            result = audit_atomic(item, gateway)
+        elif item.strategy == "quote_v2":
             result = audit_quotes(item, gateway)
         elif item.strategy == "context":
             result = audit_context(item, gateway)

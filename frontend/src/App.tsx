@@ -5,6 +5,7 @@ import { AnswerPage } from './pages/AnswerPage'
 import { ExplorerPage } from './pages/ExplorerPage'
 import { DocumentPage } from './pages/DocumentPage'
 import { AuditPage } from './pages/AuditPage'
+import { ResearchPage } from './pages/ResearchPage'
 import { fetchCorpusStats, fetchHealth, loadRecentThreads, saveThread } from './api/client'
 import { useStore } from './store'
 
@@ -364,8 +365,10 @@ function Header({ theme, setTheme }: { theme: Theme; setTheme: (t: Theme) => voi
           icon={IconCompass}
           onClick={() => navigate('/explore' + demoSuffix)}
         /></>}
-        <NavTab active={location.pathname === '/audit' || auditOnly} label="Audit" icon={IconBook}
+        <NavTab active={location.pathname === '/audit' || (auditOnly && location.pathname === '/')} label="Audit" icon={IconBook}
           onClick={() => { window.location.href = '/audit' }} />
+        <NavTab active={location.pathname === '/research'} label="Research" icon={IconCompass}
+          onClick={() => navigate('/research')} />
       </nav>
 
       <span style={{ flex: 1 }} />
@@ -415,6 +418,7 @@ export default function App() {
           <Routes>
             <Route path="/"                   element={auditOnly ? <AuditPage /> : <AnswerPage />} />
             <Route path="/audit"              element={<AuditPage />} />
+            <Route path="/research"           element={<ResearchPage />} />
             <Route path="/explore"            element={<ExplorerPage />} />
             <Route path="/document/:citation" element={<DocumentPage />} />
           </Routes>

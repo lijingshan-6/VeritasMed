@@ -1,0 +1,21 @@
+{
+  "case_ids": [
+    "3263",
+    "4850",
+    "1581",
+    "3003",
+    "1616",
+    "2259",
+    "3943",
+    "871",
+    "3679",
+    "630",
+    "3153",
+    "5326"
+  ],
+  "selection": "The same 12 sources already selected for E6; no new inference or outcome-based sample selection",
+  "direct_control": "Use original + attempts 2 and 3. Only if all three complete and share answer-level alarm presence accept that signal. Otherwise needs_review. No majority vote, new judge, pooling spans or treating agreement as truth.",
+  "atomic_control": "Use first atomic_v1 attempt only, with its existing at-most-three-call cap. Partial/unbound/still-compound/capped output remains needs_review.",
+  "scope": "Budget control of answer-level alarm presence only; no claim-level semantic accuracy or assertion of complete auditing. Unmarked alarms are not all false positives.",
+  "reason": "Medical development location-linked results suggest fewer errors accepted by decomposition. Inspect whether scheduled three-call Direct changes conservative alarm coverage; do not infer gains from extra calls alone."
+}

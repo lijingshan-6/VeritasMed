@@ -1,0 +1,8 @@
+{
+  "decision": "Evaluate all three workflows with the v2 action adapter selected after retained first-round protocol failures; no final-set tuning or baseline exclusion",
+  "development_predictions_sha256": "c31cc76e70c8e5cfac9f3622500567030936a203c50fa43e3ef65e396f047524",
+  "final_queries": 40,
+  "scope": "Named-paper fixed-candidate-corpus comparison, not historical Ask graph superiority",
+  "original_development_predictions_sha256": "580baa326c6099ee6d49f3ea36e48397c83c29524b00bd452c177fa466140dd4",
+  "development_revision": "Finish-contract clarification; recorded leading-JSON/DSML discard and bare-answer wrapping; all three arms rerun before final"
+}

@@ -15,7 +15,10 @@ PILOT_SEED = "veritasmed-v0.5-scifact-pilot-2026-09-24"
 
 
 def read_jsonl(path: Path) -> list[dict]:
-    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line]
+    # Unicode paragraph/line separators may occur inside valid JSON strings.
+    # splitlines() treats those characters as record boundaries; file iteration does not.
+    with path.open(encoding="utf-8") as stream:
+        return [json.loads(line) for line in stream if line.strip()]
 
 
 def object_hash(value) -> str:

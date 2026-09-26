@@ -1,0 +1,270 @@
+{
+  "schedule": [
+    {
+      "case_id": "1581",
+      "method": "atomic_v1",
+      "attempt": 3
+    },
+    {
+      "case_id": "1616",
+      "method": "atomic_v1",
+      "attempt": 2
+    },
+    {
+      "case_id": "3153",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "2259",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "4850",
+      "method": "atomic_v1",
+      "attempt": 2
+    },
+    {
+      "case_id": "3943",
+      "method": "atomic_v1",
+      "attempt": 3
+    },
+    {
+      "case_id": "1581",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "3003",
+      "method": "atomic_v1",
+      "attempt": 2
+    },
+    {
+      "case_id": "2259",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "3153",
+      "method": "atomic_v1",
+      "attempt": 3
+    },
+    {
+      "case_id": "1581",
+      "method": "atomic_v1",
+      "attempt": 2
+    },
+    {
+      "case_id": "1581",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "3003",
+      "method": "atomic_v1",
+      "attempt": 3
+    },
+    {
+      "case_id": "871",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "3003",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "871",
+      "method": "atomic_v1",
+      "attempt": 2
+    },
+    {
+      "case_id": "630",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "3263",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "5326",
+      "method": "atomic_v1",
+      "attempt": 2
+    },
+    {
+      "case_id": "630",
+      "method": "atomic_v1",
+      "attempt": 3
+    },
+    {
+      "case_id": "871",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "3153",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "4850",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "5326",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "4850",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "3943",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "3263",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "630",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "3263",
+      "method": "atomic_v1",
+      "attempt": 2
+    },
+    {
+      "case_id": "630",
+      "method": "atomic_v1",
+      "attempt": 2
+    },
+    {
+      "case_id": "5326",
+      "method": "atomic_v1",
+      "attempt": 3
+    },
+    {
+      "case_id": "3263",
+      "method": "atomic_v1",
+      "attempt": 3
+    },
+    {
+      "case_id": "1616",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "3943",
+      "method": "atomic_v1",
+      "attempt": 2
+    },
+    {
+      "case_id": "1616",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "3679",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "3003",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "2259",
+      "method": "atomic_v1",
+      "attempt": 2
+    },
+    {
+      "case_id": "3943",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "1616",
+      "method": "atomic_v1",
+      "attempt": 3
+    },
+    {
+      "case_id": "3153",
+      "method": "atomic_v1",
+      "attempt": 2
+    },
+    {
+      "case_id": "871",
+      "method": "atomic_v1",
+      "attempt": 3
+    },
+    {
+      "case_id": "5326",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "3679",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "3679",
+      "method": "atomic_v1",
+      "attempt": 3
+    },
+    {
+      "case_id": "3679",
+      "method": "atomic_v1",
+      "attempt": 2
+    },
+    {
+      "case_id": "2259",
+      "method": "atomic_v1",
+      "attempt": 3
+    },
+    {
+      "case_id": "4850",
+      "method": "atomic_v1",
+      "attempt": 3
+    }
+  ],
+  "dataset": "repeat",
+  "input_hashes": {
+    "3263": "b0ca17b82e30e148e10f9eabe669bd6f1c2c7563e7b045fc441ea13bf2cefa50",
+    "4850": "d3ba6dc5ffe367c3da72779da0d9bce4852dfbf7dedd12ff359cf06a8650993b",
+    "1581": "ef726ccbb9886d661d15a7ff742ecb018d075786bd020cc7c18ab4ec8e6403a9",
+    "3003": "657c7760b33023eda2d617ea846695eb27d0daf63f8f56c87c8c1afc44b71395",
+    "1616": "23a46c36f29ddf3fa4402271d1895894b36472a767f5dc5e21b2282cc4b3dbfa",
+    "2259": "2a9382156bfc3e8b96a81de3aed16c7fffdcfdd38996d631bf9340ac31c6a5ab",
+    "3943": "56517759ba4408959739b3aab6234722040b8ebd7fffb9231b3ae8387f356e28",
+    "871": "e73b165b61f645cf4f95019f6c2e3f30dd0eaf6aebde586c3a1cb711639a0b30",
+    "3679": "4ae95b78f4dc407f1f417cd1f3d2ce0a3794907aaa213b9985327eaf5196d5b9",
+    "630": "e2676409b220159dce4705220ec71efb0aa2b17c8bd4a457bc3d32f7e1b4adb7",
+    "3153": "7f5dc00cbfa3d7805d523d4b2eb8eeb3f80f59a2a9b81a3ace9124725540996d",
+    "5326": "44197ef15ed673de58ba13bd6832863d15de7ee302562a9cbbfcfc19c627c70e"
+  },
+  "code_hashes": {
+    "src/medrag/verification/atomic_audit.py": "6dc7e663fc0ad0e91821b482848f788d1d58a46d88ae8920c2ce585761dbde86",
+    "src/medrag/verification/atomic_schema.py": "e8aa9dc10ebcafa4205af97c9d6fc53559764190991ec69f3e55143ada1e50eb",
+    "src/medrag/verification/numeric_checks.py": "a20c9e51012628375ce7d830f09fd20bd6460204c448c4d740b44417db35e2d7",
+    "src/medrag/verification/answer_audit.py": "842bf4a9af6d09582653f04494f540f4029dec73cf7e6c76e22491ec6b31ec52",
+    "src/medrag/verification/quote_audit.py": "465f25d8092b72518b6e8d578e0e8f2804458d3af4d3e04ed703d5c11d3d9687",
+    "src/medrag/verification/gateway.py": "ca942913d85dbc95e882ba401ea48c360b4faa6469066ee2ff71406f56a0ba8d"
+  },
+  "workers": 3,
+  "method_limit": "atomic at most 3 calls; original Split at most 25 calls; report unequal compute",
+  "scoring": "original frozen RAGTruth location measures; constructed fact coverage separately; no semantic gold from model consensus"
+}

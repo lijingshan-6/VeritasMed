@@ -32,7 +32,7 @@ from medrag.api.routes import ask, audit, chunk, corpus, document, history, sear
 app = FastAPI(
     title="VeritasMed API",
     description="Self-verifying medical literature QA backend",
-    version="0.5.0",
+    version="0.7.0",
 )
 
 # ── CORS ─────────────────────────────────────────────────────────────────────
@@ -55,3 +55,5 @@ app.include_router(chunk.router)
 app.include_router(history.router)
 app.include_router(corpus.router)
 app.include_router(audit.router)
+from medrag.api.routes.research import router as research_router
+app.include_router(research_router)

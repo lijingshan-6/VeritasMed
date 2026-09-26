@@ -1,0 +1,11 @@
+{
+  "date": "2026-09-26",
+  "scope": "Fixed-claim study only; does not freeze or unlock whole-answer transfer evaluation",
+  "decision": "Keep both original fixed Flash and full-input MiniCheck unchanged after 60 development pairs; no prompt tuning",
+  "pilot_observation": "Both 49/60 binary correct; Flash 0/33 false accepts and 16/27 support recall; MiniCheck 3/33 false accepts and 19/27 support recall",
+  "model_revision": "96eafd01cee2d16cf81aaa2fb226b14f422a37b3",
+  "calibration": "Logistic on clipped raw-score logit; C=1; max_iter=1000; fit and threshold partitions disjoint",
+  "threshold": "Fixed grid 0..1 step 0.005; empirical risk <=0.05; >=20 accepted pairs from >=10 source groups; maximize acceptance",
+  "final_policy": "Evaluate unchanged fixed methods once on all 339 eligible official dev pairs; do not inspect outcomes to tune whole-answer methods",
+  "ordering_amendment": "Independent fixed-task GPU calibration can proceed while whole-answer development is running. Separate freezes protect separate research questions."
+}

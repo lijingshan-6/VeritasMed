@@ -1,0 +1,14 @@
+{
+  "python": "3.12.13",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "packages": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.57.3",
+    "sentencepiece": "0.2.1",
+    "numpy": "2.5.3",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.16.2",
+    "huggingface-hub": "0.36.2"
+  },
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU"
+}

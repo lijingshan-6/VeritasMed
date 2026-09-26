@@ -1,0 +1,5484 @@
+{
+  "label_review_sha256": "990bf2d8ffebd3a73a4d36377ee54547af0e13460e64d5e91e69826f00b8d729",
+  "scope": "Post-hoc developer/AI source-view sensitivity. Frozen primary labels/results retained. Not independent semantic gold or new confirmatory evidence.",
+  "excluded_groups": [
+    "5c5a3e006a34e254"
+  ],
+  "remaining_groups": 14,
+  "remaining_answers": 56,
+  "methods": {
+    "direct": {
+      "counts": {
+        "planned_answers": 56,
+        "completed_answers": 51,
+        "logical_calls": 56,
+        "facts": 112,
+        "non_supported_facts": 42,
+        "supported_facts": 70,
+        "fully_located": 108,
+        "half_located": 110,
+        "full_coverage_matching_relation": 97,
+        "location_matched_decisions": 103,
+        "wrong_fact_accepted": 3,
+        "supported_fact_accepted": 65,
+        "unsupported_fact_flagged": 35,
+        "exact_relation_match": 100
+      },
+      "numeric_diagnostics": {
+        "not_run": 122
+      },
+      "per_fact": [
+        {
+          "case_id": "medical-01-original_meaning",
+          "group_id": "a103b7c5176c5454",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The daily active capsule contained 40 mg of folic acid",
+            "relation": "supported",
+            "start": 0,
+            "end": 54
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-original_meaning",
+          "group_id": "a103b7c5176c5454",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "the primary outcome was all-cause mortality",
+            "relation": "supported",
+            "start": 62,
+            "end": 105
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-paraphrase",
+          "group_id": "a103b7c5176c5454",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Folic acid was given at 0.04 g in the daily active capsule",
+            "relation": "supported",
+            "start": 0,
+            "end": 58
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-paraphrase",
+          "group_id": "a103b7c5176c5454",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "all-cause mortality served as the primary endpoint",
+            "relation": "supported",
+            "start": 66,
+            "end": 116
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-single_error",
+          "group_id": "a103b7c5176c5454",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The daily active capsule contained 100 mg of folic acid",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 55
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-single_error",
+          "group_id": "a103b7c5176c5454",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "the primary outcome was all-cause mortality",
+            "relation": "supported",
+            "start": 63,
+            "end": 106
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-evidence_removed",
+          "group_id": "a103b7c5176c5454",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The daily active capsule contained 40 mg of folic acid",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 54
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-evidence_removed",
+          "group_id": "a103b7c5176c5454",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "the primary outcome was all-cause mortality",
+            "relation": "insufficient",
+            "start": 62,
+            "end": 105
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-original_meaning",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The ocular inflammation cohort included 7957 US residents",
+            "relation": "supported",
+            "start": 0,
+            "end": 57
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-original_meaning",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "2340 participants received immunosuppressive drugs during follow-up",
+            "relation": "supported",
+            "start": 65,
+            "end": 132
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-paraphrase",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "There were 7,957 US residents in the ocular inflammation cohort",
+            "relation": "supported",
+            "start": 0,
+            "end": 63
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-paraphrase",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "immunosuppressive treatment was received by 2,340 of them during follow-up",
+            "relation": "supported",
+            "start": 71,
+            "end": 145
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-single_error",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The ocular inflammation cohort included 2340 US residents",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 57
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-single_error",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "2340 participants received immunosuppressive drugs during follow-up",
+            "relation": "supported",
+            "start": 65,
+            "end": 132
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-evidence_removed",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The ocular inflammation cohort included 7957 US residents",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 57
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-evidence_removed",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "2340 participants received immunosuppressive drugs during follow-up",
+            "relation": "insufficient",
+            "start": 65,
+            "end": 132
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-original_meaning",
+          "group_id": "738997154b23fc1e",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Sympathetic activation was greater in pregnant women than nonpregnant controls across all 3 minutes of cold pressor stimulation",
+            "relation": "supported",
+            "start": 0,
+            "end": 127
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-original_meaning",
+          "group_id": "738997154b23fc1e",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "mean arterial pressure during peak sympathoexcitation was not different between these groups",
+            "relation": "supported",
+            "start": 135,
+            "end": 227
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-paraphrase",
+          "group_id": "738997154b23fc1e",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Throughout the three-minute cold pressor stimulation, pregnant women showed greater sympathetic activation than nonpregnant controls",
+            "relation": "supported",
+            "start": 0,
+            "end": 132
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-paraphrase",
+          "group_id": "738997154b23fc1e",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the groups did not differ in mean arterial pressure at peak sympathoexcitation",
+            "relation": "supported",
+            "start": 140,
+            "end": 218
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-single_error",
+          "group_id": "738997154b23fc1e",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Sympathetic activation was greater in pregnant women than nonpregnant controls across all 5 minutes of cold pressor stimulation",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 127
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-single_error",
+          "group_id": "738997154b23fc1e",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "mean arterial pressure during peak sympathoexcitation was not different between these groups",
+            "relation": "supported",
+            "start": 135,
+            "end": 227
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-3"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-evidence_removed",
+          "group_id": "738997154b23fc1e",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Sympathetic activation was greater in pregnant women than nonpregnant controls across all 3 minutes of cold pressor stimulation",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 127
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-evidence_removed",
+          "group_id": "738997154b23fc1e",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "mean arterial pressure during peak sympathoexcitation was not different between these groups",
+            "relation": "insufficient",
+            "start": 135,
+            "end": 227
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-original_meaning",
+          "group_id": "08e9232f13483791",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Anterior resection for rectal cancer was received by 67.4% of patients in the most deprived fifth",
+            "relation": "supported",
+            "start": 0,
+            "end": 97
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-original_meaning",
+          "group_id": "08e9232f13483791",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "75.5% of patients in the least deprived fifth received that procedure",
+            "relation": "supported",
+            "start": 105,
+            "end": 174
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-paraphrase",
+          "group_id": "08e9232f13483791",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "In the most deprived fifth, the proportion receiving anterior resection for rectal cancer was 67.4%",
+            "relation": "supported",
+            "start": 0,
+            "end": 99
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-paraphrase",
+          "group_id": "08e9232f13483791",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "in the least deprived fifth, the corresponding proportion was 75.5%",
+            "relation": "supported",
+            "start": 107,
+            "end": 174
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-single_error",
+          "group_id": "08e9232f13483791",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Anterior resection for rectal cancer was received by 75.5% of patients in the most deprived fifth",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 97
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-04-single_error",
+          "group_id": "08e9232f13483791",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "75.5% of patients in the least deprived fifth received that procedure",
+            "relation": "supported",
+            "start": 105,
+            "end": 174
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-evidence_removed",
+          "group_id": "08e9232f13483791",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Anterior resection for rectal cancer was received by 67.4% of patients in the most deprived fifth",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 97
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-evidence_removed",
+          "group_id": "08e9232f13483791",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "75.5% of patients in the least deprived fifth received that procedure",
+            "relation": "insufficient",
+            "start": 105,
+            "end": 174
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-original_meaning",
+          "group_id": "378f89a6336c131f",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The epigenome-wide methylation analysis included 64 endometrial cancer tissue samples",
+            "relation": "supported",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-05-original_meaning",
+          "group_id": "378f89a6336c131f",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "it included 23 control samples",
+            "relation": "supported",
+            "start": 93,
+            "end": 123
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-05-paraphrase",
+          "group_id": "378f89a6336c131f",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Endometrial cancer tissues numbered sixty-four in the epigenome-wide methylation analysis",
+            "relation": "supported",
+            "start": 0,
+            "end": 89
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-paraphrase",
+          "group_id": "378f89a6336c131f",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the control sample count was twenty-three",
+            "relation": "supported",
+            "start": 97,
+            "end": 138
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-single_error",
+          "group_id": "378f89a6336c131f",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The epigenome-wide methylation analysis included 23 endometrial cancer tissue samples",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-single_error",
+          "group_id": "378f89a6336c131f",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "it included 23 control samples",
+            "relation": "supported",
+            "start": 93,
+            "end": 123
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-evidence_removed",
+          "group_id": "378f89a6336c131f",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The epigenome-wide methylation analysis included 64 endometrial cancer tissue samples",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-evidence_removed",
+          "group_id": "378f89a6336c131f",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "it included 23 control samples",
+            "relation": "insufficient",
+            "start": 93,
+            "end": 123
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-original_meaning",
+          "group_id": "ff53b4309738ce70",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Average colonoscopy use was 285 per 100,000 per quarter in period 1",
+            "relation": "supported",
+            "start": 0,
+            "end": 67
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-original_meaning",
+          "group_id": "ff53b4309738ce70",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "it was 1919 per 100,000 per quarter in period 3",
+            "relation": "supported",
+            "start": 75,
+            "end": 122
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-paraphrase",
+          "group_id": "ff53b4309738ce70",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "In period 1 the quarterly average colonoscopy rate was 285 per 100,000",
+            "relation": "supported",
+            "start": 0,
+            "end": 70
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-paraphrase",
+          "group_id": "ff53b4309738ce70",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the corresponding period 3 rate was 1,919 per 100,000",
+            "relation": "supported",
+            "start": 78,
+            "end": 131
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-single_error",
+          "group_id": "ff53b4309738ce70",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Average colonoscopy use was 1919 per 100,000 per quarter in period 1",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 68
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-single_error",
+          "group_id": "ff53b4309738ce70",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "it was 1919 per 100,000 per quarter in period 3",
+            "relation": "supported",
+            "start": 76,
+            "end": 123
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-evidence_removed",
+          "group_id": "ff53b4309738ce70",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Average colonoscopy use was 285 per 100,000 per quarter in period 1",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 67
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-evidence_removed",
+          "group_id": "ff53b4309738ce70",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "it was 1919 per 100,000 per quarter in period 3",
+            "relation": "insufficient",
+            "start": 75,
+            "end": 122
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-original_meaning",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "By age 2 years, 858 infants had received multidisciplinary neurodevelopmental assessment",
+            "relation": "supported",
+            "start": 0,
+            "end": 88
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-original_meaning",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "122 of those 858 survivors had cerebral palsy at age 2",
+            "relation": "supported",
+            "start": 96,
+            "end": 150
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-paraphrase",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Multidisciplinary neurodevelopmental assessment by age two covered 858 infants",
+            "relation": "supported",
+            "start": 0,
+            "end": 78
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-paraphrase",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "at that age cerebral palsy was present in 122 of the 858 survivors",
+            "relation": "supported",
+            "start": 86,
+            "end": 152
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-single_error",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "By age 2 years, 2318 infants had received multidisciplinary neurodevelopmental assessment",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 89
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-single_error",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "122 of those 858 survivors had cerebral palsy at age 2",
+            "relation": "supported",
+            "start": 97,
+            "end": 151
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-evidence_removed",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "By age 2 years, 858 infants had received multidisciplinary neurodevelopmental assessment",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 88
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-evidence_removed",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "122 of those 858 survivors had cerebral palsy at age 2",
+            "relation": "insufficient",
+            "start": 96,
+            "end": 150
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-original_meaning",
+          "group_id": "406d2aea312cde3c",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Nine randomised studies of psychiatric instruments were identified",
+            "relation": "supported",
+            "start": 0,
+            "end": 66
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-original_meaning",
+          "group_id": "406d2aea312cde3c",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "four studies with 2457 participants could be pooled for the effect of feedback on recognition of depressive disorders",
+            "relation": "supported",
+            "start": 74,
+            "end": 191
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-paraphrase",
+          "group_id": "406d2aea312cde3c",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "The review identified 9 randomised psychiatric-instrument studies",
+            "relation": "supported",
+            "start": 0,
+            "end": 65
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-paraphrase",
+          "group_id": "406d2aea312cde3c",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "pooling of the feedback effect on depressive-disorder recognition covered 4 studies and 2,457 participants",
+            "relation": "supported",
+            "start": 73,
+            "end": 179
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-single_error",
+          "group_id": "406d2aea312cde3c",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Four randomised studies of psychiatric instruments were identified",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 66
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-single_error",
+          "group_id": "406d2aea312cde3c",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "four studies with 2457 participants could be pooled for the effect of feedback on recognition of depressive disorders",
+            "relation": "supported",
+            "start": 74,
+            "end": 191
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-evidence_removed",
+          "group_id": "406d2aea312cde3c",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Nine randomised studies of psychiatric instruments were identified",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 66
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-evidence_removed",
+          "group_id": "406d2aea312cde3c",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "four studies with 2457 participants could be pooled for the effect of feedback on recognition of depressive disorders",
+            "relation": "insufficient",
+            "start": 74,
+            "end": 191
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-3"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-original_meaning",
+          "group_id": "07b14ed636415e08",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Compared with placebo, orlistat reduced weight by 2.9 kg in the included adult trials",
+            "relation": "supported",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-original_meaning",
+          "group_id": "07b14ed636415e08",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "sibutramine reduced weight by 4.2 kg compared with placebo",
+            "relation": "supported",
+            "start": 93,
+            "end": 151
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-paraphrase",
+          "group_id": "07b14ed636415e08",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "The included adult trials reported 2,900 g less weight with orlistat than placebo",
+            "relation": "supported",
+            "start": 0,
+            "end": 81
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-paraphrase",
+          "group_id": "07b14ed636415e08",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the corresponding reduction for sibutramine versus placebo was 4,200 g",
+            "relation": "supported",
+            "start": 89,
+            "end": 159
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-single_error",
+          "group_id": "07b14ed636415e08",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Compared with placebo, orlistat reduced weight by 4.2 kg in the included adult trials",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-single_error",
+          "group_id": "07b14ed636415e08",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "sibutramine reduced weight by 4.2 kg compared with placebo",
+            "relation": "supported",
+            "start": 93,
+            "end": 151
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-3"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-evidence_removed",
+          "group_id": "07b14ed636415e08",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Compared with placebo, orlistat reduced weight by 2.9 kg in the included adult trials",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-evidence_removed",
+          "group_id": "07b14ed636415e08",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "sibutramine reduced weight by 4.2 kg compared with placebo",
+            "relation": "insufficient",
+            "start": 93,
+            "end": 151
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-original_meaning",
+          "group_id": "5088ef6d178606b7",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The rate of preventable ordering adverse drug events was 10.4 per 1000 patient-days before the intervention",
+            "relation": "supported",
+            "start": 0,
+            "end": 107
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-original_meaning",
+          "group_id": "5088ef6d178606b7",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "it was 3.5 per 1000 patient-days after the intervention",
+            "relation": "supported",
+            "start": 115,
+            "end": 170
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-paraphrase",
+          "group_id": "5088ef6d178606b7",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Before the intervention, preventable prescribing adverse events occurred at 10.4 per 1,000 patient-days",
+            "relation": "supported",
+            "start": 0,
+            "end": 103
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-paraphrase",
+          "group_id": "5088ef6d178606b7",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "afterwards the rate was 3.5 per 1,000 patient-days",
+            "relation": "supported",
+            "start": 111,
+            "end": 161
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-single_error",
+          "group_id": "5088ef6d178606b7",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The rate of preventable ordering adverse drug events was 3.5 per 1000 patient-days before the intervention",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 106
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-single_error",
+          "group_id": "5088ef6d178606b7",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "it was 3.5 per 1000 patient-days after the intervention",
+            "relation": "supported",
+            "start": 114,
+            "end": 169
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-evidence_removed",
+          "group_id": "5088ef6d178606b7",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The rate of preventable ordering adverse drug events was 10.4 per 1000 patient-days before the intervention",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 107
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-evidence_removed",
+          "group_id": "5088ef6d178606b7",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "it was 3.5 per 1000 patient-days after the intervention",
+            "relation": "insufficient",
+            "start": 115,
+            "end": 170
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-original_meaning",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The residual lifetime risk of hypertension was 90% in both 55- and 65-year-old participants",
+            "relation": "supported",
+            "start": 0,
+            "end": 91
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-original_meaning",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "the lifetime probability of receiving antihypertensive medication was 60%",
+            "relation": "supported",
+            "start": 99,
+            "end": 172
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-paraphrase",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "For participants aged 55 or 65, residual lifetime hypertension risk was ninety percent",
+            "relation": "supported",
+            "start": 0,
+            "end": 86
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-paraphrase",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "lifetime receipt of antihypertensive medication had a probability of sixty percent",
+            "relation": "supported",
+            "start": 94,
+            "end": 176
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-single_error",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The residual lifetime risk of hypertension was 60% in both 55- and 65-year-old participants",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 91
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-single_error",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "the lifetime probability of receiving antihypertensive medication was 60%",
+            "relation": "supported",
+            "start": 99,
+            "end": 172
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-evidence_removed",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The residual lifetime risk of hypertension was 90% in both 55- and 65-year-old participants",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 91
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-evidence_removed",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "the lifetime probability of receiving antihypertensive medication was 60%",
+            "relation": "insufficient",
+            "start": 99,
+            "end": 172
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-original_meaning",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The authors reported integrin alpha-v-beta-3 as a marker of breast, lung and pancreatic carcinomas with stem-like properties resistant to erlotinib",
+            "relation": "supported",
+            "start": 0,
+            "end": 147
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-original_meaning",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "pharmacological pathway targeting with bortezomib reversed both tumour stemness and erlotinib resistance",
+            "relation": "supported",
+            "start": 155,
+            "end": 259
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-paraphrase",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "According to the authors, erlotinib-resistant stem-like breast, lung and pancreatic carcinomas were marked by integrin alpha-v-beta-3",
+            "relation": "supported",
+            "start": 0,
+            "end": 133
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-13-paraphrase",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "bortezomib targeting of the pathway reversed erlotinib resistance as well as tumour stemness",
+            "relation": "supported",
+            "start": 141,
+            "end": 233
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-single_error",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The authors reported integrin alpha-v-beta-3 as a marker of breast, lung and pancreatic carcinomas with stem-like properties sensitive to erlotinib",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 147
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-single_error",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "pharmacological pathway targeting with bortezomib reversed both tumour stemness and erlotinib resistance",
+            "relation": "supported",
+            "start": 155,
+            "end": 259
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-3"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-evidence_removed",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The authors reported integrin alpha-v-beta-3 as a marker of breast, lung and pancreatic carcinomas with stem-like properties resistant to erlotinib",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 147
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-evidence_removed",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "pharmacological pathway targeting with bortezomib reversed both tumour stemness and erlotinib resistance",
+            "relation": "insufficient",
+            "start": 155,
+            "end": 259
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [
+            "claim-5"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-original_meaning",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Treatment response was reported in 30.3% of the amitriptylinoxide group",
+            "relation": "supported",
+            "start": 0,
+            "end": 71
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-original_meaning",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "it was reported in 22.4% of the amitriptyline group",
+            "relation": "supported",
+            "start": 79,
+            "end": 130
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-paraphrase",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "The reported response proportion for amitriptylinoxide was 30.3%",
+            "relation": "supported",
+            "start": 0,
+            "end": 64
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-paraphrase",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "for amitriptyline the response proportion was 22.4%",
+            "relation": "supported",
+            "start": 72,
+            "end": 123
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-single_error",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Treatment response was reported in 22.4% of the amitriptylinoxide group",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 71
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-single_error",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "it was reported in 22.4% of the amitriptyline group",
+            "relation": "supported",
+            "start": 79,
+            "end": 130
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-evidence_removed",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Treatment response was reported in 30.3% of the amitriptylinoxide group",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 71
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-evidence_removed",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "it was reported in 22.4% of the amitriptyline group",
+            "relation": "insufficient",
+            "start": 79,
+            "end": 130
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-original_meaning",
+          "group_id": "a2a859481240a7d7",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Severe hepatotoxicity was observed in 31 of 298 patients",
+            "relation": "supported",
+            "start": 0,
+            "end": 56
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-original_meaning",
+          "group_id": "a2a859481240a7d7",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "no irreversible outcomes were seen among patients with severe hepatotoxicity",
+            "relation": "supported",
+            "start": 64,
+            "end": 140
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-paraphrase",
+          "group_id": "a2a859481240a7d7",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Of the 298 patients, 31 had severe hepatotoxicity",
+            "relation": "supported",
+            "start": 0,
+            "end": 49
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-paraphrase",
+          "group_id": "a2a859481240a7d7",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the severe-hepatotoxicity patients had no observed irreversible outcomes",
+            "relation": "supported",
+            "start": 57,
+            "end": 129
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-single_error",
+          "group_id": "a2a859481240a7d7",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Severe hepatotoxicity was observed in 298 of 298 patients",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 57
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-single_error",
+          "group_id": "a2a859481240a7d7",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "no irreversible outcomes were seen among patients with severe hepatotoxicity",
+            "relation": "supported",
+            "start": 65,
+            "end": 141
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-evidence_removed",
+          "group_id": "a2a859481240a7d7",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Severe hepatotoxicity was observed in 31 of 298 patients",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 56
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-evidence_removed",
+          "group_id": "a2a859481240a7d7",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "no irreversible outcomes were seen among patients with severe hepatotoxicity",
+            "relation": "insufficient",
+            "start": 64,
+            "end": 140
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        }
+      ],
+      "scope": "Authored source-grounded diagnostic facts; character-based matching may miss faithful parses or include broad assertions. These are location-linked judgments, not independent clinical/semantic accuracy."
+    },
+    "split": {
+      "counts": {
+        "planned_answers": 56,
+        "completed_answers": 54,
+        "logical_calls": 211,
+        "facts": 112,
+        "non_supported_facts": 42,
+        "supported_facts": 70,
+        "fully_located": 111,
+        "half_located": 112,
+        "full_coverage_matching_relation": 109,
+        "location_matched_decisions": 109,
+        "wrong_fact_accepted": 0,
+        "supported_fact_accepted": 68,
+        "unsupported_fact_flagged": 41,
+        "exact_relation_match": 109
+      },
+      "numeric_diagnostics": {
+        "not_run": 155
+      },
+      "per_fact": [
+        {
+          "case_id": "medical-01-original_meaning",
+          "group_id": "a103b7c5176c5454",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The daily active capsule contained 40 mg of folic acid",
+            "relation": "supported",
+            "start": 0,
+            "end": 54
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-original_meaning",
+          "group_id": "a103b7c5176c5454",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "the primary outcome was all-cause mortality",
+            "relation": "supported",
+            "start": 62,
+            "end": 105
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-paraphrase",
+          "group_id": "a103b7c5176c5454",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Folic acid was given at 0.04 g in the daily active capsule",
+            "relation": "supported",
+            "start": 0,
+            "end": 58
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-paraphrase",
+          "group_id": "a103b7c5176c5454",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "all-cause mortality served as the primary endpoint",
+            "relation": "supported",
+            "start": 66,
+            "end": 116
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-single_error",
+          "group_id": "a103b7c5176c5454",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The daily active capsule contained 100 mg of folic acid",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 55
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-single_error",
+          "group_id": "a103b7c5176c5454",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "the primary outcome was all-cause mortality",
+            "relation": "supported",
+            "start": 63,
+            "end": 106
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-evidence_removed",
+          "group_id": "a103b7c5176c5454",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The daily active capsule contained 40 mg of folic acid",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 54
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-evidence_removed",
+          "group_id": "a103b7c5176c5454",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "the primary outcome was all-cause mortality",
+            "relation": "insufficient",
+            "start": 62,
+            "end": 105
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-original_meaning",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The ocular inflammation cohort included 7957 US residents",
+            "relation": "supported",
+            "start": 0,
+            "end": 57
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-original_meaning",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "2340 participants received immunosuppressive drugs during follow-up",
+            "relation": "supported",
+            "start": 65,
+            "end": 132
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-paraphrase",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "There were 7,957 US residents in the ocular inflammation cohort",
+            "relation": "supported",
+            "start": 0,
+            "end": 63
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-paraphrase",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "immunosuppressive treatment was received by 2,340 of them during follow-up",
+            "relation": "supported",
+            "start": 71,
+            "end": 145
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-single_error",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The ocular inflammation cohort included 2340 US residents",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 57
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-single_error",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "2340 participants received immunosuppressive drugs during follow-up",
+            "relation": "supported",
+            "start": 65,
+            "end": 132
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-evidence_removed",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The ocular inflammation cohort included 7957 US residents",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 57
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-evidence_removed",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "2340 participants received immunosuppressive drugs during follow-up",
+            "relation": "insufficient",
+            "start": 65,
+            "end": 132
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-original_meaning",
+          "group_id": "738997154b23fc1e",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Sympathetic activation was greater in pregnant women than nonpregnant controls across all 3 minutes of cold pressor stimulation",
+            "relation": "supported",
+            "start": 0,
+            "end": 127
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-original_meaning",
+          "group_id": "738997154b23fc1e",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "mean arterial pressure during peak sympathoexcitation was not different between these groups",
+            "relation": "supported",
+            "start": 135,
+            "end": 227
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-paraphrase",
+          "group_id": "738997154b23fc1e",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Throughout the three-minute cold pressor stimulation, pregnant women showed greater sympathetic activation than nonpregnant controls",
+            "relation": "supported",
+            "start": 0,
+            "end": 132
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-paraphrase",
+          "group_id": "738997154b23fc1e",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the groups did not differ in mean arterial pressure at peak sympathoexcitation",
+            "relation": "supported",
+            "start": 140,
+            "end": 218
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-single_error",
+          "group_id": "738997154b23fc1e",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Sympathetic activation was greater in pregnant women than nonpregnant controls across all 5 minutes of cold pressor stimulation",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 127
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-single_error",
+          "group_id": "738997154b23fc1e",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "mean arterial pressure during peak sympathoexcitation was not different between these groups",
+            "relation": "supported",
+            "start": 135,
+            "end": 227
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-evidence_removed",
+          "group_id": "738997154b23fc1e",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Sympathetic activation was greater in pregnant women than nonpregnant controls across all 3 minutes of cold pressor stimulation",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 127
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-evidence_removed",
+          "group_id": "738997154b23fc1e",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "mean arterial pressure during peak sympathoexcitation was not different between these groups",
+            "relation": "insufficient",
+            "start": 135,
+            "end": 227
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-original_meaning",
+          "group_id": "08e9232f13483791",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Anterior resection for rectal cancer was received by 67.4% of patients in the most deprived fifth",
+            "relation": "supported",
+            "start": 0,
+            "end": 97
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-original_meaning",
+          "group_id": "08e9232f13483791",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "75.5% of patients in the least deprived fifth received that procedure",
+            "relation": "supported",
+            "start": 105,
+            "end": 174
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-paraphrase",
+          "group_id": "08e9232f13483791",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "In the most deprived fifth, the proportion receiving anterior resection for rectal cancer was 67.4%",
+            "relation": "supported",
+            "start": 0,
+            "end": 99
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-paraphrase",
+          "group_id": "08e9232f13483791",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "in the least deprived fifth, the corresponding proportion was 75.5%",
+            "relation": "supported",
+            "start": 107,
+            "end": 174
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-single_error",
+          "group_id": "08e9232f13483791",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Anterior resection for rectal cancer was received by 75.5% of patients in the most deprived fifth",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 97
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-single_error",
+          "group_id": "08e9232f13483791",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "75.5% of patients in the least deprived fifth received that procedure",
+            "relation": "supported",
+            "start": 105,
+            "end": 174
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-evidence_removed",
+          "group_id": "08e9232f13483791",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Anterior resection for rectal cancer was received by 67.4% of patients in the most deprived fifth",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 97
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-evidence_removed",
+          "group_id": "08e9232f13483791",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "75.5% of patients in the least deprived fifth received that procedure",
+            "relation": "insufficient",
+            "start": 105,
+            "end": 174
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-original_meaning",
+          "group_id": "378f89a6336c131f",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The epigenome-wide methylation analysis included 64 endometrial cancer tissue samples",
+            "relation": "supported",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-original_meaning",
+          "group_id": "378f89a6336c131f",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "it included 23 control samples",
+            "relation": "supported",
+            "start": 93,
+            "end": 123
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-paraphrase",
+          "group_id": "378f89a6336c131f",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Endometrial cancer tissues numbered sixty-four in the epigenome-wide methylation analysis",
+            "relation": "supported",
+            "start": 0,
+            "end": 89
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-paraphrase",
+          "group_id": "378f89a6336c131f",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the control sample count was twenty-three",
+            "relation": "supported",
+            "start": 97,
+            "end": 138
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-single_error",
+          "group_id": "378f89a6336c131f",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The epigenome-wide methylation analysis included 23 endometrial cancer tissue samples",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-single_error",
+          "group_id": "378f89a6336c131f",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "it included 23 control samples",
+            "relation": "supported",
+            "start": 93,
+            "end": 123
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-evidence_removed",
+          "group_id": "378f89a6336c131f",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The epigenome-wide methylation analysis included 64 endometrial cancer tissue samples",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-evidence_removed",
+          "group_id": "378f89a6336c131f",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "it included 23 control samples",
+            "relation": "insufficient",
+            "start": 93,
+            "end": 123
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-original_meaning",
+          "group_id": "ff53b4309738ce70",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Average colonoscopy use was 285 per 100,000 per quarter in period 1",
+            "relation": "supported",
+            "start": 0,
+            "end": 67
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-original_meaning",
+          "group_id": "ff53b4309738ce70",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "it was 1919 per 100,000 per quarter in period 3",
+            "relation": "supported",
+            "start": 75,
+            "end": 122
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-paraphrase",
+          "group_id": "ff53b4309738ce70",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "In period 1 the quarterly average colonoscopy rate was 285 per 100,000",
+            "relation": "supported",
+            "start": 0,
+            "end": 70
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-paraphrase",
+          "group_id": "ff53b4309738ce70",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the corresponding period 3 rate was 1,919 per 100,000",
+            "relation": "supported",
+            "start": 78,
+            "end": 131
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-single_error",
+          "group_id": "ff53b4309738ce70",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Average colonoscopy use was 1919 per 100,000 per quarter in period 1",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 68
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-single_error",
+          "group_id": "ff53b4309738ce70",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "it was 1919 per 100,000 per quarter in period 3",
+            "relation": "supported",
+            "start": 76,
+            "end": 123
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-evidence_removed",
+          "group_id": "ff53b4309738ce70",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Average colonoscopy use was 285 per 100,000 per quarter in period 1",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 67
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-evidence_removed",
+          "group_id": "ff53b4309738ce70",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "it was 1919 per 100,000 per quarter in period 3",
+            "relation": "insufficient",
+            "start": 75,
+            "end": 122
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-original_meaning",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "By age 2 years, 858 infants had received multidisciplinary neurodevelopmental assessment",
+            "relation": "supported",
+            "start": 0,
+            "end": 88
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-original_meaning",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "122 of those 858 survivors had cerebral palsy at age 2",
+            "relation": "supported",
+            "start": 96,
+            "end": 150
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-paraphrase",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Multidisciplinary neurodevelopmental assessment by age two covered 858 infants",
+            "relation": "supported",
+            "start": 0,
+            "end": 78
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-paraphrase",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "at that age cerebral palsy was present in 122 of the 858 survivors",
+            "relation": "supported",
+            "start": 86,
+            "end": 152
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-single_error",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "By age 2 years, 2318 infants had received multidisciplinary neurodevelopmental assessment",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 89
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-single_error",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "122 of those 858 survivors had cerebral palsy at age 2",
+            "relation": "supported",
+            "start": 97,
+            "end": 151
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-evidence_removed",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "By age 2 years, 858 infants had received multidisciplinary neurodevelopmental assessment",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 88
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-evidence_removed",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "122 of those 858 survivors had cerebral palsy at age 2",
+            "relation": "insufficient",
+            "start": 96,
+            "end": 150
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-original_meaning",
+          "group_id": "406d2aea312cde3c",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Nine randomised studies of psychiatric instruments were identified",
+            "relation": "supported",
+            "start": 0,
+            "end": 66
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-original_meaning",
+          "group_id": "406d2aea312cde3c",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "four studies with 2457 participants could be pooled for the effect of feedback on recognition of depressive disorders",
+            "relation": "supported",
+            "start": 74,
+            "end": 191
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-paraphrase",
+          "group_id": "406d2aea312cde3c",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "The review identified 9 randomised psychiatric-instrument studies",
+            "relation": "supported",
+            "start": 0,
+            "end": 65
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-paraphrase",
+          "group_id": "406d2aea312cde3c",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "pooling of the feedback effect on depressive-disorder recognition covered 4 studies and 2,457 participants",
+            "relation": "supported",
+            "start": 73,
+            "end": 179
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-single_error",
+          "group_id": "406d2aea312cde3c",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Four randomised studies of psychiatric instruments were identified",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 66
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-single_error",
+          "group_id": "406d2aea312cde3c",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "four studies with 2457 participants could be pooled for the effect of feedback on recognition of depressive disorders",
+            "relation": "supported",
+            "start": 74,
+            "end": 191
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-evidence_removed",
+          "group_id": "406d2aea312cde3c",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Nine randomised studies of psychiatric instruments were identified",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 66
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-evidence_removed",
+          "group_id": "406d2aea312cde3c",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "four studies with 2457 participants could be pooled for the effect of feedback on recognition of depressive disorders",
+            "relation": "insufficient",
+            "start": 74,
+            "end": 191
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-original_meaning",
+          "group_id": "07b14ed636415e08",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Compared with placebo, orlistat reduced weight by 2.9 kg in the included adult trials",
+            "relation": "supported",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-original_meaning",
+          "group_id": "07b14ed636415e08",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "sibutramine reduced weight by 4.2 kg compared with placebo",
+            "relation": "supported",
+            "start": 93,
+            "end": 151
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-paraphrase",
+          "group_id": "07b14ed636415e08",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "The included adult trials reported 2,900 g less weight with orlistat than placebo",
+            "relation": "supported",
+            "start": 0,
+            "end": 81
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-paraphrase",
+          "group_id": "07b14ed636415e08",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the corresponding reduction for sibutramine versus placebo was 4,200 g",
+            "relation": "supported",
+            "start": 89,
+            "end": 159
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-single_error",
+          "group_id": "07b14ed636415e08",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Compared with placebo, orlistat reduced weight by 4.2 kg in the included adult trials",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-single_error",
+          "group_id": "07b14ed636415e08",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "sibutramine reduced weight by 4.2 kg compared with placebo",
+            "relation": "supported",
+            "start": 93,
+            "end": 151
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-evidence_removed",
+          "group_id": "07b14ed636415e08",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Compared with placebo, orlistat reduced weight by 2.9 kg in the included adult trials",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-evidence_removed",
+          "group_id": "07b14ed636415e08",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "sibutramine reduced weight by 4.2 kg compared with placebo",
+            "relation": "insufficient",
+            "start": 93,
+            "end": 151
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-original_meaning",
+          "group_id": "5088ef6d178606b7",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The rate of preventable ordering adverse drug events was 10.4 per 1000 patient-days before the intervention",
+            "relation": "supported",
+            "start": 0,
+            "end": 107
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-original_meaning",
+          "group_id": "5088ef6d178606b7",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "it was 3.5 per 1000 patient-days after the intervention",
+            "relation": "supported",
+            "start": 115,
+            "end": 170
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-paraphrase",
+          "group_id": "5088ef6d178606b7",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Before the intervention, preventable prescribing adverse events occurred at 10.4 per 1,000 patient-days",
+            "relation": "supported",
+            "start": 0,
+            "end": 103
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-paraphrase",
+          "group_id": "5088ef6d178606b7",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "afterwards the rate was 3.5 per 1,000 patient-days",
+            "relation": "supported",
+            "start": 111,
+            "end": 161
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-single_error",
+          "group_id": "5088ef6d178606b7",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The rate of preventable ordering adverse drug events was 3.5 per 1000 patient-days before the intervention",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 106
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-single_error",
+          "group_id": "5088ef6d178606b7",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "it was 3.5 per 1000 patient-days after the intervention",
+            "relation": "supported",
+            "start": 114,
+            "end": 169
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-evidence_removed",
+          "group_id": "5088ef6d178606b7",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The rate of preventable ordering adverse drug events was 10.4 per 1000 patient-days before the intervention",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 107
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-evidence_removed",
+          "group_id": "5088ef6d178606b7",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "it was 3.5 per 1000 patient-days after the intervention",
+            "relation": "insufficient",
+            "start": 115,
+            "end": 170
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-original_meaning",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The residual lifetime risk of hypertension was 90% in both 55- and 65-year-old participants",
+            "relation": "supported",
+            "start": 0,
+            "end": 91
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-original_meaning",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "the lifetime probability of receiving antihypertensive medication was 60%",
+            "relation": "supported",
+            "start": 99,
+            "end": 172
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-paraphrase",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "For participants aged 55 or 65, residual lifetime hypertension risk was ninety percent",
+            "relation": "supported",
+            "start": 0,
+            "end": 86
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-paraphrase",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "lifetime receipt of antihypertensive medication had a probability of sixty percent",
+            "relation": "supported",
+            "start": 94,
+            "end": 176
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-single_error",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The residual lifetime risk of hypertension was 60% in both 55- and 65-year-old participants",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 91
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-single_error",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "the lifetime probability of receiving antihypertensive medication was 60%",
+            "relation": "supported",
+            "start": 99,
+            "end": 172
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-evidence_removed",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The residual lifetime risk of hypertension was 90% in both 55- and 65-year-old participants",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 91
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-evidence_removed",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "the lifetime probability of receiving antihypertensive medication was 60%",
+            "relation": "insufficient",
+            "start": 99,
+            "end": 172
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-original_meaning",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The authors reported integrin alpha-v-beta-3 as a marker of breast, lung and pancreatic carcinomas with stem-like properties resistant to erlotinib",
+            "relation": "supported",
+            "start": 0,
+            "end": 147
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1",
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-original_meaning",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "pharmacological pathway targeting with bortezomib reversed both tumour stemness and erlotinib resistance",
+            "relation": "supported",
+            "start": 155,
+            "end": 259
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-5",
+            "claim-6",
+            "claim-7"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-paraphrase",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "According to the authors, erlotinib-resistant stem-like breast, lung and pancreatic carcinomas were marked by integrin alpha-v-beta-3",
+            "relation": "supported",
+            "start": 0,
+            "end": 133
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2",
+            "claim-5"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-13-paraphrase",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "bortezomib targeting of the pathway reversed erlotinib resistance as well as tumour stemness",
+            "relation": "supported",
+            "start": 141,
+            "end": 233
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-3",
+            "claim-4",
+            "claim-11"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-single_error",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The authors reported integrin alpha-v-beta-3 as a marker of breast, lung and pancreatic carcinomas with stem-like properties sensitive to erlotinib",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 147
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [
+            "claim-1",
+            "claim-2",
+            "claim-3",
+            "claim-4"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-single_error",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "pharmacological pathway targeting with bortezomib reversed both tumour stemness and erlotinib resistance",
+            "relation": "supported",
+            "start": 155,
+            "end": 259
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-6",
+            "claim-7",
+            "claim-8"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-evidence_removed",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The authors reported integrin alpha-v-beta-3 as a marker of breast, lung and pancreatic carcinomas with stem-like properties resistant to erlotinib",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 147
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-3",
+            "claim-8",
+            "claim-9",
+            "claim-10"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-evidence_removed",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "pharmacological pathway targeting with bortezomib reversed both tumour stemness and erlotinib resistance",
+            "relation": "insufficient",
+            "start": 155,
+            "end": 259
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-13",
+            "claim-14",
+            "claim-18"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-original_meaning",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Treatment response was reported in 30.3% of the amitriptylinoxide group",
+            "relation": "supported",
+            "start": 0,
+            "end": 71
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-original_meaning",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "it was reported in 22.4% of the amitriptyline group",
+            "relation": "supported",
+            "start": 79,
+            "end": 130
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-paraphrase",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "The reported response proportion for amitriptylinoxide was 30.3%",
+            "relation": "supported",
+            "start": 0,
+            "end": 64
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-paraphrase",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "for amitriptyline the response proportion was 22.4%",
+            "relation": "supported",
+            "start": 72,
+            "end": 123
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-single_error",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Treatment response was reported in 22.4% of the amitriptylinoxide group",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 71
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-single_error",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "it was reported in 22.4% of the amitriptyline group",
+            "relation": "supported",
+            "start": 79,
+            "end": 130
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-evidence_removed",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Treatment response was reported in 30.3% of the amitriptylinoxide group",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 71
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-evidence_removed",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "it was reported in 22.4% of the amitriptyline group",
+            "relation": "insufficient",
+            "start": 79,
+            "end": 130
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-original_meaning",
+          "group_id": "a2a859481240a7d7",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Severe hepatotoxicity was observed in 31 of 298 patients",
+            "relation": "supported",
+            "start": 0,
+            "end": 56
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-original_meaning",
+          "group_id": "a2a859481240a7d7",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "no irreversible outcomes were seen among patients with severe hepatotoxicity",
+            "relation": "supported",
+            "start": 64,
+            "end": 140
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-paraphrase",
+          "group_id": "a2a859481240a7d7",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Of the 298 patients, 31 had severe hepatotoxicity",
+            "relation": "supported",
+            "start": 0,
+            "end": 49
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-paraphrase",
+          "group_id": "a2a859481240a7d7",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the severe-hepatotoxicity patients had no observed irreversible outcomes",
+            "relation": "supported",
+            "start": 57,
+            "end": 129
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-single_error",
+          "group_id": "a2a859481240a7d7",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Severe hepatotoxicity was observed in 298 of 298 patients",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 57
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-single_error",
+          "group_id": "a2a859481240a7d7",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "no irreversible outcomes were seen among patients with severe hepatotoxicity",
+            "relation": "supported",
+            "start": 65,
+            "end": 141
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-evidence_removed",
+          "group_id": "a2a859481240a7d7",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Severe hepatotoxicity was observed in 31 of 298 patients",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 56
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-evidence_removed",
+          "group_id": "a2a859481240a7d7",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "no irreversible outcomes were seen among patients with severe hepatotoxicity",
+            "relation": "insufficient",
+            "start": 64,
+            "end": 140
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "claim-2"
+          ],
+          "full_extraction_coverage": true
+        }
+      ],
+      "scope": "Authored source-grounded diagnostic facts; character-based matching may miss faithful parses or include broad assertions. These are location-linked judgments, not independent clinical/semantic accuracy."
+    },
+    "atomic_v1": {
+      "counts": {
+        "planned_answers": 56,
+        "completed_answers": 51,
+        "logical_calls": 112,
+        "facts": 112,
+        "non_supported_facts": 42,
+        "supported_facts": 70,
+        "fully_located": 86,
+        "half_located": 112,
+        "full_coverage_matching_relation": 80,
+        "location_matched_decisions": 110,
+        "wrong_fact_accepted": 1,
+        "supported_fact_accepted": 68,
+        "unsupported_fact_flagged": 40,
+        "exact_relation_match": 108
+      },
+      "numeric_diagnostics": {
+        "unresolved": 39,
+        "not_applicable": 96,
+        "equivalent": 2,
+        "not_run": 1
+      },
+      "per_fact": [
+        {
+          "case_id": "medical-01-original_meaning",
+          "group_id": "a103b7c5176c5454",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The daily active capsule contained 40 mg of folic acid",
+            "relation": "supported",
+            "start": 0,
+            "end": 54
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-original_meaning",
+          "group_id": "a103b7c5176c5454",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "the primary outcome was all-cause mortality",
+            "relation": "supported",
+            "start": 62,
+            "end": 105
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-paraphrase",
+          "group_id": "a103b7c5176c5454",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Folic acid was given at 0.04 g in the daily active capsule",
+            "relation": "supported",
+            "start": 0,
+            "end": 58
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-paraphrase",
+          "group_id": "a103b7c5176c5454",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "all-cause mortality served as the primary endpoint",
+            "relation": "supported",
+            "start": 66,
+            "end": 116
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-single_error",
+          "group_id": "a103b7c5176c5454",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The daily active capsule contained 100 mg of folic acid",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 55
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-single_error",
+          "group_id": "a103b7c5176c5454",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "the primary outcome was all-cause mortality",
+            "relation": "supported",
+            "start": 63,
+            "end": 106
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-evidence_removed",
+          "group_id": "a103b7c5176c5454",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The daily active capsule contained 40 mg of folic acid",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 54
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-01-evidence_removed",
+          "group_id": "a103b7c5176c5454",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "the primary outcome was all-cause mortality",
+            "relation": "insufficient",
+            "start": 62,
+            "end": 105
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-original_meaning",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The ocular inflammation cohort included 7957 US residents",
+            "relation": "supported",
+            "start": 0,
+            "end": 57
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-original_meaning",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "2340 participants received immunosuppressive drugs during follow-up",
+            "relation": "supported",
+            "start": 65,
+            "end": 132
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-paraphrase",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "There were 7,957 US residents in the ocular inflammation cohort",
+            "relation": "supported",
+            "start": 0,
+            "end": 63
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-paraphrase",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "immunosuppressive treatment was received by 2,340 of them during follow-up",
+            "relation": "supported",
+            "start": 71,
+            "end": 145
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-single_error",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The ocular inflammation cohort included 2340 US residents",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 57
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-single_error",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "2340 participants received immunosuppressive drugs during follow-up",
+            "relation": "supported",
+            "start": 65,
+            "end": 132
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-evidence_removed",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The ocular inflammation cohort included 7957 US residents",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 57
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-02-evidence_removed",
+          "group_id": "e9e51d4fdb089e92",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "2340 participants received immunosuppressive drugs during follow-up",
+            "relation": "insufficient",
+            "start": 65,
+            "end": 132
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-original_meaning",
+          "group_id": "738997154b23fc1e",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Sympathetic activation was greater in pregnant women than nonpregnant controls across all 3 minutes of cold pressor stimulation",
+            "relation": "supported",
+            "start": 0,
+            "end": 127
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-original_meaning",
+          "group_id": "738997154b23fc1e",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "mean arterial pressure during peak sympathoexcitation was not different between these groups",
+            "relation": "supported",
+            "start": 135,
+            "end": 227
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-paraphrase",
+          "group_id": "738997154b23fc1e",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Throughout the three-minute cold pressor stimulation, pregnant women showed greater sympathetic activation than nonpregnant controls",
+            "relation": "supported",
+            "start": 0,
+            "end": 132
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-03-paraphrase",
+          "group_id": "738997154b23fc1e",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the groups did not differ in mean arterial pressure at peak sympathoexcitation",
+            "relation": "supported",
+            "start": 140,
+            "end": 218
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-single_error",
+          "group_id": "738997154b23fc1e",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Sympathetic activation was greater in pregnant women than nonpregnant controls across all 5 minutes of cold pressor stimulation",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 127
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-single_error",
+          "group_id": "738997154b23fc1e",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "mean arterial pressure during peak sympathoexcitation was not different between these groups",
+            "relation": "supported",
+            "start": 135,
+            "end": 227
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-evidence_removed",
+          "group_id": "738997154b23fc1e",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Sympathetic activation was greater in pregnant women than nonpregnant controls across all 3 minutes of cold pressor stimulation",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 127
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-03-evidence_removed",
+          "group_id": "738997154b23fc1e",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "mean arterial pressure during peak sympathoexcitation was not different between these groups",
+            "relation": "insufficient",
+            "start": 135,
+            "end": 227
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-original_meaning",
+          "group_id": "08e9232f13483791",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Anterior resection for rectal cancer was received by 67.4% of patients in the most deprived fifth",
+            "relation": "supported",
+            "start": 0,
+            "end": 97
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-original_meaning",
+          "group_id": "08e9232f13483791",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "75.5% of patients in the least deprived fifth received that procedure",
+            "relation": "supported",
+            "start": 105,
+            "end": 174
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-paraphrase",
+          "group_id": "08e9232f13483791",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "In the most deprived fifth, the proportion receiving anterior resection for rectal cancer was 67.4%",
+            "relation": "supported",
+            "start": 0,
+            "end": 99
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-04-paraphrase",
+          "group_id": "08e9232f13483791",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "in the least deprived fifth, the corresponding proportion was 75.5%",
+            "relation": "supported",
+            "start": 107,
+            "end": 174
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-04-single_error",
+          "group_id": "08e9232f13483791",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Anterior resection for rectal cancer was received by 75.5% of patients in the most deprived fifth",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 97
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-single_error",
+          "group_id": "08e9232f13483791",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "75.5% of patients in the least deprived fifth received that procedure",
+            "relation": "supported",
+            "start": 105,
+            "end": 174
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-evidence_removed",
+          "group_id": "08e9232f13483791",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Anterior resection for rectal cancer was received by 67.4% of patients in the most deprived fifth",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 97
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-04-evidence_removed",
+          "group_id": "08e9232f13483791",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "75.5% of patients in the least deprived fifth received that procedure",
+            "relation": "insufficient",
+            "start": 105,
+            "end": 174
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-original_meaning",
+          "group_id": "378f89a6336c131f",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The epigenome-wide methylation analysis included 64 endometrial cancer tissue samples",
+            "relation": "supported",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-original_meaning",
+          "group_id": "378f89a6336c131f",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "it included 23 control samples",
+            "relation": "supported",
+            "start": 93,
+            "end": 123
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1",
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-paraphrase",
+          "group_id": "378f89a6336c131f",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Endometrial cancer tissues numbered sixty-four in the epigenome-wide methylation analysis",
+            "relation": "supported",
+            "start": 0,
+            "end": 89
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-paraphrase",
+          "group_id": "378f89a6336c131f",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the control sample count was twenty-three",
+            "relation": "supported",
+            "start": 97,
+            "end": 138
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-single_error",
+          "group_id": "378f89a6336c131f",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The epigenome-wide methylation analysis included 23 endometrial cancer tissue samples",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-single_error",
+          "group_id": "378f89a6336c131f",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "it included 23 control samples",
+            "relation": "supported",
+            "start": 93,
+            "end": 123
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-evidence_removed",
+          "group_id": "378f89a6336c131f",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The epigenome-wide methylation analysis included 64 endometrial cancer tissue samples",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-05-evidence_removed",
+          "group_id": "378f89a6336c131f",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "it included 23 control samples",
+            "relation": "insufficient",
+            "start": 93,
+            "end": 123
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-original_meaning",
+          "group_id": "ff53b4309738ce70",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Average colonoscopy use was 285 per 100,000 per quarter in period 1",
+            "relation": "supported",
+            "start": 0,
+            "end": 67
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-original_meaning",
+          "group_id": "ff53b4309738ce70",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "it was 1919 per 100,000 per quarter in period 3",
+            "relation": "supported",
+            "start": 75,
+            "end": 122
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-paraphrase",
+          "group_id": "ff53b4309738ce70",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "In period 1 the quarterly average colonoscopy rate was 285 per 100,000",
+            "relation": "supported",
+            "start": 0,
+            "end": 70
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-06-paraphrase",
+          "group_id": "ff53b4309738ce70",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the corresponding period 3 rate was 1,919 per 100,000",
+            "relation": "supported",
+            "start": 78,
+            "end": 131
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-06-single_error",
+          "group_id": "ff53b4309738ce70",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Average colonoscopy use was 1919 per 100,000 per quarter in period 1",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 68
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-single_error",
+          "group_id": "ff53b4309738ce70",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "it was 1919 per 100,000 per quarter in period 3",
+            "relation": "supported",
+            "start": 76,
+            "end": 123
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-evidence_removed",
+          "group_id": "ff53b4309738ce70",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Average colonoscopy use was 285 per 100,000 per quarter in period 1",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 67
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-06-evidence_removed",
+          "group_id": "ff53b4309738ce70",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "it was 1919 per 100,000 per quarter in period 3",
+            "relation": "insufficient",
+            "start": 75,
+            "end": 122
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-original_meaning",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "By age 2 years, 858 infants had received multidisciplinary neurodevelopmental assessment",
+            "relation": "supported",
+            "start": 0,
+            "end": 88
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-07-original_meaning",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "122 of those 858 survivors had cerebral palsy at age 2",
+            "relation": "supported",
+            "start": 96,
+            "end": 150
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-paraphrase",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Multidisciplinary neurodevelopmental assessment by age two covered 858 infants",
+            "relation": "supported",
+            "start": 0,
+            "end": 78
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-paraphrase",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "at that age cerebral palsy was present in 122 of the 858 survivors",
+            "relation": "supported",
+            "start": 86,
+            "end": 152
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-single_error",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "By age 2 years, 2318 infants had received multidisciplinary neurodevelopmental assessment",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 89
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-07-single_error",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "122 of those 858 survivors had cerebral palsy at age 2",
+            "relation": "supported",
+            "start": 97,
+            "end": 151
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-07-evidence_removed",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "By age 2 years, 858 infants had received multidisciplinary neurodevelopmental assessment",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 88
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-07-evidence_removed",
+          "group_id": "142a19fdec20ca9e",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "122 of those 858 survivors had cerebral palsy at age 2",
+            "relation": "insufficient",
+            "start": 96,
+            "end": 150
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-original_meaning",
+          "group_id": "406d2aea312cde3c",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Nine randomised studies of psychiatric instruments were identified",
+            "relation": "supported",
+            "start": 0,
+            "end": 66
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-original_meaning",
+          "group_id": "406d2aea312cde3c",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "four studies with 2457 participants could be pooled for the effect of feedback on recognition of depressive disorders",
+            "relation": "supported",
+            "start": 74,
+            "end": 191
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-3"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-paraphrase",
+          "group_id": "406d2aea312cde3c",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "The review identified 9 randomised psychiatric-instrument studies",
+            "relation": "supported",
+            "start": 0,
+            "end": 65
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-paraphrase",
+          "group_id": "406d2aea312cde3c",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "pooling of the feedback effect on depressive-disorder recognition covered 4 studies and 2,457 participants",
+            "relation": "supported",
+            "start": 73,
+            "end": 179
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2",
+            "fact-3"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-08-single_error",
+          "group_id": "406d2aea312cde3c",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Four randomised studies of psychiatric instruments were identified",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 66
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-single_error",
+          "group_id": "406d2aea312cde3c",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "four studies with 2457 participants could be pooled for the effect of feedback on recognition of depressive disorders",
+            "relation": "supported",
+            "start": 74,
+            "end": 191
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-5"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-evidence_removed",
+          "group_id": "406d2aea312cde3c",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Nine randomised studies of psychiatric instruments were identified",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 66
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-08-evidence_removed",
+          "group_id": "406d2aea312cde3c",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "four studies with 2457 participants could be pooled for the effect of feedback on recognition of depressive disorders",
+            "relation": "insufficient",
+            "start": 74,
+            "end": 191
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [
+            "fact-4"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-original_meaning",
+          "group_id": "07b14ed636415e08",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Compared with placebo, orlistat reduced weight by 2.9 kg in the included adult trials",
+            "relation": "supported",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-09-original_meaning",
+          "group_id": "07b14ed636415e08",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "sibutramine reduced weight by 4.2 kg compared with placebo",
+            "relation": "supported",
+            "start": 93,
+            "end": 151
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-paraphrase",
+          "group_id": "07b14ed636415e08",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "The included adult trials reported 2,900 g less weight with orlistat than placebo",
+            "relation": "supported",
+            "start": 0,
+            "end": 81
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-paraphrase",
+          "group_id": "07b14ed636415e08",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the corresponding reduction for sibutramine versus placebo was 4,200 g",
+            "relation": "supported",
+            "start": 89,
+            "end": 159
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-09-single_error",
+          "group_id": "07b14ed636415e08",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Compared with placebo, orlistat reduced weight by 4.2 kg in the included adult trials",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-09-single_error",
+          "group_id": "07b14ed636415e08",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "sibutramine reduced weight by 4.2 kg compared with placebo",
+            "relation": "supported",
+            "start": 93,
+            "end": 151
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-09-evidence_removed",
+          "group_id": "07b14ed636415e08",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Compared with placebo, orlistat reduced weight by 2.9 kg in the included adult trials",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 85
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-09-evidence_removed",
+          "group_id": "07b14ed636415e08",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "sibutramine reduced weight by 4.2 kg compared with placebo",
+            "relation": "insufficient",
+            "start": 93,
+            "end": 151
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-original_meaning",
+          "group_id": "5088ef6d178606b7",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The rate of preventable ordering adverse drug events was 10.4 per 1000 patient-days before the intervention",
+            "relation": "supported",
+            "start": 0,
+            "end": 107
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-original_meaning",
+          "group_id": "5088ef6d178606b7",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "it was 3.5 per 1000 patient-days after the intervention",
+            "relation": "supported",
+            "start": 115,
+            "end": 170
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-paraphrase",
+          "group_id": "5088ef6d178606b7",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Before the intervention, preventable prescribing adverse events occurred at 10.4 per 1,000 patient-days",
+            "relation": "supported",
+            "start": 0,
+            "end": 103
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-10-paraphrase",
+          "group_id": "5088ef6d178606b7",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "afterwards the rate was 3.5 per 1,000 patient-days",
+            "relation": "supported",
+            "start": 111,
+            "end": 161
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-single_error",
+          "group_id": "5088ef6d178606b7",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The rate of preventable ordering adverse drug events was 3.5 per 1000 patient-days before the intervention",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 106
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-single_error",
+          "group_id": "5088ef6d178606b7",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "it was 3.5 per 1000 patient-days after the intervention",
+            "relation": "supported",
+            "start": 114,
+            "end": 169
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-evidence_removed",
+          "group_id": "5088ef6d178606b7",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The rate of preventable ordering adverse drug events was 10.4 per 1000 patient-days before the intervention",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 107
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-10-evidence_removed",
+          "group_id": "5088ef6d178606b7",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "it was 3.5 per 1000 patient-days after the intervention",
+            "relation": "insufficient",
+            "start": 115,
+            "end": 170
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-11-original_meaning",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The residual lifetime risk of hypertension was 90% in both 55- and 65-year-old participants",
+            "relation": "supported",
+            "start": 0,
+            "end": 91
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1",
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-original_meaning",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "the lifetime probability of receiving antihypertensive medication was 60%",
+            "relation": "supported",
+            "start": 99,
+            "end": 172
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-3"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-paraphrase",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "For participants aged 55 or 65, residual lifetime hypertension risk was ninety percent",
+            "relation": "supported",
+            "start": 0,
+            "end": 86
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-11-paraphrase",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "lifetime receipt of antihypertensive medication had a probability of sixty percent",
+            "relation": "supported",
+            "start": 94,
+            "end": 176
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-single_error",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The residual lifetime risk of hypertension was 60% in both 55- and 65-year-old participants",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 91
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "fact-1",
+            "fact-2"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-11-single_error",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "the lifetime probability of receiving antihypertensive medication was 60%",
+            "relation": "supported",
+            "start": 99,
+            "end": 172
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-3"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-11-evidence_removed",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The residual lifetime risk of hypertension was 90% in both 55- and 65-year-old participants",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 91
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-11-evidence_removed",
+          "group_id": "e7d99afefe240c7a",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "the lifetime probability of receiving antihypertensive medication was 60%",
+            "relation": "insufficient",
+            "start": 99,
+            "end": 172
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-original_meaning",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "The authors reported integrin alpha-v-beta-3 as a marker of breast, lung and pancreatic carcinomas with stem-like properties resistant to erlotinib",
+            "relation": "supported",
+            "start": 0,
+            "end": 147
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1",
+            "fact-3",
+            "fact-7"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-original_meaning",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "pharmacological pathway targeting with bortezomib reversed both tumour stemness and erlotinib resistance",
+            "relation": "supported",
+            "start": 155,
+            "end": 259
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-4",
+            "fact-5",
+            "fact-6"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-paraphrase",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "According to the authors, erlotinib-resistant stem-like breast, lung and pancreatic carcinomas were marked by integrin alpha-v-beta-3",
+            "relation": "supported",
+            "start": 0,
+            "end": 133
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-13-paraphrase",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "bortezomib targeting of the pathway reversed erlotinib resistance as well as tumour stemness",
+            "relation": "supported",
+            "start": 141,
+            "end": 233
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2",
+            "fact-3"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-13-single_error",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "The authors reported integrin alpha-v-beta-3 as a marker of breast, lung and pancreatic carcinomas with stem-like properties sensitive to erlotinib",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 147
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-13-single_error",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "pharmacological pathway targeting with bortezomib reversed both tumour stemness and erlotinib resistance",
+            "relation": "supported",
+            "start": 155,
+            "end": 259
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-4",
+            "fact-5",
+            "fact-6"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-evidence_removed",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "The authors reported integrin alpha-v-beta-3 as a marker of breast, lung and pancreatic carcinomas with stem-like properties resistant to erlotinib",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 147
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1",
+            "fact-2",
+            "fact-3"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-13-evidence_removed",
+          "group_id": "3cd852c2c02ea82c",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "pharmacological pathway targeting with bortezomib reversed both tumour stemness and erlotinib resistance",
+            "relation": "insufficient",
+            "start": 155,
+            "end": 259
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-4",
+            "fact-5"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-14-original_meaning",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Treatment response was reported in 30.3% of the amitriptylinoxide group",
+            "relation": "supported",
+            "start": 0,
+            "end": 71
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-14-original_meaning",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "it was reported in 22.4% of the amitriptyline group",
+            "relation": "supported",
+            "start": 79,
+            "end": 130
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-14-paraphrase",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "The reported response proportion for amitriptylinoxide was 30.3%",
+            "relation": "supported",
+            "start": 0,
+            "end": 64
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-paraphrase",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "for amitriptyline the response proportion was 22.4%",
+            "relation": "supported",
+            "start": 72,
+            "end": 123
+          },
+          "location_linked_prediction": null,
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-single_error",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Treatment response was reported in 22.4% of the amitriptylinoxide group",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 71
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-single_error",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "it was reported in 22.4% of the amitriptyline group",
+            "relation": "supported",
+            "start": 79,
+            "end": 130
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-evidence_removed",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Treatment response was reported in 30.3% of the amitriptylinoxide group",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 71
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-14-evidence_removed",
+          "group_id": "e4f5a4ddc2091265",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "it was reported in 22.4% of the amitriptyline group",
+            "relation": "insufficient",
+            "start": 79,
+            "end": 130
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-original_meaning",
+          "group_id": "a2a859481240a7d7",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "Severe hepatotoxicity was observed in 31 of 298 patients",
+            "relation": "supported",
+            "start": 0,
+            "end": 56
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-original_meaning",
+          "group_id": "a2a859481240a7d7",
+          "variant": "original_meaning",
+          "gold_fact": {
+            "quote": "no irreversible outcomes were seen among patients with severe hepatotoxicity",
+            "relation": "supported",
+            "start": 64,
+            "end": 140
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-paraphrase",
+          "group_id": "a2a859481240a7d7",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "Of the 298 patients, 31 had severe hepatotoxicity",
+            "relation": "supported",
+            "start": 0,
+            "end": 49
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-16-paraphrase",
+          "group_id": "a2a859481240a7d7",
+          "variant": "paraphrase",
+          "gold_fact": {
+            "quote": "the severe-hepatotoxicity patients had no observed irreversible outcomes",
+            "relation": "supported",
+            "start": 57,
+            "end": 129
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-3"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-single_error",
+          "group_id": "a2a859481240a7d7",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "Severe hepatotoxicity was observed in 298 of 298 patients",
+            "relation": "contradicted",
+            "start": 0,
+            "end": 57
+          },
+          "location_linked_prediction": "contradicted",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-single_error",
+          "group_id": "a2a859481240a7d7",
+          "variant": "single_error",
+          "gold_fact": {
+            "quote": "no irreversible outcomes were seen among patients with severe hepatotoxicity",
+            "relation": "supported",
+            "start": 65,
+            "end": 141
+          },
+          "location_linked_prediction": "supported",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        },
+        {
+          "case_id": "medical-16-evidence_removed",
+          "group_id": "a2a859481240a7d7",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "Severe hepatotoxicity was observed in 31 of 298 patients",
+            "relation": "insufficient",
+            "start": 0,
+            "end": 56
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-1"
+          ],
+          "full_extraction_coverage": false
+        },
+        {
+          "case_id": "medical-16-evidence_removed",
+          "group_id": "a2a859481240a7d7",
+          "variant": "evidence_removed",
+          "gold_fact": {
+            "quote": "no irreversible outcomes were seen among patients with severe hepatotoxicity",
+            "relation": "insufficient",
+            "start": 64,
+            "end": 140
+          },
+          "location_linked_prediction": "insufficient",
+          "matching_claim_ids": [
+            "fact-2"
+          ],
+          "full_extraction_coverage": true
+        }
+      ],
+      "scope": "Authored source-grounded diagnostic facts; character-based matching may miss faithful parses or include broad assertions. These are location-linked judgments, not independent clinical/semantic accuracy."
+    }
+  }
+}

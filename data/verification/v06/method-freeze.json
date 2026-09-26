@@ -1,0 +1,11 @@
+{
+  "decision": "Keep Direct default; atomic_v1 remains experimental",
+  "reason": "No independent whole-answer semantic gold; authored diagnostic and span coverage do not meet default-upgrade criteria. No prompt adjustment made.",
+  "development_prediction_hashes": {
+    "medical_development": "a93172467e6509bad57cd9c4e6c7a45a02550538d910ca21e250b36a0c72ced3",
+    "natural": "2a8f5fbbea8a54780c585e374be5f08e40083e65965cbc6c3c3f45ff969b3b69",
+    "repeat": "3025759470af42efa4f07e42969ac47fe54876322c37794ab47893957fa42d22"
+  },
+  "reserved_ragtruth_test": "60 source groups remain unopened; semantic scorer not validated",
+  "transfer": "Run fixed methods once on all 8 constructed transfer groups; report as construction, not clinical validation"
+}

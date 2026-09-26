@@ -1,0 +1,1158 @@
+{
+  "seed": "veritasmed-v06-v07-2026-09-26",
+  "parent_manifest_sha256": "34a645b6aae9d110f2d80b372eb19f94c39f4027e9a3a77a65055e84b14ce54b",
+  "task": "named-paper fixed-corpus fact inquiry",
+  "gold_origin": "SciFact public annotations; no final labels in inference payload",
+  "cases": [
+    {
+      "case_id": "scifact-train-897-14338915",
+      "group_id": "0717d11e886228a1",
+      "split": "v07_final",
+      "document_id": "14338915",
+      "relation": "insufficient",
+      "input_sha256": "04b0c381f00120b544831ac721d1a6f21d687ac1a7de0303691849fdc144b362",
+      "document_ids": [
+        "43329366",
+        "712078",
+        "5151024",
+        "14338915",
+        "9167230",
+        "37204802",
+        "22544171",
+        "641786"
+      ],
+      "question": "Does the paper \"Fission Yeast Scm3: A CENP-A Receptor Required for Integrity of Subkinetochore Chromatin\" support this claim: Overexpressing Cnp1 N-tail variants rescues the temperature-sensitive growth defect of scm3-139."
+    },
+    {
+      "case_id": "scifact-train-1169-4319174",
+      "group_id": "0ec2942422a6cef9",
+      "split": "v07_final",
+      "document_id": "4319174",
+      "relation": "supported",
+      "input_sha256": "7273dd68cec473c5a356c33016911f04501cd62a7a260f4e3213a0dc3957e386",
+      "document_ids": [
+        "11659421",
+        "15488881",
+        "5185871",
+        "7898952",
+        "40817021",
+        "4319174",
+        "5386514",
+        "4678846"
+      ],
+      "question": "Does the paper \"Alternatively activated macrophages produce catecholamines to sustain adaptive thermogenesis\" support this claim: The M2-phenotype in brown adipose tissue macrophages increases brown adipose tissue thermogenic activity."
+    },
+    {
+      "case_id": "scifact-train-1405-10504681",
+      "group_id": "109f6df457a2a7b1",
+      "split": "v07_final",
+      "document_id": "10504681",
+      "relation": "insufficient",
+      "input_sha256": "63312a56349f45e741f83ad21f8fc35629067ab111f0366ec69c4ae8e6d865d1",
+      "document_ids": [
+        "9167230",
+        "10504681",
+        "6441369",
+        "7433668",
+        "3512154",
+        "21498497",
+        "5468807",
+        "22194407"
+      ],
+      "question": "Does the paper \"TAA1-Mediated Auxin Biosynthesis Is Essential for Hormone Crosstalk and Plant Development\" support this claim: taa1 tar1 tar2 triple mutants in Arabidopsis do not make root meristem during embryogenesis."
+    },
+    {
+      "case_id": "scifact-train-942-11527199",
+      "group_id": "1113a1f8d0080fc7",
+      "split": "v07_final",
+      "document_id": "11527199",
+      "relation": "supported",
+      "input_sha256": "cc86dd688b08cae4dd0ff6cc8ee5b38eafd36c97c6ead7213a553be9e2ce3003",
+      "document_ids": [
+        "14500725",
+        "641786",
+        "3512154",
+        "24384587",
+        "2734421",
+        "11527199",
+        "10284593",
+        "41493639"
+      ],
+      "question": "Does the paper \"MHC Haplotype Matching for Unrelated Hematopoietic Cell Transplantation\" support this claim: Phase information is useful for predicting donor-recipient matches in organ transplantation."
+    },
+    {
+      "case_id": "scifact-train-640-6503185",
+      "group_id": "18d115ad106fd54e",
+      "split": "v07_development",
+      "document_id": "6503185",
+      "relation": "supported",
+      "input_sha256": "a96d36715de3c901c9bdae55aa99e9c8b064dd60db77a7ec844e8994dbae907e",
+      "document_ids": [
+        "3202143",
+        "15488881",
+        "4547102",
+        "6503185",
+        "29023309",
+        "25641414",
+        "4446814",
+        "20568364"
+      ],
+      "question": "Does the paper \"Malaria biology and disease pathogenesis: insights for new treatments\" support this claim: Inside the body, falciparum parasites reproduce asexually."
+    },
+    {
+      "case_id": "scifact-train-1393-12440953",
+      "group_id": "1d8285627aa7cb27",
+      "split": "v07_development",
+      "document_id": "12440953",
+      "relation": "supported",
+      "input_sha256": "d62e8dedf0cdc7dc2de11f5dc1e0603693b4d9dc234dc199bd98bf7e86d68461",
+      "document_ids": [
+        "21498497",
+        "8148304",
+        "13868795",
+        "5151024",
+        "4678846",
+        "12440953",
+        "21993510",
+        "25641414"
+      ],
+      "question": "Does the paper \"Roles for MicroRNAs in Conferring Robustness to Biological Processes\" support this claim: miRNAs enforce homeostasis by suppressing low-level ''leaky'' transcription."
+    },
+    {
+      "case_id": "scifact-train-227-26973393",
+      "group_id": "1f80c1d713ef6023",
+      "split": "v07_final",
+      "document_id": "26973393",
+      "relation": "supported",
+      "input_sha256": "5a506ea461588f7f93f3822ee7d12b870363f303a611918a14d671acdde93073",
+      "document_ids": [
+        "21993510",
+        "6144337",
+        "39264456",
+        "6441369",
+        "37204802",
+        "26973393",
+        "22442133",
+        "7485455"
+      ],
+      "question": "Does the paper \"The quest to overcome resistance to EGFR-targeted therapies in cancer\" support this claim: Cancers that initially benefit from epidermal growth factor receptor targeted therapies later become refractory through several mechanisms."
+    },
+    {
+      "case_id": "scifact-train-568-23418635",
+      "group_id": "201e2621fce3836f",
+      "split": "v07_development",
+      "document_id": "23418635",
+      "relation": "supported",
+      "input_sha256": "e82547de6d9d875cf8627f1de05cd776e6ff65982032e4bd0b74437a85e35520",
+      "document_ids": [
+        "5468807",
+        "13868795",
+        "13931771",
+        "24384587",
+        "41493639",
+        "18670",
+        "2890952",
+        "23418635"
+      ],
+      "question": "Does the paper \"Embryonic stem cells require Wnt proteins to prevent differentiation to epiblast stem cells\" support this claim: In a naive state, blocking Wingless-Int-1 secretion from mouse embryonic stem cells inhibits self-renewal of the mouse embryonic stem cells."
+    },
+    {
+      "case_id": "scifact-train-346-11902109",
+      "group_id": "23af49af3a2d4833",
+      "split": "v07_development",
+      "document_id": "11902109",
+      "relation": "contradicted",
+      "input_sha256": "140004c518c69fa9cde6204fbdf627abfef8df1131ab629418525c4a44cfb92d",
+      "document_ids": [
+        "18199839",
+        "2867345",
+        "32390525",
+        "13552682",
+        "11902109",
+        "37822406",
+        "16422880",
+        "1974176"
+      ],
+      "question": "Does the paper \"Direct sensing of systemic and nutritional signals by hematopoietic progenitors in Drosophila\" support this claim: Differentiation of progenitor cells to myeloid cells is skewed upon activation of insulin signaling."
+    },
+    {
+      "case_id": "scifact-train-1182-14541844",
+      "group_id": "2c950287bf09f9a2",
+      "split": "v07_development",
+      "document_id": "14541844",
+      "relation": "supported",
+      "input_sha256": "d4f5b23a69efced8f013197ce3bd3fc515c2285fdb1e86769ca62f2940d25a7e",
+      "document_ids": [
+        "16660256",
+        "15488881",
+        "14541844",
+        "14075252",
+        "5824985",
+        "5185871",
+        "28369117",
+        "3471191"
+      ],
+      "question": "Does the paper \"Reconstruction of the yeast Snf1 kinase regulatory network reveals its role as a global energy regulator\" support this claim: The Snf1 complex regulates carbon and energy metabolism in baker's yeast (Saccharomyces cerevisiae)."
+    },
+    {
+      "case_id": "scifact-train-1224-34016987",
+      "group_id": "2ec2305c6bf0b7d3",
+      "split": "v07_final",
+      "document_id": "34016987",
+      "relation": "supported",
+      "input_sha256": "815c87d71ba864e89903724b8bbc81203df8bdf1e41833cbea620569c6714562",
+      "document_ids": [
+        "34016987",
+        "40817021",
+        "7485455",
+        "7433668",
+        "11291348",
+        "2734421",
+        "18816720",
+        "39264456"
+      ],
+      "question": "Does the paper \"Transcriptome analysis reveals human cytomegalovirus reprograms monocyte differentiation toward an M1 macrophage.\" support this claim: The latent infection of myeloid cells with human cytomegalovirus induces a number of changes in gene expression."
+    },
+    {
+      "case_id": "scifact-train-161-6903077",
+      "group_id": "2ef60e952a254b5b",
+      "split": "v07_development",
+      "document_id": "6903077",
+      "relation": "insufficient",
+      "input_sha256": "defb29df661649ade215aaea9e1878688564ffd5ee2ad1999e915317a94adaf7",
+      "document_ids": [
+        "4547102",
+        "935538",
+        "6903077",
+        "22442133",
+        "6625693",
+        "7433668",
+        "52072815",
+        "20128547"
+      ],
+      "question": "Does the paper \"Asymmetric cryo-EM reconstruction of phage MS2 reveals genome structure in situ\" support this claim: Bacteriophagaes MS2 and Qβ are members of the Leviviridae."
+    },
+    {
+      "case_id": "scifact-train-1006-4926049",
+      "group_id": "31c995b484f621e2",
+      "split": "v07_development",
+      "document_id": "4926049",
+      "relation": "supported",
+      "input_sha256": "17b738b03eb9fa12dbdc28fea8b81a54444b6ac7874510f8c71e46c457dc9954",
+      "document_ids": [
+        "7433668",
+        "3952288",
+        "5468807",
+        "4926049",
+        "5151024",
+        "5386514",
+        "11328820",
+        "11659421"
+      ],
+      "question": "Does the paper \"TRF2 Recruits RTEL1 to Telomeres in S Phase to Promote T-Loop Unwinding\" support this claim: RTEL1 interacts with TRF2 through a C4C4 motif"
+    },
+    {
+      "case_id": "scifact-train-1350-5377642",
+      "group_id": "345458a942d57b7c",
+      "split": "v07_development",
+      "document_id": "5377642",
+      "relation": "insufficient",
+      "input_sha256": "6424834637993f19163e9f21c9b47d05ccdd341199d4c4eec4c3789c040c8228",
+      "document_ids": [
+        "4306711",
+        "4678846",
+        "37204802",
+        "3202143",
+        "2617858",
+        "23078022",
+        "5377642",
+        "5185871"
+      ],
+      "question": "Does the paper \"SATB1 Expression Governs Epigenetic Repression of PD‐1 in Tumor‐Reactive T Cells\" support this claim: Upregulation of PD1 causes the upregulation of Satb1."
+    },
+    {
+      "case_id": "scifact-train-755-17844478",
+      "group_id": "3529d584f5eeccd1",
+      "split": "v07_final",
+      "document_id": "17844478",
+      "relation": "insufficient",
+      "input_sha256": "7f354ca36f1b250089ff3c7db4276bdef716583956f18e6353cf9037cceb0795",
+      "document_ids": [
+        "25641414",
+        "19583924",
+        "5151024",
+        "17123657",
+        "17844478",
+        "14658685",
+        "13868795",
+        "52072815"
+      ],
+      "question": "Does the paper \"Autocrine VEGF Signaling Synergizes with EGFR in Tumor Cells to Promote Epithelial Cancer Development\" support this claim: Many cytokines that are produced by cancer cells also contribute to carcinogenesis."
+    },
+    {
+      "case_id": "scifact-train-790-15493354",
+      "group_id": "392b195db0ec2c9a",
+      "split": "v07_final",
+      "document_id": "15493354",
+      "relation": "contradicted",
+      "input_sha256": "ee220bb84e3b56c1914b347f098e20efd60da883e8b1b8cef30bcc363146c977",
+      "document_ids": [
+        "5293024",
+        "38380061",
+        "5573975",
+        "18949516",
+        "19583924",
+        "39128592",
+        "8148304",
+        "15493354"
+      ],
+      "question": "Does the paper \"Sublime Microglia: Expanding Roles for the Guardians of the CNS\" support this claim: Microglia are an innate immune cell type of the peripheral nervous system."
+    },
+    {
+      "case_id": "scifact-train-1215-16355392",
+      "group_id": "408f11acbfa07c89",
+      "split": "v07_development",
+      "document_id": "16355392",
+      "relation": "insufficient",
+      "input_sha256": "08b7491d9e166dbdcb2d68403c6fb10cba869dec60b8661a4095f8b65c35257a",
+      "document_ids": [
+        "16355392",
+        "4547102",
+        "470625",
+        "7433668",
+        "14500725",
+        "10284593",
+        "1974176",
+        "2890952"
+      ],
+      "question": "Does the paper \"Modification of kidney barrier function by the urokinase receptor\" support this claim: The effect of Lipopolysaccharides on kidney barrier function is dependent on inflammation levels."
+    },
+    {
+      "case_id": "scifact-train-1161-13048272",
+      "group_id": "40d7ed3008f19a8e",
+      "split": "v07_final",
+      "document_id": "13048272",
+      "relation": "insufficient",
+      "input_sha256": "b43251ec88f47bc4d3314ab94bc6a69b4f7748e5a82fa779ebc5de0a0be22e7e",
+      "document_ids": [
+        "7433668",
+        "16939583",
+        "13048272",
+        "5172048",
+        "27099731",
+        "8533245",
+        "9500590",
+        "13513790"
+      ],
+      "question": "Does the paper \"Combinatorial transcriptional control in blood stem/progenitor cells: genome-wide analysis of ten major transcriptional regulators.\" support this claim: The DEXI promoter region is bound by multiple transcription factors in a murine haematopoietic progenitor cell line."
+    },
+    {
+      "case_id": "scifact-train-1325-40476126",
+      "group_id": "46d1b072c1fd69a0",
+      "split": "v07_development",
+      "document_id": "40476126",
+      "relation": "insufficient",
+      "input_sha256": "8b60dcf733ad033c7d41bfb8eef8218640054f870d38c4040cf97bd17041fb72",
+      "document_ids": [
+        "2617858",
+        "40476126",
+        "5172048",
+        "24241932",
+        "32390525",
+        "22442133",
+        "6625693",
+        "4899981"
+      ],
+      "question": "Does the paper \"Functional role of high-affinity anandamide transport, as revealed by selective inhibition.\" support this claim: Treatment with the EC uptake inhibitor AM404 resulted in a dose-dependent decrease in the expression of immobility."
+    },
+    {
+      "case_id": "scifact-train-624-20033112",
+      "group_id": "4b58e102af1105f6",
+      "split": "v07_final",
+      "document_id": "20033112",
+      "relation": "supported",
+      "input_sha256": "6c34849b947637a4a5881ed6e9bbafe72301373abeb54bf9464cabc1a13178ed",
+      "document_ids": [
+        "11328820",
+        "20033112",
+        "3512154",
+        "19583924",
+        "5172048",
+        "10284593",
+        "641786",
+        "22194407"
+      ],
+      "question": "Does the paper \"Reprogramming fibroblasts into bipotential hepatic stem cells by defined factors.\" support this claim: Induced hepatic stem cells possess the potential to differentiate into cholangiocytic cells."
+    },
+    {
+      "case_id": "scifact-train-566-16120395",
+      "group_id": "5020dcb3d351ebfd",
+      "split": "v07_development",
+      "document_id": "16120395",
+      "relation": "contradicted",
+      "input_sha256": "fbac5b4b46c17d1d255c4659c4928cb20e239538b468d1f11cb2d14b6e21f273",
+      "document_ids": [
+        "25641414",
+        "16120395",
+        "14853989",
+        "857189",
+        "13794374",
+        "13578199",
+        "1550937",
+        "5185871"
+      ],
+      "question": "Does the paper \"Multiple RNA surveillance pathways limit aberrant expression of iron uptake mRNAs and prevent iron toxicity in S. cerevisiae.\" support this claim: In S. cerevisiae, the absence of RNA surveillance pathways reduces sensitivity to high iron conditions."
+    },
+    {
+      "case_id": "scifact-train-243-8148122",
+      "group_id": "552fcd55deb3ffa0",
+      "split": "v07_final",
+      "document_id": "8148122",
+      "relation": "supported",
+      "input_sha256": "3b36bafb795715227fde30d132ee64b3269d1fe6818b3a11af97dcb1b5357412",
+      "document_ids": [
+        "37204802",
+        "13552682",
+        "8148122",
+        "12800122",
+        "8533245",
+        "2890952",
+        "597790",
+        "24241932"
+      ],
+      "question": "Does the paper \"Global Reorganization of Replication Domains During Embryonic Stem Cell Differentiation\" support this claim: Cellular differentiation of embryonic stem cells is accompanied by changes in replication timing, transcription and nuclear localization."
+    },
+    {
+      "case_id": "scifact-train-779-13001323",
+      "group_id": "5daf26043a1a4b42",
+      "split": "v07_final",
+      "document_id": "13001323",
+      "relation": "supported",
+      "input_sha256": "bea5349d682f647f2cf80c6976520e1ee96a52500fdabde5d2d8fe246e966bf0",
+      "document_ids": [
+        "28369117",
+        "13001323",
+        "4678846",
+        "470625",
+        "6144337",
+        "7433668",
+        "39264456",
+        "712078"
+      ],
+      "question": "Does the paper \"SIRT1 deacetylase in SF1 neurons protects against metabolic imbalance.\" support this claim: Mice lacking Sirt1 in Sf1-expressing neurons have increased susceptibility to diet-induced obesity and insulin resistance."
+    },
+    {
+      "case_id": "scifact-train-80-4920376",
+      "group_id": "5e9d0ada24826b86",
+      "split": "v07_final",
+      "document_id": "4920376",
+      "relation": "insufficient",
+      "input_sha256": "98f430705520a37872221d2345af90889c3e87a23620fa78fe9050e0dd91f648",
+      "document_ids": [
+        "3202143",
+        "11659421",
+        "470625",
+        "16660256",
+        "4920376",
+        "5548081",
+        "57574395",
+        "37204802"
+      ],
+      "question": "Does the paper \"Long-Term ERK Inhibition in KRAS-Mutant Pancreatic Cancer Is Associated with MYC Degradation and Senescence-like Growth Suppression.\" support this claim: Acute ablation of KRAS causes severe growth impairment."
+    },
+    {
+      "case_id": "scifact-train-1042-17421851",
+      "group_id": "6064f40a6fcbb20d",
+      "split": "v07_final",
+      "document_id": "17421851",
+      "relation": "contradicted",
+      "input_sha256": "89ac45b1806f3acf30d03946fe63dab2d18764c44ee13014998a5da571257491",
+      "document_ids": [
+        "4319844",
+        "13578199",
+        "14075252",
+        "22194407",
+        "5151024",
+        "7485455",
+        "17421851",
+        "9988425"
+      ],
+      "question": "Does the paper \"Expression of interleukin-18 in human atherosclerotic plaques and relation to plaque instability.\" support this claim: Repressing IL-18 has negative effects on atherosclerotic lesion composition and progression."
+    },
+    {
+      "case_id": "scifact-train-345-4394817",
+      "group_id": "60c258f934382c36",
+      "split": "v07_development",
+      "document_id": "4394817",
+      "relation": "insufficient",
+      "input_sha256": "399ed0a784e14ee04dde5ba37e38ee7f7cbe0e29c39c3ee23bcb8d5bc0ff79ad",
+      "document_ids": [
+        "13578199",
+        "4547102",
+        "38380061",
+        "21993510",
+        "4394817",
+        "24177706",
+        "22442133",
+        "4899981"
+      ],
+      "question": "Does the paper \"E2F1-3 Switch from Activators in Progenitor Cells to Repressors in Differentiating Cells\" support this claim: Differentiated E2f-1, -2, -3 TKO cells in the intestine do not exhibit apoptosis."
+    },
+    {
+      "case_id": "scifact-train-663-22080671",
+      "group_id": "6dda495e9214d662",
+      "split": "v07_final",
+      "document_id": "22080671",
+      "relation": "supported",
+      "input_sha256": "eb9710b8e370ed43c998d47e9182cbf3bbeb855e82b204fdefb7a544610dbf0a",
+      "document_ids": [
+        "43329366",
+        "37822406",
+        "2734421",
+        "13513790",
+        "25641414",
+        "16361581",
+        "597790",
+        "22080671"
+      ],
+      "question": "Does the paper \"KLF4-dependent phenotypic modulation of smooth muscle cells has a key role in atherosclerotic plaque pathogenesis\" support this claim: KLF4 is necessary for VSMCs to gain genetic characteristics of other cell types within atherosclerotic lesions."
+    },
+    {
+      "case_id": "scifact-train-265-2033917",
+      "group_id": "6e0d26ea0f337037",
+      "split": "v07_final",
+      "document_id": "2033917",
+      "relation": "supported",
+      "input_sha256": "f38a66355142be14c2b779d4fe99b8acdd13f431903a4c6219534ec66c3faaeb",
+      "document_ids": [
+        "3512154",
+        "14500725",
+        "14260013",
+        "18670",
+        "2033917",
+        "13578199",
+        "5293024",
+        "18949516"
+      ],
+      "question": "Does the paper \"Clathrin is required for the function of the mitotic spindle\" support this claim: Clathrin stabilizes the spindle fiber apparatus during mitosis."
+    },
+    {
+      "case_id": "scifact-train-899-5572127",
+      "group_id": "700058fc1491f135",
+      "split": "v07_development",
+      "document_id": "5572127",
+      "relation": "insufficient",
+      "input_sha256": "6e16c5bf0e9da61af31f8b744215d2b61a7ad8e4328e53613f2159ef59135642",
+      "document_ids": [
+        "641786",
+        "7433668",
+        "5572127",
+        "17123657",
+        "23078022",
+        "4306711",
+        "2734421",
+        "857189"
+      ],
+      "question": "Does the paper \"Atm-deficient mice exhibit increased sensitivity to dextran sulfate sodium-induced colitis characterized by elevated DNA damage and persistent immune activation.\" support this claim: Oxidative DNA damage inhibits STING signalling."
+    },
+    {
+      "case_id": "scifact-train-369-6826100",
+      "group_id": "74c83590e303b9dc",
+      "split": "v07_final",
+      "document_id": "6826100",
+      "relation": "supported",
+      "input_sha256": "60eb76967877793b860c284841c4852aee67c55c6ebf5ef63088ab09b77542be",
+      "document_ids": [
+        "6826100",
+        "597790",
+        "21993510",
+        "18816720",
+        "13931771",
+        "29863668",
+        "857189",
+        "11291348"
+      ],
+      "question": "Does the paper \"The developmental potential of iPSCs is greatly influenced by reprogramming factor selection.\" support this claim: Ectopic expression of Sall4, Nanog, Esrrb, and Lin28 generates induced pluripotent stem cells from mouse embryonic fibroblasts more efficiently than other factor combinations."
+    },
+    {
+      "case_id": "scifact-train-43-7224723",
+      "group_id": "80499da769dc39dd",
+      "split": "v07_development",
+      "document_id": "7224723",
+      "relation": "insufficient",
+      "input_sha256": "b8f6d1e10f7f21450bf8f28a5db702c5a114cab97ec107878ca12fea13361e4f",
+      "document_ids": [
+        "7224723",
+        "24922825",
+        "4678846",
+        "14332945",
+        "5293024",
+        "23078022",
+        "8148304",
+        "11291348"
+      ],
+      "question": "Does the paper \"HIV–1 Infects Multipotent Progenitor Cells Causing Cell Death and Establishing Latent Cellular Reservoirs\" support this claim: A low percentage of hematopoietic progenitor cells are susceptible to HIV-1 infection ex vivo."
+    },
+    {
+      "case_id": "scifact-train-474-4373433",
+      "group_id": "843e425cf577828e",
+      "split": "v07_final",
+      "document_id": "4373433",
+      "relation": "insufficient",
+      "input_sha256": "f4903d1e7abc21096d61f5a41a13211267d7e19e1626cffb6189f8eb05bbeab1",
+      "document_ids": [
+        "4373433",
+        "3202143",
+        "21993510",
+        "4446814",
+        "14658685",
+        "1974176",
+        "19583924",
+        "2867345"
+      ],
+      "question": "Does the paper \"Broad neutralization coverage of HIV by multiple highly potent antibodies\" support this claim: Glycan adaptation is rarely observed in the B-cell repertoire."
+    },
+    {
+      "case_id": "scifact-train-1176-13910150",
+      "group_id": "86bf263f5e1120c4",
+      "split": "v07_final",
+      "document_id": "13910150",
+      "relation": "supported",
+      "input_sha256": "36b97161aaa5a948c844e7f8c831c282a34c24ec7820396a764a1bb8289617b3",
+      "document_ids": [
+        "5172048",
+        "29863668",
+        "22544171",
+        "26996935",
+        "13910150",
+        "9505402",
+        "5548081",
+        "39264456"
+      ],
+      "question": "Does the paper \"The Germ Cell Determinant Blimp1 Is Not Required for Derivation of Pluripotent Stem Cells\" support this claim: The PRDM1 gene is a key determinant of primordial germ cells."
+    },
+    {
+      "case_id": "scifact-train-1025-32408470",
+      "group_id": "8917c0bfefc31717",
+      "split": "v07_final",
+      "document_id": "32408470",
+      "relation": "insufficient",
+      "input_sha256": "59099421bf14c381c4a76e5841c188a6252352cfb57cdc26ac97185d7c57fa3b",
+      "document_ids": [
+        "22544171",
+        "32408470",
+        "2734421",
+        "9500590",
+        "12800122",
+        "16939583",
+        "18670",
+        "16361581"
+      ],
+      "question": "Does the paper \"Activation of AMPKα2 in adipocytes is essential for nicotine-induced insulin resistance in vivo\" support this claim: Reduced levels of lipolysis leads to higher P38 phosphorylation in adipose tissue."
+    },
+    {
+      "case_id": "scifact-train-1229-1676568",
+      "group_id": "8f53b5549f75f89f",
+      "split": "v07_final",
+      "document_id": "1676568",
+      "relation": "supported",
+      "input_sha256": "6c794b0de3d172e21c7cb8a86e581c00d634e89bcc7145ea4c976865b7fd818f",
+      "document_ids": [
+        "15058155",
+        "16361581",
+        "3512154",
+        "11659421",
+        "301838",
+        "39264456",
+        "1676568",
+        "4319844"
+      ],
+      "question": "Does the paper \"CLASPs link focal adhesion-associated microtubule capture to localized exocytosis and adhesion site turnover\" support this claim: The microtubule-dependent delivery and secretion of matrix metalloproteases (MMPs) is partially responsible for the disassembly of adhesion sites."
+    },
+    {
+      "case_id": "scifact-train-305-14797520",
+      "group_id": "95d679f93bd3c1c9",
+      "split": "v07_development",
+      "document_id": "14797520",
+      "relation": "supported",
+      "input_sha256": "21ff335582c0bc9b188b003b542b616a6e610935ff7abdc754608eebe25ec769",
+      "document_ids": [
+        "2867345",
+        "1921218",
+        "16422880",
+        "2890952",
+        "3202143",
+        "14797520",
+        "1550937",
+        "470625"
+      ],
+      "question": "Does the paper \"Noncoding Transcription by RNA Polymerase Pol IVb/Pol V Mediates Transcriptional Silencing of Overlapping and Adjacent Genes\" support this claim: DRD1 proteins enable Pol V transcription in vivo."
+    },
+    {
+      "case_id": "scifact-train-562-20101846",
+      "group_id": "9c8200382a1d1170",
+      "split": "v07_final",
+      "document_id": "20101846",
+      "relation": "supported",
+      "input_sha256": "72b4913d94797f95498fceee5d1c3ecf13b5301dd5ebbee045cf84f7e9fb37ef",
+      "document_ids": [
+        "5293024",
+        "5114282",
+        "5386514",
+        "20101846",
+        "14075252",
+        "10284593",
+        "41493639",
+        "9505402"
+      ],
+      "question": "Does the paper \"Homogeneously dispersed multimetal oxygen-evolving catalysts\" support this claim: Improvements in OER catalysts show stable activity over several hundred hours."
+    },
+    {
+      "case_id": "scifact-train-1314-16237005",
+      "group_id": "a08750b04b357035",
+      "split": "v07_development",
+      "document_id": "16237005",
+      "relation": "insufficient",
+      "input_sha256": "777b9fe868a7701aac35c5b5f19bc1c8b511a870f26d58898ac7efb8aeb088db",
+      "document_ids": [
+        "935538",
+        "1410197",
+        "301838",
+        "6625693",
+        "29023309",
+        "16237005",
+        "5386514",
+        "7898952"
+      ],
+      "question": "Does the paper \"Single-RNA counting reveals alternative modes of gene expression in yeast\" support this claim: Transcription rates in S. cerevisiae range between 0.7 and 2 kb/min."
+    },
+    {
+      "case_id": "scifact-train-1195-26283293",
+      "group_id": "a28125b0f2d8f41e",
+      "split": "v07_final",
+      "document_id": "26283293",
+      "relation": "insufficient",
+      "input_sha256": "f14fb4318ef8d5ba0564323ff1e8521b6a69205ec725974a61ea1aef4e4aae59",
+      "document_ids": [
+        "23078022",
+        "4828631",
+        "25641414",
+        "14075252",
+        "12685434",
+        "5293024",
+        "32390525",
+        "26283293"
+      ],
+      "question": "Does the paper \"Structural and mechanistic insights into phospholipid transfer by Ups1–Mdm35 in mitochondria\" support this claim: The artifactual C-terminal helix swapping in the StART domain is observed in the Ups1-Mdm35 heterodimer of the StARkin superfamily."
+    },
+    {
+      "case_id": "scifact-train-366-13956305",
+      "group_id": "a3ea140f6dd0b2da",
+      "split": "v07_final",
+      "document_id": "13956305",
+      "relation": "supported",
+      "input_sha256": "e66937531e4a6f2ee1e515603381214d1b08cf998321c98bb6f95ac9b0430bc6",
+      "document_ids": [
+        "13956305",
+        "4828631",
+        "12800122",
+        "40817021",
+        "5293024",
+        "30041340",
+        "5151024",
+        "52072815"
+      ],
+      "question": "Does the paper \"Major histocompatibility complex associations of ankylosing spondylitis are complex and involve further epistasis with ERAP1\" support this claim: ERAP1 SNPs are epistatic to HLA alleles for ankylosing spondylitis."
+    },
+    {
+      "case_id": "scifact-train-296-4398832",
+      "group_id": "a9df38dc890f7e37",
+      "split": "v07_final",
+      "document_id": "4398832",
+      "relation": "supported",
+      "input_sha256": "3613ca992b323a285928684c3a53152ad65441049a306d3cebbf527b0b0ec044",
+      "document_ids": [
+        "13552682",
+        "11328820",
+        "22194407",
+        "29863668",
+        "14500725",
+        "4398832",
+        "8148304",
+        "52072815"
+      ],
+      "question": "Does the paper \"Cyclin A Regulates Kinetochore-Microtubules to Promote Faithful Chromosome Segregation\" support this claim: Cyclin A2 destruction is necessary to switch from unstable to stable kt-mt attachments in mitosis."
+    },
+    {
+      "case_id": "scifact-train-643-15535511",
+      "group_id": "acf004446221685d",
+      "split": "v07_development",
+      "document_id": "15535511",
+      "relation": "supported",
+      "input_sha256": "a5be8499d111bdac8ab8bf63b8901fe31437eac0143367a5f57f1ed17b704069",
+      "document_ids": [
+        "5573975",
+        "15535511",
+        "40817021",
+        "38380061",
+        "8148304",
+        "13868795",
+        "52072815",
+        "32390525"
+      ],
+      "question": "Does the paper \"Role for insulin signaling in catecholaminergic neurons in control of energy homeostasis.\" support this claim: Insulin effects appetite via ventral tegmental neurons."
+    },
+    {
+      "case_id": "scifact-train-1168-8563659",
+      "group_id": "b5274da8b619d65d",
+      "split": "v07_final",
+      "document_id": "8563659",
+      "relation": "insufficient",
+      "input_sha256": "5c42492184605e784693241b59d19e16ea6408acf80e6ef3f6417554aaf71397",
+      "document_ids": [
+        "24384587",
+        "24922825",
+        "8563659",
+        "8148304",
+        "57574395",
+        "3202143",
+        "7433668",
+        "23078022"
+      ],
+      "question": "Does the paper \"Persistence of HIV-1 Receptor-Positive Cells after HSV-2 Reactivation: A Potential Mechanism for Increased HIV-1 Acquisition\" support this claim: The HSV-2 infection is typically asymptomatic."
+    },
+    {
+      "case_id": "scifact-train-189-4421578",
+      "group_id": "b6923cf5eebc52c7",
+      "split": "v07_development",
+      "document_id": "4421578",
+      "relation": "supported",
+      "input_sha256": "c57a983320701a05e4783f793b431c91b248ff7d567043acd68ae55fbda90569",
+      "document_ids": [
+        "641786",
+        "5386514",
+        "18670",
+        "38380061",
+        "44265107",
+        "17123657",
+        "4421578",
+        "5468807"
+      ],
+      "question": "Does the paper \"Broad and potent neutralization of HIV-1 by a gp41-specific human antibody\" support this claim: Broadly HIV-1 Neutralizing Antibodies (bnAb) 10EB have no affinity for phospholipids."
+    },
+    {
+      "case_id": "scifact-train-222-19205437",
+      "group_id": "ba5051c5fe7ea92c",
+      "split": "v07_final",
+      "document_id": "19205437",
+      "relation": "supported",
+      "input_sha256": "2486eb7401bcfa436e8c503d3ec760d738350e62cc66ef22cbbba2a609ac3630",
+      "document_ids": [
+        "22544171",
+        "32390525",
+        "1410197",
+        "7898952",
+        "19205437",
+        "29863668",
+        "17123657",
+        "2488880"
+      ],
+      "question": "Does the paper \"UCP1-independent signaling involving SERCA2b-mediated calcium cycling regulates beige fat thermogenesis and systemic glucose homeostasis\" support this claim: Ca2+ cycling is a UCP1-independent thermogenic mechanism."
+    },
+    {
+      "case_id": "scifact-train-867-14340571",
+      "group_id": "c35dab6fd987550c",
+      "split": "v07_final",
+      "document_id": "14340571",
+      "relation": "supported",
+      "input_sha256": "40ab11a82595c092a3c5fd1ada0ec355e59b7e8ee85fc99629cba9787f4752d3",
+      "document_ids": [
+        "14340571",
+        "11291348",
+        "5293024",
+        "6441369",
+        "5468807",
+        "1974176",
+        "14500725",
+        "13552682"
+      ],
+      "question": "Does the paper \"The Molecular Basis for Oat Intolerance in Patients with Celiac Disease\" support this claim: Oat tolerant coeliac patients may have oat specific inflammatory cells in their small bowel mucosa."
+    },
+    {
+      "case_id": "scifact-train-292-15048300",
+      "group_id": "c3d02db95f101f14",
+      "split": "v07_final",
+      "document_id": "15048300",
+      "relation": "supported",
+      "input_sha256": "5350521f2082337811dfa99a966b96147c3e7b429623ad7b23133264db1fa38f",
+      "document_ids": [
+        "1921218",
+        "13400643",
+        "29023309",
+        "2890952",
+        "22194407",
+        "18816720",
+        "26996935",
+        "15048300"
+      ],
+      "question": "Does the paper \"A Comparison of Cost Effectiveness Using Data from Randomized Trials or Actual Clinical Practice: Selective Cox-2 Inhibitors as an Example\" support this claim: Cost effectiveness evaluations based on cRCT data lack external validity."
+    },
+    {
+      "case_id": "scifact-train-429-36540079",
+      "group_id": "c463c26674080726",
+      "split": "v07_final",
+      "document_id": "36540079",
+      "relation": "insufficient",
+      "input_sha256": "5ee2fd643d020e062d0c290afd176e7c216ae424e61e2ba7bc452732eb5732ac",
+      "document_ids": [
+        "14075252",
+        "23078022",
+        "8533245",
+        "4828631",
+        "44265107",
+        "641786",
+        "30041340",
+        "36540079"
+      ],
+      "question": "Does the paper \"Glutamine-specific N-terminal amidase, a component of the N-end rule pathway.\" support this claim: Formation of N-terminal pyroglutamate by glutamine cyclase (GC) competes with NTAQ1 for Nt-Gln substrates."
+    },
+    {
+      "case_id": "scifact-train-432-8002887",
+      "group_id": "c5e6a40abe6067c4",
+      "split": "v07_development",
+      "document_id": "8002887",
+      "relation": "supported",
+      "input_sha256": "6ef287569bc0d44c6002040f10b8529c6e429daae6546ecadb8ff5b290852514",
+      "document_ids": [
+        "27099731",
+        "18949516",
+        "8002887",
+        "12685434",
+        "8148304",
+        "23078022",
+        "18199839",
+        "32390525"
+      ],
+      "question": "Does the paper \"Foxk proteins repress the initiation of starvation-induced atrophy and autophagy programs\" support this claim: Foxk2 regulates autophagy genes in muscle cells and fibroblast cells."
+    },
+    {
+      "case_id": "scifact-train-262-14610165",
+      "group_id": "c6159679fac8a91b",
+      "split": "v07_final",
+      "document_id": "14610165",
+      "relation": "insufficient",
+      "input_sha256": "d6fe4cf77106b1c8e4ad1685ff56fd66bf4174835e0d07ab1c51bcc5f5d4a68c",
+      "document_ids": [
+        "14610165",
+        "16939583",
+        "14075252",
+        "16660256",
+        "12800122",
+        "4319844",
+        "14853989",
+        "301838"
+      ],
+      "question": "Does the paper \"Functional Consequences of Splicing of the Antisense Transcript COOLAIR on FLC Transcription\" support this claim: Cis-acting lncRNAs control the expression of genes that are positioned in the vicinity of their transcription sites."
+    },
+    {
+      "case_id": "scifact-train-542-19688024",
+      "group_id": "c7a9bae0f9769a5e",
+      "split": "v07_final",
+      "document_id": "19688024",
+      "relation": "contradicted",
+      "input_sha256": "e8f0228d195ed5ff6e4754ac7ddca49198b046606d3dc2b45694fe2ec93575a9",
+      "document_ids": [
+        "24241932",
+        "19688024",
+        "15058155",
+        "22544171",
+        "32390525",
+        "14853989",
+        "13868795",
+        "4547102"
+      ],
+      "question": "Does the paper \"IFI16 and cGAS cooperate in the activation of STING during DNA sensing in human keratinocytes\" support this claim: IFI16 impedes STING phosphorylation and translocation, resulting in reduced activation of STING."
+    },
+    {
+      "case_id": "scifact-train-1306-5836",
+      "group_id": "c9a5a31a549cb734",
+      "split": "v07_final",
+      "document_id": "5836",
+      "relation": "insufficient",
+      "input_sha256": "b366fea63101f2a84ba86dbc3381ae9602ddc40be15231ecade3c3351447e3b1",
+      "document_ids": [
+        "9167230",
+        "14658685",
+        "27099731",
+        "13552682",
+        "29863668",
+        "5836",
+        "6441369",
+        "11328820"
+      ],
+      "question": "Does the paper \"Induction of myelodysplasia by myeloid-derived suppressor cells.\" support this claim: Toll-like receptor (TLR) signaling is involved in the pathogenesis of human MDS."
+    },
+    {
+      "case_id": "scifact-train-788-4740447",
+      "group_id": "c9fa041fd7c6a300",
+      "split": "v07_final",
+      "document_id": "4740447",
+      "relation": "supported",
+      "input_sha256": "3b35ecec4f42eb1da95795086e772cf1f33f3d41a4cb7df9070618b4564db79e",
+      "document_ids": [
+        "14260013",
+        "4740447",
+        "22544171",
+        "2867345",
+        "8087082",
+        "4899981",
+        "935538",
+        "18816720"
+      ],
+      "question": "Does the paper \"Antibacterial peptide microcin J25 inhibits transcription by binding within and obstructing the RNA polymerase secondary channel.\" support this claim: Microcin J25 inhibits nucleoside triphosphate (NTP) binding."
+    },
+    {
+      "case_id": "scifact-train-761-10009203",
+      "group_id": "cec2675f613c66da",
+      "split": "v07_final",
+      "document_id": "10009203",
+      "relation": "insufficient",
+      "input_sha256": "4d9b539ed98d8c70340bd961fb1079b2c4d52341da8a4c4797c6f70067f83eed",
+      "document_ids": [
+        "16939583",
+        "10009203",
+        "37204802",
+        "5573975",
+        "2890952",
+        "27099731",
+        "3202143",
+        "13578199"
+      ],
+      "question": "Does the paper \"Structural Homeostasis: Compensatory Adjustments of Dendritic Arbor Geometry in Response to Variations of Synaptic Input \" support this claim: MeCP2 influences the synaptic maturation of neurons."
+    },
+    {
+      "case_id": "scifact-train-1037-16287725",
+      "group_id": "d6cd8d82bb1b5559",
+      "split": "v07_final",
+      "document_id": "16287725",
+      "relation": "insufficient",
+      "input_sha256": "331a549f7eaceea0eace6b20351ac20e1ea220af0dbaee961476b9d2d322bc6c",
+      "document_ids": [
+        "2890952",
+        "3471191",
+        "22544171",
+        "16422880",
+        "19583924",
+        "4899981",
+        "16287725",
+        "11659421"
+      ],
+      "question": "Does the paper \"Reprogramming of human fibroblasts to pluripotency with lineage specifiers.\" support this claim: Replacement of OCT4 and SOX2 genes with GATA3 has the ability to reprogram human cells."
+    },
+    {
+      "case_id": "scifact-train-1001-5702790",
+      "group_id": "d88e692fb076b0cf",
+      "split": "v07_final",
+      "document_id": "5702790",
+      "relation": "insufficient",
+      "input_sha256": "0ddea4790d429e4db3395d7ff208798cd6ac07de06fcbf963ceddb7fac5f5439",
+      "document_ids": [
+        "52072815",
+        "5702790",
+        "857189",
+        "12643937",
+        "5824985",
+        "5151024",
+        "40817021",
+        "24384587"
+      ],
+      "question": "Does the paper \"Phosphate and R2D2 restrict the substrate specificity of Dicer-2, an ATP-driven ribonuclease.\" support this claim: R2D2 stops miRNA production by increasing the selectivity of Dcr2 for long dsRNA."
+    },
+    {
+      "case_id": "scifact-train-1118-23351136",
+      "group_id": "e709b1e09b7f2177",
+      "split": "v07_development",
+      "document_id": "23351136",
+      "relation": "insufficient",
+      "input_sha256": "038296ff8f5738e82b14ab1536e6dbb63e78fabcad55751359ebf044c25ddb40",
+      "document_ids": [
+        "7898952",
+        "5185871",
+        "23351136",
+        "6144337",
+        "2488880",
+        "10284593",
+        "5172048",
+        "14853989"
+      ],
+      "question": "Does the paper \"Detection of sweet and umami taste in the absence of taste receptor T1r3.\" support this claim: Sweet taste receptors on the tongue are deactivated by between 1 and 10 mM glucose."
+    },
+    {
+      "case_id": "scifact-train-315-3701541",
+      "group_id": "e7c7c8942cb31bf2",
+      "split": "v07_final",
+      "document_id": "3701541",
+      "relation": "insufficient",
+      "input_sha256": "88c442e9abcbbe76c38b76853f38d39c554efa37a9aa7fdd67f49087a72285c9",
+      "document_ids": [
+        "52072815",
+        "15058155",
+        "14332945",
+        "2734421",
+        "3701541",
+        "641786",
+        "4306711",
+        "13868795"
+      ],
+      "question": "Does the paper \"p62/SQSTM1 by Binding to Vitamin D Receptor Inhibits Hepatic Stellate Cell Activity, Fibrosis, and Liver Cancer.\" support this claim: Decrease of p62 in prostate tumor stroma results in defective autophagy."
+    },
+    {
+      "case_id": "scifact-train-79-5099266",
+      "group_id": "e8311dde01de84d1",
+      "split": "v07_final",
+      "document_id": "5099266",
+      "relation": "supported",
+      "input_sha256": "ed74b128434114cf462bed8f2a0c5ddc470a96d023cd972db29e210a3fdeb9ae",
+      "document_ids": [
+        "1974176",
+        "4678846",
+        "712078",
+        "5099266",
+        "14658685",
+        "301838",
+        "27099731",
+        "30041340"
+      ],
+      "question": "Does the paper \"Caspase-11 promotes the fusion of phagosomes harboring pathogenic bacteria with lysosomes by modulating actin polymerization.\" support this claim: Active caspase-11 protein promotes pyroptosis."
+    },
+    {
+      "case_id": "scifact-train-1220-13023410",
+      "group_id": "ef3208fba2385d2f",
+      "split": "v07_final",
+      "document_id": "13023410",
+      "relation": "supported",
+      "input_sha256": "bd967cb545823e604aaa426a66b13d3a78227fec7e317dca7850714eeeceaa9e",
+      "document_ids": [
+        "13023410",
+        "857189",
+        "37822406",
+        "5260382",
+        "12643937",
+        "9505402",
+        "18670",
+        "57574395"
+      ],
+      "question": "Does the paper \"BCR/ABL oncogenic kinase promotes unfaithful repair of the reactive oxygen species-dependent DNA double-strand breaks.\" support this claim: The generation of reactive oxygen species by activated oncogenes contributes to the increased genomic instability of leukaemia cells."
+    }
+  ],
+  "limits": {
+    "model_calls": 6,
+    "nonmodel_tools": 8,
+    "api_concurrency": 3
+  },
+  "methods": [
+    "direct_reader",
+    "autonomous_tools",
+    "structured_workflow"
+  ]
+}

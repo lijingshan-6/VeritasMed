@@ -1,0 +1,609 @@
+{
+  "E2_same_standalone_targets": {
+    "counts": {
+      "targets": 30,
+      "both_completed": 27,
+      "disagreed": 3
+    },
+    "flash_statuses": {
+      "ok": 27,
+      "invalid_evidence_reference": 3
+    },
+    "minicheck_statuses": {
+      "ok": 30
+    },
+    "per_fact": [
+      {
+        "case_id": "medical-06-original_meaning",
+        "fact_index": 0,
+        "flash": 1,
+        "minicheck": 0,
+        "raw_support_score": 0.22421620786190033
+      },
+      {
+        "case_id": "medical-06-original_meaning",
+        "fact_index": 1,
+        "flash": null,
+        "minicheck": 0,
+        "raw_support_score": 0.3392973840236664
+      },
+      {
+        "case_id": "medical-04-evidence_removed",
+        "fact_index": 0,
+        "flash": 0,
+        "minicheck": 0,
+        "raw_support_score": 0.014912232756614685
+      },
+      {
+        "case_id": "medical-04-evidence_removed",
+        "fact_index": 1,
+        "flash": 0,
+        "minicheck": 0,
+        "raw_support_score": 0.015698447823524475
+      },
+      {
+        "case_id": "medical-04-single_error",
+        "fact_index": 0,
+        "flash": 0,
+        "minicheck": 0,
+        "raw_support_score": 0.1636032909154892
+      },
+      {
+        "case_id": "medical-04-single_error",
+        "fact_index": 1,
+        "flash": 1,
+        "minicheck": 1,
+        "raw_support_score": 0.9470672011375427
+      },
+      {
+        "case_id": "medical-15-single_error",
+        "fact_index": 0,
+        "flash": 0,
+        "minicheck": 0,
+        "raw_support_score": 0.18265289068222046
+      },
+      {
+        "case_id": "medical-15-single_error",
+        "fact_index": 1,
+        "flash": 1,
+        "minicheck": 1,
+        "raw_support_score": 0.9586201906204224
+      },
+      {
+        "case_id": "medical-15-single_error",
+        "fact_index": 2,
+        "flash": 1,
+        "minicheck": 1,
+        "raw_support_score": 0.9776009321212769
+      },
+      {
+        "case_id": "medical-15-single_error",
+        "fact_index": 3,
+        "flash": 1,
+        "minicheck": 1,
+        "raw_support_score": 0.9672401547431946
+      },
+      {
+        "case_id": "medical-06-single_error",
+        "fact_index": 0,
+        "flash": 0,
+        "minicheck": 0,
+        "raw_support_score": 0.06548095494508743
+      },
+      {
+        "case_id": "medical-06-single_error",
+        "fact_index": 1,
+        "flash": 1,
+        "minicheck": 1,
+        "raw_support_score": 0.7197917103767395
+      },
+      {
+        "case_id": "medical-04-paraphrase",
+        "fact_index": 0,
+        "flash": 1,
+        "minicheck": 1,
+        "raw_support_score": 0.9251592755317688
+      },
+      {
+        "case_id": "medical-04-paraphrase",
+        "fact_index": 1,
+        "flash": 1,
+        "minicheck": 1,
+        "raw_support_score": 0.9454434514045715
+      },
+      {
+        "case_id": "medical-15-evidence_removed",
+        "fact_index": 0,
+        "flash": 0,
+        "minicheck": 0,
+        "raw_support_score": 0.013039316050708294
+      },
+      {
+        "case_id": "medical-15-evidence_removed",
+        "fact_index": 1,
+        "flash": 0,
+        "minicheck": 0,
+        "raw_support_score": 0.012514225207269192
+      },
+      {
+        "case_id": "medical-15-evidence_removed",
+        "fact_index": 2,
+        "flash": 0,
+        "minicheck": 0,
+        "raw_support_score": 0.03356020152568817
+      },
+      {
+        "case_id": "medical-15-evidence_removed",
+        "fact_index": 3,
+        "flash": 0,
+        "minicheck": 0,
+        "raw_support_score": 0.038408905267715454
+      },
+      {
+        "case_id": "medical-04-original_meaning",
+        "fact_index": 0,
+        "flash": 1,
+        "minicheck": 1,
+        "raw_support_score": 0.9233894348144531
+      },
+      {
+        "case_id": "medical-04-original_meaning",
+        "fact_index": 1,
+        "flash": 1,
+        "minicheck": 1,
+        "raw_support_score": 0.9183339476585388
+      },
+      {
+        "case_id": "medical-06-evidence_removed",
+        "fact_index": 0,
+        "flash": 0,
+        "minicheck": 0,
+        "raw_support_score": 0.02377310022711754
+      },
+      {
+        "case_id": "medical-06-evidence_removed",
+        "fact_index": 1,
+        "flash": 0,
+        "minicheck": 0,
+        "raw_support_score": 0.025838617235422134
+      },
+      {
+        "case_id": "medical-06-paraphrase",
+        "fact_index": 0,
+        "flash": null,
+        "minicheck": 1,
+        "raw_support_score": 0.869172215461731
+      },
+      {
+        "case_id": "medical-06-paraphrase",
+        "fact_index": 1,
+        "flash": null,
+        "minicheck": 0,
+        "raw_support_score": 0.43112510442733765
+      },
+      {
+        "case_id": "medical-15-paraphrase",
+        "fact_index": 0,
+        "flash": 1,
+        "minicheck": 0,
+        "raw_support_score": 0.13671714067459106
+      },
+      {
+        "case_id": "medical-15-paraphrase",
+        "fact_index": 1,
+        "flash": 1,
+        "minicheck": 1,
+        "raw_support_score": 0.9776009321212769
+      },
+      {
+        "case_id": "medical-15-paraphrase",
+        "fact_index": 2,
+        "flash": 1,
+        "minicheck": 0,
+        "raw_support_score": 0.13051503896713257
+      },
+      {
+        "case_id": "medical-15-original_meaning",
+        "fact_index": 0,
+        "flash": 1,
+        "minicheck": 1,
+        "raw_support_score": 0.520767331123352
+      },
+      {
+        "case_id": "medical-15-original_meaning",
+        "fact_index": 1,
+        "flash": 1,
+        "minicheck": 1,
+        "raw_support_score": 0.9640217423439026
+      },
+      {
+        "case_id": "medical-15-original_meaning",
+        "fact_index": 2,
+        "flash": 1,
+        "minicheck": 1,
+        "raw_support_score": 0.9776009321212769
+      }
+    ],
+    "interpretation": "Disagreement is not correctness; parsed targets have no independent semantic gold."
+  },
+  "E4_explicit_slots": {
+    "counts": {
+      "planned_facts": 30,
+      "both_completed": 29,
+      "relation_changed": 0,
+      "status_changed": 0
+    },
+    "per_fact": [
+      {
+        "case_id": "medical-06-original_meaning",
+        "fact_id": "fact-1",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-06-original_meaning",
+        "fact_id": "fact-2",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-04-evidence_removed",
+        "fact_id": "fact-1",
+        "with_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-04-evidence_removed",
+        "fact_id": "fact-2",
+        "with_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-04-single_error",
+        "fact_id": "fact-1",
+        "with_slots": {
+          "relation": "contradicted",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "contradicted",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-04-single_error",
+        "fact_id": "fact-2",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-single_error",
+        "fact_id": "fact-1",
+        "with_slots": {
+          "relation": "contradicted",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "contradicted",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-single_error",
+        "fact_id": "fact-2",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-single_error",
+        "fact_id": "fact-3",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-single_error",
+        "fact_id": "fact-4",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-06-single_error",
+        "fact_id": "fact-1",
+        "with_slots": {
+          "relation": "contradicted",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "contradicted",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-06-single_error",
+        "fact_id": "fact-2",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-04-paraphrase",
+        "fact_id": "fact-1",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-04-paraphrase",
+        "fact_id": "fact-2",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-evidence_removed",
+        "fact_id": "fact-1",
+        "with_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-evidence_removed",
+        "fact_id": "fact-2",
+        "with_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-evidence_removed",
+        "fact_id": "fact-3",
+        "with_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-evidence_removed",
+        "fact_id": "fact-4",
+        "with_slots": {
+          "relation": "insufficient",
+          "status": "needs_review"
+        },
+        "without_slots": {
+          "relation": "insufficient",
+          "status": "needs_review"
+        }
+      },
+      {
+        "case_id": "medical-04-original_meaning",
+        "fact_id": "fact-1",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-04-original_meaning",
+        "fact_id": "fact-2",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-06-evidence_removed",
+        "fact_id": "fact-1",
+        "with_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-06-evidence_removed",
+        "fact_id": "fact-2",
+        "with_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-06-paraphrase",
+        "fact_id": "fact-1",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-06-paraphrase",
+        "fact_id": "fact-2",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-paraphrase",
+        "fact_id": "fact-1",
+        "with_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-paraphrase",
+        "fact_id": "fact-2",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-paraphrase",
+        "fact_id": "fact-3",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-original_meaning",
+        "fact_id": "fact-1",
+        "with_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "insufficient",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-original_meaning",
+        "fact_id": "fact-2",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      },
+      {
+        "case_id": "medical-15-original_meaning",
+        "fact_id": "fact-3",
+        "with_slots": {
+          "relation": "supported",
+          "status": "ok"
+        },
+        "without_slots": {
+          "relation": "supported",
+          "status": "ok"
+        }
+      }
+    ],
+    "interpretation": "Changes on the same extraction, source and answer. More warnings are not automatically better."
+  },
+  "E5_numeric_rules": {
+    "on": {
+      "not_applicable": 22,
+      "unresolved": 8
+    },
+    "off_advisory_flags": 0,
+    "semantic_decisions_changed": 0,
+    "interpretation": "Diagnostic only. Unresolved contexts are retained; no clinical contradiction or default change inferred."
+  }
+}

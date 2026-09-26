@@ -177,10 +177,91 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/research/examples": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Examples */
+        get: operations["examples_api_research_examples_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/research/examples/{case_id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Replay */
+        get: operations["replay_api_research_examples__case_id__get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/research/results": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Results */
+        get: operations["results_api_research_results_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/research": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Live */
+        post: operations["live_api_research_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        /** AtomicAuditRequest */
+        AtomicAuditRequest: {
+            /** Answer */
+            answer: string;
+            /** Sources */
+            sources: components["schemas"]["AuditSource"][];
+            /**
+             * Strategy
+             * @default direct
+             * @enum {string}
+             */
+            strategy: "direct" | "split" | "context" | "quote_v2" | "atomic_v1";
+        };
         /** AuditSource */
         AuditSource: {
             /** Id */
@@ -302,6 +383,15 @@ export interface components {
             /** Chunks */
             chunks: components["schemas"]["DocumentChunkSlim"][];
         };
+        /** EvidenceDocument */
+        EvidenceDocument: {
+            /** Document Id */
+            document_id: string;
+            /** Title */
+            title: string;
+            /** Sentences */
+            sentences: string[];
+        };
         /** HTTPValidationError */
         HTTPValidationError: {
             /** Detail */
@@ -336,18 +426,22 @@ export interface components {
             /** Timestamp */
             timestamp: string;
         };
-        /** QuoteAuditRequest */
-        QuoteAuditRequest: {
-            /** Answer */
-            answer: string;
-            /** Sources */
-            sources: components["schemas"]["AuditSource"][];
+        /** ResearchRequest */
+        ResearchRequest: {
+            /** Question */
+            question: string;
+            /** Target Title */
+            target_title: string;
+            /** Claim */
+            claim: string;
+            /** Documents */
+            documents: components["schemas"]["EvidenceDocument"][];
             /**
-             * Strategy
-             * @default direct
+             * Method
+             * @default structured_workflow
              * @enum {string}
              */
-            strategy: "direct" | "split" | "context" | "quote_v2";
+            method: "direct_reader" | "autonomous_tools" | "structured_workflow";
         };
         /** SearchResponse */
         SearchResponse: {
@@ -596,7 +690,7 @@ export interface operations {
     replay_api_audit_examples__response_id__get: {
         parameters: {
             query?: {
-                strategy?: "direct" | "split" | "context" | "quote_v2";
+                strategy?: "direct" | "split" | "context" | "quote_v2" | "atomic_v1";
             };
             header?: never;
             path: {
@@ -635,7 +729,111 @@ export interface operations {
         };
         requestBody: {
             content: {
-                "application/json": components["schemas"]["QuoteAuditRequest"];
+                "application/json": components["schemas"]["AtomicAuditRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    examples_api_research_examples_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+        };
+    };
+    replay_api_research_examples__case_id__get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                case_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    results_api_research_results_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+        };
+    };
+    live_api_research_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ResearchRequest"];
             };
         };
         responses: {

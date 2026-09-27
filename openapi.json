@@ -3,7 +3,7 @@
   "info": {
     "title": "VeritasMed API",
     "description": "Self-verifying medical literature QA backend",
-    "version": "0.7.0"
+    "version": "0.7.1"
   },
   "paths": {
     "/api/search": {

@@ -1,7 +1,7 @@
 import { isGuidedDemo, isMedicalDemo } from '../demo'
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import { makeAuditHandoff } from '../api/auditHandoff'
+import type { AuditHandoff } from '../api/auditHandoff'
 import { useStore } from '../store'
 import type { AnswerOut } from '../types/ws'
 
@@ -391,21 +391,22 @@ export function AnswerPanel({
   suggestedQueries,
   onCiteClick,
   onPickQuery,
+  onAudit,
 }: {
   query: string
   suggestedQueries: string[]
   onCiteClick: (c: string) => void
   onPickQuery: (q: string) => void
+  onAudit: (handoff: AuditHandoff) => void
 }) {
   const { result, isStreaming, errorMessage } = useStore()
   const [copyLabel, setCopyLabel] = React.useState('Copy')
   const [auditError, setAuditError] = React.useState('')
-  const navigate = useNavigate()
   function openAudit() {
     if (!result || isStreaming) return
     try {
       const handoff = makeAuditHandoff(result, query, isGuidedDemo)
-      navigate('/audit', { state: { handoff } })
+      onAudit(handoff)
     } catch (e) { setAuditError(e instanceof Error ? e.message : 'Could not transfer this answer.') }
   }
   function downloadAnswer() {

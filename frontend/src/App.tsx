@@ -10,6 +10,7 @@ import { fetchCorpusStats, fetchHealth, loadRecentThreads, saveThread } from './
 import { useStore } from './store'
 
 const auditOnly = import.meta.env.VITE_AUDIT_ONLY === '1'
+const askAppUrl = (import.meta.env.VITE_ASK_APP_URL as string) || 'http://127.0.0.1:5173/'
 
 // ── SVG base ───────────────────────────────────────────────────────────────
 function I({ size = 16, sw = 1.6, children, style }: {
@@ -86,6 +87,7 @@ function NavTab({ active, label, sub, onClick, icon: Icon }: {
         border: 'none', background: 'transparent',
         color: active ? 'var(--ink)' : 'var(--muted)',
         fontSize: 13, fontWeight: 600, letterSpacing: '-0.005em',
+        whiteSpace: 'nowrap',
         position: 'relative',
         transition: 'color 120ms',
       }}
@@ -352,21 +354,21 @@ function Header({ theme, setTheme }: { theme: Theme; setTheme: (t: Theme) => voi
       <span style={{ width: 1, height: 22, background: 'var(--rule)', margin: '0 2px' }} />
 
       <nav style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-        {!auditOnly && <><NavTab
-          active={isAsk}
-          label="Ask"
-          sub="⌘K"
-          icon={IconBook}
-          onClick={() => navigate('/' + demoSuffix)}
-        />
         <NavTab
+          active={isAsk && !auditOnly}
+          label="Ask"
+          sub={auditOnly ? '↗' : '⌘K'}
+          icon={IconBook}
+          onClick={() => auditOnly ? window.location.assign(askAppUrl) : navigate('/' + demoSuffix)}
+        />
+        {!auditOnly && <NavTab
           active={isExplore}
           label="Explore"
           icon={IconCompass}
           onClick={() => navigate('/explore' + demoSuffix)}
-        /></>}
-        <NavTab active={location.pathname === '/audit' || (auditOnly && location.pathname === '/')} label="Audit" icon={IconBook}
-          onClick={() => { window.location.href = '/audit' }} />
+        />}
+        <NavTab active={location.pathname === '/audit' || (auditOnly && location.pathname === '/')} label="Audit lab" icon={IconBook}
+          onClick={() => navigate('/audit')} />
         <NavTab active={location.pathname === '/research'} label="Research" icon={IconCompass}
           onClick={() => navigate('/research')} />
       </nav>
@@ -385,8 +387,8 @@ function Header({ theme, setTheme }: { theme: Theme; setTheme: (t: Theme) => voi
 // ── App ─────────────────────────────────────────────────────────────────────
 function GuidedBanner() {
   const location = useLocation()
-  if (!isGuidedDemo || location.pathname === '/audit') return null
-  return <div role="status" style={{padding: '8px 16px', background: 'var(--accent-soft)', color: 'var(--ink)', fontSize: 12, textAlign: 'center'}}>GUIDED DEMO · Authored fixed examples and illustrative steps. No live retrieval, model calls or measured scores.</div>
+  if (!isGuidedDemo || location.pathname !== '/') return null
+  return <div role="status" style={{padding: '8px 16px', background: 'var(--accent-soft)', color: 'var(--ink)', fontSize: 12, textAlign: 'center'}}>GUIDED ASK · Authored answers and illustrative steps; no live retrieval or answer generation. Run audit uses the configured model.</div>
 }
 
 export default function App() {
@@ -402,7 +404,8 @@ export default function App() {
     function onKey(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault()
-        window.location.pathname !== '/' && (window.location.href = '/' + demoSuffix)
+        if (auditOnly) window.location.assign(askAppUrl)
+        else window.location.pathname !== '/' && (window.location.href = '/' + demoSuffix)
       }
     }
     window.addEventListener('keydown', onKey)
@@ -413,6 +416,7 @@ export default function App() {
     <BrowserRouter>
       <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', background: 'var(--canvas)' }}>
         <Header theme={theme} setTheme={setTheme} />
+        {auditOnly && <div className="vm-workspace-notice" role="note">Audit & research workspace · <a href={askAppUrl}>Open Ask for questions and follow-ups ↗</a>. Ask uses the full app described in the <a href="https://github.com/lijingshan-6/medrag-agent#run-the-full-medical-ask--audit-flow" target="_blank" rel="noreferrer">startup guide</a>.</div>}
         <GuidedBanner />
         <main style={{ flex: 1, overflow: 'hidden' }}>
           <Routes>

@@ -1,6 +1,7 @@
 # 真实回答审计面板
 
-入口 `/audit`，v0.7 在原有面板上增加原子事实、限定词和独立核查器分歧展示。
+主入口是完整应用 Ask 回答中的 **Audit**。v0.7.1 把它接回当前问答页，
+原子事实、限定词和独立核查器分歧使用同一审计组件。独立 `/audit` 是实验与保存记录回放入口。
 它接收一份完整回答和 1–40 份来源文本，
 逐条展示模型判定、回答原文范围、来源原文范围和未覆盖文本。
 只判断提供文本的支持关系，不自动搜索、修复回答或判定临床证据等级。
@@ -36,13 +37,14 @@ RAGTruth 是另一个非医学开发研究入口。可选运行
 只放在忽略的 `.benchmark-runtime/ragtruth/`。首次下载及依赖安装需网络；此后回放无需模型请求。
 缺少缓存、缓存内容变化、记录与输入哈希不符时显示错误，不拼凑来源。
 
-轻量服务提供 Audit 和 Research，启动器隐藏 Ask/Explore 导航。完整 FastAPI 应用也注册了
-相同 `/api/audit` 路由；原本的 Ask、Explore 和 Guided demo 使用原有启动方式。
-完整应用的 Ask 回答工具栏新增 **Audit**：将原回答与全部检索片段带入审计输入页，
-保留会话、问题、citation → chunk 映射。此按钮只传递文本，之后点击 **Run new audit** 才会调用模型。
+轻量服务提供 Audit lab 和 Research，保留 **Ask ↗** 返回完整应用的入口；它本身不启动检索。
+完整 FastAPI 应用也注册相同 `/api/audit` 路由，Ask、Explore 和 Guided demo 均保留。
+完整应用回答工具栏的 **Audit** 在当前问答页展开审计，保留原问题、回答、全部检索片段、
+citation → chunk 映射和底部输入框。点击 **Run audit** 才会调用模型；**Back to answer**
+关闭审计视图，再次打开仍保留本回答的结果。新问题会清除上一回答的审计上下文。
 超过 40 个片段、单段/总字符上限时明确报错，不静默截断。没有自动修复或替换原回答。
 从 Guided demo 传递的内容会显示 **Authored demo input**，不能当成真实 Agent 答案。
-轻量启动器不提供 Ask；真实医学完整流程用 `python scripts/run_demo.py --medical`。
+真实医学完整流程用 `python scripts/run_demo.py --medical`，入口是 `http://127.0.0.1:5173`。
 原有 `python scripts/run_demo.py` 仍为自拟 fastMRI 摘要语料。
 
 以下为保留的 2026-09-24 历史自拟摘要演示；当前原始医学论文演示见 [新记录](medical-demo.md)。

@@ -3,37 +3,58 @@
 **Ask a medical-literature question. Inspect each claim. Follow it back to the source.**
 
 VeritasMed is a React + FastAPI + LangGraph research showcase with literature retrieval,
-cited answers and a separate claim audit panel. The panel exposes exact answer/source
+cited answers and claim auditing within the question-and-answer workspace. The panel exposes exact answer/source
 passages, unsupported statements, unresolved quotations and unchecked text. It is not a
 clinically validated assistant.
 
-**v0.7.0 — auditable facts, measured checker reliability and a three-workflow comparison.**
+**v0.7.1 — Ask first, with claim auditing inside the answer workspace.**
 
 The experiments do not establish an advantage for the more structured workflow. Direct remains
 the audit default; Atomic and MiniCheck are explicit research options. [Results and limits](docs/releases/v0.7.0.md).
 
 Python 3.12 · Node.js 22.12+ · Apache-2.0 code · [Research source attribution](docs/research-sources.md)
 
-![Actual atomic audit with original fragments, qualifications and highlighted medical source](docs/assets/v07-atomic-medical.png)
+![Recorded medical Ask answer with retrieved source passages](docs/assets/v05-medical-ask.png)
 
-*Actual saved inference on the unchanged GRADE Agent answer: 22 parsed facts, 13 supported and
-9 unresolved or unchecked. Original fragments and source text stay visible. This single-paper
-demonstration is not a reliability score.*
+*Recorded GRADE medical Ask session: question, actual Agent answer and original abstract passages.
+In v0.7.1, the answer's Audit button opens its claim review in the same workspace.
+This single-paper demonstration is not a reliability score.*
 
-## Start here: real medical audit, no API key
+## Product entry: Ask → answer → Audit → continue asking
 
-Install [uv](https://docs.astral.sh/uv/) and Node.js 22.12+, then get the fixed milestone:
+**Ask is the main application**, at **http://127.0.0.1:5173**. It includes literature questions,
+retrieved sources, answer auditing, Explore and the research pages. The answer's **Audit** button
+opens the audit inside the current Ask workspace; **Back to answer** returns without discarding
+the answer or its audit. The question input remains available. Opening the audit makes no model
+call; **Run audit** explicitly starts checking the current answer and its complete source passages.
+
+Use the [full medical setup](#run-the-full-medical-ask--audit-flow) for this experience. The lighter
+**5174** service below is an optional audit/research workspace: it does not run the retrieval Agent.
+Its **Ask ↗** link returns to the full app. Independent evaluation of the checker is a research
+requirement, not a reason to replace the conversational product with evaluation screens.
+
+These navigation and inline-audit corrections ship in [v0.7.1](docs/releases/v0.7.1.md). The immutable
+v0.7.0 tag retains its original separate audit route. [Product direction](docs/decisions/2026-09-27-conversation-first-product.md).
+
+This restores the answer-review workflow; it does not yet implement persistent chat history or
+contextual follow-ups. Ask currently processes each question independently. Those capabilities
+and targeted audit improvements are the [v0.8 plan](docs/plans/v0.8-conversation-and-audit.md).
+
+## Optional lightweight demo: real medical audit, no API key
+
+Install [uv](https://docs.astral.sh/uv/) and Node.js 22.12+, then get the current app:
 
 ```sh
-git clone --branch v0.7.0 https://github.com/lijingshan-6/medrag-agent.git
+git clone --branch v0.7.1 https://github.com/lijingshan-6/medrag-agent.git
 cd medrag-agent
 uv venv --python 3.12
 uv pip install -r requirements-audit.txt
 uv pip install --no-deps -e .
 ```
 
-Alternatively, download the [source ZIP](https://github.com/lijingshan-6/medrag-agent/archive/refs/tags/v0.7.0.zip)
-and install from its extracted root. Activate the environment:
+Alternatively, download the [v0.7.1 source ZIP](https://github.com/lijingshan-6/medrag-agent/archive/refs/tags/v0.7.1.zip).
+The fixed [v0.7.0 source milestone](https://github.com/lijingshan-6/medrag-agent/tree/v0.7.0) preserves
+the published research artifacts. Activate the environment:
 
 | Shell | Command |
 |---|---|
@@ -121,8 +142,10 @@ python scripts/run_demo.py --medical
 Keep the Flash configuration above and the environment activated. Open **http://127.0.0.1:5173**
 and select the GRADE question. This runs BGE-M3 retrieval, reranking and the actual LangGraph
 Agent over the paper's five original abstract sections. After the answer appears, click its
-**Audit** button, review the unchanged answer and all returned passages, then run the audit.
-The new audit is a separate action and does not automatically rewrite the answer.
+**Audit** button to inspect the unchanged answer and all returned passages in the same workspace,
+then click **Run audit**. **Back to answer** preserves that audit during the current answer;
+asking a new question starts a fresh answer and audit context. The audit does not automatically
+rewrite the answer. Independent saved-input experiments remain available in **Audit lab**.
 
 The launcher uses `.demo-runtime/medical-qdrant` and the separate `medrag_medical_demo` collection;
 it does not replace the research index. Later starts can use
@@ -143,7 +166,7 @@ not actual inference. [Legacy demo guide](docs/demo.md)
 
 - **Literature Ask:** dense/sparse retrieval, reranking, requested-study matching, source-bound
   answer components, citations, explicit gaps and bounded answer repair from v0.4.
-- **Separate answer audit:** claim extraction and supported / contradicted / insufficient
+- **Answer audit within Ask:** claim extraction and supported / contradicted / insufficient
   judgments against supplied text, with answer/source navigation and original-paper links.
 - **Experimental atomic audit:** parent sentences, individual original fragments, model-interpreted
   qualification slots, explicit parsing doubts and separately recorded checker disagreements.
@@ -160,9 +183,10 @@ not actual inference. [Legacy demo guide](docs/demo.md)
 flowchart LR
   Q[Question] --> R[Retrieve and rerank]
   R --> A[Generate cited answer and review gaps]
-  A --> H[Transfer unchanged answer and returned sources]
-  H --> V[User runs separate claim audit]
+  A --> H[Open Audit within the current answer]
+  H --> V[Check the unchanged answer and returned sources]
   V --> U[Claims, original passages, failures and JSON export]
+  U --> Q
 ```
 
 [Actual Agent workflow](docs/agent-workflow.md) · [Research route](docs/verification-roadmap.md)
@@ -258,4 +282,4 @@ Existing offline checks: `python -m pytest -q`, `ruff check src/`, `npm --prefix
 `npm --prefix frontend run build`. They make no paid model calls. Live tests require `--run-live`.
 
 [Documentation index](docs/README.md) · [Medical demo](docs/medical-demo.md) ·
-[v0.7 release](docs/releases/v0.7.0.md) · [Changelog](CHANGELOG.md) · [License](LICENSE)
+[v0.7.1 patch](docs/releases/v0.7.1.md) · [v0.8 plan](docs/plans/v0.8-conversation-and-audit.md) · [Changelog](CHANGELOG.md) · [License](LICENSE)

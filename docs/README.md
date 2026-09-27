@@ -1,8 +1,13 @@
 # 文档索引与维护范围
 
-当前版本为 [v0.7.0](releases/v0.7.0.md)，合并交付 v0.6 审计研究与 v0.7 受限工作流比较。
+当前版本为 [v0.7.1](releases/v0.7.1.md)，修正对话入口与答案内审计；
+[v0.7.0](releases/v0.7.0.md) 的 v0.6 审计研究与 v0.7 受限工作流比较保留原始记录。
 Flash / Direct 保持默认；本轮没有证明更复杂流程的效果优势。逐次研究过程与修订见
 [实施记录](research-v0.6-v0.7-worklog.md)，当前结果以两份研究报告和版本说明为准。
+
+产品主入口是 **Ask（5173）**，Audit 属于回答的审阅模式；5174 是可选轻量工作台。
+v0.7.1 恢复这一关系，见 [对话优先的产品决定](decisions/2026-09-27-conversation-first-product.md)。
+真正的多轮上下文、历史保存与下一阶段审计改进见 [v0.8 详细计划](plans/v0.8-conversation-and-audit.md)，尚未实现。
 
 ## 使用与演示
 
@@ -20,6 +25,7 @@ Flash / Direct 保持默认；本轮没有证明更复杂流程的效果优势�
 | 入口 | 内容 |
 |---|---|
 | [整体路线](verification-roadmap.md) | 最终形态、当前边界及后续任务 |
+| [v0.8 详细计划](plans/v0.8-conversation-and-audit.md) | 对话记录、上下文追问、每轮审计、父句定位与限定语保真；含阶段交付和研究边界 |
 | [v0.6 协议](plans/v0.6-audit-reliability.md) | 数据、原子审计、MiniCheck、消融、校准与默认升级条件 |
 | [v0.6 研究报告](verification-v0.6-report.md) | 339 对固定目标、医学开发/转移、自然回答、消融、重复与校准的完整结果 |
 | [v0.7 协议](plans/v0.7-agent-comparison.md) | 同工具、同模型的三臂文献事实查询 |

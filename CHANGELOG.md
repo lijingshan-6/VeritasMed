@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.7.1 — 2026-09-27 (conversation-first product correction)
+
+- Restore Ask as the primary product entry. The lightweight audit/research workspace links back
+  to the full application and explains its limited scope.
+- Open answer audits inside Ask, retaining the question, complete source passages and composer.
+  Returning to the answer preserves its audit; a new question starts a fresh audit context.
+- Keep standalone Audit lab / Research as supporting tools. Use client-side navigation so moving
+  to the audit lab does not reload the app and erase the current answer. The v0.7.0 tag is unchanged.
+- Synchronize the product entry, startup instructions and version metadata. Define the v0.8 plan
+  for persistent conversations, contextual follow-ups and measured audit improvements; these remain
+  planned work. See [patch notes](docs/releases/v0.7.1.md) and [the v0.8 plan](docs/plans/v0.8-conversation-and-audit.md).
+
 ## 0.7.0 — 2026-09-27 (audits measured, workflows compared)
 
 - Add experimental atomic answer audits with parent/fragment bindings, explicit qualification

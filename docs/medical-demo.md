@@ -15,7 +15,7 @@
 
 ## 无密钥观看实际记录
 
-按 [README](../README.md#start-here-real-medical-audit-no-api-key) 安装轻量环境，运行：
+按 [README](../README.md#optional-lightweight-demo-real-medical-audit-no-api-key) 安装轻量环境，运行：
 
 ```sh
 python scripts/run_audit_demo.py
@@ -47,8 +47,9 @@ python scripts/run_demo.py --medical
 > glimepiride, liraglutide and sitagliptin while participants were taking their assigned medications,
 > and which population and analysis do these results describe?
 
-等实际回答结束，点击答案工具栏的 **Audit**，确认来源全部带入，保留 **Direct Flash**，
-点击 **Run new audit**。检索、回答和新审计都是真实执行，需要可用密钥；可能返回不同内容。
+等实际回答结束，点击答案工具栏的 **Audit**，在当前问答页查看原回答与全部来源，
+保留 **Direct Flash**，点击 **Run audit**。**Back to answer** 返回原答，底部仍可继续提问。
+检索、回答和新审计都是真实执行，需要可用密钥；可能返回不同内容。
 后续启动可用 `python scripts/run_demo.py --medical --skip-index`。
 
 ![当次真实 Ask 回答与检索片段](assets/v05-medical-ask.png)

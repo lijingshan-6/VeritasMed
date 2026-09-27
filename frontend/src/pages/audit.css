@@ -1,4 +1,8 @@
 .audit-page { height: 100%; overflow: auto; padding: 32px max(24px, calc((100vw - 1400px) / 2)); }
+.audit-page-embedded { padding-top: 22px; }
+.audit-page-embedded .audit-heading h1 { font-size: 28px; }
+.audit-page-embedded .audit-heading p { font: italic 18px/1.4 var(--serif); max-width: 900px; }
+.audit-page-embedded .audit-sources-column { max-height: calc(100vh - 240px); }
 .audit-heading { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 24px; }
 .audit-heading h1 { font: 38px/1.15 var(--serif); letter-spacing: -.025em; margin: 8px 0; }
 .audit-heading p, .audit-muted { color: var(--muted); font-size: 12px; }

@@ -53,9 +53,10 @@ function LinkedText({ text, spans, selected, onSelect }: {
 
 const emptyInput = (): AuditInput => ({ answer: '', strategy: 'direct', sources: [{ id: 'source-1', title: 'Source 1', text: '' }] })
 
-export function AuditPage() {
+export function AuditPage({ context, onClose }: { context?: AuditHandoff; onClose?: () => void } = {}) {
   const location = useLocation()
-  const incoming = (location.state as { handoff?: AuditHandoff } | null)?.handoff
+  const incoming = context ?? (location.state as { handoff?: AuditHandoff } | null)?.handoff
+  const embedded = !!context
   const [handoff, setHandoff] = useState<AuditHandoff | null>(incoming ?? null)
   const [catalogue, setCatalogue] = useState<Catalogue | null>(null)
   const [example, setExample] = useState('')
@@ -64,7 +65,7 @@ export function AuditPage() {
   const [selected, setSelected] = useState('')
   const [pending, setPending] = useState('')
   const [error, setError] = useState('')
-  const [formOpen, setFormOpen] = useState(!!incoming)
+  const [formOpen, setFormOpen] = useState(!!incoming && !embedded)
   const [draft, setDraft] = useState<AuditInput>(() => incoming?.input ?? emptyInput())
 
   function show(value: AuditRecord) {
@@ -78,6 +79,7 @@ export function AuditPage() {
     finally { setPending('') }
   }
   useEffect(() => {
+    if (embedded) return
     let alive = true
     auditExamples().then(async data => {
       if (!alive) return
@@ -93,8 +95,8 @@ export function AuditPage() {
     return () => { alive = false }
   }, [])
 
-  async function submit(event: FormEvent) {
-    event.preventDefault()
+  async function submit(event?: FormEvent) {
+    event?.preventDefault()
     const problem = inputProblem(draft)
     if (problem) { setError(problem); return }
     setPending('Auditing supplied texts…'); setRecord(null); setError('')
@@ -129,13 +131,20 @@ export function AuditPage() {
   const metaFailures = audit?.meta_text?.filter(m => m.status !== 'not_source_checked').length ?? 0
   const available = catalogue?.examples.filter(e => e.strategies[strategy]) ?? []
 
-  return <div className="audit-page">
+  return <div className={`audit-page${embedded ? ' audit-page-embedded' : ''}`}>
     <div className="audit-heading">
-      <div><div className="vm-eyebrow">VeritasMed / Textual evidence</div><h1>Inspect the answer. Follow the evidence.</h1>
-        <p>Every judgment belongs to a passage. Unchecked text remains visible.</p></div>
-      <button className="audit-button primary" disabled={!!pending} onClick={() => setFormOpen(v => !v)}>{formOpen ? 'Close input' : 'Audit your own answer'}</button>
+      <div><div className="vm-eyebrow">{embedded ? 'Ask / Audit this answer' : 'VeritasMed / Textual evidence'}</div><h1>{embedded ? 'Review the answer and its evidence.' : 'Inspect the answer. Follow the evidence.'}</h1>
+        <p>{embedded ? context.question : 'Every judgment belongs to a passage. Unchecked text remains visible.'}</p></div>
+      {embedded ? <button className="audit-button" onClick={onClose}>Back to answer</button>
+        : <button className="audit-button primary" disabled={!!pending} onClick={() => setFormOpen(v => !v)}>{formOpen ? 'Close input' : 'Audit your own answer'}</button>}
     </div>
-    <div className="audit-toolbar">
+    {embedded && <div className="audit-toolbar">
+      <label>Method <select aria-label="Answer audit method" disabled={!!pending} value={draft.strategy} onChange={e => setDraft({ ...draft, strategy: e.target.value as Strategy })}>{Object.entries(methodLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
+      <button className="audit-button primary" disabled={!!pending} onClick={() => void submit()}>{record ? 'Run audit again' : 'Run audit'}</button>
+      <button className="audit-button" disabled={!!pending} onClick={() => setFormOpen(v => !v)}>{formOpen ? 'Close inputs' : 'Inspect inputs'}</button>
+      <span className="audit-muted">{handoffLabel(context.kind)} · {context.input.sources.length} source passages · original answer retained</span>
+    </div>}
+    {!embedded && <div className="audit-toolbar">
       <span className="vm-eyebrow">Real saved runs</span>
       <label>Method <select aria-label="Audit method" disabled={!!pending} value={strategy} onChange={e => {
         const value = e.target.value as Strategy; setStrategy(value)
@@ -148,7 +157,7 @@ export function AuditPage() {
         setExample(e.target.value); void load(e.target.value, strategy)
       }}><option value="" disabled>Select a saved answer</option>{available.map(e => <option key={e.id} value={e.id} disabled={e.requires_download && !catalogue?.sources_downloaded}>{e.label} · {e.strategies[strategy]}</option>)}</select></label>
       <span className="audit-muted">Real saved inference · no new API call</span>
-    </div>
+    </div>}
     {catalogue && !catalogue.sources_downloaded && <div className="audit-notice">The medical demo is bundled and ready to replay. Optional nonmedical RAGTruth research examples require <code>python scripts/verification/answer_benchmark.py download</code>, then reload.</div>}
     {catalogue && !catalogue.examples.length && <div className="audit-notice">No saved run is available yet. You can audit supplied texts using the input below.</div>}
     {error && <div role="alert" className="audit-notice error">{error}</div>}
@@ -240,6 +249,11 @@ export function AuditPage() {
         </aside>
       </div>
     </>}
-    {!record && !pending && <div className="audit-empty"><div className="vm-eyebrow">A traceable judgment starts with the text</div><h2>Bring an answer and its sources.</h2><p>Load a real saved run above, or audit a new answer. Each claim links to exact passages; missing evidence and unfinished checks stay visible.</p></div>}
+    {embedded && !record && !formOpen && <>
+      {!pending && <p className="audit-muted">Run audit to check this answer against its retrieved passages. Opening this view makes no model call. You can return to the answer or continue asking below.</p>}
+      <div className="audit-layout"><section className="audit-answer-column"><div className="vm-eyebrow">Answer to audit · not yet checked</div><div className="audit-answer-text">{draft.answer}</div></section>
+        <aside className="audit-sources-column"><h2>Answer sources</h2>{draft.sources.map(source => <article className="audit-source" key={source.id}><h3>{source.title}</h3><div className="audit-source-text">{source.text}</div></article>)}</aside></div>
+    </>}
+    {!embedded && !record && !pending && <div className="audit-empty"><div className="vm-eyebrow">A traceable judgment starts with the text</div><h2>Bring an answer and its sources.</h2><p>Load a real saved run above, or audit a new answer. Each claim links to exact passages; missing evidence and unfinished checks stay visible.</p></div>}
   </div>
 }

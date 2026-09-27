@@ -62,4 +62,4 @@ Runtime is measured; equal per-call token caps do not mean equal actual computat
 
 See [label policy](../../../docs/verification-label-policy.md),
 [technical route](../../../docs/verification-roadmap.md), and
-[comparison report](../../../docs/verification-v0.5-diagnostics.md).
+[comparison report](../../../docs/reports/verification-v0.5-diagnostics.md).

@@ -44,10 +44,10 @@ The [v0.8 two-turn conversation export](../data/verification/v08/grade-conversat
 reuses this CC0 abstract and preserves two actual Ask answers plus one actual Direct audit.
 It is a product workflow example, not an independent medical evaluation or expert annotation.
 
-The [v0.8 offline localization replay](verification-v0.8-localization.md) reuses saved
+The [v0.8 offline localization replay](reports/verification-v0.8-localization.md) reuses saved
 SciFact/RAGTruth-derived Atomic outputs and the three GRADE demo audits. It changes
 position binding only, retains original model judgments, and creates no expert labels.
-The [exposure inventory](verification-v0.8-exposure.md) records source reuse and candidate
+The [exposure inventory](reports/verification-v0.8-exposure.md) records source reuse and candidate
 IDs; its mechanical candidate screen is not clinical annotation or a new gold dataset.
 
 ## MiniCheck

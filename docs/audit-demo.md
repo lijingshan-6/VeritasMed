@@ -154,12 +154,12 @@ Direct 保持默认；新增策略并不意味着可靠性已经提高。
 字符覆盖计数只反映多少非空白字符被有效定位的判断覆盖，不是语义完整性或正确率。
 界面不提供未经校准的置信度百分比，也不自动把来源差异升级成文献冲突。
 
-研究结果与限制见 [整段回答审计报告](verification-v0.5-answer-audit.md)；
+研究结果与限制见 [整段回答审计报告](reports/verification-v0.5-answer-audit.md)；
 运行与重算命令见 [工件说明](../data/verification/ragtruth_v1/README.md)。
 本轮改进预先登记在 [语境与元文本计划](plans/v0.5-context-audit.md)，实验命令见
 [Context 工件说明](../data/verification/context_v1/README.md)，结论与失败见
-[效果报告](verification-v0.5-context-audit.md)。
-最新 [具体错误诊断与 quote-v2 报告](verification-v0.5-specific-errors.md)区分位置成功和语义判断，
+[效果报告](reports/verification-v0.5-context-audit.md)。
+最新 [具体错误诊断与 quote-v2 报告](reports/verification-v0.5-specific-errors.md)区分位置成功和语义判断，
 提供 36 次整段/固定目标调用及全部结果；离线命令见 [quote-v2 工件](../data/verification/quote_v2/README.md)。
 
 
@@ -175,4 +175,4 @@ v2 先定位唯一父句，再绑定父句内的原始片段；限定语独立�
 **模型关系与完成状态分开。** 数字遗漏、缺失限定语锚点、复合解析或重复会保留为待查看；
 原模型 supported/contradicted/insufficient 仍可查，但不会因此计作已完成核查。
 机械规则只检查已返回的内容；无警报不能证明提取完整或语义正确。
-参见 [v0.8 研究报告](verification-v0.8-report.md)和[逐例开发观察](verification-v0.8-extraction-review.md)。
+参见 [v0.8 研究报告](reports/verification-v0.8-report.md)和[逐例开发观察](reports/verification-v0.8-extraction-review.md)。

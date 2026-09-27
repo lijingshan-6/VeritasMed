@@ -11,7 +11,7 @@ import time
 
 from fastapi import APIRouter, Query
 
-from medrag.agent.nodes import _get_retriever, _get_reranker
+from medrag.agent.nodes.retrieval import _get_retriever, _get_reranker
 from medrag.api._helpers import compute_highlights, payload_to_chunk
 from medrag.api.models import ChunkOut, SearchResponse
 

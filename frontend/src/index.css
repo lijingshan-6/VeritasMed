@@ -249,50 +249,25 @@ textarea, input, select { font-family: inherit; color: inherit; }
 
 @media (max-width: 1100px) {
   .vm-answer-grid { grid-template-columns: 230px minmax(0, 1fr) 290px !important; }
-  .vm-research-label { display: none; }
 }
-@media (max-width: 800px) {
-  .vm-header { height: auto !important; min-height: 60px; flex-wrap: wrap; gap: 8px !important; padding: 10px 12px !important; }
-  .vm-answer-page { overflow-y: auto !important; }
-  .vm-answer-grid { display: flex !important; flex-direction: column; overflow: visible !important; flex: none !important; }
-  .vm-answer-grid > * { overflow: visible !important; width: 100% !important; max-height: none !important; min-height: 200px; }
-  .vm-answer-grid > :nth-child(2) { order: -1; min-height: 380px; }
-}
-
-@media (max-width: 800px) {
-  .vm-answer-grid > * { flex: none !important; height: auto !important; }
-  .vm-answer-grid > :nth-child(2) > div { height: auto !important; overflow: visible !important; }
-}
-
-@media (max-width: 800px) {
-  .vm-explorer { flex-direction: column; overflow-y: auto !important; }
-  .vm-explorer > aside { width: 100% !important; overflow: visible !important; }
-  .vm-explorer > main { flex: none !important; overflow: visible !important; }
-  .vm-explorer > main > div { padding: 16px !important; }
-  .vm-explorer article { grid-template-columns: 24px minmax(0, 1fr) 64px !important; gap: 10px !important; }
-}
-.vm-conversation-picker { display: flex; align-items: center; gap: 6px; max-width: 320px; }
-.vm-conversation-picker select { max-width: 230px; min-width: 80px; }
+.vm-conversation-picker { display: flex; align-items: center; gap: 6px; max-width: 320px; min-width: 0; flex-shrink: 1; }
+.vm-conversation-picker select { max-width: 230px; min-width: 60px; flex-shrink: 1; }
+.vm-conversation-picker button { white-space: nowrap; }
 .vm-conversation-picker select, .vm-history-toolbar button, .vm-conversation-picker button, .vm-history-turns select { background: var(--panel); color: var(--ink); border: 1px solid var(--rule); border-radius: 6px; padding: 6px 8px; font-size: 12px; }
 .vm-conversation-history { padding: 16px 22px; border-bottom: 1px solid var(--rule); }
 .vm-history-toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .vm-history-toolbar .vm-eyebrow { margin-right: auto; }
-.vm-history-turns { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; max-height: 250px; overflow-y: auto; }
+.vm-history-turns { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; max-height: 180px; overflow-y: auto; }
 .vm-history-turns article { border: 1px solid var(--rule-soft); border-radius: 8px; background: var(--panel); }
 .vm-history-turns article.selected { border-color: var(--accent); background: var(--accent-soft); }
 .vm-turn-select { display: flex; flex-direction: column; gap: 6px; width: 100%; padding: 12px; background: none; border: 0; color: var(--ink); text-align: left; }
 .vm-turn-select strong { font-family: var(--serif); font-weight: 400; font-size: 17px; }
-.vm-turn-preview { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.vm-turn-preview { color: var(--muted); font-size: 12px; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .vm-history-turns label { display: block; padding: 0 12px 8px; font-size: 12px; }
 .vm-storage-warning { padding: 10px 18px; background: var(--error-soft); color: var(--error); }
 .vm-context-toggle { font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 4px; }
 .vm-context-details { font-size: 12px; color: var(--muted); padding: 12px; margin-bottom: 20px; border: 1px solid var(--rule); border-radius: 8px; }
 .vm-context-details pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 260px; overflow: auto; }
-.vm-conversation-picker { min-width: 0; flex-shrink: 1; }
-.vm-conversation-picker select { min-width: 60px; flex-shrink: 1; }
-.vm-conversation-picker button { white-space: nowrap; }
-.vm-turn-preview { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.vm-history-turns { max-height: 180px; }
 @media (max-width: 1200px) {
   .vm-header { gap: 10px !important; padding: 0 16px !important; }
   .vm-backend-status { display: none !important; }
@@ -301,6 +276,16 @@ textarea, input, select { font-family: inherit; color: inherit; }
 @media (max-width: 800px) {
   .vm-header { height: auto !important; min-height: 60px; flex-wrap: wrap; padding: 10px 12px !important; }
   .vm-history-turns { max-height: 140px; }
+  .vm-answer-page { overflow-y: auto !important; }
+  .vm-answer-grid { display: flex !important; flex-direction: column; overflow: visible !important; flex: none !important; }
+  .vm-answer-grid > * { overflow: visible !important; width: 100% !important; max-height: none !important; min-height: 200px; flex: none !important; height: auto !important; }
+  .vm-answer-grid > :nth-child(2) { order: -1; min-height: 380px; }
+  .vm-answer-grid > :nth-child(2) > div { height: auto !important; overflow: visible !important; }
+  .vm-explorer { flex-direction: column; overflow-y: auto !important; }
+  .vm-explorer > aside { width: 100% !important; overflow: visible !important; }
+  .vm-explorer > main { flex: none !important; overflow: visible !important; }
+  .vm-explorer > main > div { padding: 16px !important; }
+  .vm-explorer article { grid-template-columns: 24px minmax(0, 1fr) 64px !important; gap: 10px !important; }
 }
 
 

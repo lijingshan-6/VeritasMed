@@ -1,8 +1,8 @@
 # v0.7 controlled workflow comparison
 
 Protocol: [v0.7 implementation plan](../../../docs/plans/v0.7-agent-comparison.md).
-Interpretation: [research report](../../../docs/verification-v0.7-report.md).
-Every final case: [readable outputs](../../../docs/verification-v0.7-cases.md).
+Interpretation: [research report](../../../docs/reports/verification-v0.7-report.md).
+Every final case: [readable outputs](../../../docs/reports/verification-v0.7-cases.md).
 
 ## Task and grouping
 

@@ -95,7 +95,7 @@ Atomic v2 先定位唯一父句，再在该父句内定位片段；同一句重�
 ![真实回放中保留的部分回答](assets/v08-partial-answer.png)
 
 Direct / Flash 保持默认。旧 Atomic v1、历史失败与各版本报告保留，详见
-[v0.8 研究报告](verification-v0.8-report.md)、[定位重放](verification-v0.8-localization.md)及
-[来源盘点](verification-v0.8-exposure.md)。12 个上下文场景、构造题集与三组医学回放均不冒充
+[v0.8 研究报告](reports/verification-v0.8-report.md)、[定位重放](reports/verification-v0.8-localization.md)及
+[来源盘点](reports/verification-v0.8-exposure.md)。12 个上下文场景、构造题集与三组医学回放均不冒充
 新的独立临床黄金集。早期 [GRADE 两轮记录](../data/verification/v08/grade-conversation-smoke.json)
 作为历史功能开发示例继续保留。

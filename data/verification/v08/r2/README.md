@@ -73,7 +73,7 @@ jobs under an identical protocol. Prepare and run one phase at a time.
 
 The inference Python/library versions are recorded in `environment-flash.json`; endpoint,
 exact model name, generation settings and dispatch time are in each phase's dispatch file.
-This protocol was written before inference. The generated [report](../../../../docs/verification-v0.8-report.md)
+This protocol was written before inference. The generated [report](../../../../docs/reports/verification-v0.8-report.md)
 and `summary.json` describe the completed run without changing its inputs or labels.
 
 Completion: all 348 scheduled audit records are retained across the four phases, including

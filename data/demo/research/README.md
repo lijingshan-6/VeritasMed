@@ -10,7 +10,7 @@ three visible development examples are not scored as that final experiment.
 The examples come from the full second development round after the action-contract repair.
 The first round and all its failures remain in `data/verification/v07/development-original/`;
 this is not a per-example best-of-two selection. The final comparison was run once after the
-revised method freeze. See the [study report](../../../docs/verification-v0.7-report.md).
+revised method freeze. See the [study report](../../../docs/reports/verification-v0.7-report.md).
 
 After preparing the source cache, `python scripts/verification/v07_export.py export` rebuilds
 these files from the saved results without invoking a model. Replay needs no dataset cache,

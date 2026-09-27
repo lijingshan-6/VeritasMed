@@ -1,4 +1,4 @@
-"""LLM factory: dual-backend strategy with thinking control per node.
+"""LLM factory for the configured gateway, Ollama or legacy MiMo backend.
 
 Backend selection via environment variable LLM_BACKEND (default: mimo):
 
@@ -6,14 +6,14 @@ Backend selection via environment variable LLM_BACKEND (default: mimo):
   LLM_BACKEND=ollama  → ChatOllama pointing at the configured local model
   LLM_BACKEND=openhub → OpenAI-compatible gateway, with thinking enabled
 
-Two tiers per backend:
-  make_llm_fast()   → route, source identity selection, generate, summarize (direct output)
-  make_llm_think()  → grade, rewrite, check (review tier; direct output by default)
+Two graph roles (not necessarily different models):
+  make_llm_fast()   → route, source identity selection, generate, summarize
+  make_llm_think()  → grade, rewrite, check
   make_llm_think(reasoning=True) → optional Ollama reasoning, not used by default
 
-Note: MiMo's internal reasoning is disabled on both tiers via extra_body.
-The "think" tier still uses the heavier Pro model for better accuracy.
-Enabling reasoning (removing thinking.type=disabled) adds 15-27s per call.
+The current research profile uses openhub with Flash for both roles and enabled
+reasoning. There is no automatic Pro fallback. Only the legacy MiMo adapter
+selects separate fast/Pro names and disables internal reasoning on both.
 
 MiMo env vars (read from .env):
   OPENAI_BASE_URL   — MiMo API base URL
@@ -24,7 +24,7 @@ MiMo env vars (read from .env):
 Ollama env vars:
   OLLAMA_MODEL      — override model name (default: qwen3.5:9b)
 
-See docs/architecture.md §4.1.1 for design rationale.
+See docs/decisions/2026-09-23-flash-research-baseline.md for the model decision.
 """
 from __future__ import annotations
 
@@ -34,10 +34,6 @@ import os
 from medrag.config import DEFAULT_OLLAMA_MODEL, ollama_base_url
 
 logger = logging.getLogger(__name__)
-
-# ── Backend selection ──────────────────────────────────────────────────────────
-
-_BACKEND = os.environ.get("LLM_BACKEND", "mimo").strip().lower()
 
 # ── MiMo model names ───────────────────────────────────────────────────────────
 _MIMO_FAST  = os.environ.get("MIMO_MODEL_FAST",  "mimo-v2.5")
@@ -69,7 +65,7 @@ def _mimo_api_key() -> str:
 # ── Internal factory ───────────────────────────────────────────────────────────
 
 def _make_llm(thinking: bool, *, reasoning: bool = False, structured: bool | dict = False):
-    """Shared factory — `thinking` selects tier (fast=OFF / think=ON/Pro)."""
+    """Shared factory; graph role selects a separate model only for legacy MiMo."""
     temp = 0.6 if thinking else 0.2
     model = _MIMO_THINK if thinking else _MIMO_FAST
 

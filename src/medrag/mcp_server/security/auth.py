@@ -1,8 +1,7 @@
 """Local token authentication for MedRAG-Agent MCP server.
 
-In production the MCP server runs on localhost, so a pre-shared token
-(MEDRAG_LOCAL_TOKEN env var) is sufficient — it prevents accidental
-exposure if the port is accidentally bound to 0.0.0.0.
+The default MCP transport is local stdio. MEDRAG_LOCAL_TOKEN is an optional
+pre-shared tool argument, not a public deployment authentication system.
 
 Token is compared in constant time to prevent timing attacks.
 If MEDRAG_LOCAL_TOKEN is not set, authentication is DISABLED

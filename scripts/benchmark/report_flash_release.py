@@ -17,7 +17,7 @@ from report_model_comparison import recompute_declared_questions  # noqa: E402
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--directory", type=Path, required=True)
-    parser.add_argument("--case-name", required=True, help="Markdown filename stem under docs/")
+    parser.add_argument("--case-name", required=True, help="Markdown filename stem under docs/reports/")
     args = parser.parse_args()
     args.directory = ROOT / args.directory
     questions = ROOT / "data/benchmark/veritasmed_v1_1/questions.jsonl"
@@ -65,7 +65,7 @@ def main():
     }
     for name, payload in (("flash_scored.json", report), ("summary.json", summary)):
         (args.directory / name).write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
-    (ROOT / f"docs/{args.case_name}.md").write_text(
+    (ROOT / f"docs/reports/{args.case_name}.md").write_text(
         render_cases(report, questions, version="v0.4-flash"), encoding="utf-8", newline="\n")
     print(json.dumps(summary, indent=2))
 

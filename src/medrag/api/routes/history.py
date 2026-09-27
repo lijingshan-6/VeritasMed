@@ -1,5 +1,6 @@
 """
-GET /api/history/{thread_id} — session history from SqliteSaver.
+Legacy raw checkpoint lookup. Browser conversations live in IndexedDB and
+cannot be recovered by passing their public ID to this endpoint.
 """
 from __future__ import annotations
 
@@ -13,7 +14,8 @@ from medrag.api.models import HistoryResponse, HistoryTurn
 router = APIRouter()
 
 
-@router.get("/api/history/{thread_id}", response_model=HistoryResponse)
+@router.get("/api/history/{thread_id}", response_model=HistoryResponse, deprecated=True,
+            description="Legacy raw checkpoint lookup, not browser conversation history. Public Ask IDs are not checkpoint IDs; use conversation export/import in the browser.")
 async def get_history(thread_id: str) -> HistoryResponse:
     config = {"configurable": {"thread_id": thread_id}}
 

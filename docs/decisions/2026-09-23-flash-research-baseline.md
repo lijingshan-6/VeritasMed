@@ -16,12 +16,12 @@ Pro 的 token 成本过高，不适合持续迭代。本决定替代此前“不
 - Ollama `qwen3.5:9b` 仍是已有本地演示路径；未指定后端时的代码默认值仍为 MiMo。
   当前研究配置通过 `.env` 显式选择 OpenHub/Flash，不能把这三件事混为一个默认值。
 
-配置与运行入口见 [演示及研究配置](../demo.md#flash-research-profile)。
+配置与运行入口见 [演示及研究配置](../configuration.md#flash-research-profile)。
 OpenHub ID 只是网关提供的名称，不能独立确认底层模型权重。
 
 ## 如何理解现有结果
 
-[Pro/Flash 对比报告](../agent-model-comparison-report.md) 和全部原始答案继续保留。
+[Pro/Flash 对比报告](../reports/agent-model-comparison-report.md) 和全部原始答案继续保留。
 选择 Flash 不代表它已经与 Pro 等效，也不改变任何失败判定。Qwen 的历史修复成绩
 同样不能写成 Flash 的成绩。模型自检通过不是独立的正确率评估。
 
@@ -47,8 +47,8 @@ OpenHub ID 只是网关提供的名称，不能独立确认底层模型权重。
 
 ## 同日实施进展与端点变更
 
-上述修复已进入开发迭代，完整记录见 [Flash 工作记录](../agent-v0.4-flash-worklog.md) 和
-[效果报告](../agent-v0.4-flash-report.md)。关键数字、人群和方法事实目前采用选定原文句子
+上述修复已进入开发迭代，完整记录见 [Flash 工作记录](../archive/worklogs/agent-v0.4-flash-worklog.md) 和
+[效果报告](../reports/agent-v0.4-flash-report.md)。关键数字、人群和方法事实目前采用选定原文句子
 呈现，单独要求的设计解释仍由模型生成；这是为保留事实边界接受的可读性取舍。
 
 OpenHub 在第四轮完整开发尝试中余额不足，五个失败请求完整保留。用户随后提供
@@ -60,5 +60,5 @@ high 和原有输出上限；从新的一轮完整开发集开始，明确记录
 
 当前 Flash 实现已完成开发 15/15、独立重复 10/10，以及冻结后首次保留测试 31/35。
 四道测试失败原样保留；本轮没有改动黄金答案或评分规则，也没有再调用 Pro。
-完整证据、耗时与限制见 [最终效果报告](../agent-v0.4-flash-report.md)。35 道保留题现已暴露，
+完整证据、耗时与限制见 [最终效果报告](../reports/agent-v0.4-flash-report.md)。35 道保留题现已暴露，
 后续只能作为回归题，新的泛化主张需要独立新题。交付与发布状态见 [v0.4.0 说明](../releases/v0.4.0.md)。

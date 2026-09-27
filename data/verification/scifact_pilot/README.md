@@ -51,4 +51,4 @@ percentage on a medical answer.
 
 See [technical route](../../../docs/verification-roadmap.md),
 [implementation plan](../../../docs/plans/v0.5-text-verification.md) and
-[pilot report](../../../docs/verification-v0.5-pilot.md).
+[pilot report](../../../docs/reports/verification-v0.5-pilot.md).

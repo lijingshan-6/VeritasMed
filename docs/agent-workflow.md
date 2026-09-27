@@ -28,6 +28,11 @@ Guided mode uses labelled browser fixtures and does not execute this graph.
 See the [conversation guide](conversation-guide.md) for history, import/export, the no-key
 saved-inference mode and full Ask setup.
 
+The optional MCP `ask_agent` entry also starts a fresh graph checkpoint per call. Its
+`thread_id` is a caller label, not browser conversation memory; it does not run the bounded
+history resolver. The legacy `/api/history/{thread_id}` endpoint is deprecated because it
+reads raw checkpoints, while browser history is stored in IndexedDB. See the [code map](architecture.md).
+
 As of 2026-09-23, the research baseline is Flash, currently `DeepSeek-V4.1-Flash`
 through the user's compatible gateway; see the [model decision](decisions/2026-09-23-flash-research-baseline.md).
 The workflow below describes the current implementation, including its remaining limitations.
@@ -165,7 +170,7 @@ reasoning effort `high`, a 32,768-token output ceiling per call, streamed transp
 240-second client timeout. Structured calls request JSON-object output; the checker schema
 remains in the prompt. The output ceiling is not actual usage. The research runner shares
 CUDA embedding/reranking models across at most three question jobs and defaults to Flash only.
-See [configuration and commands](demo.md#flash-research-profile).
+See [configuration and commands](configuration.md#flash-research-profile).
 
 The local alternative and historical repair profile use Ollama `qwen3.5:9b`, with an 8,192-token context and a 4,096-token output
 limit for both tiers. Routing, source-identity selection and generation use direct output at
@@ -185,13 +190,13 @@ steps; an already running synchronous model request may finish in the background
 
 ## Results and limitations
 
-The first Qwen candidate achieved 9/15 strict development passes; see the [v0.4 report](agent-v0.4-report.md).
-The independent Qwen repaired run passes 15/15; see the [repair report](agent-v0.4-repaired-report.md) and [worklog](agent-v0.4-repair-worklog.md).
-The later [Pro/Flash comparison](agent-model-comparison-report.md) records distinct results and
+The first Qwen candidate achieved 9/15 strict development passes; see the [v0.4 report](reports/agent-v0.4-report.md).
+The independent Qwen repaired run passes 15/15; see the [repair report](reports/agent-v0.4-repaired-report.md) and [worklog](archive/worklogs/agent-v0.4-repair-worklog.md).
+The later [Pro/Flash comparison](reports/agent-model-comparison-report.md) records distinct results and
 shared defects in source filtering, requirements, gap rendering and self-checks. Changing the
 selected baseline to Flash does not resolve those defects or transfer Qwen's score to Flash.
-Current Flash changes and measured outcomes are tracked in the [convergence report](agent-v0.4-flash-report.md).
-The [v0.3 report](agent-v0.3-report.md) remains the published baseline.
+Current Flash changes and measured outcomes are tracked in the [convergence report](reports/agent-v0.4-flash-report.md).
+The [v0.3 report](reports/agent-v0.3-report.md) remains the published baseline.
 After final Flash development (15/15) and independent repetition (10/10), the implementation
 was frozen before its first 35-question held-out run: 31/35 strict passes, with no execution
 errors or observed unsupported material additions. Four answers omit required results or
@@ -200,6 +205,6 @@ those failures. No inference changes followed the test; these questions are now 
 and cannot serve as unseen evidence for later fixes.
 
 - [Documentation index and maintained scope](README.md)
-- [Initial v0.4 implementation plan (historical)](superpowers/plans/2026-09-22-veritasmed-agent-v0.4.md)
-- [Demonstration guide](demo.md)
-- [Frozen benchmark](benchmark-v1.1-report.md)
+- [Initial v0.4 implementation plan (historical)](archive/plans/2026-09-22-veritasmed-agent-v0.4.md)
+- [Demonstration guide](configuration.md)
+- [Frozen benchmark](reports/benchmark-v1.1-report.md)

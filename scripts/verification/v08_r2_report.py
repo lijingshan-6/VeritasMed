@@ -1,22 +1,74 @@
 """Summarize saved R2 calls, with source-group paired descriptive intervals."""
 import argparse
 from collections import Counter, defaultdict
+import hashlib
 import json
 from pathlib import Path
 import random
 import statistics
+
+from v08_r2_metrics import score
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "data/verification/v08/r2"
 METHODS = ["direct", "atomic_v1", "atomic_v2"]
 
 
-def rows(phase):
+def object_hash(value):
+    raw = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(raw.encode("utf8")).hexdigest()
+
+
+def phase_records(phase, cases, manifest_sha):
+    """Recompute metrics from saved judgments, respecting the frozen schedule.
+
+    A duplicate cannot stand in for a missing job. Cached metrics are checked,
+    not silently trusted or overwritten; this function makes no model calls.
+    """
+    protocol = json.loads((OUT / phase / "protocol.json").read_text(encoding="utf8"))
+    if protocol["phase"] != phase or protocol["manifest_sha256"] != manifest_sha:
+        raise ValueError(f"{phase}: input manifest differs from the saved protocol")
+    metric_path = "scripts/verification/v08_r2_metrics.py"
+    if object_hash((ROOT / metric_path).read_text(encoding="utf8")) != protocol["code_hashes"][metric_path]:
+        raise ValueError("Metric definition differs from the frozen run; use its original source")
+    if phase == "final":
+        frozen = json.loads((OUT / "method-freeze.json").read_text(encoding="utf8"))
+        if frozen["manifest_sha256"] != manifest_sha or frozen["code_hashes"] != protocol["code_hashes"]:
+            raise ValueError("Final protocol differs from the pre-inference freeze")
+    def key(row):
+        return row["case_id"], row["method"], row["attempt"]
+    schedule = {key(job) for job in protocol["schedule"]}
+    if len(schedule) != len(protocol["schedule"]):
+        raise ValueError(f"{phase}: duplicate scheduled job")
     file = OUT / phase / "predictions.jsonl"
     if not file.exists():
-        return []
+        return [], len(schedule)
+    records, seen = [], set()
     with file.open(encoding="utf8") as stream:
-        return [json.loads(line) for line in stream if line.strip()]
+        for line in stream:
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            job = key(row)
+            if job not in schedule or job in seen:
+                raise ValueError(f"{phase}: duplicate or unscheduled prediction {job}")
+            seen.add(job)
+            case, audit = cases[row["case_id"]], row["audit"]
+            expected_input = object_hash(case["input"])
+            if row["input_sha256"] != expected_input or case["input_sha256"] != expected_input:
+                raise ValueError(f"{job}: input fingerprint mismatch")
+            if row["group_id"] != case["group_id"] or audit["strategy"] != row["method"]:
+                raise ValueError(f"{job}: wrong source group or audit method")
+            def text_hash(text):
+                return hashlib.sha256(text.encode("utf8")).hexdigest()
+            if (audit["answer_sha256"] != text_hash(case["input"]["answer"])
+                    or audit["source_hashes"] != {s["id"]: text_hash(s["text"]) for s in case["input"]["sources"]}):
+                raise ValueError(f"{job}: audit belongs to different answer/source texts")
+            recomputed = score(case, audit)
+            if recomputed != row["metrics"]:
+                raise ValueError(f"{job}: cached metrics differ from the frozen scoring rule")
+            records.append({**row, "metrics": recomputed})
+    return records, len(schedule)
 
 
 def counts(records, cases):
@@ -116,8 +168,8 @@ def markdown(result):
         "Atomic v2 把更多解释条件接回原文，也增加了需要查看的提取状态。",
         "这里没有新的专家 gold，不据构造题或字符共现宣称医学核查准确率提高。",
         "",
-        "本报告由保存的输出重算；[协议与清单](../data/verification/v08/r2/README.md)、",
-        "[完整汇总](../data/verification/v08/r2/summary.json)、",
+        "本报告由保存的输出重算；[协议与清单](../../data/verification/v08/r2/README.md)、",
+        "[完整汇总](../../data/verification/v08/r2/summary.json)、",
         "[六例 AI 开发复核](verification-v0.8-extraction-review.md)可逐项查看。",
         "",
         "## 研究分层与默认决定",
@@ -262,7 +314,7 @@ def markdown(result):
         "后续需要新的语义标签和明确的失败任务，才能比较提取保真、补检索和修复。",
         "目前不发布校准可信度百分比、不自动裁决跨研究冲突、不以核查器自己的判断证明修复有效。",
         "",
-        "[对话指南](conversation-guide.md) · [版本说明](releases/v0.8.0.md) · [复现](research-reproduction.md)",
+        "[对话指南](../conversation-guide.md) · [版本说明](../releases/v0.8.0.md) · [复现](../research-reproduction.md)",
         "",
     ]
     return "\n".join(lines)
@@ -277,8 +329,10 @@ def main():
     cases = {c["id"]: c for c in manifest["cases"] + manifest["natural_cases"]}
     phases = {}
     all_rows = []
-    for phase, expected in [("development", 144), ("natural", 36), ("repeat", 24), ("final", 144)]:
-        records = rows(phase)
+    phase_rows = {}
+    for phase in ("development", "natural", "repeat", "final"):
+        records, expected = phase_records(phase, cases, object_hash(manifest))
+        phase_rows[phase] = records
         all_rows.extend(records)
         phases[phase] = {
             "planned": expected, "recorded": len(records),
@@ -289,7 +343,7 @@ def main():
     repeats = []
     for case_id in manifest["repeat_case_ids"]:
         for method in manifest["repeat_methods"]:
-            records = [r for r in rows("development") + rows("repeat")
+            records = [r for r in phase_rows["development"] + phase_rows["repeat"]
                        if r["case_id"] == case_id and r["method"] == method]
             records.sort(key=lambda r: r["attempt"])
             repeats.append({"case_id": case_id, "method": method, "attempts": [

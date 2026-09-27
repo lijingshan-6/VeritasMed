@@ -164,7 +164,7 @@ class TestNodeTransformations:
             content="aspirin COX inhibitor prostaglandin synthesis"
         )
 
-        with patch("medrag.agent.nodes.make_llm_think", return_value=mock_llm):
+        with patch("medrag.agent.nodes.planning.make_llm_think", return_value=mock_llm):
             state = {**sample_state, "iterations": 1}
             result = rewrite_query(state)
 
@@ -191,7 +191,7 @@ class TestNodeTransformations:
             content='{"type": "factual", "reason": "single fact requested"}'
         )
 
-        with patch("medrag.agent.nodes.make_llm_fast", return_value=mock_llm):
+        with patch("medrag.agent.nodes.planning.make_llm_fast", return_value=mock_llm):
             result = route_query(sample_state)
 
         assert result["iterations"] == 0
@@ -205,7 +205,7 @@ class TestNodeTransformations:
             content='{"type": "factual", "reason": "single fact"}'
         )
 
-        with patch("medrag.agent.nodes.make_llm_fast", return_value=mock_llm):
+        with patch("medrag.agent.nodes.planning.make_llm_fast", return_value=mock_llm):
             result = route_query(sample_state)
 
         assert result["original_query"] == sample_state["query"]
@@ -226,7 +226,7 @@ class TestNodeTransformations:
             )
         )
 
-        with patch("medrag.agent.nodes.make_llm_fast", return_value=mock_llm):
+        with patch("medrag.agent.nodes.planning.make_llm_fast", return_value=mock_llm):
             result = route_query(sample_state)
 
         assert result["search_queries"] == [
@@ -255,7 +255,7 @@ class TestNodeTransformations:
             ),
         ]
 
-        with patch("medrag.agent.nodes.make_llm_fast", return_value=mock_llm):
+        with patch("medrag.agent.nodes.planning.make_llm_fast", return_value=mock_llm):
             result = route_query(sample_state)
 
         assert mock_llm.invoke.call_count == 2
@@ -278,7 +278,7 @@ class TestNodeTransformations:
             "query": "Does the supplied study establish fewer biopsies or better outcomes?",
         }
 
-        with patch("medrag.agent.nodes.make_llm_fast", return_value=mock_llm):
+        with patch("medrag.agent.nodes.planning.make_llm_fast", return_value=mock_llm):
             result = route_query(state)
 
         assert result["answer_mode"] == "evidence_boundary"
@@ -300,7 +300,7 @@ class TestNodeTransformations:
             "query": "What structural changes did the DYNAMITE study report?",
         }
 
-        with patch("medrag.agent.nodes.make_llm_fast", return_value=mock_llm):
+        with patch("medrag.agent.nodes.planning.make_llm_fast", return_value=mock_llm):
             result = route_query(state)
 
         assert result["answer_mode"] == "direct"
@@ -329,7 +329,7 @@ class TestNodeTransformations:
             ),
         }
 
-        with patch("medrag.agent.nodes.make_llm_fast", return_value=mock_llm):
+        with patch("medrag.agent.nodes.planning.make_llm_fast", return_value=mock_llm):
             result = route_query(state)
 
         assert result["source_scope"] == "single_study"
@@ -356,7 +356,7 @@ class TestNodeTransformations:
             ),
         }
 
-        with patch("medrag.agent.nodes.make_llm_fast", return_value=mock_llm):
+        with patch("medrag.agent.nodes.planning.make_llm_fast", return_value=mock_llm):
             result = route_query(state)
 
         assert result["source_scope"] == "single_study"
@@ -378,7 +378,7 @@ class TestNodeTransformations:
             "search_queries": ["component a", "component b"],
         }
 
-        with patch("medrag.agent.nodes._get_retriever", return_value=retriever):
+        with patch("medrag.agent.nodes.retrieval._get_retriever", return_value=retriever):
             result = hybrid_retrieve(state)
 
         assert [call.args[0] for call in retriever.retrieve.call_args_list] == [
@@ -420,8 +420,8 @@ class TestNodeTransformations:
             ],
         }
 
-        with patch("medrag.agent.nodes._get_reranker", return_value=reranker), patch(
-            "medrag.agent.nodes.make_llm_fast", return_value=selector,
+        with patch("medrag.agent.nodes.retrieval._get_reranker", return_value=reranker), patch(
+            "medrag.agent.nodes.retrieval.make_llm_fast", return_value=selector,
         ):
             result = rerank_chunks(state)
 
@@ -457,7 +457,7 @@ class TestNodeTransformations:
             content="Aspirin inhibits COX-1 and COX-2 enzymes."   # plain text, not JSON
         )
 
-        with patch("medrag.agent.nodes.make_llm_fast", return_value=mock_llm):
+        with patch("medrag.agent.nodes.generation.make_llm_fast", return_value=mock_llm):
             result = generate_answer_node(sample_state)
 
         # Should not raise; uncited claims are dropped → disclaimer
@@ -479,7 +479,7 @@ class TestNodeTransformations:
             "answer_requirements": ["Cover both comparison arms"],
         }
 
-        with patch("medrag.agent.nodes.make_llm_fast", return_value=mock_llm):
+        with patch("medrag.agent.nodes.generation.make_llm_fast", return_value=mock_llm):
             result = generate_answer_node(state)
 
         messages = mock_llm.invoke.call_args.args[0]
@@ -512,7 +512,7 @@ class TestNodeTransformations:
             "retrieved_chunks": [chunk],
         }
 
-        with patch("medrag.agent.nodes.make_llm_fast", return_value=mock_llm):
+        with patch("medrag.agent.nodes.generation.make_llm_fast", return_value=mock_llm):
             result = generate_answer_node(state)
 
         assert result["evidence_status"] == "insufficient"
@@ -537,7 +537,7 @@ class TestNodeTransformations:
             "answer": "The treatment was associated with improvement [PMID:1].",
         }
 
-        with patch("medrag.agent.nodes.make_llm_think", return_value=mock_llm):
+        with patch("medrag.agent.nodes.checking.make_llm_think", return_value=mock_llm):
             result = check_faithfulness(state)
 
         messages = mock_llm.invoke.call_args.args[0]
@@ -563,7 +563,7 @@ class TestNodeTransformations:
             content='{"relevant": true, "score": 0.4, "reason": "partial", "rewrite_hint": ""}'
         )
 
-        with patch("medrag.agent.nodes.make_llm_think", return_value=mock_llm):
+        with patch("medrag.agent.nodes.grading.make_llm_think", return_value=mock_llm):
             result = grade_relevance(sample_state)
 
         # relevant=true should bump score to at least GRADE_THRESHOLD
@@ -574,14 +574,14 @@ class TestNodeTransformations:
         mock_llm = MagicMock()
         mock_llm.invoke.return_value = MagicMock(content='{"relevant":true,"score":0.95}')
         requirements = ["Report treatment time", "Report toxicity"]
-        with patch("medrag.agent.nodes.make_llm_think", return_value=mock_llm):
+        with patch("medrag.agent.nodes.grading.make_llm_think", return_value=mock_llm):
             result = grade_relevance({**sample_state, "answer_requirements": requirements})
         assert result["answer_requirements"] == requirements
         assert [c["requirement"] for c in result["answer_components"]] == requirements
         assert all(c["status"] == "missing" for c in result["answer_components"])
 
     def test_requirement_filter_drops_details_unrelated_to_question(self):
-        from medrag.agent.nodes import _filter_requirements_for_query
+        from medrag.agent.nodes.planning import _filter_requirements_for_query
 
         result = _filter_requirements_for_query(
             "How did AI change prostate MRI and breast ultrasound diagnostic performance?",
@@ -598,7 +598,7 @@ class TestNodeTransformations:
         ]
 
     def test_requirement_filter_drops_unasked_generic_evidence_boundary(self):
-        from medrag.agent.nodes import _filter_requirements_for_query
+        from medrag.agent.nodes.planning import _filter_requirements_for_query
 
         result = _filter_requirements_for_query(
             "In the cross-sectional pilot, what cardiac MRI findings were reported?",
@@ -610,107 +610,10 @@ class TestNodeTransformations:
 
         assert result == ["Report the cardiac MRI findings from the pilot"]
 
-    def test_requirement_expansion_restores_statistics_from_supporting_sentence(self):
-        from medrag.agent.nodes import _expand_requirements_from_context
 
-        chunk = RetrievedChunk(
-            "pubmed:1:0",
-            (
-                "The primary endpoint was the difference in mean device area at 9 months. "
-                "At 9 months, mean device area increased to 8.53 mm2 "
-                "(absolute difference 0.37 mm2; p = 0.010). "
-                "Four patients had events by 24 months."
-            ),
-            0.9,
-            {"source": "pubmed", "doc_id": "1"},
-        )
 
-        result = _expand_requirements_from_context(
-            ["Mean device area increased by 0.37 mm2 at 9 months"],
-            [chunk],
-        )
 
-        assert "p = 0.010" in result[0]
 
-    def test_requirement_expansion_uses_shared_number_to_restore_confidence_interval(self):
-        from medrag.agent.nodes import _expand_requirements_from_context
-
-        chunk = RetrievedChunk(
-            "pubmed:1:0",
-            (
-                "The nomogram reported an AUC of 0.866 (95% CI 0.837-0.895), "
-                "sensitivity of 70.33%, and specificity of 85.89%."
-            ),
-            0.9,
-            {"source": "pubmed", "doc_id": "1"},
-        )
-
-        result = _expand_requirements_from_context(
-            ["Discrimination: area under the curve = 0.866"],
-            [chunk],
-            query="What discrimination did the thrombosis nomogram report?",
-        )
-
-        assert "95% CI 0.837-0.895" in result[0]
-
-    def test_how_requirement_expansion_includes_adjacent_method_sentence(self):
-        from medrag.agent.nodes import _expand_requirements_from_context
-
-        chunk = RetrievedChunk(
-            "pubmed:1:0",
-            (
-                "Through-plane and in-plane acceleration techniques are combined. "
-                "Multiple image-shift strategies and 2D Hadamard encoding reduce slice leakage. "
-                "Tests reduced scan time and increased SNR."
-            ),
-            0.9,
-            {"source": "pubmed", "doc_id": "1"},
-        )
-
-        result = _expand_requirements_from_context(
-            ["Multiple image-shift strategies and 2D Hadamard encoding reduce slice leakage"],
-            [chunk],
-            query="How did the fMRI acceleration method work?",
-        )
-
-        assert "Through-plane and in-plane" in result[0]
-
-    def test_requirement_expansion_preserves_inequalities_between_html_tags(self):
-        from medrag.agent.nodes import _expand_requirements_from_context
-
-        chunk = RetrievedChunk(
-            "pubmed:1:0",
-            "Specificity increased to 69.2% (<i>P</i> < .001). <b>Keywords:</b> MRI.",
-            0.9,
-            {"source": "pubmed", "doc_id": "1"},
-        )
-        result = _expand_requirements_from_context(["Specificity increased to 69.2%"], [chunk])
-
-        assert result == ["Specificity increased to 69.2% (P < .001)."]
-
-    def test_how_requirement_expansion_never_crosses_source_boundary(self):
-        from medrag.agent.nodes import _expand_requirements_from_context
-
-        other = RetrievedChunk(
-            "pubmed:2:0",
-            "A different method used an unrelated Bayesian framework.",
-            0.8,
-            {"source": "pubmed", "doc_id": "2"},
-        )
-        target = RetrievedChunk(
-            "pubmed:1:0",
-            "Multiple image-shift strategies and 2D Hadamard encoding reduce slice leakage.",
-            0.9,
-            {"source": "pubmed", "doc_id": "1"},
-        )
-
-        result = _expand_requirements_from_context(
-            ["Multiple image-shift strategies and 2D Hadamard encoding reduce slice leakage"],
-            [other, target],
-            query="How did the fMRI acceleration method work?",
-        )
-
-        assert "Bayesian framework" not in result[0]
 
 
 # ── Test 4: Memory helpers ────────────────────────────────────────────────────

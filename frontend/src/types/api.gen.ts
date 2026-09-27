@@ -65,7 +65,11 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Get History */
+        /**
+         * Get History
+         * @deprecated
+         * @description Legacy raw checkpoint lookup, not browser conversation history. Public Ask IDs are not checkpoint IDs; use conversation export/import in the browser.
+         */
         get: operations["get_history_api_history__thread_id__get"];
         put?: never;
         post?: never;

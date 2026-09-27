@@ -86,7 +86,7 @@ def main():
     import pyarrow  # noqa: F401
     import sentence_transformers  # noqa: F401
     from medrag.agent.graph import app
-    from medrag.agent.nodes import _get_retriever, _get_reranker
+    from medrag.agent.nodes.retrieval import _get_retriever, _get_reranker
     from medrag.benchmark.agent_runner import run_agent_question
     from medrag.config import get_qdrant_client
 

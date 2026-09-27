@@ -100,7 +100,7 @@ def main():
             "The decisions below are Codex source-first adjudications, not independent clinician reviews.",
             "The code includes the archived uncommitted gateway adapter and runner; exact runtime hashes are in the raw artifact.\n"
             "The decisions below are Codex source-first adjudications, not independent clinician reviews.")
-        Path(f"docs/{args.case_prefix}-{label}-cases.md").write_text(cases, encoding="utf-8", newline="\n")
+        Path(f"docs/reports/{args.case_prefix}-{label}-cases.md").write_text(cases, encoding="utf-8", newline="\n")
     if configs[0] != configs[1]:
         raise ValueError("Models were evaluated with different implementations or common settings")
     paired = [{"id": qid, "pro_pass": rows_by_model["pro"][qid]["metrics"]["strict_pass"],

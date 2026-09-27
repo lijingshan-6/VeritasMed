@@ -6,12 +6,12 @@ Tools exposed to Claude Desktop / Claude Code:
   3. evaluate_query      — grade how well a set of chunks answers a query (no generation)
   4. search_visual       — stub for future visual / image search capability
 
-Security middleware (applied in order):
+Request controls (MCP only, not the web API):
   1. auth            — MEDRAG_LOCAL_TOKEN env var (disabled if not set → dev mode)
   2. rate_limit      — 30 rpm global, 10 rpm for ask_agent
-  3. injection_guard — prompt injection detection before retrieval
-  4. pii             — PII redaction in audit log (query hash only stored)
-  5. audit           — structured JSON-Lines to data/logs/audit.jsonl
+  3. pii             — pattern-based query redaction before retrieval
+  4. injection_guard — pattern detection / query wrapping, not complete protection
+  Audit logging wraps execution: query hash, outcome and timing; not raw query text.
 
 Run for local development (FastMCP 3.x — use fastmcp CLI, not mcp CLI):
     fastmcp dev inspector src/medrag/mcp_server/server.py --with-editable .
@@ -32,6 +32,7 @@ import sys
 import threading
 import time
 from typing import Any
+from uuid import uuid4
 
 # Force UTF-8 for Windows terminals
 if sys.stdout.encoding and sys.stdout.encoding.lower() not in ("utf-8", "utf-8-sig"):
@@ -45,7 +46,8 @@ from medrag.config import load_project_env
 
 load_project_env()
 
-from medrag.agent.nodes import _get_retriever, _get_reranker
+from medrag.agent.nodes.retrieval import _get_retriever, _get_reranker
+from medrag.agent.invocation import build_initial_state
 from medrag.mcp_server.security import (
     AuthError,
     InjectionGuardError,
@@ -108,9 +110,9 @@ class _UsageAccumulator(BaseCallbackHandler):
 def _security_check(query: str, token: str, is_generate: bool = False) -> str:
     """Run auth → rate_limit → pii_redact → injection_guard; return sanitised query.
 
-    PII redaction happens before the query reaches any LLM or retrieval call,
-    satisfying HIPAA/GDPR data-minimisation requirements.  The audit log still
-    hashes the *original* query (caller's responsibility) for correlation.
+    Pattern-based redaction happens before retrieval or generation. It can miss
+    identifying text and is not a privacy/compliance guarantee. The audit log
+    hashes the original query (caller's responsibility) for correlation.
 
     Raises AuthError, RateLimitError, or InjectionGuardError on violation.
     """
@@ -121,10 +123,10 @@ def _security_check(query: str, token: str, is_generate: bool = False) -> str:
 
 
 @contextlib.contextmanager
-def _audit_tool(name: str, query: str):
+def _audit_tool(name: str, query: str, success_status: str = "ok"):
     """Context manager: measures latency and calls log_tool_call on exit."""
     t0 = time.perf_counter()
-    status = "ok"
+    status = success_status
     try:
         yield
     except (AuthError, RateLimitError, InjectionGuardError) as exc:
@@ -240,34 +242,11 @@ def _ask_agent_sync(
     from medrag.agent.graph import app
 
     config = {
-        "configurable": {"thread_id": thread_id},
+        "configurable": {"thread_id": str(uuid4())},
+        "metadata": {"public_thread_id": thread_id},
         "callbacks": [usage],
     }
-    initial_state = {
-        "query": sanitised,
-        "original_query": "",
-        "query_type": "",
-        "answer_components": [],
-        "answer_claims": [],
-        "binding_issues": [],
-        "repair_component_ids": [],
-        "rewritten_queries": [],
-        "retrieved_chunks": [],
-        "relevance_score": 0.0,
-        "relevant": False,
-        "grade_reason": "",
-        "rewrite_hint": "",
-        "iterations": 0,
-        "answer": "",
-        "citations": [],
-        "confidence": 0.0,
-        "faithful": False,
-        "faithfulness_issues": "",
-        "regen_count": 0,
-        "history": [],
-        "summary": "",
-    }
-    result = app.invoke(initial_state, config=config)
+    result = app.invoke(build_initial_state(sanitised), config=config)
     return {
         "answer": result.get("answer", ""),
         "evidence_status": result.get("evidence_status", "insufficient"),
@@ -336,7 +315,9 @@ async def ask_agent(
 
     Args:
         query: Medical question to answer.
-        thread_id: Session identifier for multi-turn memory (default: "default").
+        thread_id: Caller label for tracing (default: "default"). Each call is
+            isolated; this does not supply conversation history. Use web Ask
+            for bounded contextual follow-ups.
         token: Optional auth token (MEDRAG_LOCAL_TOKEN).
 
     Returns:
@@ -469,8 +450,8 @@ def search_visual(
     Returns:
         Dict with status="not_implemented" and a message.
     """
-    _security_check(query, token, is_generate=False)
-    log_tool_call("search_visual", query, "stub", 0.0)
+    with _audit_tool("search_visual", query, success_status="stub"):
+        _security_check(query, token, is_generate=False)
     return {
         "status": "not_implemented",
         "message": (
@@ -498,7 +479,6 @@ def _start_mcp_warmup() -> None:
     threading.Thread(target=_run, daemon=True, name="medrag-mcp-warmup").start()
 
 
-_start_mcp_warmup()
-
 if __name__ == "__main__":
+    _start_mcp_warmup()
     mcp.run()

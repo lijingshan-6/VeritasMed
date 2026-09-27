@@ -15,9 +15,7 @@ from typing import Any
 _RUNTIME_FILES = (
     "scripts/benchmark/run_agent.py",
     "src/medrag/agent/graph.py",
-    "src/medrag/agent/evidence.py",
     "src/medrag/agent/llms.py",
-    "src/medrag/agent/nodes.py",
     "src/medrag/agent/prompts.py",
     "src/medrag/agent/state.py",
     "src/medrag/agent/utils.py",
@@ -26,6 +24,12 @@ _RUNTIME_FILES = (
     "src/medrag/index/embedder.py",
     "src/medrag/retrieval/hybrid.py",
     "src/medrag/retrieval/reranker.py",
+) + tuple(
+    path.relative_to(Path(__file__).resolve().parents[2]).as_posix()
+    for package in ("nodes", "evidence")
+    for path in sorted(
+        (Path(__file__).resolve().parents[2] / "src/medrag/agent" / package).glob("*.py")
+    )
 )
 
 

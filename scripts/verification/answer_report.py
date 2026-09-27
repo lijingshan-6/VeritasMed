@@ -15,7 +15,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--run", type=Path, default=Path("data/verification/ragtruth_v1/run01"))
     parser.add_argument("--cache", type=Path, default=Path(".benchmark-runtime/ragtruth"))
-    parser.add_argument("--output", type=Path, default=Path("docs/verification-v0.5-answer-audit-results.md"))
+    parser.add_argument("--output", type=Path, default=Path("docs/reports/verification-v0.5-answer-audit-results.md"))
     args = parser.parse_args()
     cases, _ = prepare(args.cache)
     rows = read_jsonl(args.run / "predictions.jsonl")

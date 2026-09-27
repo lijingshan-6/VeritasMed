@@ -81,4 +81,4 @@ Ask 的完整分角色 usage 不在这个浏览器导出里，因此 7,453 不�
 
 无密钥回放会将展示模式改为 saved，并附医学演示说明；原始下载文件保留 live 模式和原始
 provenance。模型输出、判定及原文范围不修改。非医学公开数据上的误报、漏报和重复不稳定
-仍在 [v0.5 研究报告](verification-v0.5-specific-errors.md) 中，不能被这个容易的示例抵消。
+仍在 [v0.5 研究报告](reports/verification-v0.5-specific-errors.md) 中，不能被这个容易的示例抵消。

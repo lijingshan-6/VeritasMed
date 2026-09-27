@@ -16,12 +16,12 @@ def main() -> None:
     parser.add_argument("--check", action="store_true", help="verify outputs without writing")
     parser.add_argument("--root", type=Path, default=ROOT, help="repository root with source files")
     parser.add_argument("--summary-output", type=Path, help="JSON output (default: data/eval/release_summary.json)")
-    parser.add_argument("--report-output", type=Path, help="Markdown output (default: docs/evaluation_report.md)")
+    parser.add_argument("--report-output", type=Path, help="Markdown output (default: docs/reports/evaluation_report.md)")
     args = parser.parse_args()
     root = args.root.resolve()
     summary = load_release(root)
     summary_path = args.summary_output or root / "data/eval/release_summary.json"
-    report_path = args.report_output or root / "docs/evaluation_report.md"
+    report_path = args.report_output or root / "docs/reports/evaluation_report.md"
     try:
         write_or_check(summary, summary_path, report_path, check=args.check)
     except ValueError as exc:

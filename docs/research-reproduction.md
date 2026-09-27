@@ -61,9 +61,9 @@ python scripts/verification/v08_rebind.py --output output/v08-r1-replay
 This produces all old/new bindings and a table of recovered/unresolved positions. It includes
 the three distinct GRADE demo audits, with repeats and ablations reported separately.
 It does not change old judgments or count recovered positions as checked facts.
-See the [localization report](verification-v0.8-localization.md).
+See the [localization report](reports/verification-v0.8-localization.md).
 
-The separate [source inventory](verification-v0.8-exposure.md) requires the old local medical
+The separate [source inventory](reports/verification-v0.8-exposure.md) requires the old local medical
 corpora as well as the pinned datasets. Fresh clones can inspect its saved snapshots;
 rebuilding that local inventory is not required to run the app or the localization replay.
 
@@ -127,12 +127,15 @@ The following commands make no model calls:
 ```sh
 python scripts/prepare_conversation_demo.py
 node --experimental-strip-types frontend/scripts/package-conversation-demo.mjs
-python scripts/verification/v08_r2_report.py --markdown docs/verification-v0.8-report.md
+python scripts/verification/v08_r2_report.py --markdown docs/reports/verification-v0.8-report.md
 ```
 
 The first rebuilds the 15 original abstract passages from attributed snapshots. The second
 packages unchanged saved Ask and audit responses using the browser's own export/import
-contract. The third summarizes every recorded R2 attempt, retaining failures; intervals
+contract, requiring every protocol-scheduled audit before replacing exports. The third
+recomputes each R2 metric from saved judgments and checks unique scheduled jobs, source/input
+fingerprints and the frozen metric definition. Cached metrics must agree; missing attempts
+stay incomplete and duplicate rows cannot fill their place. Intervals
 resample source groups with all four variants together. Natural answers, artificial errors,
 mechanical anchors and semantic development observations are separate.
 
@@ -146,3 +149,13 @@ identified output directory and unchanged inputs/protocol. Do not overwrite hist
 or replace the frozen final results. Run phases serially; maximum API concurrency is three.
 R3 remains deferred because the unused public-label pool does not support a new semantic
 comparison. Reusing exposed historical final cases is a regression exercise, not a new test.
+
+For a read-only comparison with the published v0.8 derivatives, write new output files:
+
+```sh
+python scripts/verification/v08_r2_report.py --output output/v08-summary.json --markdown output/v08-report.md
+```
+
+The temporary Markdown retains links relative to `docs/reports/`; read the maintained report there.
+This recomputation can establish consistency with saved inputs, not correctness of the original
+model judgments or labels. [Research interpretation](research-overview.md) · [Artifact catalogue](../data/README.md).

@@ -22,15 +22,18 @@ Conditional edges
 
 Memory
 ──────
-  L1 — SqliteSaver checkpointer (crash recovery, multi-turn sessions)
-  L2 — summarize_history node (rolling compression every 10 turns)
+  SqliteSaver retains graph execution state; web/MCP requests use a fresh ID.
+  Browser conversation context is explicitly resolved before graph invocation.
+  summarize_history remains for programmatic callers reusing a checkpoint.
 
 Usage
 ─────
     from medrag.agent.graph import app
 
-    config = {"configurable": {"thread_id": "user-session-1"}}
-    result = app.invoke({"query": "What is the mechanism of aspirin?"}, config=config)
+    from uuid import uuid4
+    from medrag.agent.invocation import build_initial_state
+    config = {"configurable": {"thread_id": str(uuid4())}}
+    result = app.invoke(build_initial_state("What is the mechanism of aspirin?"), config=config)
     print(result["answer"])
 """
 from __future__ import annotations

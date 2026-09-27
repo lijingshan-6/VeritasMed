@@ -1,299 +1,109 @@
-> Historical development document. The old graph, thresholds, memory and corpus counts below are superseded. For current behavior, read the [Agent workflow](agent-workflow.md). Use the [documentation index](README.md) for current configuration, model choice and measured results.
+# 当前架构与维护边界
 
-# MedRAG-Agent — Architecture Reference
+适用于 v0.8 里程碑整理后的工作树。先从 [README](../README.md) 启动，再按本页找实现。
+本页替代早期架构和原 `code-map.md`；旧设计的固定快照见 [归档说明](archive/README.md)。
 
-> Stack: LangGraph 0.2 · FastMCP 2.x · MiMo V2.5 / V2.5-Pro (API) · BGE-M3 · BGE-Reranker-v2-m3 · Qdrant · sentence_transformers
+## 产品的三条入口
 
----
+| 入口 | 服务与代码 | 实际工作 |
+|---|---|---|
+| Ask 回放 | `run_showcase.py` → `api/replay_app.py` | 读真实保存会话与原文；禁止写请求，不启动模型或索引 |
+| Live Ask | `run_demo.py --conversations` → `api/app.py` → `routes/ask.py` | 解释所选历史 → 独立图执行 → 返回答案与来源；浏览器保存会话 |
+| Audit lab / Research | `run_audit_demo.py` → `api/audit_app.py` | 独立审计/研究回放；配置 Flash 后可新建审计 |
 
-## 1. System Overview
+三套入口共享 [服务生命周期](../scripts/local_services.py)，各自只声明端口、模式和数据集。
+默认均监听 loopback。Full Ask 有 ML 依赖；两套轻量服务避免导入检索栈。
+端口和旧启动器见 [启动配置](configuration.md)。
 
-MedRAG-Agent is a retrieval-augmented generation system for medical literature QA. It combines a vector database of PubMed/PMC abstracts with a LangGraph agentic loop that **retrieves, grades, rewrites, generates, and verifies** answers — terminating only when the answer is grounded in the retrieved evidence.
-
-Two access paths:
-
-```
-┌──────────────────────────────────┐    ┌──────────────────────────────────┐
-│  Browser (React + TypeScript)    │    │  Claude Desktop / Claude Code    │
-│  http://localhost:5173           │    │  (MCP client)                    │
-└──────────────────┬───────────────┘    └──────────────────┬───────────────┘
-                   │  REST / WebSocket                      │  FastMCP 2.x
-                   │  http://localhost:8000                 │  (stdio / SSE)
-                   ▼                                        ▼
-┌──────────────────────────────────┐    ┌──────────────────────────────────┐
-│  FastAPI Backend                 │    │  MedRAG MCP Server               │
-│                                  │    │                                  │
-│  /api/ask   WebSocket            │    │  Security Middleware (5 layers)  │
-│  /api/search, /document, …       │    │  auth → rate_limit →             │
-│  CORSMiddleware (all origins)    │    │  injection_guard → pii → audit   │
-└──────────────────┬───────────────┘    └──────────────────┬───────────────┘
-                   │                                        │
-                   └──────────────┬─────────────────────────┘
-                                  ▼
-┌─────────────────────────────────────────────────────────────────────┐
-│                   LangGraph Agentic Loop                            │
-│                   (CompiledStateGraph + SqliteSaver)                │
-│                                                                     │
-│  START → route → retrieve → rerank → grade ──────► generate        │
-│                    ▲           │               │         │          │
-│                    │      (relevant)      (not rel,      │          │
-│                    │           │           iter<1)       │          │
-│                    │           ▼               │         ▼          │
-│                    └───── rewrite ◄────────────┘      check        │
-│                                                          │          │
-│                                             (faithful) ──► END      │
-│                                         (unfaithful,               │
-│                                           smart gate) ──► END       │
-│                                         (unfaithful,               │
-│                                           regen<1)  ──► inc_regen  │
-│                                                          │          │
-│                                                     ─► generate    │
-└─────────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────────────┐
-│                  Retrieval Pipelines                                │
-│                                                                     │
-│  P2 Hybrid:  BGE-M3 dense (1024-d) ──► RRF fusion                  │
-│  P3 Reranker: P2 candidates ──► BGE-Reranker cross-encoder         │
-│                                                                     │
-│  Qdrant (localhost:6333) · collection: medrag_text                  │
-│  ~186k chunks from PubMed abstracts + PMC full text                 │
-└─────────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+  Browser[Ask 页面 / IndexedDB 会话] --> Context[有界历史指代解释]
+  Context --> Graph[独立 checkpoint / 原有检索回答图]
+  Graph --> Answer[答案版本 / 原文来源 / 执行记录]
+  Answer --> Browser
+  Answer --> Audit[用户发起逐条审计]
+  Audit --> Saved[该答案版本下的独立审计记录]
+  Saved --> Browser
+  Research[受限文献研究比较] --> Transfer[原答与固定来源转入 Audit]
+  Transfer --> Audit
 ```
 
----
+Audit 的结果尚未接管 Live Ask 的答案修复；图内原有 `check` 与用户点开的审计是两套合同。
+研究页的三臂比较也不执行整个 Ask 图。解释这三者时不要统称为同一次 Agent 评测。
 
-## 2. LangGraph Node Reference
+## 后端按职责定位
 
-| Node | Python function | LLM | Thinking | Responsibility |
-|------|----------------|-----|----------|----------------|
-| `route` | `route_query` | `llm_fast` | OFF | Classify query: factual / synthesis / multihop |
-| `retrieve` | `hybrid_retrieve` | — | — | Dense RRF retrieval, returns top-20 candidates |
-| `rerank` | `rerank_chunks` | — | — | BGE cross-encoder → shrink to top-5 |
-| `grade` | `grade_relevance` | `llm_think` | ON | Score chunk relevance 0–1; set `rewrite_hint` |
-| `rewrite` | `rewrite_query` | `llm_think` | ON | Rewrite failed query (MeSH synonyms, sub-questions) |
-| `generate` | `generate_answer_node` | `llm_fast` | OFF | Structured JSON answer: {answer, citations, confidence} |
-| `check` | `check_faithfulness` | `llm_think` | ON | Binary faithfulness audit with smart gate |
-| `inc_regen` | `increment_regen` | — | — | Increment `regen_count` before re-generation |
-| `append_history` | `append_history` | — | — | Persist completed Q&A turn to `state["history"]` |
-| `summarize_gate` | lambda passthrough | — | — | Decide whether to compress history |
-| `summarize` | `summarize_history` | `llm_fast` | OFF | Compress history to ≤200-word rolling summary |
+| 路径（相对仓库根目录） | 职责 / 维护注意 |
+|---|---|
+| `src/medrag/agent/conversation.py` | 最多六轮 / 12,000 Unicode 字符的指代解释；旧回答只解释意图，不是证据 |
+| `src/medrag/agent/invocation.py` | Web/MCP 共用的新请求初始状态；每次还必须使用新的 checkpoint ID |
+| `src/medrag/agent/graph.py`, `nodes/` | 图装配与分职责节点，详见下表及 [真实工作流](agent-workflow.md) |
+| `src/medrag/agent/evidence/`, `prompts.py` | 要点与原句绑定、数值/角色等窄规则、提示；规则不能证明完整语义正确 |
+| `src/medrag/agent/llms.py`, `config.py` | Flash / Ollama / 旧 MiMo 适配、配置及 Qdrant 单例；Flash 是当前研究配置，旧适配不是备用裁判 |
+| `src/medrag/ingest/`, `index/`, `retrieval/` | PubMed/PMC、分块、BGE-M3 dense+sparse、RRF、reranker；HyDE/Multi-query 仍供旧 CLI 比较使用 |
+| `src/medrag/verification/` | 固定证据核查、Direct/Split/Context/Quote/Atomic、定位、MiniCheck 和研究计分 |
+| `src/medrag/agent/research_workflow.py` | 固定八篇摘要的三臂工具比较，独立于完整检索图 |
+| `src/medrag/api/routes/` | Ask WS、检索/原文、独立审计、研究/会话回放；旧 `/history` 已标为 deprecated |
+| `src/medrag/mcp_server/` | 本地 stdio 工具；令牌、限流、日志只作用于此入口，见 [MCP 实现边界](mcp_security.md) |
+| `src/medrag/benchmark/`, `eval/` | v0.1–v0.4 的题集、评分与旧报告重算；不是新审计的真值来源 |
 
-### 2.1 Dual-LLM Strategy
+图内 additive history / summarize 节点保留程序化兼容能力。网页和 MCP 公共请求均采用独立
+checkpoint；网页多轮来自显式浏览器快照。旧 `/api/history/{thread_id}` 查的是内部检查点，
+不是浏览器聊天记录，也不是刷新恢复的实现。
 
-```
-llm_fast  (mimo-v2.5, thinking=disabled, temp=0.2)
-  → route, generate, summarize
-  → ~1–2 s per call, deterministic output
+### Ask 节点与绑定的内部边界
 
-llm_think (mimo-v2.5-pro, thinking=disabled, temp=0.6)
-  → grade, rewrite, check
-  → ~2–4 s per call, higher accuracy than v2.5
-```
+原 `nodes.py` / `evidence.py` 已改为同名包，公共导入路径保持 `medrag.agent.nodes` /
+`medrag.agent.evidence`，内部实现不再放在同一大文件里。图调用公共节点；单元测试在实际所属模块
+替换模型依赖，不靠包入口转发可变全局。没有新增一层运行时分发器。
 
-Both tiers pass `extra_body={"thinking": {"type": "disabled"}}`. MiMo reasoning
-models default to internal CoT which burns 1000–5000 reasoning tokens before
-producing content (adds 15–27 s per call). Disabling it is required for
-practical latency. The "think" label now refers to the Pro model tier, not
-literal chain-of-thought.
+| 模块 | 负责什么 |
+|---|---|
+| `nodes/planning.py` | 原问题、检索计划、查询重写；三段无生产调用的旧启发式已移除 |
+| `nodes/retrieval.py` | 懒加载检索/重排资源、来源身份匹配、证据预算；保留 Windows 原生库加载顺序 |
+| `nodes/grading.py` | 根据所给来源构造待回答要点及缺口 |
+| `nodes/generation.py` | 生成、绑定、定向补写、返回答案 |
+| `nodes/checking.py` | 审核生成结果，选择需要修复的要点 |
+| `nodes/common.py`、`constants.py`、`memory.py` | 请求/JSON 与提示格式、预算、程序化历史；不互相混入业务规则 |
+| `evidence/models.py` | Pydantic 数据对象、文本规范化与原句切分 |
+| `evidence/binding.py` | 要点/claim 与原句的绑定、状态聚合 |
+| `evidence/scope.py` | 人群角色、协议时间等窄保护规则及缺口措辞 |
+| `evidence/restoration.py` | 数字遗漏、方法说明与结果上下文的原句恢复 |
 
-Configured via env vars `MIMO_MODEL_FAST` and `MIMO_MODEL_THINK` (or `LLM_BACKEND=ollama`).
+本次移动保留 46 个函数/类的执行逻辑，修正文档中旧的 thinking 开关描述；
+清理不代表重新验证了这些医学规则的效果。
+新运行的 benchmark 快照会收集包内全部 Python 文件；旧 `runtime_code/` 不改写。
 
-### 2.2 Conditional Routing
+## 前端按数据流定位
 
-```
-After grade:
-  relevance_score ≥ threshold  →  generate
-    thresholds: factual=0.5 · synthesis=0.6 · multihop=0.7
-  score < threshold, iterations < MAX_REWRITES (1)  →  rewrite
-  score < threshold, iterations ≥ MAX_REWRITES      →  generate (cap hit)
+| 路径（`frontend/src/` 下） | 职责 |
+|---|---|
+| `conversation/model.ts` | Conversation → Turn → Revision → AuditRun，指代上下文选择、输入指纹及导入/导出 |
+| `conversation/storage.ts`, `store/index.ts` | IndexedDB、当前选择、按答案版本接收结果、保存队列；当前设计为单标签页编辑 |
+| `hooks/useAgentStream.ts`, `api/streamConnection.js` | WS 生命周期、停止及迟到结果隔离 |
+| `pages/AnswerPage.tsx` | 对话主工作区；Audit 嵌在所选答案内 |
+| `pages/AuditPage.tsx` | 审计输入、执行、回放及选中状态 |
+| `components/audit/` | Presentation 管状态/高亮；ClaimList 管逐项详情；SourceList 管来源导航 |
+| `pages/ResearchPage.tsx` | 独立受限研究结果、trace 和原答转审计 |
+| `components/AnswerPanel.tsx`, `components/answer/` | 页面组合和动作；文本引用、证据状态、建议问题分别在 AnswerText / AnswerEvidence / Suggestions |
+| `components/EvidencePanel.tsx` | 检索来源与原文引用导航 |
+| `types/api.gen.ts`, `types/ws.ts` | REST 自动生成类型与 WS 手工镜像；修改合同须同步 |
 
-After check:
-  faithful = True                                    →  append_history → END
-  unfaithful, confidence ≥ 0.3 AND has citations    →  append_history → END (smart gate)
-  unfaithful, regen_count < MAX_REGEN (1)            →  inc_regen → generate
-  unfaithful, regen_count ≥ MAX_REGEN                →  append_history → END
-```
+`openapi.json` / `api.gen.ts` 是生成物，不手改。调用 `scripts/export_openapi.py` 后运行
+`npm --prefix frontend run generate-types`。会话指纹验证一致性，不证明作者身份或医学真伪。
 
-Constants (`nodes.py`): `MAX_REWRITES=1`, `MAX_REGEN=1`, `GRADE_THRESHOLD=0.6` (base; overridden per query type), `REGEN_CONFIDENCE_SKIP=0.3`, `CANDIDATE_K=20`, `TOP_K=5`, `HISTORY_SUMMARIZE_EVERY=10`.
+## 保留的兼容边界与研究债务
 
----
+**已经整理：** 三套启动器共用服务管理；Web/MCP 共用初始状态；后端大节点/绑定文件和前端
+答案/claim 详情均按职责拆开；旧配置说明合并，报告与工作日志移入分类目录。
+历史模型源码副本在 `data/benchmark/**/runtime_code/`，是当次实验的输入证据，不是第二套运行入口。
+Direct、Atomic v1/v2 的不同提示/输出合同是比较对象，不能为了减少文件数合并后仍沿用旧成绩。
 
-## 3. Two-Tier Memory Architecture
+**仍保留的成本：** 旧 MiMo / Ollama / conda / Docker / 编号脚本有明确历史调用者，暂保兼容。
+图内 check 与独立 Audit 的合同不同，目前不强行合并。`scope` / `restoration` 中的窄规则有已知
+语义局限，模块拆分不能证明它们可靠；未来替换要有新的研究记录。多标签页编辑、账户同步和
+公共部署不属于本地展示版。下一步聚焦漏答与澄清，见 [v0.9 计划](plans/v0.9-question-coverage.md)。
 
-```
-L1 — LangGraph SqliteSaver
-  Storage:  data/checkpoints/agent.db (SQLite)
-  Purpose:  crash recovery, multi-turn conversation continuity
-  Scope:    full AgentState snapshot per step
-  Key:      thread_id (set by client per user session)
-
-L2 — Rolling Summarisation
-  Trigger:  every 10 conversation turns (HISTORY_SUMMARIZE_EVERY=10)
-  LLM:      llm_fast (thinking=OFF)
-  Output:   ≤200-word summary in state["summary"]
-  Purpose:  prevent context-window overflow in long sessions
-```
-
----
-
-## 4. Retrieval Pipeline
-
-### 4.1 Embedding — sentence_transformers
-
-The embedder uses `FlagEmbedding.inference.embedder.encoder_only.m3.M3Embedder` (submodule import, bypasses `FlagEmbedding.__init__`). The reranker uses `sentence_transformers.CrossEncoder`. Importing the FlagEmbedding top-level package (`from FlagEmbedding import ...`) triggers a `STATUS_ACCESS_VIOLATION` crash on Windows because `__init__` pulls in the decoder-only reranker (`modeling_minicpm_reranker.py`) whose C++ runtime conflicts with qdrant_client's gRPC runtime. The fix is to import only the encoder-only submodule directly.
-
-```python
-# embedder.py — uses FlagEmbedding submodule (not top-level package)
-from FlagEmbedding.inference.embedder.encoder_only.m3 import M3Embedder
-M3Embedder("BAAI/bge-m3", use_fp16=False, devices=["cpu"])
-# Returns dense 1024-d float32 normalised vectors + sparse lexical weights.
-# sparse keys are string token IDs castable to int for Qdrant SparseVector.
-
-# reranker.py — sentence_transformers CrossEncoder (no FlagEmbedding dependency)
-CrossEncoder("BAAI/bge-reranker-v2-m3", device=device)
-# fp16 on CUDA, float32 on CPU
-```
-
-Device is auto-detected (`EMBEDDER_DEVICE` / `RERANKER_DEVICE` env vars, default `auto` → `cuda` if available, else `cpu`).
-
-**Critical import order** (`app.py`): `import sentence_transformers` must appear before any `qdrant_client` import. On Windows, qdrant_client's gRPC C++ runtime conflicts with PyTorch if PyTorch loads after it. Pre-importing `sentence_transformers` at startup loads PyTorch first.
-
-### 4.2 P2 Hybrid Retrieval
-
-```
-Query
-  │
-  └──► BGE-M3 encode (dense 1024-d, + sparse weights if available)
-         │
-         ├──► Qdrant dense search   →  top-20 by cosine similarity
-         │
-         ├──► Qdrant sparse search  →  top-20 (skipped when sparse_weights is empty)
-         │
-         └──► RRF fusion (k=60)    →  top-20 fused candidates
-```
-
-`HybridRetriever` calls `embedder.encode(return_sparse=True)` and checks `if sparse_weights:` before issuing the sparse Qdrant query. With the current `BGEM3Embedder` (sentence_transformers backend), sparse weights are always empty, so sparse search is skipped and the result is effectively dense-only RRF. If the embedder is replaced with one that produces sparse vectors, sparse search activates automatically with no changes to `hybrid.py`.
-
-### 4.3 P3 Hybrid + Reranker
-
-```
-P2 output (top-20 candidates)
-  │
-  └──► BGE-Reranker-v2-m3 (cross-encoder, batch_size=8)
-       Input:  [query, chunk_text] pairs
-       Output: top-5 by reranker score
-```
-
-### 4.4 Evaluation Results (50-question golden dataset)
-
-| Pipeline | R@5 | MRR@20 | Latency |
-|----------|-----|--------|---------|
-| P1 Dense | 98.0% | 0.963 | 0.48 s |
-| P2 Hybrid | **100.0%** | **1.000** | 0.55 s |
-| P3 Hybrid+Reranker | **100.0%** | **1.000** | ~65 s |
-| P4 HyDE | 88.0% | 0.810 | 8.97 s |
-| P5 Multi-Query | 96.0% | 0.936 | 8.09 s |
-
-P3 is used for `/api/ask` (quality-critical). P2 is used for `/api/search` (speed-critical).
-
----
-
-## 5. API Contract
-
-### 5.1 REST — OpenAPI
-
-FastAPI auto-generates `/openapi.json`. TypeScript types are generated from it:
-
-```bash
-python scripts/export_openapi.py      # write openapi.json
-cd frontend && npm run generate-types  # write src/types/api.gen.ts
-```
-
-Key schemas: `ChunkOut`, `SearchResponse`, `DocumentResponse`, `ChunkContextResponse`, `CorpusStats`, `AnswerOut`.
-
-### 5.2 WebSocket — AgentEvent (manual sync)
-
-`/api/ask` is a WebSocket endpoint — not in the OpenAPI schema. Events are a Pydantic discriminated union (`models.py`) mirrored manually in `frontend/src/types/ws.ts`.
-
-```
-node_start        { event, node }
-node_end          { event, node, data: NodeEndData }
-chunk_retrieved   { event, node, data: ChunkRetrievedData }
-done              { event: "done", node: null, data: AnswerOut }
-error             { event: "error", node: null, data: { message } }
-```
-
-Answer arrives once in the `done` event (no incremental token streaming).
-
----
-
-## 6. Corpus Statistics
-
-| Metric | Value |
-|--------|-------|
-| Sources | PubMed abstracts + PMC full-text (Open Access) |
-| Total chunks (evaluation run) | 44,768 (1,975 PubMed + 42,793 PMC) |
-| Avg chunk length | ~300 tokens |
-| Chunk overlap | 64 tokens |
-| Embedding model | BAAI/bge-m3 (dense 1024-d, sentence_transformers) |
-| Reranker | BAAI/bge-reranker-v2-m3 (cross-encoder) |
-| Vector DB | Qdrant (single-node, localhost:6333) |
-| Sparse vectors | Not produced by current embedder — sparse Qdrant search skipped at runtime |
-
----
-
-## 7. Directory Structure
-
-```
-medrag-agent/
-├── src/medrag/
-│   ├── agent/
-│   │   ├── graph.py        # StateGraph + SqliteSaver (graph assembly)
-│   │   ├── nodes.py        # 11 node functions
-│   │   ├── state.py        # AgentState TypedDict
-│   │   ├── prompts.py      # LLM prompt templates
-│   │   ├── llms.py         # Dual-LLM factory (mimo/ollama backends)
-│   │   ├── utils.py        # strip_thinking(), build_answer_from_claims()
-│   │   └── generator.py    # Week-1 baseline: single-shot answer (no agent loop)
-│   ├── api/
-│   │   ├── app.py          # FastAPI entry point (CORS, import order)
-│   │   ├── models.py       # Pydantic models — single source of truth
-│   │   ├── _helpers.py     # Shared utilities
-│   │   └── routes/         # ask, search, document, chunk, history, corpus
-│   ├── index/
-│   │   ├── embedder.py     # BGEM3Embedder (sentence_transformers, dense 1024-d)
-│   │   ├── indexer.py      # Qdrant upsert pipeline
-│   │   └── qdrant_setup.py # Collection initialisation
-│   ├── ingest/
-│   │   ├── pubmed.py       # PubMed abstract fetcher
-│   │   ├── pmc.py          # PMC OA full-text fetcher
-│   │   └── chunker.py      # Sliding-window chunker (64-token overlap)
-│   ├── retrieval/
-│   │   ├── hybrid.py       # HybridRetriever (dense-only RRF)
-│   │   ├── reranker.py     # BGEReranker (CrossEncoder)
-│   │   ├── retriever.py    # DenseRetriever + RetrievedChunk
-│   │   ├── hyde.py         # HyDERetriever
-│   │   └── multi_query.py  # MultiQueryRetriever
-│   └── mcp_server/
-│       ├── server.py       # FastMCP server + 4 tools
-│       └── security/       # auth, rate_limit, injection_guard, pii, audit
-├── frontend/               # React + TypeScript (served separately)
-│   ├── src/types/
-│   │   ├── api.gen.ts      # Generated from openapi.json — do not edit
-│   │   ├── index.ts        # Re-exports
-│   │   └── ws.ts           # WebSocket types (manual mirror of models.py)
-│   ├── .env.local          # VITE_API_URL=http://localhost:8000 (gitignored)
-│   └── vite.config.ts      # No proxy — direct CORS to :8000
-├── data/
-│   ├── golden/             # Evaluation datasets (standard + hard set)
-│   ├── eval/               # Evaluation outputs
-│   └── checkpoints/        # LangGraph SqliteSaver state (runtime)
-├── scripts/                # Numbered pipeline scripts (01–14)
-├── openapi.json            # FastAPI OpenAPI schema
-├── .env.example            # Required environment variables
-├── start_dev.ps1           # Dev launcher (Windows)
-├── start_setup.ps1         # First-run setup (Windows)
-└── start_mcp.ps1           # MCP server launcher (Windows)
-```
+R2 的 [冻结清单](../data/verification/v08/r2/method-freeze.json) 包含 11 个推理/计分文件。
+本轮未改它们。未来行为改动需要新候选和新记录；离线历史报告继续使用原合同。
+旧脚本入口和大数据的保留理由见 [脚本索引](../scripts/README.md) 与 [数据目录](../data/README.md)。

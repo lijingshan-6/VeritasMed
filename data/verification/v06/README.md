@@ -1,7 +1,7 @@
 # v0.6 audit reliability research
 
 The planned fixed-claim, calibration, constructed medical, natural-development, repeat and
-ablation runs are complete. See the [research report](../../../docs/verification-v0.6-report.md).
+ablation runs are complete. See the [research report](../../../docs/reports/verification-v0.6-report.md).
 Read each `attempt-*.json` and retain every prediction/error. The natural-answer final reserve
 was not used; completion of these studies does not mean whole-answer reliability is established.
 

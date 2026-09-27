@@ -35,4 +35,4 @@ this comparison cannot isolate one prompt field's causal effect. Direct remains 
 
 Completed: 36/36 audits, 294,320 reported tokens. Whole-answer error hits are 3/5 for both methods;
 fixed binary agreement is 8/8 for each, with the easy controls and label-boundary limitations above.
-See [full results](run01/results.md) and the [interpretation](../../../docs/verification-v0.5-specific-errors.md).
+See [full results](run01/results.md) and the [interpretation](../../../docs/reports/verification-v0.5-specific-errors.md).

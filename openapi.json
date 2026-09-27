@@ -174,7 +174,9 @@
     "/api/history/{thread_id}": {
       "get": {
         "summary": "Get History",
+        "description": "Legacy raw checkpoint lookup, not browser conversation history. Public Ask IDs are not checkpoint IDs; use conversation export/import in the browser.",
         "operationId": "get_history_api_history__thread_id__get",
+        "deprecated": true,
         "parameters": [
           {
             "name": "thread_id",

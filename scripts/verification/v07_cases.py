@@ -18,7 +18,7 @@ def main():
     lines = [
         "# v0.7 最终 40 题逐题记录",
         "从保存输出生成，不调用模型、不修订标签；包括失败与被保留的原草稿。公开标签只评指定论文与 claim 的关系，不代表每个解释句都经过独立核查。",
-        "[主报告](verification-v0.7-report.md) · [原始 JSONL](../data/verification/v07/final/predictions.jsonl) · [冻结清单](../data/verification/v07/manifest.json)",
+        "[主报告](verification-v0.7-report.md) · [原始 JSONL](../../data/verification/v07/final/predictions.jsonl) · [冻结清单](../../data/verification/v07/manifest.json)",
     ]
     for entry, task in sorted(tasks, key=lambda pair: pair[0]["case_id"]):
         lines += [
@@ -64,7 +64,7 @@ def main():
             ]
             if r.get("review_reason"):
                 lines += [f"保留原因：{r['review_reason']}"]
-    (ROOT / "docs/verification-v0.7-cases.md").write_text(
+    (ROOT / "docs/reports/verification-v0.7-cases.md").write_text(
         "\n\n".join(lines) + "\n", encoding="utf8"
     )
     print("Wrote all 40 final cases with all three original outputs")

@@ -12,8 +12,9 @@ Redacted patterns
   - IP addresses (v4)
   - Names following "patient:" / "subject:" / "my name is" patterns
 
-Redaction is applied at the logging boundary only — the query seen by
-the retriever is the original (umodified) query to preserve recall.
+The MCP entry point redacts the query before retrieval/generation. The audit
+logger stores only a hash of the original query. These regexes are heuristic;
+they neither remove all identifiers nor protect the separate web API.
 """
 from __future__ import annotations
 

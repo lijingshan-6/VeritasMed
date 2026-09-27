@@ -17,6 +17,7 @@ from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 
 from medrag.agent.graph import app as langgraph_app
 from medrag.agent.conversation import resolve_context
+from medrag.agent.invocation import build_initial_state as _build_initial_state
 from medrag.api._helpers import payload_to_chunk
 from medrag.api.models import (
     AnswerOut,
@@ -39,33 +40,6 @@ _SENTINEL = object()
 _STREAM_TIMEOUT_S = 300.0
 _QUEUE_CAPACITY = 32
 _PUBLIC_ERROR = "The answer could not be completed. Please try again."
-
-
-def _build_initial_state(query: str) -> dict:
-    return {
-        "query": query,
-        "original_query": "",
-        "answer_components": [],
-        "answer_claims": [],
-        "binding_issues": [],
-        "repair_component_ids": [],
-        "repair_history": [],
-        "rewritten_queries": [],
-        "retrieved_chunks": [],
-        "relevance_score": 0.0,
-        "relevant": False,
-        "grade_reason": "",
-        "rewrite_hint": "",
-        "iterations": 0,
-        "answer": "",
-        "citations": [],
-        "confidence": 0.0,
-        "faithful": False,
-        "faithfulness_issues": "",
-        "regen_count": 0,
-        "history": [],
-        "summary": "",
-    }
 
 
 async def _send_safe(ws: WebSocket, payload: dict) -> bool:

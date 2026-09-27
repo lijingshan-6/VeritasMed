@@ -15,6 +15,10 @@ and unresolved interpretation; it is an experiment, not a demonstrated upgrade i
 
 Python 3.12 · Node.js 22.12+ · Apache-2.0 code · [Source attribution](docs/research-sources.md)
 
+[Use the app](docs/conversation-guide.md) · [Current code map](docs/architecture.md) ·
+[What the research establishes](docs/research-overview.md) · [Data catalogue](data/README.md) ·
+[Version history](docs/history.md)
+
 ![Actual saved GRADE conversation, with turn history and original source passages](docs/assets/v08-conversation.png)
 
 Actual saved inference from the three-paper demonstration; no clinical accuracy is implied.
@@ -58,7 +62,7 @@ new questions or model calls. To ask your own questions, use the full setup belo
 
 [Conversation guide](docs/conversation-guide.md) ·
 [Original papers, licenses and fixed questions](data/demo/conversations/README.md) ·
-[v0.8 results and limits](docs/verification-v0.8-report.md)
+[v0.8 results and limits](docs/reports/verification-v0.8-report.md)
 
 ## Optional standalone audit and research workspace
 
@@ -152,7 +156,7 @@ text normalization and preserved XML snapshots.
 The earlier three-summary fixture remains available with `python scripts/run_demo.py`.
 For a browser-only authored UI example: `cd frontend`, `npm ci`, `npm run dev`, then open
 `http://127.0.0.1:5173/?demo=1`. Guided answers and animated steps are written fixtures,
-not actual inference. [Legacy demo guide](docs/demo.md)
+not actual inference. [Runtime configuration](docs/configuration.md)
 
 ## What this version delivers
 
@@ -208,8 +212,8 @@ co-presence and numeric-retention differences include zero. In the separate 12-a
 development sample, Direct / v2 complete 12/12 and 3/12, with the same 8/12 annotated error spans
 overlapped by warnings. Completion contracts differ; span overlap does not establish specific-error detection.
 
-See the [v0.8 report](docs/verification-v0.8-report.md), [localization results](docs/verification-v0.8-localization.md)
-and [source inventory](docs/verification-v0.8-exposure.md).
+See the [v0.8 report](docs/reports/verification-v0.8-report.md), [localization results](docs/reports/verification-v0.8-localization.md)
+and [source inventory](docs/reports/verification-v0.8-exposure.md).
 
 <details>
 <summary>Preserved v0.4–v0.7 measurements and their separate evaluation contracts</summary>
@@ -252,8 +256,8 @@ fewer reported tokens than direct reading, but took longer and retained fewer co
 The first development run exposed a broken action protocol; all its records remain available,
 and the repaired autonomous baseline was frozen before these final questions were run.
 
-[Audit reliability report](docs/verification-v0.6-report.md) ·
-[Workflow results and all 40 cases](docs/verification-v0.7-report.md)
+[Audit reliability report](docs/reports/verification-v0.6-report.md) ·
+[Workflow results and all 40 cases](docs/reports/verification-v0.7-report.md)
 
 Earlier v0.5 observations remain available for context:
 
@@ -270,12 +274,12 @@ specific-issue review is **AI development review**, not independent expert valid
 The 60 reserved RAGTruth test source groups remain unused. No calibrated reliability, clinical
 evidence grading or advantage over a strong model with the same autonomous tools is claimed.
 
-[Historical v0.5 interpretation](docs/releases/v0.5.0.md) · [Quote-v2 results](docs/verification-v0.5-specific-errors.md)
+[Historical v0.5 interpretation](docs/releases/v0.5.0.md) · [Quote-v2 results](docs/reports/verification-v0.5-specific-errors.md)
 
 The historical **v0.4** medical answer evaluation achieved development 15/15, declared repeats
 10/10 and first held-out test **31/35** under its own contract. Those 35 questions are now exposed;
 the scores do not measure this new audit panel. Four failures and AI-review limitations
-remain in the [v0.4 report](docs/agent-v0.4-flash-report.md).
+remain in the [v0.4 report](docs/reports/agent-v0.4-flash-report.md).
 
 </details>
 
@@ -308,4 +312,4 @@ Existing offline checks: `python -m pytest -q`, `ruff check src/`, `npm --prefix
 `npm --prefix frontend run build`. They make no paid model calls. Live tests require `--run-live`.
 
 [Documentation index](docs/README.md) · [Medical demo](docs/medical-demo.md) ·
-[v0.8 release](docs/releases/v0.8.0.md) · [v0.8 plan](docs/plans/v0.8-conversation-and-audit.md) · [Changelog](CHANGELOG.md) · [License](LICENSE)
+[v0.8 release](docs/releases/v0.8.0.md) · [Next: v0.9 question coverage](docs/plans/v0.9-question-coverage.md) · [Changelog](CHANGELOG.md) · [License](LICENSE)

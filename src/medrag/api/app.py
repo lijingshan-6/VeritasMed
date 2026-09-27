@@ -36,8 +36,8 @@ app = FastAPI(
 )
 
 # ── CORS ─────────────────────────────────────────────────────────────────────
-# Allow any origin so the frontend can be served from any dev port or CDN.
-# Tighten to specific origins in production via CORS_ORIGINS env var.
+# Default to the local Ask frontend. CORS is a browser origin policy, not auth.
+# Override explicitly with CORS_ORIGINS for another local frontend.
 _origins = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")
 app.add_middleware(
     CORSMiddleware,

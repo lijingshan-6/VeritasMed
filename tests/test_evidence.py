@@ -102,7 +102,7 @@ def test_omitted_answer_does_not_mean_source_evidence_is_missing():
                               "unsupported_source_inference": False,
                               "gap": "Answer omitted performance", "correction": "Include the result"}],
     }))
-    with patch("medrag.agent.nodes.make_llm_think", return_value=llm):
+    with patch("medrag.agent.nodes.checking.make_llm_think", return_value=llm):
         result = check_faithfulness({"query": "Performance?", "answer": "No evidence",
                                     "answer_components": outline()[:1], "retrieved_chunks": [chunk()]})
     assert result["answer_components"][0]["status"] == "supported"
@@ -120,7 +120,7 @@ def test_last_check_removes_an_outcome_not_established_by_the_source():
                               "gap": "The answer incorrectly infers admissions from sensitivity.",
                               "correction": "Remove the admission claim"}],
     }))
-    with patch("medrag.agent.nodes.make_llm_think", return_value=llm):
+    with patch("medrag.agent.nodes.checking.make_llm_think", return_value=llm):
         result = check_faithfulness({
             "query": "Did it reduce admissions?", "answer": "Hospital admissions decreased.",
             "answer_claims": [{"component_id": "C1", "text": "Hospital admissions decreased.", "cite": ["PMID:1"]}],
@@ -142,7 +142,7 @@ def test_named_study_is_selected_by_identity_instead_of_leading_rank():
             "requirement": "Diagnostic performance", "status": "supported", "evidence_ids": ["E1"],
         }]})),
     ]
-    with patch("medrag.agent.nodes.make_llm_think", return_value=llm), patch("medrag.agent.nodes.make_llm_fast", return_value=llm):
+    with patch("medrag.agent.nodes.grading.make_llm_think", return_value=llm), patch("medrag.agent.nodes.grading.make_llm_fast", return_value=llm):
         result = grade_relevance({"query": "What did the diagnostic study find?",
                                  "source_scope": "single_study", "retrieved_chunks": [wrong, target]})
     assert result["selected_sources"] == ["PMID:1"]
@@ -214,7 +214,7 @@ def test_targeted_repair_retains_the_other_component():
     ], "evidence_status": "complete", "confidence": 0.5}
     llm = MagicMock()
     llm.invoke.return_value = MagicMock(content=json.dumps(response))
-    with patch("medrag.agent.nodes.make_llm_fast", return_value=llm):
+    with patch("medrag.agent.nodes.generation.make_llm_fast", return_value=llm):
         result = generate_answer_node({
             "query": "Compare performance and report the population",
             "retrieved_chunks": [chunk()], "answer_components": [*components, other],
@@ -263,7 +263,7 @@ def test_quote_recovery_does_not_hide_rejected_explanation():
     llm.invoke.return_value = MagicMock(content=json.dumps({"claims": [{"component_id": "C1",
         "text": "Measurements were simultaneous at a single time point, so causality is unproven.",
         "cite": ["PMID:1"]}], "evidence_status": "complete"}))
-    with patch("medrag.agent.nodes.make_llm_fast", return_value=llm):
+    with patch("medrag.agent.nodes.generation.make_llm_fast", return_value=llm):
         result = generate_answer_node({"query": "Explain the design's causal limit",
             "retrieved_chunks": [source], "answer_components": components})
     assert '2020' in result['answer']
@@ -279,7 +279,7 @@ def test_critical_facts_cannot_gain_an_unreported_mechanism_in_paraphrasing():
     llm.invoke.return_value = MagicMock(content=json.dumps({"claims": [{"component_id": "C1",
         "text": "Area increased by 0.4 units because the implant dissolved.", "cite": ["PMID:1"]}],
         "evidence_status": "complete"}))
-    with patch("medrag.agent.nodes.make_llm_fast", return_value=llm):
+    with patch("medrag.agent.nodes.generation.make_llm_fast", return_value=llm):
         result = generate_answer_node({"query": "What was the measured change?",
             "retrieved_chunks": [source], "answer_components": components})
     assert "dissolved" not in result['answer']
@@ -339,7 +339,7 @@ def test_boundary_distinguishes_measured_outcome_from_requested_comparison():
             "outcome_evidence_ids": ["E1"], "comparison_evidence_ids": ["E1"] if comparison_supported else [],
             "design_evidence_ids": [],
         }]}))
-        with patch("medrag.agent.nodes.make_llm_think", return_value=llm):
+        with patch("medrag.agent.nodes.grading.make_llm_think", return_value=llm):
             result = grade_relevance({"query": "Does the study establish comparative mortality benefit?",
                                      "source_scope": "single_study", "selected_sources": ["PMID:1"],
                                      "answer_mode": "evidence_boundary", "answer_requirements": ["Comparative mortality benefit"],
@@ -369,7 +369,7 @@ def test_joint_study_plan_keeps_both_sources_and_original_question():
     llm.invoke.return_value = MagicMock(content=json.dumps({"relevant": True, "score": .9,
         "components": [{"requirement": requirement, "status": "supported", "evidence_ids": [evidence]}
                        for requirement, evidence in [("Method A result", "E1"), ("Method B result", "E2")]]}))
-    with patch("medrag.agent.nodes.make_llm_think", return_value=llm):
+    with patch("medrag.agent.nodes.grading.make_llm_think", return_value=llm):
         result = grade_relevance({"query": "Compare method A and method B", "source_scope": "multi_source",
                                  "selected_sources": ["PMID:1", "PMID:2"], "retrieved_chunks": [first, second]})
     assert [c["evidence"][0]["citation"] for c in result["answer_components"]] == ["PMID:1", "PMID:2"]
@@ -380,13 +380,13 @@ def test_joint_study_plan_keeps_both_sources_and_original_question():
 
 
 def test_check_schema_requires_each_gap_decision():
-    from medrag.agent.nodes import _check_schema
+    from medrag.agent.nodes.checking import _check_schema
     schema = _check_schema([{"id": "C1"}, {"id": "C2"}])
     assert schema["properties"]["component_checks"]["required"] == ["C1", "C2"]
 
 
 def test_source_cards_keep_descriptive_suffix_candidates_and_disclose_mismatches():
-    from medrag.agent.nodes import _source_cards
+    from medrag.agent.nodes.retrieval import _source_cards
     source = chunk(text="RX2 uptake was measured in tumor models.")
     assert list(_source_cards("RX2-targeted imaging results?", [source])) == ["PMID:1"]
     assert list(_source_cards("RX2-expressing models?", [source])) == ["PMID:1"]
@@ -455,7 +455,7 @@ def test_review_reads_and_repairs_the_displayed_gap_with_the_answer():
             "requirement_requested": True, "unsupported_source_inference": False,
             "gap": "", "missing_outcome": "", "correction": "Remove the unrequested quantitative gap"}},
     }))
-    with patch("medrag.agent.nodes.make_llm_think", return_value=llm):
+    with patch("medrag.agent.nodes.checking.make_llm_think", return_value=llm):
         result = check_faithfulness({"query": "What validation findings did methods A and B report?",
             "source_scope": "multi_source", "selected_sources": ["PMID:1", "PMID:2"],
             "retrieved_chunks": [source], "answer_components": [component],
@@ -495,7 +495,7 @@ def test_generator_recovers_actual_result_only_from_its_bound_study():
 
 
 def test_named_identifier_is_not_crowded_out_or_matched_in_references():
-    from medrag.agent.nodes import _source_cards
+    from medrag.agent.nodes.retrieval import _source_cards
     wrong = [chunk(str(i), "A receptor imaging study targeting RX20.") for i in range(2, 7)]
     reference = chunk("7", "References: RX2 tumor imaging study.")
     reference.payload['section'] = 'REF'

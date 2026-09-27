@@ -78,7 +78,7 @@ def v06_report():
             ],
         ),
         "P0 以 claim 与全部关联文献构成连通组隔离，同时排除旧试跑、构造与医学语料暴露。v0.7 的 20/40 组先另留。医学计划的 24 组减为 23：文献 42291761 摘要年份矛盾且截断，未勉强标注。公开数据可能进入模型训练，来源隔离不等于无预训练污染。",
-        "协议、标签来源、逐次设置与精确推理代码见 [v06 工件](../data/verification/v06/README.md)。本次没有提示调优后覆盖首轮记录。",
+        "协议、标签来源、逐次设置与精确推理代码见 [v06 工件](../../data/verification/v06/README.md)。本次没有提示调优后覆盖首轮记录。",
         "## E1：固定 claim 与完整摘要",
         "Flash 固定核查器与 pinned MiniCheck-Flan-T5-Large 接收相同目标和完整摘要，不给 gold 关系或依据句。MiniCheck 只做二分类；超出 2048 token 显式失败，不静默截断。本表合并 Contradicted / Insufficient 为 Non-supported。",
         "公开关系标签可能依赖领域别名或隐含推理，而 Flash 提示限制仅凭提供文本；相同输入不等于两种方法学到了相同判断政策。标签仍保留，不按输出重标；不能把所有分歧简单归为模型医学能力高低。",
@@ -118,7 +118,7 @@ def v06_report():
         + "/339，二分类正确 "
         + str(fixed["flash"]["parsed_relation_diagnostic"]["counts"]["correct"])
         + "/339。此补充在 E2 发现引用失败后、固定最终运行过程中登记，未用于选择方法、阈值或默认；原始主表和失败不被替换。完整分母与明细在 JSON。",
-        "![固定核查比较](assets/v07-fixed-verifiers.png)",
+        "![固定核查比较](../assets/v07-fixed-verifiers.png)",
         table(
             ["MiniCheck − Flash", "配对差值及 95% 来源组 bootstrap 区间"],
             [
@@ -156,7 +156,7 @@ def v06_report():
         "MiniCheck 使用本机 RTX 4060 Laptop / FP32；时间不含权重加载。其无 API usage 不代表没有计算成本。Flash 的模型名是网关返回字段，不能独立认证底层权重身份。模型版本、环境和响应字段在原始工件中保留。",
         "## 校准：没有可发布的接受规则",
         f"仅在 87 对拟合一个 logistic 映射，在另 91 对按预定网格选择阈值：接受项经验错误率 ≤5%，至少 20 对且涉及 10 来源组。**没有合格阈值**。最终仍评估冻结映射，Brier raw={cal['brier_raw']:.4f}，映射后={cal['brier_calibrated']:.4f}，完成 {cal['completed']}/{cal['planned_pairs']}。",
-        "![可靠性及风险覆盖](assets/v07-calibration.png)",
+        "![可靠性及风险覆盖](../assets/v07-calibration.png)",
         "最终曲线用于描述分布，不用于重新挑阈值。阈值为 null 时，接受风险为不可估计，不能把零接受写成零风险。每组预选代表样本和风险区间另存 `calibration-final.json`。此分数针对文本支持关系，不是医学事实为真的概率。",
         "## E3：完整回答与构造事实",
         "**下面主表按原冻结构造标签重算，其中 medical-15 存在已记录的来源范围疑点；紧随主表给出统一去掉该组的敏感性结果。保留原记录不等于继续把已知疑点当作无误标签。**",
@@ -209,7 +209,7 @@ def v06_report():
                 for m, r in sensitivity["methods"].items()
             ],
         ),
-        "[勘误记录](../data/verification/v06/medical-label-review.json)与 [完整敏感性明细](../data/verification/v06/medical-label-sensitivity.json)保留发现时间、来源和限制。若未来修订题集，应另建版本并重新冻结，不覆盖本轮输入。",
+        "[勘误记录](../../data/verification/v06/medical-label-review.json)与 [完整敏感性明细](../../data/verification/v06/medical-label-sensitivity.json)保留发现时间、来源和限制。若未来修订题集，应另建版本并重新冻结，不覆盖本轮输入。",
         "### 自然回答：公开错误范围",
         table(
             ["方法", "回答完成", "错误任意重叠", "错误至少半覆盖", "无标错回答上有警报"],
@@ -282,9 +282,9 @@ def v06_report():
         "## 产品与发布决定",
         "原子拆分、限定词槽位、原文多片段绑定、数字建议和单独 MiniCheck 结果已接入真实记录面板。Direct 仍为默认；模型分歧只提示审阅。三类 GRADE 演示明确区分真实 Agent 原答、构造组别互换和构造删证据。",
         "没有获得覆盖整段语义、提取保真度和支持召回非劣的足够证据，故不升级默认、不自动修复答案、不使用 60 来源自然回答保留集。证据分级、临床适用性和跨研究冲突裁决继续单列研究。v0.6 的交付随 v0.7.0 合并发布，不伪造独立 v0.6.0 发布。",
-        "[实施协议](plans/v0.6-audit-reliability.md) · [复现](research-reproduction.md) · [MiniCheck 环境与上游](minicheck-research.md) · [v0.7 工作流对照](verification-v0.7-report.md)",
+        "[实施协议](../plans/v0.6-audit-reliability.md) · [复现](../research-reproduction.md) · [MiniCheck 环境与上游](../minicheck-research.md) · [v0.7 工作流对照](verification-v0.7-report.md)",
     ]
-    (ROOT / "docs/verification-v0.6-report.md").write_text(
+    (ROOT / "docs/reports/verification-v0.6-report.md").write_text(
         "\n\n".join(lines) + "\n", encoding="utf8"
     )
 
@@ -345,7 +345,7 @@ def v07_report():
         "首轮开发暴露两项协议问题：自主提示中 finish 包装与裸答案格式要求冲突；收到的 JSON action 后混入 DSML 标记。最终题保持未运行，先保留首轮全部记录，再修正提示，并在第二轮开发中增加明确格式归一化：只取开头完整 JSON 对象、丢弃且不执行 DSML 后缀；完整裸答案包装为 finish，仍检查已读文献与真实引用。不会把模拟工具输出作为证据。",
         "第二轮仍记录完整原回复、最初解析错误和归一化说明，因此初始 JSONDecodeError 不必然等于最终流程失败；请结合状态和动作适配次数。第一轮失败未被覆盖，第二轮三臂完整重跑后才冻结最终方法。收到的 DSML 文本不能判定问题来自底层模型还是网关转换，也不等于医学推理错误。",
         "三臂分数同时反映输出合同/适配、完成率和关系判断；原生工具调用的其他实现未在本轮比较。因此规定流程若领先，不能把全部差距归因于 Agent 推理结构，也不能外推为强模型自主工具能力的上限。",
-        "![三臂工作流与成本](assets/v07-workflow-comparison.png)",
+        "![三臂工作流与成本](../assets/v07-workflow-comparison.png)",
         table(
             ["结构化 − 对照", "错误接受率差值 95% CI", "支持召回差值 95% CI"],
             [
@@ -443,15 +443,15 @@ def v07_report():
                 for m in methods
             ],
         ),
-        "首轮自主臂 0/20 完成暴露的是当前提示/适配缺陷，不能作为强模型自主工具能力的有效上限。第二轮未增加论文、标签、工具权限或调用上限；不是按题挑选两轮最好结果。原始清单、完整回复与首次分数见 [development-original](../data/verification/v07/development-original/metrics.json)。所有开发观察已曝光，仅最终 40 来源承担冻结后的独立比较。",
+        "首轮自主臂 0/20 完成暴露的是当前提示/适配缺陷，不能作为强模型自主工具能力的有效上限。第二轮未增加论文、标签、工具权限或调用上限；不是按题挑选两轮最好结果。原始清单、完整回复与首次分数见 [development-original](../../data/verification/v07/development-original/metrics.json)。所有开发观察已曝光，仅最终 40 来源承担冻结后的独立比较。",
         "## 如何解释及继续研究",
         "本实验能回答：在已知目标论文、固定小候选库和固定 Flash 配置下，规定流程如何改变支持关系判断、保留率与成本。它不能单独回答：完整医学 Agent 是否胜过强模型自由使用全部生产工具。",
         "仍保留 Direct 审计默认。自动答案修复与审计驱动的开放补检索没有作为已证明有效的功能上线：v0.6 暴露了核查误报与限定词损失，强行把核查器输出作为修复目标可能损害正确内容。后续先扩展未指定论文、需要补找证据的独立任务，再测每一步的作用；本次最终集合已曝光，只能做回归。",
         "## 复现、原始记录与演示",
-        "[全部原始输出和冻结清单](../data/verification/v07/README.md) · [离线重算与另存新运行](research-reproduction.md) · [产品演示](research-demo.md) · [实施协议](plans/v0.7-agent-comparison.md)。",
+        "[全部原始输出和冻结清单](../../data/verification/v07/README.md) · [离线重算与另存新运行](../research-reproduction.md) · [产品演示](../research-demo.md) · [实施协议](../plans/v0.7-agent-comparison.md)。",
         "标签来源为 [SciFact 官方数据格式](https://github.com/allenai/scifact/blob/master/doc/data.md)。引用文献无标注依据仅作该摘要信息不足，不是全球无证据。公共数据训练污染、标题提示、固定干扰、单模型和小组数均限制泛化。",
     ]
-    (ROOT / "docs/verification-v0.7-report.md").write_text(
+    (ROOT / "docs/reports/verification-v0.7-report.md").write_text(
         "\n\n".join(lines) + "\n", encoding="utf8"
     )
 

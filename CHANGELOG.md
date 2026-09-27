@@ -1,5 +1,20 @@
 # Changelog
 
+## Unreleased — v0.8 milestone maintenance
+
+- Split the Ask nodes and evidence helpers into cohesive packages without changing the retained function bodies; remove three unused planner heuristics. Snapshot all package files for future benchmark runs.
+- Split answer text/evidence/suggestions and audit claim/source panels into components; keep Ask-centered interactions and saved records intact.
+- Consolidate startup/port configuration, replace old architecture prose, archive plans/worklogs, and move experimental reports/cases together with their generation paths. Remove superseded design and test narratives; keep fixed-tag historical links and raw experiments.
+- Define v0.9 question-coverage research: missing requirements, unnecessary gaps and clarification; compare direct review, structured requests and a two-pass direct control before changing defaults.
+- Fix MCP Ask reusing public thread labels as checkpoint IDs; share fresh graph inputs with the web entry. Preserve the tool argument as a tracing label and document that MCP does not provide browser conversation memory.
+- Keep MCP module imports from starting background model loading; record rejected visual-stub calls and correct PII/auth/audit documentation without implying compliance or web API protection.
+- Consolidate the three demo launchers, wait for the audit backend before opening its frontend, and explicitly reset inherited Vite mode flags.
+- Separate exact audit passage rendering from page state. Mark legacy raw-checkpoint history deprecated and regenerate its REST contract.
+- Recompute v0.8 R2 metrics from saved judgments, check the frozen schedule/input identities, and reject duplicate predictions or stale cached scores. Require scheduled demo audits before packaging any exports. Historical outputs and research numbers remain unchanged.
+- Add current code, research, data and script maps, clarify historical version/tag status, and replace stale port/MCP guides. See [milestone review](docs/milestone-v0.8-review.md).
+
+These changes follow the immutable `v0.8.0` tag; they do not rewrite that release or claim new model experiments.
+
 ## 0.8.0 — 2026-09-27 (persistent conversations and qualifier inspection)
 
 - Keep Ask conversations, selected answer versions, complete source snapshots and per-answer audits
@@ -18,7 +33,7 @@
 - Preserve all 348 scheduled R2 audits and 577 model calls. Final target co-presence is 91/104 for
   Direct and 101/104 for v2, while fully completed audits are 47/48 and 26/48 under their differing
   extraction contracts. The mechanical results do not establish semantic improvement.
-  See [version notes](docs/releases/v0.8.0.md) and [the research report](docs/verification-v0.8-report.md).
+  See [version notes](docs/releases/v0.8.0.md) and [the research report](docs/reports/verification-v0.8-report.md).
 
 ## 0.7.1 — 2026-09-27 (conversation-first product correction)
 
@@ -57,28 +72,28 @@
 
 - Add 33 explicit AI development error reviews separating specific issue identification from incidental span overlap; preserve public annotations and historical scores.
 - Add an optional quote-v2 audit with program-derived locations/context and visible repeated/missing quotations. Offline binding-only replay completes 125/126 original outputs versus historical 123/126; never overwrites original failures.
-- Complete 36 Flash calls on 8 new sources with separate whole-answer and fixed-target tasks. Whole-answer hits remain 3/5 for both, fixed binary agreement is 8/8 for both including easy copy controls, and repeated whole-answer judgments vary. Keep Direct default; see the [full interpretation](docs/verification-v0.5-specific-errors.md).
+- Complete 36 Flash calls on 8 new sources with separate whole-answer and fixed-target tasks. Whole-answer hits remain 3/5 for both, fixed binary agreement is 8/8 for both including easy copy controls, and repeated whole-answer judgments vary. Keep Direct default; see the [full interpretation](docs/reports/verification-v0.5-specific-errors.md).
 
 - Add an opt-in, one-call Context + meta audit with exact paragraph bindings and separately visible presentation text; preserve the original Direct implementation and default.
 - Connect the Ask toolbar to Audit with the unchanged answer, every returned source passage and citation/chunk provenance. No automatic call, truncation or answer replacement; distinguish authored demo transfers.
-- Complete 126 preregistered Flash development calls: context/metatext ablations, 24 new source groups and 6 repeated answers. Preserve 123 fully bound audits and all 3 partial failures, unchanged error denominators and a full prior disagreement ledger. Span-metric gains do not establish better semantic verification; Direct remains the default. The 60 official test sources remain unused. See the [context experiment](docs/verification-v0.5-context-audit.md).
+- Complete 126 preregistered Flash development calls: context/metatext ablations, 24 new source groups and 6 repeated answers. Preserve 123 fully bound audits and all 3 partial failures, unchanged error denominators and a full prior disagreement ledger. Span-metric gains do not establish better semantic verification; Direct remains the default. The 60 official test sources remain unused. See the [context experiment](docs/reports/verification-v0.5-context-audit.md).
 - Add independent source-bound text verification, SciFact adaptation and controlled diagnostics; keep all historical v0.4 artifacts intact.
 - Add whole-answer direct and extract-then-verify Flash audits, exact answer/source anchors, uncovered text and distinct failure states.
 - Freeze a 24-answer RAGTruth training pilot and a metadata-only reserve of 60 test source groups. Count missed and unextracted reference errors in the evaluation denominator.
 - Add a real `/audit` panel with saved inference replay, new input, source navigation and JSON export; no uncalibrated confidence percentages.
-- Add a lightweight local audit service and launcher without retrieval/GPU dependencies. See the [audit guide](docs/audit-demo.md) and [experiment report](docs/verification-v0.5-answer-audit.md).
+- Add a lightweight local audit service and launcher without retrieval/GPU dependencies. See the [audit guide](docs/audit-demo.md) and [experiment report](docs/reports/verification-v0.5-answer-audit.md).
 
 ## 0.4.0 — 2026-09-23 (published research showcase)
 
 - Add the OpenHub backend with streaming and per-question model selection for the complete Agent.
-- Preserve the Pro/Flash development comparison, repeat, all 44 completed answers and source-first assessments; see the [comparison report](docs/agent-model-comparison-report.md).
+- Preserve the Pro/Flash development comparison, repeat, all 44 completed answers and source-first assessments; see the [comparison report](docs/reports/agent-model-comparison-report.md).
 - Select `deepseek-v4.1-flash` as the continuing research baseline at the user's request because of Pro's token cost, superseding the initial Pro recommendation. Keep the measured results unchanged.
 - Make the research runner default to Flash only; paired Pro/Flash runs require explicitly selecting both models. Align configuration examples, workflow and demo guidance with that choice.
 - Add a [documentation index](docs/README.md) distinguishing active guidance, experimental records and historical designs.
 
 - Prioritize source identities without rejecting descriptive suffixes; plan and review the whole original question, including evidence gaps.
 - Preserve rejected claims through quotation recovery and target unsupported protocol timing and development/validation cohort relationships.
-- Render critical factual components from selected source sentences while keeping requested design explanations generative; preserve all development failures and source-first reviews in the [Flash report](docs/agent-v0.4-flash-report.md).
+- Render critical factual components from selected source sentences while keeping requested design explanations generative; preserve all development failures and source-first reviews in the [Flash report](docs/reports/agent-v0.4-flash-report.md).
 - Retain the fourth development run's five billing errors. Continue with a fresh full run after the user supplied a different compatible Flash gateway; record its exact endpoint/model separately and retain missing usage as unavailable.
 
 - Complete final Flash development (15/15), independent repetition (10/10) and one post-freeze held-out evaluation (31/35), retaining all four test failures and unchanged scoring.
@@ -96,7 +111,7 @@
 - Save two independent Qwen `qwen3.5:9b` focus runs (6/6 and 6/6) and a separate full development run (15/15), with 0 unsupported additions and 0 execution errors in the full run. Preserve all earlier failures.
 - Add `recompute_saved_agent.py --version v0.4-repaired`; older version selections retain their meaning.
 
-See [the repair report](docs/agent-v0.4-repaired-report.md). No stable tag, push or held-out test evaluation is implied.
+See [the repair report](docs/reports/agent-v0.4-repaired-report.md). No stable tag, push or held-out test evaluation is implied.
 
 ## 0.4.0 — 2026-09-22 (unpublished development candidate)
 

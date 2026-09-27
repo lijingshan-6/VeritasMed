@@ -19,14 +19,14 @@ textual diagnostics; they do not establish clinical reliability.
 | r2/method-freeze.json, r2/final | Candidate fingerprint and all 144 audits from one post-freeze final run |
 | r2/summary.json | Offline mechanical summaries and source-group paired intervals; not clinical accuracy |
 
-See the [development log](../../../docs/development-v0.8-worklog.md),
-[exposure decision](../../../docs/verification-v0.8-exposure.md), and
-[localization report](../../../docs/verification-v0.8-localization.md).
+See the [development log](../../../docs/archive/worklogs/development-v0.8-worklog.md),
+[exposure decision](../../../docs/reports/verification-v0.8-exposure.md), and
+[localization report](../../../docs/reports/verification-v0.8-localization.md).
 Dataset provenance and distinct upstream licenses remain in
 [research sources](../../../docs/research-sources.md).
 
 R2 contains all 348 scheduled audits and 577 recorded model calls. See the
-[complete report](../../../docs/verification-v0.8-report.md) for results, intervals and limitations.
+[complete report](../../../docs/reports/verification-v0.8-report.md) for results, intervals and limitations.
 The three full medical conversations are preserved separately in
 [the actual replay directory](../../demo/conversations/README.md), not mixed into R2.
 Only one unexposed public SciFact labelled pair

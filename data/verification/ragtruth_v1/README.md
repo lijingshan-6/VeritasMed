@@ -1,7 +1,7 @@
 # RAGTruth whole-answer development pilot
 
 Protocol: [v0.5 answer audit](../../../docs/plans/v0.5-answer-audit.md).
-Results: [experiment report](../../../docs/verification-v0.5-answer-audit.md).
+Results: [experiment report](../../../docs/reports/verification-v0.5-answer-audit.md).
 UI: [real audit panel](../../../docs/audit-demo.md).
 
 ## Provenance and scope

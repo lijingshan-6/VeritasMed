@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useStore } from '../store'
 import { useAgentStream } from '../hooks/useAgentStream'
-import { fetchCorpusStats, saveThread } from '../api/client'
+import { fetchCorpusStats } from '../api/client'
 import type { CorpusStats } from '../types'
+import { contextFor } from '../conversation/model'
+import { isGuidedDemo, isReplayOnly } from '../demo'
 
 // ── SVG icons ─────────────────────────────────────────────────────────────
 function I({ size = 16, sw = 1.6, children }: { size?: number; sw?: number; children: React.ReactNode }) {
@@ -18,38 +20,19 @@ const IconArrowUp  = (p: { size?: number; sw?: number }) => <I {...p}><path d="M
 const IconStop     = (p: { size?: number; sw?: number }) => <I {...p}><rect x="6" y="6" width="12" height="12" rx="1.5"/></I>
 const IconDatabase = (p: { size?: number; sw?: number }) => <I {...p}><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></I>
 
-function ThreadPill({ value, onChange }: { value: string; onChange: (v: string) => void }) {
-  return (
-    <div style={{
-      display: 'inline-flex', alignItems: 'center', gap: 6,
-      padding: '5px 9px',
-      border: '1px solid var(--rule-soft)',
-      borderRadius: 6,
-      fontSize: 11, color: 'var(--muted)',
-    }}>
-      <span className="vm-eyebrow" style={{ fontSize: 9, letterSpacing: '0.12em' }}>Thread</span>
-      <input
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        style={{
-          width: 92, border: 'none', outline: 'none', background: 'transparent',
-          fontFamily: 'var(--mono)', fontSize: 11, color: 'var(--ink-soft)', fontWeight: 600,
-        }}
-      />
-    </div>
-  )
-}
-
 // ── QueryInput ─────────────────────────────────────────────────────────────
 export function QueryInput() {
-  const { query, setQuery, threadId, setThreadId, isStreaming } = useStore()
+  const { query, setQuery, activeRequest, useContext, setUseContext, hydrated, conversations, threadId, selectedTurnId, selectedRevisionId } = useStore()
   const { send, cancel } = useAgentStream()
+  const isStreaming = !!activeRequest
+  const conversation = conversations.find(c => c.id === threadId)
+  const history = conversation ? contextFor(conversation, selectedTurnId, selectedRevisionId) : { context: [], omitted: 0 }
   const [stats, setStats] = useState<CorpusStats | null>(null)
   const [focused, setFocused] = useState(false)
   const taRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
-    fetchCorpusStats().then(setStats).catch(() => null)
+    if (!isReplayOnly) fetchCorpusStats().then(setStats).catch(() => null)
   }, [])
 
   // Auto-grow textarea
@@ -63,14 +46,19 @@ export function QueryInput() {
   function handleKey(e: React.KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
-      if (!isStreaming && query.trim()) {
-        saveThread(threadId)
+      if (hydrated && !isStreaming && query.trim()) {
         send()
       }
     }
   }
 
-  const canSend = query.trim().length > 0 && !isStreaming
+  const canSend = hydrated && query.trim().length > 0 && !isStreaming
+
+  if (isReplayOnly) return <div className="vm-replay-composer">
+    <strong>Saved conversation replay</strong>
+    <span>Select a recorded question above. Answers, sources and audits belong to that original run.</span>
+    <a href="https://github.com/lijingshan-6/medrag-agent#run-the-full-medical-ask--audit-flow" target="_blank" rel="noreferrer">Set up live questions and follow-ups ↗</a>
+  </div>
 
   return (
     <div style={{
@@ -97,7 +85,7 @@ export function QueryInput() {
             onKeyDown={handleKey}
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
-            disabled={isStreaming}
+            disabled={isStreaming || !hydrated}
             rows={1}
             placeholder="Ask a literature question — enter to send, shift+enter for a new line"
             style={{
@@ -119,7 +107,8 @@ export function QueryInput() {
           borderTop: '1px solid var(--rule-soft)',
         }}>
           <span className="vm-mono" style={{ fontSize: 11, color: "var(--muted)" }}>Evidence + self-check</span>
-          <ThreadPill value={threadId} onChange={setThreadId} />
+          {!isGuidedDemo && <label className="vm-context-toggle"><input type="checkbox" checked={useContext} onChange={e => setUseContext(e.target.checked)} /> Use selected history ({history.context.length} turns)</label>}
+          {useContext && history.omitted > 0 && <span role="note">{history.omitted} older turns omitted; no partial turns</span>}
 
           {stats && (
             <span className="vm-mono" style={{
@@ -133,7 +122,7 @@ export function QueryInput() {
           )}
 
           <button
-            onClick={isStreaming ? cancel : () => { if (canSend) { saveThread(threadId); send() } }}
+            onClick={isStreaming ? cancel : () => { if (canSend) { send() } }}
             disabled={!isStreaming && !canSend}
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,

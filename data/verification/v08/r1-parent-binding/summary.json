@@ -1,0 +1,212 @@
+{
+  "schema": 1,
+  "binding_version": "parent-exact-v1",
+  "model_calls": 0,
+  "scope": "All v06 JSONL atomic_v1 audit records, including repeats and no-slots ablation, plus the three distinct GRADE demo audits. Output fixed; strata reported separately.",
+  "interpretation": "Exact localization only. Original claim extraction and semantic judgments are unchanged. Recovered unjudged facts are still not checked.",
+  "input_files": {
+    "data/verification/v06/ablations/no_slots.jsonl": "cc432febd900f2cb80ad848b3e3e57afe417269616af81ef3c086e25602fc57a",
+    "data/verification/v06/whole/medical_development/predictions.jsonl": "a93172467e6509bad57cd9c4e6c7a45a02550538d910ca21e250b36a0c72ced3",
+    "data/verification/v06/whole/medical_transfer/predictions.jsonl": "b1e0c88774b10525a1acde55a4abd4f90fd5f9be738176308dd9936e4069c0c3",
+    "data/verification/v06/whole/natural/predictions.jsonl": "2a8f5fbbea8a54780c585e374be5f08e40083e65965cbc6c3c3f45ff969b3b69",
+    "data/verification/v06/whole/repeat/predictions.jsonl": "3025759470af42efa4f07e42969ac47fe54876322c37794ab47893957fa42d22",
+    "data/demo/reliability/grade-arm-swap-atomic_v1.json": "807096e7cc9b5fa319abfb99a9acde7bd74acc42f93604104fef5c5d111c6040",
+    "data/demo/reliability/grade-evidence-gap-atomic_v1.json": "edd9cebf2223a81564d705efb49a37029c8565e475271cc2480bffcfd9281a4a",
+    "data/demo/reliability/grade-original-atomic_v1.json": "48a800810bc8769edb37ca27e8394e32e843ec0e592a3ed1280200c2490754fc"
+  },
+  "total": {
+    "audits": 167,
+    "audits_with_extraction": 167,
+    "original_checked_facts": 1027,
+    "all_positions_valid_before": 136,
+    "all_positions_valid_after": 157,
+    "facts": 1203,
+    "valid_before": 1097,
+    "valid_after": 1179,
+    "recovered_positions": 82,
+    "recovered_without_original_judgment": 82,
+    "regressed_positions": 0,
+    "fragments": 2169,
+    "unique_before": 2069,
+    "unique_after": 2125,
+    "global_unique_outside_parent": 0,
+    "parent_statuses": {
+      "unique": 1187,
+      "not_found": 16
+    },
+    "fragment_transitions": {
+      "unique -> unique": 2041,
+      "ambiguous -> ambiguous": 1,
+      "not_found -> not_found": 7,
+      "ambiguous -> unique": 84,
+      "unique -> unresolved_parent": 28,
+      "ambiguous -> unresolved_parent": 8
+    },
+    "incorrect_cross_parent_links_after": 0,
+    "semantic_judgments_added": 0
+  },
+  "datasets": {
+    "grade_demo": {
+      "audits": 3,
+      "audits_with_extraction": 3,
+      "original_checked_facts": 40,
+      "all_positions_valid_before": 0,
+      "all_positions_valid_after": 3,
+      "facts": 69,
+      "valid_before": 40,
+      "valid_after": 69,
+      "recovered_positions": 29,
+      "recovered_without_original_judgment": 29,
+      "regressed_positions": 0,
+      "fragments": 156,
+      "unique_before": 127,
+      "unique_after": 156,
+      "global_unique_outside_parent": 0,
+      "parent_statuses": {
+        "unique": 69
+      },
+      "fragment_transitions": {
+        "unique -> unique": 127,
+        "ambiguous -> unique": 29
+      },
+      "incorrect_cross_parent_links_after": 0,
+      "semantic_judgments_added": 0
+    },
+    "medical_development": {
+      "audits": 60,
+      "audits_with_extraction": 60,
+      "original_checked_facts": 143,
+      "all_positions_valid_before": 59,
+      "all_positions_valid_after": 59,
+      "facts": 152,
+      "valid_before": 151,
+      "valid_after": 151,
+      "recovered_positions": 0,
+      "recovered_without_original_judgment": 0,
+      "regressed_positions": 0,
+      "fragments": 302,
+      "unique_before": 301,
+      "unique_after": 301,
+      "global_unique_outside_parent": 0,
+      "parent_statuses": {
+        "unique": 152
+      },
+      "fragment_transitions": {
+        "unique -> unique": 301,
+        "ambiguous -> ambiguous": 1
+      },
+      "incorrect_cross_parent_links_after": 0,
+      "semantic_judgments_added": 0
+    },
+    "medical_transfer": {
+      "audits": 32,
+      "audits_with_extraction": 32,
+      "original_checked_facts": 102,
+      "all_positions_valid_before": 32,
+      "all_positions_valid_after": 32,
+      "facts": 111,
+      "valid_before": 111,
+      "valid_after": 111,
+      "recovered_positions": 0,
+      "recovered_without_original_judgment": 0,
+      "regressed_positions": 0,
+      "fragments": 230,
+      "unique_before": 230,
+      "unique_after": 230,
+      "global_unique_outside_parent": 0,
+      "parent_statuses": {
+        "unique": 111
+      },
+      "fragment_transitions": {
+        "unique -> unique": 230
+      },
+      "incorrect_cross_parent_links_after": 0,
+      "semantic_judgments_added": 0
+    },
+    "natural": {
+      "audits": 36,
+      "audits_with_extraction": 36,
+      "original_checked_facts": 449,
+      "all_positions_valid_before": 22,
+      "all_positions_valid_after": 32,
+      "facts": 510,
+      "valid_before": 476,
+      "valid_after": 502,
+      "recovered_positions": 26,
+      "recovered_without_original_judgment": 26,
+      "regressed_positions": 0,
+      "fragments": 867,
+      "unique_before": 834,
+      "unique_after": 851,
+      "global_unique_outside_parent": 0,
+      "parent_statuses": {
+        "unique": 505,
+        "not_found": 5
+      },
+      "fragment_transitions": {
+        "unique -> unique": 825,
+        "not_found -> not_found": 3,
+        "ambiguous -> unique": 26,
+        "unique -> unresolved_parent": 9,
+        "ambiguous -> unresolved_parent": 4
+      },
+      "incorrect_cross_parent_links_after": 0,
+      "semantic_judgments_added": 0
+    },
+    "no_slots": {
+      "audits": 12,
+      "audits_with_extraction": 12,
+      "original_checked_facts": 29,
+      "all_positions_valid_before": 12,
+      "all_positions_valid_after": 12,
+      "facts": 30,
+      "valid_before": 30,
+      "valid_after": 30,
+      "recovered_positions": 0,
+      "recovered_without_original_judgment": 0,
+      "regressed_positions": 0,
+      "fragments": 50,
+      "unique_before": 50,
+      "unique_after": 50,
+      "global_unique_outside_parent": 0,
+      "parent_statuses": {
+        "unique": 30
+      },
+      "fragment_transitions": {
+        "unique -> unique": 50
+      },
+      "incorrect_cross_parent_links_after": 0,
+      "semantic_judgments_added": 0
+    },
+    "repeat": {
+      "audits": 24,
+      "audits_with_extraction": 24,
+      "original_checked_facts": 264,
+      "all_positions_valid_before": 11,
+      "all_positions_valid_after": 19,
+      "facts": 331,
+      "valid_before": 289,
+      "valid_after": 316,
+      "recovered_positions": 27,
+      "recovered_without_original_judgment": 27,
+      "regressed_positions": 0,
+      "fragments": 564,
+      "unique_before": 527,
+      "unique_after": 537,
+      "global_unique_outside_parent": 0,
+      "parent_statuses": {
+        "unique": 320,
+        "not_found": 11
+      },
+      "fragment_transitions": {
+        "unique -> unique": 508,
+        "ambiguous -> unique": 29,
+        "not_found -> not_found": 4,
+        "unique -> unresolved_parent": 19,
+        "ambiguous -> unresolved_parent": 4
+      },
+      "incorrect_cross_parent_links_after": 0,
+      "semantic_judgments_added": 0
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { api } from '../api/client'
+import { isReplayOnly } from '../demo'
 import { useNavigate } from 'react-router-dom'
 import { inputProblem } from '../api/auditHandoff'
 import type { AuditHandoff } from '../api/auditHandoff'
@@ -90,7 +91,7 @@ export function ResearchPage() {
       {active && <div className="audit-layout research-layout"><section>
         <div className="audit-section-title"><h2>{methods[method]}</h2><span className="audit-muted">Recorded output</span></div>
         <div className="audit-answer-text">{answerText ?? 'No usable answer was returned.'}</div>
-        {!!answerText?.trim() && <button className="audit-button" onClick={transfer}>Audit this answer with the candidate sources ↗</button>}
+        {!!answerText?.trim() && !isReplayOnly && <button className="audit-button" onClick={transfer}>Audit this answer with the candidate sources ↗</button>}
         <p>{answerField(active, 'explanation')}</p>
         {active.review_reason && <div className="audit-notice">{active.review_reason}</div>}
         {active.status !== 'ok' && <p className="audit-error-text">This result is not counted as a completed accepted judgment. The original draft is retained.</p>}

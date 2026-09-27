@@ -1,10 +1,10 @@
 # VeritasMed demonstration guide
 
-**Current starting point:** [atomic audits and workflow comparisons](research-demo.md),
-[real medical Ask → Audit](medical-demo.md) and
-[no-key audit replay](audit-demo.md). The medical profile uses original CC0 paper passages:
-`python scripts/run_demo.py --medical`. The older summaries and Guided fixture documented
-below remain separate; the dated v0.4 browser runs are historical recordings.
+**Current starting point:** [v0.8 medical conversations](conversation-guide.md).
+Use `python scripts/run_showcase.py` for no-key actual Ask replay, or
+`python scripts/run_demo.py --conversations` for new questions over three original abstracts.
+The older one-paper GRADE setup, authored summaries and Guided fixture below remain separate;
+the dated browser runs are historical recordings.
 
 ## Two explicit modes
 

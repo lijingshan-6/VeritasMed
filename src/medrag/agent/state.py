@@ -1,8 +1,8 @@
 """LangGraph AgentState definition for MedRAG-Agent.
 
-Two-tier memory architecture:
-  L1 — LangGraph SqliteSaver checkpointer (crash recovery, multi-turn)
-  L2 — rolling summarization every 10 turns (long-context compression)
+The graph has checkpoint/history reducers for explicit programmatic reuse.
+The Ask API deliberately starts a fresh checkpoint per request; conversation
+intent comes from bounded browser snapshots, not shared history or summaries.
 """
 from __future__ import annotations
 

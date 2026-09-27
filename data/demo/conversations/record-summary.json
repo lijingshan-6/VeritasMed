@@ -1,0 +1,151 @@
+{
+  "scope": "Recorded software behavior, not reliability scoring or expert gold.",
+  "known_limits": [
+    "Diet/exercise turn 1 treats the instruction not to rank effectiveness as an evidence question, producing an unnecessary partial-coverage label.",
+    "The diet/exercise turn 3 returned both durations instead of clarifying the singular reference.",
+    "Evidence-limits turn 3 quoted the duration but did not explicitly answer the requested mortality clause; the product marks partial evidence. A successful audit of the quotation does not establish complete question coverage."
+  ],
+  "turns": [
+    {
+      "conversation": "v08-grade-follow-up",
+      "turn": 1,
+      "record_status": "complete",
+      "evidence_status": "complete",
+      "intent_status": "independent",
+      "audits": [
+        {
+          "method": "direct",
+          "status": "ok",
+          "claims": 2
+        },
+        {
+          "method": "atomic_v2",
+          "status": "partial_error",
+          "claims": 14
+        }
+      ]
+    },
+    {
+      "conversation": "v08-grade-follow-up",
+      "turn": 2,
+      "record_status": "complete",
+      "evidence_status": "complete",
+      "intent_status": "follow_up",
+      "audits": [
+        {
+          "method": "direct",
+          "status": "ok",
+          "claims": 7
+        }
+      ]
+    },
+    {
+      "conversation": "v08-grade-follow-up",
+      "turn": 3,
+      "record_status": "complete",
+      "evidence_status": "complete",
+      "intent_status": "follow_up",
+      "audits": [
+        {
+          "method": "direct",
+          "status": "ok",
+          "claims": 2
+        }
+      ]
+    },
+    {
+      "conversation": "v08-diet-exercise",
+      "turn": 1,
+      "record_status": "complete",
+      "evidence_status": "partial",
+      "intent_status": "independent",
+      "audits": [
+        {
+          "method": "direct",
+          "status": "ok",
+          "claims": 7
+        },
+        {
+          "method": "atomic_v2",
+          "status": "partial_error",
+          "claims": 18
+        }
+      ]
+    },
+    {
+      "conversation": "v08-diet-exercise",
+      "turn": 2,
+      "record_status": "complete",
+      "evidence_status": "complete",
+      "intent_status": "follow_up",
+      "audits": [
+        {
+          "method": "direct",
+          "status": "ok",
+          "claims": 4
+        }
+      ]
+    },
+    {
+      "conversation": "v08-diet-exercise",
+      "turn": 3,
+      "record_status": "complete",
+      "evidence_status": "complete",
+      "intent_status": "follow_up",
+      "audits": [
+        {
+          "method": "direct",
+          "status": "ok",
+          "claims": 3
+        }
+      ]
+    },
+    {
+      "conversation": "v08-evidence-limits",
+      "turn": 1,
+      "record_status": "complete",
+      "evidence_status": "insufficient",
+      "intent_status": "independent",
+      "audits": [
+        {
+          "method": "direct",
+          "status": "ok",
+          "claims": 1
+        },
+        {
+          "method": "atomic_v2",
+          "status": "ok",
+          "claims": 1
+        }
+      ]
+    },
+    {
+      "conversation": "v08-evidence-limits",
+      "turn": 2,
+      "record_status": "complete",
+      "evidence_status": "complete",
+      "intent_status": "follow_up",
+      "audits": [
+        {
+          "method": "direct",
+          "status": "ok",
+          "claims": 2
+        }
+      ]
+    },
+    {
+      "conversation": "v08-evidence-limits",
+      "turn": 3,
+      "record_status": "complete",
+      "evidence_status": "partial",
+      "intent_status": "follow_up",
+      "audits": [
+        {
+          "method": "direct",
+          "status": "ok",
+          "claims": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # 真实回答审计面板
 
-主入口是完整应用 Ask 回答中的 **Audit**。v0.7.1 把它接回当前问答页，
+主入口是 Ask 回答中的 **Audit**。v0.8 保留对话、答案版本与逐次审计，
 原子事实、限定词和独立核查器分歧使用同一审计组件。独立 `/audit` 是实验与保存记录回放入口。
 它接收一份完整回答和 1–40 份来源文本，
 逐条展示模型判定、回答原文范围、来源原文范围和未覆盖文本。
@@ -8,7 +8,8 @@
 
 ## 轻量启动
 
-在 `main` 运行以下命令。`v0.5.0` 仅包含旧面板，新增功能随 `v0.7.0` 交付。
+在当前 v0.8 源码运行以下命令。要在完整 Ask 页面查看三轮真实对话回放，使用
+`python scripts/run_showcase.py`（5173）；以下为可选独立审计工作台（5174）。
 需要 Python 3.12、Node.js 22.12+ 和 uv，不需要 Ollama、Qdrant 或 GPU。
 已有完整项目环境可以直接使用，省略安装步骤。
 
@@ -41,10 +42,11 @@ RAGTruth 是另一个非医学开发研究入口。可选运行
 完整 FastAPI 应用也注册相同 `/api/audit` 路由，Ask、Explore 和 Guided demo 均保留。
 完整应用回答工具栏的 **Audit** 在当前问答页展开审计，保留原问题、回答、全部检索片段、
 citation → chunk 映射和底部输入框。点击 **Run audit** 才会调用模型；**Back to answer**
-关闭审计视图，再次打开仍保留本回答的结果。新问题会清除上一回答的审计上下文。
+关闭审计视图，再次打开仍保留本回答的结果。新问题创建独立记录，旧回答及其审计继续保留。
+**Saved runs** 切换该答案版本的已保存核查；导出完整会话后可以在另一浏览器恢复。
 超过 40 个片段、单段/总字符上限时明确报错，不静默截断。没有自动修复或替换原回答。
 从 Guided demo 传递的内容会显示 **Authored demo input**，不能当成真实 Agent 答案。
-真实医学完整流程用 `python scripts/run_demo.py --medical`，入口是 `http://127.0.0.1:5173`。
+三篇原文的真实医学完整流程用 `python scripts/run_demo.py --conversations`，入口是 `http://127.0.0.1:5173`。
 原有 `python scripts/run_demo.py` 仍为自拟 fastMRI 摘要语料。
 
 以下为保留的 2026-09-24 历史自拟摘要演示；当前原始医学论文演示见 [新记录](medical-demo.md)。
@@ -159,3 +161,18 @@ Direct 保持默认；新增策略并不意味着可靠性已经提高。
 [效果报告](verification-v0.5-context-audit.md)。
 最新 [具体错误诊断与 quote-v2 报告](verification-v0.5-specific-errors.md)区分位置成功和语义判断，
 提供 36 次整段/固定目标调用及全部结果；离线命令见 [quote-v2 工件](../data/verification/quote_v2/README.md)。
+
+
+## Atomic v2 的限定语原文
+
+在完整 Ask 中选择 **Atomic v2 · qualifier anchors · experimental** 可发起新审计；
+三组对话的首个可审计回答保存了该候选的实际输出。旧 Atomic v1 继续可用。
+
+v2 先定位唯一父句，再绑定父句内的原始片段；限定语独立保留自己的父句与逐字位置，
+可以跨句引用原回答的人群、时间、比较、数量和否定条件。面板将每条限定语联动至原回答。
+没有唯一位置时保留失败，不通过模糊匹配或选择第一次出现来补齐。
+
+**模型关系与完成状态分开。** 数字遗漏、缺失限定语锚点、复合解析或重复会保留为待查看；
+原模型 supported/contradicted/insufficient 仍可查，但不会因此计作已完成核查。
+机械规则只检查已返回的内容；无警报不能证明提取完整或语义正确。
+参见 [v0.8 研究报告](verification-v0.8-report.md)和[逐例开发观察](verification-v0.8-extraction-review.md)。

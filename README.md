@@ -7,54 +7,32 @@ cited answers and claim auditing within the question-and-answer workspace. The p
 passages, unsupported statements, unresolved quotations and unchecked text. It is not a
 clinically validated assistant.
 
-**v0.7.1 — Ask first, with claim auditing inside the answer workspace.**
+**v0.8.0 — Persistent conversations with an audit attached to each answer.**
 
-The experiments do not establish an advantage for the more structured workflow. Direct remains
-the audit default; Atomic and MiniCheck are explicit research options. [Results and limits](docs/releases/v0.7.0.md).
+Ask follow-up questions, revisit answer versions, inspect exact source passages and keep the
+original audit records. Direct / Flash remains the default. Atomic v2 exposes qualifier anchors
+and unresolved interpretation; it is an experiment, not a demonstrated upgrade in clinical reliability.
 
-Python 3.12 · Node.js 22.12+ · Apache-2.0 code · [Research source attribution](docs/research-sources.md)
+Python 3.12 · Node.js 22.12+ · Apache-2.0 code · [Source attribution](docs/research-sources.md)
 
-![Recorded medical Ask answer with retrieved source passages](docs/assets/v05-medical-ask.png)
+![Actual saved GRADE conversation, with turn history and original source passages](docs/assets/v08-conversation.png)
 
-*Recorded GRADE medical Ask session: question, actual Agent answer and original abstract passages.
-In v0.7.1, the answer's Audit button opens its claim review in the same workspace.
-This single-paper demonstration is not a reliability score.*
+Actual saved inference from the three-paper demonstration; no clinical accuracy is implied.
 
-## Product entry: Ask → answer → Audit → continue asking
+## Start with Ask: real recorded conversations, no key
 
-**Ask is the main application**, at **http://127.0.0.1:5173**. It includes literature questions,
-retrieved sources, answer auditing, Explore and the research pages. The answer's **Audit** button
-opens the audit inside the current Ask workspace; **Back to answer** returns without discarding
-the answer or its audit. The question input remains available. Opening the audit makes no model
-call; **Run audit** explicitly starts checking the current answer and its complete source passages.
-
-Use the [full medical setup](#run-the-full-medical-ask--audit-flow) for this experience. The lighter
-**5174** service below is an optional audit/research workspace: it does not run the retrieval Agent.
-Its **Ask ↗** link returns to the full app. Independent evaluation of the checker is a research
-requirement, not a reason to replace the conversational product with evaluation screens.
-
-These navigation and inline-audit corrections ship in [v0.7.1](docs/releases/v0.7.1.md). The immutable
-v0.7.0 tag retains its original separate audit route. [Product direction](docs/decisions/2026-09-27-conversation-first-product.md).
-
-This restores the answer-review workflow; it does not yet implement persistent chat history or
-contextual follow-ups. Ask currently processes each question independently. Those capabilities
-and targeted audit improvements are the [v0.8 plan](docs/plans/v0.8-conversation-and-audit.md).
-
-## Optional lightweight demo: real medical audit, no API key
-
-Install [uv](https://docs.astral.sh/uv/) and Node.js 22.12+, then get the current app:
+Install [uv](https://docs.astral.sh/uv/) and Node.js 22.12+, then:
 
 ```sh
-git clone --branch v0.7.1 https://github.com/lijingshan-6/medrag-agent.git
+git clone --branch v0.8.0 https://github.com/lijingshan-6/medrag-agent.git
 cd medrag-agent
 uv venv --python 3.12
 uv pip install -r requirements-audit.txt
 uv pip install --no-deps -e .
 ```
 
-Alternatively, download the [v0.7.1 source ZIP](https://github.com/lijingshan-6/medrag-agent/archive/refs/tags/v0.7.1.zip).
-The fixed [v0.7.0 source milestone](https://github.com/lijingshan-6/medrag-agent/tree/v0.7.0) preserves
-the published research artifacts. Activate the environment:
+Or download the [v0.8.0 source ZIP](https://github.com/lijingshan-6/medrag-agent/archive/refs/tags/v0.8.0.zip).
+Activate the environment:
 
 | Shell | Command |
 |---|---|
@@ -62,27 +40,40 @@ the published research artifacts. Activate the environment:
 | macOS / Linux | `source .venv/bin/activate` |
 
 ```sh
+python scripts/run_showcase.py
+```
+
+Open **http://127.0.0.1:5173/**. The launcher installs frontend dependencies if needed;
+ports **8000 and 5173** must be free. Ctrl+C stops both services. If PowerShell blocks activation,
+use `.\.venv\Scripts\python.exe scripts/run_showcase.py` directly.
+
+Choose a **SAVED INFERENCE** conversation. Three real medical papers support three recorded
+conversations of three questions each. Select a turn, inspect its complete answer and sources,
+then click **Audit** and switch **Saved runs**. **Back to answer** keeps the conversation.
+Export/import preserves questions, versions, source snapshots, traces and all attached audits.
+
+Replay needs **no model key, GPU, Qdrant or dataset download** after dependency installation.
+It reads actual saved output, including refusals, partial answers and incomplete judgments. It accepts no
+new questions or model calls. To ask your own questions, use the full setup below.
+
+[Conversation guide](docs/conversation-guide.md) ·
+[Original papers, licenses and fixed questions](data/demo/conversations/README.md) ·
+[v0.8 results and limits](docs/verification-v0.8-report.md)
+
+## Optional standalone audit and research workspace
+
+```sh
 python scripts/run_audit_demo.py
 ```
 
-Open **http://127.0.0.1:5174/audit**. The launcher installs frontend dependencies if needed;
-ports **8001 and 5174** must be free. Ctrl+C stops both services. If PowerShell blocks activation,
-use `.\.venv\Scripts\python.exe scripts/run_audit_demo.py` directly.
+Open **http://127.0.0.1:5174/audit** (API **8001**). This separate workspace replays the earlier
+GRADE audits, constructed error controls, MiniCheck diagnostics and controlled research comparisons.
+It also permits new audits after configuring Flash. Ask at **5173** remains the main product;
+Audit lab and Research are supporting tools. Neither page replaces conversational Ask.
 
-The medical record and its source texts are bundled. After dependency installation, replay
-needs **no model key, GPU, Qdrant or dataset download**. Click a claim, select **Locate in full
-source**, open the paper, and export the audit JSON. The page clearly identifies saved inference.
+[Audit guide](docs/audit-demo.md) · [Historical research walkthrough](docs/research-demo.md)
 
-[Medical walkthrough and actual output](docs/medical-demo.md) · [Audit methods and input limits](docs/audit-demo.md)
-
-The [v0.7 walkthrough](docs/research-demo.md) adds **Atomic facts · experimental** and three
-GRADE inputs: the unchanged real Agent answer, deliberately swapped arm values, and deliberately
-removed result evidence. The controls are explicitly labelled constructions. Inspect parent text,
-individual facts, qualifications, source passages and separate checker results; unresolved items
-stay visible. MiniCheck results are saved GPU inference, so replay does not download its weights.
-
-Optional: download the pinned public RAGTruth texts to replay nonmedical development
-experiments too, then reload the page:
+Optional: download pinned RAGTruth texts for the nonmedical development replays:
 
 ```sh
 python scripts/verification/answer_benchmark.py download
@@ -108,7 +99,7 @@ In **Audit your own answer**, enter an answer and its sources, then choose **Run
 This sends those texts to the configured endpoint. The audit service does not save submissions;
 use **Export audit JSON** to retain a result. Do not submit personal health information.
 
-**Direct Flash remains the default.** Atomic facts, Split, Context + meta and Exact quotes v2 are experimental
+**Direct Flash remains the default.** Atomic v1/v2, Split, Context + meta and Exact quotes v2 are experimental
 alternatives. Their existence does not establish better semantic accuracy. Unique text binding
 proves where a quote occurs; it cannot prove a judgment is correct.
 
@@ -136,26 +127,27 @@ From the root, install it into the same Python 3.12 environment (or a fresh one)
 ```sh
 uv pip sync requirements.lock --torch-backend cpu
 uv pip install --no-deps -e .
-python scripts/run_demo.py --medical
+python scripts/run_demo.py --conversations
 ```
 
-Keep the Flash configuration above and the environment activated. Open **http://127.0.0.1:5173**
-and select the GRADE question. This runs BGE-M3 retrieval, reranking and the actual LangGraph
-Agent over the paper's five original abstract sections. After the answer appears, click its
-**Audit** button to inspect the unchanged answer and all returned passages in the same workspace,
-then click **Run audit**. **Back to answer** preserves that audit during the current answer;
-asking a new question starts a fresh answer and audit context. The audit does not automatically
-rewrite the answer. Independent saved-input experiments remain available in **Audit lab**.
+Stop the replay launcher first, keep the Flash configuration above, then open
+**http://127.0.0.1:5173/**. This runs BGE-M3 retrieval, reranking and the actual LangGraph Agent
+on **15 original abstract sections from three papers**. You can ask new questions or use the
+fixed questions in the [demo protocol](data/demo/conversations/protocol.json).
 
-The launcher uses `.demo-runtime/medical-qdrant` and the separate `medrag_medical_demo` collection;
-it does not replace the research index. Later starts can use
-`python scripts/run_demo.py --medical --skip-index`. Ports **8000 and 5173** must be free.
-The first request includes model loading and may be much slower than later requests.
+Keep **Use selected history** enabled for follow-ups. The resolver uses up to six whole prior
+turns to understand references; every answer retrieves evidence anew. Select an older turn to
+continue from it. **Re-run** appends an answer version, and **Run audit** appends a separate audit
+for that exact version. Refresh restores browser history. A new question retains earlier answers.
 
-The source is Seaquist et al. (2024),
-[GRADE hypoglycemia outcomes](https://doi.org/10.1371/journal.pone.0309907), under **CC0**.
-The [publisher XML, provenance and extraction recipe](data/demo/medical/README.md) are included.
-Only its abstract is indexed; this is not a whole-literature review or full-text clinical assessment.
+The launcher uses `.demo-runtime/conversation-qdrant` and `medrag_conversation_demo`, separate
+from research indexes. Later starts can use `python scripts/run_demo.py --conversations --skip-index`.
+The first question includes local model loading and may take longer. Only abstracts are indexed;
+this tiny collection does not supply evidence for arbitrary medical questions.
+
+The earlier one-paper GRADE setup remains available with `python scripts/run_demo.py --medical`.
+See the [source manifest and rebuild recipe](data/demo/conversations/README.md) for attribution,
+text normalization and preserved XML snapshots.
 
 The earlier three-summary fixture remains available with `python scripts/run_demo.py`.
 For a browser-only authored UI example: `cd frontend`, `npm ci`, `npm run dev`, then open
@@ -164,12 +156,15 @@ not actual inference. [Legacy demo guide](docs/demo.md)
 
 ## What this version delivers
 
+- **Persistent conversations:** bounded contextual follow-ups, ambiguity clarification, local history,
+  answer versions, per-answer audits and complete conversation export/import.
 - **Literature Ask:** dense/sparse retrieval, reranking, requested-study matching, source-bound
   answer components, citations, explicit gaps and bounded answer repair from v0.4.
 - **Answer audit within Ask:** claim extraction and supported / contradicted / insufficient
   judgments against supplied text, with answer/source navigation and original-paper links.
-- **Experimental atomic audit:** parent sentences, individual original fragments, model-interpreted
-  qualification slots, explicit parsing doubts and separately recorded checker disagreements.
+- **Experimental Atomic v2:** unique parent-scoped fragment binding, exact qualifier anchors,
+  literal numeric omissions, duplicates and compound/uncertain facts retained for review.
+  The original Atomic v1 and its historical results remain available.
 - **Visible failure boundaries:** missing/ambiguous quotes, request failures, uncovered text and
   extracted-claim limits stay visible. No uncalibrated confidence percentage in the audit panel.
 - **Inspectable records:** actual model outputs, source fingerprints, invocation metadata,
@@ -192,6 +187,34 @@ flowchart LR
 [Actual Agent workflow](docs/agent-workflow.md) · [Research route](docs/verification-roadmap.md)
 
 ## What we measured
+
+v0.8 separates mechanical localization, constructed qualifier diagnostics and natural development
+answers. The offline parent-binding replay recovers 82 fact locations across 167 saved audits,
+with zero binding regressions; it adds no semantic judgment. Source-use inventory leaves too few
+fresh public labels for a new semantic generalization comparison. Direct stays the default.
+
+All **348 scheduled R2 audits** are saved (577 model calls). On the final 12 source groups /
+48 constructed answers:
+
+| Method | Fully completed audits | Targets with all anchors in one claim | Number + target conditions retained |
+|---|---|---|---|
+| Direct | 47/48 | 91/104 | 83/96 |
+| Atomic v1 | 26/48 | 81/104 | 71/96 |
+| Atomic v2 | 26/48 | 101/104 | 93/96 |
+
+These are mechanical diagnostics on AI-authored constructions, **not semantic accuracy**.
+V2 makes conditions more inspectable but adds review burden; source-group intervals for its
+co-presence and numeric-retention differences include zero. In the separate 12-answer natural
+development sample, Direct / v2 complete 12/12 and 3/12, with the same 8/12 annotated error spans
+overlapped by warnings. Completion contracts differ; span overlap does not establish specific-error detection.
+
+See the [v0.8 report](docs/verification-v0.8-report.md), [localization results](docs/verification-v0.8-localization.md)
+and [source inventory](docs/verification-v0.8-exposure.md).
+
+<details>
+<summary>Preserved v0.4–v0.7 measurements and their separate evaluation contracts</summary>
+
+The following figures are the preserved **v0.6/v0.7** research results, not v0.8 re-evaluations.
 
 The completed fixed-claim study uses **339 pairs from 247 connected source groups** in SciFact's
 public development set. Inputs, methods and thresholds were frozen before this evaluation;
@@ -254,6 +277,8 @@ The historical **v0.4** medical answer evaluation achieved development 15/15, de
 the scores do not measure this new audit panel. Four failures and AI-review limitations
 remain in the [v0.4 report](docs/agent-v0.4-flash-report.md).
 
+</details>
+
 ## Practical limits and repository map
 
 Services bind to loopback. The web API has no public-user authentication or multi-tenant
@@ -263,8 +288,8 @@ finish after Stop. Responses can omit qualifiers or misinterpret a source despit
 
 Windows is the local demonstration platform. GitHub Actions runs the existing Ubuntu checks;
 Docker and macOS/Linux browser use have not been exercised on the release host. Research
-corpora, weights, local indexes and credentials are excluded. The tiny medical XML snapshot is
-an explicit CC0 exception. Small SciFact excerpts, bundled candidate abstracts and actual source/tool
+corpora, weights, local indexes and credentials are excluded. The bundled medical XML snapshots retain their
+CC0 or CC BY attribution. Small SciFact excerpts, bundled candidate abstracts and actual source/tool
 responses are also retained for inspection; they keep their [upstream licenses](docs/research-sources.md).
 
 | Path | Purpose |
@@ -272,6 +297,7 @@ responses are also retained for inspection; they keep their [upstream licenses](
 | `src/medrag/agent/` | Question-answer graph, evidence binding and model backends |
 | `src/medrag/verification/` | Independent fixed-evidence and whole-answer auditors |
 | `src/medrag/api/`, `frontend/` | API and interactive audit/Ask interface |
+| `data/demo/conversations/` | Three-paper corpus, fixed questions, raw streams and complete conversation exports |
 | `data/demo/medical/` | Original source, actual Ask stream and exported audit |
 | `data/demo/reliability/`, `data/demo/research/` | Saved atomic medical audits and shared-tool comparisons |
 | `data/verification/` | Frozen audit experiments and offline reports |
@@ -282,4 +308,4 @@ Existing offline checks: `python -m pytest -q`, `ruff check src/`, `npm --prefix
 `npm --prefix frontend run build`. They make no paid model calls. Live tests require `--run-live`.
 
 [Documentation index](docs/README.md) · [Medical demo](docs/medical-demo.md) ·
-[v0.7.1 patch](docs/releases/v0.7.1.md) · [v0.8 plan](docs/plans/v0.8-conversation-and-audit.md) · [Changelog](CHANGELOG.md) · [License](LICENSE)
+[v0.8 release](docs/releases/v0.8.0.md) · [v0.8 plan](docs/plans/v0.8-conversation-and-audit.md) · [Changelog](CHANGELOG.md) · [License](LICENSE)

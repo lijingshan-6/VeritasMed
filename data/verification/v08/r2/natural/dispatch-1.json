@@ -1,0 +1,196 @@
+{
+  "started_utc": "2026-09-27T12:00:38.367427+00:00",
+  "settings": {
+    "model": "DeepSeek-V4.1-Flash",
+    "base_url": "https://www.cun.ai/v1",
+    "reasoning_effort": "high",
+    "max_tokens": 32768,
+    "timeout_seconds": 240.0,
+    "streaming": true,
+    "sdk_max_retries": 0,
+    "transport": "openai_sdk_raw_stream"
+  },
+  "pending": [
+    {
+      "case_id": "v08-natural-3126",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5460",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5594",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5304",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-753",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3187",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-4614",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3187",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3187",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3273",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3126",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5304",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3050",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3182",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3050",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5304",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5370",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-4614",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5594",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3273",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5370",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3126",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-753",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-4614",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5460",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3050",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5370",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5355",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5355",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5594",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3273",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5460",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-5355",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3182",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-753",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-natural-3182",
+      "method": "direct",
+      "attempt": 1
+    }
+  ],
+  "dispatch": "bounded continuous queue; max 3 requests across this runner"
+}

@@ -1,0 +1,242 @@
+{
+  "input": {
+    "answer": "The study reports: \"While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p<0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p<0.001).\" [PMC:PMC11567630]. The study reports: \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\" [PMC:PMC11567630].",
+    "sources": [
+      {
+        "id": "evidence-1",
+        "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+        "text": "While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p<0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p<0.001)."
+      },
+      {
+        "id": "evidence-2",
+        "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+        "text": "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol). Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years. HbA1c was measured quarterly; if a level >7.5% (>58.5 mmol/mol) was confirmed, rescue glargine and/or aspart insulin was added. We conducted a per-protocol analysis of 4,830, who attended at least one post-baseline visit and took at least one dose of assigned study medication. We assessed severe hypoglycemia events reported throughout the entire study. At quarterly visits, all participants were asked about hypoglycemic symptoms within the last 30 days, and those in the glargine and glimepiride groups were asked for any measured glucose <70 mg/dL (3.9 mmol/L) within this time period."
+      },
+      {
+        "id": "evidence-3",
+        "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+        "text": "In metformin-treated patients with T2DM who add a second medication, hypoglycemia is most likely with addition of glimepiride, less with glargine, and least likely with liraglutide and sitagliptin."
+      },
+      {
+        "id": "evidence-4",
+        "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+        "text": "Hypoglycemia is a major concern in type 2 diabetes (T2DM), but little is known about its likelihood compared across common therapies. We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies."
+      }
+    ],
+    "strategy": "direct"
+  },
+  "audit": {
+    "id": "c7a3299d-4c74-4709-8889-8b9b17e3ad14",
+    "created_utc": "2026-09-27T11:41:21.787746+00:00",
+    "strategy": "direct",
+    "status": "ok",
+    "answer_sha256": "5bc3653e06baaea980576028dfe4b347c925c53dfd195b08a8d7a7b733ecaa97",
+    "source_hashes": {
+      "evidence-1": "bab600fe30235c85d53be52fe06ce296bc9810658f8d6e18587b69985a3f03fe",
+      "evidence-2": "5be60f24272631db49c3926ac2b4f84cf7320a6a3c35ef9aaef56526e9dd4bc5",
+      "evidence-3": "54cd485cf05e6529341d379bd2597ef216722981d8d93d6e9ec46b13a7072e33",
+      "evidence-4": "c2df36f611369fd1c78003b871560c13948457bae3474f08ac30cabe6c467c5f"
+    },
+    "claims": [
+      {
+        "id": "claim-1",
+        "quote": "While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p<0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p<0.001).",
+        "relation": "supported",
+        "explanation": "The exact quoted sentence appears in evidence-1, supporting the reported severe hypoglycemia and symptom counts, drug order, and p-values.",
+        "status": "ok",
+        "answer_span": {
+          "start": 20,
+          "end": 369,
+          "text": "While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p<0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p<0.001).",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 0,
+            "end": 349,
+            "text": "While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p<0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p<0.001).",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-1",
+            "source_sha256": "bab600fe30235c85d53be52fe06ce296bc9810658f8d6e18587b69985a3f03fe"
+          }
+        ]
+      },
+      {
+        "id": "claim-2",
+        "quote": "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).",
+        "relation": "supported",
+        "explanation": "The exact quoted sentence appears in evidence-2, supporting the trial size, T2DM duration, and HbA1c range.",
+        "status": "ok",
+        "answer_span": {
+          "start": 410,
+          "end": 548,
+          "text": "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 0,
+            "end": 138,
+            "text": "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-2",
+            "source_sha256": "5be60f24272631db49c3926ac2b4f84cf7320a6a3c35ef9aaef56526e9dd4bc5"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "supported": 2,
+      "contradicted": 0,
+      "insufficient": 0,
+      "failed_or_unchecked": 0
+    },
+    "extraction_coverage": {
+      "covered_nonspace_characters": 425,
+      "total_nonspace_characters": 497,
+      "uncovered": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The study reports: \""
+        },
+        {
+          "start": 369,
+          "end": 410,
+          "text": "\" [PMC:PMC11567630]. The study reports: \""
+        },
+        {
+          "start": 548,
+          "end": 568,
+          "text": "\" [PMC:PMC11567630]."
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "checked_coverage": {
+      "covered_nonspace_characters": 425,
+      "total_nonspace_characters": 497,
+      "uncovered": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The study reports: \""
+        },
+        {
+          "start": 369,
+          "end": 410,
+          "text": "\" [PMC:PMC11567630]. The study reports: \""
+        },
+        {
+          "start": 548,
+          "end": 568,
+          "text": "\" [PMC:PMC11567630]."
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "claims_at_cap": false,
+    "calls": [
+      {
+        "stage": "direct",
+        "status": "ok",
+        "raw_output": "{\n  \"claims\": [\n    {\n      \"quote\": \"While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p<0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p<0.001).\",\n      \"occurrence\": 0,\n      \"relation\": \"supported\",\n      \"evidence\": [\n        {\n          \"source_id\": \"evidence-1\",\n          \"quote\": \"While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p<0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p<0.001).\",\n          \"occurrence\": 0\n        }\n      ],\n      \"explanation\": \"The exact quoted sentence appears in evidence-1, supporting the reported severe hypoglycemia and symptom counts, drug order, and p-values.\"\n    },\n    {\n      \"quote\": \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\",\n      \"occurrence\": 0,\n      \"relation\": \"supported\",\n      \"evidence\": [\n        {\n          \"source_id\": \"evidence-2\",\n          \"quote\": \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\",\n          \"occurrence\": 0\n        }\n      ],\n      \"explanation\": \"The exact quoted sentence appears in evidence-2, supporting the trial size, T2DM duration, and HbA1c range.\"\n    }\n  ]\n}",
+        "usage": {
+          "input_tokens": 1156,
+          "output_tokens": 10745,
+          "total_tokens": 11901
+        },
+        "transport_metadata": {
+          "model": "deepseek-v4.1-flash",
+          "model_identifiers": [
+            "deepseek-v4.1-flash"
+          ],
+          "finish_reason": "stop",
+          "usage_snapshots": [
+            {
+              "input_tokens": 1156,
+              "output_tokens": 10745,
+              "total_tokens": 11901
+            }
+          ],
+          "reasoning_characters": 39728
+        },
+        "elapsed_seconds": 44.215
+      }
+    ],
+    "elapsed_seconds": 44.217,
+    "scope": "Textual support in provided sources; not calibrated confidence or clinical evidence grading."
+  },
+  "mode": "saved",
+  "provenance": {
+    "note": "Saved actual Ask → audit. Three-paper abstract demonstration, not independent clinical gold.",
+    "run": "data/demo/conversations/run01",
+    "conversation_id": "v08-grade-follow-up",
+    "turn_id": "v08-grade-follow-up-turn-1",
+    "revision_id": "v08-grade-follow-up-turn-1-revision-1",
+    "handoff": {
+      "kind": "live_ask",
+      "question": "In the GRADE report on hypoglycemia outcomes, what were the severe hypoglycemia percentages for glargine, glimepiride, liraglutide and sitagliptin while taking the assigned medication?",
+      "thread_id": "v08-grade-follow-up",
+      "citations": [
+        "PMC:PMC11567630"
+      ],
+      "input": {
+        "answer": "The study reports: \"While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p<0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p<0.001).\" [PMC:PMC11567630]. The study reports: \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\" [PMC:PMC11567630].",
+        "strategy": "direct",
+        "sources": [
+          {
+            "id": "evidence-1",
+            "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+            "text": "While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p<0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p<0.001)."
+          },
+          {
+            "id": "evidence-2",
+            "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+            "text": "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol). Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years. HbA1c was measured quarterly; if a level >7.5% (>58.5 mmol/mol) was confirmed, rescue glargine and/or aspart insulin was added. We conducted a per-protocol analysis of 4,830, who attended at least one post-baseline visit and took at least one dose of assigned study medication. We assessed severe hypoglycemia events reported throughout the entire study. At quarterly visits, all participants were asked about hypoglycemic symptoms within the last 30 days, and those in the glargine and glimepiride groups were asked for any measured glucose <70 mg/dL (3.9 mmol/L) within this time period."
+          },
+          {
+            "id": "evidence-3",
+            "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+            "text": "In metformin-treated patients with T2DM who add a second medication, hypoglycemia is most likely with addition of glimepiride, less with glargine, and least likely with liraglutide and sitagliptin."
+          },
+          {
+            "id": "evidence-4",
+            "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+            "text": "Hypoglycemia is a major concern in type 2 diabetes (T2DM), but little is known about its likelihood compared across common therapies. We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies."
+          }
+        ]
+      },
+      "source_map": [
+        {
+          "id": "evidence-1",
+          "chunk_id": "pmc:PMC11567630:2",
+          "citation": "PMC:PMC11567630",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+          "section": "Abstract / Results"
+        },
+        {
+          "id": "evidence-2",
+          "chunk_id": "pmc:PMC11567630:1",
+          "citation": "PMC:PMC11567630",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+          "section": "Abstract / Research design & methods"
+        },
+        {
+          "id": "evidence-3",
+          "chunk_id": "pmc:PMC11567630:3",
+          "citation": "PMC:PMC11567630",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+          "section": "Abstract / Conclusions"
+        },
+        {
+          "id": "evidence-4",
+          "chunk_id": "pmc:PMC11567630:0",
+          "citation": "PMC:PMC11567630",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+          "section": "Abstract / Objective"
+        }
+      ]
+    }
+  }
+}

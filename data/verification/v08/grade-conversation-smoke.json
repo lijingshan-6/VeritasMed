@@ -1,0 +1,1032 @@
+{
+  "format": "veritasmed-conversation",
+  "schema": 1,
+  "sha256": "bc825adc1ceeda8d054dc21464990384f7c812a40c5c2f5b88b7283744d87b1c",
+  "conversation": {
+    "schema": 1,
+    "id": "66e96f0c-94df-4c83-87dc-9a8dc3f85a8c",
+    "title": "In the GRADE trial hypoglycemia report, which four treatments were compared?",
+    "created_at": "2026-09-27T09:28:46.320Z",
+    "updated_at": "2026-09-27T09:36:54.285Z",
+    "turns": [
+      {
+        "id": "753bd49e-3ff7-4a30-b1b1-617aa80ac54e",
+        "question": "In the GRADE trial hypoglycemia report, which four treatments were compared?",
+        "parent_turn_id": null,
+        "revisions": [
+          {
+            "id": "50891793-43a7-492f-8b1d-06e77e28a510",
+            "created_at": "2026-09-27T09:30:31.744Z",
+            "status": "complete",
+            "origin": "live",
+            "context": [],
+            "omitted_context": 0,
+            "result": {
+              "conversation_context": {
+                "original_query": "In the GRADE trial hypoglycemia report, which four treatments were compared?",
+                "resolved_query": "In the GRADE trial hypoglycemia report, which four treatments were compared?",
+                "supplied_turn_ids": [],
+                "context_turn_ids": [],
+                "referent_entities": [],
+                "needs_clarification": false,
+                "clarification": "",
+                "omitted_context": 0,
+                "elapsed_ms": 0,
+                "model": null,
+                "usage": null,
+                "status": "independent",
+                "raw_output": ""
+              },
+              "evidence_status": "complete",
+              "evidence_gap": "",
+              "answer_components": [
+                {
+                  "id": "C1",
+                  "requirement": "Identify the four treatments compared in the GRADE trial hypoglycemia report",
+                  "question_span": "which four treatments were compared?",
+                  "source_hint": "PMC11567630",
+                  "status": "supported",
+                  "evidence": [
+                    {
+                      "chunk_id": "pmc:PMC11567630:1",
+                      "citation": "PMC:PMC11567630",
+                      "quote": "Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years."
+                    },
+                    {
+                      "chunk_id": "pmc:PMC11567630:1",
+                      "citation": "PMC:PMC11567630",
+                      "quote": "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol)."
+                    },
+                    {
+                      "chunk_id": "pmc:PMC11567630:0",
+                      "citation": "PMC:PMC11567630",
+                      "quote": "We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies."
+                    }
+                  ],
+                  "required_details": [
+                    "glargine U100, glimepiride, liraglutide, or sitagliptin",
+                    "5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol)",
+                    "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).",
+                    "We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies."
+                  ],
+                  "missing_outcome": "",
+                  "gap": "",
+                  "answer": "The study reports: \"Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years.\" [PMC:PMC11567630]. The study reports: \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\" [PMC:PMC11567630]. The study reports: \"We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.\" [PMC:PMC11567630]."
+                }
+              ],
+              "answer": "The study reports: \"Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years.\" [PMC:PMC11567630]. The study reports: \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\" [PMC:PMC11567630]. The study reports: \"We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.\" [PMC:PMC11567630].",
+              "citations": [
+                "PMC:PMC11567630"
+              ],
+              "confidence": 0.95,
+              "faithful": true,
+              "faithfulness_issues": "",
+              "iterations": 0,
+              "regen_count": 0,
+              "rewritten_queries": [],
+              "chunks": [
+                {
+                  "chunk_id": "pmc:PMC11567630:0",
+                  "citation": "PMC:PMC11567630",
+                  "source": "pmc",
+                  "doc_id": "PMC11567630",
+                  "title": "Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "section": "Abstract / Objective",
+                  "pmid": "39546502",
+                  "chunk_idx": 0,
+                  "total_chunks": 5,
+                  "text": "Hypoglycemia is a major concern in type 2 diabetes (T2DM), but little is known about its likelihood compared across common therapies. We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.",
+                  "score": 0.8091142177581787,
+                  "highlight_ranges": [],
+                  "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                  "authors": "Seaquist ER et al.; GRADE Research Group",
+                  "journal": "PLOS ONE",
+                  "year": 2024
+                },
+                {
+                  "chunk_id": "pmc:PMC11567630:2",
+                  "citation": "PMC:PMC11567630",
+                  "source": "pmc",
+                  "doc_id": "PMC11567630",
+                  "title": "Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "section": "Abstract / Results",
+                  "pmid": "39546502",
+                  "chunk_idx": 2,
+                  "total_chunks": 5,
+                  "text": "While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p<0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p<0.001).",
+                  "score": 0.6289255023002625,
+                  "highlight_ranges": [],
+                  "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                  "authors": "Seaquist ER et al.; GRADE Research Group",
+                  "journal": "PLOS ONE",
+                  "year": 2024
+                },
+                {
+                  "chunk_id": "pmc:PMC11567630:1",
+                  "citation": "PMC:PMC11567630",
+                  "source": "pmc",
+                  "doc_id": "PMC11567630",
+                  "title": "Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "section": "Abstract / Research design & methods",
+                  "pmid": "39546502",
+                  "chunk_idx": 1,
+                  "total_chunks": 5,
+                  "text": "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol). Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years. HbA1c was measured quarterly; if a level >7.5% (>58.5 mmol/mol) was confirmed, rescue glargine and/or aspart insulin was added. We conducted a per-protocol analysis of 4,830, who attended at least one post-baseline visit and took at least one dose of assigned study medication. We assessed severe hypoglycemia events reported throughout the entire study. At quarterly visits, all participants were asked about hypoglycemic symptoms within the last 30 days, and those in the glargine and glimepiride groups were asked for any measured glucose <70 mg/dL (3.9 mmol/L) within this time period.",
+                  "score": 0.493587464094162,
+                  "highlight_ranges": [],
+                  "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                  "authors": "Seaquist ER et al.; GRADE Research Group",
+                  "journal": "PLOS ONE",
+                  "year": 2024
+                },
+                {
+                  "chunk_id": "pmc:PMC11567630:3",
+                  "citation": "PMC:PMC11567630",
+                  "source": "pmc",
+                  "doc_id": "PMC11567630",
+                  "title": "Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "section": "Abstract / Conclusions",
+                  "pmid": "39546502",
+                  "chunk_idx": 3,
+                  "total_chunks": 5,
+                  "text": "In metformin-treated patients with T2DM who add a second medication, hypoglycemia is most likely with addition of glimepiride, less with glargine, and least likely with liraglutide and sitagliptin.",
+                  "score": 0.053654566407203674,
+                  "highlight_ranges": [],
+                  "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                  "authors": "Seaquist ER et al.; GRADE Research Group",
+                  "journal": "PLOS ONE",
+                  "year": 2024
+                },
+                {
+                  "chunk_id": "pmc:PMC11567630:4",
+                  "citation": "PMC:PMC11567630",
+                  "source": "pmc",
+                  "doc_id": "PMC11567630",
+                  "title": "Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "section": "Abstract / Trial registration",
+                  "pmid": "39546502",
+                  "chunk_idx": 4,
+                  "total_chunks": 5,
+                  "text": "ClinicalTrials.gov Identifier: NCT01794143.",
+                  "score": 0.00043570491834543645,
+                  "highlight_ranges": [],
+                  "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                  "authors": "Seaquist ER et al.; GRADE Research Group",
+                  "journal": "PLOS ONE",
+                  "year": 2024
+                }
+              ],
+              "thread_id": "66e96f0c-94df-4c83-87dc-9a8dc3f85a8c",
+              "latency_ms": 55640.6
+            },
+            "timeline": [
+              {
+                "name": "route",
+                "label": "Route",
+                "status": "done",
+                "summary": "",
+                "timestamp": 1790501431888,
+                "detail": {
+                  "count": null,
+                  "relevance_score": null,
+                  "relevant": null,
+                  "reason": null,
+                  "rewrite_hint": null,
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": null,
+                  "faithful": null,
+                  "issues": null,
+                  "confidence": null,
+                  "route": ""
+                },
+                "elapsed_ms": 8093
+              },
+              {
+                "name": "retrieve",
+                "label": "Retrieve",
+                "status": "done",
+                "summary": "5 candidates",
+                "timestamp": 1790501439986,
+                "detail": {
+                  "count": 5,
+                  "relevance_score": null,
+                  "relevant": null,
+                  "reason": null,
+                  "rewrite_hint": null,
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": null,
+                  "faithful": null,
+                  "issues": null,
+                  "confidence": null,
+                  "route": null
+                },
+                "elapsed_ms": 8381
+              },
+              {
+                "name": "rerank",
+                "label": "Rerank",
+                "status": "done",
+                "summary": "5 candidates",
+                "timestamp": 1790501448384,
+                "detail": {
+                  "count": 5,
+                  "relevance_score": null,
+                  "relevant": null,
+                  "reason": null,
+                  "rewrite_hint": null,
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": null,
+                  "faithful": null,
+                  "issues": null,
+                  "confidence": null,
+                  "route": null
+                },
+                "elapsed_ms": 17788
+              },
+              {
+                "name": "grade",
+                "label": "Match evidence",
+                "status": "done",
+                "summary": "score: 1.00 · relevant",
+                "timestamp": 1790501466181,
+                "detail": {
+                  "count": null,
+                  "relevance_score": 1,
+                  "relevant": true,
+                  "reason": "The report directly names the four randomized add-on therapies.",
+                  "rewrite_hint": "",
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": null,
+                  "faithful": null,
+                  "issues": null,
+                  "confidence": null,
+                  "route": null
+                },
+                "elapsed_ms": 11647
+              },
+              {
+                "name": "generate",
+                "label": "Generate",
+                "status": "done",
+                "summary": "answer generated",
+                "timestamp": 1790501477836,
+                "detail": {
+                  "count": null,
+                  "relevance_score": null,
+                  "relevant": null,
+                  "reason": null,
+                  "rewrite_hint": null,
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": "The study reports: \"Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 ",
+                  "faithful": null,
+                  "issues": null,
+                  "confidence": null,
+                  "route": null
+                },
+                "elapsed_ms": 6070
+              },
+              {
+                "name": "check",
+                "label": "Faithfulness Check",
+                "status": "done",
+                "summary": "faithful ✓",
+                "timestamp": 1790501483926,
+                "detail": {
+                  "count": null,
+                  "relevance_score": null,
+                  "relevant": null,
+                  "reason": null,
+                  "rewrite_hint": null,
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": null,
+                  "faithful": true,
+                  "issues": "",
+                  "confidence": 0,
+                  "route": null
+                },
+                "elapsed_ms": 3472
+              },
+              {
+                "name": "append_history",
+                "label": "append_history",
+                "status": "done",
+                "summary": "",
+                "timestamp": 1790501487415,
+                "detail": {
+                  "count": null,
+                  "relevance_score": null,
+                  "relevant": null,
+                  "reason": null,
+                  "rewrite_hint": null,
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": null,
+                  "faithful": null,
+                  "issues": null,
+                  "confidence": null,
+                  "route": null
+                },
+                "elapsed_ms": 16
+              }
+            ],
+            "liveChunks": [],
+            "error": null,
+            "audits": [],
+            "answer_sha256": "c32bebfe50ac9e9db1fdc95a6f50341b7003a8acad5d6eedc6da3e21547748cf",
+            "source_hashes": {
+              "pmc:PMC11567630:0": "c2df36f611369fd1c78003b871560c13948457bae3474f08ac30cabe6c467c5f",
+              "pmc:PMC11567630:2": "bab600fe30235c85d53be52fe06ce296bc9810658f8d6e18587b69985a3f03fe",
+              "pmc:PMC11567630:1": "5be60f24272631db49c3926ac2b4f84cf7320a6a3c35ef9aaef56526e9dd4bc5",
+              "pmc:PMC11567630:3": "54cd485cf05e6529341d379bd2597ef216722981d8d93d6e9ec46b13a7072e33",
+              "pmc:PMC11567630:4": "68f6d26f0a1b9b9058f4b3ef877914fef75d6ad59545015d49dad49a06e9ca47"
+            }
+          }
+        ]
+      },
+      {
+        "id": "a6fde5ef-94af-47e9-ab6c-261359db137d",
+        "question": "What was its participant population, and how long were participants followed?",
+        "parent_turn_id": "753bd49e-3ff7-4a30-b1b1-617aa80ac54e",
+        "revisions": [
+          {
+            "id": "eb80577f-f6b9-476a-ae6b-f886732aed7f",
+            "created_at": "2026-09-27T09:33:09.132Z",
+            "status": "complete",
+            "origin": "live",
+            "context": [
+              {
+                "turn_id": "753bd49e-3ff7-4a30-b1b1-617aa80ac54e",
+                "revision_id": "50891793-43a7-492f-8b1d-06e77e28a510",
+                "question": "In the GRADE trial hypoglycemia report, which four treatments were compared?",
+                "answer": "The study reports: \"Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years.\" [PMC:PMC11567630]. The study reports: \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\" [PMC:PMC11567630]. The study reports: \"We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.\" [PMC:PMC11567630].",
+                "source_titles": [
+                  "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial"
+                ]
+              }
+            ],
+            "omitted_context": 0,
+            "result": {
+              "conversation_context": {
+                "original_query": "What was its participant population, and how long were participants followed?",
+                "resolved_query": "What was its participant population, and how long were participants followed?\n\nReference context for interpreting this question (not evidence):\nThe GRADE trial hypoglycemia report referenced in the prior turn",
+                "supplied_turn_ids": [
+                  "753bd49e-3ff7-4a30-b1b1-617aa80ac54e"
+                ],
+                "context_turn_ids": [
+                  "753bd49e-3ff7-4a30-b1b1-617aa80ac54e"
+                ],
+                "referent_entities": [
+                  "GRADE trial hypoglycemia report"
+                ],
+                "needs_clarification": false,
+                "clarification": "",
+                "omitted_context": 0,
+                "elapsed_ms": 5959.3,
+                "model": "deepseek-v4.1-flash",
+                "usage": {
+                  "completion_tokens": 690,
+                  "prompt_tokens": 783,
+                  "total_tokens": 1473,
+                  "completion_tokens_details": {
+                    "accepted_prediction_tokens": 0,
+                    "audio_tokens": 0,
+                    "reasoning_tokens": 609,
+                    "rejected_prediction_tokens": 0,
+                    "cached_tokens": 0
+                  },
+                  "prompt_tokens_details": {
+                    "audio_tokens": 0,
+                    "cache_write_tokens": null,
+                    "cached_tokens": 0,
+                    "accepted_prediction_tokens": 0,
+                    "reasoning_tokens": 0,
+                    "rejected_prediction_tokens": 0
+                  },
+                  "cache_creation_input_tokens": 0,
+                  "cache_read_input_tokens": 0,
+                  "cached_tokens": 0,
+                  "completion_thinking_tokens": 609,
+                  "credit": 0,
+                  "prompt_cache_hit_tokens": 0,
+                  "prompt_cache_miss_tokens": 783,
+                  "prompt_cache_write_tokens": 0
+                },
+                "status": "follow_up",
+                "raw_output": "{\n  \"mode\": \"follow_up\",\n  \"reference_context\": \"The GRADE trial hypoglycemia report referenced in the prior turn\",\n  \"context_turn_ids\": [\"753bd49e-3ff7-4a30-b1b1-617aa80ac54e\"],\n  \"referent_entities\": [\"GRADE trial hypoglycemia report\"],\n  \"clarification\": \"\"\n}"
+              },
+              "evidence_status": "complete",
+              "evidence_gap": "",
+              "answer_components": [
+                {
+                  "id": "C1",
+                  "requirement": "participant population",
+                  "question_span": "What was its participant population",
+                  "source_hint": "PMC11567630",
+                  "status": "supported",
+                  "evidence": [
+                    {
+                      "chunk_id": "pmc:PMC11567630:1",
+                      "citation": "PMC:PMC11567630",
+                      "quote": "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol)."
+                    },
+                    {
+                      "chunk_id": "pmc:PMC11567630:0",
+                      "citation": "PMC:PMC11567630",
+                      "quote": "We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies."
+                    }
+                  ],
+                  "required_details": [
+                    "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).",
+                    "metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies",
+                    "5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol)"
+                  ],
+                  "missing_outcome": "",
+                  "gap": "",
+                  "answer": "The study reports: \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\" [PMC:PMC11567630]. The study reports: \"We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.\" [PMC:PMC11567630]."
+                },
+                {
+                  "id": "C2",
+                  "requirement": "follow-up duration",
+                  "question_span": "how long were participants followed?",
+                  "source_hint": "PMC11567630",
+                  "status": "supported",
+                  "evidence": [
+                    {
+                      "chunk_id": "pmc:PMC11567630:1",
+                      "citation": "PMC:PMC11567630",
+                      "quote": "Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years."
+                    }
+                  ],
+                  "required_details": [
+                    "Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years."
+                  ],
+                  "missing_outcome": "",
+                  "gap": "",
+                  "answer": "The study reports: \"Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years.\" [PMC:PMC11567630]."
+                }
+              ],
+              "answer": "The study reports: \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\" [PMC:PMC11567630]. The study reports: \"We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.\" [PMC:PMC11567630]. The study reports: \"Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years.\" [PMC:PMC11567630].",
+              "citations": [
+                "PMC:PMC11567630"
+              ],
+              "confidence": 0.95,
+              "faithful": true,
+              "faithfulness_issues": "",
+              "iterations": 0,
+              "regen_count": 0,
+              "rewritten_queries": [],
+              "chunks": [
+                {
+                  "chunk_id": "pmc:PMC11567630:1",
+                  "citation": "PMC:PMC11567630",
+                  "source": "pmc",
+                  "doc_id": "PMC11567630",
+                  "title": "Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "section": "Abstract / Research design & methods",
+                  "pmid": "39546502",
+                  "chunk_idx": 1,
+                  "total_chunks": 5,
+                  "text": "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol). Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years. HbA1c was measured quarterly; if a level >7.5% (>58.5 mmol/mol) was confirmed, rescue glargine and/or aspart insulin was added. We conducted a per-protocol analysis of 4,830, who attended at least one post-baseline visit and took at least one dose of assigned study medication. We assessed severe hypoglycemia events reported throughout the entire study. At quarterly visits, all participants were asked about hypoglycemic symptoms within the last 30 days, and those in the glargine and glimepiride groups were asked for any measured glucose <70 mg/dL (3.9 mmol/L) within this time period.",
+                  "score": 0.8393526673316956,
+                  "highlight_ranges": [],
+                  "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                  "authors": "Seaquist ER et al.; GRADE Research Group",
+                  "journal": "PLOS ONE",
+                  "year": 2024
+                },
+                {
+                  "chunk_id": "pmc:PMC11567630:2",
+                  "citation": "PMC:PMC11567630",
+                  "source": "pmc",
+                  "doc_id": "PMC11567630",
+                  "title": "Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "section": "Abstract / Results",
+                  "pmid": "39546502",
+                  "chunk_idx": 2,
+                  "total_chunks": 5,
+                  "text": "While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p<0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p<0.001).",
+                  "score": 0.46505188941955566,
+                  "highlight_ranges": [],
+                  "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                  "authors": "Seaquist ER et al.; GRADE Research Group",
+                  "journal": "PLOS ONE",
+                  "year": 2024
+                },
+                {
+                  "chunk_id": "pmc:PMC11567630:0",
+                  "citation": "PMC:PMC11567630",
+                  "source": "pmc",
+                  "doc_id": "PMC11567630",
+                  "title": "Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "section": "Abstract / Objective",
+                  "pmid": "39546502",
+                  "chunk_idx": 0,
+                  "total_chunks": 5,
+                  "text": "Hypoglycemia is a major concern in type 2 diabetes (T2DM), but little is known about its likelihood compared across common therapies. We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.",
+                  "score": 0.221126526594162,
+                  "highlight_ranges": [],
+                  "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                  "authors": "Seaquist ER et al.; GRADE Research Group",
+                  "journal": "PLOS ONE",
+                  "year": 2024
+                },
+                {
+                  "chunk_id": "pmc:PMC11567630:3",
+                  "citation": "PMC:PMC11567630",
+                  "source": "pmc",
+                  "doc_id": "PMC11567630",
+                  "title": "Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "section": "Abstract / Conclusions",
+                  "pmid": "39546502",
+                  "chunk_idx": 3,
+                  "total_chunks": 5,
+                  "text": "In metformin-treated patients with T2DM who add a second medication, hypoglycemia is most likely with addition of glimepiride, less with glargine, and least likely with liraglutide and sitagliptin.",
+                  "score": 0.026424672454595566,
+                  "highlight_ranges": [],
+                  "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                  "authors": "Seaquist ER et al.; GRADE Research Group",
+                  "journal": "PLOS ONE",
+                  "year": 2024
+                },
+                {
+                  "chunk_id": "pmc:PMC11567630:4",
+                  "citation": "PMC:PMC11567630",
+                  "source": "pmc",
+                  "doc_id": "PMC11567630",
+                  "title": "Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                  "section": "Abstract / Trial registration",
+                  "pmid": "39546502",
+                  "chunk_idx": 4,
+                  "total_chunks": 5,
+                  "text": "ClinicalTrials.gov Identifier: NCT01794143.",
+                  "score": 0.005596119910478592,
+                  "highlight_ranges": [],
+                  "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                  "authors": "Seaquist ER et al.; GRADE Research Group",
+                  "journal": "PLOS ONE",
+                  "year": 2024
+                }
+              ],
+              "thread_id": "66e96f0c-94df-4c83-87dc-9a8dc3f85a8c",
+              "latency_ms": 47064
+            },
+            "timeline": [
+              {
+                "name": "resolve_context",
+                "label": "Interpret follow-up",
+                "status": "done",
+                "summary": "Context resolved · fresh evidence required",
+                "timestamp": 1790501589163,
+                "detail": {
+                  "count": null,
+                  "relevance_score": null,
+                  "relevant": null,
+                  "reason": "follow_up",
+                  "rewrite_hint": null,
+                  "new_query": "What was its participant population, and how long were participants followed?\n\nReference context for interpreting this question (not evidence):\nThe GRADE trial hypoglycemia report referenced in the prior turn",
+                  "rewritten_queries": null,
+                  "answer_preview": null,
+                  "faithful": null,
+                  "issues": null,
+                  "confidence": null,
+                  "route": null
+                },
+                "elapsed_ms": 5965
+              },
+              {
+                "name": "route",
+                "label": "Route",
+                "status": "done",
+                "summary": "",
+                "timestamp": 1790501595136,
+                "detail": {
+                  "count": null,
+                  "relevance_score": null,
+                  "relevant": null,
+                  "reason": null,
+                  "rewrite_hint": null,
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": null,
+                  "faithful": null,
+                  "issues": null,
+                  "confidence": null,
+                  "route": ""
+                },
+                "elapsed_ms": 7321
+              },
+              {
+                "name": "retrieve",
+                "label": "Retrieve",
+                "status": "done",
+                "summary": "5 candidates",
+                "timestamp": 1790501602469,
+                "detail": {
+                  "count": 5,
+                  "relevance_score": null,
+                  "relevant": null,
+                  "reason": null,
+                  "rewrite_hint": null,
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": null,
+                  "faithful": null,
+                  "issues": null,
+                  "confidence": null,
+                  "route": null
+                },
+                "elapsed_ms": 922
+              },
+              {
+                "name": "rerank",
+                "label": "Rerank",
+                "status": "done",
+                "summary": "5 candidates",
+                "timestamp": 1790501603404,
+                "detail": {
+                  "count": 5,
+                  "relevance_score": null,
+                  "relevant": null,
+                  "reason": null,
+                  "rewrite_hint": null,
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": null,
+                  "faithful": null,
+                  "issues": null,
+                  "confidence": null,
+                  "route": null
+                },
+                "elapsed_ms": 13154
+              },
+              {
+                "name": "grade",
+                "label": "Match evidence",
+                "status": "done",
+                "summary": "score: 0.95 · relevant",
+                "timestamp": 1790501616566,
+                "detail": {
+                  "count": null,
+                  "relevance_score": 0.95,
+                  "relevant": true,
+                  "reason": "The GRADE trial report directly states the randomized participant population and mean follow-up duration.",
+                  "rewrite_hint": "",
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": null,
+                  "faithful": null,
+                  "issues": null,
+                  "confidence": null,
+                  "route": null
+                },
+                "elapsed_ms": 8796
+              },
+              {
+                "name": "generate",
+                "label": "Generate",
+                "status": "done",
+                "summary": "answer generated",
+                "timestamp": 1790501625378,
+                "detail": {
+                  "count": null,
+                  "relevance_score": null,
+                  "relevant": null,
+                  "reason": null,
+                  "rewrite_hint": null,
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": "The study reports: \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c ",
+                  "faithful": null,
+                  "issues": null,
+                  "confidence": null,
+                  "route": null
+                },
+                "elapsed_ms": 4214
+              },
+              {
+                "name": "check",
+                "label": "Faithfulness Check",
+                "status": "done",
+                "summary": "faithful ✓",
+                "timestamp": 1790501629613,
+                "detail": {
+                  "count": null,
+                  "relevance_score": null,
+                  "relevant": null,
+                  "reason": null,
+                  "rewrite_hint": null,
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": null,
+                  "faithful": true,
+                  "issues": "",
+                  "confidence": 0,
+                  "route": null
+                },
+                "elapsed_ms": 6582
+              },
+              {
+                "name": "append_history",
+                "label": "append_history",
+                "status": "done",
+                "summary": "",
+                "timestamp": 1790501636212,
+                "detail": {
+                  "count": null,
+                  "relevance_score": null,
+                  "relevant": null,
+                  "reason": null,
+                  "rewrite_hint": null,
+                  "new_query": null,
+                  "rewritten_queries": null,
+                  "answer_preview": null,
+                  "faithful": null,
+                  "issues": null,
+                  "confidence": null,
+                  "route": null
+                },
+                "elapsed_ms": 18
+              }
+            ],
+            "liveChunks": [],
+            "error": null,
+            "audits": [
+              {
+                "id": "8d0d4eab-abbc-4c1f-b418-ea76544f34ad",
+                "revision_id": "eb80577f-f6b9-476a-ae6b-f886732aed7f",
+                "created_at": "2026-09-27T09:36:54.285Z",
+                "edited": false,
+                "record": {
+                  "input": {
+                    "answer": "The study reports: \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\" [PMC:PMC11567630]. The study reports: \"We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.\" [PMC:PMC11567630]. The study reports: \"Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years.\" [PMC:PMC11567630].",
+                    "sources": [
+                      {
+                        "id": "evidence-1",
+                        "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                        "text": "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol). Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years. HbA1c was measured quarterly; if a level >7.5% (>58.5 mmol/mol) was confirmed, rescue glargine and/or aspart insulin was added. We conducted a per-protocol analysis of 4,830, who attended at least one post-baseline visit and took at least one dose of assigned study medication. We assessed severe hypoglycemia events reported throughout the entire study. At quarterly visits, all participants were asked about hypoglycemic symptoms within the last 30 days, and those in the glargine and glimepiride groups were asked for any measured glucose <70 mg/dL (3.9 mmol/L) within this time period."
+                      },
+                      {
+                        "id": "evidence-2",
+                        "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                        "text": "While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p<0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p<0.001)."
+                      },
+                      {
+                        "id": "evidence-3",
+                        "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                        "text": "Hypoglycemia is a major concern in type 2 diabetes (T2DM), but little is known about its likelihood compared across common therapies. We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies."
+                      },
+                      {
+                        "id": "evidence-4",
+                        "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                        "text": "In metformin-treated patients with T2DM who add a second medication, hypoglycemia is most likely with addition of glimepiride, less with glargine, and least likely with liraglutide and sitagliptin."
+                      },
+                      {
+                        "id": "evidence-5",
+                        "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                        "text": "ClinicalTrials.gov Identifier: NCT01794143."
+                      }
+                    ],
+                    "strategy": "direct"
+                  },
+                  "audit": {
+                    "id": "0b7e31bc-5e64-4e73-a51c-35255d6ccb57",
+                    "created_utc": "2026-09-27T09:36:54.279087+00:00",
+                    "strategy": "direct",
+                    "status": "ok",
+                    "answer_sha256": "4a8799bfc3528a89ef9ebe246b757d30e02e0b5e4b869dc2dc8b75ff4de61775",
+                    "source_hashes": {
+                      "evidence-1": "5be60f24272631db49c3926ac2b4f84cf7320a6a3c35ef9aaef56526e9dd4bc5",
+                      "evidence-2": "bab600fe30235c85d53be52fe06ce296bc9810658f8d6e18587b69985a3f03fe",
+                      "evidence-3": "c2df36f611369fd1c78003b871560c13948457bae3474f08ac30cabe6c467c5f",
+                      "evidence-4": "54cd485cf05e6529341d379bd2597ef216722981d8d93d6e9ec46b13a7072e33",
+                      "evidence-5": "68f6d26f0a1b9b9058f4b3ef877914fef75d6ad59545015d49dad49a06e9ca47"
+                    },
+                    "claims": [
+                      {
+                        "id": "claim-1",
+                        "quote": "The study reports: \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\" [PMC:PMC11567630].",
+                        "relation": "supported",
+                        "explanation": "The source contains the exact quoted sentence.",
+                        "status": "ok",
+                        "answer_span": {
+                          "start": 0,
+                          "end": 178,
+                          "text": "The study reports: \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\" [PMC:PMC11567630].",
+                          "offset_unit": "unicode_codepoint"
+                        },
+                        "evidence": [
+                          {
+                            "start": 0,
+                            "end": 138,
+                            "text": "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).",
+                            "offset_unit": "unicode_codepoint",
+                            "source_id": "evidence-1",
+                            "source_sha256": "5be60f24272631db49c3926ac2b4f84cf7320a6a3c35ef9aaef56526e9dd4bc5"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "claim-2",
+                        "quote": "The study reports: \"We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.\" [PMC:PMC11567630].",
+                        "relation": "supported",
+                        "explanation": "The source contains the exact quoted sentence.",
+                        "status": "ok",
+                        "answer_span": {
+                          "start": 179,
+                          "end": 361,
+                          "text": "The study reports: \"We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.\" [PMC:PMC11567630].",
+                          "offset_unit": "unicode_codepoint"
+                        },
+                        "evidence": [
+                          {
+                            "start": 134,
+                            "end": 276,
+                            "text": "We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.",
+                            "offset_unit": "unicode_codepoint",
+                            "source_id": "evidence-3",
+                            "source_sha256": "c2df36f611369fd1c78003b871560c13948457bae3474f08ac30cabe6c467c5f"
+                          }
+                        ]
+                      },
+                      {
+                        "id": "claim-3",
+                        "quote": "The study reports: \"Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years.\" [PMC:PMC11567630].",
+                        "relation": "supported",
+                        "explanation": "The source contains the exact quoted sentence.",
+                        "status": "ok",
+                        "answer_span": {
+                          "start": 362,
+                          "end": 520,
+                          "text": "The study reports: \"Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years.\" [PMC:PMC11567630].",
+                          "offset_unit": "unicode_codepoint"
+                        },
+                        "evidence": [
+                          {
+                            "start": 139,
+                            "end": 257,
+                            "text": "Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years.",
+                            "offset_unit": "unicode_codepoint",
+                            "source_id": "evidence-1",
+                            "source_sha256": "5be60f24272631db49c3926ac2b4f84cf7320a6a3c35ef9aaef56526e9dd4bc5"
+                          }
+                        ]
+                      }
+                    ],
+                    "summary": {
+                      "supported": 3,
+                      "contradicted": 0,
+                      "insufficient": 0,
+                      "failed_or_unchecked": 0
+                    },
+                    "extraction_coverage": {
+                      "covered_nonspace_characters": 452,
+                      "total_nonspace_characters": 452,
+                      "uncovered": [],
+                      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+                    },
+                    "checked_coverage": {
+                      "covered_nonspace_characters": 452,
+                      "total_nonspace_characters": 452,
+                      "uncovered": [],
+                      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+                    },
+                    "claims_at_cap": false,
+                    "calls": [
+                      {
+                        "stage": "direct",
+                        "status": "ok",
+                        "raw_output": "{\"claims\":[{\"quote\":\"The study reports: \\\"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\\\" [PMC:PMC11567630].\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\",\"occurrence\":0}],\"explanation\":\"The source contains the exact quoted sentence.\"},{\"quote\":\"The study reports: \\\"We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.\\\" [PMC:PMC11567630].\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-3\",\"quote\":\"We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.\",\"occurrence\":0}],\"explanation\":\"The source contains the exact quoted sentence.\"},{\"quote\":\"The study reports: \\\"Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years.\\\" [PMC:PMC11567630].\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years.\",\"occurrence\":0}],\"explanation\":\"The source contains the exact quoted sentence.\"}]}",
+                        "usage": {
+                          "input_tokens": 1179,
+                          "output_tokens": 6633,
+                          "total_tokens": 7812
+                        },
+                        "transport_metadata": {
+                          "model": "deepseek-v4.1-flash",
+                          "model_identifiers": [
+                            "deepseek-v4.1-flash"
+                          ],
+                          "finish_reason": "stop",
+                          "usage_snapshots": [
+                            {
+                              "input_tokens": 1179,
+                              "output_tokens": 6633,
+                              "total_tokens": 7812
+                            }
+                          ],
+                          "reasoning_characters": 24898
+                        },
+                        "elapsed_seconds": 26.623
+                      }
+                    ],
+                    "elapsed_seconds": 26.628,
+                    "scope": "Textual support in provided sources; not calibrated confidence or clinical evidence grading."
+                  },
+                  "mode": "live",
+                  "provenance": {
+                    "note": "New Flash inference on the supplied texts. Input and output are not saved on the server.",
+                    "handoff": {
+                      "kind": "live_ask",
+                      "question": "What was its participant population, and how long were participants followed?",
+                      "thread_id": "66e96f0c-94df-4c83-87dc-9a8dc3f85a8c",
+                      "citations": [
+                        "PMC:PMC11567630"
+                      ],
+                      "input": {
+                        "answer": "The study reports: \"Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol).\" [PMC:PMC11567630]. The study reports: \"We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies.\" [PMC:PMC11567630]. The study reports: \"Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years.\" [PMC:PMC11567630].",
+                        "strategy": "direct",
+                        "sources": [
+                          {
+                            "id": "evidence-1",
+                            "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                            "text": "Randomized, controlled trial of 5,047 participants with T2DM of <10 years’ duration, hemoglobin A1c (HbA1c) 6.8–8.5% (50.8–69.4 mmol/mol). Randomization to addition of glargine U100, glimepiride, liraglutide, or sitagliptin over 5.0 ± 1.3 (mean ± SD) years. HbA1c was measured quarterly; if a level >7.5% (>58.5 mmol/mol) was confirmed, rescue glargine and/or aspart insulin was added. We conducted a per-protocol analysis of 4,830, who attended at least one post-baseline visit and took at least one dose of assigned study medication. We assessed severe hypoglycemia events reported throughout the entire study. At quarterly visits, all participants were asked about hypoglycemic symptoms within the last 30 days, and those in the glargine and glimepiride groups were asked for any measured glucose <70 mg/dL (3.9 mmol/L) within this time period."
+                          },
+                          {
+                            "id": "evidence-2",
+                            "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                            "text": "While participants were taking their assigned medications, severe hypoglycemia occurred in 10 (0.8%), 16 (1.3%), 6 (0.5%), and 4 (0.3%), (p<0.05) and hypoglycemic symptoms in 659 (54.2%), 833 (68.3%), 375 (32.4%), and 361 (29.1%) of participants following randomization to glargine, glimepiride, liraglutide, and sitagliptin, respectively (p<0.001)."
+                          },
+                          {
+                            "id": "evidence-3",
+                            "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                            "text": "Hypoglycemia is a major concern in type 2 diabetes (T2DM), but little is known about its likelihood compared across common therapies. We compared the likelihood of hypoglycemia among metformin-treated patients with T2DM randomized to the addition of one of 4 common therapies."
+                          },
+                          {
+                            "id": "evidence-4",
+                            "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                            "text": "In metformin-treated patients with T2DM who add a second medication, hypoglycemia is most likely with addition of glimepiride, less with glargine, and least likely with liraglutide and sitagliptin."
+                          },
+                          {
+                            "id": "evidence-5",
+                            "title": "PMC:PMC11567630 · Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+                            "text": "ClinicalTrials.gov Identifier: NCT01794143."
+                          }
+                        ]
+                      },
+                      "source_map": [
+                        {
+                          "id": "evidence-1",
+                          "chunk_id": "pmc:PMC11567630:1",
+                          "citation": "PMC:PMC11567630",
+                          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                          "section": "Abstract / Research design & methods"
+                        },
+                        {
+                          "id": "evidence-2",
+                          "chunk_id": "pmc:PMC11567630:2",
+                          "citation": "PMC:PMC11567630",
+                          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                          "section": "Abstract / Results"
+                        },
+                        {
+                          "id": "evidence-3",
+                          "chunk_id": "pmc:PMC11567630:0",
+                          "citation": "PMC:PMC11567630",
+                          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                          "section": "Abstract / Objective"
+                        },
+                        {
+                          "id": "evidence-4",
+                          "chunk_id": "pmc:PMC11567630:3",
+                          "citation": "PMC:PMC11567630",
+                          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                          "section": "Abstract / Conclusions"
+                        },
+                        {
+                          "id": "evidence-5",
+                          "chunk_id": "pmc:PMC11567630:4",
+                          "citation": "PMC:PMC11567630",
+                          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11567630/",
+                          "section": "Abstract / Trial registration"
+                        }
+                      ]
+                    },
+                    "input_edited": false
+                  }
+                }
+              }
+            ],
+            "answer_sha256": "4a8799bfc3528a89ef9ebe246b757d30e02e0b5e4b869dc2dc8b75ff4de61775",
+            "source_hashes": {
+              "pmc:PMC11567630:1": "5be60f24272631db49c3926ac2b4f84cf7320a6a3c35ef9aaef56526e9dd4bc5",
+              "pmc:PMC11567630:2": "bab600fe30235c85d53be52fe06ce296bc9810658f8d6e18587b69985a3f03fe",
+              "pmc:PMC11567630:0": "c2df36f611369fd1c78003b871560c13948457bae3474f08ac30cabe6c467c5f",
+              "pmc:PMC11567630:3": "54cd485cf05e6529341d379bd2597ef216722981d8d93d6e9ec46b13a7072e33",
+              "pmc:PMC11567630:4": "68f6d26f0a1b9b9058f4b3ef877914fef75d6ad59545015d49dad49a06e9ca47"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

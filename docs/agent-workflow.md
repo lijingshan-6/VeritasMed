@@ -1,20 +1,32 @@
-# Medical Ask workflow (inherited from v0.4)
+# Medical Ask workflow (v0.8 context, inherited v0.4 answer graph)
 
-This document describes the full retrieval/answer graph, which v0.7 preserves. The new
+This document describes the full retrieval/answer graph, which v0.8 preserves. The
 `/research` comparison uses a separate bounded named-paper workflow with shared tools;
 it does not measure this entire graph. See the [research demonstration](research-demo.md)
 and [scope decision](decisions/2026-09-26-v07-research-scope.md).
 
-v0.5 adds a separate **Ask → Audit** action. The browser transfers the unchanged answer and
-all returned source texts to `/audit`; the user then runs Direct Flash or an experimental audit.
+The **Ask → Audit** action opens the audit inside the current answer. The browser transfers
+the unchanged answer and all returned source texts; the user then runs Direct Flash or an experimental audit.
 It does not feed the new audit into the graph's repair loop. Exact answer/source bindings,
 unresolved quotes, uncovered text and JSON export are described in the [audit guide](audit-demo.md).
 The [medical walkthrough](medical-demo.md) records this flow on original article text.
 
-The production Ask graph answers one standalone question using retrieved literature.
+In v0.8 the browser preserves a conversation with per-answer versions and audits. Before the
+graph starts, the API resolves explicit selected history: at most six whole turns and 12,000
+Unicode characters. The current question stays verbatim; reference context is appended only
+for a resolved follow-up. A clarification response bypasses retrieval. The actual resolution,
+used turn IDs, omitted count and resolver usage are saved with the answer. Ambiguous references
+can still be missed; the two-study demo preserves one such failure.
+
+Each graph invocation answers its resulting question using freshly retrieved literature;
+earlier assistant answers are not source evidence. It receives a new checkpoint identity.
 The browser API, the Ollama runner `scripts/benchmark/run_agent.py`, and the OpenHub runner
 `scripts/benchmark/compare_agent_models.py` call the same graph.
+The historical benchmark runners do not exercise the new browser/API conversation resolver.
 Guided mode uses labelled browser fixtures and does not execute this graph.
+
+See the [conversation guide](conversation-guide.md) for history, import/export, the no-key
+saved-inference mode and full Ask setup.
 
 As of 2026-09-23, the research baseline is Flash, currently `DeepSeek-V4.1-Flash`
 through the user's compatible gateway; see the [model decision](decisions/2026-09-23-flash-research-baseline.md).

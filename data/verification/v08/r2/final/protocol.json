@@ -1,0 +1,748 @@
+{
+  "manifest_sha256": "71135b0de67bd20eaa017e61f1c0f47f36616548fd9e899f871d2dcc4cd9f629",
+  "phase": "final",
+  "schedule": [
+    {
+      "case_id": "v08-23-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-20-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-03-cross_context",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-15-original",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-20-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-03-repeated_error",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-02-original",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-20-original",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-18-repeated_error",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-11-paraphrase",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-15-repeated_error",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-20-paraphrase",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-02-cross_context",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-09-cross_context",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-19-repeated_error",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-15-repeated_error",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-09-repeated_error",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-15-paraphrase",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-22-original",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-09-cross_context",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-22-cross_context",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-18-cross_context",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-03-paraphrase",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-18-original",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-02-paraphrase",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-11-repeated_error",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-11-original",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-13-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-23-original",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-20-cross_context",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-15-cross_context",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-02-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-09-paraphrase",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-02-original",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-18-cross_context",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-11-original",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-20-paraphrase",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-22-original",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-09-repeated_error",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-13-repeated_error",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-11-cross_context",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-20-cross_context",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-23-original",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-22-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-18-original",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-02-repeated_error",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-15-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-18-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-19-original",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-13-cross_context",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-19-cross_context",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-15-paraphrase",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-19-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-20-repeated_error",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-09-original",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-03-original",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-03-cross_context",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-03-original",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-02-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-15-cross_context",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-13-paraphrase",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-19-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-14-original",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-22-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-19-paraphrase",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-14-original",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-18-repeated_error",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-13-original",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-23-original",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-23-repeated_error",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-11-original",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-03-cross_context",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-19-repeated_error",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-13-original",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-19-paraphrase",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-22-repeated_error",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-20-repeated_error",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-15-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-11-paraphrase",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-19-cross_context",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-14-paraphrase",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-22-paraphrase",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-11-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-09-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-23-cross_context",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-23-cross_context",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-22-original",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-19-original",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-13-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-14-repeated_error",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-22-cross_context",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-23-repeated_error",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-18-cross_context",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-23-paraphrase",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-11-cross_context",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-23-cross_context",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-15-original",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-03-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-09-paraphrase",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-09-original",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-20-original",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-14-cross_context",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-11-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-09-original",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-15-original",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-15-cross_context",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-11-cross_context",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-19-original",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-22-paraphrase",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-11-repeated_error",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-02-cross_context",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-03-paraphrase",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-13-cross_context",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-14-original",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-20-cross_context",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-02-paraphrase",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-14-cross_context",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-22-repeated_error",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-03-original",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-14-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-13-original",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-19-cross_context",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-02-original",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-18-paraphrase",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-09-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-09-cross_context",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-03-repeated_error",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-13-repeated_error",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-14-paraphrase",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-14-cross_context",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-22-cross_context",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-20-original",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-14-repeated_error",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-18-original",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-18-paraphrase",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-03-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-14-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-18-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-13-paraphrase",
+      "method": "direct",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-13-cross_context",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-23-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-02-cross_context",
+      "method": "atomic_v2",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-02-repeated_error",
+      "method": "atomic_v1",
+      "attempt": 1
+    },
+    {
+      "case_id": "v08-23-paraphrase",
+      "method": "direct",
+      "attempt": 1
+    }
+  ],
+  "code_hashes": {
+    "src/medrag/verification/answer_audit.py": "842bf4a9af6d09582653f04494f540f4029dec73cf7e6c76e22491ec6b31ec52",
+    "src/medrag/verification/atomic_audit.py": "de666ffb115a3fd09bea59cfbd2987d98b217747d0a57690e486d946f75fc90e",
+    "src/medrag/verification/atomic_schema.py": "5a4617c7283bce09f7be4ba726d917732d59a60e9cd6c7d742cbc87a90c2dcd3",
+    "src/medrag/verification/atomic_v2.py": "d507ec55e7d34f7909d241a53f852ba0e89dd7cec4df4463b06c4a2f7db1a9c9",
+    "src/medrag/verification/atomic_v2_schema.py": "548a9e1aca96c1c7fce0c6f0194b4844443db020aa4bcb8a7a6906c8bfeb9db3",
+    "src/medrag/verification/fidelity.py": "ae06db2ced364e9fddd59756d1417150db3a8a1b6e190fa8ef113595af41ff82",
+    "src/medrag/verification/parent_binding.py": "763e59c81e8ec5c4ba09315893c1eec6e0edc745ebdb92cf063a08d2ecf17210",
+    "src/medrag/verification/quote_audit.py": "465f25d8092b72518b6e8d578e0e8f2804458d3af4d3e04ed703d5c11d3d9687",
+    "src/medrag/verification/gateway.py": "ca942913d85dbc95e882ba401ea48c360b4faa6469066ee2ff71406f56a0ba8d",
+    "src/medrag/verification/numeric_checks.py": "7433a14dec24b0b867e1ffbc92e535ea000229bf3cde8caa5408aba19e1b9a7c",
+    "scripts/verification/v08_r2_metrics.py": "dcf7f81bc411b23d351838c3814b88040893c320c8962e9b787a3e8a76d196e9"
+  },
+  "concurrency": 3,
+  "sdk_max_retries": 0,
+  "limits": {
+    "direct_calls": 1,
+    "atomic_calls": 3,
+    "atomic_facts": 48
+  },
+  "retry_policy": "Resume only jobs never recorded. All failures remain; no best-of or majority-vote labels.",
+  "metrics": "Target phrase coverage and single-claim anchor co-presence are mechanical, not proof of semantic mapping. Literal preservation separate; constructed numerical warnings separate from natural errors."
+}

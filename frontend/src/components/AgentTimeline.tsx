@@ -159,7 +159,7 @@ function TraceNode({ node, isLast, isActive, cumMs }: {
             display: 'inline-flex', alignItems: 'center', gap: 6,
           }}>
             {checkDetail.faithful ? <IconCheck size={11} sw={2.4} /> : <IconAlert size={11} sw={2.4} />}
-            {checkDetail.faithful ? 'All claims supported' : 'Unsupported claims'}
+            {checkDetail.faithful ? 'Model self-check passed' : 'Model self-check found issues'}
           </div>
         )}
       </div>

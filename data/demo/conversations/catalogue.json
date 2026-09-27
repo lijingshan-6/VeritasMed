@@ -1,0 +1,26 @@
+[
+  {
+    "id": "v08-grade-follow-up",
+    "label": "GRADE: results, population and original evidence",
+    "file": "v08-grade-follow-up.json",
+    "turns": 3,
+    "description": "4 saved audits · original passages included",
+    "origin": "saved_inference"
+  },
+  {
+    "id": "v08-diet-exercise",
+    "label": "Two studies: explicit follow-up and ambiguous reference",
+    "file": "v08-diet-exercise.json",
+    "turns": 3,
+    "description": "4 saved audits · original passages included",
+    "origin": "saved_inference"
+  },
+  {
+    "id": "v08-evidence-limits",
+    "label": "Evidence limits: a mortality question and available outcomes",
+    "file": "v08-evidence-limits.json",
+    "turns": 3,
+    "description": "4 saved audits · original passages included",
+    "origin": "saved_inference"
+  }
+]

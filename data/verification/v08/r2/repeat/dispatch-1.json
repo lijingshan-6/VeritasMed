@@ -1,0 +1,136 @@
+{
+  "started_utc": "2026-09-27T12:19:44.388471+00:00",
+  "settings": {
+    "model": "DeepSeek-V4.1-Flash",
+    "base_url": "https://www.cun.ai/v1",
+    "reasoning_effort": "high",
+    "max_tokens": 32768,
+    "timeout_seconds": 240.0,
+    "streaming": true,
+    "sdk_max_retries": 0,
+    "transport": "openai_sdk_raw_stream"
+  },
+  "pending": [
+    {
+      "case_id": "v08-06-paraphrase",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "v08-07-paraphrase",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "v08-21-original",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "v08-21-original",
+      "method": "atomic_v2",
+      "attempt": 3
+    },
+    {
+      "case_id": "v08-10-original",
+      "method": "atomic_v2",
+      "attempt": 2
+    },
+    {
+      "case_id": "v08-12-repeated_error",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "v08-06-paraphrase",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "v08-06-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 3
+    },
+    {
+      "case_id": "v08-07-paraphrase",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "v08-12-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 2
+    },
+    {
+      "case_id": "v08-07-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 3
+    },
+    {
+      "case_id": "v08-05-cross_context",
+      "method": "atomic_v2",
+      "attempt": 3
+    },
+    {
+      "case_id": "v08-05-cross_context",
+      "method": "atomic_v2",
+      "attempt": 2
+    },
+    {
+      "case_id": "v08-07-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 2
+    },
+    {
+      "case_id": "v08-05-cross_context",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "v08-10-original",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "v08-12-repeated_error",
+      "method": "atomic_v2",
+      "attempt": 3
+    },
+    {
+      "case_id": "v08-05-cross_context",
+      "method": "direct",
+      "attempt": 3
+    },
+    {
+      "case_id": "v08-10-original",
+      "method": "atomic_v2",
+      "attempt": 3
+    },
+    {
+      "case_id": "v08-06-paraphrase",
+      "method": "atomic_v2",
+      "attempt": 2
+    },
+    {
+      "case_id": "v08-21-original",
+      "method": "atomic_v2",
+      "attempt": 2
+    },
+    {
+      "case_id": "v08-21-original",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "v08-12-repeated_error",
+      "method": "direct",
+      "attempt": 2
+    },
+    {
+      "case_id": "v08-10-original",
+      "method": "direct",
+      "attempt": 2
+    }
+  ],
+  "dispatch": "bounded continuous queue; max 3 requests across this runner"
+}

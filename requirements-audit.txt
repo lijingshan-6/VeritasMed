@@ -1,4 +1,4 @@
-# Small standalone audit service. Full retrieval uses requirements.lock instead.
+# Small Ask replay and standalone audit service. Full retrieval uses requirements.lock instead.
 fastapi>=0.115.6,<1
 uvicorn>=0.30,<1
 pydantic>=2.7,<3

@@ -1,5 +1,7 @@
 .audit-page { height: 100%; overflow: auto; padding: 32px max(24px, calc((100vw - 1400px) / 2)); }
-.audit-page-embedded { padding-top: 22px; }
+.audit-page-embedded { padding-top: 18px; padding-bottom: 150px; }
+.audit-page-embedded .audit-heading { margin-bottom: 12px; }
+.audit-page-embedded .audit-runline { padding: 12px 0; }
 .audit-page-embedded .audit-heading h1 { font-size: 28px; }
 .audit-page-embedded .audit-heading p { font: italic 18px/1.4 var(--serif); max-width: 900px; }
 .audit-page-embedded .audit-sources-column { max-height: calc(100vh - 240px); }
@@ -105,3 +107,5 @@
 .research-table { width: 100%; border-collapse: collapse; font-size: .85rem; text-align: left; }
 .research-table th, .research-table td { padding: .8rem .6rem; border-bottom: 1px solid var(--vm-border, #dedbd4); }
 .research-table thead { color: #58665f; }
+.audit-qualifier { margin: 12px 0; padding: 10px 12px; border-left: 2px solid var(--rule); background: var(--panel); }
+.audit-text-link.needs_review { border-bottom-color: #996011; color: #996011; }

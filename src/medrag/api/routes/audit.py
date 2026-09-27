@@ -10,8 +10,9 @@ from fastapi import APIRouter, HTTPException
 from medrag.verification.answer_audit import AuditInput, audit_answer, text_hash
 from medrag.verification.context_audit import audit_context
 from medrag.verification.quote_audit import QuoteAuditRequest, audit_quotes
-from medrag.verification.atomic_schema import AtomicAuditRequest
+from medrag.verification.atomic_v2_schema import AtomicV2Request as AtomicAuditRequest
 from medrag.verification.atomic_audit import audit_atomic
+from medrag.verification.atomic_v2 import audit_atomic_v2
 from medrag.verification.gateway import FlashGateway
 from medrag.verification.ragtruth import prepare
 from medrag.verification.scifact import object_hash, read_jsonl
@@ -125,7 +126,7 @@ def examples():
 
 
 @router.get("/examples/{response_id}")
-def replay(response_id: str, strategy: Literal["direct", "split", "context", "quote_v2", "atomic_v1"] = "direct"):
+def replay(response_id: str, strategy: Literal["direct", "split", "context", "quote_v2", "atomic_v1", "atomic_v2"] = "direct"):
     catalogue_path = RELIABILITY / "catalogue.json"
     if catalogue_path.exists():
         catalogue = json.loads(catalogue_path.read_text(encoding="utf8"))
@@ -188,7 +189,9 @@ def live_audit(item: AtomicAuditRequest):
             gateway = FlashGateway()
         except Exception:
             raise HTTPException(503, "Configure the Flash profile and key in the local .env before running a live audit.") from None
-        if item.strategy == "atomic_v1":
+        if item.strategy == "atomic_v2":
+            result = audit_atomic_v2(item, gateway)
+        elif item.strategy == "atomic_v1":
             result = audit_atomic(item, gateway)
         elif item.strategy == "quote_v2":
             result = audit_quotes(item, gateway)

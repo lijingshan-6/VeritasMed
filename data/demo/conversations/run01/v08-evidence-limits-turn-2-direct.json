@@ -1,0 +1,260 @@
+{
+  "input": {
+    "answer": "The study reports: \"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\" [PMC:PMC3594238]. The study reports: \"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\" [PMC:PMC3594238].",
+    "sources": [
+      {
+        "id": "evidence-1",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days. Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart. Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods)."
+      },
+      {
+        "id": "evidence-2",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+      },
+      {
+        "id": "evidence-3",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "To evaluate the effects of aerobic (AER) or aerobic plus resistance exercise (COMB) sessions on glucose levels and glucose variability in patients with type 2 diabetes. Additionally, we assessed conventional and non-conventional methods to analyze glucose variability derived from multiple measurements performed with continuous glucose monitoring system (CGMS)."
+      },
+      {
+        "id": "evidence-4",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises."
+      },
+      {
+        "id": "evidence-5",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "Aerobic training, aerobic-resistance training and glucose profile (CGMS) in type 2 diabetes (CGMS exercise). ClinicalTrials.gov ID: NCT00887094."
+      }
+    ],
+    "strategy": "direct"
+  },
+  "audit": {
+    "id": "f8915052-6e90-4817-aa3f-70a3f7e564f9",
+    "created_utc": "2026-09-27T11:58:28.369243+00:00",
+    "strategy": "direct",
+    "status": "ok",
+    "answer_sha256": "9d58c5616e36ed3afedcd37159d78ebc6c234b0e676adc276a314a8c1547648d",
+    "source_hashes": {
+      "evidence-1": "c09a9b02fb69cb11e1f04d8841f739822fc5f3f042c730c4a63112ee752f9541",
+      "evidence-2": "96d4b4a46e565db471319bded2a9739e97553cc5af52d3365f11046e3f815a10",
+      "evidence-3": "9758b51b4a5013a90507b8087c9402d99c6d51502fb2b5aea11e2ba6362ccc8b",
+      "evidence-4": "444909c5406f77af26202f361ee1bce4f63d715762fe7ec44930d122c56d9471",
+      "evidence-5": "b41be9ce00d1886e4d4956c605127ab51800d15a3bb97237aff6f28580602ce8"
+    },
+    "claims": [
+      {
+        "id": "claim-1",
+        "quote": "Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.",
+        "relation": "supported",
+        "explanation": "The exact sentence appears in the cited source.",
+        "status": "ok",
+        "answer_span": {
+          "start": 20,
+          "end": 150,
+          "text": "Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 79,
+            "end": 209,
+            "text": "Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-1",
+            "source_sha256": "c09a9b02fb69cb11e1f04d8841f739822fc5f3f042c730c4a63112ee752f9541"
+          }
+        ]
+      },
+      {
+        "id": "claim-2",
+        "quote": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.",
+        "relation": "supported",
+        "explanation": "The exact sentence appears in the cited source.",
+        "status": "ok",
+        "answer_span": {
+          "start": 190,
+          "end": 268,
+          "text": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 0,
+            "end": 78,
+            "text": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-1",
+            "source_sha256": "c09a9b02fb69cb11e1f04d8841f739822fc5f3f042c730c4a63112ee752f9541"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "supported": 2,
+      "contradicted": 0,
+      "insufficient": 0,
+      "failed_or_unchecked": 0
+    },
+    "extraction_coverage": {
+      "covered_nonspace_characters": 174,
+      "total_nonspace_characters": 244,
+      "uncovered": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The study reports: \""
+        },
+        {
+          "start": 150,
+          "end": 190,
+          "text": "\" [PMC:PMC3594238]. The study reports: \""
+        },
+        {
+          "start": 268,
+          "end": 287,
+          "text": "\" [PMC:PMC3594238]."
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "checked_coverage": {
+      "covered_nonspace_characters": 174,
+      "total_nonspace_characters": 244,
+      "uncovered": [
+        {
+          "start": 0,
+          "end": 20,
+          "text": "The study reports: \""
+        },
+        {
+          "start": 150,
+          "end": 190,
+          "text": "\" [PMC:PMC3594238]. The study reports: \""
+        },
+        {
+          "start": 268,
+          "end": 287,
+          "text": "\" [PMC:PMC3594238]."
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "claims_at_cap": false,
+    "calls": [
+      {
+        "stage": "direct",
+        "status": "ok",
+        "raw_output": "{\"claims\":[{\"quote\":\"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\",\"occurrence\":0}],\"explanation\":\"The exact sentence appears in the cited source.\"},{\"quote\":\"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\",\"occurrence\":0}],\"explanation\":\"The exact sentence appears in the cited source.\"}]}",
+        "usage": {
+          "input_tokens": 1043,
+          "output_tokens": 2370,
+          "total_tokens": 3413
+        },
+        "transport_metadata": {
+          "model": "deepseek-v4.1-flash",
+          "model_identifiers": [
+            "deepseek-v4.1-flash"
+          ],
+          "finish_reason": "stop",
+          "usage_snapshots": [
+            {
+              "input_tokens": 1043,
+              "output_tokens": 2370,
+              "total_tokens": 3413
+            }
+          ],
+          "reasoning_characters": 9677
+        },
+        "elapsed_seconds": 12.54
+      }
+    ],
+    "elapsed_seconds": 12.54,
+    "scope": "Textual support in provided sources; not calibrated confidence or clinical evidence grading."
+  },
+  "mode": "saved",
+  "provenance": {
+    "note": "Saved actual Ask → audit. Three-paper abstract demonstration, not independent clinical gold.",
+    "run": "data/demo/conversations/run01",
+    "conversation_id": "v08-evidence-limits",
+    "turn_id": "v08-evidence-limits-turn-2",
+    "revision_id": "v08-evidence-limits-turn-2-revision-1",
+    "handoff": {
+      "kind": "live_ask",
+      "question": "For the exercise study specifically, what did the participants actually undergo and how long were glucose measurements collected?",
+      "thread_id": "v08-evidence-limits",
+      "citations": [
+        "PMC:PMC3594238"
+      ],
+      "input": {
+        "answer": "The study reports: \"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\" [PMC:PMC3594238]. The study reports: \"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\" [PMC:PMC3594238].",
+        "strategy": "direct",
+        "sources": [
+          {
+            "id": "evidence-1",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days. Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart. Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods)."
+          },
+          {
+            "id": "evidence-2",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+          },
+          {
+            "id": "evidence-3",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "To evaluate the effects of aerobic (AER) or aerobic plus resistance exercise (COMB) sessions on glucose levels and glucose variability in patients with type 2 diabetes. Additionally, we assessed conventional and non-conventional methods to analyze glucose variability derived from multiple measurements performed with continuous glucose monitoring system (CGMS)."
+          },
+          {
+            "id": "evidence-4",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises."
+          },
+          {
+            "id": "evidence-5",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "Aerobic training, aerobic-resistance training and glucose profile (CGMS) in type 2 diabetes (CGMS exercise). ClinicalTrials.gov ID: NCT00887094."
+          }
+        ]
+      },
+      "source_map": [
+        {
+          "id": "evidence-1",
+          "chunk_id": "pmc:PMC3594238:1",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Methods"
+        },
+        {
+          "id": "evidence-2",
+          "chunk_id": "pmc:PMC3594238:2",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Results"
+        },
+        {
+          "id": "evidence-3",
+          "chunk_id": "pmc:PMC3594238:0",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Purpose"
+        },
+        {
+          "id": "evidence-4",
+          "chunk_id": "pmc:PMC3594238:3",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Conclusions"
+        },
+        {
+          "id": "evidence-5",
+          "chunk_id": "pmc:PMC3594238:4",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Trial Registration"
+        }
+      ]
+    }
+  }
+}

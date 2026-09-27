@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "fixed_before_inference": true,
+  "purpose": "Actual Ask software demonstrations, not clinical gold or an independent reliability evaluation.",
+  "corpus": "All original abstract sections from the three papers in source-manifest.json.",
+  "profile": "Flash only; full Ask retrieval pipeline with a separate conversation demonstration index.",
+  "attempt_policy": "One scheduled Ask attempt per question. Keep errors, clarification and incomplete answers. No best-of selection; infrastructure continuation must retain the original failure and a separate run identity.",
+  "audit_policy": "One Direct audit for each completed answer with source passages; one atomic_v2 audit for the first such answer in each conversation. No audit for clarification or source-free refusal.",
+  "context_policy": "The same bounded, whole-turn context used by the product: at most 6 prior turns / 12000 Unicode characters; original question unchanged.",
+  "conversations": [
+    {
+      "id": "v08-grade-follow-up",
+      "label": "GRADE: results, population and original evidence",
+      "questions": [
+        "In the GRADE report on hypoglycemia outcomes, what were the severe hypoglycemia percentages for glargine, glimepiride, liraglutide and sitagliptin while taking the assigned medication?",
+        "Which participants and follow-up period do those results describe?",
+        "For glimepiride specifically, show the original sentence that supports its severe hypoglycemia percentage, preserving the analysis condition."
+      ]
+    },
+    {
+      "id": "v08-diet-exercise",
+      "label": "Two studies: explicit follow-up and ambiguous reference",
+      "questions": [
+        "From the 2016 brown-rice-based vegan diet trial and the 2013 aerobic versus combined exercise trial, separately describe what each study measured and over what time period. Do not rank their clinical effectiveness.",
+        "In the vegan diet trial specifically, what HbA1c changes were reported for the two groups?",
+        "Returning to both the vegan diet study and the exercise study, how long did it last?"
+      ]
+    },
+    {
+      "id": "v08-evidence-limits",
+      "label": "Evidence limits: a mortality question and available outcomes",
+      "questions": [
+        "Do the supplied 2016 vegan diet and 2013 aerobic/combined exercise abstracts show that either intervention reduces five-year all-cause mortality?",
+        "For the exercise study specifically, what did the participants actually undergo and how long were glucose measurements collected?",
+        "Quote the abstract sentence describing how long the glucose decrease persisted, and state whether that sentence supplies a five-year mortality result."
+      ]
+    }
+  ]
+}

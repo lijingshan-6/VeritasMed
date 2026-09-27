@@ -21,7 +21,7 @@ def main():
             except OSError:
                 raise SystemExit(f"Port {port} is already in use; stop that local service first.") from None
     env = {**os.environ, "PYTHONPATH": str(ROOT / "src"), "PYTHONIOENCODING": "utf-8",
-           "PYTHONNOUSERSITE": "1", "VITE_API_URL": "http://127.0.0.1:8001", "VITE_AUDIT_ONLY": "1"}
+           "PYTHONNOUSERSITE": "1", "VITE_API_URL": "http://127.0.0.1:8001", "VITE_AUDIT_ONLY": "1", "VITE_REPLAY_ONLY": "0"}
     if not (ROOT / "frontend/node_modules").is_dir():
         subprocess.run([npm, "ci"], cwd=ROOT / "frontend", env=env, check=True)
     children = []

@@ -3,7 +3,7 @@
   "info": {
     "title": "VeritasMed API",
     "description": "Self-verifying medical literature QA backend",
-    "version": "0.7.1"
+    "version": "0.8.0"
   },
   "paths": {
     "/api/search": {
@@ -314,7 +314,8 @@
                 "split",
                 "context",
                 "quote_v2",
-                "atomic_v1"
+                "atomic_v1",
+                "atomic_v2"
               ],
               "type": "string",
               "default": "direct",
@@ -355,12 +356,71 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AtomicAuditRequest"
+                "$ref": "#/components/schemas/AtomicV2Request"
               }
             }
           },
           "required": true
         },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/conversations/examples": {
+      "get": {
+        "tags": [
+          "saved conversations"
+        ],
+        "summary": "Examples",
+        "operationId": "examples_api_conversations_examples_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/conversations/examples/{example_id}": {
+      "get": {
+        "tags": [
+          "saved conversations"
+        ],
+        "summary": "Replay",
+        "operationId": "replay_api_conversations_examples__example_id__get",
+        "parameters": [
+          {
+            "name": "example_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Example Id"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -503,7 +563,7 @@
   },
   "components": {
     "schemas": {
-      "AtomicAuditRequest": {
+      "AtomicV2Request": {
         "properties": {
           "answer": {
             "type": "string",
@@ -527,7 +587,8 @@
               "split",
               "context",
               "quote_v2",
-              "atomic_v1"
+              "atomic_v1",
+              "atomic_v2"
             ],
             "title": "Strategy",
             "default": "direct"
@@ -539,7 +600,7 @@
           "answer",
           "sources"
         ],
-        "title": "AtomicAuditRequest"
+        "title": "AtomicV2Request"
       },
       "AuditSource": {
         "properties": {

@@ -1,18 +1,18 @@
 # 文档索引与维护范围
 
-当前版本为 [v0.7.1](releases/v0.7.1.md)，修正对话入口与答案内审计；
-[v0.7.0](releases/v0.7.0.md) 的 v0.6 审计研究与 v0.7 受限工作流比较保留原始记录。
-Flash / Direct 保持默认；本轮没有证明更复杂流程的效果优势。逐次研究过程与修订见
-[实施记录](research-v0.6-v0.7-worklog.md)，当前结果以两份研究报告和版本说明为准。
+v0.8 已完成收敛：多轮历史、答案版本、逐轮审计、显式上下文和无密钥真实对话回放。
+产品主入口是 **Ask（5173）**，Audit 属于答案审阅；5174 是可选独立工作台。
+[对话指南](conversation-guide.md) · [实施记录](development-v0.8-worklog.md) ·
+[v0.8 版本说明](releases/v0.8.0.md) · [v0.8 研究报告](verification-v0.8-report.md)。
 
-产品主入口是 **Ask（5173）**，Audit 属于回答的审阅模式；5174 是可选轻量工作台。
-v0.7.1 恢复这一关系，见 [对话优先的产品决定](decisions/2026-09-27-conversation-first-product.md)。
-真正的多轮上下文、历史保存与下一阶段审计改进见 [v0.8 详细计划](plans/v0.8-conversation-and-audit.md)，尚未实现。
+Flash / Direct 保持默认。v0.6 / v0.7 的原始研究与 [v0.7.1 产品修正](releases/v0.7.1.md)
+继续保留历史意义；新界面与原文锚点不能作为语义可靠性提升的证据。
 
 ## 使用与演示
 
 | 入口 | 内容 |
 |---|---|
+| [对话与逐轮审计](conversation-guide.md) | 无密钥真实三轮回放、Live 追问、版本和完整会话导出 |
 | [项目 README](../README.md) | 获取固定版本、轻量启动、实际能力及关键结果 |
 | [原子审计与工作流比较](research-demo.md) | GRADE 三类输入、方法/分歧展示、工具 trace、导出与回答传递 |
 | [真实医学 Ask → Audit](medical-demo.md) | 原始 CC0 论文、实际 Agent 记录和完整检索演示 |
@@ -25,7 +25,11 @@ v0.7.1 恢复这一关系，见 [对话优先的产品决定](decisions/2026-09-
 | 入口 | 内容 |
 |---|---|
 | [整体路线](verification-roadmap.md) | 最终形态、当前边界及后续任务 |
+| [v0.8 研究报告](verification-v0.8-report.md) | 348 次预定审计全部保留；限定语共现、自然样本、重复、成本与来源组区间分开解释 |
 | [v0.8 详细计划](plans/v0.8-conversation-and-audit.md) | 对话记录、上下文追问、每轮审计、父句定位与限定语保真；含阶段交付和研究边界 |
+| [v0.8 来源盘点](verification-v0.8-exposure.md) | 剩余公开标签不足；R2 继续构造诊断，R3 新语义泛化比较暂不启动 |
+| [v0.8 六例开发复核](verification-v0.8-extraction-review.md) | 原文限定语和规范化事实的具体差异，AI 观察不是独立 gold |
+| [v0.8 定位重放](verification-v0.8-localization.md) | 167 次旧审计、82 个事实恢复位置；零新增语义判断 |
 | [v0.6 协议](plans/v0.6-audit-reliability.md) | 数据、原子审计、MiniCheck、消融、校准与默认升级条件 |
 | [v0.6 研究报告](verification-v0.6-report.md) | 339 对固定目标、医学开发/转移、自然回答、消融、重复与校准的完整结果 |
 | [v0.7 协议](plans/v0.7-agent-comparison.md) | 同工具、同模型的三臂文献事实查询 |

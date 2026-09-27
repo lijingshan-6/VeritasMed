@@ -1,0 +1,1035 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD Journal Publishing DTD v3.0 20080202//EN" "http://dtd.nlm.nih.gov/publishing/3.0/journalpublishing3.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="research-article" dtd-version="3.0" xml:lang="en">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">PLoS ONE</journal-id>
+      <journal-id journal-id-type="publisher-id">plos</journal-id>
+      <journal-id journal-id-type="pmc">plosone</journal-id>
+      <journal-title-group>
+        <journal-title>PLoS ONE</journal-title>
+      </journal-title-group>
+      <issn pub-type="epub">1932-6203</issn>
+      <publisher>
+        <publisher-name>Public Library of Science</publisher-name>
+        <publisher-loc>San Francisco, USA</publisher-loc>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="publisher-id">PONE-D-12-30932</article-id>
+      <article-id pub-id-type="doi">10.1371/journal.pone.0057733</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Research Article</subject>
+        </subj-group>
+        <subj-group subj-group-type="Discipline-v2">
+          <subject>Biology</subject>
+          <subj-group>
+            <subject>Anatomy and physiology</subject>
+            <subj-group>
+              <subject>Endocrine system</subject>
+              <subj-group>
+                <subject>Diabetic endocrinology</subject>
+              </subj-group>
+            </subj-group>
+          </subj-group>
+        </subj-group>
+        <subj-group subj-group-type="Discipline-v2">
+          <subject>Medicine</subject>
+          <subj-group>
+            <subject>Anatomy and physiology</subject>
+            <subj-group>
+              <subject>Endocrine system</subject>
+              <subj-group>
+                <subject>Diabetic endocrinology</subject>
+              </subj-group>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Endocrinology</subject>
+            <subj-group>
+              <subject>Diabetic endocrinology</subject>
+              <subj-group>
+                <subject>Diabetes mellitus type 2</subject>
+              </subj-group>
+            </subj-group>
+          </subj-group>
+          <subj-group>
+            <subject>Sports and exercise medicine</subject>
+          </subj-group>
+        </subj-group>
+        <subj-group subj-group-type="Discipline">
+          <subject>Diabetes and Endocrinology</subject>
+          <subject>Physiology</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial</article-title>
+        <alt-title alt-title-type="running-head">Exercise and Glucose Variability in Diabetes</alt-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Figueira</surname>
+            <given-names>Franciele R.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Umpierre</surname>
+            <given-names>Daniel</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff3">
+            <sup>3</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Casali</surname>
+            <given-names>Karina R.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff4">
+            <sup>4</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Tetelbom</surname>
+            <given-names>Pedro S.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Henn</surname>
+            <given-names>Nicoli T.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" deceased="yes" xlink:type="simple">
+          <name name-style="western">
+            <surname>Ribeiro</surname>
+            <given-names>Jorge P.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff3">
+            <sup>3</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff5">
+            <sup>5</sup>
+          </xref>
+          <xref ref-type="fn" rid="fn1">
+            <sup>¶</sup>
+          </xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple">
+          <name name-style="western">
+            <surname>Schaan</surname>
+            <given-names>Beatriz D.</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">
+            <sup>1</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff2">
+            <sup>2</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff3">
+            <sup>3</sup>
+          </xref>
+          <xref ref-type="aff" rid="aff5">
+            <sup>5</sup>
+          </xref>
+          <xref ref-type="corresp" rid="cor1">
+            <sup>*</sup>
+          </xref>
+        </contrib>
+      </contrib-group>
+      <aff id="aff1">
+        <label>1</label>
+        <addr-line>Exercise Pathophysiology Research Laboratory, Hospital de Clínicas de Porto Alegre, Porto Alegre, Rio Grande do Sul, Brazil</addr-line>
+      </aff>
+      <aff id="aff2">
+        <label>2</label>
+        <addr-line>Postgraduate Program in Endocrinology, Universidade Federal do Rio Grande do Sul,Porto Alegre, Rio Grande do Sul, Brazil</addr-line>
+      </aff>
+      <aff id="aff3">
+        <label>3</label>
+        <addr-line>Postgraduate Program in Cardiology, Universidade Federal do Rio Grande do Sul, Porto Alegre, Rio Grande do Sul, Brazil</addr-line>
+      </aff>
+      <aff id="aff4">
+        <label>4</label>
+        <addr-line>Instituto de Cardiologia/Fundação Universitária de Cardiologia do Rio Grande do Sul, Porto Alegre, Rio Grande do Sul, Brazil</addr-line>
+      </aff>
+      <aff id="aff5">
+        <label>5</label>
+        <addr-line>Department of Internal Medicine, Universidade Federal do Rio Grande do Sul, Porto Alegre, Rio Grande do Sul, Brazil</addr-line>
+      </aff>
+      <contrib-group>
+        <contrib contrib-type="editor" xlink:type="simple">
+          <name name-style="western">
+            <surname>Song</surname>
+            <given-names>Yiqing</given-names>
+          </name>
+          <role>Editor</role>
+          <xref ref-type="aff" rid="edit1"/>
+        </contrib>
+      </contrib-group>
+      <aff id="edit1">
+        <addr-line>Brigham &amp; Women’s Hospital, and Harvard Medical School, United States of America</addr-line>
+      </aff>
+      <author-notes>
+        <fn id="fn1" fn-type="other">
+          <p>¶ Dr. Jorge Pinto Ribeiro passed away on the 23<sup>rd</sup> of August 2012. Although he had been fully involved in conception and design of the study, data analysis, and interpretation, the final version of this document is responsibility of the other authors.</p>
+        </fn>
+        <corresp id="cor1">* E-mail: <email xlink:type="simple">beatrizschaan@gmail.com</email></corresp>
+        <fn fn-type="conflict">
+          <p>Dr. Ribeiro has received consulting and lecturing fees as well as grant support from the following companies: Abbott, Aventis, Boehringer Ingelheimer, Bioassist, Bristol-Myers Squibb, Merck, Sharp &amp; Dohme, and Servier. All other authors have no conflict of interest to declare. This does not alter the authors’ adherence to all the PLOS ONE policies on sharing data and materials.</p>
+        </fn>
+        <fn fn-type="con">
+          <p>Conceived and designed the experiments: FRF DU BDS. Performed the experiments: FRF PST NTH. Analyzed the data: FRF DU PST NTH KRC JPR BDS. Wrote the paper: FRF DU BDS KRC.</p>
+        </fn>
+      </author-notes>
+      <pub-date pub-type="collection">
+        <year>2013</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>11</day>
+        <month>3</month>
+        <year>2013</year>
+      </pub-date>
+      <volume>8</volume>
+      <issue>3</issue>
+      <elocation-id>e57733</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>23</day>
+          <month>9</month>
+          <year>2012</year>
+        </date>
+        <date date-type="accepted">
+          <day>24</day>
+          <month>1</month>
+          <year>2013</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-year>2013</copyright-year>
+        <copyright-holder>Figueira et al</copyright-holder>
+        <license xlink:type="simple">
+          <license-p>This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <sec>
+          <title>Purpose</title>
+          <p>To evaluate the effects of aerobic (AER) or aerobic plus resistance exercise (COMB) sessions on glucose levels and glucose variability in patients with type 2 diabetes. Additionally, we assessed conventional and non-conventional methods to analyze glucose variability derived from multiple measurements performed with continuous glucose monitoring system (CGMS).</p>
+        </sec>
+        <sec>
+          <title>Methods</title>
+          <p>Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days. Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart. Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods).</p>
+        </sec>
+        <sec>
+          <title>Results</title>
+          <p>Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 <italic>vs.</italic> 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 <italic>vs.</italic> 21.5±5.1, P = 0.004) were observed only after the COMB session.</p>
+        </sec>
+        <sec>
+          <title>Conclusions</title>
+          <p>Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises.</p>
+        </sec>
+        <sec>
+          <title>Trial Registration</title>
+          <p>Aerobic training, aerobic-resistance training and glucose profile (CGMS) in type 2 diabetes (CGMS exercise). ClinicalTrials.gov ID: <ext-link ext-link-type="uri" xlink:href="http://clinicaltrials.gov/ct2/show/NCT00887094" xlink:type="simple">NCT00887094</ext-link>.</p>
+        </sec>
+      </abstract>
+      <funding-group>
+        <funding-statement>This study was partially supported by Conselho Nacional de Desenvolvimento Científico e Tecnológico, grant 131847/2009-0; Fundação de Apoio à Pesquisa do Rio Grande do Sul, grant 05/1936-6; Fundo de Apoio à Pesquisa do Hospital de Clínicas de Porto Alegre, grant 08-180; and Coordenação de Aperfeiçoamento de Pessoal de Nível Superior, PNPD 2546/2009. The sponsors of the study had no role in the study design, data collection, data analysis, data interpretation, or writing of the report.</funding-statement>
+      </funding-group>
+      <counts>
+        <page-count count="10"/>
+      </counts>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="s1">
+      <title>Introduction</title>
+      <p>The main objective in treating diabetes is to reduce HbA1c, as it reflects average glycemia over several months, and has strong predictive value for diabetes complications <xref ref-type="bibr" rid="pone.0057733-UK1">[1]</xref>, <xref ref-type="bibr" rid="pone.0057733-Stratton1">[2]</xref>. Other components of dysglycemia, such as postprandial glucose and glucose variability, however, have been recently evaluated as possible targets for intervention. Glucose variability may contribute to the generation of excessive protein glycation and oxidative stress, which are key factors in the pathogenesis of diabetic complications <xref ref-type="bibr" rid="pone.0057733-Brownlee1">[3]</xref>. Moreover, high glucose variability was shown to be associated with reduced endothelial function in patients with type 2 diabetes and optimal metabolic control <xref ref-type="bibr" rid="pone.0057733-DiFlaviani1">[4]</xref>. However, the mean amplitude of glycemic excursions (MAGE) could not predict the development of retinopathy or nephropathy in a cohort of type 1 diabetic patients <xref ref-type="bibr" rid="pone.0057733-Kilpatrick1">[5]</xref>. It is reasonable to speculate that the controversial findings regarding the association of glucose variability with outcomes in patients with diabetes <xref ref-type="bibr" rid="pone.0057733-Brownlee1">[3]</xref>–<xref ref-type="bibr" rid="pone.0057733-Kilpatrick2">[6]</xref> may result from limited tools to identify genuine disturbances in glucose variability.</p>
+      <p>Glucose curve, like any biological signal, has linear and non-linear properties that can be analyzed by statistical methods. The oscillatory nature of this signal seems to depend on physiological mechanisms related to free radicals <xref ref-type="bibr" rid="pone.0057733-Monnier1">[7]</xref>, insulin sensitivity <xref ref-type="bibr" rid="pone.0057733-Churruca1">[8]</xref>, and inflammatory markers <xref ref-type="bibr" rid="pone.0057733-Buscemi1">[9]</xref> that modulate its behaviour. Accordingly, the application of spectral analysis could indicate the presence of senoidal components<monospace>,</monospace> allowing a quantitative and differentiated assessment.</p>
+      <p>Since age and disease are associated with loss of complexity in many physiological systems, complexity analysis techniques may provide information on these phenomena <xref ref-type="bibr" rid="pone.0057733-Varela1">[10]</xref>, <xref ref-type="bibr" rid="pone.0057733-Varela2">[11]</xref>. As recently reported <xref ref-type="bibr" rid="pone.0057733-Churruca2">[12]</xref>, the progressive loss of complexity in glycemic profile from health through metabolic syndrome to type 2 diabetes seems to precede hyperglycemia and correlates with other markers of disease progression, suggesting that non-linear analysis may be useful in the evaluation of the progression of dysglycemia to overt diabetes or related complications. Complexity analysis can be performed by several methods, including the evaluation of entropy and entropy rate through symbolic analysis <xref ref-type="bibr" rid="pone.0057733-Porta1">[13]</xref>.</p>
+      <p>Pharmacological agents acting on postprandial glucose excursions may attenuate glucose instability. Although lifestyle interventions have an important role in the treatment of type 2 diabetes <xref ref-type="bibr" rid="pone.0057733-Church1">[14]</xref>, <xref ref-type="bibr" rid="pone.0057733-Sigal1">[15]</xref>, <xref ref-type="bibr" rid="pone.0057733-Umpierre1">[16]</xref>, little is known about the effect of exercise in glucose variability, especially regarding whether different types of exercise modalities could have distinct impact on glucose variability. In the present study we aimed to assess the effect of a single exercise session on glucose levels and glucose variability in patients with type 2 diabetes, as evaluated by continuous glucose monitoring system (CGMS). To determine whether the post-exercise glucose levels would be influenced by different exercise modalities, we used two randomized sessions consisting of either aerobic (AER) or aerobic combined with resistance exercise (COMB). In order to separate the effects of meals and exercise sessions, the analysis was performed on data derived from all glucose curves, before and after exercise, divided in before and after meal, according to diary appointments. Glucose variability was evaluated by conventional methods (glucose standard deviation, glucose variance, MAGE and glucose coefficient of variation) and by non-conventional methods (spectral and symbolic analysis). As spectral and symbolic analyses had never been used in the evaluation of glucose variability, mathematic tools were applied for full validation of these methods for this signal.</p>
+    </sec>
+    <sec id="s2" sec-type="methods">
+      <title>Methods</title>
+      <p>The protocol for this trial and supporting CONSORT checklist are available as supporting information; see Checklist S1 and Protocol S1.</p>
+      <sec id="s2a">
+        <title>Research Design and Participants</title>
+        <p>Fourteen patients with type 2 diabetes participated in the experiments using a crossover randomized design (<xref ref-type="fig" rid="pone-0057733-g001">Figure 1</xref>). Individuals were recruited from outpatient clinics, and were not taking insulin or sulphonylureas. Exclusion criteria were heart disease, proliferative diabetic retinopathy, severe autonomic neuropathy, any limb amputation, uncontrolled hypertension, diabetic nephropathy (albuminuria&gt;than 17 mg/L) and/or chronic renal failure (creatinine &gt;1.4 mg/dL), and osteomuscular conditions which could limit the proposed protocols. The protocol was approved by the Ethics in Research Committee at Hospital de Clínicas de Porto Alegre and all patients provided their written informed consent before the participation. At the entry of the study, clinical characteristics, usual physical activity (International Physical Activity Questionnaire - IPAQ) <xref ref-type="bibr" rid="pone.0057733-Craig1">[17]</xref>, anthropometric evaluation, as well as 12-h fasting blood (glucose, HbA1c, cholesterol, HDL-cholesterol, triglycerides, creatinine) and urine (microalbuminuria) exams were obtained for each subject<bold>.</bold> One week prior to the experimental exercise session, subjects underwent maximal cardiopulmonary exercise testing and maximal strength testing.</p>
+        <fig id="pone-0057733-g001" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0057733.g001</object-id>
+          <label>Figure 1</label>
+          <caption>
+            <title>Flow Diagram.</title>
+          </caption>
+          <graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0057733.g001" position="float" xlink:type="simple"/>
+        </fig>
+      </sec>
+      <sec id="s2b">
+        <title>Maximal Cardiopulmonary Exercise Testing</title>
+        <p>The maximal incremental exercise test was performed on an electrically braked cycle ergometer (ER-900, Jaeger, Würzburg, Germany) with increments of 20 W/minute, as previously described <xref ref-type="bibr" rid="pone.0057733-Umpierre2">[18]</xref>. During the test, gas exchange variables were measured by a previously validated system (Oxycon Delta, VIASYS, Healthcare GmbH, Jaeger, Germany). Heart rate continuously monitored by a 12-lead electrocardiogram (Nihon Kohden Corporation, Japan) and blood pressure was measured with automatic oscillometric device every 2 min.</p>
+      </sec>
+      <sec id="s2c">
+        <title>Strength Testing</title>
+        <p>Strength was measured by 1 repetition maximum (1-RM), which was preceded by exercises at mild intensity for movement familiarization and warm-up. Proper technique was demonstrated and practiced for leg press exercise (Sculptor, Porto Alegre Brazil), leg extension, bench press and biceps curl. When new attempts were needed, a 5-min resting period was allowed between subsequent attempts.</p>
+      </sec>
+      <sec id="s2d">
+        <title>CGMS Measurements</title>
+        <p>Subjects were admitted to the laboratory in the morning at approximately 9∶00 a.m., 24 h before the exercise session, when the glucose sensor (Sof-Sensor™, Medtronic Mini-Med, Northridge, USA) was inserted subcutaneously. The sensor is a glucose oxidase based platinum electrode that is inserted through a needle into the subcutaneous tissue of the anterior abdominal wall, using a spring-loaded device (Senserter, Medtronic, Northridge, USA). Glucose oxidase catalyzes the oxidation of glucose in the interstitial fluid, which generates an electrical current. The current is carried by a cable to a pager-size monitor that analyzes the data every 10 s and reports average values every 5 min, totalizing 288 readings per day. Glucose profiles were collected the day before (day 1), the day of (day 2), and the day following (day 3) the single 1-h bout of moderate exercise. Sensor readings were calibrated with a glucose monitor (Accu-Check Performa, Roche Diagnostics, Mannheim, Germany) using 4 finger-stick blood samples for each 24 h. Each sensor was used continuously for up to 72 h. All patients were previously instructed about the operation of the monitor, which included event registration for meals, inserting capillary glucose values as calibration, general care and completing detailed food recall during the period of monitoring. Subjects were asked to closely match their daily nutritional intake, avoid physical exercise except for the protocol, and record detailed food intake and daily physical activities in diaries across the 3-d period. The dietary assessment was performed using the software DietWin (Porto Alegre, Brazil).</p>
+      </sec>
+      <sec id="s2e">
+        <title>Glucose Variability Evaluation</title>
+        <p>Glucose variability was assessed from series of absolute values of glucose, obtained by CGMS, sampled every 5 minutes. Each method was used as reported in the literature and respecting its limitations. Glucose variability was evaluated using conventional analysis and other mathematical methods generally applied to biological series, here called non-conventional analysis of glucose variability. The selection of the segments for the following analysis is illustrated in <xref ref-type="fig" rid="pone-0057733-g002">Figure 2</xref>.</p>
+        <fig id="pone-0057733-g002" position="float">
+          <object-id pub-id-type="doi">10.1371/journal.pone.0057733.g002</object-id>
+          <label>Figure 2</label>
+          <caption>
+            <title>Example of a glucose curve obtained from CGMS record of 72 hours depicting the time periods used to evaluate the effects of meals, pre (section A) and post prandial (section B), and exercise, pre (section B) and post (section C) sessions, indicated in blocks.</title>
+            <p>The dark grey line represents the period of exercise session.</p>
+          </caption>
+          <graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0057733.g002" position="float" xlink:type="simple"/>
+        </fig>
+        <p>Conventional analysis of glucose variability was constructed from the statistical properties of the series, obtaining the following indices: MAGE <xref ref-type="bibr" rid="pone.0057733-Service1">[19]</xref>, glucose variance (VAR), glucose coefficient of variation (CV%), and glucose standard deviation (SD), all normalized by the mean blood glucose in each period <xref ref-type="bibr" rid="pone.0057733-Mcdonnell1">[20]</xref>–<xref ref-type="bibr" rid="pone.0057733-Hill1">[23]</xref>. These indices, except MAGE, were calculated for every 6-h block to obtain the measures according to the period of the day. The MAGE index was calculated for the whole signal (24 h), and its calculation is based on the differences between consecutive points, considering those which are higher than one standard deviation <xref ref-type="bibr" rid="pone.0057733-Service1">[19]</xref>. In this way, according to the characteristics of the curves in our study, the MAGE index was calculated only for the highest curve between 12 h and 14 h.</p>
+        <p>Non-conventional analyses were applied in the pre- and the postprandial periods before the exercise session, and in the postprandial period after the exercise sessions. The first set period for the analysis was the one obtained before exercise, which was compared to the one obtained after the AER and COMB exercise sessions. Non-conventional analysis of glucose variability was conducted using two methods applied to the glucose series: a linear method based on spectral analysis and an integrated nonlinear approach to the complexity analysis, symbolic analysis. Spectral analysis is a linear method that allows quantifying the oscillatory components from time series, by autoregressive model, widely applied to heart rate and arterial pressure series <xref ref-type="bibr" rid="pone.0057733-Malliani1">[24]</xref>. A peak detector algorithm was used to determine possible predominant bands in the frequency power spectrum. The same methodology was applied to 10 surrogate signals, generated from each segment, to test false spectral results <xref ref-type="bibr" rid="pone.0057733-Schreiber1">[25]</xref>.</p>
+        <p>Symbolic dynamics relies on the calculation of Shannon entropy (SE) of the distribution of patterns lasting three measures and the classification of frequent deterministic patterns lasting three measures. Entropy calculates the degree of complexity of the distribution of the samples of a signal. The largest entropy is obtained when the distribution is flat (the samples are identically distributed). In contrast, the entropy decreases whenever values are distributed closer to a Gaussian sample distribution. Usually, in the analysis of biological variability, entropy is not calculated directly over the samples of the series but over patterns of length L (i.e., ordered sequences of (L-1) samples). Differently, entropy rate (e.g., approximated entropy or conditional entropy) provides a global index of complexity of the distributions of the samples conditioned to (L-1) previous samples as a function of L <xref ref-type="bibr" rid="pone.0057733-Porta2">[26]</xref>. Symbolic analysis is an approach based on quantification of complexity that allows an advanced characterization of glucose variability series and the identification of experimental conditions known to differently perturb glucose oscillations. This method was fully described and validated previously <xref ref-type="bibr" rid="pone.0057733-Porta2">[26]</xref>. Each subject and each experimental condition had its own range of glucose variations. Therefore, the full range of the sequences was uniformly spread on 6 levels (from 0 to 5), and presence of patterns was quantified. A redundancy reduction criterion was proposed to distribute deterministic patterns of the group in four categories according to the number and type of glucose changes: 1) no variation (0 V); 2) one variation (1 V); and 3) two like variations (2 LV); 4) two unlike variations (2 UV). The Shannon entropy and corrected conditional entropy (CCE) of the distribution of the patterns were calculated to provide a quantification of the complexity of the pattern distribution <xref ref-type="bibr" rid="pone.0057733-Porta2">[26]</xref>. Probability density function (PDF) provides the distribution of the patterns and reports the sample frequency of each pattern as a function of the decimal code <xref ref-type="bibr" rid="pone.0057733-Porta2">[26]</xref>. The small number of quantization levels utilized to describe this dynamics can express some patterns more frequent than others only by chance. In order to rule out this possibility, 20 surrogate data series were obtained from each original series and the results were statistically compared.</p>
+        <p>The surrogate signals were generated by routines implemented in Matlab, based on the works of Theiler et al. (1992) <xref ref-type="bibr" rid="pone.0057733-Theiler1">[27]</xref>. The same algorithm is used to generate surrogates in previous workw by our group <xref ref-type="bibr" rid="pone.0057733-Casali1">[28]</xref>, <xref ref-type="bibr" rid="pone.0057733-Porta3">[29]</xref>.Twenty surrogate data series were obtained from the original one by randomly shuffling the samples according to 20 different white noise realizations, thus completely destroying the original power spectrum but maintaining sample distribution. A complexity index (SE <bold>or</bold> MP%) calculated over the original series (CIO) was compared with those obtained from the surrogate series (CIS) by using the formula:<disp-formula id="pone.0057733.e001"><graphic position="anchor" xlink:href="info:doi/10.1371/journal.pone.0057733.e001" xlink:type="simple"/></disp-formula></p>
+        <p>Where mean and sd represented the mean and the standard deviation over the 20 surrogate series. If σ &gt;2, CIO could not be derived from a white noise with the same sample distribution as the original series (p&lt;0.05) <xref ref-type="bibr" rid="pone.0057733-Theiler1">[27]</xref>.</p>
+      </sec>
+      <sec id="s2f">
+        <title>Hiperglycemic Episodes Evaluation</title>
+        <p>To quantify the number of hyperglycemic episodes 24 h before and after the exercise we used the number of CGMS measurements above 150 mg/dL normalized by the total number of CGMS measurements during 24 h.</p>
+      </sec>
+      <sec id="s2g">
+        <title>Randomization</title>
+        <p>Subjects participated in the experimental sessions according to a computer-generated randomization. Such process occurred once before subjects were recruited in the study, indicating the order of the two 50-min sessions of either aerobic exercise (AER, n = 14) or combined aerobic and resistance exercise (COMB, n = 14), which were separated by at least 7 days. A researcher who was not part of the interventions handled the randomization.</p>
+      </sec>
+      <sec id="s2h">
+        <title>Exercise Protocol</title>
+        <p>Two exercise sessions, consisting of either AER or COMB exercise protocols, were carried out in a randomized order. Exercise intensity was recorded for each individual by a heart rate monitor (Polar F1 TM, Polar Electro Oy, Helsinki, Finland), and a Borg 0–10 scale was used to register individuals’ perceived exertion every 5 minutes throughout the experimental sessions. For the AER session, subjects exercised on a cycle ergometer (Embreex 360, Brusque, Brazil<bold>)</bold>. Each session included a 5-min warm-up at 20 watts, followed by 40 min at 70% of the peak heart rate, as determined in the incremental exercise test, and 5-min of stretching exercise as cool down. In the COMB session, subjects completed a 5-min warm-up on the cycle ergometer and continued for 20 min at 70% of the peak heart rate. This aerobic part was then complemented by 4 resistance exercises (leg press, leg extension, bench press and biceps curl), in which subjects completed 3 sets of 12 repetitions at 65% of 1-RM.</p>
+      </sec>
+      <sec id="s2i">
+        <title>Statistical Analysis</title>
+        <p>The 18.0 version of Statistical Package for Social Sciences software was used for statistical analysis. Descriptive data are presented as mean and SEM or median and interquartile range (P25–P75). Logarithmic transformation was applied to non normal distribution data. Glucose area under curve (AUC) value was calculated considering the integrated over area enclosed by the glucose curve, on each 24-h time interval. The effects of the interventions were compared by two-way analysis of variance for repeated measures (ANOVA), and multiple comparisons were performed with the Bonferroni correction.</p>
+      </sec>
+    </sec>
+    <sec id="s3">
+      <title>Results</title>
+      <p>Between March 2009 and December 2011, 210 patients with type 2 diabetes were screened for participation but only 14 participated in the protocols. Demographic and clinical characteristics of participants are shown in <xref ref-type="table" rid="pone-0057733-t001">Table 1</xref>. Patients were 56±2 years old, predominantly women, had diabetes for 4.5 years (3.1–5.9), and did not present metabolic decompensation. Most of the patients were insufficiently active and this was reflected on reduced values of peak oxygen uptake. Dietary records were similar among the three days of the study with AER session (P = 0.56) and with COMB session (P = 0.43). No differences in macronutrient intake were observed when the three days including the AER session were compared with the three days including the COMB session (P = 0.79). On average, the subjects consumed their meals 156±78 min before and 97±42 min after the AER session, whereas meal intake was 147±69 min before and 117±87 min after the COMB session, respectively.</p>
+      <table-wrap id="pone-0057733-t001" position="float">
+        <object-id pub-id-type="doi">10.1371/journal.pone.0057733.t001</object-id>
+        <label>Table 1</label>
+        <caption>
+          <title>Baseline characteristics of the patients studied.</title>
+        </caption>
+        <alternatives>
+          <graphic id="pone-0057733-t001-1" position="float" mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0057733.t001" xlink:type="simple"/>
+          <table>
+            <colgroup span="1">
+              <col align="left" span="1"/>
+              <col align="center" span="1"/>
+            </colgroup>
+            <thead>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Characteristics</td>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Men (n and %)</td>
+                <td align="left" rowspan="1" colspan="1">5 (35.7)</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Age (yr)</td>
+                <td align="left" rowspan="1" colspan="1">56±2</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">
+                  <bold>Anthropometrics</bold>
+                </td>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Body weight (kg)</td>
+                <td align="left" rowspan="1" colspan="1">79±4</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Body mass index (kg.m<sup>−2</sup>)</td>
+                <td align="left" rowspan="1" colspan="1">30±1</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Waist circumference (cm)</td>
+                <td align="left" rowspan="1" colspan="1">101±3</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">
+                  <bold>Blood pressure (mmHg)</bold>
+                </td>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Systolic</td>
+                <td align="left" rowspan="1" colspan="1">136±4</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Diastolic</td>
+                <td align="left" rowspan="1" colspan="1">77±2</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Duration of diabetes (yr)</td>
+                <td align="left" rowspan="1" colspan="1">4.5 (3.1–5.9)</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">HbAlc (%)</td>
+                <td align="left" rowspan="1" colspan="1">7.9±0.7</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Fasting blood glucose (mg/dl)</td>
+                <td align="left" rowspan="1" colspan="1">139±5</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Total cholesterol (mg/dl)</td>
+                <td align="left" rowspan="1" colspan="1">191±8</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">HDL cholesterol (mg/dl)</td>
+                <td align="left" rowspan="1" colspan="1">61±13</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">LDL cholesterol (mg/dl)</td>
+                <td align="left" rowspan="1" colspan="1">95±12</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Triglycerides (mg/dl)</td>
+                <td align="left" rowspan="1" colspan="1">161 (124–198)</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">
+                  <bold>Psysical activity level (IPAQ)</bold>
+                </td>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Insufficiently active</td>
+                <td align="left" rowspan="1" colspan="1">11 (71.4)</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Sufficiently active</td>
+                <td align="left" rowspan="1" colspan="1">3 (21.4)</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Very active</td>
+                <td align="left" rowspan="1" colspan="1">1 (7.1)</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">VO<sub>2</sub> peak (mL.Kg<sup>−1</sup>.min<sup>−1</sup>)</td>
+                <td align="left" rowspan="1" colspan="1">23±2</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Heart rate peak (bpm)</td>
+                <td align="left" rowspan="1" colspan="1">156±6</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">R<sub>peak</sub></td>
+                <td align="left" rowspan="1" colspan="1">1.2±0.0</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">
+                  <bold>Maximal strength testing (1-RM) Kg</bold>
+                </td>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Biceps curl</td>
+                <td align="left" rowspan="1" colspan="1">9±1</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Bench press</td>
+                <td align="left" rowspan="1" colspan="1">30±2</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Leg press</td>
+                <td align="left" rowspan="1" colspan="1">131±17</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Leg extension</td>
+                <td align="left" rowspan="1" colspan="1">35±3</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">
+                  <bold>Medications (n and %)</bold>
+                </td>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Metformin</td>
+                <td align="left" rowspan="1" colspan="1">14 (100)</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">β-blockers</td>
+                <td align="left" rowspan="1" colspan="1">2 (14.3)</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Angiotensin-converting enzyme inhibitors</td>
+                <td align="left" rowspan="1" colspan="1">4 (28.6)</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Aspirin</td>
+                <td align="left" rowspan="1" colspan="1">4 (28.6)</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Diuretics</td>
+                <td align="left" rowspan="1" colspan="1">6 (42.8)</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Statins</td>
+                <td align="left" rowspan="1" colspan="1">5 (35.7)</td>
+              </tr>
+            </tbody>
+          </table>
+        </alternatives>
+        <table-wrap-foot>
+          <fn id="nt101">
+            <label/>
+            <p>HbA1c: glycated hemoglobin; VO<sub>2</sub>peak: peak oxygen uptake per kilogram of body weight/fat-free mass; R<sub>peak</sub> peak respiratory exchange ratio of peak.</p>
+          </fn>
+          <fn id="nt102">
+            <label>**</label>
+            <p>Data are expressed as mean ± SEM, except duration of diabetes, which is expressed as median (95% CI); categorical variables are presented as numbers (%).</p>
+          </fn>
+        </table-wrap-foot>
+      </table-wrap>
+      <p><xref ref-type="table" rid="pone-0057733-t002">Table 2</xref> shows the effects of a meal on glucose variability evaluated by conventional and non-conventional analyses. The MAGE index could not be evaluated before meal because its value depends on postprandial oscillations. For all other variables analyzed, the coefficient of variation was the only that was changed by the meal, showing a reduction of glucose variability after it (P = 0.008).</p>
+      <table-wrap id="pone-0057733-t002" position="float">
+        <object-id pub-id-type="doi">10.1371/journal.pone.0057733.t002</object-id>
+        <label>Table 2</label>
+        <caption>
+          <title>Glucose variability evaluated by conventional and non-conventional analysis before and after meals, before any exercise session.</title>
+        </caption>
+        <alternatives>
+          <graphic id="pone-0057733-t002-2" position="float" mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0057733.t002" xlink:type="simple"/>
+          <table>
+            <colgroup span="1">
+              <col align="left" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+            </colgroup>
+            <thead>
+              <tr>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1">Pre-prandial</td>
+                <td align="left" rowspan="1" colspan="1">Post-prandial</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">
+                  <bold>Conventional</bold>
+                </td>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Glucose variance (mg<sup>2</sup>/dL<sup>2</sup>)</td>
+                <td align="left" rowspan="1" colspan="1">421.4±795.0</td>
+                <td align="left" rowspan="1" colspan="1">524.2±768.8</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Coefficient of variation (%)</td>
+                <td align="left" rowspan="1" colspan="1">11.7±6.0</td>
+                <td align="left" rowspan="1" colspan="1">8.4±4.0<xref ref-type="table-fn" rid="nt104">*</xref></td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Glucose standard deviation (mg/dL)</td>
+                <td align="left" rowspan="1" colspan="1">16.4±12.5</td>
+                <td align="left" rowspan="1" colspan="1">20.0±11.4</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">MAGE</td>
+                <td align="left" rowspan="1" colspan="1">-</td>
+                <td align="left" rowspan="1" colspan="1">42.4±119.8</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">
+                  <bold>Non-conventional</bold>
+                </td>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">
+                  <italic>
+                    <underline>Spectral analysis</underline>
+                  </italic>
+                </td>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Total power (mg<sup>2</sup>/dL<sup>2</sup>)</td>
+                <td align="left" rowspan="1" colspan="1">92.8±26.2</td>
+                <td align="left" rowspan="1" colspan="1">135.2±33.5</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Predominant band (peak at 0.002 Hz) (mg<sup>2</sup>/dL<sup>2</sup>)</td>
+                <td align="left" rowspan="1" colspan="1">4.4±1.1</td>
+                <td align="left" rowspan="1" colspan="1">9.8±5.0</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">
+                  <italic>
+                    <underline>Symbolic analysis</underline>
+                  </italic>
+                </td>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1"/>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Shannon entropy</td>
+                <td align="left" rowspan="1" colspan="1">4.2±0.05</td>
+                <td align="left" rowspan="1" colspan="1">4.2±0.08</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">0 V pattern (%)</td>
+                <td align="left" rowspan="1" colspan="1">54.2±2.0</td>
+                <td align="left" rowspan="1" colspan="1">48.4±2.6</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">1 V pattern (%)</td>
+                <td align="left" rowspan="1" colspan="1">37.7±1.4</td>
+                <td align="left" rowspan="1" colspan="1">41.4±2.0</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">2 LV pattern (%)</td>
+                <td align="left" rowspan="1" colspan="1">5.0±0.9</td>
+                <td align="left" rowspan="1" colspan="1">5.5±1.2</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">2 UV pattern (%)</td>
+                <td align="left" rowspan="1" colspan="1">3.1±0.6</td>
+                <td align="left" rowspan="1" colspan="1">4.6±0.8</td>
+              </tr>
+            </tbody>
+          </table>
+        </alternatives>
+        <table-wrap-foot>
+          <fn id="nt103">
+            <label/>
+            <p>Comparisons were performed by Student’s <italic>t</italic>-test;</p>
+          </fn>
+          <fn id="nt104">
+            <label>*</label>
+            <p>P&lt;0.05 <italic>vs.</italic> pre-prandial. Data are expressed as mean ± SEM. MAGE index could not be evaluated before meal because its value depends on postprandial oscillations.</p>
+          </fn>
+        </table-wrap-foot>
+      </table-wrap>
+      <p>All participants completed AER and COMB exercise interventions, and levels of perceived exertion were similar during both experimental sessions (AER, 4.9±0.4; COMB, 4.8±0.5; P = 0.92). Glucose levels (CGMS), heart rate, systolic and diastolic blood pressure measured before and at the end of the exercise sessions are presented in <xref ref-type="table" rid="pone-0057733-t003">Table 3</xref>. Both exercise modalities elicited similar increases in heart rate and blood pressure as well as similar reductions in glucose levels.</p>
+      <table-wrap id="pone-0057733-t003" position="float">
+        <object-id pub-id-type="doi">10.1371/journal.pone.0057733.t003</object-id>
+        <label>Table 3</label>
+        <caption>
+          <title>Cardiovascular and metabolic responses to exercise.</title>
+        </caption>
+        <alternatives>
+          <graphic id="pone-0057733-t003-3" position="float" mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0057733.t003" xlink:type="simple"/>
+          <table>
+            <colgroup span="1">
+              <col align="left" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+              <col align="center" span="1"/>
+            </colgroup>
+            <thead>
+              <tr>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td colspan="2" align="left" rowspan="1">Aerobic</td>
+                <td colspan="2" align="left" rowspan="1">Combined</td>
+                <td align="left" rowspan="1" colspan="1">P</td>
+                <td align="left" rowspan="1" colspan="1">P</td>
+                <td align="left" rowspan="1" colspan="1">P</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1"/>
+                <td align="left" rowspan="1" colspan="1">Pre</td>
+                <td align="left" rowspan="1" colspan="1">Post</td>
+                <td align="left" rowspan="1" colspan="1">Pre</td>
+                <td align="left" rowspan="1" colspan="1">Post</td>
+                <td align="left" rowspan="1" colspan="1">Exercise</td>
+                <td align="left" rowspan="1" colspan="1">Time</td>
+                <td align="left" rowspan="1" colspan="1">Interaction</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Heart rate (bpm)</td>
+                <td align="left" rowspan="1" colspan="1">86±2</td>
+                <td align="left" rowspan="1" colspan="1">113±2</td>
+                <td align="left" rowspan="1" colspan="1">84±3</td>
+                <td align="left" rowspan="1" colspan="1">109±8</td>
+                <td align="left" rowspan="1" colspan="1">0.29</td>
+                <td align="left" rowspan="1" colspan="1">0.001</td>
+                <td align="left" rowspan="1" colspan="1">0.58</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Systolic blood pressure (mmHg)</td>
+                <td align="left" rowspan="1" colspan="1">130±5</td>
+                <td align="left" rowspan="1" colspan="1">145±7</td>
+                <td align="left" rowspan="1" colspan="1">129±4</td>
+                <td align="left" rowspan="1" colspan="1">134±5</td>
+                <td align="left" rowspan="1" colspan="1">0.20</td>
+                <td align="left" rowspan="1" colspan="1">0.005</td>
+                <td align="left" rowspan="1" colspan="1">0.29</td>
+              </tr>
+              <tr>
+                <td align="left" rowspan="1" colspan="1">Glucose levels evaluated by CGMS (mg/dl)</td>
+                <td align="left" rowspan="1" colspan="1">151±8</td>
+                <td align="left" rowspan="1" colspan="1">124±9</td>
+                <td align="left" rowspan="1" colspan="1">147±9</td>
+                <td align="left" rowspan="1" colspan="1">125±6</td>
+                <td align="left" rowspan="1" colspan="1">0.89</td>
+                <td align="left" rowspan="1" colspan="1">0.001</td>
+                <td align="left" rowspan="1" colspan="1">0.45</td>
+              </tr>
+            </tbody>
+          </table>
+        </alternatives>
+        <table-wrap-foot>
+          <fn id="nt105">
+            <label/>
+            <p>P: Two-way analysis of variance for repeated measures (ANOVA).Data are expressed as mean ± SEM.</p>
+          </fn>
+        </table-wrap-foot>
+      </table-wrap>
+      <p><xref ref-type="fig" rid="pone-0057733-g003">Figure 3</xref> (panel A) shows glucose levels determined by CGMS after AER and COMB exercise sessions. For both exercise modalities, glucose levels returned to baseline levels similarly about 3 hours after exercise; this reduction in glucose levels was not different comparing 3 hours after exercise <italic>vs.</italic> baseline (AER session P = 0.99; COMB session P = 1.00; α = 0.05 for Pre/Post P = 0.050). In addition, <xref ref-type="fig" rid="pone-0057733-g003">Figure 3</xref> (panel B) shows that the AUC of glucose over 24 h after exercise was similar in both exercise protocols. During the day before the AER session, hyperglycemic episodes (expressed as the percentage of time glucose levels were above 150 mg/dL) occurred in 33±0.3% of the period, whereas on the day after the session, such episodes occurred in 31±0.3% of the 24 h period (P = 0.79). Before the COMB session, hyperglycemic episodes occurred in 31±0.2% of the readings throughout the 24-h period, whereas such episodes occurred in 27±0.3% of the readings during the 24 h after the COMB session (P = 0.33). The duration of hyperglycemic episodes was not different after both exercises (P = 0.50).</p>
+      <fig id="pone-0057733-g003" position="float">
+        <object-id pub-id-type="doi">10.1371/journal.pone.0057733.g003</object-id>
+        <label>Figure 3</label>
+        <caption>
+          <title>24-h glucose levels (CGMS), detailed on the first 6</title>
+          <p> <bold>h after exercise in aerobic (AER) and aerobic plus resistance (COMB) exercise (Panel A) exercise sessions.</bold> Panel B shows 24-h glucose levels (CGMS) as the area under the glucose response curve comparing AER and COMB sessions (P = 0.335). Data are reported as mean ± SEM.</p>
+        </caption>
+        <graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0057733.g003" position="float" xlink:type="simple"/>
+      </fig>
+      <p>Conventional analysis of glucose variability is shown in <xref ref-type="fig" rid="pone-0057733-g004">Figure 4</xref>. Panel A shows that glucose variability, as evaluated by glucose variance, was similar after exercise for AER and COMB sessions. Similar findings were obtained for glucose variability evaluated by the glucose coefficient of variation (Panel B) and glucose standard deviation (Panel C).</p>
+      <fig id="pone-0057733-g004" position="float">
+        <object-id pub-id-type="doi">10.1371/journal.pone.0057733.g004</object-id>
+        <label>Figure 4</label>
+        <caption>
+          <title>Glucose variability evaluated by conventional analysis before and after aerobic (AER) or aerobic plus resistance exercise (COMB) exercise.</title>
+          <p>Panel A, glucose variance; Panel B, coefficient of variation and Panel C, standard deviation. Data are reported as mean ± SEM; n = 14. Two-way analysis of variance for repeated measures (ANOVA); Bonferroni correction.</p>
+        </caption>
+        <graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0057733.g004" position="float" xlink:type="simple"/>
+      </fig>
+      <p>Non-conventional analysis of glucose variability (spectral analysis results) indicates the absence of a predominant band in surrogate series and the presence of a band centered at 0.002 Hz in all analyzed series. Similar spectrum parameters were presented after exercise for the two exercise modalities (AER, 7.3±8.7 <italic>vs.</italic> 3.1±2.3 mg<sup>2</sup>/dl<sup>2</sup>, P = 0.11; COMB, 5.9±8.4 <italic>vs.</italic> 3.8±5.6 mg<sup>2</sup>/dl<sup>2</sup>, P = 0.13).</p>
+      <p>Non-conventional analysis of glucose variability (symbolic analysis) is shown in <xref ref-type="fig" rid="pone-0057733-g005">Figures 5</xref> and <xref ref-type="fig" rid="pone-0057733-g006">6</xref>. <xref ref-type="fig" rid="pone-0057733-g005">Figure 5</xref> depicts the mathematical analysis used for validation of the analysis applied. Probability density function obtained from original series was different from that obtained from its surrogate series, without a predominant pattern, indicating a random result (Panel A). Panel B depicts normalized corrected conditional entropy (NCCEs), calculated over the original (black line) and surrogate series (gray line). The NCCE from original series exhibited a deep minimum, while the surrogated data were completely flat. Panel C shows an example of original and surrogated series generated to method validation and Panel D illustrates an example of symbolic analysis results applied to real glucose series. <xref ref-type="fig" rid="pone-0057733-g006">Figure 6</xref> shows the changes induced by exercise sessions in the patterns of symbolic analysis. Results obtained comparing exercise sessions reported differences between them on 0 V, which is related to no variation in glucose short-term variability (three consecutive measures), only for COMB sessions compared to pre-exercise values (AER, 69.9±7.8 <italic>vs.</italic> 71.9±7.1, P = 0.35; COMB, 67.0±7.1 <italic>vs.</italic> 76.0±6.3, P = 0.003, power of performed test (α = 0.05) = 0.927) and 1 V patterns (AE, 26.6±6.2 <italic>vs.</italic> 25.2±4.7, P = 0.47; COMB, 29.1±5.3 <italic>vs.</italic> 21.5±5.1, P = 0.004, power of performed test (α = 0.05) = 0.952). The Shannon entropy did not change after both exercise sessions (AER, 4.3±0.3 <italic>vs.</italic> 4.1±0.3, P = 0.19; COMB, 4.2±0.2 <italic>vs.</italic> 4.2±0.3, P = 0.52).</p>
+      <fig id="pone-0057733-g005" position="float">
+        <object-id pub-id-type="doi">10.1371/journal.pone.0057733.g005</object-id>
+        <label>Figure 5</label>
+        <caption>
+          <title>Glucose variability evaluated by non-conventional analysis: symbolic analysis and the mathematical analysis to method validation.</title>
+          <p>Panel A: Comparison between original (black line) and surrogated (gray line) series with respect to Probability density function (PDF), indicating a random result in surrogate series. Panel B: Normalized corrected conditional entropy (NCCE), exhibiting a deep minimum in original series. Panel C: Example of an original and a surrogated series. Panel D: Example of symbolic analysis results. One way repeated measures ANOVA.</p>
+        </caption>
+        <graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0057733.g005" position="float" xlink:type="simple"/>
+      </fig>
+      <fig id="pone-0057733-g006" position="float">
+        <object-id pub-id-type="doi">10.1371/journal.pone.0057733.g006</object-id>
+        <label>Figure 6</label>
+        <caption>
+          <title>Results of glucose variability evaluated by symbolic analysis after AER or COMB exercise (n = 14) and comparison between before (open bars) and after (close bars) both exercises.</title>
+          <p>Occurrence percentage of each pattern: 0 V (no variation), 1 V (one variation), 2 LV (two low variations) and 2 UV (two up variations). Data are reported as mean ± SEM. *P&lt;0.01 <italic>vs</italic>. pre-exercise values (COMB), Two way repeated measures ANOVA.</p>
+        </caption>
+        <graphic mimetype="image" xlink:href="info:doi/10.1371/journal.pone.0057733.g006" position="float" xlink:type="simple"/>
+      </fig>
+    </sec>
+    <sec id="s4">
+      <title>Discussion</title>
+      <p>In the present study, we show that acute sessions of AER and COMB promote similar reductions in glucose levels as evaluated by the CGMS immediately after the exercise, which are sustained for approximately 4 hours after the exercise. Moreover, although absolute glucose level reduction was small, the pattern of glucose curve was changed, indicating a reduction in its variability as evaluated by non-conventional methods, which was undetectable when conventional methods were applied.</p>
+      <p>The acute glucose lowering effect of exercise results from high muscle glucose uptake determined by increased insulin sensitivity induced by muscle contraction <xref ref-type="bibr" rid="pone.0057733-Holloszy1">[30]</xref>, and this effect has been described to last up to 72 h after a single exercise bout <xref ref-type="bibr" rid="pone.0057733-King1">[31]</xref>. In contrast, our data, using multiple and frequent glucose measurements with continuous monitoring, do not confirm such long duration of glucose reduction after either AER or COMB exercise sessions. The increased insulin sensitivity determined by exercise is accomplished by increased GLUT4 protein [32–30] which is determined by enhanced skeletal muscle AMPK activity <xref ref-type="bibr" rid="pone.0057733-Holloszy1">[30]</xref>–<xref ref-type="bibr" rid="pone.0057733-Sharoff1">[33]</xref>. These changes occur very rapidly after the exercise onset and can last 16 h after the intervention <xref ref-type="bibr" rid="pone.0057733-Ren1">[32]</xref>. However, feeding a high-carbohydrate diet, with development of glycogen supercompensation, prevents the increase in insulin responsiveness <xref ref-type="bibr" rid="pone.0057733-Host1">[34]</xref>, whereas feeding a carbohydrate-free diet maintains the increase in GLUT4 and insulin responsiveness for days after the exercise bout <xref ref-type="bibr" rid="pone.0057733-Iscoe1">[35]</xref>. Considering that patients in our study maintained their usual carbohydrate ingestion, this could be one reason influencing the reduced duration of the exercise-induced hypoglycemic effect. Moreover, the severity of the insulin-resistant state characteristic of type 2 diabetes has been shown to preclude the expected exercise increase in glucose uptake by muscle cells <xref ref-type="bibr" rid="pone.0057733-Cusi1">[36]</xref>.</p>
+      <p>Considering that sulphonylureas <xref ref-type="bibr" rid="pone.0057733-Larsen1">[37]</xref> and insulin <xref ref-type="bibr" rid="pone.0057733-Iscoe1">[35]</xref>–<xref ref-type="bibr" rid="pone.0057733-Praet1">[38]</xref> may increase the hypoglycemic action of exercise when the treatments are combined, we studied patients who were not using these agents, in order to isolate the effects of exercise. Because current guidelines recommend metformin as the first step in type 2 diabetes treatment, and this drug has no hypoglycemic effect, patients on metformin were included. However, recent data have shown that the enhanced insulin sensitivity caused by an exercise bout is blunted by the administration of metformin, which was accounted for the absence of skeletal muscle AMPK activity rise, thus resulting in an attenuation of the well-documented hypoglycemic effect of exercise alone <xref ref-type="bibr" rid="pone.0057733-Sharoff1">[33]</xref>. This is another fact possibly contributing to small lowering of absolute glucose observed in the present study. Moreover, the effect of metformin in lowering plasma glucose after a meal has been shown to be attenuated by exercise <xref ref-type="bibr" rid="pone.0057733-Boule1">[39]</xref>.</p>
+      <p>To track changes in blood glucose levels of patients both in usual activities, as well as during exercises sessions, we used the CGMS, which has proven to be effective in registering changes in glucose levels in usual activities, recording nocturnal hypoglycemia and postprandial hyperglycemia that are not evident with routine monitoring <xref ref-type="bibr" rid="pone.0057733-Boland1">[40]</xref>. Furthermore, in a previous study, we showed that in patients with diabetes, agreement between finger-stick blood glucose and CGMS-measured glucose during exercise was within the recommended accuracy limits considering the proposed International Organization for Standardization (ISO) <xref ref-type="bibr" rid="pone.0057733-Figueira1">[41]</xref>.</p>
+      <p>Results from glucose obtained with the CGMS during an acute exercise session were previously reported by other authors <xref ref-type="bibr" rid="pone.0057733-Iscoe1">[35]</xref>–<xref ref-type="bibr" rid="pone.0057733-Cauza1">[42]</xref>, but, to our knowledge, the present study is the first to compare an acute session of aerobic exercise with a combination of aerobic with resistance exercise. The similar reduction in glucose levels after AER or COMB exercise sessions are in accordance with the findings of our recent meta-analysis on the chronic effects of exercise on HbA1c in patients with type 2 diabetes <xref ref-type="bibr" rid="pone.0057733-Umpierre1">[16]</xref>. Since controversial results in long-term trials <xref ref-type="bibr" rid="pone.0057733-Church1">[14]</xref>, <xref ref-type="bibr" rid="pone.0057733-Sigal1">[15]</xref> might be related to the amount of exercise performed, we have been careful to apply the same duration of both exercise protocols. In addition, a modified Borg CR10 scale was used to measure the rating of perceived exertion, indicating similar perceived exertion between the two exercise sessions.</p>
+      <p>An interesting new finding of the present study was the reduction in glucose variability induced by acute exercise sessions, irrespective of the modality employed. Glucose fluctuations trigger activation of oxidative stress, a main mechanism leading to diabetic complications <xref ref-type="bibr" rid="pone.0057733-Brownlee1">[3]</xref>. However, different ways of evaluating glucose variability have provided controversial results concerning their impact to improve the risk prediction of microvascular complications above the risk predicted by HbA1c levels <xref ref-type="bibr" rid="pone.0057733-Kilpatrick1">[5]</xref>, <xref ref-type="bibr" rid="pone.0057733-Kilpatrick2">[6]</xref>. Importantly, these studies were performed in patients with type 1 diabetes, and no study evaluated the possible beneficial effect of exercise training as a tool for lowering glucose variability and its potential in reducing diabetic complications in the long term. To our knowledge, the present study provides the first piece of evidence showing this potential by a single exercise session.</p>
+      <p>With regard to the results obtained with the non-conventional methods, we found some parameters were altered after the exercise sessions. The interpretation of these results requires attention to some important concepts related to the physiological mechanisms involved in the generation of glucose oscillations. First, the proposed validation using surrogated signals demonstrated the applicability of the method and the changes detected only in real signals, indicated the veracity of such characteristics present in the glucose curves, minimizing the possibility of intrinsic errors into the signal pattern. Second, spectral analysis indicated the presence of a slow physiological mechanism acting within a period of around 8 minutes (predominant band at around 0.002 Hz). The power of this band was not affected by meals, but was reduced after the exercise sessions. Moreover, the results of symbolic analysis were also not affected by meals, however, COMB exercise induced an increase of 0 V pattern, accompanied by reduction in the 1 V pattern. These changes, favoring 0 V pattern, represent no variation, indicating a decrease in glucose variability when evaluated on three consecutive measures. It is important to note that the results of non conventional methods can provide complementary information about glucose oscilation. Certainly, the most important information provided by our results is the detection of glucose curve features that were not previously detected by the indices conventionally used in the literature.</p>
+      <p>Interestingly, the question of complexity and pathology is not yet clear. Some studies have shown a relationship between pathological conditions and loss of complexity <xref ref-type="bibr" rid="pone.0057733-Costa1">[43]</xref> but, on the other hand, but others suggest a possible opposite relationship <xref ref-type="bibr" rid="pone.0057733-Porta4">[44]</xref>. Our study evaluates the acute effect of two sessions that evoke different physiological responses. Reducing complexity after the COMB sessions may not be related to an impaired systemic context, but to the predominance of a nonlinear mechanism or the withdrawal of a nonlinear mechanism shortly after the session. The mechanisms involved should still be studied to clarify the observed patterns of linearity.</p>
+      <p>We can only speculate on possible physiological mechanisms acting on the predominant frequency range of the power spectra and symbolic patterns described above. The responses observed in the present study may have been underlying the responses observed in the present stuy, there may have been hormonal actions linked to insulin synthesis and release <xref ref-type="bibr" rid="pone.0057733-King2">[45]</xref>, oxidative stress <xref ref-type="bibr" rid="pone.0057733-Childs1">[46]</xref>, and/or inflammatory factors <xref ref-type="bibr" rid="pone.0057733-Shephard1">[47]</xref>. Additionally, mechanisms directly affected by muscle contractions cannot be ruled out. The Akt substrate of 160 kDa (AS160), which is stimulated by insulin as well as by exercise, and its increase after exclusive sessions of either aerobic or resistance exercises may have contributed to change glucose dynamics <xref ref-type="bibr" rid="pone.0057733-Dreyer1">[48]</xref>, <xref ref-type="bibr" rid="pone.0057733-Howlett1">[49]</xref>. Moreover, since only the COMB session changed the glucose variability pattern, it is possible that additive effects from aerobic and resistance stimuli may affect the post-exercise insulin signaling. Some studies have shown a correlation between such parameters and glucose variability, both under physiological and pathological situations, indicating a possible influence of these mechanisms on the changed variables <xref ref-type="bibr" rid="pone.0057733-Monnier2">[50]</xref>–<xref ref-type="bibr" rid="pone.0057733-Rosa1">[54]</xref>. Therefore, further investigation is required in order to interpret the obtained results, since the isolated actions of these mechanisms on the parameters here addressed were not studied.</p>
+      <p>In conclusion, both AER and COMB exercise modalities in patients with type 2 diabetes using metformin were associated with small glucose level reductions, which lasted a short time. The glucose variability pattern was changed after COMB sessions only when non-conventional methods (symbolic analysis) were employed. Further research is needed to identify physiological mechanisms related to these mathematical characteristics. Long-term potential benefits of lowering glucose variability by exercise training should be tested in randomized clinical trials.</p>
+    </sec>
+    <sec id="s5">
+      <title>Supporting Information</title>
+      <supplementary-material id="pone.0057733.s001" mimetype="application/msword" xlink:href="info:doi/10.1371/journal.pone.0057733.s001" position="float" xlink:type="simple">
+        <label>Checklist S1</label>
+        <caption>
+          <p>PRISMA checklist.</p>
+          <p>(DOC)</p>
+        </caption>
+      </supplementary-material>
+      <supplementary-material id="pone.0057733.s002" mimetype="application/msword" xlink:href="info:doi/10.1371/journal.pone.0057733.s002" position="float" xlink:type="simple">
+        <label>Protocol S1</label>
+        <caption>
+          <p>Trial protocol.</p>
+          <p>(DOC)</p>
+        </caption>
+      </supplementary-material>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <title>References</title>
+      <ref id="pone.0057733-UK1">
+        <label>1</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><collab xlink:type="simple">UK Prospective Diabetes Study (UKPDS) Group</collab> (<year>1998</year>) <article-title>Intensive blood-glucose control with sulphonylureas or insulin compared with conventional treatment and risk of complications in patients with type 2 diabetes (UKPDS 33). UK Prospective Diabetes Study (UKPDS) Group. Lancet</article-title>. <volume>352</volume>: <fpage>837</fpage>–<lpage>853</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Stratton1">
+        <label>2</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Stratton</surname><given-names>IM</given-names></name>, <name name-style="western"><surname>Adler</surname><given-names>AI</given-names></name>, <name name-style="western"><surname>Neil</surname><given-names>HA</given-names></name>, <name name-style="western"><surname>Matthews</surname><given-names>DR</given-names></name>, <name name-style="western"><surname>Manley</surname><given-names>SE</given-names></name>, <etal>et al</etal>. (<year>2000</year>) <article-title>Association of glycaemia with macrovascular and microvascular complications of type 2 diabetes (UKPDS 35): prospective observational study. BMJ</article-title>. <volume>321</volume>: <fpage>405</fpage>–<lpage>412</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Brownlee1">
+        <label>3</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Brownlee</surname><given-names>M</given-names></name> (<year>2005</year>) <article-title>The pathobiology of diabetic complications: a unifying mechanism. Diabetes</article-title>. <volume>54</volume>: <fpage>1615</fpage>–<lpage>1625</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-DiFlaviani1">
+        <label>4</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Di Flaviani</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Picconi</surname><given-names>F</given-names></name>, <name name-style="western"><surname>Di Stefano</surname><given-names>P</given-names></name>, <name name-style="western"><surname>Giordani</surname><given-names>I</given-names></name>, <name name-style="western"><surname>Malandrucco</surname><given-names>I</given-names></name>, <etal>et al</etal>. (<year>2011</year>) <article-title>Impact of glycemic and blood pressure variability on surrogate measures of cardiovascular outcomes in type 2 diabetic patients. Diabetes Care</article-title>. <volume>34</volume>: <fpage>1605</fpage>–<lpage>1609</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Kilpatrick1">
+        <label>5</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Kilpatrick</surname><given-names>ES</given-names></name>, <name name-style="western"><surname>Rigby</surname><given-names>AS</given-names></name>, <name name-style="western"><surname>Atkin</surname><given-names>SL</given-names></name> (<year>2009</year>) <article-title>Effect of glucose variability on the long-term risk of microvascular complications in type 1 diabetes. Diabetes Care</article-title>. <volume>32</volume>: <fpage>1901</fpage>–<lpage>1903</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Kilpatrick2">
+        <label>6</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Kilpatrick</surname><given-names>ES</given-names></name>, <name name-style="western"><surname>Rigby</surname><given-names>AS</given-names></name>, <name name-style="western"><surname>Atkin</surname><given-names>SL</given-names></name> (<year>2008</year>) <article-title>A1C variability and the risk of microvascular complications in type 1 diabetes: data from the Diabetes Control and Complications Trial. Diabetes Care</article-title>. <volume>31</volume>: <fpage>2198</fpage>–<lpage>2202</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Monnier1">
+        <label>7</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Monnier</surname><given-names>L</given-names></name>, <name name-style="western"><surname>Mas</surname><given-names>E</given-names></name>, <name name-style="western"><surname>Ginet</surname><given-names>C</given-names></name>, <name name-style="western"><surname>Michel</surname><given-names>F</given-names></name>, <name name-style="western"><surname>Villon</surname><given-names>L</given-names></name>, <etal>et al</etal>. (<year>2006</year>) <article-title>Activation of oxidative stress by acute glucose fluctuations compared with sustained chronic hyperglycemia in patients with type 2 diabetes. JAMA</article-title>. <volume>295</volume>: <fpage>1681</fpage>–<lpage>1687</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Churruca1">
+        <label>8</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Churruca</surname><given-names>J</given-names></name>, <name name-style="western"><surname>Vigil</surname><given-names>L</given-names></name>, <name name-style="western"><surname>Luna</surname><given-names>E</given-names></name>, <name name-style="western"><surname>Ruiz-Galiana</surname><given-names>J</given-names></name>, <name name-style="western"><surname>Varela</surname><given-names>M</given-names></name> (<year>2008</year>) <article-title>The route to diabetes: Loss of complexity in the glycemic profile from health through the metabolic syndrome to type 2 diabetes</article-title>. <source>Diabetes Metab Syndr</source> <volume>Obes</volume> (<issue>1</issue>) 
+<fpage>3</fpage>–<lpage>11</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Buscemi1">
+        <label>9</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Buscemi</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Verga</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Cottone</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Azzolina</surname><given-names>V</given-names></name>, <name name-style="western"><surname>Buscemi</surname><given-names>B</given-names></name>, <etal>et al</etal>. (<year>2009</year>) <article-title>Glycaemic variability and inflammation in subjects with metabolic syndrome. Acta Diabetol</article-title>. <volume>1</volume>: <fpage>55</fpage>–<lpage>61</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Varela1">
+        <label>10</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Varela</surname><given-names>M</given-names></name>, <name name-style="western"><surname>Calvo</surname><given-names>M</given-names></name>, <name name-style="western"><surname>Chana</surname><given-names>M</given-names></name>, <name name-style="western"><surname>Gomez-Mestre</surname><given-names>I</given-names></name>, <name name-style="western"><surname>Asensio</surname><given-names>R</given-names></name>, <etal>et al</etal>. (<year>2005</year>) <article-title>Clinical implications of temperature curve complexity in critically ill patients. Crit Care Med</article-title>. <volume>33</volume>: <fpage>2764</fpage>–<lpage>2771</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Varela2">
+        <label>11</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Varela</surname><given-names>M</given-names></name>, <name name-style="western"><surname>Churruca</surname><given-names>J</given-names></name>, <name name-style="western"><surname>Gonzalez</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Martin</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Ode</surname><given-names>J</given-names></name>, <etal>et al</etal>. (<year>2006</year>) <article-title>Temperature curve complexity predicts survival in critically ill patients. Am J Respir Crit Care Med</article-title>. <volume>174</volume>: <fpage>290</fpage>–<lpage>298</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Churruca2">
+        <label>12</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Churruca</surname><given-names>J</given-names></name>, <name name-style="western"><surname>Vigil</surname><given-names>L</given-names></name>, <name name-style="western"><surname>Luna</surname><given-names>E</given-names></name>, <name name-style="western"><surname>Ruiz-Galiana</surname><given-names>J</given-names></name>, <name name-style="western"><surname>Varela</surname><given-names>M</given-names></name> (<year>2008</year>) <article-title>The route to diabetes: Loss of complexity in the glycemic profile from health through the metabolic syndrome to type 2 diabetes. Diabetes Metab Syndr Obes</article-title>. <volume>1</volume>: <fpage>3</fpage>–<lpage>11</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Porta1">
+        <label>13</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Porta</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Guzzetti</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Montano</surname><given-names>N</given-names></name>, <name name-style="western"><surname>Pagani</surname><given-names>M</given-names></name>, <name name-style="western"><surname>Somers</surname><given-names>V</given-names></name>, <etal>et al</etal>. (<year>2000</year>) <article-title>Information domain analysis of cardiovascular variability signals: evaluation of regularity, synchronisation and co-ordination. Med Biol Eng Comput</article-title>. <volume>38</volume>: <fpage>180</fpage>–<lpage>188</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Church1">
+        <label>14</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Church</surname><given-names>TS</given-names></name>, <name name-style="western"><surname>Blair</surname><given-names>SN</given-names></name>, <name name-style="western"><surname>Cocreham</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Johannsen</surname><given-names>N</given-names></name>, <name name-style="western"><surname>Johnson</surname><given-names>W</given-names></name>, <etal>et al</etal>. (<year>2010</year>) <article-title>Effects of aerobic and resistance training on hemoglobin A1c levels in patients with type 2 diabetes: a randomized controlled trial. JAMA</article-title>. <volume>304</volume>: <fpage>2253</fpage>–<lpage>2262</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Sigal1">
+        <label>15</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Sigal</surname><given-names>RJ</given-names></name>, <name name-style="western"><surname>Kenny</surname><given-names>GP</given-names></name>, <name name-style="western"><surname>Boule</surname><given-names>NG</given-names></name>, <name name-style="western"><surname>Wells</surname><given-names>GA</given-names></name>, <name name-style="western"><surname>Prud’homme</surname><given-names>D</given-names></name>, <etal>et al</etal>. (<year>2007</year>) <article-title>Effects of aerobic training, resistance training, or both on glycemic control in type 2 diabetes: a randomized trial. Ann Intern Med</article-title>. <volume>147</volume>: <fpage>357</fpage>–<lpage>369</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Umpierre1">
+        <label>16</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Umpierre</surname><given-names>D</given-names></name>, <name name-style="western"><surname>Ribeiro</surname><given-names>PA</given-names></name>, <name name-style="western"><surname>Kramer</surname><given-names>CK</given-names></name>, <name name-style="western"><surname>Leitão</surname><given-names>CB</given-names></name>, <name name-style="western"><surname>Zucatti</surname><given-names>AT</given-names></name>, <etal>et al</etal>. (<year>2011</year>) <article-title>Physical activity advice only or structured exercise training and association with HbA1c levels in type 2 diabetes: a systematic review and meta-analysis. JAMA</article-title>. <volume>305</volume>: <fpage>1790</fpage>–<lpage>1799</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Craig1">
+        <label>17</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Craig</surname><given-names>CL</given-names></name>, <name name-style="western"><surname>Marshall</surname><given-names>AL</given-names></name>, <name name-style="western"><surname>Sjostrom</surname><given-names>M</given-names></name>, <name name-style="western"><surname>Bauman</surname><given-names>AE</given-names></name>, <name name-style="western"><surname>Booth</surname><given-names>ML</given-names></name>, <etal>et al</etal>. (<year>2003</year>) <article-title>International physical activity questionnaire: 12-country reliability and validity. Med Sci Sports Exerc</article-title>. <volume>35</volume>: <fpage>1381</fpage>–<lpage>1395</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Umpierre2">
+        <label>18</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Umpierre</surname><given-names>D</given-names></name>, <name name-style="western"><surname>Stein</surname><given-names>R</given-names></name>, <name name-style="western"><surname>Vieira</surname><given-names>PJ</given-names></name>, <name name-style="western"><surname>Ribeiro</surname><given-names>JP</given-names></name> (<year>2009</year>) <article-title>Blunted vascular responses but preserved endothelial vasodilation after submaximal exercise in chronic heart failure. Eur J Cardiovasc Prev Rehabil</article-title>. <volume>16</volume>: <fpage>53</fpage>–<lpage>59</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Service1">
+        <label>19</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><collab xlink:type="simple">Service FJ, Molnar GD, Rosevear JW, Ackerman E, Gatewood LC, et al</collab> (<year>1970</year>) <article-title>Mean amplitude of glycemic excursions, a measure of diabetic instability</article-title>. <volume>Diabetes</volume> (<issue>19</issue>) 
+<fpage>644</fpage>–<lpage>655</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Mcdonnell1">
+        <label>20</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Mcdonnell</surname><given-names>CM</given-names></name>, <name name-style="western"><surname>Donath</surname><given-names>SM</given-names></name>, <name name-style="western"><surname>Vidmar</surname><given-names>SI</given-names></name>, <name name-style="western"><surname>Werther</surname><given-names>GA</given-names></name>, <name name-style="western"><surname>Cameron</surname><given-names>FJ</given-names></name>, <etal>et al</etal>. (<year>2005</year>) <article-title>A novel approach to continuous glucose analysis utilizing glycemic variation. Diabetes Technol Ther</article-title>. <volume>7</volume>: <fpage>253</fpage>–<lpage>263</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Whitelaw1">
+        <label>21</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Whitelaw</surname><given-names>B</given-names></name> (<year>2008</year>) <article-title>What is the best way to analyse glycaemic variability using continuous glucose monitoring data?</article-title> <volume>Diabetologia</volume> (<issue>51</issue>) 
+<fpage>S436</fpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Zaccardi1">
+        <label>22</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Zaccardi</surname><given-names>F</given-names></name>, <name name-style="western"><surname>Stefano</surname><given-names>PD</given-names></name>, <name name-style="western"><surname>Busetto</surname><given-names>E</given-names></name>, <name name-style="western"><surname>Federici</surname><given-names>MO</given-names></name>, <name name-style="western"><surname>Manto</surname><given-names>A</given-names></name>, <etal>et al</etal>. (<year>2008</year>) <article-title>Group of signs: a new method to evaluate glycemic variability. J Diabetes Sci Technol</article-title>. <volume>2</volume>: <fpage>1061</fpage>–<lpage>5</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Hill1">
+        <label>23</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Hill</surname><given-names>NR</given-names></name>, <name name-style="western"><surname>Oliver</surname><given-names>NS</given-names></name>, <name name-style="western"><surname>Choudhary</surname><given-names>P</given-names></name>, <name name-style="western"><surname>Levy</surname><given-names>JC</given-names></name>, <name name-style="western"><surname>Hindmarsh</surname><given-names>P</given-names></name>, <etal>et al</etal>. (<year>2011</year>) <article-title>Normal reference range for mean tissue glucose and glycemic variability derived from continuous glucose monitoring for subjects without diabetes in different ethnic groups</article-title>. <source>Diabetes Technol</source> <volume>Ther</volume> (<issue>13</issue>) 
+<fpage>921</fpage>–<lpage>8</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Malliani1">
+        <label>24</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Malliani</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Pagani</surname><given-names>M</given-names></name>, <name name-style="western"><surname>Lombardi</surname><given-names>F</given-names></name>, <name name-style="western"><surname>Cerutti</surname><given-names>S</given-names></name> (<year>1991</year>) <article-title>Cardiovascular neural regulation explored in the frequency domain. Circulation</article-title>. <volume>84</volume>: <fpage>482</fpage>–<lpage>492</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Schreiber1">
+        <label>25</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Schreiber</surname><given-names>T</given-names></name>, <name name-style="western"><surname>Schmitz</surname><given-names>A</given-names></name> (<year>2000</year>) <article-title>Surrogate time series. Physica</article-title>. <volume>142</volume>: <fpage>346</fpage>–<lpage>382</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Porta2">
+        <label>26</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Porta</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Guzzetti</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Montano</surname><given-names>N</given-names></name>, <name name-style="western"><surname>Furlan</surname><given-names>R</given-names></name>, <name name-style="western"><surname>Pagani</surname><given-names>M</given-names></name>, <etal>et al</etal>. (<year>2001</year>) <article-title>Entropy, entropy rate, and pattern classification as tools to typify complexity in short heart period variability series. IEEE Trans Biomed Eng</article-title>. <volume>48</volume>: <fpage>1282</fpage>–<lpage>1291</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Theiler1">
+        <label>27</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Theiler</surname><given-names>J</given-names></name>, <name name-style="western"><surname>Eubank</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Longtin</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Galdrikian</surname><given-names>J</given-names></name> (<year>1992</year>) <article-title>Testing for nonlinearity in time series: the method of surrogate data. Physica D</article-title>. <volume>58</volume>: <fpage>77</fpage>–<lpage>94</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Casali1">
+        <label>28</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Casali</surname><given-names>KR</given-names></name>, <name name-style="western"><surname>Casali</surname><given-names>AG</given-names></name>, <name name-style="western"><surname>Montano</surname><given-names>N</given-names></name>, <name name-style="western"><surname>Irigoyen</surname><given-names>MC</given-names></name>, <name name-style="western"><surname>Macagnan</surname><given-names>F</given-names></name>, <etal>et al</etal>. (<year>2008</year>) <article-title>Multiple testing strategy for the detection of temporal irreversibility in stationary time series</article-title>. <source>Phys</source> <volume>Rev</volume> (<issue>77</issue>) 
+<fpage>066204</fpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Porta3">
+        <label>29</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Porta</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Casali</surname><given-names>KR</given-names></name>, <name name-style="western"><surname>Casali</surname><given-names>AG</given-names></name>, <name name-style="western"><surname>Gnecchi-Ruscone</surname><given-names>T</given-names></name>, <name name-style="western"><surname>Tobaldini</surname><given-names>E</given-names></name>, <etal>et al</etal>. (<year>2008</year>) <article-title>Temporal asymmetries of short-term heart period variability are linked to autonomic regulation.Am J Physiol Regul Integr Comp Physiol</article-title>. <volume>295</volume>: <fpage>R550</fpage>–<lpage>7</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Holloszy1">
+        <label>30</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Holloszy</surname><given-names>JO</given-names></name> (<year>2005</year>) <article-title>Exercise-induced increase in muscle insulin sensitivity. J Appl Physiol</article-title>. <volume>99</volume>: <fpage>338</fpage>–<lpage>343</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-King1">
+        <label>31</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>King</surname><given-names>DS</given-names></name>, <name name-style="western"><surname>Baldus</surname><given-names>PJ</given-names></name>, <name name-style="western"><surname>Sharp</surname><given-names>RL</given-names></name>, <name name-style="western"><surname>Kesl</surname><given-names>LD</given-names></name>, <name name-style="western"><surname>Feltmeyer</surname><given-names>TL</given-names></name>, <etal>et al</etal>. (<year>1995</year>) <article-title>Time course for exercise-induced alterations in insulin action and glucose tolerance in middle-aged people. J Appl Physiol</article-title>. <volume>78</volume>: <fpage>17</fpage>–<lpage>22</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Ren1">
+        <label>32</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Ren</surname><given-names>JM</given-names></name>, <name name-style="western"><surname>Semenkovich</surname><given-names>CF</given-names></name>, <name name-style="western"><surname>Gulve</surname><given-names>EA</given-names></name>, <name name-style="western"><surname>Gao</surname><given-names>J</given-names></name>, <name name-style="western"><surname>Holloszy</surname><given-names>JO</given-names></name>, <etal>et al</etal>. (<year>1994</year>) <article-title>Exercise induces rapid increases in GLUT4 expression, glucose transport capacity, and insulin-stimulated glycogen storage in muscle. J Biol Chem</article-title>. <volume>269</volume>: <fpage>14396</fpage>–<lpage>14401</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Sharoff1">
+        <label>33</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Sharoff</surname><given-names>CG</given-names></name>, <name name-style="western"><surname>Hagobian</surname><given-names>TA</given-names></name>, <name name-style="western"><surname>Malin</surname><given-names>SK</given-names></name>, <name name-style="western"><surname>Chipkin</surname><given-names>SR</given-names></name>, <name name-style="western"><surname>Yu</surname><given-names>H</given-names></name>, <etal>et al</etal>. (<year>2010</year>) <article-title>Combining short-term metformin treatment and one bout of exercise does not increase insulin action in insulin-resistant individuals. Am J Physiol Endocrinol</article-title>. <volume>298</volume>: <fpage>E815</fpage>–<lpage>823</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Host1">
+        <label>34</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Host</surname><given-names>HH</given-names></name>, <name name-style="western"><surname>Hansen</surname><given-names>PA</given-names></name>, <name name-style="western"><surname>Nolte</surname><given-names>LA</given-names></name>, <name name-style="western"><surname>Chen</surname><given-names>MM</given-names></name>, <name name-style="western"><surname>Holloszy</surname><given-names>JO</given-names></name> (<year>1998</year>) <article-title>Glycogen supercompensation masks the effect of a traininginduced increase in GLUT-4 on muscle glucose transport. J Appl Physiol</article-title>. <volume>85</volume>: <fpage>133</fpage>–<lpage>138</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Iscoe1">
+        <label>35</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Iscoe</surname><given-names>KE</given-names></name>, <name name-style="western"><surname>Campbell</surname><given-names>JE</given-names></name>, <name name-style="western"><surname>Jamnik</surname><given-names>V</given-names></name>, <name name-style="western"><surname>Perkins</surname><given-names>BA</given-names></name>, <name name-style="western"><surname>Riddell</surname><given-names>MC</given-names></name> (<year>2006</year>) <article-title>Efficacy of continuous real-time blood glucose monitoring during and after prolonged high-intensity cycling exercise: spinning with a continuous glucose monitoring system. Diabetes Technol Ther</article-title>. <volume>8</volume>: <fpage>627</fpage>–<lpage>635</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Cusi1">
+        <label>36</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Cusi</surname><given-names>K</given-names></name>, <name name-style="western"><surname>Maezono</surname><given-names>K</given-names></name>, <name name-style="western"><surname>Osman</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Pendergrass</surname><given-names>M</given-names></name>, <name name-style="western"><surname>Patti</surname><given-names>ME</given-names></name>, <etal>et al</etal>. (<year>2000</year>) <article-title>Insulin resistance differentially affects the PI 3-kinase- and MAP kinase-mediated signaling in human muscle. J Clin Invest</article-title>. <volume>105</volume>: <fpage>311</fpage>–<lpage>320</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Larsen1">
+        <label>37</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Larsen</surname><given-names>JJ</given-names></name>, <name name-style="western"><surname>Dela</surname><given-names>F</given-names></name>, <name name-style="western"><surname>Madsbad</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Vibe-Petersen</surname><given-names>J</given-names></name>, <name name-style="western"><surname>Galbo</surname><given-names>H</given-names></name> (<year>1999</year>) <article-title>Interaction of sulfonylureas and exercise on glucose homeostasis in type 2 diabetic patients. Diabetes Care</article-title>. <volume>22</volume>: <fpage>1647</fpage>–<lpage>1654</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Praet1">
+        <label>38</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Praet</surname><given-names>SF</given-names></name>, <name name-style="western"><surname>Manders</surname><given-names>RJ</given-names></name>, <name name-style="western"><surname>Lieverse</surname><given-names>AG</given-names></name>, <name name-style="western"><surname>Kuipers</surname><given-names>H</given-names></name>, <name name-style="western"><surname>Stehouwer</surname><given-names>CD</given-names></name>, <etal>et al</etal>. (<year>2006</year>) <article-title>Influence of acute exercise on hyperglycemia in insulin-treated type 2 diabetes. Med Sci Sports Exerc</article-title>. <volume>38</volume>: <fpage>2037</fpage>–<lpage>2044</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Boule1">
+        <label>39</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Boule</surname><given-names>NG</given-names></name>, <name name-style="western"><surname>Robert</surname><given-names>C</given-names></name>, <name name-style="western"><surname>Bell</surname><given-names>GJ</given-names></name>, <name name-style="western"><surname>Johnson</surname><given-names>ST</given-names></name>, <name name-style="western"><surname>Bell</surname><given-names>RC</given-names></name>, <etal>et al</etal>. (<year>2011</year>) <article-title>Metformin and exercise in type 2 diabetes: examining treatment modality interactions. Diabetes Care</article-title>. <volume>34</volume>: <fpage>1469</fpage>–<lpage>1474</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Boland1">
+        <label>40</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Boland</surname><given-names>E</given-names></name>, <name name-style="western"><surname>Monsod</surname><given-names>T</given-names></name>, <name name-style="western"><surname>Delucia</surname><given-names>M</given-names></name>, <name name-style="western"><surname>Brandt</surname><given-names>CA</given-names></name>, <name name-style="western"><surname>Fernando</surname><given-names>S</given-names></name>, <etal>et al</etal>. (<year>2001</year>) <article-title>Limitations of conventional methods of self-monitoring of blood glucose: lessons learned from 3 days of continuous glucose sensing in pediatric patients with type 1 diabetes. Diabetes Care</article-title>. <volume>24</volume>: <fpage>1858</fpage>–<lpage>1862</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Figueira1">
+        <label>41</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Figueira</surname><given-names>FR</given-names></name>, <name name-style="western"><surname>Umpierre</surname><given-names>D</given-names></name>, <name name-style="western"><surname>Ribeiro</surname><given-names>JP</given-names></name>, <name name-style="western"><surname>Tetelbom</surname><given-names>PS</given-names></name>, <name name-style="western"><surname>Henn</surname><given-names>NT</given-names></name>, <etal>et al</etal>. (<year>2012</year>) <article-title>Accuracy of continuous glucose monitoring system during exercise in type 2 diabetes. Diabetes Res Clin Pract</article-title>. <volume>98</volume>: <fpage>e36</fpage>–<lpage>9</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Cauza1">
+        <label>42</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Cauza</surname><given-names>E</given-names></name>, <name name-style="western"><surname>Hanusch-Enserer</surname><given-names>U</given-names></name>, <name name-style="western"><surname>Strasser</surname><given-names>B</given-names></name>, <name name-style="western"><surname>Kostner</surname><given-names>K</given-names></name>, <name name-style="western"><surname>Dunky</surname><given-names>A</given-names></name>, <etal>et al</etal>. (<year>2005</year>) <article-title>Strength and endurance training lead to different post exercise glucose profiles in diabetic participants using a continuous subcutaneous glucose monitoring system. Eur J Clin Invest</article-title>. <volume>35</volume>: <fpage>745</fpage>–<lpage>751</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Costa1">
+        <label>43</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Costa</surname><given-names>M</given-names></name>, <name name-style="western"><surname>Goldberger</surname><given-names>AL</given-names></name>, <name name-style="western"><surname>Peng</surname><given-names>CK</given-names></name> (<year>2005</year>) <article-title>Broken asymmetry of the human heartbeat: loss of time irreversibility in aging and disease. Phys Rev Lett</article-title>. <volume>95</volume>: <fpage>198102</fpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Porta4">
+        <label>44</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Porta</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Guzzetti</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Montano</surname><given-names>N</given-names></name>, <name name-style="western"><surname>Gnecchi-Ruscone</surname><given-names>T</given-names></name>, <name name-style="western"><surname>Furlan</surname><given-names>R</given-names></name>, <etal>et al</etal>. (<year>2006</year>) <article-title>Time reversibility in short-term heart period variability. Comp Cardiol</article-title>. <volume>33</volume>: <fpage>77</fpage>–<lpage>80</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-King2">
+        <label>45</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>King</surname><given-names>DS</given-names></name>, <name name-style="western"><surname>Baldus</surname><given-names>PJ</given-names></name>, <name name-style="western"><surname>Sharp</surname><given-names>RL</given-names></name>, <name name-style="western"><surname>Kesl</surname><given-names>LD</given-names></name>, <name name-style="western"><surname>Feltmeyer</surname><given-names>TL</given-names></name>, <etal>et al</etal>. (<year>1995</year>) <article-title>Time course for exercise-induced alterations in insulin action and glucose tolerance in middle-aged people</article-title>. <source>J Appl</source> <volume>Physiol</volume> (<issue>78</issue>) 
+<fpage>17</fpage>–<lpage>22</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Childs1">
+        <label>46</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Childs</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Jacobs</surname><given-names>C</given-names></name>, <name name-style="western"><surname>Kaminski</surname><given-names>T</given-names></name>, <name name-style="western"><surname>Halliwell</surname><given-names>B</given-names></name>, <name name-style="western"><surname>Leeuwenburgh</surname><given-names>C</given-names></name> (<year>2001</year>) <article-title>Supplementation with vitamin C and N-acetyl-cysteine increases oxidative stress in humans after an acute muscle injury induced by eccentric exercise. Free Radic Biol Med</article-title>. <volume>31</volume>: <fpage>745</fpage>–<lpage>53</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Shephard1">
+        <label>47</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Shephard</surname><given-names>RJ</given-names></name> (<year>2002</year>) <article-title>Cytokine responses to physical activity, with particular reference to IL-6: sources, actions, and clinical implications</article-title>. <source>Crit Rev</source> <volume>Immunol</volume> (<issue>22</issue>) 
+<fpage>165</fpage>–<lpage>82</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Dreyer1">
+        <label>48</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Dreyer</surname><given-names>HC</given-names></name>, <name name-style="western"><surname>Drummond</surname><given-names>MJ</given-names></name>, <name name-style="western"><surname>Glynn</surname><given-names>EL</given-names></name>, <name name-style="western"><surname>Fujita</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Chinkes</surname><given-names>DL</given-names></name>, <etal>et al</etal>. (<year>2008</year>) <article-title>Resistance exercise increases human skeletal muscle AS160/TBC1D4 phosphorylation in association with enhanced leg glucose uptake during postexercise recovery. J Appl Physiol</article-title>. <volume>105</volume>: <fpage>1967</fpage>–<lpage>197</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Howlett1">
+        <label>49</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Howlett</surname><given-names>KF</given-names></name>, <name name-style="western"><surname>Mathews</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Garnham</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Sakamoto</surname><given-names>K</given-names></name> (<year>2008</year>) <article-title>The effect of exercise and insulin on AS160 phosphorylation and 14-3-3 binding capacity in human skeletal muscle</article-title>. <source>Am J Physiol Endocrinol</source> <volume>Metab</volume> (<issue>294</issue>) 
+<fpage>E401</fpage>–<lpage>7</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Monnier2">
+        <label>50</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Monnier</surname><given-names>L</given-names></name>, <name name-style="western"><surname>Mas</surname><given-names>E</given-names></name>, <name name-style="western"><surname>Ginet</surname><given-names>C</given-names></name>, <name name-style="western"><surname>Michel</surname><given-names>F</given-names></name>, <name name-style="western"><surname>Villon</surname><given-names>L</given-names></name>, <etal>et al</etal>. (<year>2006</year>) <article-title>Activation of oxidative stress by acute glucose fluctuations compared with sustained chronic hyperglycemia in patients with type 2 diabetes. JAMA</article-title>. <volume>295</volume>: <fpage>1681</fpage>–<lpage>1687</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Buscemi2">
+        <label>51</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Buscemi</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Verga</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Cottone</surname><given-names>S</given-names></name>, <name name-style="western"><surname>Azzolina</surname><given-names>V</given-names></name>, <name name-style="western"><surname>Buscemi</surname><given-names>B</given-names></name>, <etal>et al</etal>. (<year>2009</year>) <article-title>Glycaemic variability and inflammation in subjects with metabolic syndrome. Acta Diabetol</article-title>. <volume>46</volume>: <fpage>55</fpage>–<lpage>61</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Chang1">
+        <label>52</label>
+        <mixed-citation publication-type="other" xlink:type="simple">Chang CM, Hsieh CJ, Huang JC, Huang IC (2012) Acute and chronic fluctuations in blood glucose levels can increase oxidative stress in type 2 diabetes mellitus. Acta Diabetol. DOI: 10.1007/s00592–012–0398-x.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Davi1">
+        <label>53</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Davi</surname><given-names>G</given-names></name>, <name name-style="western"><surname>Falco</surname><given-names>A</given-names></name>, <name name-style="western"><surname>Patrono</surname><given-names>C</given-names></name> (<year>2005</year>) <article-title>Lipid peroxidation in diabetes mellitus. Antioxid Redox Signal</article-title>. <volume>7</volume>: <fpage>256</fpage>–<lpage>258</lpage>.</mixed-citation>
+      </ref>
+      <ref id="pone.0057733-Rosa1">
+        <label>54</label>
+        <mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Rosa</surname><given-names>JS</given-names></name>, <name name-style="western"><surname>Flores</surname><given-names>RL</given-names></name>, <name name-style="western"><surname>Oliver</surname><given-names>SR</given-names></name>, <name name-style="western"><surname>Pontello</surname><given-names>AM</given-names></name>, <name name-style="western"><surname>Zaldivar</surname><given-names>FP</given-names></name>, <etal>et al</etal>. (<year>2010</year>) <article-title>Resting and exercise-induced IL-6 levels in children with Type 1 diabetes reflect hyperglycemic profiles during the previous 3 days</article-title>. <source>J Appl</source> <volume>Physiol</volume> (<issue>108</issue>) 
+<fpage>334</fpage>–<lpage>42</lpage>.</mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>

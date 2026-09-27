@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.8.0 — 2026-09-27 (persistent conversations and qualifier inspection)
+
+- Keep Ask conversations, selected answer versions, complete source snapshots and per-answer audits
+  in browser storage. Support explicit bounded follow-up context, reload recovery and full export/import.
+- Add independent experimental Atomic v2 with unique parent-scoped fragment binding and exact
+  qualifier anchors. Preserve model judgments, unresolved extraction and source-location failures separately.
+- Recover 82 fact locations in an offline replay of 167 historical Atomic audits; retain all old
+  judgments and 24 unresolved facts. Location recovery is not semantic verification.
+- Bundle three actual three-turn medical conversations, nine Ask responses and twelve audits,
+  using original attributed abstracts from three papers. Keep ambiguous references, incomplete
+  answers and unnecessary coverage warnings visible; do not replace them with curated retries.
+- Add a lightweight, no-key Ask replay at 5173 and a separate full `--conversations` retrieval
+  profile. Audit stays inside Ask; standalone audit/research workspaces remain available.
+- Keep Direct / Flash as the default. R2 measures constructed qualifier diagnostics with separate
+  natural development and repeat runs. Defer R3 because fresh public semantic labels are insufficient.
+- Preserve all 348 scheduled R2 audits and 577 model calls. Final target co-presence is 91/104 for
+  Direct and 101/104 for v2, while fully completed audits are 47/48 and 26/48 under their differing
+  extraction contracts. The mechanical results do not establish semantic improvement.
+  See [version notes](docs/releases/v0.8.0.md) and [the research report](docs/verification-v0.8-report.md).
+
 ## 0.7.1 — 2026-09-27 (conversation-first product correction)
 
 - Restore Ask as the primary product entry. The lightweight audit/research workspace links back

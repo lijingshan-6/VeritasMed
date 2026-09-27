@@ -1,0 +1,8 @@
+{
+  "scope": "12 developer-constructed intent scenarios; not expert medical gold. Context answers are authored, not Agent performance.",
+  "cases": 12,
+  "passed": 12,
+  "review": [],
+  "total_tokens": 11619,
+  "interpretation": "Pass means the declared intent checks passed, not that an answer or medical claim is correct."
+}

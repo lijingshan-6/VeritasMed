@@ -1,0 +1,680 @@
+{
+  "input": {
+    "answer": "The retrieved evidence does not establish: five-year all-cause mortality.",
+    "sources": [
+      {
+        "id": "evidence-1",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "Both diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+      },
+      {
+        "id": "evidence-2",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks."
+      },
+      {
+        "id": "evidence-3",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+      },
+      {
+        "id": "evidence-4",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises."
+      },
+      {
+        "id": "evidence-5",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "Several intervention studies have suggested that vegetarian or vegan diets have clinical benefits, particularly in terms of glycemic control, in patients with type 2 diabetes (T2D); however, no randomized controlled trial has been conducted in Asians who more commonly depend on plant-based foods, as compared to Western populations. Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals."
+      }
+    ],
+    "strategy": "atomic_v2"
+  },
+  "audit": {
+    "id": "ab373e60-c699-4190-ae71-40a69ec336fa",
+    "created_utc": "2026-09-27T11:57:10.947531+00:00",
+    "strategy": "atomic_v2",
+    "variant": "qualifier_anchors_v1",
+    "status": "ok",
+    "answer_sha256": "580cdacdb0355ec90c3828005a9910decf2524f69a92d85f668d7317b045499a",
+    "source_hashes": {
+      "evidence-1": "919fca6984eb62dd1c4d4e419303793bfbec4602423396b7bcf86824e948e451",
+      "evidence-2": "683dc9e6bf32afc40e76cb97593a3847a7adc2dccbfc813cd9ca5dfe013f00e5",
+      "evidence-3": "96d4b4a46e565db471319bded2a9739e97553cc5af52d3365f11046e3f815a10",
+      "evidence-4": "444909c5406f77af26202f361ee1bce4f63d715762fe7ec44930d122c56d9471",
+      "evidence-5": "af342cbaa7a8d8c526074605f3edc5f2bf03f5694825685ff6cb39fec4e7250a"
+    },
+    "claims": [
+      {
+        "id": "fact-1",
+        "parent_claim_id": "parent-1",
+        "quote": "retrieved evidence",
+        "answer_span": {
+          "start": 4,
+          "end": 22,
+          "text": "retrieved evidence",
+          "offset_unit": "unicode_codepoint"
+        },
+        "answer_spans": [
+          {
+            "start": 4,
+            "end": 22,
+            "text": "retrieved evidence",
+            "offset_unit": "unicode_codepoint"
+          },
+          {
+            "start": 23,
+            "end": 41,
+            "text": "does not establish",
+            "offset_unit": "unicode_codepoint"
+          },
+          {
+            "start": 43,
+            "end": 72,
+            "text": "five-year all-cause mortality",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "context_span": {
+          "start": 0,
+          "end": 73,
+          "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "context_spans": [
+          {
+            "start": 0,
+            "end": 73,
+            "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "normalized_claim": "The retrieved evidence is said not to establish five-year all-cause mortality.",
+        "slots": {
+          "subject": "retrieved evidence",
+          "population": null,
+          "intervention": null,
+          "comparator": null,
+          "outcome": "five-year all-cause mortality",
+          "value_unit": null,
+          "time": "five-year",
+          "qualifications": "Negation is attributed to the retrieved evidence; the outcome scope is all-cause mortality; the time frame is five-year."
+        },
+        "qualifier_anchors": [
+          {
+            "kind": "negation_attribution",
+            "quote": "does not establish",
+            "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality.",
+            "parent_binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 0,
+                "end": 73,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 0,
+                  "end": 73,
+                  "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false
+            },
+            "binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 23,
+                "end": 41,
+                "text": "does not establish",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 23,
+                  "end": 41,
+                  "text": "does not establish",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "quote": "does not establish",
+              "search_scope": {
+                "start": 0,
+                "end": 73,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "binding_version": "parent-exact-v1"
+            }
+          },
+          {
+            "kind": "negation_attribution",
+            "quote": "retrieved evidence",
+            "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality.",
+            "parent_binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 0,
+                "end": 73,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 0,
+                  "end": 73,
+                  "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false
+            },
+            "binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 4,
+                "end": 22,
+                "text": "retrieved evidence",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 4,
+                  "end": 22,
+                  "text": "retrieved evidence",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "quote": "retrieved evidence",
+              "search_scope": {
+                "start": 0,
+                "end": 73,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "binding_version": "parent-exact-v1"
+            }
+          },
+          {
+            "kind": "outcome",
+            "quote": "all-cause mortality",
+            "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality.",
+            "parent_binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 0,
+                "end": 73,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 0,
+                  "end": 73,
+                  "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false
+            },
+            "binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 53,
+                "end": 72,
+                "text": "all-cause mortality",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 53,
+                  "end": 72,
+                  "text": "all-cause mortality",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "quote": "all-cause mortality",
+              "search_scope": {
+                "start": 0,
+                "end": 73,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "binding_version": "parent-exact-v1"
+            }
+          },
+          {
+            "kind": "time_denominator",
+            "quote": "five-year",
+            "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality.",
+            "parent_binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 0,
+                "end": 73,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 0,
+                  "end": 73,
+                  "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false
+            },
+            "binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 43,
+                "end": 52,
+                "text": "five-year",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 43,
+                  "end": 52,
+                  "text": "five-year",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "quote": "five-year",
+              "search_scope": {
+                "start": 0,
+                "end": 73,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "binding_version": "parent-exact-v1"
+            }
+          }
+        ],
+        "fidelity_diagnostic": {
+          "status": "no_mechanical_issue_detected",
+          "flags": [],
+          "numbers_absent_from_interpretation": [],
+          "scope": "Literal anchors and numeric tokens only. Paraphrases/conversions may trigger review; absence of a warning does not establish semantic fidelity or complete extraction.",
+          "overrides_relation": false
+        },
+        "duplicate_of": null,
+        "binding_version": "parent-exact-v1",
+        "decomposition_status": "atomic",
+        "explanation": "The supplied sources report outcomes such as 12-week glycemic control/HbA1c and glucose variability, and none mention five-year all-cause mortality or explicitly state that it was not established. Under the rule that absence is insufficient, the negative meta-claim cannot be verified from the supplied texts.",
+        "relation": "insufficient",
+        "evidence": [],
+        "status": "ok",
+        "answer_bindings": [
+          {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 4,
+              "end": 22,
+              "text": "retrieved evidence",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 4,
+                "end": 22,
+                "text": "retrieved evidence",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false,
+            "quote": "retrieved evidence",
+            "search_scope": {
+              "start": 0,
+              "end": 73,
+              "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "binding_version": "parent-exact-v1"
+          },
+          {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 23,
+              "end": 41,
+              "text": "does not establish",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 23,
+                "end": 41,
+                "text": "does not establish",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false,
+            "quote": "does not establish",
+            "search_scope": {
+              "start": 0,
+              "end": 73,
+              "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "binding_version": "parent-exact-v1"
+          },
+          {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 43,
+              "end": 72,
+              "text": "five-year all-cause mortality",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 43,
+                "end": 72,
+                "text": "five-year all-cause mortality",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false,
+            "quote": "five-year all-cause mortality",
+            "search_scope": {
+              "start": 0,
+              "end": 73,
+              "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "binding_version": "parent-exact-v1"
+          }
+        ],
+        "parent_binding": {
+          "status": "unique",
+          "match_count": 1,
+          "span": {
+            "start": 0,
+            "end": 73,
+            "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+            "offset_unit": "unicode_codepoint"
+          },
+          "candidates": [
+            {
+              "start": 0,
+              "end": 73,
+              "text": "The retrieved evidence does not establish: five-year all-cause mortality.",
+              "offset_unit": "unicode_codepoint"
+            }
+          ],
+          "candidates_truncated": false
+        },
+        "checker_results": {
+          "flash": {
+            "fact_id": "fact-1",
+            "relation": "insufficient",
+            "evidence": [],
+            "explanation": "The supplied sources report outcomes such as 12-week glycemic control/HbA1c and glucose variability, and none mention five-year all-cause mortality or explicitly state that it was not established. Under the rule that absence is insufficient, the negative meta-claim cannot be verified from the supplied texts."
+          }
+        },
+        "evidence_bindings": [],
+        "numeric_diagnostic": {
+          "status": "not_applicable",
+          "overrides_relation": false,
+          "scope": "Single explicit quantity with shared named subject/outcome/time; advisory only"
+        }
+      }
+    ],
+    "summary": {
+      "supported": 0,
+      "contradicted": 0,
+      "insufficient": 1,
+      "needs_review": 0,
+      "failed_or_unchecked": 0
+    },
+    "calls": [
+      {
+        "stage": "atomic_v2_extract",
+        "status": "ok",
+        "raw_output": "{\"facts\":[{\"parent_quote\":\"The retrieved evidence does not establish: five-year all-cause mortality.\",\"answer_quotes\":[\"retrieved evidence\",\"does not establish\",\"five-year all-cause mortality\"],\"normalized_claim\":\"The retrieved evidence is said not to establish five-year all-cause mortality.\",\"slots\":{\"subject\":\"retrieved evidence\",\"population\":null,\"intervention\":null,\"comparator\":null,\"outcome\":\"five-year all-cause mortality\",\"value_unit\":null,\"time\":\"five-year\",\"qualifications\":\"Negation is attributed to the retrieved evidence; the outcome scope is all-cause mortality; the time frame is five-year.\"},\"decomposition_status\":\"atomic\",\"qualifiers\":[{\"kind\":\"negation_attribution\",\"quote\":\"does not establish\",\"parent_quote\":\"The retrieved evidence does not establish: five-year all-cause mortality.\"},{\"kind\":\"negation_attribution\",\"quote\":\"retrieved evidence\",\"parent_quote\":\"The retrieved evidence does not establish: five-year all-cause mortality.\"},{\"kind\":\"outcome\",\"quote\":\"all-cause mortality\",\"parent_quote\":\"The retrieved evidence does not establish: five-year all-cause mortality.\"},{\"kind\":\"time_denominator\",\"quote\":\"five-year\",\"parent_quote\":\"The retrieved evidence does not establish: five-year all-cause mortality.\"}]}],\"completeness_note\":\"The answer contains one negative evidence assertion. No population, intervention, comparator, or numeric value unit is stated. No unresolved parsing issues beyond the single sentence.\"}",
+        "usage": {
+          "input_tokens": 523,
+          "output_tokens": 2182,
+          "total_tokens": 2705
+        },
+        "transport_metadata": {
+          "model": "deepseek-v4.1-flash",
+          "model_identifiers": [
+            "deepseek-v4.1-flash"
+          ],
+          "finish_reason": "stop",
+          "usage_snapshots": [
+            {
+              "input_tokens": 523,
+              "output_tokens": 2182,
+              "total_tokens": 2705
+            }
+          ],
+          "reasoning_characters": 8684
+        },
+        "elapsed_seconds": 11.757
+      },
+      {
+        "stage": "atomic_v2_verify",
+        "status": "ok",
+        "raw_output": "{\n  \"judgments\": [\n    {\n      \"fact_id\": \"fact-1\",\n      \"relation\": \"insufficient\",\n      \"evidence\": [],\n      \"explanation\": \"The supplied sources report outcomes such as 12-week glycemic control/HbA1c and glucose variability, and none mention five-year all-cause mortality or explicitly state that it was not established. Under the rule that absence is insufficient, the negative meta-claim cannot be verified from the supplied texts.\"\n    }\n  ]\n}",
+        "usage": {
+          "input_tokens": 1464,
+          "output_tokens": 7708,
+          "total_tokens": 9172
+        },
+        "transport_metadata": {
+          "model": "deepseek-v4.1-flash",
+          "model_identifiers": [
+            "deepseek-v4.1-flash"
+          ],
+          "finish_reason": "stop",
+          "usage_snapshots": [
+            {
+              "input_tokens": 1464,
+              "output_tokens": 7708,
+              "total_tokens": 9172
+            }
+          ],
+          "reasoning_characters": 37498
+        },
+        "elapsed_seconds": 35.85
+      }
+    ],
+    "claims_at_cap": false,
+    "extraction": {
+      "facts": [
+        {
+          "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality.",
+          "answer_quotes": [
+            "retrieved evidence",
+            "does not establish",
+            "five-year all-cause mortality"
+          ],
+          "normalized_claim": "The retrieved evidence is said not to establish five-year all-cause mortality.",
+          "slots": {
+            "subject": "retrieved evidence",
+            "population": null,
+            "intervention": null,
+            "comparator": null,
+            "outcome": "five-year all-cause mortality",
+            "value_unit": null,
+            "time": "five-year",
+            "qualifications": "Negation is attributed to the retrieved evidence; the outcome scope is all-cause mortality; the time frame is five-year."
+          },
+          "decomposition_status": "atomic",
+          "qualifiers": [
+            {
+              "kind": "negation_attribution",
+              "quote": "does not establish",
+              "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality."
+            },
+            {
+              "kind": "negation_attribution",
+              "quote": "retrieved evidence",
+              "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality."
+            },
+            {
+              "kind": "outcome",
+              "quote": "all-cause mortality",
+              "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality."
+            },
+            {
+              "kind": "time_denominator",
+              "quote": "five-year",
+              "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality."
+            }
+          ]
+        }
+      ],
+      "completeness_note": "The answer contains one negative evidence assertion. No population, intervention, comparator, or numeric value unit is stated. No unresolved parsing issues beyond the single sentence."
+    },
+    "parent_count": 1,
+    "extraction_coverage": {
+      "covered_nonspace_characters": 60,
+      "total_nonspace_characters": 65,
+      "uncovered": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "The "
+        },
+        {
+          "start": 41,
+          "end": 43,
+          "text": ": "
+        },
+        {
+          "start": 72,
+          "end": 73,
+          "text": "."
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "checked_coverage": {
+      "covered_nonspace_characters": 60,
+      "total_nonspace_characters": 65,
+      "uncovered": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "The "
+        },
+        {
+          "start": 41,
+          "end": 43,
+          "text": ": "
+        },
+        {
+          "start": 72,
+          "end": 73,
+          "text": "."
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "elapsed_seconds": 47.608,
+    "scope": "Model-parsed facts, not exhaustive semantic coverage. Textual support, not clinical validity or calibrated confidence."
+  },
+  "mode": "saved",
+  "provenance": {
+    "note": "Saved actual Ask → audit. Three-paper abstract demonstration, not independent clinical gold.",
+    "run": "data/demo/conversations/run01",
+    "conversation_id": "v08-evidence-limits",
+    "turn_id": "v08-evidence-limits-turn-1",
+    "revision_id": "v08-evidence-limits-turn-1-revision-1",
+    "handoff": {
+      "kind": "live_ask",
+      "question": "Do the supplied 2016 vegan diet and 2013 aerobic/combined exercise abstracts show that either intervention reduces five-year all-cause mortality?",
+      "thread_id": "v08-evidence-limits",
+      "citations": [],
+      "input": {
+        "answer": "The retrieved evidence does not establish: five-year all-cause mortality.",
+        "strategy": "direct",
+        "sources": [
+          {
+            "id": "evidence-1",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "Both diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+          },
+          {
+            "id": "evidence-2",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks."
+          },
+          {
+            "id": "evidence-3",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+          },
+          {
+            "id": "evidence-4",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises."
+          },
+          {
+            "id": "evidence-5",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "Several intervention studies have suggested that vegetarian or vegan diets have clinical benefits, particularly in terms of glycemic control, in patients with type 2 diabetes (T2D); however, no randomized controlled trial has been conducted in Asians who more commonly depend on plant-based foods, as compared to Western populations. Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals."
+          }
+        ]
+      },
+      "source_map": [
+        {
+          "id": "evidence-1",
+          "chunk_id": "pmc:PMC4890770:3",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Conclusion"
+        },
+        {
+          "id": "evidence-2",
+          "chunk_id": "pmc:PMC4890770:2",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Results"
+        },
+        {
+          "id": "evidence-3",
+          "chunk_id": "pmc:PMC3594238:2",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Results"
+        },
+        {
+          "id": "evidence-4",
+          "chunk_id": "pmc:PMC3594238:3",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Conclusions"
+        },
+        {
+          "id": "evidence-5",
+          "chunk_id": "pmc:PMC4890770:0",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Objective"
+        }
+      ]
+    }
+  }
+}

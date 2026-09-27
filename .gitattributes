@@ -9,6 +9,7 @@
 *.png binary
 # Keep the publisher snapshot byte-identical to its recorded download hash.
 data/demo/medical/article.xml -text
+data/demo/conversations/sources/*.xml -text
 data/benchmark/veritasmed_v1_1/*_log.txt text eol=lf
 data/benchmark/veritasmed_v1_1/v04_repair_probes/*_log.txt text eol=lf
 data/benchmark/veritasmed_v1_1/v04_repair_round1/*_log.txt text eol=lf

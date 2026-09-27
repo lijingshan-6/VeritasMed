@@ -1,4 +1,4 @@
-import { isGuidedDemo, demoSuffix } from './demo'
+import { isGuidedDemo, isReplayOnly, demoSuffix } from './demo'
 import React, { useEffect, useRef, useState } from 'react'
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { AnswerPage } from './pages/AnswerPage'
@@ -6,8 +6,8 @@ import { ExplorerPage } from './pages/ExplorerPage'
 import { DocumentPage } from './pages/DocumentPage'
 import { AuditPage } from './pages/AuditPage'
 import { ResearchPage } from './pages/ResearchPage'
-import { fetchCorpusStats, fetchHealth, loadRecentThreads, saveThread } from './api/client'
-import { useStore } from './store'
+import { fetchCorpusStats, fetchHealth } from './api/client'
+import { useStore, initializeConversations } from './store'
 
 const auditOnly = import.meta.env.VITE_AUDIT_ONLY === '1'
 const askAppUrl = (import.meta.env.VITE_ASK_APP_URL as string) || 'http://127.0.0.1:5173/'
@@ -30,8 +30,6 @@ const IconCompass   = (p: { size?: number; sw?: number; style?: React.CSSPropert
   <I {...p}><circle cx="12" cy="12" r="9"/><path d="m15 9-4 1.5L9.5 15l4-1.5L15 9Z"/></I>
 const IconHistory   = (p: { size?: number; sw?: number; style?: React.CSSProperties }) =>
   <I {...p}><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/><path d="M12 7v5l3 2"/></I>
-const IconChevDown  = (p: { size?: number; sw?: number; style?: React.CSSProperties }) =>
-  <I {...p}><path d="m6 9 6 6 6-6"/></I>
 const IconSettings  = (p: { size?: number; sw?: number; style?: React.CSSProperties }) =>
   <I {...p}><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09A1.65 1.65 0 0 0 15 4.6a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.06.32.21.62.42.85.21.22.51.35.81.36H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></I>
 
@@ -113,111 +111,25 @@ function NavTab({ active, label, sub, onClick, icon: Icon }: {
 
 // ── ThreadHistoryButton ─────────────────────────────────────────────────────
 function ThreadHistoryButton() {
-  const { threadId, setThreadId } = useStore()
-  const [open, setOpen] = useState(false)
-  const [threads, setThreads] = useState<string[]>([])
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    setThreads(loadRecentThreads())
-  }, [threadId])
-
-  useEffect(() => {
-    function onDoc(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
-    }
-    document.addEventListener('mousedown', onDoc)
-    return () => document.removeEventListener('mousedown', onDoc)
-  }, [])
-
-  return (
-    <div ref={ref} style={{ position: 'relative' }}>
-      <button
-        onClick={() => setOpen((v) => !v)}
-        style={{
-          display: 'inline-flex', alignItems: 'center', gap: 7,
-          padding: '6px 10px 6px 11px',
-          border: '1px solid var(--rule)', borderRadius: 7,
-          background: 'var(--panel)',
-          color: 'var(--ink-soft)', fontSize: 12, fontWeight: 500,
-          maxWidth: 260,
-        }}
-      >
-        <IconHistory size={12} sw={2} style={{ color: 'var(--faint)', flexShrink: 0 }} />
-        <span style={{
-          fontFamily: 'var(--serif)', fontStyle: 'italic',
-          fontSize: 13, color: 'var(--ink)',
-          overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-          maxWidth: 180,
-        }}>
-          {threadId || 'New thread'}
-        </span>
-        <IconChevDown size={11} sw={2} style={{ color: 'var(--faint)' }} />
-      </button>
-
-      {open && threads.length > 0 && (
-        <div style={{
-          position: 'absolute', top: 'calc(100% + 6px)', right: 0,
-          minWidth: 280,
-          background: 'var(--panel)',
-          border: '1px solid var(--rule)',
-          borderRadius: 8,
-          boxShadow: 'var(--shadow-float)',
-          padding: 6, zIndex: 50,
-        }}>
-          <div className="vm-eyebrow" style={{ padding: '6px 10px 4px' }}>Recent threads</div>
-          {threads.map((t) => (
-            <button
-              key={t}
-              onClick={() => { setThreadId(t); saveThread(t); setOpen(false) }}
-              style={{
-                display: 'flex', alignItems: 'baseline', gap: 8,
-                width: '100%', padding: '8px 10px',
-                border: 'none', background: t === threadId ? 'var(--accent-soft)' : 'transparent',
-                color: 'var(--ink)', textAlign: 'left', borderRadius: 5,
-              }}
-              onMouseEnter={(e) => { if (t !== threadId) e.currentTarget.style.background = 'var(--panel-2)' }}
-              onMouseLeave={(e) => { if (t !== threadId) e.currentTarget.style.background = 'transparent' }}
-            >
-              <span style={{
-                fontFamily: 'var(--serif)', fontStyle: 'italic',
-                fontSize: 13.5, color: 'var(--ink)', flex: 1,
-                overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-              }}>{t}</span>
-            </button>
-          ))}
-          <div style={{ borderTop: '1px solid var(--rule-soft)', margin: '4px 0' }} />
-          <button
-            onClick={() => {
-              const newId = `session-${Date.now()}`
-              setThreadId(newId)
-              setOpen(false)
-            }}
-            style={{
-              display: 'flex', alignItems: 'center', gap: 6,
-              width: '100%', padding: '8px 10px', borderRadius: 5,
-              border: 'none', background: 'transparent',
-              color: 'var(--accent)', fontSize: 12, fontWeight: 600,
-              textAlign: 'left',
-            }}
-          >
-            + Start a new thread
-          </button>
-        </div>
-      )}
-    </div>
-  )
+  const { conversations, threadId, setThreadId, newThread, hydrated } = useStore()
+  return <div className="vm-conversation-picker">
+    <IconHistory size={12} />
+    <select aria-label="Conversation" disabled={!hydrated} value={threadId} onChange={e => setThreadId(e.target.value)}>
+      {conversations.slice().sort((a, b) => b.updated_at.localeCompare(a.updated_at)).map(c => <option key={c.id} value={c.id}>{c.title} · {c.turns.length} turns</option>)}
+    </select>
+    {!isReplayOnly && <button disabled={!hydrated} onClick={newThread}>+ New</button>}
+  </div>
 }
 
 // ── StatusPill ──────────────────────────────────────────────────────────────
 function StatusPill() {
-  const [text, setText] = useState(isGuidedDemo ? 'fixed examples · no live model' : 'checking…')
+  const [text, setText] = useState(isReplayOnly ? 'saved inference · no API calls' : isGuidedDemo ? 'fixed examples · no live model' : 'checking…')
   const [healthy, setHealthy] = useState<boolean | null>(null)
 
   useEffect(() => {
     let cancelled = false
     async function poll() {
-      if (isGuidedDemo) { setHealthy(null); return }
+      if (isGuidedDemo || isReplayOnly) { setHealthy(null); return }
       try {
         const [health, stats] = await Promise.all([
           fetchHealth().catch(() => null),
@@ -245,7 +157,7 @@ function StatusPill() {
   const dotShadow = healthy ? '0 0 0 3px var(--verified-soft)' : 'none'
 
   return (
-    <div style={{
+    <div className="vm-backend-status" style={{
       display: 'inline-flex', alignItems: 'center', gap: 8,
       padding: '5px 11px 5px 9px',
       border: '1px solid var(--rule)', borderRadius: 999,
@@ -348,7 +260,7 @@ function Header({ theme, setTheme }: { theme: Theme; setTheme: (t: Theme) => voi
       borderBottom: '1px solid var(--rule)',
     }}>
       <BrandMark />
-      {!auditOnly && <a href={isGuidedDemo ? "/" : "/?demo=1"} style={{fontSize: 12, color: "var(--accent)"}}>{isGuidedDemo ? "Live mode" : "Guided demo"}</a>}
+      {!auditOnly && !isReplayOnly && <a href={isGuidedDemo ? "/" : "/?demo=1"} style={{fontSize: 12, color: "var(--accent)"}}>{isGuidedDemo ? "Live mode" : "Guided demo"}</a>}
       <span className="vm-research-label" style={{ fontSize: 11, color: "var(--muted)" }}>Research demo · not clinical advice</span>
 
       <span style={{ width: 1, height: 22, background: 'var(--rule)', margin: '0 2px' }} />
@@ -361,7 +273,7 @@ function Header({ theme, setTheme }: { theme: Theme; setTheme: (t: Theme) => voi
           icon={IconBook}
           onClick={() => auditOnly ? window.location.assign(askAppUrl) : navigate('/' + demoSuffix)}
         />
-        {!auditOnly && <NavTab
+        {!auditOnly && !isReplayOnly && <NavTab
           active={isExplore}
           label="Explore"
           icon={IconCompass}
@@ -393,6 +305,7 @@ function GuidedBanner() {
 
 export default function App() {
   const [theme, setTheme] = useState<Theme>('paper')
+  useEffect(() => { if (!auditOnly) void initializeConversations() }, [initializeConversations])
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme === 'paper' ? '' : theme

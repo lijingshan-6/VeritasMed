@@ -10,9 +10,10 @@ from __future__ import annotations
 
 from typing import Annotated, Literal, Union
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 from medrag.agent.evidence import AnswerComponent
+from medrag.agent.conversation import ContextTurn, ContextResolution
 
 
 # ── Shared ──────────────────────────────────────────────────────────────────
@@ -103,8 +104,20 @@ class ErrorEvent(BaseModel):
 # ── WS request ──────────────────────────────────────────────────────────────
 
 class AskRequest(BaseModel):
-    query: str
+    query: str = Field(min_length=1, max_length=12000)
     thread_id: str = "default"
+    context: list[ContextTurn] = Field(default_factory=list, max_length=6)
+    omitted_context: int = Field(default=0, ge=0)
+
+    @model_validator(mode="after")
+    def bounded_context(self):
+        if not self.query.strip():
+            raise ValueError("Question is empty")
+        if sum(len(c.question) + len(c.answer) + sum(map(len, c.source_titles)) for c in self.context) > 12000:
+            raise ValueError("Context exceeds 12000 characters; retain whole turns")
+        if len({c.turn_id for c in self.context}) != len(self.context):
+            raise ValueError("Context must contain distinct turns")
+        return self
     pipeline: str | None = Field(
         default=None,
         deprecated=True,
@@ -115,6 +128,7 @@ class AskRequest(BaseModel):
 # ── Full answer (inside "done" event data) ──────────────────────────────────
 
 class AnswerOut(BaseModel):
+    conversation_context: ContextResolution | None = None
     evidence_status: Literal["complete", "partial", "insufficient"] | None = None
     evidence_gap: str = ""
     answer_components: list[AnswerComponent] = Field(default_factory=list)

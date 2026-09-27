@@ -1,14 +1,14 @@
 {
   "name": "frontend",
   "private": true,
-  "version": "0.7.1",
+  "version": "0.8.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1 --strictPort",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "generate-types": "openapi-typescript ../openapi.json -o src/types/api.gen.ts",
-    "test": "node --test tests/*.test.js"
+    "test": "node --experimental-strip-types --test tests/*.test.js"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",

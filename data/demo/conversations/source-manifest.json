@@ -1,0 +1,53 @@
+{
+  "purpose": "Three-paper software demonstration; original abstract excerpts, not a clinical benchmark or current practice recommendations.",
+  "retrieved_utc": "2026-09-27",
+  "normalization": "XML itertext in original order; whitespace collapsed within each paragraph; paragraphs joined by two newlines. All abstract sections from each paper included. No paraphrases or clinical additions. Unicode code-point anchors refer to these normalized passages, not PDF coordinates.",
+  "sources": [
+    {
+      "title": "Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial",
+      "authors": "Seaquist ER et al.; GRADE Research Group",
+      "doi": "10.1371/journal.pone.0309907",
+      "pmid": "39546502",
+      "pmcid": "PMC11567630",
+      "year": 2024,
+      "article_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0309907",
+      "xml_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0309907&type=manuscript",
+      "xml_path": "data/demo/medical/article.xml",
+      "xml_sha256": "b55d6fc595dcd5d977a54caefa07534666c92b5390fc0bf01310b06f538e10fe",
+      "license": "CC0-1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_statement": "This is an open access article, free of all copyright, and may be freely reproduced, distributed, transmitted, modified, built upon, or otherwise used by anyone for any lawful purpose. The work is made available under the Creative Commons CC0 public domain dedication."
+    },
+    {
+      "title": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+      "authors": "Lee Yu-Mi; Kim Se-A; Lee In-Kyu; Kim Jung-Guk; Park Keun-Gyu; Jeong Ji-Yun; Jeon Jae-Han; Shin Ji-Yeon; Lee Duk-Hee",
+      "doi": "10.1371/journal.pone.0155918",
+      "pmid": "27253526",
+      "pmcid": "PMC4890770",
+      "year": 2016,
+      "article_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0155918",
+      "xml_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0155918&type=manuscript",
+      "xml_path": "data/demo/conversations/sources/PMC4890770.xml",
+      "xml_sha256": "19385705879bce1764597896c77b50ffb6a585ab3e7f010d05260ba9ed6cb1b0",
+      "license": "CC-BY-4.0",
+      "license_url": "http://creativecommons.org/licenses/by/4.0/",
+      "license_statement": "This is an open access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited."
+    },
+    {
+      "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+      "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+      "doi": "10.1371/journal.pone.0057733",
+      "pmid": "23536769",
+      "pmcid": "PMC3594238",
+      "year": 2013,
+      "article_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0057733",
+      "xml_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0057733&type=manuscript",
+      "xml_path": "data/demo/conversations/sources/PMC3594238.xml",
+      "xml_sha256": "75708cdfa8f9ff9156a6a92a43b467ebc59d1aa726d5cf176ba253209eca406e",
+      "license": "CC-BY",
+      "license_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+      "license_statement": "This is an open-access article distributed under the terms of the Creative Commons Attribution License, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.",
+      "license_note": "Publisher XML and PMC explicitly permit redistribution with attribution; neither snapshot states a license version. No version is inferred."
+    }
+  ]
+}

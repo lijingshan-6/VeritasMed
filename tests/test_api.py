@@ -60,6 +60,48 @@ def test_worker_exception_sends_error_without_done(monkeypatch):
     assert "private upstream token" not in str(events)
 
 
+def test_context_resolution_runs_before_fresh_graph_and_is_returned(monkeypatch):
+    from medrag.agent.conversation import ContextResolution
+
+    received = []
+    def resolve(query, context, omitted):
+        assert context[0].turn_id == "t1"
+        return ContextResolution(original_query=query, resolved_query=query + " Study A",
+            supplied_turn_ids=["t1"], context_turn_ids=["t1"], status="follow_up")
+
+    def generate(state):
+        received.append(state["query"])
+        return {"answer": "New answer from fresh retrieval", "citations": []}
+
+    monkeypatch.setattr(ask, "resolve_context", resolve)
+    monkeypatch.setattr(ask, "langgraph_app", _graph(generate))
+    with _client(ask.router).websocket_connect("/api/ask") as ws:
+        ws.send_json({"query": "Its sample?", "context": [{"turn_id": "t1", "revision_id": "r1", "question": "Study A?", "answer": "OLD ANSWER IS NOT EVIDENCE"}]})
+        events = _events(ws)
+    assert received == ["Its sample? Study A"]
+    assert events[0] == {"event": "node_start", "node": "resolve_context"}
+    assert events[-1]["data"]["conversation_context"]["context_turn_ids"] == ["t1"]
+    assert events[-1]["data"]["chunks"] == []
+
+
+def test_clarification_does_not_run_retrieval_or_claim_faithfulness(monkeypatch):
+    from medrag.agent.conversation import ContextResolution
+
+    monkeypatch.setattr(ask, "resolve_context", lambda *args: ContextResolution(
+        original_query="Its sample?", resolved_query="", needs_clarification=True,
+        clarification="Which study?", status="clarify"))
+    def forbidden(_state):
+        raise AssertionError("Must not generate before intent is clear")
+    monkeypatch.setattr(ask, "langgraph_app", _graph(forbidden))
+    with _client(ask.router).websocket_connect("/api/ask") as ws:
+        ws.send_json({"query": "Its sample?"})
+        events = _events(ws)
+    assert [e["event"] for e in events] == ["done"]
+    result = events[0]["data"]
+    assert result["answer"] == "Which study?"
+    assert result["faithful"] is False and result["chunks"] == []
+
+
 def test_timeout_sends_error_without_done(monkeypatch):
     def slow(_state):
         time.sleep(0.2)

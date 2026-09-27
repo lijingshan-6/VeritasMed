@@ -1,0 +1,18 @@
+{
+  "manifest_sha256": "71135b0de67bd20eaa017e61f1c0f47f36616548fd9e899f871d2dcc4cd9f629",
+  "code_hashes": {
+    "src/medrag/verification/answer_audit.py": "842bf4a9af6d09582653f04494f540f4029dec73cf7e6c76e22491ec6b31ec52",
+    "src/medrag/verification/atomic_audit.py": "de666ffb115a3fd09bea59cfbd2987d98b217747d0a57690e486d946f75fc90e",
+    "src/medrag/verification/atomic_schema.py": "5a4617c7283bce09f7be4ba726d917732d59a60e9cd6c7d742cbc87a90c2dcd3",
+    "src/medrag/verification/atomic_v2.py": "d507ec55e7d34f7909d241a53f852ba0e89dd7cec4df4463b06c4a2f7db1a9c9",
+    "src/medrag/verification/atomic_v2_schema.py": "548a9e1aca96c1c7fce0c6f0194b4844443db020aa4bcb8a7a6906c8bfeb9db3",
+    "src/medrag/verification/fidelity.py": "ae06db2ced364e9fddd59756d1417150db3a8a1b6e190fa8ef113595af41ff82",
+    "src/medrag/verification/parent_binding.py": "763e59c81e8ec5c4ba09315893c1eec6e0edc745ebdb92cf063a08d2ecf17210",
+    "src/medrag/verification/quote_audit.py": "465f25d8092b72518b6e8d578e0e8f2804458d3af4d3e04ed703d5c11d3d9687",
+    "src/medrag/verification/gateway.py": "ca942913d85dbc95e882ba401ea48c360b4faa6469066ee2ff71406f56a0ba8d",
+    "src/medrag/verification/numeric_checks.py": "7433a14dec24b0b867e1ffbc92e535ea000229bf3cde8caa5408aba19e1b9a7c",
+    "scripts/verification/v08_r2_metrics.py": "dcf7f81bc411b23d351838c3814b88040893c320c8962e9b787a3e8a76d196e9"
+  },
+  "decision": "One anchored candidate, no output-selected retry. Direct remains default; R2 is constructed/textual diagnostics, R3 lacks fresh public labels.",
+  "frozen_utc": "2026-09-27T12:25:53.738763+00:00"
+}

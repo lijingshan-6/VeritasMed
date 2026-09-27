@@ -16,6 +16,7 @@ from uuid import uuid4
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 
 from medrag.agent.graph import app as langgraph_app
+from medrag.agent.conversation import resolve_context
 from medrag.api._helpers import payload_to_chunk
 from medrag.api.models import (
     AnswerOut,
@@ -141,6 +142,9 @@ def _node_event(
             confidence=output.get("confidence", 0.0),
         )
 
+    elif node_name == "resolve_context":
+        data = NodeEndData(new_query=output.get("new_query"), reason=output.get("reason"))
+
     elif node_name == "route":
         data = NodeEndData(route=output.get("route", ""))
 
@@ -162,11 +166,10 @@ async def ask_ws(websocket: WebSocket) -> None:
         await websocket.close()
         return
 
-    # The public thread label is stable in the UI, but this release runs each
-    # question as an independent turn. Reusing its checkpoint would merge
-    # reducer state and allow overlapping requests to read each other's answer.
+    # Intent uses explicit bounded snapshots; evidence/history reducers always
+    # start fresh. A public conversation ID is never a shared graph checkpoint.
     config: dict = {"configurable": {"thread_id": str(uuid4())}}
-    initial_state = _build_initial_state(req.query)
+    resolution = None
     queue: asyncio.Queue = asyncio.Queue(maxsize=_QUEUE_CAPACITY)
     loop = asyncio.get_running_loop()
     stop = Event()
@@ -192,7 +195,19 @@ async def ask_ws(websocket: WebSocket) -> None:
         return False
 
     def _stream_worker() -> None:
+        nonlocal resolution
         try:
+            if req.context and not _enqueue(("node_start", "resolve_context", {})):
+                return
+            resolution = resolve_context(req.query, req.context, req.omitted_context)
+            if stop.is_set():
+                return
+            if req.context:
+                _enqueue(("node_output", "resolve_context", {"new_query": resolution.resolved_query, "reason": resolution.status}))
+            if resolution.needs_clarification:
+                _enqueue(("clarification", None, None))
+                return
+            initial_state = _build_initial_state(resolution.resolved_query)
             for mode, chunk in langgraph_app.stream(
                 initial_state, config=config, stream_mode=["tasks", "updates"]
             ):
@@ -259,6 +274,14 @@ async def ask_ws(websocket: WebSocket) -> None:
                 await _send_safe(websocket, ErrorEvent(data=ErrorData(message=_PUBLIC_ERROR)).model_dump())
                 return
 
+            if kind == "clarification":
+                answer_out = AnswerOut(answer=resolution.clarification, citations=[], confidence=0,
+                    faithful=False, faithfulness_issues="Clarification only; no evidence judgment made.",
+                    iterations=0, regen_count=0, rewritten_queries=[], chunks=[], thread_id=req.thread_id,
+                    latency_ms=round((time.perf_counter() - t_start) * 1000, 1), conversation_context=resolution)
+                await _send_safe(websocket, DoneEvent(data=answer_out).model_dump())
+                return
+
             if kind == "node_start":
                 if name in hidden_nodes:
                     continue
@@ -284,6 +307,7 @@ async def ask_ws(websocket: WebSocket) -> None:
         final = snapshot.values if snapshot else {}
         latency = round((time.perf_counter() - t_start) * 1000, 1)
         answer_out = AnswerOut(
+            conversation_context=resolution,
             evidence_status=final.get("evidence_status"),
             evidence_gap=final.get("evidence_gap", ""),
             answer_components=final.get("answer_components", []),

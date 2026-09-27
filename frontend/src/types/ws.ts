@@ -17,6 +17,12 @@ export interface AnswerComponent {
 }
 
 export interface AnswerOut {
+  conversation_context?: {
+    original_query: string; resolved_query: string; context_turn_ids: string[]; supplied_turn_ids: string[]
+    needs_clarification: boolean; clarification: string; referent_entities: string[]
+    omitted_context: number; elapsed_ms: number; model: string | null; usage: Record<string, unknown> | null
+    status: string; raw_output: string
+  }
   evidence_status?: 'complete' | 'partial' | 'insufficient' | null
   evidence_gap?: string
   answer_components?: AnswerComponent[]

@@ -40,6 +40,16 @@ CC0. The [source card and original XML](../data/demo/medical/README.md) record t
 abstract extraction. The unchanged Agent answer, swapped-arm control and evidence-removal
 control have different provenance labels; the latter two are explicit constructions.
 
+The [v0.8 two-turn conversation export](../data/verification/v08/grade-conversation-smoke.json)
+reuses this CC0 abstract and preserves two actual Ask answers plus one actual Direct audit.
+It is a product workflow example, not an independent medical evaluation or expert annotation.
+
+The [v0.8 offline localization replay](verification-v0.8-localization.md) reuses saved
+SciFact/RAGTruth-derived Atomic outputs and the three GRADE demo audits. It changes
+position binding only, retains original model judgments, and creates no expert labels.
+The [exposure inventory](verification-v0.8-exposure.md) records source reuse and candidate
+IDs; its mechanical candidate screen is not clinical annotation or a new gold dataset.
+
 ## MiniCheck
 
 Liyan Tang, Philippe Laban and Greg Durrett, **MiniCheck: Efficient Fact-Checking of LLMs
@@ -51,3 +61,25 @@ The optional adapter follows the pinned upstream input/scoring format while usin
 full-input length limit instead of silent truncation or upstream chunk aggregation. Exact
 revisions, model/code licenses and these changes are documented in the
 [MiniCheck environment guide](minicheck-research.md). Weights are not redistributed here.
+
+
+## v0.8 conversation demonstration
+
+The three-paper Ask replay retains original publisher XML and every original abstract section
+from Seaquist et al. (2024, GRADE, CC0), Lee et al. (2016, brown-rice-based vegan diet RCT,
+CC BY 4.0), and Figueira et al. (2013, exercise crossover RCT, Creative Commons Attribution).
+The older paper's snapshot does not identify a CC BY version; none is inferred.
+Full titles, author lists, DOI/PMID/PMCID, license statements and hashes are in the
+[source manifest](../data/demo/conversations/source-manifest.json) and
+[attribution/readme](../data/demo/conversations/README.md).
+
+The normalized corpus preserves original paragraph order. Saved model answers are clearly
+labelled outputs, not source text or gold labels. Nine questions are frozen before inference;
+failures and clarification are preserved. The corpus contains abstracts, not whole-text or
+current-guideline coverage. New dialogue recordings are demonstrations and must be treated
+as exposed data in any later source-use inventory.
+
+The v0.8 R2 manifest adds 24 previously unused SciFact source groups (plus four input-only
+exclusions inspected during selection) and 12 RAGTruth training sources. All are now exposed
+for later research. The pre-v0.8 inventory remains an immutable pre-selection snapshot.
+The manifest and output directories record these new uses rather than rewriting that snapshot.

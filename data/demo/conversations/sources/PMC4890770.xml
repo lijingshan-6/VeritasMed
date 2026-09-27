@@ -1,0 +1,1040 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1d3 20150301//EN" "http://jats.nlm.nih.gov/publishing/1.1d3/JATS-journalpublishing1.dtd">
+<article article-type="research-article" dtd-version="1.1d3" xml:lang="en" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink">
+<front>
+<journal-meta>
+<journal-id journal-id-type="nlm-ta">PLoS ONE</journal-id>
+<journal-id journal-id-type="publisher-id">plos</journal-id>
+<journal-id journal-id-type="pmc">plosone</journal-id>
+<journal-title-group>
+<journal-title>PLOS ONE</journal-title>
+</journal-title-group>
+<issn pub-type="epub">1932-6203</issn>
+<publisher>
+<publisher-name>Public Library of Science</publisher-name>
+<publisher-loc>San Francisco, CA USA</publisher-loc>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="doi">10.1371/journal.pone.0155918</article-id>
+<article-id pub-id-type="publisher-id">PONE-D-16-03816</article-id>
+<article-categories>
+<subj-group subj-group-type="heading">
+<subject>Research Article</subject>
+</subj-group>
+<subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Nutrition</subject><subj-group><subject>Diet</subject></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Medicine and health sciences</subject><subj-group><subject>Nutrition</subject><subj-group><subject>Diet</subject></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Medicine and health sciences</subject><subj-group><subject>Endocrinology</subject><subj-group><subject>Endocrine disorders</subject><subj-group><subject>Diabetes mellitus</subject><subj-group><subject>Type 2 diabetes</subject><subj-group><subject>Diet and type 2 diabetes</subject></subj-group></subj-group></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Medicine and health sciences</subject><subj-group><subject>Metabolic disorders</subject><subj-group><subject>Diabetes mellitus</subject><subj-group><subject>Type 2 diabetes</subject><subj-group><subject>Diet and type 2 diabetes</subject></subj-group></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Medicine and health sciences</subject><subj-group><subject>Diagnostic medicine</subject><subj-group><subject>Diabetes diagnosis and management</subject><subj-group><subject>HbA1c</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Biochemistry</subject><subj-group><subject>Proteins</subject><subj-group><subject>Hemoglobin</subject><subj-group><subject>HbA1c</subject></subj-group></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Medicine and health sciences</subject><subj-group><subject>Endocrinology</subject><subj-group><subject>Endocrine disorders</subject><subj-group><subject>Diabetes mellitus</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Medicine and health sciences</subject><subj-group><subject>Metabolic disorders</subject><subj-group><subject>Diabetes mellitus</subject></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Physiology</subject><subj-group><subject>Physiological processes</subject><subj-group><subject>Food consumption</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Medicine and health sciences</subject><subj-group><subject>Physiology</subject><subj-group><subject>Physiological processes</subject><subj-group><subject>Food consumption</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Biochemistry</subject><subj-group><subject>Lipids</subject><subj-group><subject>Fats</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Nutrition</subject><subj-group><subject>Diet</subject><subj-group><subject>Food</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Medicine and health sciences</subject><subj-group><subject>Nutrition</subject><subj-group><subject>Diet</subject><subj-group><subject>Food</subject></subj-group></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Biology and life sciences</subject><subj-group><subject>Nutrition</subject><subj-group><subject>Nutrients</subject></subj-group></subj-group></subj-group><subj-group subj-group-type="Discipline-v3"><subject>Medicine and health sciences</subject><subj-group><subject>Nutrition</subject><subj-group><subject>Nutrients</subject></subj-group></subj-group></subj-group></article-categories>
+<title-group>
+<article-title>Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial</article-title>
+<alt-title alt-title-type="running-head">Glycemic Control with a Vegan Diet in T2D</alt-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Lee</surname>
+<given-names>Yu-Mi</given-names>
+</name>
+<xref ref-type="aff" rid="aff001"><sup>1</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Kim</surname>
+<given-names>Se-A</given-names>
+</name>
+<xref ref-type="aff" rid="aff002"><sup>2</sup></xref>
+<xref ref-type="aff" rid="aff003"><sup>3</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Lee</surname>
+<given-names>In-Kyu</given-names>
+</name>
+<xref ref-type="aff" rid="aff004"><sup>4</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Kim</surname>
+<given-names>Jung-Guk</given-names>
+</name>
+<xref ref-type="aff" rid="aff004"><sup>4</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Park</surname>
+<given-names>Keun-Gyu</given-names>
+</name>
+<xref ref-type="aff" rid="aff004"><sup>4</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Jeong</surname>
+<given-names>Ji-Yun</given-names>
+</name>
+<xref ref-type="aff" rid="aff004"><sup>4</sup></xref>
+<xref ref-type="fn" rid="currentaff001"><sup>¤</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Jeon</surname>
+<given-names>Jae-Han</given-names>
+</name>
+<xref ref-type="aff" rid="aff004"><sup>4</sup></xref>
+</contrib>
+<contrib contrib-type="author" xlink:type="simple">
+<name name-style="western">
+<surname>Shin</surname>
+<given-names>Ji-Yeon</given-names>
+</name>
+<xref ref-type="aff" rid="aff005"><sup>5</sup></xref>
+</contrib>
+<contrib contrib-type="author" corresp="yes" xlink:type="simple">
+<name name-style="western">
+<surname>Lee</surname>
+<given-names>Duk-Hee</given-names>
+</name>
+<xref ref-type="aff" rid="aff001"><sup>1</sup></xref>
+<xref ref-type="aff" rid="aff002"><sup>2</sup></xref>
+<xref ref-type="aff" rid="aff003"><sup>3</sup></xref>
+<xref ref-type="corresp" rid="cor001">*</xref>
+</contrib>
+</contrib-group>
+<aff id="aff001"><label>1</label> <addr-line>Department of Preventative Medicine, School of Medicine, Kyungpook National University, Daegu, Korea</addr-line></aff>
+<aff id="aff002"><label>2</label> <addr-line>Department of Biomedical Science, Kyungpook National University, Daegu, Korea</addr-line></aff>
+<aff id="aff003"><label>3</label> <addr-line>BK21 Plus KNU Biomedical Convergence Program, Department of Biomedical Science, Kyungpook National University, Daegu, Korea</addr-line></aff>
+<aff id="aff004"><label>4</label> <addr-line>Department of Endocrinology, School of Medicine, Kyungpook National University, Daegu, Korea</addr-line></aff>
+<aff id="aff005"><label>5</label> <addr-line>Department of Preventive Medicine, School of Medicine, Eulji University, Daejeon, Republic of Korea</addr-line></aff>
+<contrib-group>
+<contrib contrib-type="editor" xlink:type="simple">
+<name name-style="western">
+<surname>Meyre</surname>
+<given-names>David</given-names>
+</name>
+<role>Editor</role>
+<xref ref-type="aff" rid="edit1"/>
+</contrib>
+</contrib-group>
+<aff id="edit1"><addr-line>McMaster University, CANADA</addr-line></aff>
+<author-notes>
+<fn fn-type="conflict" id="coi001">
+<p>The authors have declared that no competing interests exist.</p>
+</fn>
+<fn fn-type="con" id="contrib001">
+<p>Conceived and designed the experiments: DHL. Performed the experiments: SAK JYS. Analyzed the data: YML. Wrote the paper: YML DHL. Reviewed the manuscript and contributed to the discussion: IKL KGP JYJ JHJ JYS JGK.</p>
+</fn>
+<fn fn-type="current-aff" id="currentaff001">
+<label>¤</label><p>Current address: Department of Internal Medicine, Soonchunhyang University Gumi Hospital, Gumi, Republic of Korea</p>
+</fn>
+<corresp id="cor001">* E-mail: <email xlink:type="simple">lee_dh@knu.ac.kr</email></corresp>
+</author-notes>
+<pub-date pub-type="epub">
+<day>2</day>
+<month>6</month>
+<year>2016</year>
+</pub-date>
+<pub-date pub-type="collection">
+<year>2016</year>
+</pub-date>
+<volume>11</volume>
+<issue>6</issue>
+<elocation-id>e0155918</elocation-id>
+<history>
+<date date-type="received">
+<day>29</day>
+<month>1</month>
+<year>2016</year>
+</date>
+<date date-type="accepted">
+<day>5</day>
+<month>5</month>
+<year>2016</year>
+</date>
+</history>
+<permissions>
+<copyright-year>2016</copyright-year>
+<copyright-holder>Lee et al</copyright-holder>
+<license xlink:href="http://creativecommons.org/licenses/by/4.0/" xlink:type="simple">
+<license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/4.0/" xlink:type="simple">Creative Commons Attribution License</ext-link>, which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</license-p>
+</license>
+</permissions>
+<self-uri content-type="pdf" xlink:href="info:doi/10.1371/journal.pone.0155918"/>
+<abstract>
+<sec id="sec001">
+<title>Objective</title>
+<p>Several intervention studies have suggested that vegetarian or vegan diets have clinical benefits, particularly in terms of glycemic control, in patients with type 2 diabetes (T2D); however, no randomized controlled trial has been conducted in Asians who more commonly depend on plant-based foods, as compared to Western populations. Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals.</p>
+</sec>
+<sec id="sec002">
+<title>Materials and Methods</title>
+<p>Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks. HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.</p>
+</sec>
+<sec id="sec003">
+<title>Results</title>
+<p>The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks.</p>
+</sec>
+<sec id="sec004">
+<title>Conclusion</title>
+<p>Both diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms.</p>
+</sec>
+<sec id="sec005">
+<title>Trial Registration</title>
+<p>CRiS <ext-link ext-link-type="uri" xlink:href="https://cris.nih.go.kr/cris/en/search/search_result_st01.jsp?seq=5905" xlink:type="simple">KCT0001771</ext-link></p>
+</sec>
+</abstract>
+<funding-group>
+<award-group id="award001">
+<funding-source>
+<institution>Ministry of Health and Welfare (KR)</institution>
+</funding-source>
+<award-id>A111716-1202-0000100</award-id>
+<principal-award-recipient>
+<name name-style="western">
+<surname>Lee</surname>
+<given-names>Duk-Hee</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="award002">
+<funding-source>
+<institution>Ministry of Health and Welfare (KR)</institution>
+</funding-source>
+<award-id>HI13C0715</award-id>
+<principal-award-recipient>
+<name name-style="western">
+<surname>Lee</surname>
+<given-names>Duk-Hee</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<award-group id="award003">
+<funding-source>
+<institution>Ministry of Health and Welfare (KR)</institution>
+</funding-source>
+<award-id>HI11C1300</award-id>
+<principal-award-recipient>
+<name name-style="western">
+<surname>Lee</surname>
+<given-names>In-Kyu</given-names>
+</name>
+</principal-award-recipient>
+</award-group>
+<funding-statement>This research was supported by the Korea Health Industry Development Institute, funded by the Ministry of Health &amp; Welfare (A111716-1202-0000100), as well as the Korean Health Technology R&amp;D Project, funded by the Ministry of Health and Welfare, Republic of Korea (HI13C0715 and HI11C1300).</funding-statement>
+</funding-group>
+<counts>
+<fig-count count="2"/>
+<table-count count="3"/>
+<page-count count="14"/>
+</counts>
+<custom-meta-group>
+<custom-meta id="data-availability">
+<meta-name>Data Availability</meta-name>
+<meta-value>Data cannot be made publicly available as the authors did not receive consent from the participants during enrollment for this specific request. Data are available upon request from the corresponding author at <email xlink:type="simple">lee_dh@knu.ac.kr</email>.</meta-value>
+</custom-meta>
+</custom-meta-group>
+</article-meta>
+</front>
+<body>
+<sec id="sec006" sec-type="intro">
+<title>Introduction</title>
+<p>A healthy diet is one of the core elements in the management of type 2 diabetes (T2D), along with regular exercise and pharmacotherapy [<xref ref-type="bibr" rid="pone.0155918.ref001">1</xref>]. In fact, diet plays important roles in T2D prevention and management, such as decreasing the risk of diabetes in individuals with obesity and pre-diabetes and avoiding the associated complications [<xref ref-type="bibr" rid="pone.0155918.ref002">2</xref>]; however, there is currently no general optimal meal plan or dietary pattern for T2D patients [<xref ref-type="bibr" rid="pone.0155918.ref003">3</xref>].</p>
+<p>A vegetarian or vegan diet has been suggested to be clinically beneficial in the management of diabetes [<xref ref-type="bibr" rid="pone.0155918.ref004">4</xref>, <xref ref-type="bibr" rid="pone.0155918.ref005">5</xref>]. Interestingly, a randomized clinical trial (RCT) has suggested that a low-fat vegan diet can be more effective in glycemic and lipid control than a conventional diet recommended by the American Diabetes Association (ADA) [<xref ref-type="bibr" rid="pone.0155918.ref006">6</xref>].</p>
+<p>Thus far, most of the RCTs on vegetarian or vegan diets in T2D patients have included populations from Western countries [<xref ref-type="bibr" rid="pone.0155918.ref005">5</xref>]. Compared to the populations from Western countries, Asians mainly consume a diet based on plant foods such as rice, vegetables, and fresh fruits [<xref ref-type="bibr" rid="pone.0155918.ref007">7</xref>]. Hence, the use of a vegan diet in Asians with T2D may be more effective than that in Western populations.</p>
+<p>In addition, both epidemiological and experimental evidence has suggested that the chronic exposure to chemicals such as persistent organic pollutants (POPs) may disturb glucose and lipid metabolism [<xref ref-type="bibr" rid="pone.0155918.ref008">8</xref>]. As fatty animal foods, including fish, are the main sources of exposure to POPs [<xref ref-type="bibr" rid="pone.0155918.ref009">9</xref>], the use of a vegan diet that excludes any animal foods could also be beneficial in terms of avoiding POP exposure.</p>
+<p>In the present study, we conducted an RCT to determine the effect of a vegan diet on glycemic control and other cardiovascular risk factors in Korean patients with T2D.</p>
+</sec>
+<sec id="sec007" sec-type="materials|methods">
+<title>Materials and Methods</title>
+<sec id="sec008">
+<title>Participants</title>
+<p>Participants were recruited through advertisements in the endocrinology outpatient clinic of Kyungpook National University Hospital, Hypertension-Diabetes Education Center, and 4 public health centers in Daegu city from March 2012 through August 2012. The inclusion criteria were as follows: age of 30–70 years; use of hypoglycemic medications for ≥6 months; and HbA1c level of 6.0–11.0%. The exclusion criteria were as follows: increased dose of hypoglycemic medication or the addition of a new drug in the regimen during the last 2 months; current vegetarian status; pregnancy; or severe complications such as chronic renal failure.</p>
+</sec>
+<sec id="sec009">
+<title>Sample size estimation</title>
+<p>Considering the two-sample t-test for a between-group HbA1c difference (effect size) of 0.65%, standard deviation of 1.0, α level of 0.05 for a two-tailed test, power of 80%, and a loss of follow-up rate of 30%, we found that 53 participants would be required for each group [<xref ref-type="bibr" rid="pone.0155918.ref010">10</xref>]. Among the 106 participants enrolled from April 2012 through August 2012, 53 subjects and 53 subjects were stratified according to a cutoff HbA1c value of 8.0% and randomly allocated to the conventional Korean Diabetic Association (KDA) diet group and vegan diet group, respectively, using stratified block randomization with a block size of 4.</p>
+</sec>
+<sec id="sec010">
+<title>Intervention</title>
+<sec id="sec011">
+<title>1) Experimental group: vegan diet</title>
+<p>Participants were asked to follow a vegan diet consisting of whole grains, vegetables, fruit, and legumes. The following instructions were provided to these patients: 1) ingest unpolished rice (brown rice); 2) avoid polished rice (white rice); 3) avoid processed food made of rice flour or wheat flour; 4) avoid all animal food products (i.e., meat, poultry, fish, daily goods, and eggs); and 5) favor low-glycemic index foods (e.g., legumes, legumes-based foods, green vegetables, and seaweed). Participants were carefully educated on the foods they should consume and should avoid. The amount and frequency of food consumption, energy intake, and portion sizes were not restricted over the 12-week period.</p>
+</sec>
+<sec id="sec012">
+<title>2) Control group: conventional diet</title>
+<p>The conventional diet followed the treatment guidelines for diabetes recommended by the KDA 2011 [<xref ref-type="bibr" rid="pone.0155918.ref011">11</xref>]. Participants were asked to 1) restrict their individualized daily energy intake based on body weight, physical activity, need for weight control, and compliance; 2) total calorie intake comprised 50–60% carbohydrate, 15–20% protein (if renal function is normal), &lt;25% fat, &lt;7% saturated fat, minimal trans-fat intake, and ≤200 mg/day cholesterol. A dietitian estimated the individual daily energy requirement (standard body weight [kg] × 30–35 [kcal/kg]) while considering moderate physical activity in the participants, and established the food exchange lists based on the individual daily energy requirements as per the KDA 2011 guidelines. The type and amount of food were classified into 6 food categories (grains, meat, vegetables, fats and oils, milk, and fruits) based on the food exchange lists, and were prescribed to all participants in the KDA group. The daily energy requirement and daily proportion of food categories were appropriately distributed into 3 meals and snacks consumed between meals; the participants’ food preferences were considered. The adjustment of daily energy requirement based on weight loss during the study period was not performed.</p>
+</sec>
+<sec id="sec013">
+<title>3) Common protocols for both groups</title>
+<p>We conducted an open randomized clinical trial without the blinding of participants in terms of the nature of their dietary intervention. No specific meals or menus were given to the participants, and they were free to consume any food based on the recommendations provided. One registered dietitian provided nutritional education and instruction for 1 hour at week 0 and week 4, which helped participants make appropriately assigned diet plans using educational materials. The food consumption status of each participant was checked once a week by a dietitian via a telephone consultation. The dietitian reminded patients about the dietary guidelines and cooking methods that were previously described during dietary education, provided counseling to participants and answered questions, and encouraged the patients to record daily food consumption. The duration of education was similar for both groups. No additional functional foods or vitamin supplements including vitamin B12 were permitted. The participants were asked to maintain the usual level of physical activity, and to not modify their exercise habits during the intervention period.</p>
+<p>Participants were asked to maintain their current medication, without any control of the dose or type of medication for 12 weeks; however, dose reduction was permitted when it was necessary according to a physician’s judgment. The glucose levels were measured as a part of blood sampling at baseline, and during the fourth and twelfth week; most participants self-assessed their blood glucose levels via finger-stick glucose measurement. The study protocol was reviewed and approved by the institutional review board of Kyungpook National University Hospital (IRB No: KNUH 2012-03-032). Written informed consent was obtained from all the subjects before they were enrolled in the study. All participants received a financial incentive (approximately US$ 125). This study was registered with the Clinical Research Information Service (CRiS, Korea, <ext-link ext-link-type="uri" xlink:href="https://cris.nih.go.kr/" xlink:type="simple">https://cris.nih.go.kr</ext-link>; registration number: KCT0001771).</p>
+</sec>
+</sec>
+<sec id="sec014">
+<title>Measurement</title>
+<p>A dietitian conducted 24-hour dietary recalls through unannounced telephone calls a total of 12 times (4 times per month, including 3 on weekdays and once on a weekend). The dietary intake of the subjects prior to participation in the trial was not assessed. Energy and nutrition intake was analyzed using a country-specific food-nutrient database (Can-Pro 4.0 professional version, the Korean Nutrition Society, Korea, 2011). Physical examination and laboratory measurements, including body weight, height, waist circumference, and blood pressure, were assessed at week 0, 4, and 12. Venous blood was collected in the morning, after fasting from 8:00 PM on the previous night. The fasting blood glucose level was determined using the hexokinase method with the ADVIA 2400 analyzer (Siemens, USA). The HbA1c level was determined with the turbidimetric inhibition immunoassay using COBAS Integra 800 (Roche, Switzerland). The levels of total cholesterol and triglyceride were analyzed using the enzymatic assay and the level of high-density lipoprotein (HDL)-cholesterol was analyzed by using the selective inhibition method with the ADVIA 2400 analyzer (Siemens, USA). The level of low-density lipoprotein (LDL)-cholesterol was estimated using the equation of total cholesterol—(triglycerides/5)—HDL cholesterol.</p>
+</sec>
+<sec id="sec015">
+<title>Compliance based on self-assessed daily records</title>
+<p>Each participant was required to fill out a daily dietary record form regarding the types and amount of food consumed during the intervention period. Compliance was measured according to a daily 10-point scale via self-assessed dietary recording. In the vegan diet group, the dietitian deducted 1 point whenever the consumption of meats, poultry, fish, daily goods, or eggs was entered into the daily dietary record. In the KDA diet group, the dietitian checked the types and amount of food recorded in the daily food diary and deducted 1 point whenever daily food consumption had not been maintained according to the prescribed food exchange lists. We used the average value of the daily compliance score over 0 to 12 weeks, 0 to 4 weeks, and 5 to 12 weeks.</p>
+</sec>
+<sec id="sec016">
+<title>Statistical analysis</title>
+<p>The primary endpoint was the HbA1c level. Repeated-measures analysis of variance (RM-ANOVA) was used to evaluate 1) whether there was a difference in HbA1c levels between the baseline and endpoint in both groups and 2) whether the effect of dietary intervention was different over time, including the interaction of the time and diet group (time*diet group). The secondary endpoints were body mass index (BMI), waist circumference, systolic/diastolic blood pressure (SBP/DBP), fasting blood glucose, LDL-cholesterol, HDL-cholesterol, and triglyceride. For intention-to-treat (ITT) analysis, we imputed the missing HbA1c levels at the fourth and twelfth weeks by using the HbA1c level at baseline by the last-observation-carried-forward imputation method. The number of missing data points were total 26 points on 13 withdrawal participants. Moreover, the clinical and dietary information required for adjustment were also imputed with the median value of each variable among the 93 subjects with complete data. All analyses were calculated using SAS 9.4 (SAS Institute Inc., Cary, NC). A p-value of &lt;0.05 was considered statistically significant.</p>
+</sec>
+</sec>
+<sec id="sec017" sec-type="results">
+<title>Results</title>
+<sec id="sec018">
+<title>Demographic and clinical characteristics at baseline</title>
+<p>Among the 106 randomized participants, 6 in the conventional KDA diet group and 7 in the vegan diet group dropped out of the study; hence, a total of 47 and 46 participants finally completed the 12-week intervention in the conventional KDA diet group and vegan diet group, respectively. All 13 drop-out subjects did not receive any education and did not participate in the 4-week and 12-week follow-up evaluation. <xref ref-type="fig" rid="pone.0155918.g001">Fig 1</xref> depicts the inclusion and exclusion of the participants in the study.</p>
+<fig id="pone.0155918.g001" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0155918.g001</object-id>
+<label>Fig 1</label>
+<caption>
+<title>Enrollment of participants in the study.</title>
+</caption>
+<graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0155918.g001" xlink:type="simple"/>
+</fig>
+<p>When comparing the demographic and clinical characteristics at baseline between the 2 groups, none of the variables were found to be significantly different (<xref ref-type="table" rid="pone.0155918.t001">Table 1</xref>). Moreover, none of the participants changed their medication dose over the 12 weeks.</p>
+<table-wrap id="pone.0155918.t001" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0155918.t001</object-id>
+<label>Table 1</label> <caption><title>General and clinical characteristics<xref ref-type="table-fn" rid="t001fn001"><sup>1</sup></xref><sup>)</sup> of study participants at baseline (week 0).</title></caption>
+<alternatives>
+<graphic id="pone.0155918.t001g" mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0155918.t001" xlink:type="simple"/>
+<table>
+<colgroup>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+</colgroup>
+<thead>
+<tr>
+<th align="justify"/>
+<th align="justify">Vegan diet</th>
+<th align="center">Conventional diet recommended by the Korean Diabetes Association</th>
+<th align="justify"/>
+</tr>
+<tr>
+<th align="justify">Characteristics</th>
+<th align="justify">n = 46</th>
+<th align="center">n = 47</th>
+<th align="justify">pvalue<xref ref-type="table-fn" rid="t001fn002"><sup>2</sup></xref><sup>)</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="justify">Female [n (%)]</td>
+<td align="left">40 (87.0)</td>
+<td align="left">35 (74.5)</td>
+<td align="justify">0.128</td>
+</tr>
+<tr>
+<td align="justify">Age (years) [range]</td>
+<td align="justify">57.5±7.7 [32–70]</td>
+<td align="justify">58.3±7.0 [40–69]</td>
+<td align="justify">0.593</td>
+</tr>
+<tr>
+<td align="justify">Duration since diabetes diagnosis (years)</td>
+<td align="justify">9.4±8.1</td>
+<td align="justify">9.4±5.6</td>
+<td align="justify">0.995</td>
+</tr>
+<tr>
+<td align="justify">Receiving insulin [n (%)]</td>
+<td align="justify">7 (15.2)</td>
+<td align="justify">8 (17.0)</td>
+<td align="justify">0.813</td>
+</tr>
+<tr>
+<td align="justify">    Glargine [n (%)]</td>
+<td align="justify">6 (13.0)</td>
+<td align="justify">3 (6.4)</td>
+<td align="justify"/>
+</tr>
+<tr>
+<td align="justify">    Premixed insulin [n (%)]</td>
+<td align="justify">0 (0.0)</td>
+<td align="justify">2 (4.3)</td>
+<td align="justify"/>
+</tr>
+<tr>
+<td align="justify">    NPH<xref ref-type="table-fn" rid="t001fn003"><sup>3</sup></xref><sup>)</sup> [n (%)]</td>
+<td align="justify">1 (2.2)</td>
+<td align="justify">1 (2.1)</td>
+<td align="justify"/>
+</tr>
+<tr>
+<td align="justify">    Glargine+rapid-acting analog [n (%)]</td>
+<td align="justify">0 (0.0)</td>
+<td align="justify">2 (4.3)</td>
+<td align="justify"/>
+</tr>
+<tr>
+<td align="justify">Receiving metformin [n (%)]</td>
+<td align="justify">34 (73.9)</td>
+<td align="justify">36 (76.6)</td>
+<td align="justify">0.764</td>
+</tr>
+<tr>
+<td align="justify">Receiving sulfonylurea [n (%)]</td>
+<td align="justify">17 (37.0)</td>
+<td align="justify">21 (44.7)</td>
+<td align="justify">0.449</td>
+</tr>
+<tr>
+<td align="justify">Receiving other diabetes medications [n (%)]</td>
+<td align="justify">14 (30.4)</td>
+<td align="justify">19 (40.4)</td>
+<td align="justify">0.314</td>
+</tr>
+<tr>
+<td align="justify">Receiving hypertension medication [n (%)]</td>
+<td align="justify">18 (39.1)</td>
+<td align="justify">22 (46.8)</td>
+<td align="justify">0.455</td>
+</tr>
+<tr>
+<td align="justify">Receiving hypercholesterolemia medication [n (%)]</td>
+<td align="justify">23 (50.0)</td>
+<td align="justify">26 (55.3)</td>
+<td align="justify">0.608</td>
+</tr>
+<tr>
+<td align="justify">History of eye involvement [n (%)]</td>
+<td align="justify">6 (13.0)</td>
+<td align="justify">6 (12.8)</td>
+<td align="justify">0.968</td>
+</tr>
+<tr>
+<td align="justify">MNSI<xref ref-type="table-fn" rid="t001fn004"><sup>4</sup></xref><sup>)</sup> score [median (range)]</td>
+<td align="justify">0 [0–6]</td>
+<td align="justify">0 [0–4]</td>
+<td align="justify">0.555</td>
+</tr>
+<tr>
+<td align="justify">Body mass index (kg/m<sup>2</sup>)</td>
+<td align="justify">23.9±3.4</td>
+<td align="justify">23.1±2.4</td>
+<td align="justify">0.191</td>
+</tr>
+<tr>
+<td align="justify">Waist circumference (cm)</td>
+<td align="justify">85.0±9.8</td>
+<td align="justify">82.3±7.5</td>
+<td align="justify">0.143</td>
+</tr>
+<tr>
+<td align="justify">Systolic blood pressure (mmHg)</td>
+<td align="justify">125.1±16.1</td>
+<td align="justify">128.1±19.9</td>
+<td align="justify">0.425</td>
+</tr>
+<tr>
+<td align="justify">Diastolic blood pressure (mmHg)</td>
+<td align="justify">75.6±10.9</td>
+<td align="justify">78.1±12.1</td>
+<td align="justify">0.305</td>
+</tr>
+<tr>
+<td align="justify">LDL-cholesterol (mg/dL)</td>
+<td align="justify">92.7±28.5</td>
+<td align="justify">102.8±39.0</td>
+<td align="justify">0.155</td>
+</tr>
+<tr>
+<td align="justify">Triglyceride (mg/dL)</td>
+<td align="justify">130.3±61.7</td>
+<td align="justify">147.7±113.8</td>
+<td align="justify">0.362</td>
+</tr>
+<tr>
+<td align="justify">HDL-cholesterol (mg/dL)</td>
+<td align="justify">50.0±12.3</td>
+<td align="justify">51.2±13.3</td>
+<td align="justify">0.639</td>
+</tr>
+<tr>
+<td align="justify">Fasting blood glucose (mg/dL)</td>
+<td align="justify">138.4±52.4</td>
+<td align="justify">126.3±37.7</td>
+<td align="justify">0.205</td>
+</tr>
+<tr>
+<td align="justify">HbA1c (%)</td>
+<td align="justify">7.7±1.3</td>
+<td align="justify">7.4±1.0</td>
+<td align="justify">0.268</td>
+</tr>
+</tbody>
+</table>
+</alternatives>
+<table-wrap-foot>
+<fn id="t001fn001"><p><sup>1)</sup> percentage (%) or mean±standard deviation</p></fn>
+<fn id="t001fn002"><p><sup>2)</sup>calculated from the chi-square test for categorical variables or Student's t-test for continuous variables</p></fn>
+<fn id="t001fn003"><p><sup>3)</sup> Neutral Protamine Hagedorn (an intermediate-acting insulin)</p></fn>
+<fn id="t001fn004"><p><sup>4)</sup> Michigan Neuropathy Screening Instrument: A higher score (out of a maximum of 13 points) indicates a greater number of neuropathic symptoms.</p></fn>
+</table-wrap-foot>
+</table-wrap>
+</sec>
+<sec id="sec019">
+<title>Nutrient intake during the intervention period</title>
+<p>The average energy intake over the 12 weeks was 1,496 kcal/day in the vegan diet group and 1,559 kcal/day in the conventional diet group, and the difference was significant (p = 0.042; <xref ref-type="table" rid="pone.0155918.t002">Table 2</xref>). The intake of nutrients primarily from plant-based foods (carbohydrates, vegetable fat, fiber, beta-carotene, vitamin E, vitamin K, vitamin C, vitamin B6, folate, phosphorus, and potassium) was significantly higher in the vegan diet group than in the conventional diet group. The intake of nutrients primarily from animal-based foods (animal fat, protein, cholesterol, total fatty acid, saturated fatty acid, mono-unsaturated fatty acid, vitamin D, vitamin B12, and iron) were significantly higher in the conventional diet group than in the vegan diet group. The nutrient intakes at week 1, week 4, and week 12 are described in <xref ref-type="supplementary-material" rid="pone.0155918.s003">S1 Table</xref>.</p>
+<table-wrap id="pone.0155918.t002" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0155918.t002</object-id>
+<label>Table 2</label> <caption><title>Mean nutrient intake status and compliance of the study participants during the 12-week intervention period involving a vegan or conventional diet.</title></caption>
+<alternatives>
+<graphic id="pone.0155918.t002g" mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0155918.t002" xlink:type="simple"/>
+<table>
+<colgroup>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+</colgroup>
+<thead>
+<tr>
+<th align="justify"/>
+<th align="center">Vegan diet n = 46</th>
+<th align="center">Conventional diet recommended by the Korean Diabetes Association n = 47</th>
+<th align="center">p-value<xref ref-type="table-fn" rid="t002fn001"><sup>1</sup></xref><sup>)</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="justify"><bold>Nutrients</bold></td>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+</tr>
+<tr>
+<td align="left">Energy (kcal)</td>
+<td align="justify">1,496.2±104.8</td>
+<td align="justify">1,559.7±181.6</td>
+<td align="justify">0.042</td>
+</tr>
+<tr>
+<td align="left">Carbohydrate (g)</td>
+<td align="justify">268.4±19.7</td>
+<td align="justify">249.1±35.5</td>
+<td align="justify">0.002</td>
+</tr>
+<tr>
+<td align="left">Fat (g)</td>
+<td align="justify">31.8±6.3</td>
+<td align="justify">34.7±7.8</td>
+<td align="justify">0.054</td>
+</tr>
+<tr>
+<td align="left">Animal fat (g)</td>
+<td align="justify">2.4±1.5</td>
+<td align="justify">14.1±5.3</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Vegetable fat (g)</td>
+<td align="justify">29.5±6.6</td>
+<td align="justify">20.6±5.4</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Protein (g)</td>
+<td align="justify">55.1±5.8</td>
+<td align="justify">66.1±9.1</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Animal protein (g)</td>
+<td align="justify">6.4±3.7</td>
+<td align="justify">28.3±8.2</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Plant protein (g)</td>
+<td align="justify">48.7±5.8</td>
+<td align="justify">37.8±6.1</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Cholesterol (g)</td>
+<td align="justify">70.3±57.4</td>
+<td align="justify">240.7±74.7</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Total fatty acid (g)</td>
+<td align="justify">15.8±5.0</td>
+<td align="justify">20.8±5.7</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">SFA (g)</td>
+<td align="justify">3.2±1.5</td>
+<td align="justify">6.7±2.7</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">MUFA (g)</td>
+<td align="justify">5.8±2.2</td>
+<td align="justify">8.7±3.4</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">PUFA (g)</td>
+<td align="justify">8.1±2.8</td>
+<td align="justify">7.9±1.8</td>
+<td align="justify">0.728</td>
+</tr>
+<tr>
+<td align="left">Fiber (g)</td>
+<td align="justify">33.7±4.8</td>
+<td align="justify">24.9±4.5</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Vitamin A (ug RE)</td>
+<td align="justify">1,117.1±352.0</td>
+<td align="justify">1,037.0±356.4</td>
+<td align="justify">0.278</td>
+</tr>
+<tr>
+<td align="left">Beta-carotene (ug)</td>
+<td align="justify">6,604.0±2,155.0</td>
+<td align="justify">5,705.3±2,146.4</td>
+<td align="justify">0.047</td>
+</tr>
+<tr>
+<td align="left">Vitamin D (ug)</td>
+<td align="justify">0.6±0.5</td>
+<td align="justify">3.4±1.7</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Vitamin E (ug)</td>
+<td align="justify">19.6±3.9</td>
+<td align="justify">16.1±3.1</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Vitamin K (ug)</td>
+<td align="justify">384.0±199.4</td>
+<td align="justify">265.2±81.8</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Vitamin C (mg)</td>
+<td align="justify">135.1±33.2</td>
+<td align="justify">112.2±25.9</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Vitamin B6 (mg)</td>
+<td align="justify">2.1±0.2</td>
+<td align="justify">1.7±0.4</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Folate (ug)</td>
+<td align="justify">611.1±101.9</td>
+<td align="justify">545.8±92.7</td>
+<td align="justify">0.002</td>
+</tr>
+<tr>
+<td align="left">Vitamin B12 (ug)</td>
+<td align="justify">4.1±1.8</td>
+<td align="justify">8.5±2.7</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Calcium (mg)</td>
+<td align="justify">567.3±116.1</td>
+<td align="justify">540.4±105.4</td>
+<td align="justify">0.245</td>
+</tr>
+<tr>
+<td align="left">Phosphorus (mg)</td>
+<td align="justify">1,363.8±127.8</td>
+<td align="justify">1,121.2±192.1</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Sodium (mg)</td>
+<td align="justify">5,127.0±897.8</td>
+<td align="justify">4,782.4±792.4</td>
+<td align="justify">0.053</td>
+</tr>
+<tr>
+<td align="left">Potassium (mg)</td>
+<td align="justify">3,583.4±492.5</td>
+<td align="justify">3,101.4±526.6</td>
+<td align="justify">&lt;0.001</td>
+</tr>
+<tr>
+<td align="left">Magnesium (mg)</td>
+<td align="justify">92.0±21.5</td>
+<td align="justify">97.1±28.3</td>
+<td align="justify">0.339</td>
+</tr>
+<tr>
+<td align="left">Iron (mg)</td>
+<td align="justify">13.9±2.3</td>
+<td align="justify">15.0±2.7</td>
+<td align="justify">0.046</td>
+</tr>
+<tr>
+<td align="left">Zinc (mg)</td>
+<td align="justify">10.2±1.2</td>
+<td align="justify">10.3±1.4</td>
+<td align="justify">0.869</td>
+</tr>
+<tr>
+<td align="justify"><bold>Compliance</bold></td>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+</tr>
+<tr>
+<td align="justify">Mean score during the 1st to 12th week</td>
+<td align="justify">8.2±1.5</td>
+<td align="justify">9.2±1.6</td>
+<td align="left">0.002</td>
+</tr>
+<tr>
+<td align="justify">Mean score during the 1st to 4th week</td>
+<td align="justify">8.6±1.3</td>
+<td align="justify">9.5±1.4</td>
+<td align="left">0.003</td>
+</tr>
+<tr>
+<td align="justify">Mean score during the 5th to 12th week</td>
+<td align="justify">8.0±1.7</td>
+<td align="justify">9.1±1.7</td>
+<td align="left">0.003</td>
+</tr>
+<tr>
+<td align="left">Proportion of high compliance [n (%)] (mean score from the 1st to 12th week ≥ 9)</td>
+<td align="justify">14 (30.4%)</td>
+<td align="justify">37 (78.7%)</td>
+<td align="left">&lt;0.001</td>
+</tr>
+</tbody>
+</table>
+</alternatives>
+<table-wrap-foot>
+<fn id="t002fn001"><p><sup>1)</sup>p-values calculated from the t-test in the case of continuous variables and the chi-square test in the case of categorical variables for between-group comparisons</p></fn>
+<fn id="t002fn002"><p>SFA: saturated fatty acid; MUFA: mono-unsaturated fatty acid; PUFA: poly-unsaturated fatty acid</p></fn>
+</table-wrap-foot>
+</table-wrap>
+</sec>
+<sec id="sec020">
+<title>Compliance based on the self-assessed daily records</title>
+<p>Compliance—evaluated based on the self-assessed dietary record—was better in the conventional diet group than in the vegan diet group (<xref ref-type="table" rid="pone.0155918.t002">Table 2</xref>). The mean compliance score (a maximum of 10 points) during the overall intervention period was 9.2±1.6 and 8.2±1.5 in the conventional diet group and vegan diet group, respectively (p = 0.002). Compared to the early phase of the trial (first to fourth week), the compliance was lower during the late phase of the trial (fifth to twelfth week) in both groups. The proportion of participants with high compliance (≥9 points) was significantly higher in the conventional diet group (78.7%) than in the vegan group (30.4%) (p&lt;0.001).</p>
+</sec>
+<sec id="sec021">
+<title>Primary endpoint: Glycemic control</title>
+<p>The HbA1c level significantly decreased over time in both groups: -0.5% in the vegan diet group (p&lt;0.01) and -0.2% in the conventional diet group (p&lt;0.05) (<xref ref-type="table" rid="pone.0155918.t003">Table 3</xref>, <xref ref-type="fig" rid="pone.0155918.g002">Fig 2A</xref>). However, the changes in the HbA1c level from baseline to the end point were greater in the vegan diet group than in the conventional diet group (p-for-interaction for time*group interaction = 0.017). When analyses were restricted to subjects with a high compliance (≥9 points/10 points), the difference in HbA1c level changes between the 2 groups became more remarkable: -0.9% in the vegan group and -0.3% in the conventional group (p-for-interaction for time*group interaction = 0.010) (<xref ref-type="table" rid="pone.0155918.t003">Table 3</xref>, <xref ref-type="fig" rid="pone.0155918.g002">Fig 2B</xref>). The differences remained significant even after adjusting for energy intake or waist circumference. The results of the ITT analysis were similar to those of subjects with complete data (<xref ref-type="supplementary-material" rid="pone.0155918.s004">S2 Table</xref>).</p>
+<fig id="pone.0155918.g002" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0155918.g002</object-id>
+<label>Fig 2</label>
+<caption>
+<title>Levels of HbA1c (mean ± SD) at baseline and at 4 and 12 weeks in individuals with type 2 diabetes following a vegan or conventional diet recommended by the Korean Diabetes Association.</title>
+<p>(A) All participants. (B) Participants with mean compliance ≥9.0/10 points.</p>
+</caption>
+<graphic mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0155918.g002" xlink:type="simple"/>
+</fig>
+<table-wrap id="pone.0155918.t003" position="float">
+<object-id pub-id-type="doi">10.1371/journal.pone.0155918.t003</object-id>
+<label>Table 3</label> <caption><title>Clinical outcomes of the study participants following a vegan or conventional diet at baseline, and after the fourth and twelfth weeks.</title></caption>
+<alternatives>
+<graphic id="pone.0155918.t003g" mimetype="image" position="float" xlink:href="info:doi/10.1371/journal.pone.0155918.t003" xlink:type="simple"/>
+<table>
+<colgroup>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+<col align="left" valign="middle"/>
+</colgroup>
+<thead>
+<tr>
+<th align="justify"/>
+<th align="center" colspan="3">Vegan diet</th>
+<th align="center"/>
+<th align="center" colspan="3">Conventional diet recommended by the Korean Diabetes Association</th>
+<th align="center"/>
+<th align="center" rowspan="3">p value for group*time interaction<xref ref-type="table-fn" rid="t003fn001"><sup>1</sup></xref><sup>)</sup></th>
+</tr>
+<tr>
+<th align="justify"/>
+<th align="center" colspan="3">n = 46</th>
+<th align="center"/>
+<th align="center" colspan="3">n = 47</th>
+<th align="justify"/>
+</tr>
+<tr>
+<th align="justify">Clinical outcome</th>
+<th align="center">Week 0 (baseline)</th>
+<th align="center">Week 4</th>
+<th align="center">Week 12 (final)</th>
+<th align="center">Change (Week 12-Week 0)</th>
+<th align="center">Week 0 (baseline)</th>
+<th align="center">Week 4</th>
+<th align="center">Week 12 (final)</th>
+<th align="center">Change (Week 12-Week 0)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="justify"><bold>Primary endpoint</bold></td>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+<td align="center"/>
+</tr>
+<tr>
+<td align="justify">HbA1c (%) (all participants)</td>
+<td align="left">7.7±1.3</td>
+<td align="left">7.2±1.1</td>
+<td align="left">7.1±1.3</td>
+<td align="justify">-0.5±0.8<xref ref-type="table-fn" rid="t003fn005"><sup>‡</sup></xref></td>
+<td align="left">7.4±1.0</td>
+<td align="left">7.2±0.9</td>
+<td align="left">7.2±0.9</td>
+<td align="justify">-0.2±0.7<xref ref-type="table-fn" rid="t003fn004"><sup>†</sup></xref></td>
+<td align="center">0.017 (0.037)<xref ref-type="table-fn" rid="t003fn002"><sup>2</sup></xref><sup>)</sup> (0.042)<xref ref-type="table-fn" rid="t003fn003"><sup>3</sup></xref><sup>)</sup></td>
+</tr>
+<tr>
+<td align="justify">HbA1c (%) [compliance≥9.0 (n = 14 in vegan, n = 37 in KDA)]</td>
+<td align="left">7.5±1.2</td>
+<td align="left">7.0±0.9</td>
+<td align="left">6.6±0.9</td>
+<td align="justify">-0.9±0.8<xref ref-type="table-fn" rid="t003fn005"><sup>‡</sup></xref></td>
+<td align="left">7.4±1.1</td>
+<td align="left">7.3±1.0</td>
+<td align="left">7.2±1.0</td>
+<td align="justify">-0.3±0.7<xref ref-type="table-fn" rid="t003fn004"><sup>†</sup></xref></td>
+<td align="center">0.010 (0.013)<xref ref-type="table-fn" rid="t003fn002"><sup>2</sup></xref><sup>)</sup> (0.011)<xref ref-type="table-fn" rid="t003fn003"><sup>3</sup></xref><sup>)</sup></td>
+</tr>
+<tr>
+<td align="justify"><bold>Secondary endpoint</bold></td>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+<td align="justify"/>
+<td align="center"/>
+</tr>
+<tr>
+<td align="justify">BMI (kg/m<sup>2</sup>)</td>
+<td align="left">23.9±3.4</td>
+<td align="left">23.8±3.4</td>
+<td align="left">23.5±3.4</td>
+<td align="justify">-0.5±0.9<xref ref-type="table-fn" rid="t003fn005"><sup>‡</sup></xref></td>
+<td align="left">23.1±2.4</td>
+<td align="left">23.1±2.3</td>
+<td align="left">23.0±2.4</td>
+<td align="justify">-0.1±0.6</td>
+<td align="center">0.092</td>
+</tr>
+<tr>
+<td align="justify">Waist circumference (cm)</td>
+<td align="left">85.0±9.8</td>
+<td align="left">82.8±9.7</td>
+<td align="left">81.9±9.9</td>
+<td align="justify">-3.1±4.9<xref ref-type="table-fn" rid="t003fn005"><sup>‡</sup></xref></td>
+<td align="left">82.3±7.5</td>
+<td align="left">82.1±7.6</td>
+<td align="left">81.5±7.9</td>
+<td align="justify">-0.8±4.6</td>
+<td align="center">0.027</td>
+</tr>
+<tr>
+<td align="justify">Systolic BP (mmHg)</td>
+<td align="left">125.1±16.1</td>
+<td align="left">124.4±16.1</td>
+<td align="left">126.1±14.4</td>
+<td align="justify">1.0±14.9</td>
+<td align="left">128.1±19.9</td>
+<td align="left">121.9±16.5</td>
+<td align="left">126.6±16.1</td>
+<td align="justify">-1.5±18.7</td>
+<td align="center">0.186</td>
+</tr>
+<tr>
+<td align="justify">Diastolic BP (mmHg)</td>
+<td align="left">75.6±10.9</td>
+<td align="left">74.5±10.5</td>
+<td align="left">76.7±9.3</td>
+<td align="justify">1.1±9.0</td>
+<td align="left">78.1±12.1</td>
+<td align="left">75.2±10.1</td>
+<td align="left">76.7±10.3</td>
+<td align="justify">-1.4±9.9</td>
+<td align="center">0.335</td>
+</tr>
+<tr>
+<td align="justify">Fasting blood glucose (mg/dL)</td>
+<td align="left">138.4±52.4</td>
+<td align="left">117.3±32.1</td>
+<td align="left">125.2±38.0</td>
+<td align="justify">-13.2±47.4</td>
+<td align="left">126.3±37.7</td>
+<td align="left">119.7±32.7</td>
+<td align="left">126.3±33.0</td>
+<td align="justify">0.0±39.1</td>
+<td align="center">0.146</td>
+</tr>
+<tr>
+<td align="justify">LDL-cholesterol (mg/dL)</td>
+<td align="left">92.7±28.5</td>
+<td align="left">89.1±31.2</td>
+<td align="left">89.9±32.3</td>
+<td align="justify">-2.8±17.8</td>
+<td align="left">102.8±39.0</td>
+<td align="left">97.8±36.1</td>
+<td align="left">101.9±38.5</td>
+<td align="justify">-1.0±29.3</td>
+<td align="center">0.732</td>
+</tr>
+<tr>
+<td align="justify">Triglyceride (mg/dL)</td>
+<td align="left">130.3±61.7</td>
+<td align="left">128.7±60.3</td>
+<td align="left">143.7±92.4</td>
+<td align="justify">13.4±72.8</td>
+<td align="left">147.7±113.8</td>
+<td align="left">141.9±91.9</td>
+<td align="left">128.8±57.9</td>
+<td align="justify">-18.9±81.9</td>
+<td align="center">0.053</td>
+</tr>
+<tr>
+<td align="justify">HDL-cholesterol (mg/dL)</td>
+<td align="left">50.0±12.3</td>
+<td align="left">49.5±11.9</td>
+<td align="left">52.2±14.9</td>
+<td align="justify">2.2±8.8</td>
+<td align="left">51.2±13.3</td>
+<td align="left">50.8±13.1</td>
+<td align="left">51.7±13.0</td>
+<td align="justify">0.5±8.2</td>
+<td align="center">0.459</td>
+</tr>
+</tbody>
+</table>
+</alternatives>
+<table-wrap-foot>
+<fn id="t003fn001"><p><sup>1)</sup> p values for the group*time interaction were calculated via repeated measures analysis of variance or MANOVA (Wilks' lambda)</p></fn>
+<fn id="t003fn002"><p><sup>2)</sup> p values for the group*time interaction after adjusting for the mean energy intake (kcal) over the 12-week period</p></fn>
+<fn id="t003fn003"><p><sup>3)</sup> p values for the group*time interaction after adjusting for waist circumference at 0, 4, and 12 weeks</p></fn>
+<fn id="t003fn004"><p><sup>†</sup>p&lt;0.05</p></fn>
+<fn id="t003fn005"><p><sup>‡</sup>p&lt;0.01; p values represent the values of the paired t-test that assessed whether the changes from baseline to the final week were significantly different from zero.</p></fn>
+<fn id="t003fn006"><p>None of the participants required any change in medication during the intervention period</p></fn>
+</table-wrap-foot>
+</table-wrap>
+</sec>
+<sec id="sec022">
+<title>Secondary endpoint: BMI, waist circumference, blood pressure, and lipid control</title>
+<p>The BMI and waist circumference significantly reduced over the 12-week period only in the vegan diet group (p-for-interaction for time*group interaction = 0.027 for waist circumference). However, there were no significant differences in the changes in SBP, DBP, LDL-cholesterol level, and HDL-cholesterol level in both the groups. The triglyceride levels tended to increase in the vegan diet group and tended to decrease in the conventional diet group (p-for-interaction for time*group interaction = 0.053). When the analyses were restricted to subjects with a high compliance (≥9 points/10 points), the results remained unchanged (data not shown).</p>
+</sec>
+</sec>
+<sec id="sec023" sec-type="conclusions">
+<title>Discussion</title>
+<p>In the present study, we observed that both vegan and conventional diabetic diets were significantly associated with reductions in HbA1c levels. However, compared to the conventional diet, the vegan diet appeared to be more effective for glycemic control among T2D patients. In particular, the vegan diet group with a high compliance showed a markedly decreasing trend in the HbA1c level.</p>
+<p>Importantly, the benefit of the vegan diet was noted even after adjusting for energy intake and waist circumference over the 12-week period between the 2 groups. At present, weight loss due to reduced total calorie intake is considered to be the main mechanism for achieving good glycemic control in T2D patients with various diet interventions, including a vegan or vegetarian diet [<xref ref-type="bibr" rid="pone.0155918.ref012">12</xref>]. However, the current study suggests that a vegan diet may have additional benefits, other than the low energy intake or weight loss.</p>
+<p>Consistent with the findings of the current study, a recent meta-analysis including 6 controlled clinical trials conducted primarily in the United States showed that a vegetarian or vegan diet has a significant glycemic control effect in the management of T2D [<xref ref-type="bibr" rid="pone.0155918.ref005">5</xref>]. In the pooled analysis, vegetarian diets were associated with a significant decrease in HbA1c levels (-0.39%), as compared to omnivorous diets. This difference appears to be slightly larger than that observed in the overall sample in the present study; in fact, the difference in the changes in HbA1C levels between the vegan diet group (-0.5%) and conventional diet group (-0.2%) was approximately -0.3%.</p>
+<p>These findings appear to fail to support our priori hypothesis that a vegan diet would be more effective in T2D management among Asians than among Westerners when the absolute value of decreased HbA1c between studies was simply compared. However, when we only compared participants with good compliance, we noted that the HbA1C reduction among the vegan diet group was 0.9%, and that the difference between the 2 groups was doubled (-0.6%). As previous clinical trials did not report results only from participants with good compliance, it is still difficult to interpret this finding as direct evidence for the greater effectiveness of a vegan diet in T2D management among Asians than among Westerners.</p>
+<p>Nevertheless, the reduction of HbA1C levels observed in the vegan group with good compliance appeared to be larger than the effects of other dietary approaches, which were examined in a meta-analysis of 20 RCTs on various T2D diet interventions; the largest effect was observed with a Mediterranean diet (effect size, -0.47%) [<xref ref-type="bibr" rid="pone.0155918.ref012">12</xref>]. In RCTs, low compliance can be expected with vegan diets as it would be difficult for individuals with a prior omnivorous diet to maintain a vegan diet for several months. However, our findings suggest that, if patients are motivated to maintain a vegan diet, it can be effective in the management of T2D.</p>
+<p>The practical advantages of vegan diets include the absence of any restriction on calorie intake, lack of necessity for calculating food portion sizes, and ease of understanding the diet methods (no consumption of animal food) [<xref ref-type="bibr" rid="pone.0155918.ref013">13</xref>]. In particular, compared to conventional diabetic diets that are focused on restricting calorie intake and portion size, vegetarian diets are reportedly easier to follow during exercise—another key component of T2D management—due to the reduced feeling of hunger [<xref ref-type="bibr" rid="pone.0155918.ref014">14</xref>]. Considering that both diet and exercise are 2 vital components for the optimal management of T2D, such advantages would be important for T2D patients.</p>
+<p>In addition to improved glycemic control, vegetarian or vegan diets may offer health benefits associated with cardiovascular risk factors such as serum lipids and blood pressure, as compared to omnivorous diets [<xref ref-type="bibr" rid="pone.0155918.ref015">15</xref>]. In a meta-analysis on 11 RCTs, vegetarian or vegan diets were found to have significant lowering effects on the concentrations of LDL-cholesterol and HDL-cholesterol, but no remarkable effect on the concentration of triglycerides [<xref ref-type="bibr" rid="pone.0155918.ref016">16</xref>]. Moreover, in a meta-analysis on 7 RCTs, these diets were found to be effective in reducing SBP and DBP, in comparison with omnivorous diets [<xref ref-type="bibr" rid="pone.0155918.ref017">17</xref>]. However, we did not observe any benefit on blood pressure and lipids in both diets. The effect of a vegan diet on the cardiovascular risk factors may be better evaluated among participants with dyslipidemia or hypertension than among those with T2D.</p>
+<p>Similar to other T2D diet interventions, weight loss (particularly the loss of visceral fat), as a result of lower energy intake, has been considered a main mechanism for improved glycemic control with vegan or vegetarian diets [<xref ref-type="bibr" rid="pone.0155918.ref013">13</xref>, <xref ref-type="bibr" rid="pone.0155918.ref014">14</xref>, <xref ref-type="bibr" rid="pone.0155918.ref018">18</xref>]. However, the benefit of vegan diets in the present study could not be fully explained by weight loss or lower energy intake. Other potential mechanisms may include the higher intake of dietary fiber [<xref ref-type="bibr" rid="pone.0155918.ref019">19</xref>]. Dietary fiber can lower the glycemic index of carbohydrates by slowing the absorption of glucose from the intestine [<xref ref-type="bibr" rid="pone.0155918.ref020">20</xref>]. In addition, dietary fiber can improve glycemic control by increasing bile acid excretion [<xref ref-type="bibr" rid="pone.0155918.ref021">21</xref>], and increasing the production of short-chain fatty acids via the bacterial fermentation of fiber [<xref ref-type="bibr" rid="pone.0155918.ref022">22</xref>]. The reduction of intramyocellular lipid concentrations may represent another possible mechanism [<xref ref-type="bibr" rid="pone.0155918.ref023">23</xref>].</p>
+<p>Another explanation may involve the reduced exposure to POPs by vegan diets through the prohibition of animal food. Recently, background exposure to low-dose POPs has been found to be an important risk factor of developing T2D [<xref ref-type="bibr" rid="pone.0155918.ref008">8</xref>]. Furthermore, these chemicals are associated with poor glycemic control among T2D patients [<xref ref-type="bibr" rid="pone.0155918.ref024">24</xref>], and with an increased risk of cardiovascular diseases [<xref ref-type="bibr" rid="pone.0155918.ref025">25</xref>, <xref ref-type="bibr" rid="pone.0155918.ref026">26</xref>], which are the most common complications of T2D. Hence, avoiding animal food contaminated with POPs may offer additional benefit for T2D patients.</p>
+<p>There are several limitations of the present study. First, the study duration of 3 months would not be sufficient to evaluate the long-term effects of vegan diets on glycemic control. However, an RCT with a long duration would commonly involve changes in the medication for appropriate medical management, and hence, the estimation of effect size might be complicated [<xref ref-type="bibr" rid="pone.0155918.ref006">6</xref>]. Hence, a 3-month study duration without any change in medication would be suitable for the evaluation of diet effects among T2D patients. Second, compared to previous trials on diet intervention that used a more intensive approach (including weekly or biweekly group meetings), this study used only telephone consultations. This may be the reason for the low compliance among our study subjects. Third, most of the study participants were women, as men were difficult to recruit for diet intervention. In fact, it is known that the participants of clinical trials on interventions for diet or behavioral change are predominantly female due to the low participation rate of males [<xref ref-type="bibr" rid="pone.0155918.ref027">27</xref>]. Nevertheless, we could not exclude the possibility that the effect of vegan diets may differ according to the gender. Fourth, it is unclear whether the improvement in glycemic control through vegan diets would lead to a reduction in the risks of macro- or microvascular complications of diabetes, as there are certain concerns regarding the potential of low intake of some nutrients in a vegan diet that is not planned well [<xref ref-type="bibr" rid="pone.0155918.ref028">28</xref>].</p>
+</sec>
+<sec id="sec024" sec-type="conclusions">
+<title>Conclusion</title>
+<p>The use of a vegan diet for 3 months was found to be more effective for glycemic control among T2D patients, as compared to a conventional diabetes diet recommended by the KDA. However, as the compliance of the vegan diet group was lower than that of the conventional group, and because dietary choices are often personal, it is not realistic to recommend vegan diets to all T2D patients. Nevertheless, this effective diet approach can be applied for T2D patients who are strongly motivated to follow a vegan diet, particularly in the Asian population.</p>
+</sec>
+<sec id="sec025">
+<title>Supporting Information</title>
+<supplementary-material id="pone.0155918.s001" mimetype="application/msword" position="float" xlink:href="info:doi/10.1371/journal.pone.0155918.s001" xlink:type="simple">
+<label>S1 CONSORT Checklist</label>
+<caption>
+<title/>
+<p>(DOC)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pone.0155918.s002" mimetype="application/msword" position="float" xlink:href="info:doi/10.1371/journal.pone.0155918.s002" xlink:type="simple">
+<label>S1 Protocol</label>
+<caption>
+<title/>
+<p>(DOC)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pone.0155918.s003" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document" position="float" xlink:href="info:doi/10.1371/journal.pone.0155918.s003" xlink:type="simple">
+<label>S1 Table</label>
+<caption>
+<title>Nutrient intake status of the study participants following a vegan or conventional diet after the first, fourth, and twelfth weeks.</title>
+<p>(DOCX)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pone.0155918.s004" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document" position="float" xlink:href="info:doi/10.1371/journal.pone.0155918.s004" xlink:type="simple">
+<label>S2 Table</label>
+<caption>
+<title>Primary endpoint (HbA1c) among all randomized participants using an intention-to-treat analysis</title>
+<p>(DOCX)</p>
+</caption>
+</supplementary-material>
+<supplementary-material id="pone.0155918.s005" mimetype="application/msword" position="float" xlink:href="info:doi/10.1371/journal.pone.0155918.s005" xlink:type="simple">
+<label>S1 Text</label>
+<caption>
+<title>Trial protocol (Korean).</title>
+<p>(DOC)</p>
+</caption>
+</supplementary-material>
+</sec>
+</body>
+<back>
+<ref-list>
+<title>References</title>
+<ref id="pone.0155918.ref001"><label>1</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Evert</surname> <given-names>AB</given-names></name>, <name name-style="western"><surname>Boucher</surname> <given-names>JL</given-names></name>, <name name-style="western"><surname>Cypress</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Dunbar</surname> <given-names>SA</given-names></name>, <name name-style="western"><surname>Franz</surname> <given-names>MJ</given-names></name>, <name name-style="western"><surname>Mayer-Davis</surname> <given-names>EJ</given-names></name>, <etal>et al</etal>. <article-title>Nutrition therapy recommendations for the management of adults with diabetes</article-title>. <source>Diabetes Care</source>. <year>2013</year>;<volume>36</volume>(<issue>11</issue>):<fpage>3821</fpage>–<lpage>42</lpage>. <object-id pub-id-type="pmid">24107659</object-id>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.2337/dc13-2042" xlink:type="simple">10.2337/dc13-2042</ext-link></comment></mixed-citation></ref>
+<ref id="pone.0155918.ref002"><label>2</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Bantle</surname> <given-names>JP</given-names></name>, <name name-style="western"><surname>Wylie-Rosett</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Albright</surname> <given-names>AL</given-names></name>, <name name-style="western"><surname>Apovian</surname> <given-names>CM</given-names></name>, <name name-style="western"><surname>Clark</surname> <given-names>NG</given-names></name>, <name name-style="western"><surname>Franz</surname> <given-names>MJ</given-names></name>, <etal>et al</etal>. <article-title>Nutrition recommendations and interventions for diabetes: a position statement of the American Diabetes Association</article-title>. <source>Diabetes Care</source>. <year>2008</year>;<volume>31</volume> <issue>Suppl 1</issue>:<fpage>S61</fpage>–<lpage>78</lpage>. <object-id pub-id-type="pmid">18165339</object-id>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.2337/dc08-S061" xlink:type="simple">10.2337/dc08-S061</ext-link></comment></mixed-citation></ref>
+<ref id="pone.0155918.ref003"><label>3</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Cao</surname> <given-names>Y</given-names></name>, <name name-style="western"><surname>Mauger</surname> <given-names>DT</given-names></name>, <name name-style="western"><surname>Pelkman</surname> <given-names>CL</given-names></name>, <name name-style="western"><surname>Zhao</surname> <given-names>G</given-names></name>, <name name-style="western"><surname>Townsend</surname> <given-names>SM</given-names></name>, <name name-style="western"><surname>Kris-Etherton</surname> <given-names>PM</given-names></name>. <article-title>Effects of moderate (MF) versus lower fat (LF) diets on lipids and lipoproteins: a meta-analysis of clinical trials in subjects with and without diabetes</article-title>. <source>J Clin Lipidol</source>. <year>2009</year>;<volume>3</volume>(<issue>1</issue>):<fpage>19</fpage>–<lpage>32</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.jacl.2008.12.008" xlink:type="simple">10.1016/j.jacl.2008.12.008</ext-link></comment> <object-id pub-id-type="pmid">21291785</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref004"><label>4</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Barnard</surname> <given-names>ND</given-names></name>, <name name-style="western"><surname>Katcher</surname> <given-names>HI</given-names></name>, <name name-style="western"><surname>Jenkins</surname> <given-names>DJ</given-names></name>, <name name-style="western"><surname>Cohen</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Turner-McGrievy</surname> <given-names>G</given-names></name>. <article-title>Vegetarian and vegan diets in type 2 diabetes management</article-title>. <source>Nutr Rev</source>. <year>2009</year>;<volume>67</volume>(<issue>5</issue>):<fpage>255</fpage>–<lpage>63</lpage>. <object-id pub-id-type="pmid">19386029</object-id>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1111/j.1753-4887.2009.00198.x" xlink:type="simple">10.1111/j.1753-4887.2009.00198.x</ext-link></comment></mixed-citation></ref>
+<ref id="pone.0155918.ref005"><label>5</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Yokoyama</surname> <given-names>Y</given-names></name>, <name name-style="western"><surname>Barnard</surname> <given-names>ND</given-names></name>, <name name-style="western"><surname>Levin</surname> <given-names>SM</given-names></name>, <name name-style="western"><surname>Watanabe</surname> <given-names>M</given-names></name>. <article-title>Vegetarian diets and glycemic control in diabetes: a systematic review and meta-analysis</article-title>. <source>Cardiovasc Diagn Ther</source>. <year>2014</year>;<volume>4</volume>(<issue>5</issue>):<fpage>373</fpage>–<lpage>82</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.3978/j.issn.2223-3652.2014.10.04" xlink:type="simple">10.3978/j.issn.2223-3652.2014.10.04</ext-link></comment> <object-id pub-id-type="pmid">25414824</object-id>; PubMed Central PMCID: PMC4221319.</mixed-citation></ref>
+<ref id="pone.0155918.ref006"><label>6</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Barnard</surname> <given-names>ND</given-names></name>, <name name-style="western"><surname>Cohen</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Jenkins</surname> <given-names>DJ</given-names></name>, <name name-style="western"><surname>Turner-McGrievy</surname> <given-names>G</given-names></name>, <name name-style="western"><surname>Gloede</surname> <given-names>L</given-names></name>, <name name-style="western"><surname>Green</surname> <given-names>A</given-names></name>, <etal>et al</etal>. <article-title>A low-fat vegan diet and a conventional diabetes diet in the treatment of type 2 diabetes: a randomized, controlled, 74-wk clinical trial</article-title>. <source>Am J Clin Nutr</source>. <year>2009</year>;<volume>89</volume>(<issue>5</issue>):<fpage>1588S</fpage>–<lpage>96S</lpage>. <object-id pub-id-type="pmid">19339401</object-id>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.3945/ajcn.2009.26736H" xlink:type="simple">10.3945/ajcn.2009.26736H</ext-link></comment></mixed-citation></ref>
+<ref id="pone.0155918.ref007"><label>7</label><mixed-citation publication-type="other" xlink:type="simple">WHO. Diet, nutrition and the prevention of chronic diseases. WHO Technical Report Series. 2003.</mixed-citation></ref>
+<ref id="pone.0155918.ref008"><label>8</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Lee</surname> <given-names>DH</given-names></name>, <name name-style="western"><surname>Porta</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Jacobs</surname> <given-names>DR</given-names> <suffix>Jr</suffix></name>, <name name-style="western"><surname>Vandenberg</surname> <given-names>LN</given-names></name>. <article-title>Chlorinated persistent organic pollutants, obesity, and type 2 diabetes</article-title>. <source>Endocr Rev</source>. <year>2014</year>;<volume>35</volume>(<issue>4</issue>):<fpage>557</fpage>–<lpage>601</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1210/er.2013-108410.1210/er.9013-1084" xlink:type="simple">10.1210/er.2013-108410.1210/er.9013-1084</ext-link></comment> <object-id pub-id-type="pmid">24483949</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref009"><label>9</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Kelly</surname> <given-names>BC</given-names></name>, <name name-style="western"><surname>Ikonomou</surname> <given-names>MG</given-names></name>, <name name-style="western"><surname>Blair</surname> <given-names>JD</given-names></name>, <name name-style="western"><surname>Morin</surname> <given-names>AE</given-names></name>, <name name-style="western"><surname>Gobas</surname> <given-names>FA</given-names></name>. <article-title>Food web-specific biomagnification of persistent organic pollutants</article-title>. <source>Science</source>. <year>2007</year>;<volume>317</volume>(<issue>5835</issue>):<fpage>236</fpage>–<lpage>9</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1126/science.1138275" xlink:type="simple">10.1126/science.1138275</ext-link></comment> <object-id pub-id-type="pmid">17626882</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref010"><label>10</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Barnard</surname> <given-names>ND</given-names></name>, <name name-style="western"><surname>Cohen</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Jenkins</surname> <given-names>DJ</given-names></name>, <name name-style="western"><surname>Turner-McGrievy</surname> <given-names>G</given-names></name>, <name name-style="western"><surname>Gloede</surname> <given-names>L</given-names></name>, <name name-style="western"><surname>Jaster</surname> <given-names>B</given-names></name>, <etal>et al</etal>. <article-title>A low-fat vegan diet improves glycemic control and cardiovascular risk factors in a randomized clinical trial in individuals with type 2 diabetes</article-title>. <source>Diabetes Care</source>. <year>2006</year>;<volume>29</volume>(<issue>8</issue>):<fpage>1777</fpage>–<lpage>83</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.2337/dc06-0606" xlink:type="simple">10.2337/dc06-0606</ext-link></comment> <object-id pub-id-type="pmid">16873779</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref011"><label>11</label><mixed-citation publication-type="other" xlink:type="simple">Committee of Clinical Practice Guidelines KDA. 2011 Clinical Practice Guidelines for Type 2 Diabetes in Korea2011.</mixed-citation></ref>
+<ref id="pone.0155918.ref012"><label>12</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Ajala</surname> <given-names>O</given-names></name>, <name name-style="western"><surname>English</surname> <given-names>P</given-names></name>, <name name-style="western"><surname>Pinkney</surname> <given-names>J</given-names></name>. <article-title>Systematic review and meta-analysis of different dietary approaches to the management of type 2 diabetes</article-title>. <source>Am J Clin Nutr</source>. <year>2013</year>;<volume>97</volume>(<issue>3</issue>):<fpage>505</fpage>–<lpage>16</lpage>. <object-id pub-id-type="pmid">23364002</object-id>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.3945/ajcn.112.042457" xlink:type="simple">10.3945/ajcn.112.042457</ext-link></comment></mixed-citation></ref>
+<ref id="pone.0155918.ref013"><label>13</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Barnard</surname> <given-names>ND</given-names></name>, <name name-style="western"><surname>Scialli</surname> <given-names>AR</given-names></name>, <name name-style="western"><surname>Turner-McGrievy</surname> <given-names>G</given-names></name>, <name name-style="western"><surname>Lanou</surname> <given-names>AJ</given-names></name>, <name name-style="western"><surname>Glass</surname> <given-names>J</given-names></name>. <article-title>The effects of a low-fat, plant-based dietary intervention on body weight, metabolism, and insulin sensitivity</article-title>. <source>Am J Med</source>. <year>2005</year>;<volume>118</volume>(<issue>9</issue>):<fpage>991</fpage>–<lpage>7</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.amjmed.2005.03.039" xlink:type="simple">10.1016/j.amjmed.2005.03.039</ext-link></comment> <object-id pub-id-type="pmid">16164885</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref014"><label>14</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Kahleova</surname> <given-names>H</given-names></name>, <name name-style="western"><surname>Matoulek</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Malinska</surname> <given-names>H</given-names></name>, <name name-style="western"><surname>Oliyarnik</surname> <given-names>O</given-names></name>, <name name-style="western"><surname>Kazdova</surname> <given-names>L</given-names></name>, <name name-style="western"><surname>Neskudla</surname> <given-names>T</given-names></name>, <etal>et al</etal>. <article-title>Vegetarian diet improves insulin resistance and oxidative stress markers more than conventional diet in subjects with Type 2 diabetes</article-title>. <source>Diabet Med</source>. <year>2011</year>;<volume>28</volume>(<issue>5</issue>):<fpage>549</fpage>–<lpage>59</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1111/j.1464-5491.2010.03209.x" xlink:type="simple">10.1111/j.1464-5491.2010.03209.x</ext-link></comment> <object-id pub-id-type="pmid">21480966</object-id>; PubMed Central PMCID: PMC3427880.</mixed-citation></ref>
+<ref id="pone.0155918.ref015"><label>15</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Le</surname> <given-names>LT</given-names></name>, <name name-style="western"><surname>Sabate</surname> <given-names>J</given-names></name>. <article-title>Beyond meatless, the health effects of vegan diets: findings from the Adventist cohorts</article-title>. <source>Nutrients</source>. <year>2014</year>;<volume>6</volume>(<issue>6</issue>):<fpage>2131</fpage>–<lpage>47</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.3390/nu6062131" xlink:type="simple">10.3390/nu6062131</ext-link></comment> <object-id pub-id-type="pmid">24871675</object-id>; PubMed Central PMCID: PMC4073139.</mixed-citation></ref>
+<ref id="pone.0155918.ref016"><label>16</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Wang</surname> <given-names>F</given-names></name>, <name name-style="western"><surname>Zheng</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Yang</surname> <given-names>B</given-names></name>, <name name-style="western"><surname>Jiang</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Fu</surname> <given-names>Y</given-names></name>, <name name-style="western"><surname>Li</surname> <given-names>D</given-names></name>. <article-title>Effects of Vegetarian Diets on Blood Lipids: A Systematic Review and Meta-Analysis of Randomized Controlled Trials</article-title>. <source>J Am Heart Assoc</source>. <year>2015</year>;<volume>4</volume>(<issue>10</issue>):<fpage>e002408</fpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1161/JAHA.115.002408" xlink:type="simple">10.1161/JAHA.115.002408</ext-link></comment> <object-id pub-id-type="pmid">26508743</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref017"><label>17</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Yokoyama</surname> <given-names>Y</given-names></name>, <name name-style="western"><surname>Nishimura</surname> <given-names>K</given-names></name>, <name name-style="western"><surname>Barnard</surname> <given-names>ND</given-names></name>, <name name-style="western"><surname>Takegami</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Watanabe</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Sekikawa</surname> <given-names>A</given-names></name>, <etal>et al</etal>. <article-title>Vegetarian diets and blood pressure: a meta-analysis</article-title>. <source>JAMA Intern Med</source>. <year>2014</year>;<volume>174</volume>(<issue>4</issue>):<fpage>577</fpage>–<lpage>87</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1001/jamainternmed.2013.14547" xlink:type="simple">10.1001/jamainternmed.2013.14547</ext-link></comment> <object-id pub-id-type="pmid">24566947</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref018"><label>18</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Mishra</surname> <given-names>S</given-names></name>, <name name-style="western"><surname>Xu</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Agarwal</surname> <given-names>U</given-names></name>, <name name-style="western"><surname>Gonzales</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Levin</surname> <given-names>S</given-names></name>, <name name-style="western"><surname>Barnard</surname> <given-names>ND</given-names></name>. <article-title>A multicenter randomized controlled trial of a plant-based nutrition program to reduce body weight and cardiovascular risk in the corporate setting: the GEICO study</article-title>. <source>Eur J Clin Nutr</source>. <year>2013</year>;<volume>67</volume>(<issue>7</issue>):<fpage>718</fpage>–<lpage>24</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1038/ejcn.2013.92" xlink:type="simple">10.1038/ejcn.2013.92</ext-link></comment> <object-id pub-id-type="pmid">23695207</object-id>; PubMed Central PMCID: PMC3701293.</mixed-citation></ref>
+<ref id="pone.0155918.ref019"><label>19</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Chandalia</surname> <given-names>M</given-names></name>, <name name-style="western"><surname>Garg</surname> <given-names>A</given-names></name>, <name name-style="western"><surname>Lutjohann</surname> <given-names>D</given-names></name>, <name name-style="western"><surname>von Bergmann</surname> <given-names>K</given-names></name>, <name name-style="western"><surname>Grundy</surname> <given-names>SM</given-names></name>, <name name-style="western"><surname>Brinkley</surname> <given-names>LJ</given-names></name>. <article-title>Beneficial effects of high dietary fiber intake in patients with type 2 diabetes mellitus</article-title>. <source>N Engl J Med</source>. <year>2000</year>;<volume>342</volume>(<issue>19</issue>):<fpage>1392</fpage>–<lpage>8</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1056/NEJM200005113421903" xlink:type="simple">10.1056/NEJM200005113421903</ext-link></comment> <object-id pub-id-type="pmid">10805824</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref020"><label>20</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Livesey</surname> <given-names>G</given-names></name>, <name name-style="western"><surname>Tagami</surname> <given-names>H</given-names></name>. <article-title>Interventions to lower the glycemic response to carbohydrate foods with a low-viscosity fiber (resistant maltodextrin): meta-analysis of randomized controlled trials</article-title>. <source>Am J Clin Nutr</source>. <year>2009</year>;<volume>89</volume>(<issue>1</issue>):<fpage>114</fpage>–<lpage>25</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.3945/ajcn.2008.26842" xlink:type="simple">10.3945/ajcn.2008.26842</ext-link></comment> <object-id pub-id-type="pmid">19126874</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref021"><label>21</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Story</surname> <given-names>JA</given-names></name>, <name name-style="western"><surname>Kritchevsky</surname> <given-names>D</given-names></name>. <article-title>Bile acid metabolism and fiber</article-title>. <source>Am J Clin Nutr</source>. <year>1978</year>;<volume>31</volume>(<issue>10</issue> Suppl):<fpage>S199</fpage>–<lpage>S202</lpage>. <object-id pub-id-type="pmid">707373</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref022"><label>22</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>De Vadder</surname> <given-names>F</given-names></name>, <name name-style="western"><surname>Kovatcheva-Datchary</surname> <given-names>P</given-names></name>, <name name-style="western"><surname>Goncalves</surname> <given-names>D</given-names></name>, <name name-style="western"><surname>Vinera</surname> <given-names>J</given-names></name>, <name name-style="western"><surname>Zitoun</surname> <given-names>C</given-names></name>, <name name-style="western"><surname>Duchampt</surname> <given-names>A</given-names></name>, <etal>et al</etal>. <article-title>Microbiota-generated metabolites promote metabolic benefits via gut-brain neural circuits</article-title>. <source>Cell</source>. <year>2014</year>;<volume>156</volume>(<issue>1–2</issue>):<fpage>84</fpage>–<lpage>96</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.cell.2013.12.016" xlink:type="simple">10.1016/j.cell.2013.12.016</ext-link></comment> <object-id pub-id-type="pmid">24412651</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref023"><label>23</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Goff</surname> <given-names>LM</given-names></name>, <name name-style="western"><surname>Bell</surname> <given-names>JD</given-names></name>, <name name-style="western"><surname>So</surname> <given-names>PW</given-names></name>, <name name-style="western"><surname>Dornhorst</surname> <given-names>A</given-names></name>, <name name-style="western"><surname>Frost</surname> <given-names>GS</given-names></name>. <article-title>Veganism and its relationship with insulin resistance and intramyocellular lipid</article-title>. <source>Eur J Clin Nutr</source>. <year>2005</year>;<volume>59</volume>(<issue>2</issue>):<fpage>291</fpage>–<lpage>8</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1038/sj.ejcn.1602076" xlink:type="simple">10.1038/sj.ejcn.1602076</ext-link></comment> <object-id pub-id-type="pmid">15523486</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref024"><label>24</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Lee</surname> <given-names>DH</given-names></name>, <name name-style="western"><surname>Jacobs</surname> <given-names>DR</given-names> <suffix>Jr</suffix></name>, <name name-style="western"><surname>Steffes</surname> <given-names>M</given-names></name>. <article-title>Association of organochlorine pesticides with peripheral neuropathy in patients with diabetes or impaired fasting glucose</article-title>. <source>Diabetes</source>. <year>2008</year>;<volume>57</volume>(<issue>11</issue>):<fpage>3108</fpage>–<lpage>11</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.2337/db08-0668" xlink:type="simple">10.2337/db08-0668</ext-link></comment> <object-id pub-id-type="pmid">18647952</object-id>; PubMed Central PMCID: PMCPMC2570408.</mixed-citation></ref>
+<ref id="pone.0155918.ref025"><label>25</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Lind</surname> <given-names>L</given-names></name>, <name name-style="western"><surname>Lind</surname> <given-names>PM</given-names></name>. <article-title>Can persistent organic pollutants and plastic-associated chemicals cause cardiovascular disease?</article-title> <source>J Intern Med</source>. <year>2012</year>;<volume>271</volume>(<issue>6</issue>):<fpage>537</fpage>–<lpage>53</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1111/j.1365-2796.2012.02536.x" xlink:type="simple">10.1111/j.1365-2796.2012.02536.x</ext-link></comment> <object-id pub-id-type="pmid">22372998</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref026"><label>26</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Lee</surname> <given-names>DH</given-names></name>, <name name-style="western"><surname>Lind</surname> <given-names>PM</given-names></name>, <name name-style="western"><surname>Jacobs</surname> <given-names>DR</given-names> <suffix>Jr</suffix></name>, <name name-style="western"><surname>Salihovic</surname> <given-names>S</given-names></name>, <name name-style="western"><surname>van Bavel</surname> <given-names>B</given-names></name>, <name name-style="western"><surname>Lind</surname> <given-names>L</given-names></name>. <article-title>Background exposure to persistent organic pollutants predicts stroke in the elderly</article-title>. <source>Environ Int</source>. <year>2012</year>;<volume>47</volume>:<fpage>115</fpage>–<lpage>20</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1016/j.envint.2012.06.009" xlink:type="simple">10.1016/j.envint.2012.06.009</ext-link></comment> <object-id pub-id-type="pmid">22809777</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref027"><label>27</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Artinian</surname> <given-names>NT</given-names></name>, <name name-style="western"><surname>Fletcher</surname> <given-names>GF</given-names></name>, <name name-style="western"><surname>Mozaffarian</surname> <given-names>D</given-names></name>, <name name-style="western"><surname>Kris-Etherton</surname> <given-names>P</given-names></name>, <name name-style="western"><surname>Van Horn</surname> <given-names>L</given-names></name>, <name name-style="western"><surname>Lichtenstein</surname> <given-names>AH</given-names></name>, <etal>et al</etal>. <article-title>Interventions to promote physical activity and dietary lifestyle changes for cardiovascular risk factor reduction in adults: a scientific statement from the American Heart Association</article-title>. <source>Circulation</source>. <year>2010</year>;<volume>122</volume>(<issue>4</issue>):<fpage>406</fpage>–<lpage>41</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1161/CIR.0b013e3181e8edf1" xlink:type="simple">10.1161/CIR.0b013e3181e8edf1</ext-link></comment> <object-id pub-id-type="pmid">20625115</object-id>.</mixed-citation></ref>
+<ref id="pone.0155918.ref028"><label>28</label><mixed-citation publication-type="journal" xlink:type="simple"><name name-style="western"><surname>Craig</surname> <given-names>WJ</given-names></name>. <article-title>Health effects of vegan diets</article-title>. <source>Am J Clin Nutr</source>. <year>2009</year>;<volume>89</volume>(<issue>5</issue>):<fpage>1627S</fpage>–<lpage>33S</lpage>. <comment>doi: <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.3945/ajcn.2009.26736N" xlink:type="simple">10.3945/ajcn.2009.26736N</ext-link></comment> <object-id pub-id-type="pmid">19279075</object-id>.</mixed-citation></ref>
+</ref-list>
+</back>
+</article>

@@ -11,7 +11,7 @@ from medrag.ingest.chunker import Chunk
 
 def bootstrap(client, embedder, corpus: Path | None = None, *, collection: str = "medrag_demo") -> int:
     """Upsert a bundled demo corpus into its separately named collection."""
-    if collection not in {"medrag_demo", "medrag_medical_demo"}:
+    if collection not in {"medrag_demo", "medrag_medical_demo", "medrag_conversation_demo"}:
         raise ValueError("Demo indexing is restricted to demonstration collections")
     corpus = corpus or Path(__file__).resolve().parents[2] / "data/demo/corpus.jsonl"
     rows = [json.loads(line) for line in corpus.read_text(encoding="utf-8").splitlines() if line.strip()]

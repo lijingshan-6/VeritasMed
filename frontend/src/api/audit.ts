@@ -1,6 +1,6 @@
 import { api } from './client'
 
-export type Strategy = 'direct' | 'split' | 'context' | 'quote_v2' | 'atomic_v1'
+export type Strategy = 'direct' | 'split' | 'context' | 'quote_v2' | 'atomic_v1' | 'atomic_v2'
 export type Span = { start: number; end: number; text: string }
 export type QuoteBinding = { status: string; match_count: number; span: Span | null; candidates: Span[]; candidates_truncated?: boolean }
 export type Source = { id: string; title: string; text: string }
@@ -15,6 +15,10 @@ export type AuditClaim = {
   normalized_claim?: string
   decomposition_status?: string
   slots?: Record<string, string | null>
+  qualifier_anchors?: { kind: string; quote: string; parent_quote: string; binding: QuoteBinding; parent_binding: QuoteBinding }[]
+  fidelity_diagnostic?: { status: string; flags: string[]; numbers_absent_from_interpretation: string[]; scope: string; overrides_relation: boolean }
+  duplicate_of?: string | null
+  binding_version?: string
   answer_bindings?: QuoteBinding[]
   parent_binding?: QuoteBinding
   evidence_bindings?: (QuoteBinding & { source_id: string; quote: string })[]

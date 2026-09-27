@@ -57,19 +57,6 @@ export async function fetchHealth(): Promise<{ status: string; qdrant: string; l
   return r.data
 }
 
-export function loadRecentThreads(): string[] {
-  try {
-    return JSON.parse(localStorage.getItem('vm_threads') ?? '[]') as string[]
-  } catch { return [] }
-}
-
-export function saveThread(threadId: string): void {
-  try {
-    const existing = loadRecentThreads().filter((t) => t !== threadId)
-    localStorage.setItem('vm_threads', JSON.stringify([threadId, ...existing].slice(0, 20)))
-  } catch { /* ignore */ }
-}
-
 // ── WebSocket URL helper ──────────────────────────────────────────────────
 
 export function wsAskUrl(): string {

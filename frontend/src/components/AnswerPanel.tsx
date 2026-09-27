@@ -1,4 +1,4 @@
-import { isGuidedDemo, isMedicalDemo } from '../demo'
+import { isConversationDemo, isMedicalDemo, isReplayOnly } from '../demo'
 import React from 'react'
 import { makeAuditHandoff } from '../api/auditHandoff'
 import type { AuditHandoff } from '../api/auditHandoff'
@@ -116,7 +116,7 @@ function ToolbarButton({ children, label, onClick }: { children: React.ReactNode
 }
 
 // Evidence coverage describes the retrieved material, not clinical certainty.
-function EvidenceCoverage({ result, onCiteClick }: { result: AnswerOut; onCiteClick: (c: string) => void }) {
+function EvidenceCoverage({ result, onCiteClick, guided }: { result: AnswerOut; onCiteClick: (c: string) => void; guided: boolean }) {
   const setSelectedChunkId = useStore((state) => state.setSelectedChunkId)
   if (!result.evidence_status) return null
   const labels = { complete: 'Evidence covers the question', partial: 'Partially covered', insufficient: 'Insufficient evidence' }
@@ -124,7 +124,7 @@ function EvidenceCoverage({ result, onCiteClick }: { result: AnswerOut; onCiteCl
   return (
     <section aria-label="Evidence coverage" style={{ margin: '0 0 26px', padding: '16px 18px', border: '1px solid var(--rule)', borderRadius: 8, background: 'var(--panel-2)' }}>
       <div className="vm-eyebrow" style={{ color: result.evidence_status === 'complete' ? 'var(--verified)' : 'var(--warn)' }}>
-        {isGuidedDemo ? 'Illustrative coverage · ' : ''}{labels[result.evidence_status]}
+        {guided ? 'Illustrative coverage · ' : ''}{labels[result.evidence_status]}
       </div>
       <p style={{ margin: '8px 0', fontSize: 12, lineHeight: 1.6, color: 'var(--muted)' }}>
         Coverage reflects the retrieved passages and model assessment; it is not a correctness score.
@@ -153,7 +153,7 @@ function EvidenceCoverage({ result, onCiteClick }: { result: AnswerOut; onCiteCl
 }
 
 // ── Verification mark ──────────────────────────────────────────────────────
-function VerificationMark({ result }: { result: AnswerOut }) {
+function VerificationMark({ result, guided }: { result: AnswerOut; guided: boolean }) {
   const ok = result.faithful
   return (
     <div style={{
@@ -180,7 +180,7 @@ function VerificationMark({ result }: { result: AnswerOut }) {
           fontSize: 18, lineHeight: 1.2,
           color: ok ? 'var(--verified)' : 'var(--warn)',
         }}>
-          {isGuidedDemo ? 'Illustrative evidence-check result' : ok ? 'Model evidence check passed' : 'Evidence check did not pass'}
+          {guided ? 'Illustrative evidence-check result' : ok ? 'Model evidence check passed' : 'Evidence check did not pass'}
         </div>
 
         {!ok && result.faithfulness_issues && (
@@ -192,8 +192,8 @@ function VerificationMark({ result }: { result: AnswerOut }) {
         <div style={{ marginTop: 12, display: 'flex', flexWrap: 'wrap', gap: '4px 22px', fontSize: 11, color: 'var(--muted)' }}>
           <Metric label="rewrites"      value={String(result.iterations)} />
           <Metric label="regenerations" value={String(result.regen_count)} />
-          <Metric label="elapsed"       value={isGuidedDemo ? "illustrative" : `${(result.latency_ms / 1000).toFixed(2)}s`} />
-          <Metric label="verifier"      value={isGuidedDemo ? "preset example" : "configured LLM"} />
+          <Metric label="elapsed"       value={guided ? "illustrative" : `${(result.latency_ms / 1000).toFixed(2)}s`} />
+          <Metric label="verifier"      value={guided ? "preset example" : "configured LLM"} />
         </div>
       </div>
     </div>
@@ -342,9 +342,9 @@ function EmptyState({ suggestedQueries, onPickQuery }: {
           color: 'var(--ink-soft)', maxWidth: 480, margin: '0 auto 36px',
           letterSpacing: '-0.005em',
         }}>
-          Ask a standalone literature question. Inspect retrieved passages,
+          Ask a literature question, then follow up. Inspect retrieved passages,
           follow citations to their sources, and review the model’s evidence check.
-          {isMedicalDemo ? 'This demo searches the original GRADE hypoglycemia trial abstract (Seaquist et al., 2024; CC0). It is a single-paper demonstration, not a literature review.' : 'The bundled examples use labelled summaries, not original article text.'}
+          {' '}{isConversationDemo ? 'This demo searches 15 original abstract passages from three papers: GRADE hypoglycemia, a vegan diet trial and an exercise trial. This small collection cannot answer arbitrary medical questions.' : isMedicalDemo ? 'This demo searches the original GRADE hypoglycemia trial abstract (Seaquist et al., 2024; CC0). It is a single-paper demonstration, not a literature review.' : 'The bundled examples use labelled summaries, not original article text.'}
         </p>
 
         <div className="vm-eyebrow" style={{ marginBottom: 12 }}>Try a query</div>
@@ -392,12 +392,16 @@ export function AnswerPanel({
   onCiteClick,
   onPickQuery,
   onAudit,
+  onRegenerate,
+  guided,
 }: {
   query: string
   suggestedQueries: string[]
   onCiteClick: (c: string) => void
   onPickQuery: (q: string) => void
   onAudit: (handoff: AuditHandoff) => void
+  onRegenerate?: () => void
+  guided: boolean
 }) {
   const { result, isStreaming, errorMessage } = useStore()
   const [copyLabel, setCopyLabel] = React.useState('Copy')
@@ -405,13 +409,13 @@ export function AnswerPanel({
   function openAudit() {
     if (!result || isStreaming) return
     try {
-      const handoff = makeAuditHandoff(result, query, isGuidedDemo)
+      const handoff = makeAuditHandoff(result, query, guided)
       onAudit(handoff)
     } catch (e) { setAuditError(e instanceof Error ? e.message : 'Could not transfer this answer.') }
   }
   function downloadAnswer() {
     if (!result) return
-    const text = `${isGuidedDemo ? 'GUIDED DEMO — authored fixed example; no live model.\n\n' : ''}# ${query}\n\n${result.answer}\n\nResearch demonstration; not clinical advice.\n`
+    const text = `${guided ? 'GUIDED DEMO — authored fixed example; no live model.\n\n' : ''}# ${query}\n\n${result.answer}\n\nResearch demonstration; not clinical advice.\n`
     const url = URL.createObjectURL(new Blob([text], { type: 'text/markdown;charset=utf-8' }))
     const link = document.createElement('a')
     link.href = url
@@ -421,6 +425,7 @@ export function AnswerPanel({
   }
 
   if (!result && !isStreaming && !errorMessage) {
+    if (isReplayOnly) return <div className="vm-replay-empty"><h2>Explore a recorded medical conversation</h2><p>Choose one of the saved conversations above. Follow each question, inspect its original sources, and open the attached claim audit.</p><p>These are actual model outputs, including incomplete judgments. Loading them makes no model call.</p></div>
     return <EmptyState suggestedQueries={suggestedQueries} onPickQuery={onPickQuery} />
   }
 
@@ -452,14 +457,14 @@ export function AnswerPanel({
   const paragraphs  = displayText.split(/\n\n+/).filter(Boolean)
 
   return (
-    <div style={{ height: '100%', overflowY: 'auto' }}>
+    <div>
       <div style={{
         maxWidth: 720, margin: '0 auto',
-        padding: 'clamp(28px, 4vw, 56px) clamp(24px, 4vw, 56px) 80px',
+        padding: '28px clamp(24px, 3vw, 44px) 60px',
       }}>
         {/* Question echo */}
         {query && (
-          <div style={{ marginBottom: 36 }} className="vm-fadeup">
+          <div style={{ marginBottom: 24 }} className="vm-fadeup">
             <div className="vm-eyebrow" style={{ marginBottom: 8 }}>Question</div>
             <div style={{
               fontFamily: 'var(--serif)', fontStyle: 'italic',
@@ -479,14 +484,20 @@ export function AnswerPanel({
           }}>
             <span className="vm-eyebrow">Answer</span>
             <span style={{ flex: 1 }} />
-            {!isStreaming && <ToolbarButton label="Audit" onClick={openAudit}><IconCheck size={13} sw={2} /></ToolbarButton>}
+            {!isStreaming && !result.conversation_context?.needs_clarification && <ToolbarButton label="Audit" onClick={openAudit}><IconCheck size={13} sw={2} /></ToolbarButton>}
             <ToolbarButton label={copyLabel} onClick={() => { navigator.clipboard.writeText(result.answer).then(() => setCopyLabel("Copied")).catch(() => setCopyLabel("Copy failed")) }}><IconCopy size={13} sw={2} /></ToolbarButton>
             <ToolbarButton label="Download" onClick={downloadAnswer}><IconBookmark size={13} sw={2} /></ToolbarButton>
-            <ToolbarButton label="Re-run" onClick={() => onPickQuery(query)}><IconRefresh size={13} sw={2} /></ToolbarButton>
+            {onRegenerate && <ToolbarButton label="Re-run" onClick={onRegenerate}><IconRefresh size={13} sw={2} /></ToolbarButton>}
           </div>
         )}
 
         {auditError && <p role="alert" style={{ color: 'var(--error)', fontSize: 13 }}>{auditError}</p>}
+        {result?.conversation_context && <details className="vm-context-details"><summary>{result.conversation_context.needs_clarification ? 'Clarification needed' : 'Question interpretation'} · {result.conversation_context.context_turn_ids.length} prior turns used</summary>
+          <p>{result.conversation_context.resolved_query || result.conversation_context.clarification}</p>
+          <p>Supplied: {result.conversation_context.supplied_turn_ids.length} turns · omitted: {result.conversation_context.omitted_context} · resolver: {(result.conversation_context.elapsed_ms / 1000).toFixed(1)}s</p>
+          <p>Prior answers help interpret the question. This answer requires newly retrieved evidence.</p>
+          <details><summary>Resolution record</summary><pre>{JSON.stringify(result.conversation_context, null, 2)}</pre></details>
+        </details>}
 
         {/* Streaming placeholder */}
         {isStreaming && !displayText && (
@@ -499,7 +510,7 @@ export function AnswerPanel({
           </div>
         )}
 
-        {result && <EvidenceCoverage result={result} onCiteClick={onCiteClick} />}
+        {result && !result.conversation_context?.needs_clarification && <EvidenceCoverage result={result} guided={guided} onCiteClick={onCiteClick} />}
 
         {/* Prose body */}
         <div className="vm-prose">
@@ -515,9 +526,9 @@ export function AnswerPanel({
           {isStreaming && displayText && <StreamingCaret />}
         </div>
 
-        {result && <VerificationMark result={result} />}
+        {result && !result.conversation_context?.needs_clarification && <VerificationMark result={result} guided={guided} />}
         {result && <SourcesStrip result={result} onCiteClick={onCiteClick} />}
-        {result && <FollowUps items={suggestedQueries} onPick={onPickQuery} />}
+        {result && suggestedQueries.length > 0 && <FollowUps items={suggestedQueries} onPick={onPickQuery} />}
       </div>
     </div>
   )

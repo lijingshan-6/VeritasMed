@@ -1,4 +1,4 @@
-import { isGuidedDemo, playDemo, cancelDemo } from '../demo'
+import { isGuidedDemo, isReplayOnly, playDemo, cancelDemo } from '../demo'
 import { useCallback } from 'react'
 import { connectStream, cancelStream } from '../api/streamConnection.js'
 import { wsAskUrl } from '../api/client'
@@ -7,6 +7,7 @@ import type { ChunkOut } from '../types'
 import type { AgentEvent, NodeEndData } from '../types/ws'
 
 const NODE_LABELS: Record<string, string> = {
+  resolve_context: 'Interpret follow-up',
   route:          'Route',
   retrieve:       'Retrieve',
   rerank:         'Rerank',
@@ -21,43 +22,31 @@ const NODE_LABELS: Record<string, string> = {
 
 export function useAgentStream() {
   const {
-    threadId,
     query,
-    setActiveQuery,
-    setStreaming,
-    setTimeline,
-    updateNode,
-    pushNode,
-    pushLiveChunk,
-    clearLiveChunks,
-    setResult,
-    setSelectedChunkId,
-    setErrorMessage,
+    begin, patchRequest, finish,
   } = useStore()
 
-  const send = useCallback((overrideQuery?: string) => {
+  const send = useCallback((overrideQuery?: string, regenerate = false) => {
+    if (isReplayOnly) return
     const q = overrideQuery !== undefined ? overrideQuery : query
-
+    const target = begin(q, isGuidedDemo ? 'authored_demo' : 'live', regenerate)
+    if (!target) return
     cancelStream()
     cancelDemo()
-
-    setActiveQuery(q)
-    setTimeline([])
-    clearLiveChunks()
-    setResult(null)
-    setSelectedChunkId(null)
-    setErrorMessage(null)
-    setStreaming(true)
+    const revision = useStore.getState().conversations.find(c => c.id === target.conversationId)!.turns.find(t => t.id === target.turnId)!.revisions.at(-1)!
+    const pushNode = (node) => patchRequest(target, r => ({ ...r, timeline: [...r.timeline, node] }))
+    const updateNode = (name, patch) => patchRequest(target, r => ({ ...r, timeline: r.timeline.map((n, i) =>
+      i === r.timeline.findLastIndex(v => v.name === name && v.status === 'running')
+        ? { ...n, ...patch, elapsed_ms: n.timestamp ? Date.now() - n.timestamp : undefined } : n) }))
 
     if (isGuidedDemo) {
-      playDemo(q, threadId, handleEvent)
+      playDemo(q, target.conversationId, handleEvent)
       return
     }
-    connectStream(wsAskUrl(), { query: q, thread_id: threadId }, {
+    connectStream(wsAskUrl(), { query: q, thread_id: target.conversationId, context: revision.context, omitted_context: revision.omitted_context }, {
       onEvent: handleEvent,
       onError: (message: string) => {
-        setErrorMessage(message)
-        setStreaming(false)
+        void finish(target, undefined, message)
       },
     })
 
@@ -83,6 +72,8 @@ export function useAgentStream() {
         } else if (ev.node === 'rewrite') {
           const nq = d.new_query ?? ''
           summary = nq.slice(0, 60) + (nq.length > 60 ? '…' : '')
+        } else if (ev.node === 'resolve_context') {
+          summary = d.reason === 'follow_up' ? 'Context resolved · fresh evidence required' : d.reason ?? ''
         } else if (ev.node === 'generate') {
           summary = 'answer generated'
         } else if (ev.node === 'check') {
@@ -113,32 +104,28 @@ export function useAgentStream() {
           highlight_ranges: [],
           external_url: d.external_url,
         }
-        pushLiveChunk(chunk)
+        patchRequest(target, r => ({ ...r, liveChunks: [...r.liveChunks, chunk] }))
       }
 
       if (ev.event === 'done') {
-        setResult(ev.data)
-        setStreaming(false)
+        void finish(target, ev.data).catch(() => finish(target, undefined, 'Could not preserve the answer and source fingerprints.'))
       }
 
       if (ev.event === 'error') {
         console.error('Agent error event:', ev.data.message)
-        setErrorMessage(`Server error: ${ev.data.message}`)
-        setStreaming(false)
+        void finish(target, undefined, `Server error: ${ev.data.message}`)
       }
     }
   }, [
-    query, threadId,
-    setActiveQuery, setStreaming, setTimeline, updateNode, pushNode,
-    pushLiveChunk, clearLiveChunks,
-    setResult, setSelectedChunkId, setErrorMessage,
+    query, begin, patchRequest, finish,
   ])
 
   const cancel = useCallback(() => {
     cancelStream()
     cancelDemo()
-    setStreaming(false)
-  }, [setStreaming])
+    const target = useStore.getState().activeRequest
+    if (target) void finish(target, undefined, undefined, true)
+  }, [finish])
 
   return { send, cancel }
 }

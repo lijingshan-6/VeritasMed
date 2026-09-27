@@ -10,13 +10,17 @@ import subprocess
 import sys
 import time
 
+from local_services import wait_for_api
+
 ROOT = Path(__file__).resolve().parent.parent
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--skip-index", action="store_true", help="Reuse an already initialized demo store")
-    parser.add_argument("--medical", action="store_true", help="Use the bundled original GRADE trial abstract")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--medical", action="store_true", help="Use the bundled original GRADE trial abstract")
+    mode.add_argument("--conversations", action="store_true", help="Use three original papers for the v0.8 conversation demo")
     args = parser.parse_args()
     npm = shutil.which("npm.cmd" if os.name == "nt" else "npm")
     if not npm:
@@ -30,18 +34,20 @@ def main() -> None:
     env = os.environ.copy()
     env.update({
         "PYTHONPATH": str(ROOT / "src"),
-        "QDRANT_PATH": str(ROOT / (".demo-runtime/medical-qdrant" if args.medical else ".demo-runtime/qdrant")),
-        "QDRANT_COLLECTION": "medrag_medical_demo" if args.medical else "medrag_demo",
+        "QDRANT_PATH": str(ROOT / (".demo-runtime/conversation-qdrant" if args.conversations else ".demo-runtime/medical-qdrant" if args.medical else ".demo-runtime/qdrant")),
+        "QDRANT_COLLECTION": "medrag_conversation_demo" if args.conversations else "medrag_medical_demo" if args.medical else "medrag_demo",
         "MEDRAG_DATA_DIR": str(ROOT / ".demo-runtime"),
         "PYTHONIOENCODING": "utf-8",
         "PYTHONNOUSERSITE": "1",
         # Same-origin Vite proxy; don't inherit another project's .env.local URL.
         "VITE_API_URL": "",
         "VITE_AUDIT_ONLY": "0",
-        "VITE_MEDICAL_DEMO": "1" if args.medical else "0",
+        "VITE_REPLAY_ONLY": "0",
+        "VITE_CONVERSATION_DEMO": "1" if args.conversations else "0",
+        "VITE_MEDICAL_DEMO": "1" if args.medical or args.conversations else "0",
     })
     if not args.skip_index:
-        command = [sys.executable, "scripts/bootstrap_demo.py"] + (["--medical"] if args.medical else [])
+        command = [sys.executable, "scripts/bootstrap_demo.py"] + (["--conversations"] if args.conversations else ["--medical"] if args.medical else [])
         subprocess.run(command, cwd=ROOT, env=env, check=True)
     if not (ROOT / "frontend/node_modules").is_dir():
         subprocess.run([npm, "ci"], cwd=ROOT / "frontend", env=env, check=True)
@@ -51,6 +57,7 @@ def main() -> None:
             [sys.executable, "-m", "uvicorn", "medrag.api.app:app", "--host", "127.0.0.1", "--port", "8000"],
             cwd=ROOT, env=env,
         ))
+        wait_for_api(children[0], 8000)
         children.append(subprocess.Popen([npm, "run", "dev"], cwd=ROOT / "frontend", env=env))
         print("VeritasMed: http://127.0.0.1:5173 — Ctrl+C stops this demo.", flush=True)
         while all(child.poll() is None for child in children):

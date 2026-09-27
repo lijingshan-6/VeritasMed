@@ -5,7 +5,10 @@ import { inputProblem } from '../api/auditHandoff'
 import type { AuditHandoff } from '../api/auditHandoff'
 import { auditExamples, replayAudit, runAudit } from '../api/audit'
 import type { AuditClaim, AuditInput, AuditRecord, Catalogue, QuoteBinding, Span, Strategy } from '../api/audit'
+import type { SavedAudit } from '../conversation/model'
+import { newId, now, sha256 } from '../conversation/model'
 import './audit.css'
+import { isReplayOnly } from '../demo'
 
 const labels: Record<string, string> = {
   supported: 'Supported', contradicted: 'Contradicted', insufficient: 'Insufficient evidence',
@@ -15,13 +18,24 @@ const labels: Record<string, string> = {
   needs_review: 'Needs review · parsing unresolved',
   not_source_checked: 'Presentation text · not source-checked',
 }
-const methodLabels: Record<Strategy, string> = { direct: 'Direct Flash', split: 'Extract → verify each claim', context: 'Context + meta · experimental', quote_v2: 'Exact quotes v2 · experimental', atomic_v1: 'Atomic facts · experimental' }
+const methodLabels: Record<Strategy, string> = { direct: 'Direct Flash', split: 'Extract → verify each claim', context: 'Context + meta · experimental', quote_v2: 'Exact quotes v2 · experimental', atomic_v1: 'Atomic v1 · historical baseline', atomic_v2: 'Atomic v2 · qualifier anchors · experimental' }
+const qualifierLabels: Record<string, string> = {
+  population: 'Population', group_comparison: 'Group / comparison', outcome: 'Outcome',
+  value_unit: 'Quantity / unit', time_denominator: 'Time / denominator', negation_attribution: 'Negation / attribution',
+}
+const fidelityLabels: Record<string, string> = {
+  unresolved_qualifier_anchor: 'A condition could not be located exactly.',
+  literal_number_absent_from_interpretation: 'An original numeric token is absent from the model interpretation.',
+  no_qualifier_anchors_declared: 'The extractor did not provide original condition anchors.',
+  duplicate_interpretation: 'This interpretation duplicates an earlier parsed fact.',
+}
 function handoffLabel(kind: AuditHandoff['kind']) {
   return kind === 'live_ask' ? 'Actual Ask answer' : kind === 'research_workflow' ? 'Actual controlled research answer' : 'Authored demo · not a real Agent answer'
 }
 function BindingDetail({ binding, label }: { binding: QuoteBinding; label: string }) {
   const description: Record<string, string> = { unique: 'Unique exact passage', ambiguous: 'Repeated passage; no location chosen',
-    not_found: 'Quotation not found exactly', unknown_source: 'Source ID not provided', empty_quote: 'Empty quotation' }
+    not_found: 'Quotation not found exactly', unknown_source: 'Source ID not provided', empty_quote: 'Empty quotation',
+    unresolved_parent: 'Parent passage unresolved; no fallback location chosen' }
   return <div className={`audit-binding ${binding.status === 'unique' ? '' : 'audit-error-text'}`}>
     <strong>{label}: {description[binding.status] ?? binding.status}</strong>
     {binding.match_count > 0 && <span> · {binding.match_count} {binding.match_count === 1 ? 'match' : 'matches'} ({binding.candidates.map(s => `${s.start}–${s.end}`).join(', ')}{binding.candidates_truncated ? ', …' : ''})</span>}
@@ -53,7 +67,7 @@ function LinkedText({ text, spans, selected, onSelect }: {
 
 const emptyInput = (): AuditInput => ({ answer: '', strategy: 'direct', sources: [{ id: 'source-1', title: 'Source 1', text: '' }] })
 
-export function AuditPage({ context, onClose }: { context?: AuditHandoff; onClose?: () => void } = {}) {
+export function AuditPage({ context, onClose, saved = [], onRecord }: { context?: AuditHandoff; onClose?: () => void; saved?: SavedAudit[]; onRecord?: (record: AuditRecord) => Promise<void> } = {}) {
   const location = useLocation()
   const incoming = context ?? (location.state as { handoff?: AuditHandoff } | null)?.handoff
   const embedded = !!context
@@ -61,8 +75,9 @@ export function AuditPage({ context, onClose }: { context?: AuditHandoff; onClos
   const [catalogue, setCatalogue] = useState<Catalogue | null>(null)
   const [example, setExample] = useState('')
   const [strategy, setStrategy] = useState<Strategy>('direct')
-  const [record, setRecord] = useState<AuditRecord | null>(null)
-  const [selected, setSelected] = useState('')
+  const initialSaved = saved.find(r => r.record.audit.strategy === 'direct' && !r.edited) ?? saved[0]
+  const [record, setRecord] = useState<AuditRecord | null>(initialSaved?.record ?? null)
+  const [selected, setSelected] = useState(initialSaved?.record.audit.claims[0]?.id ?? '')
   const [pending, setPending] = useState('')
   const [error, setError] = useState('')
   const [formOpen, setFormOpen] = useState(!!incoming && !embedded)
@@ -97,15 +112,35 @@ export function AuditPage({ context, onClose }: { context?: AuditHandoff; onClos
 
   async function submit(event?: FormEvent) {
     event?.preventDefault()
+    if (isReplayOnly) { setError('Saved replay makes no model calls. Start the full Ask service for a new audit.'); return }
     const problem = inputProblem(draft)
     if (problem) { setError(problem); return }
     setPending('Auditing supplied texts…'); setRecord(null); setError('')
+    const started = performance.now()
+    let returnedRecord: AuditRecord | null = null
     try {
       const value = await runAudit(draft)
+      returnedRecord = value
       if (handoff) value.provenance = { ...value.provenance, handoff,
         input_edited: draft.answer !== handoff.input.answer || JSON.stringify(draft.sources) !== JSON.stringify(handoff.input.sources) }
+      await onRecord?.(value)
       show(value); setFormOpen(false)
-    } catch (e) { setError(message(e)) }
+    } catch (e) {
+      // A transport failure is an attempted run, not a completed verifier judgment.
+      // Preserve its exact input, while making no claim about server completion.
+      if (onRecord && !returnedRecord) {
+        const value: AuditRecord = { input: structuredClone(draft), mode: 'live', provenance: { note: 'Audit response unavailable. Server completion is unknown; no model judgment is inferred.', ...(handoff ? { handoff } : {}) },
+          audit: { id: newId(), status: 'transport_error', created_utc: now(), strategy: draft.strategy,
+            elapsed_seconds: (performance.now() - started) / 1000, claims: [], summary: {}, claims_at_cap: false,
+            answer_sha256: await sha256(draft.answer), source_hashes: Object.fromEntries(await Promise.all(draft.sources.map(async s => [s.id, await sha256(s.text)]))),
+            checked_coverage: { covered_nonspace_characters: 0, total_nonspace_characters: Array.from(draft.answer.replace(/\s/g, '')).length,
+              uncovered: [{ start: 0, end: Array.from(draft.answer).length, text: draft.answer }] },
+            calls: [{ stage: 'audit_transport', status: 'response_unavailable', elapsed_seconds: (performance.now() - started) / 1000, usage: null }] } }
+        try { await onRecord(value); show(value) } catch { /* Keep the explicit failure notice if local persistence also fails. */ }
+      }
+      setError(returnedRecord ? 'The audit returned, but could not be attached to this answer. Export the audit before leaving.' : message(e))
+      if (returnedRecord) { setRecord(returnedRecord); setSelected(returnedRecord.audit.claims[0]?.id ?? '') }
+    }
     finally { setPending('') }
   }
   function selectClaim(id: string, scroll = true) {
@@ -125,7 +160,8 @@ export function AuditPage({ context, onClose }: { context?: AuditHandoff; onClos
   }
   const audit = record?.audit
   const active = audit?.claims.find(c => c.id === selected)
-  const validSpans = [...(audit?.claims.flatMap(c => (c.answer_spans ?? (c.answer_span ? [c.answer_span] : [])).map(s => ({ ...s, claimId: c.id, category: category(c) }))) ?? []),
+  const validSpans = [...(audit?.claims.flatMap(c => [...(c.answer_spans ?? (c.answer_span ? [c.answer_span] : [])),
+    ...(c.qualifier_anchors?.flatMap(q => q.binding.span ? [q.binding.span] : []) ?? [])].map(s => ({ ...s, claimId: c.id, category: category(c) }))) ?? []),
     ...(audit?.meta_text?.flatMap(m => m.answer_span ? [{ ...m.answer_span, claimId: m.id, category: m.status }] : []) ?? [])]
   const models = [...new Set(audit?.calls.flatMap(c => c.transport_metadata?.model_identifiers ?? []) ?? [])]
   const metaFailures = audit?.meta_text?.filter(m => m.status !== 'not_source_checked').length ?? 0
@@ -136,11 +172,12 @@ export function AuditPage({ context, onClose }: { context?: AuditHandoff; onClos
       <div><div className="vm-eyebrow">{embedded ? 'Ask / Audit this answer' : 'VeritasMed / Textual evidence'}</div><h1>{embedded ? 'Review the answer and its evidence.' : 'Inspect the answer. Follow the evidence.'}</h1>
         <p>{embedded ? context.question : 'Every judgment belongs to a passage. Unchecked text remains visible.'}</p></div>
       {embedded ? <button className="audit-button" onClick={onClose}>Back to answer</button>
-        : <button className="audit-button primary" disabled={!!pending} onClick={() => setFormOpen(v => !v)}>{formOpen ? 'Close input' : 'Audit your own answer'}</button>}
+        : <button className="audit-button primary" disabled={!!pending} onClick={() => { if (isReplayOnly && record) setDraft(record.input); setFormOpen(v => !v) }}>{formOpen ? 'Close input' : isReplayOnly ? 'Inspect saved inputs' : 'Audit your own answer'}</button>}
     </div>
     {embedded && <div className="audit-toolbar">
-      <label>Method <select aria-label="Answer audit method" disabled={!!pending} value={draft.strategy} onChange={e => setDraft({ ...draft, strategy: e.target.value as Strategy })}>{Object.entries(methodLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
-      <button className="audit-button primary" disabled={!!pending} onClick={() => void submit()}>{record ? 'Run audit again' : 'Run audit'}</button>
+      {saved.length > 0 && <label>Saved runs <select aria-label="Saved audit run" value={saved.find(r => r.record.audit.id === record?.audit.id)?.id ?? ''} onChange={e => { const run = saved.find(r => r.id === e.target.value); if (run) show(run.record) }}><option value="" disabled>Select run</option>{saved.map((r, i) => <option key={r.id} value={r.id}>{i + 1} · {r.record.audit.strategy} · {r.edited ? 'Edited experiment' : 'Original answer'} · {r.record.audit.status}</option>)}</select></label>}
+      {!isReplayOnly && <label>New run method <select aria-label="Answer audit method" disabled={!!pending} value={draft.strategy} onChange={e => setDraft({ ...draft, strategy: e.target.value as Strategy })}>{Object.entries(methodLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>}
+      <button className="audit-button primary" disabled={!!pending || isReplayOnly} onClick={() => void submit()}>{isReplayOnly ? 'Saved runs only' : record ? 'Run audit again' : 'Run audit'}</button>
       <button className="audit-button" disabled={!!pending} onClick={() => setFormOpen(v => !v)}>{formOpen ? 'Close inputs' : 'Inspect inputs'}</button>
       <span className="audit-muted">{handoffLabel(context.kind)} · {context.input.sources.length} source passages · original answer retained</span>
     </div>}
@@ -176,14 +213,14 @@ export function AuditPage({ context, onClose }: { context?: AuditHandoff; onClos
       <div className="audit-toolbar">
         <button type="button" className="audit-button" disabled={draft.sources.length >= 40 || !!pending} onClick={() => setDraft({ ...draft, sources: [...draft.sources, { id: `source-${Date.now()}`, title: `Source ${draft.sources.length + 1}`, text: '' }] })}>+ Add source</button>
         <label>Method <select aria-label="New audit method" value={draft.strategy} onChange={e => setDraft({ ...draft, strategy: e.target.value as Strategy })}>{Object.entries(methodLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
-        <button className="audit-button primary" disabled={!!pending}>Run new audit</button>
+        <button className="audit-button primary" disabled={!!pending || isReplayOnly}>{isReplayOnly ? 'Saved runs only' : 'Run new audit'}</button>
       </div>
       <p className="audit-muted">Sends these texts to the Flash endpoint configured in your local .env. Split mode makes one extraction call plus a call per claim and can take several minutes. The server does not save this input. Up to 40 sources / 80,000 source characters; no automatic search. Exact quotes v2 binds only unique original passages and exposes repeated or missing quotations. Direct remains the baseline.</p>
     </form>}
     {pending && <div className="audit-pending" role="status"><span className="audit-pulse" />{pending}<span className="audit-muted">The full result appears when the run finishes.</span></div>}
     {record && audit && <>
       <div className="audit-runline">
-        <span className="audit-mode">{record.mode === 'saved' ? 'SAVED INFERENCE' : 'NEW INFERENCE'}</span>
+        <span className="audit-mode">{record.mode === 'saved' || saved.some(r => r.record.audit.id === record.audit.id) ? 'SAVED INFERENCE' : 'NEW INFERENCE'}</span>
         <span>{methodLabels[audit.strategy]}</span>
         <span>{audit.calls.length} {audit.calls.length === 1 ? 'call' : 'calls'} · {audit.elapsed_seconds.toFixed(1)} s recorded</span>
         <span className="audit-muted">{new Date(audit.created_utc).toLocaleString()}</span>
@@ -192,13 +229,13 @@ export function AuditPage({ context, onClose }: { context?: AuditHandoff; onClos
       <p className="audit-muted">{record.provenance.note}</p>
       {record.provenance.paper && /^https?:\/\//i.test(record.provenance.paper) && <p><a href={record.provenance.paper} target="_blank" rel="noreferrer">Open original paper ↗</a></p>}
       {audit.supplemental_checkers && <div className="audit-notice">Separate local checker: {audit.supplemental_checkers.judgments}/{audit.supplemental_checkers.attempts} standalone fact checks completed in {audit.supplemental_checkers.elapsed_seconds.toFixed(1)} s, in addition to the recorded Flash calls. Disagreements remain visible; no vote or combined confidence score is applied.</div>}
-      {record.provenance.handoff && <div className="audit-notice"><strong>{handoffLabel(record.provenance.handoff.kind)}</strong> · {record.provenance.input_edited ? 'Inputs edited after transfer; originals retained in export.' : 'Original answer and source passages preserved.'}<p>{record.provenance.handoff.question}</p></div>}
+      {record.provenance.handoff && (!embedded || record.provenance.input_edited) && <div className="audit-notice"><strong>{handoffLabel(record.provenance.handoff.kind)}</strong> · {record.provenance.input_edited ? 'Inputs edited after transfer; originals retained in export.' : 'Original answer and source passages preserved.'}<p>{record.provenance.handoff.question}</p></div>}
       <div className="audit-layout">
         <section className="audit-answer-column">
           <div className="vm-eyebrow">Original answer · click an underlined passage</div>
-          <div className="audit-answer-text"><LinkedText text={record.input.answer} spans={validSpans} selected={selected} onSelect={selectClaim} /></div>
+          <div className="audit-answer-text" id="audit-original-answer"><LinkedText text={record.input.answer} spans={validSpans} selected={selected} onSelect={selectClaim} /></div>
           <div className="audit-summary">
-            {audit.strategy === 'atomic_v1' && <p><strong>{audit.parent_count ?? 0} original passages → {audit.claims.length} parsed facts.</strong> These are model interpretations. All parsed facts passing does not establish that every assertion was extracted. {audit.extraction?.completeness_note}</p>}
+            {audit.strategy.startsWith('atomic_') && <p><strong>{audit.parent_count ?? 0} original passages → {audit.claims.length} parsed facts.</strong> These are model interpretations. All parsed facts passing does not establish that every assertion was extracted. {audit.extraction?.completeness_note}</p>}
             <div className="audit-summary-counts">{(['supported', 'contradicted', 'insufficient'] as const).map(k => <span key={k} className={k}><b>{audit.summary[k] ?? 0}</b> {labels[k]}</span>)}{!!audit.summary.needs_review && <span><b>{audit.summary.needs_review}</b> parsing needs review</span>}<span><b>{(audit.summary.failed_or_unchecked ?? 0) - (audit.summary.needs_review ?? 0)}</b> failed / unchecked claims</span>{metaFailures > 0 && <span className="audit-error-text"><b>{metaFailures}</b> invalid presentation ranges</span>}</div>
             <p>{audit.checked_coverage.covered_nonspace_characters} / {audit.checked_coverage.total_nonspace_characters} non-space answer characters received a validly anchored judgment. Text coverage does not measure correctness or completeness of meaning.</p>
             <p>Run: <strong>{audit.status}</strong>{audit.claims_at_cap ? ' · Claim limit reached; additional assertions may be omitted.' : ''}. These are model judgments about the supplied texts, not confidence scores or clinical evidence grades.</p>
@@ -210,9 +247,25 @@ export function AuditPage({ context, onClose }: { context?: AuditHandoff; onClos
               <span className="audit-claim-number">{String(index + 1).padStart(2, '0')}</span><span><span className="audit-claim-quote">{claim.normalized_claim ?? claim.quote}</span>{claim.normalized_claim && <small className="audit-muted">Model-parsed fact · {claim.parent_claim_id}</small>}<span className={`audit-verdict ${category(claim)}`}>{labels[category(claim)] ?? claim.status}</span>{claim.checker_disagreement && <span className="audit-verdict insufficient">Checkers disagree</span>}</span><span aria-hidden="true">{selected === claim.id ? '−' : '+'}</span>
             </button>
             {selected === claim.id && <div className="audit-claim-body"><p>{claim.explanation || 'No usable judgment was returned.'}</p>
+              {claim.fidelity_diagnostic && <div className="audit-notice">
+                <strong>Model relation: {claim.relation ? labels[claim.relation] : 'Not judged'}</strong>
+                <p>{claim.fidelity_diagnostic.flags.length ? 'Extraction needs review; this fact is not counted as a completed check.' : 'No mechanical extraction issue detected. Meaning and completeness are not guaranteed.'}</p>
+                {claim.fidelity_diagnostic.flags.map(flag => <p key={flag}>{fidelityLabels[flag] ?? flag}</p>)}
+                {!!claim.fidelity_diagnostic.numbers_absent_from_interpretation.length && <p>Original numeric tokens: {claim.fidelity_diagnostic.numbers_absent_from_interpretation.join(', ')}. A wording change or conversion can also trigger this check.</p>}
+                {claim.duplicate_of && <p>Duplicate interpretation of {claim.duplicate_of}; not independent support.</p>}
+              </div>}
               {claim.checker_disagreement && <div className="audit-notice">Checkers disagree on support. This is a reason to inspect the original text, not an automatic contradiction or a calibrated risk estimate. The original Flash judgment is retained.</div>}
               {claim.answer_spans && <details className="audit-context" open><summary>Original answer fragments · unchanged text</summary>{claim.answer_spans.map((s, i) => <blockquote key={i}>{s.text}<small> · {s.start}–{s.end}</small></blockquote>)}</details>}
               {claim.slots && <details className="audit-context"><summary>Explicit qualifications · model parsing</summary><dl>{Object.entries(claim.slots).map(([name, value]) => <div key={name}><dt>{name}</dt><dd>{value ?? 'Not explicitly extracted'}</dd></div>)}</dl><p>Parsing status: {claim.decomposition_status}. Recording population or conditions is not a clinical evidence grade.</p></details>}
+              {claim.qualifier_anchors && <details className="audit-context" open><summary>Conditions in the original answer · {claim.qualifier_anchors.length} anchors</summary>
+                {claim.qualifier_anchors.map((q, i) => <div key={i} className="audit-qualifier">
+                  <strong>{qualifierLabels[q.kind] ?? q.kind}</strong><blockquote>{q.quote}</blockquote>
+                  <BindingDetail binding={q.binding} label="Original condition" />
+                  {q.binding.span && <button className="audit-button" onClick={() => document.querySelector('#audit-original-answer [data-span-start="' + q.binding.span!.start + '"]')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}>Locate in answer · {q.binding.span.start}–{q.binding.span.end}</button>}
+                  <details><summary>Original context for this condition</summary><blockquote>{q.parent_quote}</blockquote><BindingDetail binding={q.parent_binding} label="Context" /></details>
+                </div>)}
+                <p>These are exact answer quotes selected by the extractor. Their existence does not establish that every required condition was selected or interpreted correctly.</p>
+              </details>}
               {claim.answer_bindings && <details className="audit-context" open={claim.status === 'invalid_reference'}><summary>Fragment and evidence locations</summary>{claim.parent_binding && <BindingDetail binding={claim.parent_binding} label="Parent answer passage" />}{claim.answer_bindings.map((b, i) => <BindingDetail key={i} binding={b} label={`Answer fragment ${i + 1}`} />)}{claim.evidence_bindings?.map((b, i) => <BindingDetail key={i} binding={b} label={`Source ${b.source_id}`} />)}</details>}
               {claim.numeric_diagnostic && claim.numeric_diagnostic.status !== 'not_applicable' && <details className="audit-context"><summary>Numeric diagnostic · {claim.numeric_diagnostic.status}</summary><p>{claim.numeric_diagnostic.reason ?? claim.numeric_diagnostic.scope} This does not override the judgment.</p></details>}
               {claim.checker_results && <details className="audit-context"><summary>Recorded checker outputs</summary><pre className="audit-checker-json">{JSON.stringify(claim.checker_results, null, 2)}</pre><p>Raw scores and model agreement are not probabilities of truth.</p></details>}
@@ -237,7 +290,7 @@ export function AuditPage({ context, onClose }: { context?: AuditHandoff; onClos
           <div className="audit-section-title"><h2>Provided sources</h2><span className="audit-muted">{record.input.sources.length} {record.input.sources.length === 1 ? 'text' : 'texts'}</span></div>
           <p className="audit-muted">Highlights follow claim {active ? audit.claims.indexOf(active) + 1 : '—'}. Click a marked source passage to select its claim. A reference proves text location, not semantic correctness.</p>
           {record.input.sources.map(source => {
-            const refs = audit.claims.flatMap(c => c.status === 'ok' ? c.evidence.filter(r => r.source_id === source.id).map(r => ({ ...r, claimId: c.id, category: category(c) })) : [])
+            const refs = audit.claims.flatMap(c => c.evidence.filter(r => r.source_id === source.id).map(r => ({ ...r, claimId: c.id, category: category(c) })))
             const origin = record.provenance.handoff?.source_map.find(s => s.id === source.id)
             return <article className="audit-source" id={`audit-source-${source.id}`} key={source.id}>
               <header><span className="vm-eyebrow">{source.id} / supplied text</span><h3>{source.title}</h3></header>
@@ -250,7 +303,7 @@ export function AuditPage({ context, onClose }: { context?: AuditHandoff; onClos
       </div>
     </>}
     {embedded && !record && !formOpen && <>
-      {!pending && <p className="audit-muted">Run audit to check this answer against its retrieved passages. Opening this view makes no model call. You can return to the answer or continue asking below.</p>}
+      {!pending && <p className="audit-muted">{isReplayOnly ? 'No audit is saved for this answer. Replay does not create a judgment. Return to the answer to inspect its recorded sources.' : 'Run audit to check this answer against its retrieved passages. Opening this view makes no model call. You can return to the answer or continue asking below.'}</p>}
       <div className="audit-layout"><section className="audit-answer-column"><div className="vm-eyebrow">Answer to audit · not yet checked</div><div className="audit-answer-text">{draft.answer}</div></section>
         <aside className="audit-sources-column"><h2>Answer sources</h2>{draft.sources.map(source => <article className="audit-source" key={source.id}><h3>{source.title}</h3><div className="audit-source-text">{source.text}</div></article>)}</aside></div>
     </>}

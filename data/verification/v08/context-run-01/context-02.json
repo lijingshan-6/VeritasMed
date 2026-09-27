@@ -1,0 +1,58 @@
+{
+  "id": "context-02",
+  "result": {
+    "original_query": "它的随访时间是多少？",
+    "resolved_query": "它的随访时间是多少？\n\nReference context for interpreting this question (not evidence):\nGRADE 试验（t1 中所讨论的低血糖报告对应的研究）",
+    "supplied_turn_ids": [
+      "t1"
+    ],
+    "context_turn_ids": [
+      "t1"
+    ],
+    "referent_entities": [
+      "GRADE 试验"
+    ],
+    "needs_clarification": false,
+    "clarification": "",
+    "omitted_context": 0,
+    "elapsed_ms": 7637.6,
+    "model": "deepseek-v4.1-flash",
+    "usage": {
+      "completion_tokens": 328,
+      "prompt_tokens": 413,
+      "total_tokens": 741,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "audio_tokens": 0,
+        "reasoning_tokens": 271,
+        "rejected_prediction_tokens": 0,
+        "cached_tokens": 0
+      },
+      "prompt_tokens_details": {
+        "audio_tokens": 0,
+        "cache_write_tokens": null,
+        "cached_tokens": 0,
+        "accepted_prediction_tokens": 0,
+        "reasoning_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cached_tokens": 0,
+      "completion_thinking_tokens": 271,
+      "credit": 0,
+      "prompt_cache_hit_tokens": 0,
+      "prompt_cache_miss_tokens": 413,
+      "prompt_cache_write_tokens": 0
+    },
+    "status": "follow_up",
+    "raw_output": "{\"mode\": \"follow_up\", \"reference_context\": \"GRADE 试验（t1 中所讨论的低血糖报告对应的研究）\", \"context_turn_ids\": [\"t1\"], \"referent_entities\": [\"GRADE 试验\"], \"clarification\": \"\"}"
+  },
+  "checks": {
+    "mode": true,
+    "exact_question": true,
+    "referent": true,
+    "scope": true
+  },
+  "passed": true
+}

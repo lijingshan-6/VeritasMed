@@ -1,5 +1,7 @@
 # MCP：已经实现的控制与边界
 
+[English](en/mcp_security.md) | **简体中文**
+
 按 v0.8 里程碑整理后的源码说明。**authentication、rate limiting、audit logging 都在仓库中，
 但只用于 MCP 工具，不自动保护网页 FastAPI。** 这是本地研究工具，不是公共多用户服务。
 早期“5 层安全 / 合规”描述已由本页替代；旧测试报告仅留作历史。

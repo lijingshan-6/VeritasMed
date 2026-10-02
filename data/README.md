@@ -1,5 +1,7 @@
 # 数据、实验与历史工件目录
 
+[English](../docs/en/data-catalogue.md) | **简体中文**
+
 这里混合了不同年代、不同标签来源的材料。目录名中的 `golden` 不代表专家真值，
 `final` 也不代表今天仍未曝光。先读 [研究总览](../docs/research-overview.md)，再进入相应原始记录。
 

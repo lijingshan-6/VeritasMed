@@ -1,5 +1,7 @@
 # 真实医学论文：Ask → Audit
 
+[English](en/medical-demo.md) | **简体中文**
+
 v0.8 的三篇原文、三组各三轮真实对话见[对话指南](conversation-guide.md)。本页保留较早的单篇演示。
 
 本例使用 Seaquist 等（2024）报告的 GRADE 低血糖结局，展示检索、实际回答、逐条审计、
@@ -17,7 +19,7 @@ v0.8 的三篇原文、三组各三轮真实对话见[对话指南](conversation
 
 ## 无密钥观看实际记录
 
-按 [README](../README.md#start-with-ask-real-recorded-conversations-no-key) 安装轻量环境，运行：
+按 [README](../README.zh-CN.md) 安装轻量环境，运行：
 
 ```sh
 python scripts/run_audit_demo.py

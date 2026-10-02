@@ -1,6 +1,8 @@
 # 启动、模型配置与排错
 
-当前产品主入口是 Ask。首次安装按 [README](../README.md)，对话操作按
+[English](en/configuration.md) | **简体中文**
+
+当前产品主入口是 Ask。首次安装按 [README](../README.zh-CN.md)，对话操作按
 [对话指南](conversation-guide.md)。本页合并旧 `PORTS.md` 和 `demo.md` 中仍有效的配置。
 
 ## 选择一种启动方式

@@ -1,7 +1,9 @@
 # 脚本入口：演示、复现与历史开发
 
+[English](../docs/en/script-catalogue.md) | **简体中文**
+
 从仓库根目录运行。普通使用只需要下表第一组，不必顺次运行全部编号脚本。
-环境安装见 [项目 README](../README.md)。
+环境安装见 [项目 README](../README.zh-CN.md)。
 
 ## 当前使用
 
@@ -15,6 +17,10 @@
 | `bootstrap_demo.py` | 建立隔离的嵌入式 Qdrant 演示库 | 本地嵌入模型 |
 | `record_conversation_demo.py` | 记录新的真实 Ask + 审计；先读协议、使用独立 run-dir | **是，付费** |
 | `export_openapi.py` | REST 类型源；随后运行前端 `generate-types` | 否 |
+| `python scripts/render_system_docs.py` | 标准库生成中英文节点图、内部逻辑卡和真实执行图；读取源码及旧 WS | 否 |
+| `render_showcase.py` | 重建展示图解与四张研究图；可选 matplotlib | 否 |
+| `record_showcase.mjs` | Playwright CLI 复录 GRADE 保存会话；用法见图解指南 | 否 |
+| `render_showcase_media.py` | 将真实录屏转为 MP4/GIF，打包未修改截图；可选 imageio-ffmpeg | 否 |
 
 会话打包在 `frontend/scripts/package-conversation-demo.mjs`，读取既存原始记录。
 它要求所有计划审计文件存在后才写导出，不能把文件缺失当成成功跳过。

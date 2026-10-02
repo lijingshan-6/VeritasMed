@@ -1,24 +1,23 @@
-# Reproduce the audit and workflow research
+# 复现审计与工作流研究
 
-UI replay needs only the main README's lightweight setup. Research inference is optional,
-uses the configured Flash account, and can make hundreds of paid calls. There is no Pro fallback.
-Use the published raw results first; re-running an exposed evaluation is a repeat, not a new test.
+[English](en/research-reproduction.md) | **简体中文**
 
-## Restore source inputs
+界面回放只需 README 的轻量安装。研究推理是可选操作，使用所配置 Flash 账户，可能产生数百次
+付费调用，没有 Pro 回退。先查看发布的原始结果；重跑已曝光评估只能叫重复，不是新测试。
 
-From the repository root, using the lightweight Python environment:
+## 恢复来源输入
+
+在仓库根目录使用轻量 Python 环境：
 
 ```sh
 python scripts/verification/prepare_scifact.py
 python scripts/verification/answer_benchmark.py download
 ```
 
-These download pinned upstream data into `.benchmark-runtime`, verify the pinned input,
-and leave the published experiment records intact. The original old medical corpus is not
-needed to use frozen v0.6/v0.7 partitions. `v06_prepare.py` rebuilds the historical exposure
-inventory and requires that old local corpus; it is not a fresh-clone startup requirement.
+下载固定上游数据到 `.benchmark-runtime`，核对输入，保留发布记录。使用冻结 v0.6/v0.7 分区
+不需要旧医学大语料；`v06_prepare.py` 重建历史暴露盘点才需要旧本地语料，不是新克隆的启动前提。
 
-## Recompute saved results without model calls
+## 无模型调用重算保存结果
 
 ```sh
 python scripts/verification/v06_report.py pilot
@@ -34,8 +33,7 @@ python scripts/verification/v07_cases.py
 python scripts/verification/v07_export.py export
 ```
 
-Calibration uses NumPy/scikit-learn in the [separate research environment](minicheck-research.md).
-Once its dependencies are installed, these commands also make no model calls:
+校准需要 [独立研究环境](minicheck-research.md) 的 NumPy/scikit-learn。安装后以下命令也不调用模型：
 
 ```sh
 python scripts/verification/v06_report.py calibrate
@@ -44,32 +42,26 @@ python scripts/verification/v07_figures.py
 python scripts/verification/v07_release_reports.py
 ```
 
-Labels and raw outputs are not overwritten. Metric JSON files are deterministic derivatives.
-Published runs can include failures; inspect all planned denominators, not only successful calls.
-Natural-answer matching measures error-span localization; it is not full semantic accuracy.
-`v06_medical_review.py` reproduces a separately labelled post-hoc sensitivity view for the
-documented source-view issue. It does not edit the frozen labels or replace primary scores.
+标签和原始输出不覆盖，指标 JSON 是确定性派生物。发布运行包含失败，应看完整计划分母，
+不只成功项。自然回答匹配测标错范围定位，不是完整语义准确率。`v06_medical_review.py` 重现
+单列的事后来源视图敏感性分析，不修改冻结标签或替代主要分数。
 
-## v0.8 offline development results
+## v0.8 离线开发结果
 
-After restoring the pinned datasets above, replay the saved Atomic extractions with no model calls:
+恢复上述固定数据后，无模型调用重放旧 Atomic：
 
 ~~~sh
 python scripts/verification/v08_rebind.py --output output/v08-r1-replay
 ~~~
 
-This produces all old/new bindings and a table of recovered/unresolved positions. It includes
-the three distinct GRADE demo audits, with repeats and ablations reported separately.
-It does not change old judgments or count recovered positions as checked facts.
-See the [localization report](reports/verification-v0.8-localization.md).
+输出全部新旧绑定、恢复/未解决表，包括三个不同 GRADE 审计；重复与消融分列。不改旧判断，
+不将恢复位置算作已检查事实。见 [定位报告](reports/verification-v0.8-localization.md)。
+[来源盘点](reports/verification-v0.8-exposure.md)另需旧本地医学语料；新克隆可读快照，
+无需重建盘点即可运行应用与定位重放。
 
-The separate [source inventory](reports/verification-v0.8-exposure.md) requires the old local medical
-corpora as well as the pinned datasets. Fresh clones can inspect its saved snapshots;
-rebuilding that local inventory is not required to run the app or the localization replay.
+## 单独记录的付费重复
 
-## A separately recorded paid repeat
-
-Create a new ignored output directory, retaining the original results:
+使用新忽略输出目录，保留原结果：
 
 ```sh
 python scripts/verification/v06_fixed.py prepare --split pilot --method flash --run-dir .benchmark-runtime/my-fixed-repeat
@@ -82,47 +74,32 @@ python scripts/verification/v07_benchmark.py prepare --split development --run-d
 python scripts/verification/v07_benchmark.py run --split development --run-dir .benchmark-runtime/my-workflow-repeat
 ```
 
-Each run has a frozen schedule and input/source hashes. Resuming skips existing attempts;
-failed outputs remain failures rather than being silently retried. Provider access/balance/rate
-errors stop new batches. Repeating failed cases requires a separately identified experiment.
-Do not run several API runners simultaneously: each uses up to three requests internally.
-Later milestone stages use a bounded continuous queue: jobs launch in frozen order when a
-slot is free and are saved on completion. Earlier attempts used groups of three with a barrier;
-the `dispatch` field records the new policy. This changes waiting time, not inference settings
-or case selection. Already in-flight results are retained if a provider block stops dispatch.
+每次有冻结排程与输入/来源指纹。续跑跳过既有尝试，失败不静默重试；权限、余额或限流错误
+停止新批次。重试失败题需另标实验。多个 API runner 不要同时运行，每个内部最多三请求。
+后期使用有界连续队列：空槽按冻结顺序启动、完成即保存；早期为三请求带 barrier 的批次。
+`dispatch` 记录新策略，只改变等待，不改推理配置或选题。阻断后保留在途结果。
 
-## Reading the source snapshots
+## 如何读源码快照
 
-`data/verification/v06/frozen-source.json` preserves exact inference code used when protocols
-were prepared. Release formatting was accepted only where Python ASTs were identical, including
-prompt string values. Runners map format-equivalent code to that original fingerprint; actual
-behavior/prompt changes fail the frozen-protocol comparison. Published runtime versions are in
-`environment-flash.json` and `environment-minicheck.json`.
+`data/verification/v06/frozen-source.json` 保存准备协议时的精确推理源码。发布格式整理仅在
+Python AST（包括提示字符串）相同时接受；格式等价映射回原指纹，行为/提示改变会使冻结对照失败。
+环境版本见 `environment-flash.json` 和 `environment-minicheck.json`。
 
-The workflow comparator required a development-only protocol correction before final inference:
-its finish instructions conflicted, and some received replies mixed JSON with DSML. All 60 first
-development records remain in `v07/development-original`. A complete second round uses explicit
-finish instructions and recorded format normalization; no final question was used to repair it.
-`v07/frozen-source-v2.json` preserves that exact revised source. A DSML suffix is retained in the
-raw reply but never executed, included in model history, or treated as source evidence. Complete
-bare answer objects may be wrapped as finish; read/citation validation and budgets still apply.
+工作流比较最终推理前只修订开发协议：finish 指令矛盾，部分回复混合 JSON/DSML。
+首轮 60 条全保留于 `v07/development-original`；第二轮完整使用明确 finish 与记录的格式规范化，
+不借最终题修协议。`v07/frozen-source-v2.json` 保存修订源码。DSML 后缀仅留原回复，不执行、
+不进入模型历史、不当来源证据。完整裸 answer 对象可包装成 finish，read/引用校验和预算仍适用。
 
-Raw JSONL records use actual file newlines. Unicode paragraph/line separators inside JSON
-strings are preserved by the reader; they must not be treated as record boundaries.
+JSONL 用实际文件换行划分；JSON 字符串里的 Unicode 段落/行分隔符保留，不能当记录边界。
+`run_v06_v07.py` 是原实验排程的付费续跑器，需已完成医学开发与供应商配置，**不是**无密钥报告命令。
+正确离线入口在上方。
 
-The optional `run_v06_v07.py` dispatcher was used to continue the original experiment schedule.
-It requires a completed medical development run and provider configuration; it is **not** a
-no-key report command. The offline commands above are the appropriate reproduction entry.
+v0.7 是受限研究流程与自主对照共享工具，不运行完整 Ask 的稠密/稀疏检索、改写及修复。
+语料、指定论文任务、调用预算和这个限制是协议的一部分，不由好成绩反推。
 
-The v0.7 comparison uses a bounded research workflow sharing tools with its autonomous comparator.
-It does not run the historical Ask graph with dense/sparse retrieval, rewrite and answer repair.
-The corpus, named-paper task, model-call budgets and this limitation are part of the protocol,
-not conclusions inferred from a good score.
+## v0.8 保存会话与限定语诊断
 
-
-## v0.8 saved conversations and qualifier diagnostics
-
-The following commands make no model calls:
+以下不调用模型：
 
 ```sh
 python scripts/prepare_conversation_demo.py
@@ -130,32 +107,27 @@ node --experimental-strip-types frontend/scripts/package-conversation-demo.mjs
 python scripts/verification/v08_r2_report.py --markdown docs/reports/verification-v0.8-report.md
 ```
 
-The first rebuilds the 15 original abstract passages from attributed snapshots. The second
-packages unchanged saved Ask and audit responses using the browser's own export/import
-contract, requiring every protocol-scheduled audit before replacing exports. The third
-recomputes each R2 metric from saved judgments and checks unique scheduled jobs, source/input
-fingerprints and the frozen metric definition. Cached metrics must agree; missing attempts
-stay incomplete and duplicate rows cannot fill their place. Intervals
-resample source groups with all four variants together. Natural answers, artificial errors,
-mechanical anchors and semantic development observations are separate.
+生成器输出中文主报告，不会自动更新英文翻译。维护发布报告时，重算后同步对应英文页与
+语言切换链接，两版使用同一份保存的表格和计数。
 
-`python scripts/run_showcase.py` opens the no-key conversation replay. The raw nine-question
-protocol, WebSocket streams and returned audits are in `data/demo/conversations/`.
+第一条从有归属快照重建 15 段摘要；第二条用浏览器自身导入/导出合同打包未经修改的 Ask/审计，
+要求全部协议审计存在后才替换导出；第三条从保存判断重算指标，核对唯一任务、来源/输入指纹与
+冻结指标定义。缓存须一致，缺尝试仍不完整，重复不能补缺。区间按来源组连四个变体一起抽样。
+自然回答、人工错误、机械锚点和语义开发观察分列。
 
-**Paid inference:** `scripts/record_conversation_demo.py` calls the running full Ask service;
-`v08_r2_run.py run` calls Flash. Do not invoke them just to inspect a release. Their default
-locations resume only unattempted jobs, so a deliberate independent run needs a separately
-identified output directory and unchanged inputs/protocol. Do not overwrite historical failures
-or replace the frozen final results. Run phases serially; maximum API concurrency is three.
-R3 remains deferred because the unused public-label pool does not support a new semantic
-comparison. Reusing exposed historical final cases is a regression exercise, not a new test.
+`python scripts/run_showcase.py` 打开无密钥会话回放。九题协议、WS 流和审计在
+`data/demo/conversations/`。
 
-For a read-only comparison with the published v0.8 derivatives, write new output files:
+**付费推理：**`scripts/record_conversation_demo.py` 调完整 Ask，`v08_r2_run.py run` 调 Flash。
+不要仅为看发布版运行它们。默认目录仅续未尝试项，独立重复需另标输出目录与不变的输入/协议。
+不覆盖旧失败或冻结最终结果。各阶段顺次运行，最大 API 并发三。
+R3 因未用公开标签不足暂缓；重用旧最终题只能做回归，不是新测试。
+
+与发布派生物只读比较时写新文件：
 
 ```sh
 python scripts/verification/v08_r2_report.py --output output/v08-summary.json --markdown output/v08-report.md
 ```
 
-The temporary Markdown retains links relative to `docs/reports/`; read the maintained report there.
-This recomputation can establish consistency with saved inputs, not correctness of the original
-model judgments or labels. [Research interpretation](research-overview.md) · [Artifact catalogue](../data/README.md).
+临时 Markdown 仍使用 `docs/reports/` 相对链接，应在维护的报告位置阅读。重算只证明与保存输入
+一致，不证明原判断/标签正确。[研究解释](research-overview.md) · [工件目录](../data/README.md)。

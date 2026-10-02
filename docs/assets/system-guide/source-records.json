@@ -1,0 +1,304 @@
+{
+  "scope": "Current source structure; not a reconstruction of historical intermediate state",
+  "nodes": [
+    {
+      "id": "route",
+      "symbol": "route_query",
+      "source": {
+        "path": "src/medrag/agent/nodes/planning.py",
+        "line": 121
+      }
+    },
+    {
+      "id": "retrieve",
+      "symbol": "hybrid_retrieve",
+      "source": {
+        "path": "src/medrag/agent/nodes/retrieval.py",
+        "line": 71
+      }
+    },
+    {
+      "id": "rerank",
+      "symbol": "rerank_chunks",
+      "source": {
+        "path": "src/medrag/agent/nodes/retrieval.py",
+        "line": 137
+      }
+    },
+    {
+      "id": "grade",
+      "symbol": "grade_relevance",
+      "source": {
+        "path": "src/medrag/agent/nodes/grading.py",
+        "line": 18
+      }
+    },
+    {
+      "id": "rewrite",
+      "symbol": "rewrite_query",
+      "source": {
+        "path": "src/medrag/agent/nodes/planning.py",
+        "line": 189
+      }
+    },
+    {
+      "id": "generate",
+      "symbol": "generate_answer_node",
+      "source": {
+        "path": "src/medrag/agent/nodes/generation.py",
+        "line": 17
+      }
+    },
+    {
+      "id": "check",
+      "symbol": "check_faithfulness",
+      "source": {
+        "path": "src/medrag/agent/nodes/checking.py",
+        "line": 37
+      }
+    },
+    {
+      "id": "inc_regen",
+      "symbol": "increment_regen",
+      "source": {
+        "path": "src/medrag/agent/nodes/checking.py",
+        "line": 191
+      }
+    },
+    {
+      "id": "append_history",
+      "symbol": "append_history",
+      "source": {
+        "path": "src/medrag/agent/nodes/memory.py",
+        "line": 15
+      }
+    },
+    {
+      "id": "summarize_gate",
+      "symbol": "lambda",
+      "source": {
+        "path": "src/medrag/agent/graph.py",
+        "line": 155
+      }
+    },
+    {
+      "id": "summarize",
+      "symbol": "summarize_history",
+      "source": {
+        "path": "src/medrag/agent/nodes/memory.py",
+        "line": 27
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "__start__",
+      "to": "route"
+    },
+    {
+      "from": "route",
+      "to": "retrieve"
+    },
+    {
+      "from": "retrieve",
+      "to": "rerank"
+    },
+    {
+      "from": "rerank",
+      "to": "grade"
+    },
+    {
+      "from": "grade",
+      "to": "generate",
+      "predicate": "_after_grade",
+      "branch": "generate"
+    },
+    {
+      "from": "grade",
+      "to": "rewrite",
+      "predicate": "_after_grade",
+      "branch": "rewrite"
+    },
+    {
+      "from": "rewrite",
+      "to": "retrieve"
+    },
+    {
+      "from": "generate",
+      "to": "check"
+    },
+    {
+      "from": "check",
+      "to": "append_history",
+      "predicate": "_after_check",
+      "branch": "end"
+    },
+    {
+      "from": "check",
+      "to": "inc_regen",
+      "predicate": "_after_check",
+      "branch": "regenerate"
+    },
+    {
+      "from": "inc_regen",
+      "to": "generate"
+    },
+    {
+      "from": "append_history",
+      "to": "summarize_gate"
+    },
+    {
+      "from": "summarize_gate",
+      "to": "summarize",
+      "predicate": "_maybe_summarize",
+      "branch": "summarize"
+    },
+    {
+      "from": "summarize_gate",
+      "to": "__end__",
+      "predicate": "_maybe_summarize",
+      "branch": "end"
+    },
+    {
+      "from": "summarize",
+      "to": "__end__"
+    }
+  ],
+  "budgets": {
+    "MAX_REWRITES": 2,
+    "MAX_REGEN": 2,
+    "TOP_K": 5,
+    "PER_QUERY_K": 12,
+    "HISTORY_SUMMARIZE_EVERY": 10
+  },
+  "thresholds": {
+    "factual": 0.6,
+    "synthesis": 0.75,
+    "multihop": 0.8
+  },
+  "default_threshold": 0.75,
+  "state_fields": [
+    "query",
+    "original_query",
+    "query_type",
+    "source_scope",
+    "selected_sources",
+    "unmatched_source_queries",
+    "source_queries",
+    "answer_mode",
+    "search_queries",
+    "answer_requirements",
+    "answer_components",
+    "answer_claims",
+    "binding_issues",
+    "repair_component_ids",
+    "repair_history",
+    "rewritten_queries",
+    "retrieved_chunks",
+    "retrieval_groups",
+    "relevance_score",
+    "relevant",
+    "grade_reason",
+    "rewrite_hint",
+    "iterations",
+    "answer",
+    "citations",
+    "confidence",
+    "evidence_status",
+    "evidence_gap",
+    "faithful",
+    "answer_supported",
+    "answer_complete",
+    "boundary_correct",
+    "faithfulness_issues",
+    "regen_count",
+    "history",
+    "summary"
+  ],
+  "predicates": {
+    "_after_grade": {
+      "path": "src/medrag/agent/graph.py",
+      "line": 84
+    },
+    "_after_check": {
+      "path": "src/medrag/agent/graph.py",
+      "line": 103
+    },
+    "_maybe_summarize": {
+      "path": "src/medrag/agent/graph.py",
+      "line": 132
+    }
+  },
+  "fingerprint_format": "sha256-utf8-lf",
+  "fingerprints": {
+    "src/medrag/agent/graph.py": "d9101e5afd16b47c6c6d3200bfd8a43c644e210710bb7649cc9936cb13f693e0",
+    "src/medrag/agent/nodes/constants.py": "831fcae2a69de8841181c50fbca4be88ec92652c9d1ba97fd782c31824f49de4",
+    "src/medrag/agent/state.py": "91ac108c661d791aa04d4578a3d004f18989917ee539476c199f7c2958bd11a6"
+  },
+  "record": {
+    "path": "data/demo/conversations/run01/v08-evidence-limits-turn-3-events.jsonl",
+    "sha256": "e9ffb75415db8c45f0e05a7623337a774e4bf2fa987f9af00ced5e2904cb33d9",
+    "observed_nodes": [
+      {
+        "node": "resolve_context",
+        "occurrence": 1,
+        "execution": "completed"
+      },
+      {
+        "node": "route",
+        "occurrence": 1,
+        "execution": "completed"
+      },
+      {
+        "node": "retrieve",
+        "occurrence": 1,
+        "execution": "completed"
+      },
+      {
+        "node": "rerank",
+        "occurrence": 1,
+        "execution": "completed"
+      },
+      {
+        "node": "grade",
+        "occurrence": 1,
+        "execution": "completed"
+      },
+      {
+        "node": "generate",
+        "occurrence": 1,
+        "execution": "completed"
+      },
+      {
+        "node": "check",
+        "occurrence": 1,
+        "execution": "completed"
+      },
+      {
+        "node": "generate",
+        "occurrence": 2,
+        "execution": "completed"
+      },
+      {
+        "node": "check",
+        "occurrence": 2,
+        "execution": "completed"
+      },
+      {
+        "node": "generate",
+        "occurrence": 3,
+        "execution": "completed"
+      },
+      {
+        "node": "check",
+        "occurrence": 3,
+        "execution": "completed"
+      },
+      {
+        "node": "append_history",
+        "occurrence": 1,
+        "execution": "completed"
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img">
+<title>Ask nodes and bounded loops</title><desc>Current source structure / resolve context before the graph / helpers retain programmatic compatibility</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#647273"/></marker></defs>
+<rect width="1600" height="100%" fill="#faf9f5"/>
+<g font-family="Arial, Microsoft YaHei, sans-serif" fill="#203436">
+<text x="50" y="44" font-size="18" fill="#296789" font-weight="normal">VERITASMED / v0.8 / DOCUMENTATION</text>
+<text x="50" y="91" font-size="34" fill="#203436" font-weight="bold">Ask nodes and bounded loops</text>
+<text x="50" y="129" font-size="21" fill="#647273" font-weight="normal">Current source structure / resolve context before the graph / helpers retain programmatic compatibility</text>
+<path d="M210,224 L210,247" fill="none" stroke="#647273" stroke-width="2"  marker-end="url(#arrow)"/>
+<path d="M352,305 L438,305" fill="none" stroke="#647273" stroke-width="2"  marker-end="url(#arrow)"/>
+<path d="M722,305 L808,305" fill="none" stroke="#647273" stroke-width="2"  marker-end="url(#arrow)"/>
+<path d="M1092,305 L1178,305" fill="none" stroke="#647273" stroke-width="2"  marker-end="url(#arrow)"/>
+<path d="M1320,363 L950,472" fill="none" stroke="#647273" stroke-width="2"  marker-end="url(#arrow)"/>
+<path d="M1320,363 L1320,472" fill="none" stroke="#647273" stroke-width="2"  marker-end="url(#arrow)"/>
+<path d="M1462,530 L1530,530 L1530,640 L770,640 L770,410 L580,410 L580,363" fill="none" stroke="#a9691e" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+<path d="M808,530 L722,530" fill="none" stroke="#647273" stroke-width="2"  marker-end="url(#arrow)"/>
+<path d="M438,530 L352,530" fill="none" stroke="#647273" stroke-width="2"  marker-end="url(#arrow)"/>
+<path d="M580,588 L580,672" fill="none" stroke="#a9691e" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+<path d="M580,672 L950,588" fill="none" stroke="#a9691e" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+<path d="M210,588 L210,672" fill="none" stroke="#647273" stroke-width="2"  marker-end="url(#arrow)"/>
+<path d="M210,788 L210,852" fill="none" stroke="#647273" stroke-width="2"  marker-end="url(#arrow)"/>
+<path d="M210,788 L580,886" fill="none" stroke="#647273" stroke-width="2"  marker-end="url(#arrow)"/>
+<path d="M352,910 L518,910" fill="none" stroke="#647273" stroke-width="2"  marker-end="url(#arrow)"/>
+<rect x="70" y="250" width="280" height="110" rx="12" stroke="#296789" stroke-width="2" fill="#ffffff"/>
+<text x="86" y="280" font-size="22" fill="#203436" font-weight="bold">route</text>
+<text x="86" y="315" font-size="20" fill="#203436" font-weight="normal">Plan retrieval</text>
+<text x="86" y="345" font-size="16" fill="#647273" font-weight="normal">Model</text>
+<rect x="440" y="250" width="280" height="110" rx="12" stroke="#7887a2" stroke-width="2" fill="#ffffff"/>
+<text x="456" y="280" font-size="22" fill="#203436" font-weight="bold">retrieve</text>
+<text x="456" y="315" font-size="20" fill="#203436" font-weight="normal">Hybrid retrieval</text>
+<text x="456" y="345" font-size="16" fill="#647273" font-weight="normal">Retrieval</text>
+<rect x="810" y="250" width="280" height="110" rx="12" stroke="#a9691e" stroke-width="2" fill="#ffffff"/>
+<text x="826" y="280" font-size="22" fill="#203436" font-weight="bold">rerank</text>
+<text x="826" y="315" font-size="20" fill="#203436" font-weight="normal">Rerank / match studies</text>
+<text x="826" y="345" font-size="16" fill="#647273" font-weight="normal">Model + rules</text>
+<rect x="1180" y="250" width="280" height="110" rx="12" stroke="#a9691e" stroke-width="2" fill="#ffffff"/>
+<text x="1196" y="280" font-size="22" fill="#203436" font-weight="bold">grade</text>
+<text x="1196" y="315" font-size="20" fill="#203436" font-weight="normal">Bind answer components</text>
+<text x="1196" y="345" font-size="16" fill="#647273" font-weight="normal">Model + rules</text>
+<rect x="1180" y="475" width="280" height="110" rx="12" stroke="#296789" stroke-width="2" fill="#ffffff"/>
+<text x="1196" y="505" font-size="22" fill="#203436" font-weight="bold">rewrite</text>
+<text x="1196" y="540" font-size="20" fill="#203436" font-weight="normal">Rewrite search</text>
+<text x="1196" y="570" font-size="16" fill="#647273" font-weight="normal">Model</text>
+<rect x="810" y="475" width="280" height="110" rx="12" stroke="#a9691e" stroke-width="2" fill="#ffffff"/>
+<text x="826" y="505" font-size="22" fill="#203436" font-weight="bold">generate</text>
+<text x="826" y="540" font-size="20" fill="#203436" font-weight="normal">Generate / targeted repair</text>
+<text x="826" y="570" font-size="16" fill="#647273" font-weight="normal">Model + rules</text>
+<rect x="440" y="475" width="280" height="110" rx="12" stroke="#a9691e" stroke-width="2" fill="#ffffff"/>
+<text x="456" y="505" font-size="22" fill="#203436" font-weight="bold">check</text>
+<text x="456" y="540" font-size="20" fill="#203436" font-weight="normal">Internal check</text>
+<text x="456" y="570" font-size="16" fill="#647273" font-weight="normal">Model + rules</text>
+<rect x="440" y="675" width="280" height="110" rx="12" stroke="#647273" stroke-width="2" fill="#ffffff"/>
+<text x="456" y="705" font-size="22" fill="#203436" font-weight="bold">inc_regen</text>
+<text x="456" y="740" font-size="20" fill="#203436" font-weight="normal">Increment repair counter</text>
+<text x="456" y="770" font-size="16" fill="#647273" font-weight="normal">Program rule</text>
+<rect x="70" y="475" width="280" height="110" rx="12" stroke="#28745b" stroke-width="2" fill="#ffffff"/>
+<text x="86" y="505" font-size="22" fill="#203436" font-weight="bold">append_history</text>
+<text x="86" y="540" font-size="20" fill="#203436" font-weight="normal">Append graph history</text>
+<text x="86" y="570" font-size="16" fill="#647273" font-weight="normal">Persistence</text>
+<rect x="70" y="675" width="280" height="110" rx="12" stroke="#647273" stroke-width="2" fill="#ffffff"/>
+<text x="86" y="705" font-size="22" fill="#203436" font-weight="bold">summarize_gate</text>
+<text x="86" y="740" font-size="20" fill="#203436" font-weight="normal">History summary gate</text>
+<text x="86" y="770" font-size="16" fill="#647273" font-weight="normal">Program rule</text>
+<rect x="70" y="855" width="280" height="110" rx="12" stroke="#296789" stroke-width="2" fill="#ffffff"/>
+<text x="86" y="885" font-size="22" fill="#203436" font-weight="bold">summarize</text>
+<text x="86" y="920" font-size="20" fill="#203436" font-weight="normal">Summarize graph history</text>
+<text x="86" y="950" font-size="16" fill="#647273" font-weight="normal">Model</text>
+<rect x="150" y="180" width="120" height="44" rx="12" stroke="#647273" stroke-width="2" fill="#eff2ef"/>
+<text x="175" y="210" font-size="20" fill="#647273" font-weight="normal">START</text>
+<rect x="520" y="888" width="120" height="44" rx="12" stroke="#647273" stroke-width="2" fill="#eff2ef"/>
+<text x="545" y="918" font-size="20" fill="#647273" font-weight="normal">END</text>
+<text x="1340" y="416" font-size="17" fill="#a9691e" font-weight="normal">score / rewrite budget</text>
+<text x="950" y="675" font-size="20" fill="#a9691e" font-weight="normal">rewrite ≤ 2</text>
+<text x="700" y="750" font-size="20" fill="#a9691e" font-weight="normal">repair ≤ 2</text>
+<rect x="940" y="780" width="585" height="205" rx="12" stroke="#647273" stroke-width="2" fill="#f1f3f0"/>
+<text x="965" y="820" font-size="24" fill="#203436" font-weight="bold">Graph history ≠ browser conversation</text>
+<text x="965" y="865" font-size="21" fill="#647273" font-weight="normal">Web requests use fresh checkpoints.</text>
+<text x="965" y="896" font-size="21" fill="#647273" font-weight="normal">Browser history lives in IndexedDB.</text>
+<text x="965" y="927" font-size="21" fill="#647273" font-weight="normal">Explicit graph reuse: summarize every 10 turns.</text>
+<text x="50" y="1036" font-size="21" fill="#647273" font-weight="normal">Solid: ordinary branches. Dashed: repair / rewrite. Unresolved issues can remain at exit.</text>
+<text x="50" y="1067" font-size="21" fill="#647273" font-weight="normal">Source: graph.py / nodes/constants.py. Internal check is separate from user-opened Audit.</text>
+</g></svg>

@@ -1,6 +1,8 @@
 # v0.7 演示：原子审计与工作流对照
 
-安装和启动沿用 [README](../README.md) 的轻量环境：
+[English](en/research-demo.md) | **简体中文**
+
+安装和启动沿用 [README](../README.zh-CN.md) 的轻量环境：
 
 ```sh
 python scripts/run_audit_demo.py

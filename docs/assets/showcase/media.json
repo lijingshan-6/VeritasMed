@@ -1,0 +1,81 @@
+{
+  "recorded_utc_date": "2026-09-30",
+  "mode": "Actual UI operation / saved-inference replay; no new model call",
+  "saved_inference_source": "data/demo/conversations/run01/v08-grade-follow-up.json",
+  "raw_recording": "output/playwright/v08-walkthrough-hd.webm",
+  "raw_sha256": "08d66d7bd0e77269cd617206aa95576616f661b1cbbd393865351d9cea3e2821",
+  "video": {
+    "size": [
+      1440,
+      1000
+    ],
+    "fps": 12,
+    "retained_seconds": 46,
+    "processing": "H.264 transcode, unchanged timing; trim trailing idle only; no audio"
+  },
+  "gif": {
+    "width": 864,
+    "fps": 5,
+    "excerpts_seconds": [
+      [
+        1,
+        3
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        14,
+        16
+      ],
+      [
+        20,
+        22
+      ],
+      [
+        26,
+        28
+      ],
+      [
+        32,
+        34
+      ],
+      [
+        40,
+        42
+      ]
+    ]
+  },
+  "screenshots": "Unedited screenshots captured by record_showcase.mjs",
+  "outputs": {
+    "walkthrough.mp4": {
+      "bytes": 3641325,
+      "sha256": "13e0d7a94ee5c2bb3ca0872839043d42f854fd8694c739b085bd9041728f951e"
+    },
+    "preview.gif": {
+      "bytes": 2649704,
+      "sha256": "daac21cda379e7286d37e10f1d5185025e5e08d7db79e17f8ceec6d938afcc30"
+    },
+    "ask-answer.png": {
+      "bytes": 341445,
+      "sha256": "4a28281d45d68a6519d65c623171fcdf48af8f969ce3d7a5d4d35d7cd8df2fbf"
+    },
+    "audit-overview.png": {
+      "bytes": 263777,
+      "sha256": "e7915e64db4996f13a0dac0bc41d9789e0614e15da9d22469939735e586ae64f"
+    },
+    "audit-direct.png": {
+      "bytes": 276399,
+      "sha256": "d92e79c2725793bdd98da0c723ff90a25b3ca5935a0ecf1aeb8c772041536f51"
+    },
+    "audit-qualifiers.png": {
+      "bytes": 261650,
+      "sha256": "1095d0f2a8c198e425b331b2ab8ccc823421d3628af0442beb34d72512629738"
+    },
+    "audit-review.png": {
+      "bytes": 235430,
+      "sha256": "0ee00186d8592196e3c332d0c28312fb984650e9dc953f27aec8168c140f3e0f"
+    }
+  }
+}

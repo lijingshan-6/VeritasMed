@@ -2,6 +2,9 @@
 
 ## Unreleased — v0.8 milestone maintenance
 
+- Add paired system/node documentation with six SVGs: all source-derived graph nodes/branches, model versus program responsibilities inside key nodes, and an actual three-round repair failure. Embed figures in architecture/workflow/tour and retain source records; standard-library rendering only, with no product or API changes.
+- Maintain paired Chinese/English documentation: add `README.zh-CN.md`, English guides and catalogues in `docs/en/`, translated v0.6–v0.8 main reports and the v0.9 plan, with per-page language links. Share visual assets and raw experimental records; preserve original-language historical records and identical commands/results.
+- Add an illustrated showcase route: reorder README, provide editable system/Agent/claim diagrams, render four research figures from saved metrics and record the actual GRADE replay with parsing failures retained. Include source fingerprints and reproducible rendering/recording scripts; no new model calls or changes to the fixed release tag.
 - Split the Ask nodes and evidence helpers into cohesive packages without changing the retained function bodies; remove three unused planner heuristics. Snapshot all package files for future benchmark runs.
 - Split answer text/evidence/suggestions and audit claim/source panels into components; keep Ask-centered interactions and saved records intact.
 - Consolidate startup/port configuration, replace old architecture prose, archive plans/worklogs, and move experimental reports/cases together with their generation paths. Remove superseded design and test narratives; keep fixed-tag historical links and raw experiments.

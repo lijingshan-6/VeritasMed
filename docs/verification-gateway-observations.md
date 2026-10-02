@@ -1,5 +1,7 @@
 # Flash 网关观测：返回标识与用量
 
+[English](en/verification-gateway-observations.md) | **简体中文**
+
 2026-09-24。只记录可观察到的 API 行为，不验证底层模型权重或提供方身份。
 
 ## 已确认的事实

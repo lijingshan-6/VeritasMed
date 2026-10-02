@@ -1,11 +1,13 @@
 # 文献对话与逐轮审计（v0.8）
 
+[English](en/conversation-guide.md) | **简体中文**
+
 Ask 是主入口。每个问题保留自己的答案版本、完整来源、上下文解释和审计记录。
 审计用于审阅所选答案，不取代对话，也不自动把答案改写成核查器认可的结论。
 
 ## 无密钥查看真实对话
 
-按 [README](../README.md) 安装轻量依赖后运行：
+按 [README](../README.zh-CN.md) 安装轻量依赖后运行：
 
 ```sh
 python scripts/run_showcase.py

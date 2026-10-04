@@ -7,6 +7,8 @@
 
 ![录制的操作演示：对话、回答、逐条审计](docs/assets/showcase/preview.gif)
 
+**[打开在线回放 →](https://lijingshan-6.github.io/medrag-agent/)**（录制的真实对话，直接在浏览器运行，无需注册）
+
 React · FastAPI · LangGraph · BGE-M3 混合检索 · Python 3.12 · Apache-2.0
 
 ## 它能做什么
@@ -19,27 +21,25 @@ React · FastAPI · LangGraph · BGE-M3 混合检索 · Python 3.12 · Apache-2.
 
 ## 无需 API 密钥即可试用
 
-回放三段录制好的医学对话（九个真实回答、十二次审计），不需要模型、GPU 或数据库。
-安装 [uv](https://docs.astral.sh/uv/) 和 Node.js 22.12+ 后：
+直接打开 [在线回放](https://lijingshan-6.github.io/medrag-agent/)，或在本地运行：在浏览器中回放三段录制好的医学对话（九个真实回答、十二次审计）。不需要模型、Python、GPU 或数据库，
+只需 Node.js 22.12+：
 
 ```sh
 git clone https://github.com/lijingshan-6/medrag-agent.git
-cd medrag-agent
-uv venv --python 3.12
-uv pip install -r requirements-audit.txt
-uv pip install --no-deps -e .
+cd medrag-agent/frontend
+npm ci
+npm run replay
 ```
 
-激活环境（Windows 用 `.venv\Scripts\Activate.ps1`，其他系统用 `source .venv/bin/activate`），
-然后运行 `python scripts/run_showcase.py`。打开 http://127.0.0.1:5173，选择一段对话，
-点选一个问题，再点 **Audit**。
+打开 http://127.0.0.1:5173，选择一段对话，点选一个问题，再点 **Audit**。
 
 ## 问你自己的问题
 
-在线模式检索仓库自带的三篇论文（15 段原始摘要，CC0 / CC BY 许可）。需要完整依赖（数 GB，CPU 即可）
-和一个 OpenAI 兼容的 Flash 端点：
+在线模式检索仓库自带的三篇论文（15 段原始摘要，CC0 / CC BY 许可）。需要 Python 3.12 与完整依赖
+（数 GB，CPU 即可，推荐使用 [uv](https://docs.astral.sh/uv/)）和一个 OpenAI 兼容的 Flash 端点。在仓库根目录执行：
 
 ```sh
+uv venv --python 3.12      # 然后激活 .venv
 uv pip sync requirements.lock --torch-backend cpu
 uv pip install --no-deps -e .
 cp .env.example .env        # 然后填写 OPENHUB_API_KEY（端点或模型不同时一并修改）
@@ -84,9 +84,9 @@ python scripts/run_demo.py  # 之后启动可加 --skip-index
 | `src/medrag/agent/` | LangGraph 回答图、证据绑定、追问解析、模型工厂 |
 | `src/medrag/verification/` | Direct 与 Atomic v2 审计、精确引文绑定、数值检查 |
 | `src/medrag/retrieval/`、`index/` | 混合检索、重排、Qdrant 索引 |
-| `src/medrag/api/` | FastAPI 应用（`app.py`）与无密钥回放（`replay_app.py`） |
+| `src/medrag/api/` | FastAPI 应用：Ask WebSocket、审计、原文段落、录制对话 |
 | `src/medrag/mcp_server/` | 可选的本地 MCP 工具（检索、问答、评估） |
-| `frontend/` | React 应用：对话、回答、来源、审计视图 |
+| `frontend/` | React 应用：对话、回答、来源、审计视图；`npm run replay` 无需后端 |
 | `data/demo/conversations/` | 三篇来源论文、语料与录制的对话 |
 
 检查命令：`python -m pytest -q`、`ruff check src/`、`npm --prefix frontend test`、

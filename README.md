@@ -8,6 +8,8 @@ source and marks what is unsupported or unchecked.
 
 ![Recorded walkthrough: conversation, answer, claim audit](docs/assets/showcase/preview.gif)
 
+**[Open the live replay →](https://lijingshan-6.github.io/medrag-agent/)** (recorded conversations, runs in the browser, no sign-up)
+
 React · FastAPI · LangGraph · BGE-M3 hybrid retrieval · Python 3.12 · Apache-2.0
 
 ## What it does
@@ -23,26 +25,26 @@ React · FastAPI · LangGraph · BGE-M3 hybrid retrieval · Python 3.12 · Apach
 
 ## Try it without an API key
 
-Replay three recorded medical conversations (nine real answers and twelve audits). No model,
-GPU or database is needed. Install [uv](https://docs.astral.sh/uv/) and Node.js 22.12+, then:
+Use the [live replay](https://lijingshan-6.github.io/medrag-agent/), or run it locally. Replay three recorded medical conversations (nine real answers and twelve audits) in the
+browser. No model, Python, GPU or database is needed, only Node.js 22.12+:
 
 ```sh
 git clone https://github.com/lijingshan-6/medrag-agent.git
-cd medrag-agent
-uv venv --python 3.12
-uv pip install -r requirements-audit.txt
-uv pip install --no-deps -e .
+cd medrag-agent/frontend
+npm ci
+npm run replay
 ```
 
-Activate the environment (`.venv\Scripts\Activate.ps1` on Windows, `source .venv/bin/activate`
-elsewhere) and run `python scripts/run_showcase.py`. Open http://127.0.0.1:5173, pick a conversation, select a question and press **Audit**.
+Open http://127.0.0.1:5173, pick a conversation, select a question and press **Audit**.
 
 ## Ask your own questions
 
 The live mode searches the three bundled papers (15 original abstract passages, CC0 / CC BY).
-It needs the full dependencies (several GB, CPU is fine) and an OpenAI-compatible Flash endpoint:
+It needs Python 3.12 with the full dependencies (several GB, CPU is fine; [uv](https://docs.astral.sh/uv/)
+recommended) and an OpenAI-compatible Flash endpoint. From the repository root:
 
 ```sh
+uv venv --python 3.12      # then activate .venv
 uv pip sync requirements.lock --torch-backend cpu
 uv pip install --no-deps -e .
 cp .env.example .env        # then set OPENHUB_API_KEY (and the endpoint/model if different)
@@ -95,9 +97,9 @@ The full numbers, intervals and what each version changed are in the [research s
 | `src/medrag/agent/` | LangGraph answer graph, evidence binding, follow-up resolution, model factory |
 | `src/medrag/verification/` | Direct and Atomic v2 audits, exact-quote binding, numeric checks |
 | `src/medrag/retrieval/`, `index/` | Hybrid retrieval, reranking, Qdrant indexing |
-| `src/medrag/api/` | FastAPI app (`app.py`) and key-free replay (`replay_app.py`) |
+| `src/medrag/api/` | FastAPI app: Ask WebSocket, audit, passages, saved conversations |
 | `src/medrag/mcp_server/` | Optional local MCP tools (search, ask, evaluate) |
-| `frontend/` | React app: conversations, answers, sources, audit view |
+| `frontend/` | React app: conversations, answers, sources, audit view; `npm run replay` needs no backend |
 | `data/demo/conversations/` | Three source papers, corpus, and the recorded conversations |
 
 Checks: `python -m pytest -q`, `ruff check src/`, `npm --prefix frontend test`,

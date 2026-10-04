@@ -294,7 +294,7 @@ export default function App() {
   }, [])
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
       <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', background: 'var(--canvas)' }}>
         <Header theme={theme} setTheme={setTheme} />
         <main style={{ flex: 1, overflow: 'hidden' }}>

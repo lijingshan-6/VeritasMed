@@ -1,7 +1,0 @@
-# Small Ask replay and standalone audit service. Full retrieval uses requirements.lock instead.
-fastapi>=0.115.6,<1
-uvicorn>=0.30,<1
-pydantic>=2.7,<3
-openai>=2.36,<3
-python-dotenv>=1.2,<2
-langchain-core>=1.4,<2

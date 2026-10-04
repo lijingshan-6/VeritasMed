@@ -41,3 +41,14 @@ def test_missing_gateway_configuration_is_explicit(monkeypatch):
     response = _client().post("/api/audit", json={"answer": "An answer.", "sources": [
         {"id": "s", "title": "Source", "text": "A source."}]})
     assert response.status_code == 503
+
+
+def test_atomic_v2_is_opt_in_and_direct_remains_default(monkeypatch):
+    calls = []
+    monkeypatch.setattr(audit, "FlashGateway", lambda: object())
+    monkeypatch.setattr(audit, "audit_atomic_v2", lambda item, gateway: calls.append("atomic_v2") or {"status": "ok"})
+    monkeypatch.setattr(audit, "audit_answer", lambda item, gateway: calls.append("direct") or {"status": "ok"})
+    body = {"answer": "An answer.", "sources": [{"id": "s", "title": "Source", "text": "Original."}]}
+    assert _client().post("/api/audit", json=body).status_code == 200
+    assert _client().post("/api/audit", json={**body, "strategy": "atomic_v2"}).status_code == 200
+    assert calls == ["direct", "atomic_v2"]

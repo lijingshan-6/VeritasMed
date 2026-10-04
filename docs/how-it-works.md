@@ -12,7 +12,7 @@
 | Ask API (FastAPI + LangGraph) | Resolve follow-ups, retrieve, plan, generate, self-check; streams each step over WebSocket |
 | Retrieval (Qdrant) | BGE-M3 dense + sparse vectors, reciprocal rank fusion, BGE cross-encoder reranking |
 | Audit API | Checks one answer revision against the passages it used; never edits the answer |
-| Replay API | Serves the recorded conversations read-only; rejects every request that would call a model |
+| Replay build | `npm run replay` / `build:replay`: the recorded conversations and corpus as static files, no backend |
 
 ## The Ask graph
 
@@ -98,7 +98,7 @@ Only one tab should edit a conversation at a time.
 
 | Command | Frontend / API | Needs |
 |---|---|---|
-| `python scripts/run_showcase.py` | 5173 / 8000 | Light install only; replay, no model calls |
+| `npm --prefix frontend run replay` | 5173 / none | Node only; read-only replay, no model calls |
 | `python scripts/run_demo.py` | 5173 / 8000 | Full install, `.env`; indexes the three papers into `.demo-runtime/` on first start |
 
 Settings are in [`.env.example`](../.env.example). `LLM_BACKEND=openhub` (default) calls any

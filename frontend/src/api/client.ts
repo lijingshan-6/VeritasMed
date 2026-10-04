@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { isReplayOnly } from '../demo'
+import { replayChunk, replayDocument } from '../replay/corpus'
 import type { ChunkContextResponse, CorpusStats, DocumentResponse } from '../types'
 
 // Dev options (pick one):
@@ -9,6 +11,7 @@ const BASE = (import.meta.env.VITE_API_URL as string) ?? ''
 export const api = axios.create({ baseURL: BASE })
 
 export async function fetchDocument(citation: string): Promise<DocumentResponse> {
+  if (isReplayOnly) return replayDocument(citation)
   const r = await api.get(`/api/document/${encodeURIComponent(citation)}`)
   return r.data
 }
@@ -17,6 +20,7 @@ export async function fetchChunk(
   chunkId: string,
   contextWindow = 1,
 ): Promise<ChunkContextResponse> {
+  if (isReplayOnly) return replayChunk(chunkId, contextWindow)
   const r = await api.get(`/api/chunk/${encodeURIComponent(chunkId)}`, {
     params: { context_window: contextWindow },
   })

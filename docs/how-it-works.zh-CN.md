@@ -12,7 +12,7 @@
 | Ask API（FastAPI + LangGraph） | 理解追问、检索、规划、生成、自检；通过 WebSocket 逐步推送 |
 | 检索（Qdrant） | BGE-M3 稠密与稀疏向量、倒数排名融合、BGE 交叉编码器重排 |
 | 审计 API | 用某个答案版本所用的段落核查该答案，从不修改答案 |
-| 回放 API | 只读提供录制的对话；凡是会调用模型的请求一律拒绝 |
+| 回放构建 | `npm run replay` / `build:replay`：录制的对话与语料作为静态文件提供，无需后端 |
 
 ## Ask 图
 
@@ -89,7 +89,7 @@ v0.9 已修复（见 [研究总结](research.zh-CN.md#5-这些迭代的意义)�
 
 | 命令 | 前端 / API | 需要 |
 |---|---|---|
-| `python scripts/run_showcase.py` | 5173 / 8000 | 只需轻量安装；回放，不调用模型 |
+| `npm --prefix frontend run replay` | 5173 / 无 | 只需 Node；只读回放，不调用模型 |
 | `python scripts/run_demo.py` | 5173 / 8000 | 完整安装与 `.env`；首次启动把三篇论文索引到 `.demo-runtime/` |
 
 配置项见 [`.env.example`](../.env.example)。`LLM_BACKEND=openhub`（默认）调用任意 OpenAI 兼容端点并开启推理；

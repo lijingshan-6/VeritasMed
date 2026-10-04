@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import { api } from '../api/client'
+import { isReplayOnly } from '../demo'
+import { replayCatalogue, replayConversation } from '../replay/corpus'
 import { importConversation } from '../conversation/model'
 import { useStore } from '../store'
 
-type Example = { id: string; label: string; description: string; turns: number }
+type Example = { id: string; label: string; description: string; turns: number; file: string }
 export function SavedConversations() {
   const [examples, setExamples] = useState<Example[]>([])
   const [error, setError] = useState('')
@@ -12,14 +14,16 @@ export function SavedConversations() {
   const { addConversation, hydrated, selectRevision } = useStore()
   useEffect(() => {
     let alive = true
-    api.get('/api/conversations/examples').then(({ data }) => { if (alive) setExamples(data.examples) })
-      .catch(() => { if (alive) setError('Saved conversations are unavailable. Check that the local service is running.') })
+    const catalogue = isReplayOnly ? replayCatalogue() : api.get('/api/conversations/examples').then(({ data }) => data.examples)
+    catalogue.then(list => { if (alive) setExamples(list) })
+      .catch(() => { if (alive) setError('Saved conversations are unavailable.') })
     return () => { alive = false }
   }, [])
   async function load(example: Example) {
     setPending(example.id); setError('')
     try {
-      const { data } = await api.get('/api/conversations/examples/' + encodeURIComponent(example.id))
+      const data = isReplayOnly ? await replayConversation(example)
+        : (await api.get('/api/conversations/examples/' + encodeURIComponent(example.id))).data
       const conversation = await importConversation(JSON.stringify(data))
       addConversation(conversation)
       const first = conversation.turns[0]

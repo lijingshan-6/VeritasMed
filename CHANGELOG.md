@@ -15,6 +15,8 @@ of the working tree and is archived at
   `/api/search`, `/api/history`, legacy numbered pipelines, benchmark tooling, experiment scripts
   and data, and the unverified Docker / conda / PowerShell launchers. Code went from 37,600 to
   13,500 lines including tests; tracked files from 1,154 to 206.
+- **Added:** a backend-free replay build (`npm run replay`, `npm run build:replay`) and a GitHub Pages
+  workflow, so the recorded conversations can be opened from a link. Replay no longer needs Python.
 - **Changed:** Flash (`openhub`) is the default backend; Ollama remains optional. One live demo
   profile (three papers). Saved audits made with retired methods still display.
 - **Docs:** a new README, [how it works](docs/how-it-works.md) and [research summary](docs/research.md),

@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1 --strictPort",
+    "replay": "node scripts/prepare-replay.mjs && vite --mode replay --host 127.0.0.1 --strictPort",
     "build": "tsc && vite build",
+    "build:replay": "node scripts/prepare-replay.mjs && tsc && vite build --mode replay && node -e \"require('fs').copyFileSync('dist/index.html','dist/404.html')\"",
     "preview": "vite preview",
     "generate-types": "openapi-typescript ../openapi.json --default-non-nullable false -o src/types/api.gen.ts",
     "test": "node --experimental-strip-types --test tests/*.test.js"

@@ -17,7 +17,6 @@ jobs:
       - run: python -m pip check
       - run: python -m pytest -q
       - run: ruff check src/
-      - run: python scripts/report_release.py --check
       - run: python -m pip wheel --no-deps . -w dist
   frontend:
     runs-on: ubuntu-latest

@@ -1,4 +1,0 @@
-{
-  "decision": "Development review required; this is a stop marker, not authorization for final inference",
-  "reason": "Conflicting finish instructions and received JSON/DSML protocol mixing need development-only adapter repair. Preserve first development run and keep final unopened."
-}

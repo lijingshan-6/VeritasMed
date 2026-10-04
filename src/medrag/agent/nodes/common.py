@@ -6,6 +6,7 @@ import json
 import re
 from typing import Any
 from langchain_core.messages import HumanMessage
+from medrag.agent.usage import record as record_usage
 from medrag.agent.utils import strip_thinking
 from medrag.retrieval.retriever import RetrievedChunk
 
@@ -24,13 +25,15 @@ def _invoke_once(llm, messages):
     """One model call, repeated once after a transient transport failure."""
     import time
     try:
-        return llm.invoke(messages)
+        response = llm.invoke(messages)
     except Exception as exc:  # noqa: BLE001 - classified below; anything else propagates
         if not _transient(exc):
             raise
         logger.warning("[llm] transient transport failure (%s) — retrying once", type(exc).__name__)
         time.sleep(2)
-        return llm.invoke(messages)
+        response = llm.invoke(messages)
+    record_usage(response)
+    return response
 
 
 def _invoke_with_retry(llm, messages, retries: int = 1) -> str:

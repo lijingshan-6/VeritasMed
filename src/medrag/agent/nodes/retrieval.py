@@ -13,7 +13,7 @@ from medrag.agent.state import AgentState
 from medrag.retrieval.retriever import RetrievedChunk
 from medrag.retrieval.reranker import _select_coverage_chunks
 from .common import _invoke_json_with_retry, _unique_texts
-from .constants import CANDIDATE_K, PER_QUERY_K, TOP_K
+from .constants import CANDIDATE_K, MAX_EVIDENCE, PER_QUERY_K, TOP_K
 
 logger = logging.getLogger("medrag.agent.nodes")
 
@@ -134,6 +134,37 @@ def _source_cards(search: str, ranked: list[RetrievedChunk]) -> dict[str, dict]:
     return cards
 
 
+def complete_documents(ranked: list[RetrievedChunk], documents: list[str], passages_of,
+                       limit: int = MAX_EVIDENCE) -> list[RetrievedChunk]:
+    """Give the leading document(s) all their sections, then fill by rank up to `limit`.
+
+    A passage-level top-k can keep a paper's Background and Methods but drop its Results
+    in favour of other papers' passages. Whole abstracts are short, so the documents the
+    answer will rest on are passed complete, in reading order.
+    """
+    out: list[RetrievedChunk] = []
+    seen: set[str] = set()
+    for doc in documents:
+        siblings = passages_of(doc) or [c for c in ranked if c.payload.get("doc_id") == doc]
+        for chunk in siblings:
+            if chunk.chunk_id not in seen and len(out) < limit:
+                out.append(chunk)
+                seen.add(chunk.chunk_id)
+    for chunk in ranked:
+        if chunk.chunk_id not in seen and len(out) < limit:
+            out.append(chunk)
+            seen.add(chunk.chunk_id)
+    return out
+
+
+def _passages_of(doc_id: str) -> list[RetrievedChunk]:
+    try:
+        return _get_retriever().document_passages(doc_id)
+    except Exception as exc:  # noqa: BLE001 - completion is an improvement, never a failure
+        logger.warning("[rerank] could not load sections of %s: %s", doc_id, exc)
+        return []
+
+
 def rerank_chunks(state: AgentState) -> dict:
     """Rank each search, match its study, then select the final evidence budget."""
     query = state.get("original_query") or state["query"]
@@ -196,6 +227,8 @@ def rerank_chunks(state: AgentState) -> dict:
             logger.info("[sources] %s: %s (%s)", search[:70], matches, selection.get("reason", ""))
         filtered = [[c for c in ranked if c.citation in selected_sources] for ranked in ranked_groups]
         reranked = _select_coverage_chunks(filtered, top_k=TOP_K)
+        selected_docs = list(dict.fromkeys(c.payload.get("doc_id") for c in reranked if c.payload.get("doc_id")))
+        reranked = complete_documents(reranked, selected_docs, _passages_of, limit=max(MAX_EVIDENCE, TOP_K))
         if len(selected_sources) > 1:
             source_scope = "multi_source"
         return {"retrieved_chunks": reranked, "selected_sources": selected_sources,
@@ -216,6 +249,9 @@ def rerank_chunks(state: AgentState) -> dict:
         logger.error("[rerank] error: %s — falling back to top-%d by score", exc, TOP_K)
         reranked = sorted(chunks, key=lambda c: -c.score)[:TOP_K]
 
-    logger.info("[rerank] kept top %d chunks", len(reranked))
+    leading = reranked[0].payload.get("doc_id") if reranked else None
+    if leading:
+        reranked = complete_documents(reranked, [leading], _passages_of)
+    logger.info("[rerank] kept %d chunks", len(reranked))
     return {"retrieved_chunks": reranked, "selected_sources": selected_sources,
             "source_queries": {}, "source_scope": source_scope, "unmatched_source_queries": []}

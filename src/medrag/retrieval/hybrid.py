@@ -113,5 +113,18 @@ class HybridRetriever:
             ))
         return results
 
+    def document_passages(self, doc_id: str) -> list[RetrievedChunk]:
+        """Every indexed passage of one document, in reading order."""
+        from qdrant_client.models import FieldCondition, Filter, MatchValue
+
+        points, _ = self.qdrant.scroll(
+            collection_name=self.collection,
+            scroll_filter=Filter(must=[FieldCondition(key="doc_id", match=MatchValue(value=doc_id))]),
+            limit=64, with_payload=True,
+        )
+        points.sort(key=lambda p: p.payload.get("chunk_idx", 0))
+        return [RetrievedChunk(chunk_id=p.payload["chunk_id"], text=p.payload["text"], score=0.0, payload=p.payload)
+                for p in points]
+
 
 __all__ = ["HybridRetriever", "_reciprocal_rank_fusion"]

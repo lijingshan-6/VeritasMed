@@ -265,3 +265,6 @@ output/
 # Superseded benchmark attempts and per-model scratch summaries
 data/benchmark/**/**_attempt*.jsonl
 data/benchmark/**/qwen35_final_audit/quality_summary.json
+
+# Experiment data and indexes (rebuilt by experiments/*/prepare.py)
+.exp-runtime/

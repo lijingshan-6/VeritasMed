@@ -668,3 +668,43 @@ def test_transient_transport_failure_is_retried_once_but_auth_errors_are_not():
         _invoke_with_retry(llm, [], retries=0)
     assert llm.invoke.call_count == 1
 
+
+def test_usage_is_recorded_only_inside_a_collection_block():
+    from types import SimpleNamespace
+    from unittest.mock import MagicMock
+    from medrag.agent.nodes.common import _invoke_with_retry
+    from medrag.agent.usage import collect_usage
+
+    llm = MagicMock()
+    llm.invoke.return_value = SimpleNamespace(content="ok", usage_metadata={"input_tokens": 10, "output_tokens": 5, "total_tokens": 15},
+                                              response_metadata={"model_name": "m"})
+    _invoke_with_retry(llm, [])
+    with collect_usage() as calls:
+        _invoke_with_retry(llm, [])
+        _invoke_with_retry(llm, [])
+    assert [c["total_tokens"] for c in calls] == [15, 15] and calls[0]["model"] == "m"
+
+
+def test_usage_falls_back_to_openai_format_token_usage():
+    from types import SimpleNamespace
+    from medrag.agent.usage import collect_usage, record
+    response = SimpleNamespace(usage_metadata=None, response_metadata={
+        "model_name": "m", "token_usage": {"prompt_tokens": 43, "completion_tokens": 42, "total_tokens": 85, "prompt_cache_hit_tokens": 0}})
+    with collect_usage() as calls:
+        record(response)
+    assert calls == [{"input_tokens": 43, "output_tokens": 42, "total_tokens": 85, "cache_read_tokens": 0, "model": "m"}]
+
+
+
+def test_leading_document_is_completed_with_its_other_sections():
+    from medrag.agent.nodes.retrieval import complete_documents
+    from medrag.retrieval.retriever import RetrievedChunk
+
+    def chunk(doc, i):
+        return RetrievedChunk(f"pubmed:{doc}:{i}", f"{doc}-{i}", 0.0, {"doc_id": doc, "chunk_idx": i})
+    ranked = [chunk("A", 0), chunk("B", 2), chunk("A", 1), chunk("C", 2), chunk("D", 1)]
+    library = {"A": [chunk("A", i) for i in range(4)]}
+    out = complete_documents(ranked, ["A"], lambda d: library.get(d, []), limit=6)
+    assert [c.chunk_id for c in out] == ["pubmed:A:0", "pubmed:A:1", "pubmed:A:2", "pubmed:A:3", "pubmed:B:2", "pubmed:C:2"]
+    # Without a lookup it falls back to the document's passages already retrieved.
+    assert [c.chunk_id for c in complete_documents(ranked, ["A"], lambda d: [], limit=3)] == ["pubmed:A:0", "pubmed:A:1", "pubmed:B:2"]

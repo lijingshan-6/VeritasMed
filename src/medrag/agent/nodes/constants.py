@@ -30,3 +30,6 @@ PER_QUERY_K  = 12         # bound multi-part retrieval before grouped reranking
 
 
 TOP_K        = 5          # chunks passed to generator
+
+
+MAX_EVIDENCE = 8          # cap after completing the leading document(s) with their other sections

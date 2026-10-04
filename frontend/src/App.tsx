@@ -1,10 +1,10 @@
 import { isReplayOnly } from './demo'
 import React, { useEffect, useRef, useState } from 'react'
-import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { AnswerPage } from './pages/AnswerPage'
 import { DocumentPage } from './pages/DocumentPage'
 import { fetchCorpusStats, fetchHealth } from './api/client'
-import { useStore, initializeConversations } from './store'
+import { initializeConversations } from './store'
 
 
 // ── SVG base ───────────────────────────────────────────────────────────────
@@ -19,10 +19,6 @@ function I({ size = 16, sw = 1.6, children, style }: {
     </svg>
   )
 }
-const IconBook      = (p: { size?: number; sw?: number; style?: React.CSSProperties }) =>
-  <I {...p}><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></I>
-const IconHistory   = (p: { size?: number; sw?: number; style?: React.CSSProperties }) =>
-  <I {...p}><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/><path d="M12 7v5l3 2"/></I>
 const IconSettings  = (p: { size?: number; sw?: number; style?: React.CSSProperties }) =>
   <I {...p}><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09A1.65 1.65 0 0 0 15 4.6a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.06.32.21.62.42.85.21.22.51.35.81.36H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></I>
 
@@ -61,62 +57,9 @@ function BrandMark() {
   )
 }
 
-// ── NavTab ──────────────────────────────────────────────────────────────────
-function NavTab({ active, label, sub, onClick, icon: Icon }: {
-  active: boolean
-  label: string
-  sub?: string
-  onClick: () => void
-  icon: React.ComponentType<{ size?: number; sw?: number; style?: React.CSSProperties }>
-}) {
-  return (
-    <button
-      onClick={onClick}
-      style={{
-        display: 'inline-flex', alignItems: 'baseline', gap: 7,
-        padding: '8px 12px',
-        border: 'none', background: 'transparent',
-        color: active ? 'var(--ink)' : 'var(--muted)',
-        fontSize: 13, fontWeight: 600, letterSpacing: '-0.005em',
-        whiteSpace: 'nowrap',
-        position: 'relative',
-        transition: 'color 120ms',
-      }}
-      onMouseEnter={(e) => { if (!active) e.currentTarget.style.color = 'var(--ink-soft)' }}
-      onMouseLeave={(e) => { if (!active) e.currentTarget.style.color = 'var(--muted)' }}
-    >
-      <Icon size={13} sw={2} style={{ alignSelf: 'center' }} />
-      {label}
-      {sub && (
-        <span className="vm-mono" style={{ fontSize: 9.5, color: 'var(--faint)' }}>
-          {sub}
-        </span>
-      )}
-      {active && (
-        <span style={{
-          position: 'absolute', bottom: -1, left: 12, right: 12,
-          height: 1, background: 'var(--ink)',
-        }} />
-      )}
-    </button>
-  )
-}
-
-// ── ThreadHistoryButton ─────────────────────────────────────────────────────
-function ThreadHistoryButton() {
-  const { conversations, threadId, setThreadId, newThread, hydrated } = useStore()
-  return <div className="vm-conversation-picker">
-    <IconHistory size={12} />
-    <select aria-label="Conversation" disabled={!hydrated} value={threadId} onChange={e => setThreadId(e.target.value)}>
-      {conversations.slice().sort((a, b) => b.updated_at.localeCompare(a.updated_at)).map(c => <option key={c.id} value={c.id}>{c.title} · {c.turns.length} turns</option>)}
-    </select>
-    {!isReplayOnly && <button disabled={!hydrated} onClick={newThread}>+ New</button>}
-  </div>
-}
-
 // ── StatusPill ──────────────────────────────────────────────────────────────
 function StatusPill() {
-  const [text, setText] = useState(isReplayOnly ? 'saved inference · no API calls' : 'checking…')
+  const [text, setText] = useState(isReplayOnly ? 'Replay · recorded answers' : 'checking…')
   const [healthy, setHealthy] = useState<boolean | null>(null)
 
   useEffect(() => {
@@ -239,33 +182,12 @@ function ThemePopover({ theme, setTheme }: { theme: Theme; setTheme: (t: Theme) 
 
 // ── Header ──────────────────────────────────────────────────────────────────
 function Header({ theme, setTheme }: { theme: Theme; setTheme: (t: Theme) => void }) {
-  const navigate = useNavigate()
-  const location = useLocation()
-  const isAsk     = location.pathname === '/'
-
   return (
-    <header className="vm-header" style={{
-      height: 60, flexShrink: 0,
-      display: 'flex', alignItems: 'center', gap: 24,
-      padding: '0 24px',
-      background: 'var(--canvas)',
-      borderBottom: '1px solid var(--rule)',
-    }}>
-      <BrandMark />
-      <span className="vm-research-label" style={{ fontSize: 11, color: "var(--muted)" }}>Research demo · not clinical advice</span>
-
-      <span style={{ width: 1, height: 22, background: 'var(--rule)', margin: '0 2px' }} />
-
-      <nav style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-        <NavTab active={isAsk} label="Ask" sub="⌘K" icon={IconBook} onClick={() => navigate('/')} />
-      </nav>
-
+    <header className="ws-header">
+      <a href={import.meta.env.BASE_URL} className="ws-brand" aria-label="VeritasMed home"><BrandMark /></a>
+      <span className="ws-tagline">Medical literature answers you can check</span>
       <span style={{ flex: 1 }} />
-
-      {isAsk && <StatusPill />}
-
-      <ThreadHistoryButton />
-
+      <StatusPill />
       <ThemePopover theme={theme} setTheme={setTheme} />
     </header>
   )
@@ -281,12 +203,12 @@ export default function App() {
     if (theme === 'paper') delete document.documentElement.dataset.theme
   }, [theme])
 
-  // Cmd/Ctrl+K → Ask page
+  // Cmd/Ctrl+K focuses the question box.
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault()
-        if (window.location.pathname !== '/') window.location.href = '/'
+        document.querySelector<HTMLTextAreaElement>('.ws-composer textarea')?.focus()
       }
     }
     window.addEventListener('keydown', onKey)
@@ -295,14 +217,14 @@ export default function App() {
 
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
-      <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', background: 'var(--canvas)' }}>
+      <div className="ws-app">
         <Header theme={theme} setTheme={setTheme} />
-        <main style={{ flex: 1, overflow: 'hidden' }}>
+        <div className="ws-body">
           <Routes>
             <Route path="/"                   element={<AnswerPage />} />
             <Route path="/document/:citation" element={<DocumentPage />} />
           </Routes>
-        </main>
+        </div>
       </div>
     </BrowserRouter>
   )

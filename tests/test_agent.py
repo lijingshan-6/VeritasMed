@@ -644,3 +644,27 @@ class TestMemoryHelpers:
 
         state_empty = {"history": []}
         assert _maybe_summarize(state_empty) == "end"
+
+
+def test_transient_transport_failure_is_retried_once_but_auth_errors_are_not():
+    from unittest.mock import MagicMock
+    from medrag.agent.nodes.common import _invoke_with_retry
+
+    class APIError(Exception):
+        pass
+
+    class AuthenticationError(Exception):
+        status_code = 401
+
+    llm = MagicMock()
+    llm.invoke.side_effect = [APIError("upstream stream ended before [DONE]"), MagicMock(content="ok")]
+    assert _invoke_with_retry(llm, [], retries=0) == "ok"
+    assert llm.invoke.call_count == 2
+
+    llm = MagicMock()
+    llm.invoke.side_effect = AuthenticationError("bad key")
+    import pytest
+    with pytest.raises(AuthenticationError):
+        _invoke_with_retry(llm, [], retries=0)
+    assert llm.invoke.call_count == 1
+

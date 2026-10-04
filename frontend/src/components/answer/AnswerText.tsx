@@ -51,7 +51,7 @@ export function AnnotatedParagraph({ text, citeMap, onCiteClick, isFirst }: {
   }
   if (last < text.length) parts.push(text.slice(last))
   return (
-    <p className={isFirst ? 'vm-dropcap' : undefined}>
+    <p data-first={isFirst || undefined}>
       {parts}
     </p>
   )

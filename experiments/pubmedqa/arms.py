@@ -14,19 +14,24 @@ from uuid import uuid4
 
 from langchain_core.messages import HumanMessage, SystemMessage
 
-ANSWER_RULES = """Answer the biomedical research question in 2-5 plain sentences. State the
-finding directly, with the population, comparison and numbers it rests on. Use only the supplied
+ANSWER_RULES = """Answer the biomedical research question in 2-5 plain sentences. If the question
+can be answered yes or no, open with a one-sentence bottom line (yes, no, or that the evidence is
+mixed or insufficient) naming the finding it rests on. Then give the population, comparison and
+numbers it rests on. Use only the supplied
 passages. Put the citation key in square brackets after every sentence that uses a passage, e.g.
 [PMID:12345]. Do not cite keys that are not supplied. If the passages do not settle the question,
 say what they do and do not show. Return JSON only: {"answer": "..."}"""
 
 CLOSED_BOOK = """Answer the biomedical research question in 2-5 plain sentences from your own
-knowledge. State the finding directly. Return JSON only: {"answer": "..."}"""
+knowledge. If it can be answered yes or no, open with a one-sentence bottom line (yes, no, or that
+the evidence is mixed or insufficient). Return JSON only: {"answer": "..."}"""
 
 JUDGE = """You read an answer to a yes/no research question and report what the ANSWER concludes,
-not what you believe. yes: the answer concludes the question is affirmed. no: it concludes the
-opposite. maybe: the answer says the evidence is mixed, conditional, inconclusive, or that the
-question cannot be settled. Return JSON only: {"verdict": "yes" | "no" | "maybe"}"""
+not what you believe. yes: the answer affirms the question, explicitly ("Yes, ...") or through its
+main finding. no: it denies it, explicitly or through its main finding. maybe: ONLY when the answer
+itself says the evidence is mixed, conflicting, insufficient, or that the question cannot be settled.
+Caveats or limitations attached to a clear conclusion do not make it maybe.
+Return JSON only: {"verdict": "yes" | "no" | "maybe"}"""
 
 
 def _call(gateway, system: str, payload: dict) -> tuple[dict, dict]:

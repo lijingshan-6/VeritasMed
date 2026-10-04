@@ -179,7 +179,9 @@ OUTPUT FORMAT — you must return ONLY valid JSON, nothing else:
 }
 
 RULES:
-Answer the question directly in plain, concise English, in the third person. Lead with what was
+Answer the question directly in plain, concise English, in the third person. If the question can
+be answered yes or no, make the first claim a one-sentence bottom line - yes, no, or that the cited
+evidence is mixed or insufficient - naming the finding it rests on, with its citation. Lead with what was
 asked: state each requested number or finding with the group, comparator and condition it belongs
 to (e.g. "glargine 0.8%, glimepiride 1.3%"), rather than quoting a whole sentence. Combine related
 findings and do not repeat a study's population under every component. The bound source sentences

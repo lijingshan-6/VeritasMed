@@ -1,6 +1,6 @@
 {
   "scope": "Recorded software behavior, not reliability scoring or expert gold.",
-  "bundled_run": "run02",
+  "bundled_run": "run06",
   "runs": {
     "run01": {
       "code": "v0.8.0",
@@ -305,6 +305,473 @@
           ]
         }
       ]
+    },
+    "run04": {
+      "code": "v0.9: plain-language answers (848dab5) + transport retry",
+      "recorded": "2026-10-04",
+      "known_limits": [
+        "Audits used the passage-only hand-off: 6 claims quoting a paper title or identifier were unresolved, and two Direct audits were discarded by one unusable claim. Fixed in 06adc1f; see run06."
+      ],
+      "turns": [
+        {
+          "conversation": "v08-grade-follow-up",
+          "turn": 1,
+          "record_status": "complete",
+          "evidence_status": "complete",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 5,
+              "summary": {
+                "supported": 4,
+                "contradicted": 0,
+                "insufficient": 1,
+                "failed_or_unchecked": 0
+              }
+            },
+            {
+              "method": "atomic_v2",
+              "status": "partial_error",
+              "claims": 14,
+              "summary": {
+                "supported": 6,
+                "contradicted": 0,
+                "insufficient": 0,
+                "failed_or_unchecked": 8
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-grade-follow-up",
+          "turn": 2,
+          "record_status": "complete",
+          "evidence_status": "complete",
+          "faithful": true,
+          "regen_count": 1,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 7,
+              "summary": {
+                "supported": 7,
+                "contradicted": 0,
+                "insufficient": 0,
+                "failed_or_unchecked": 0
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-grade-follow-up",
+          "turn": 3,
+          "record_status": "complete",
+          "evidence_status": "complete",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 7,
+              "summary": {
+                "supported": 6,
+                "contradicted": 0,
+                "insufficient": 1,
+                "failed_or_unchecked": 0
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-diet-exercise",
+          "turn": 1,
+          "record_status": "complete",
+          "evidence_status": "complete",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "partial_error",
+              "claims": 16,
+              "summary": {
+                "supported": 9,
+                "contradicted": 0,
+                "insufficient": 3,
+                "failed_or_unchecked": 4
+              }
+            },
+            {
+              "method": "atomic_v2",
+              "status": "partial_error",
+              "claims": 17,
+              "summary": {
+                "supported": 0,
+                "contradicted": 0,
+                "insufficient": 4,
+                "failed_or_unchecked": 13
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-diet-exercise",
+          "turn": 2,
+          "record_status": "complete",
+          "evidence_status": "complete",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "partial_error",
+              "claims": 8,
+              "summary": {
+                "supported": 5,
+                "contradicted": 0,
+                "insufficient": 2,
+                "failed_or_unchecked": 1
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-diet-exercise",
+          "turn": 3,
+          "record_status": "complete",
+          "evidence_status": "partial",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 8,
+              "summary": {
+                "supported": 8,
+                "contradicted": 0,
+                "insufficient": 0,
+                "failed_or_unchecked": 0
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-evidence-limits",
+          "turn": 1,
+          "record_status": "complete",
+          "evidence_status": "insufficient",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 2,
+              "summary": {
+                "supported": 2,
+                "contradicted": 0,
+                "insufficient": 0,
+                "failed_or_unchecked": 0
+              }
+            },
+            {
+              "method": "atomic_v2",
+              "status": "ok",
+              "claims": 2,
+              "summary": {
+                "supported": 2,
+                "contradicted": 0,
+                "insufficient": 0,
+                "failed_or_unchecked": 0
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-evidence-limits",
+          "turn": 2,
+          "record_status": "complete",
+          "evidence_status": "complete",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "partial_error",
+              "claims": 6,
+              "summary": {
+                "supported": 5,
+                "contradicted": 0,
+                "insufficient": 0,
+                "failed_or_unchecked": 1
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-evidence-limits",
+          "turn": 3,
+          "record_status": "complete",
+          "evidence_status": "partial",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "partial_error",
+              "claims": 0,
+              "summary": {
+                "supported": 0,
+                "contradicted": 0,
+                "insufficient": 0,
+                "failed_or_unchecked": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "run06": {
+      "code": "run04 answers unchanged; audits re-run with the title-line hand-off and per-claim validation (06adc1f)",
+      "recorded": "2026-10-04",
+      "known_limits": [
+        "Atomic v2 extraction for GRADE turn 1 hit the 32,768-token output limit (truncated JSON); kept as a failure.",
+        "Diet/exercise turn 3 reports the exercise trial's overall duration as not stated; the abstract gives a 3-day monitoring window and sessions 7 days apart."
+      ],
+      "turns": [
+        {
+          "conversation": "v08-grade-follow-up",
+          "turn": 1,
+          "record_status": "complete",
+          "evidence_status": "complete",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 19,
+              "summary": {
+                "supported": 18,
+                "contradicted": 0,
+                "insufficient": 1,
+                "failed_or_unchecked": 0
+              }
+            },
+            {
+              "method": "atomic_v2",
+              "status": "partial_error",
+              "claims": 0,
+              "summary": {
+                "supported": 0,
+                "contradicted": 0,
+                "insufficient": 0,
+                "failed_or_unchecked": 0
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-grade-follow-up",
+          "turn": 2,
+          "record_status": "complete",
+          "evidence_status": "complete",
+          "faithful": true,
+          "regen_count": 1,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 12,
+              "summary": {
+                "supported": 12,
+                "contradicted": 0,
+                "insufficient": 0,
+                "failed_or_unchecked": 0
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-grade-follow-up",
+          "turn": 3,
+          "record_status": "complete",
+          "evidence_status": "complete",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 8,
+              "summary": {
+                "supported": 7,
+                "contradicted": 0,
+                "insufficient": 1,
+                "failed_or_unchecked": 0
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-diet-exercise",
+          "turn": 1,
+          "record_status": "complete",
+          "evidence_status": "complete",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 11,
+              "summary": {
+                "supported": 8,
+                "contradicted": 0,
+                "insufficient": 3,
+                "failed_or_unchecked": 0
+              }
+            },
+            {
+              "method": "atomic_v2",
+              "status": "partial_error",
+              "claims": 16,
+              "summary": {
+                "supported": 0,
+                "contradicted": 0,
+                "insufficient": 5,
+                "failed_or_unchecked": 11
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-diet-exercise",
+          "turn": 2,
+          "record_status": "complete",
+          "evidence_status": "complete",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 11,
+              "summary": {
+                "supported": 9,
+                "contradicted": 0,
+                "insufficient": 2,
+                "failed_or_unchecked": 0
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-diet-exercise",
+          "turn": 3,
+          "record_status": "complete",
+          "evidence_status": "partial",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 8,
+              "summary": {
+                "supported": 7,
+                "contradicted": 0,
+                "insufficient": 1,
+                "failed_or_unchecked": 0
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-evidence-limits",
+          "turn": 1,
+          "record_status": "complete",
+          "evidence_status": "insufficient",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 2,
+              "summary": {
+                "supported": 2,
+                "contradicted": 0,
+                "insufficient": 0,
+                "failed_or_unchecked": 0
+              }
+            },
+            {
+              "method": "atomic_v2",
+              "status": "ok",
+              "claims": 2,
+              "summary": {
+                "supported": 2,
+                "contradicted": 0,
+                "insufficient": 0,
+                "failed_or_unchecked": 0
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-evidence-limits",
+          "turn": 2,
+          "record_status": "complete",
+          "evidence_status": "complete",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 9,
+              "summary": {
+                "supported": 9,
+                "contradicted": 0,
+                "insufficient": 0,
+                "failed_or_unchecked": 0
+              }
+            }
+          ]
+        },
+        {
+          "conversation": "v08-evidence-limits",
+          "turn": 3,
+          "record_status": "complete",
+          "evidence_status": "partial",
+          "faithful": true,
+          "regen_count": 0,
+          "audits": [
+            {
+              "method": "direct",
+              "status": "ok",
+              "claims": 2,
+              "summary": {
+                "supported": 2,
+                "contradicted": 0,
+                "insufficient": 0,
+                "failed_or_unchecked": 0
+              }
+            }
+          ]
+        }
+      ]
     }
+  },
+  "not_kept": {
+    "run03": "Aborted: the gateway dropped the stream during the first question ('upstream stream ended before [DONE]') before any answer was produced. Restarted as run04 after adding a single transport retry.",
+    "run05": "Audits of the run04 answers with a hand-off header that held the title but not the identifier; superseded by run06 before packaging."
   }
 }

@@ -1,0 +1,421 @@
+{
+  "input": {
+    "answer": "In the 2016 brown-rice-based vegan diet randomized trial in Korean adults with type 2 diabetes, mean HbA1c levels at weeks 0, 4 and 12 were 7.7%, 7.2% and 7.1% in the vegan diet group and 7.4%, 7.2% and 7.2% in the conventional diet group [PMC:PMC4890770]. Both the vegan and conventional diet groups showed significant reductions in HbA1c over the 12 weeks, but the reduction was larger with the vegan diet than with the conventional diet (-0.5% vs. -0.2%; p-for-interaction = 0.017) [PMC:PMC4890770]. Among participants with high compliance only, the between-group difference in HbA1c reduction was larger still, at -0.9% for the vegan group versus -0.3% for the conventional group [PMC:PMC4890770].",
+    "sources": [
+      {
+        "id": "evidence-1",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks."
+      },
+      {
+        "id": "evidence-2",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks. HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks."
+      },
+      {
+        "id": "evidence-3",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "Both diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+      },
+      {
+        "id": "evidence-4",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "Several intervention studies have suggested that vegetarian or vegan diets have clinical benefits, particularly in terms of glycemic control, in patients with type 2 diabetes (T2D); however, no randomized controlled trial has been conducted in Asians who more commonly depend on plant-based foods, as compared to Western populations. Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals."
+      }
+    ],
+    "strategy": "direct"
+  },
+  "audit": {
+    "id": "598abc08-40b1-449d-87f6-c1da79f5d5fe",
+    "created_utc": "2026-10-04T18:58:18.688647+00:00",
+    "strategy": "direct",
+    "status": "partial_error",
+    "answer_sha256": "f49e838afd1e42417cfb0926056ea8d60f9a7effc9460dac04c2b57a243e2e45",
+    "source_hashes": {
+      "evidence-1": "683dc9e6bf32afc40e76cb97593a3847a7adc2dccbfc813cd9ca5dfe013f00e5",
+      "evidence-2": "0912029346629933aad1a05b2a919d87e4c85fcc12b0c627f57bd463979fcbe0",
+      "evidence-3": "919fca6984eb62dd1c4d4e419303793bfbec4602423396b7bcf86824e948e451",
+      "evidence-4": "af342cbaa7a8d8c526074605f3edc5f2bf03f5694825685ff6cb39fec4e7250a"
+    },
+    "claims": [
+      {
+        "id": "claim-1",
+        "quote": "2016",
+        "relation": "insufficient",
+        "explanation": "The supplied sources do not state the trial year.",
+        "status": "ok",
+        "answer_span": {
+          "start": 7,
+          "end": 11,
+          "text": "2016",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      {
+        "id": "claim-2",
+        "quote": "brown-rice-based vegan diet randomized trial",
+        "relation": "supported",
+        "explanation": "The source title identifies a brown rice based vegan diet and randomized clinical trial, and the text states participants were randomly assigned.",
+        "status": "invalid_reference",
+        "answer_span": {
+          "start": 12,
+          "end": 56,
+          "text": "brown-rice-based vegan diet randomized trial",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [],
+        "error_type": "QuoteNotFound"
+      },
+      {
+        "id": "claim-3",
+        "quote": "Korean adults",
+        "relation": "insufficient",
+        "explanation": "The source says Korean individuals, not Korean adults; age/adult status is not established.",
+        "status": "ok",
+        "answer_span": {
+          "start": 60,
+          "end": 73,
+          "text": "Korean adults",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 334,
+            "end": 463,
+            "text": "Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-4",
+            "source_sha256": "af342cbaa7a8d8c526074605f3edc5f2bf03f5694825685ff6cb39fec4e7250a"
+          }
+        ]
+      },
+      {
+        "id": "claim-4",
+        "quote": "type 2 diabetes",
+        "relation": "supported",
+        "explanation": "The source explicitly refers to patients with type 2 diabetes (T2D).",
+        "status": "ok",
+        "answer_span": {
+          "start": 79,
+          "end": 94,
+          "text": "type 2 diabetes",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 0,
+            "end": 333,
+            "text": "Several intervention studies have suggested that vegetarian or vegan diets have clinical benefits, particularly in terms of glycemic control, in patients with type 2 diabetes (T2D); however, no randomized controlled trial has been conducted in Asians who more commonly depend on plant-based foods, as compared to Western populations.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-4",
+            "source_sha256": "af342cbaa7a8d8c526074605f3edc5f2bf03f5694825685ff6cb39fec4e7250a"
+          }
+        ]
+      },
+      {
+        "id": "claim-5",
+        "quote": "mean HbA1c levels at weeks 0, 4 and 12 were 7.7%, 7.2% and 7.1% in the vegan diet group and 7.4%, 7.2% and 7.2% in the conventional diet group",
+        "relation": "supported",
+        "explanation": "The source reports the same mean HbA1c values for the vegan and conventional groups at weeks 0, 4, and 12.",
+        "status": "ok",
+        "answer_span": {
+          "start": 96,
+          "end": 238,
+          "text": "mean HbA1c levels at weeks 0, 4 and 12 were 7.7%, 7.2% and 7.1% in the vegan diet group and 7.4%, 7.2% and 7.2% in the conventional diet group",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 0,
+            "end": 155,
+            "text": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-1",
+            "source_sha256": "683dc9e6bf32afc40e76cb97593a3847a7adc2dccbfc813cd9ca5dfe013f00e5"
+          }
+        ]
+      },
+      {
+        "id": "claim-6",
+        "quote": "Both the vegan and conventional diet groups showed significant reductions in HbA1c over the 12 weeks",
+        "relation": "supported",
+        "explanation": "The source states both groups had significant reductions, and the trial endpoint was change over 12 weeks.",
+        "status": "ok",
+        "answer_span": {
+          "start": 257,
+          "end": 357,
+          "text": "Both the vegan and conventional diet groups showed significant reductions in HbA1c over the 12 weeks",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 156,
+            "end": 346,
+            "text": "Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017).",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-1",
+            "source_sha256": "683dc9e6bf32afc40e76cb97593a3847a7adc2dccbfc813cd9ca5dfe013f00e5"
+          },
+          {
+            "start": 236,
+            "end": 362,
+            "text": "HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-2",
+            "source_sha256": "0912029346629933aad1a05b2a919d87e4c85fcc12b0c627f57bd463979fcbe0"
+          }
+        ]
+      },
+      {
+        "id": "claim-7",
+        "quote": "the reduction was larger with the vegan diet than with the conventional diet (-0.5% vs. -0.2%; p-for-interaction = 0.017)",
+        "relation": "supported",
+        "explanation": "The source directly reports larger reductions in the vegan group with the same values and p-for-interaction.",
+        "status": "ok",
+        "answer_span": {
+          "start": 363,
+          "end": 484,
+          "text": "the reduction was larger with the vegan diet than with the conventional diet (-0.5% vs. -0.2%; p-for-interaction = 0.017)",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 156,
+            "end": 346,
+            "text": "Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017).",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-1",
+            "source_sha256": "683dc9e6bf32afc40e76cb97593a3847a7adc2dccbfc813cd9ca5dfe013f00e5"
+          }
+        ]
+      },
+      {
+        "id": "claim-8",
+        "quote": "Among participants with high compliance only, the between-group difference in HbA1c reduction was larger still, at -0.9% for the vegan group versus -0.3% for the conventional group",
+        "relation": "supported",
+        "explanation": "The source reports a larger between-group difference among high-compliance participants, with -0.9% vs. -0.3%; the preceding sentence establishes the vegan-first order.",
+        "status": "ok",
+        "answer_span": {
+          "start": 503,
+          "end": 683,
+          "text": "Among participants with high compliance only, the between-group difference in HbA1c reduction was larger still, at -0.9% for the vegan group versus -0.3% for the conventional group",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 156,
+            "end": 504,
+            "text": "Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%).",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-1",
+            "source_sha256": "683dc9e6bf32afc40e76cb97593a3847a7adc2dccbfc813cd9ca5dfe013f00e5"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "supported": 5,
+      "contradicted": 0,
+      "insufficient": 2,
+      "failed_or_unchecked": 1
+    },
+    "extraction_coverage": {
+      "covered_nonspace_characters": 525,
+      "total_nonspace_characters": 592,
+      "uncovered": [
+        {
+          "start": 0,
+          "end": 7,
+          "text": "In the "
+        },
+        {
+          "start": 56,
+          "end": 60,
+          "text": " in "
+        },
+        {
+          "start": 73,
+          "end": 79,
+          "text": " with "
+        },
+        {
+          "start": 94,
+          "end": 96,
+          "text": ", "
+        },
+        {
+          "start": 238,
+          "end": 257,
+          "text": " [PMC:PMC4890770]. "
+        },
+        {
+          "start": 357,
+          "end": 363,
+          "text": ", but "
+        },
+        {
+          "start": 484,
+          "end": 503,
+          "text": " [PMC:PMC4890770]. "
+        },
+        {
+          "start": 683,
+          "end": 701,
+          "text": " [PMC:PMC4890770]."
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "checked_coverage": {
+      "covered_nonspace_characters": 485,
+      "total_nonspace_characters": 592,
+      "uncovered": [
+        {
+          "start": 0,
+          "end": 7,
+          "text": "In the "
+        },
+        {
+          "start": 11,
+          "end": 60,
+          "text": " brown-rice-based vegan diet randomized trial in "
+        },
+        {
+          "start": 73,
+          "end": 79,
+          "text": " with "
+        },
+        {
+          "start": 94,
+          "end": 96,
+          "text": ", "
+        },
+        {
+          "start": 238,
+          "end": 257,
+          "text": " [PMC:PMC4890770]. "
+        },
+        {
+          "start": 357,
+          "end": 363,
+          "text": ", but "
+        },
+        {
+          "start": 484,
+          "end": 503,
+          "text": " [PMC:PMC4890770]. "
+        },
+        {
+          "start": 683,
+          "end": 701,
+          "text": " [PMC:PMC4890770]."
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "claims_at_cap": false,
+    "calls": [
+      {
+        "stage": "direct",
+        "status": "ok",
+        "raw_output": "{\"claims\":[{\"quote\":\"2016\",\"occurrence\":0,\"relation\":\"insufficient\",\"evidence\":[],\"explanation\":\"The supplied sources do not state the trial year.\"},{\"quote\":\"brown-rice-based vegan diet randomized trial\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\",\"occurrence\":0},{\"source_id\":\"evidence-2\",\"quote\":\"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\",\"occurrence\":0}],\"explanation\":\"The source title identifies a brown rice based vegan diet and randomized clinical trial, and the text states participants were randomly assigned.\"},{\"quote\":\"Korean adults\",\"occurrence\":0,\"relation\":\"insufficient\",\"evidence\":[{\"source_id\":\"evidence-4\",\"quote\":\"Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals.\",\"occurrence\":0}],\"explanation\":\"The source says Korean individuals, not Korean adults; age/adult status is not established.\"},{\"quote\":\"type 2 diabetes\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-4\",\"quote\":\"Several intervention studies have suggested that vegetarian or vegan diets have clinical benefits, particularly in terms of glycemic control, in patients with type 2 diabetes (T2D); however, no randomized controlled trial has been conducted in Asians who more commonly depend on plant-based foods, as compared to Western populations.\",\"occurrence\":0}],\"explanation\":\"The source explicitly refers to patients with type 2 diabetes (T2D).\"},{\"quote\":\"mean HbA1c levels at weeks 0, 4 and 12 were 7.7%, 7.2% and 7.1% in the vegan diet group and 7.4%, 7.2% and 7.2% in the conventional diet group\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively.\",\"occurrence\":0}],\"explanation\":\"The source reports the same mean HbA1c values for the vegan and conventional groups at weeks 0, 4, and 12.\"},{\"quote\":\"Both the vegan and conventional diet groups showed significant reductions in HbA1c over the 12 weeks\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017).\",\"occurrence\":0},{\"source_id\":\"evidence-2\",\"quote\":\"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.\",\"occurrence\":0}],\"explanation\":\"The source states both groups had significant reductions, and the trial endpoint was change over 12 weeks.\"},{\"quote\":\"the reduction was larger with the vegan diet than with the conventional diet (-0.5% vs. -0.2%; p-for-interaction = 0.017)\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017).\",\"occurrence\":0}],\"explanation\":\"The source directly reports larger reductions in the vegan group with the same values and p-for-interaction.\"},{\"quote\":\"Among participants with high compliance only, the between-group difference in HbA1c reduction was larger still, at -0.9% for the vegan group versus -0.3% for the conventional group\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%).\",\"occurrence\":0}],\"explanation\":\"The source reports a larger between-group difference among high-compliance participants, with -0.9% vs. -0.3%; the preceding sentence establishes the vegan-first order.\"}]}",
+        "usage": {
+          "input_tokens": 1196,
+          "output_tokens": 11590,
+          "total_tokens": 12786
+        },
+        "transport_metadata": {
+          "model": "deepseek-v4.1-flash",
+          "model_identifiers": [
+            "deepseek-v4.1-flash"
+          ],
+          "finish_reason": "stop",
+          "usage_snapshots": [
+            {
+              "input_tokens": 1196,
+              "output_tokens": 11590,
+              "total_tokens": 12786
+            }
+          ],
+          "reasoning_characters": 42976
+        },
+        "elapsed_seconds": 42.544
+      }
+    ],
+    "elapsed_seconds": 42.547,
+    "scope": "Textual support in provided sources; not calibrated confidence or clinical evidence grading."
+  },
+  "mode": "saved",
+  "provenance": {
+    "note": "Saved actual Ask → audit. Three-paper abstract demonstration, not independent clinical gold.",
+    "run": "data/demo/conversations/run04",
+    "conversation_id": "v08-diet-exercise",
+    "turn_id": "v08-diet-exercise-turn-2",
+    "revision_id": "v08-diet-exercise-turn-2-revision-1",
+    "handoff": {
+      "kind": "live_ask",
+      "question": "In the vegan diet trial specifically, what HbA1c changes were reported for the two groups?",
+      "thread_id": "v08-diet-exercise",
+      "citations": [
+        "PMC:PMC4890770"
+      ],
+      "input": {
+        "answer": "In the 2016 brown-rice-based vegan diet randomized trial in Korean adults with type 2 diabetes, mean HbA1c levels at weeks 0, 4 and 12 were 7.7%, 7.2% and 7.1% in the vegan diet group and 7.4%, 7.2% and 7.2% in the conventional diet group [PMC:PMC4890770]. Both the vegan and conventional diet groups showed significant reductions in HbA1c over the 12 weeks, but the reduction was larger with the vegan diet than with the conventional diet (-0.5% vs. -0.2%; p-for-interaction = 0.017) [PMC:PMC4890770]. Among participants with high compliance only, the between-group difference in HbA1c reduction was larger still, at -0.9% for the vegan group versus -0.3% for the conventional group [PMC:PMC4890770].",
+        "strategy": "direct",
+        "sources": [
+          {
+            "id": "evidence-1",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks."
+          },
+          {
+            "id": "evidence-2",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks. HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks."
+          },
+          {
+            "id": "evidence-3",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "Both diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+          },
+          {
+            "id": "evidence-4",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "Several intervention studies have suggested that vegetarian or vegan diets have clinical benefits, particularly in terms of glycemic control, in patients with type 2 diabetes (T2D); however, no randomized controlled trial has been conducted in Asians who more commonly depend on plant-based foods, as compared to Western populations. Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals."
+          }
+        ]
+      },
+      "source_map": [
+        {
+          "id": "evidence-1",
+          "chunk_id": "pmc:PMC4890770:2",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Results"
+        },
+        {
+          "id": "evidence-2",
+          "chunk_id": "pmc:PMC4890770:1",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Materials and Methods"
+        },
+        {
+          "id": "evidence-3",
+          "chunk_id": "pmc:PMC4890770:3",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Conclusion"
+        },
+        {
+          "id": "evidence-4",
+          "chunk_id": "pmc:PMC4890770:0",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Objective"
+        }
+      ]
+    }
+  }
+}

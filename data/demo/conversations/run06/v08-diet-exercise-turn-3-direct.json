@@ -1,0 +1,417 @@
+{
+  "input": {
+    "answer": "In the trial of participants diagnosed with type 2 diabetes, those randomized to a vegan diet excluding animal-based foods including fish (n = 46) or to a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) followed their assigned diet for 12 weeks; HbA1c was measured at weeks 0, 4 and 12, with change in HbA1c over 12 weeks as the primary endpoint, and the beneficial effect of the vegan diet was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks [PMC:PMC4890770]. The retrieved evidence does not establish: overall duration of the exercise study.",
+    "sources": [
+      {
+        "id": "evidence-1",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nBaseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+      },
+      {
+        "id": "evidence-2",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\n\nThe mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks."
+      },
+      {
+        "id": "evidence-3",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\n\nParticipants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks. HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks."
+      },
+      {
+        "id": "evidence-4",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\n\nBoth diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+      },
+      {
+        "id": "evidence-5",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nAerobic training, aerobic-resistance training and glucose profile (CGMS) in type 2 diabetes (CGMS exercise). ClinicalTrials.gov ID: NCT00887094."
+      }
+    ],
+    "strategy": "direct"
+  },
+  "audit": {
+    "id": "7aa2a266-150b-4be8-90f6-f06856eec365",
+    "created_utc": "2026-10-04T19:32:29.160627+00:00",
+    "strategy": "direct",
+    "status": "ok",
+    "answer_sha256": "25f20e6ba27ff9d785b5e668ce294692ccedd6b281fd6c40642a51fa1fca25e3",
+    "source_hashes": {
+      "evidence-1": "abd6478e54cf31346a2c5aa97527cb3f2b2461b9c85159c0fdd060ef83858474",
+      "evidence-2": "b30f74cadfc7a0330ee284b6330a348210225d9853a5452426ab9f83e689c865",
+      "evidence-3": "96d5afeaad3900523fb97bd9efde5535cabde09a68c7cc0561c2314daf90eb74",
+      "evidence-4": "cebf51544bce241980ae4ef0e120abd9c3dbd06d70792b56e10d0294f94e279e",
+      "evidence-5": "c9e1d44790620af9526b15dd3eac8079516175d596320bcc1575b6caa67ec759"
+    },
+    "claims": [
+      {
+        "id": "claim-1",
+        "quote": "In the trial of participants diagnosed with type 2 diabetes",
+        "relation": "supported",
+        "explanation": "The source title identifies a 12-week randomized clinical trial in patients with type 2 diabetes, and the body says participants diagnosed with T2D were randomly assigned.",
+        "status": "ok",
+        "answer_span": {
+          "start": 0,
+          "end": 59,
+          "text": "In the trial of participants diagnosed with type 2 diabetes",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 17,
+            "end": 177,
+            "text": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-3",
+            "source_sha256": "96d5afeaad3900523fb97bd9efde5535cabde09a68c7cc0561c2314daf90eb74"
+          },
+          {
+            "start": 179,
+            "end": 414,
+            "text": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-3",
+            "source_sha256": "96d5afeaad3900523fb97bd9efde5535cabde09a68c7cc0561c2314daf90eb74"
+          }
+        ]
+      },
+      {
+        "id": "claim-2",
+        "quote": "those randomized to a vegan diet excluding animal-based foods including fish (n = 46)",
+        "relation": "supported",
+        "explanation": "The source states randomization to a vegan diet excluding animal-based food including fish, with n = 46.",
+        "status": "ok",
+        "answer_span": {
+          "start": 61,
+          "end": 146,
+          "text": "those randomized to a vegan diet excluding animal-based foods including fish (n = 46)",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 179,
+            "end": 414,
+            "text": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-3",
+            "source_sha256": "96d5afeaad3900523fb97bd9efde5535cabde09a68c7cc0561c2314daf90eb74"
+          }
+        ]
+      },
+      {
+        "id": "claim-3",
+        "quote": "or to a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47)",
+        "relation": "supported",
+        "explanation": "The source states the conventional diet was recommended by the Korean Diabetes Association 2011, with n = 47.",
+        "status": "ok",
+        "answer_span": {
+          "start": 147,
+          "end": 233,
+          "text": "or to a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47)",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 179,
+            "end": 414,
+            "text": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-3",
+            "source_sha256": "96d5afeaad3900523fb97bd9efde5535cabde09a68c7cc0561c2314daf90eb74"
+          }
+        ]
+      },
+      {
+        "id": "claim-4",
+        "quote": "followed their assigned diet for 12 weeks",
+        "relation": "supported",
+        "explanation": "The source says participants were randomly assigned to follow either diet for 12 weeks; the excerpt does not separately document adherence.",
+        "status": "ok",
+        "answer_span": {
+          "start": 234,
+          "end": 275,
+          "text": "followed their assigned diet for 12 weeks",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 179,
+            "end": 414,
+            "text": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-3",
+            "source_sha256": "96d5afeaad3900523fb97bd9efde5535cabde09a68c7cc0561c2314daf90eb74"
+          }
+        ]
+      },
+      {
+        "id": "claim-5",
+        "quote": "HbA1c was measured at weeks 0, 4 and 12",
+        "relation": "supported",
+        "explanation": "The source states HbA1c levels were measured at weeks 0, 4, and 12.",
+        "status": "ok",
+        "answer_span": {
+          "start": 277,
+          "end": 316,
+          "text": "HbA1c was measured at weeks 0, 4 and 12",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 415,
+            "end": 541,
+            "text": "HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-3",
+            "source_sha256": "96d5afeaad3900523fb97bd9efde5535cabde09a68c7cc0561c2314daf90eb74"
+          }
+        ]
+      },
+      {
+        "id": "claim-6",
+        "quote": "with change in HbA1c over 12 weeks as the primary endpoint",
+        "relation": "supported",
+        "explanation": "The source states the primary study endpoint was the change in HbA1c levels over 12 weeks.",
+        "status": "ok",
+        "answer_span": {
+          "start": 318,
+          "end": 376,
+          "text": "with change in HbA1c over 12 weeks as the primary endpoint",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 415,
+            "end": 541,
+            "text": "HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-3",
+            "source_sha256": "96d5afeaad3900523fb97bd9efde5535cabde09a68c7cc0561c2314daf90eb74"
+          }
+        ]
+      },
+      {
+        "id": "claim-7",
+        "quote": "the beneficial effect of the vegan diet was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks",
+        "relation": "supported",
+        "explanation": "The source directly states that the beneficial effect of vegan diets was noted after adjusting for changes in total energy intake or waist circumference over the 12 weeks.",
+        "status": "ok",
+        "answer_span": {
+          "start": 382,
+          "end": 528,
+          "text": "the beneficial effect of the vegan diet was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 684,
+            "end": 828,
+            "text": "The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-2",
+            "source_sha256": "b30f74cadfc7a0330ee284b6330a348210225d9853a5452426ab9f83e689c865"
+          }
+        ]
+      },
+      {
+        "id": "claim-8",
+        "quote": "The retrieved evidence does not establish: overall duration of the exercise study.",
+        "relation": "insufficient",
+        "explanation": "This is a meta-statement about the evidence set; no provided source states the exercise study's overall duration, and the claim cannot be verified from source quotes.",
+        "status": "ok",
+        "answer_span": {
+          "start": 547,
+          "end": 629,
+          "text": "The retrieved evidence does not establish: overall duration of the exercise study.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      }
+    ],
+    "summary": {
+      "supported": 7,
+      "contradicted": 0,
+      "insufficient": 1,
+      "failed_or_unchecked": 0
+    },
+    "extraction_coverage": {
+      "covered_nonspace_characters": 501,
+      "total_nonspace_characters": 525,
+      "uncovered": [
+        {
+          "start": 59,
+          "end": 61,
+          "text": ", "
+        },
+        {
+          "start": 275,
+          "end": 277,
+          "text": "; "
+        },
+        {
+          "start": 316,
+          "end": 318,
+          "text": ", "
+        },
+        {
+          "start": 376,
+          "end": 382,
+          "text": ", and "
+        },
+        {
+          "start": 528,
+          "end": 547,
+          "text": " [PMC:PMC4890770]. "
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "checked_coverage": {
+      "covered_nonspace_characters": 501,
+      "total_nonspace_characters": 525,
+      "uncovered": [
+        {
+          "start": 59,
+          "end": 61,
+          "text": ", "
+        },
+        {
+          "start": 275,
+          "end": 277,
+          "text": "; "
+        },
+        {
+          "start": 316,
+          "end": 318,
+          "text": ", "
+        },
+        {
+          "start": 376,
+          "end": 382,
+          "text": ", and "
+        },
+        {
+          "start": 528,
+          "end": 547,
+          "text": " [PMC:PMC4890770]. "
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "claims_at_cap": false,
+    "calls": [
+      {
+        "stage": "direct",
+        "status": "ok",
+        "raw_output": "{\"claims\":[{\"quote\":\"In the trial of participants diagnosed with type 2 diabetes\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-3\",\"quote\":\"Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\",\"occurrence\":0},{\"source_id\":\"evidence-3\",\"quote\":\"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\",\"occurrence\":0}],\"explanation\":\"The source title identifies a 12-week randomized clinical trial in patients with type 2 diabetes, and the body says participants diagnosed with T2D were randomly assigned.\"},{\"quote\":\"those randomized to a vegan diet excluding animal-based foods including fish (n = 46)\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-3\",\"quote\":\"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\",\"occurrence\":0}],\"explanation\":\"The source states randomization to a vegan diet excluding animal-based food including fish, with n = 46.\"},{\"quote\":\"or to a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47)\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-3\",\"quote\":\"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\",\"occurrence\":0}],\"explanation\":\"The source states the conventional diet was recommended by the Korean Diabetes Association 2011, with n = 47.\"},{\"quote\":\"followed their assigned diet for 12 weeks\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-3\",\"quote\":\"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\",\"occurrence\":0}],\"explanation\":\"The source says participants were randomly assigned to follow either diet for 12 weeks; the excerpt does not separately document adherence.\"},{\"quote\":\"HbA1c was measured at weeks 0, 4 and 12\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-3\",\"quote\":\"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.\",\"occurrence\":0}],\"explanation\":\"The source states HbA1c levels were measured at weeks 0, 4, and 12.\"},{\"quote\":\"with change in HbA1c over 12 weeks as the primary endpoint\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-3\",\"quote\":\"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.\",\"occurrence\":0}],\"explanation\":\"The source states the primary study endpoint was the change in HbA1c levels over 12 weeks.\"},{\"quote\":\"the beneficial effect of the vegan diet was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-2\",\"quote\":\"The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks.\",\"occurrence\":0}],\"explanation\":\"The source directly states that the beneficial effect of vegan diets was noted after adjusting for changes in total energy intake or waist circumference over the 12 weeks.\"},{\"quote\":\"The retrieved evidence does not establish: overall duration of the exercise study.\",\"occurrence\":0,\"relation\":\"insufficient\",\"evidence\":[],\"explanation\":\"This is a meta-statement about the evidence set; no provided source states the exercise study's overall duration, and the claim cannot be verified from source quotes.\"}]}",
+        "usage": {
+          "input_tokens": 1468,
+          "output_tokens": 9077,
+          "total_tokens": 10545
+        },
+        "transport_metadata": {
+          "model": "deepseek-v4.1-flash",
+          "model_identifiers": [
+            "deepseek-v4.1-flash"
+          ],
+          "finish_reason": "stop",
+          "usage_snapshots": [
+            {
+              "input_tokens": 1468,
+              "output_tokens": 9077,
+              "total_tokens": 10545
+            }
+          ],
+          "reasoning_characters": 37362
+        },
+        "elapsed_seconds": 38.844
+      }
+    ],
+    "elapsed_seconds": 38.846,
+    "scope": "Textual support in provided sources; not calibrated confidence or clinical evidence grading."
+  },
+  "mode": "saved",
+  "provenance": {
+    "note": "Saved actual Ask → audit. Three-paper abstract demonstration, not independent clinical gold.",
+    "run": "data/demo/conversations/run06",
+    "conversation_id": "v08-diet-exercise",
+    "turn_id": "v08-diet-exercise-turn-3",
+    "revision_id": "v08-diet-exercise-turn-3-revision-1",
+    "handoff": {
+      "kind": "live_ask",
+      "question": "Returning to both the vegan diet study and the exercise study, how long did it last?",
+      "thread_id": "v08-diet-exercise",
+      "citations": [
+        "PMC:PMC4890770"
+      ],
+      "input": {
+        "answer": "In the trial of participants diagnosed with type 2 diabetes, those randomized to a vegan diet excluding animal-based foods including fish (n = 46) or to a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) followed their assigned diet for 12 weeks; HbA1c was measured at weeks 0, 4 and 12, with change in HbA1c over 12 weeks as the primary endpoint, and the beneficial effect of the vegan diet was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks [PMC:PMC4890770]. The retrieved evidence does not establish: overall duration of the exercise study.",
+        "strategy": "direct",
+        "sources": [
+          {
+            "id": "evidence-1",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nBaseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+          },
+          {
+            "id": "evidence-2",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\n\nThe mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks."
+          },
+          {
+            "id": "evidence-3",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\n\nParticipants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks. HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks."
+          },
+          {
+            "id": "evidence-4",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\n\nBoth diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+          },
+          {
+            "id": "evidence-5",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nAerobic training, aerobic-resistance training and glucose profile (CGMS) in type 2 diabetes (CGMS exercise). ClinicalTrials.gov ID: NCT00887094."
+          }
+        ]
+      },
+      "source_map": [
+        {
+          "id": "evidence-1",
+          "chunk_id": "pmc:PMC3594238:2",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Results"
+        },
+        {
+          "id": "evidence-2",
+          "chunk_id": "pmc:PMC4890770:2",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Results"
+        },
+        {
+          "id": "evidence-3",
+          "chunk_id": "pmc:PMC4890770:1",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Materials and Methods"
+        },
+        {
+          "id": "evidence-4",
+          "chunk_id": "pmc:PMC4890770:3",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Conclusion"
+        },
+        {
+          "id": "evidence-5",
+          "chunk_id": "pmc:PMC3594238:4",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Trial Registration"
+        }
+      ]
+    }
+  }
+}

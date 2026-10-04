@@ -1,0 +1,250 @@
+{
+  "input": {
+    "answer": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet. The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+    "sources": [
+      {
+        "id": "evidence-1",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\n\nBoth diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+      },
+      {
+        "id": "evidence-2",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\n\nThe mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks."
+      },
+      {
+        "id": "evidence-3",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nBaseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+      },
+      {
+        "id": "evidence-4",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nBoth AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises."
+      },
+      {
+        "id": "evidence-5",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\n\nSeveral intervention studies have suggested that vegetarian or vegan diets have clinical benefits, particularly in terms of glycemic control, in patients with type 2 diabetes (T2D); however, no randomized controlled trial has been conducted in Asians who more commonly depend on plant-based foods, as compared to Western populations. Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals."
+      }
+    ],
+    "strategy": "direct"
+  },
+  "audit": {
+    "id": "09390257-3445-4d0f-832c-4fe9bd28c292",
+    "created_utc": "2026-10-04T19:32:49.642856+00:00",
+    "strategy": "direct",
+    "status": "ok",
+    "answer_sha256": "ff522669a3ae093a81ab7dc5a5f3b2b48479fddfdefcf6307502a42292c44e49",
+    "source_hashes": {
+      "evidence-1": "cebf51544bce241980ae4ef0e120abd9c3dbd06d70792b56e10d0294f94e279e",
+      "evidence-2": "b30f74cadfc7a0330ee284b6330a348210225d9853a5452426ab9f83e689c865",
+      "evidence-3": "abd6478e54cf31346a2c5aa97527cb3f2b2461b9c85159c0fdd060ef83858474",
+      "evidence-4": "b78a79e8302c7da75883aa997a4cbb999fda2ed9374913a0ba516c67a50d3b93",
+      "evidence-5": "cd4aa1362068bf173cbda7e7dd852a0b077094bbf1566e2573871da6dff0b507"
+    },
+    "claims": [
+      {
+        "id": "claim-1",
+        "quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+        "relation": "supported",
+        "explanation": "The vegan-diet sources report 12-week glycemic outcomes and call for long-term study; none report five-year all-cause mortality reduction.",
+        "status": "ok",
+        "answer_span": {
+          "start": 0,
+          "end": 101,
+          "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 435,
+            "end": 590,
+            "text": "However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-1",
+            "source_sha256": "cebf51544bce241980ae4ef0e120abd9c3dbd06d70792b56e10d0294f94e279e"
+          },
+          {
+            "start": 684,
+            "end": 828,
+            "text": "The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-2",
+            "source_sha256": "b30f74cadfc7a0330ee284b6330a348210225d9853a5452426ab9f83e689c865"
+          },
+          {
+            "start": 513,
+            "end": 642,
+            "text": "Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-5",
+            "source_sha256": "cd4aa1362068bf173cbda7e7dd852a0b077094bbf1566e2573871da6dff0b507"
+          }
+        ]
+      },
+      {
+        "id": "claim-2",
+        "quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+        "relation": "supported",
+        "explanation": "The exercise sources report short-term glucose and glucose-variability outcomes; none report five-year all-cause mortality reduction.",
+        "status": "ok",
+        "answer_span": {
+          "start": 102,
+          "end": 219,
+          "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 131,
+            "end": 354,
+            "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-4",
+            "source_sha256": "b78a79e8302c7da75883aa997a4cbb999fda2ed9374913a0ba516c67a50d3b93"
+          },
+          {
+            "start": 316,
+            "end": 490,
+            "text": "Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-3",
+            "source_sha256": "abd6478e54cf31346a2c5aa97527cb3f2b2461b9c85159c0fdd060ef83858474"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "supported": 2,
+      "contradicted": 0,
+      "insufficient": 0,
+      "failed_or_unchecked": 0
+    },
+    "extraction_coverage": {
+      "covered_nonspace_characters": 191,
+      "total_nonspace_characters": 191,
+      "uncovered": [],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "checked_coverage": {
+      "covered_nonspace_characters": 191,
+      "total_nonspace_characters": 191,
+      "uncovered": [],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "claims_at_cap": false,
+    "calls": [
+      {
+        "stage": "direct",
+        "status": "ok",
+        "raw_output": "{\"claims\":[{\"quote\":\"The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms.\",\"occurrence\":0},{\"source_id\":\"evidence-2\",\"quote\":\"The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks.\",\"occurrence\":0},{\"source_id\":\"evidence-5\",\"quote\":\"Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals.\",\"occurrence\":0}],\"explanation\":\"The vegan-diet sources report 12-week glycemic outcomes and call for long-term study; none report five-year all-cause mortality reduction.\"},{\"quote\":\"The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-4\",\"quote\":\"Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises.\",\"occurrence\":0},{\"source_id\":\"evidence-3\",\"quote\":\"Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.\",\"occurrence\":0}],\"explanation\":\"The exercise sources report short-term glucose and glucose-variability outcomes; none report five-year all-cause mortality reduction.\"}]}",
+        "usage": {
+          "input_tokens": 1359,
+          "output_tokens": 4420,
+          "total_tokens": 5779
+        },
+        "transport_metadata": {
+          "model": "deepseek-v4.1-flash",
+          "model_identifiers": [
+            "deepseek-v4.1-flash"
+          ],
+          "finish_reason": "stop",
+          "usage_snapshots": [
+            {
+              "input_tokens": 1359,
+              "output_tokens": 4420,
+              "total_tokens": 5779
+            }
+          ],
+          "reasoning_characters": 20148
+        },
+        "elapsed_seconds": 20.45
+      }
+    ],
+    "elapsed_seconds": 20.45,
+    "scope": "Textual support in provided sources; not calibrated confidence or clinical evidence grading."
+  },
+  "mode": "saved",
+  "provenance": {
+    "note": "Saved actual Ask → audit. Three-paper abstract demonstration, not independent clinical gold.",
+    "run": "data/demo/conversations/run06",
+    "conversation_id": "v08-evidence-limits",
+    "turn_id": "v08-evidence-limits-turn-1",
+    "revision_id": "v08-evidence-limits-turn-1-revision-1",
+    "handoff": {
+      "kind": "live_ask",
+      "question": "Do the supplied 2016 vegan diet and 2013 aerobic/combined exercise abstracts show that either intervention reduces five-year all-cause mortality?",
+      "thread_id": "v08-evidence-limits",
+      "citations": [],
+      "input": {
+        "answer": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet. The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+        "strategy": "direct",
+        "sources": [
+          {
+            "id": "evidence-1",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\n\nBoth diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+          },
+          {
+            "id": "evidence-2",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\n\nThe mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks."
+          },
+          {
+            "id": "evidence-3",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nBaseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+          },
+          {
+            "id": "evidence-4",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nBoth AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises."
+          },
+          {
+            "id": "evidence-5",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\n\nSeveral intervention studies have suggested that vegetarian or vegan diets have clinical benefits, particularly in terms of glycemic control, in patients with type 2 diabetes (T2D); however, no randomized controlled trial has been conducted in Asians who more commonly depend on plant-based foods, as compared to Western populations. Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals."
+          }
+        ]
+      },
+      "source_map": [
+        {
+          "id": "evidence-1",
+          "chunk_id": "pmc:PMC4890770:3",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Conclusion"
+        },
+        {
+          "id": "evidence-2",
+          "chunk_id": "pmc:PMC4890770:2",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Results"
+        },
+        {
+          "id": "evidence-3",
+          "chunk_id": "pmc:PMC3594238:2",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Results"
+        },
+        {
+          "id": "evidence-4",
+          "chunk_id": "pmc:PMC3594238:3",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Conclusions"
+        },
+        {
+          "id": "evidence-5",
+          "chunk_id": "pmc:PMC4890770:0",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Objective"
+        }
+      ]
+    }
+  }
+}

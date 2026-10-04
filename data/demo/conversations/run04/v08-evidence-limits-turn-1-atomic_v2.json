@@ -1,0 +1,1150 @@
+{
+  "input": {
+    "answer": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet. The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+    "sources": [
+      {
+        "id": "evidence-1",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "Both diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+      },
+      {
+        "id": "evidence-2",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks."
+      },
+      {
+        "id": "evidence-3",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+      },
+      {
+        "id": "evidence-4",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises."
+      },
+      {
+        "id": "evidence-5",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "Several intervention studies have suggested that vegetarian or vegan diets have clinical benefits, particularly in terms of glycemic control, in patients with type 2 diabetes (T2D); however, no randomized controlled trial has been conducted in Asians who more commonly depend on plant-based foods, as compared to Western populations. Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals."
+      }
+    ],
+    "strategy": "atomic_v2"
+  },
+  "audit": {
+    "id": "f7120c8f-35eb-4375-a554-1fc97aeb3c7b",
+    "created_utc": "2026-10-04T19:04:12.799190+00:00",
+    "strategy": "atomic_v2",
+    "variant": "qualifier_anchors_v1",
+    "status": "ok",
+    "answer_sha256": "ff522669a3ae093a81ab7dc5a5f3b2b48479fddfdefcf6307502a42292c44e49",
+    "source_hashes": {
+      "evidence-1": "919fca6984eb62dd1c4d4e419303793bfbec4602423396b7bcf86824e948e451",
+      "evidence-2": "683dc9e6bf32afc40e76cb97593a3847a7adc2dccbfc813cd9ca5dfe013f00e5",
+      "evidence-3": "96d4b4a46e565db471319bded2a9739e97553cc5af52d3365f11046e3f815a10",
+      "evidence-4": "444909c5406f77af26202f361ee1bce4f63d715762fe7ec44930d122c56d9471",
+      "evidence-5": "af342cbaa7a8d8c526074605f3edc5f2bf03f5694825685ff6cb39fec4e7250a"
+    },
+    "claims": [
+      {
+        "id": "fact-1",
+        "parent_claim_id": "parent-1",
+        "quote": "The retrieved evidence does not establish",
+        "answer_span": {
+          "start": 0,
+          "end": 41,
+          "text": "The retrieved evidence does not establish",
+          "offset_unit": "unicode_codepoint"
+        },
+        "answer_spans": [
+          {
+            "start": 0,
+            "end": 41,
+            "text": "The retrieved evidence does not establish",
+            "offset_unit": "unicode_codepoint"
+          },
+          {
+            "start": 43,
+            "end": 82,
+            "text": "five-year all-cause mortality reduction",
+            "offset_unit": "unicode_codepoint"
+          },
+          {
+            "start": 83,
+            "end": 100,
+            "text": "with a vegan diet",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "context_span": {
+          "start": 0,
+          "end": 101,
+          "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "context_spans": [
+          {
+            "start": 0,
+            "end": 101,
+            "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "normalized_claim": "The retrieved evidence does not establish a five-year all-cause mortality reduction with a vegan diet.",
+        "slots": {
+          "subject": "retrieved evidence",
+          "population": null,
+          "intervention": "vegan diet",
+          "comparator": null,
+          "outcome": "five-year all-cause mortality reduction",
+          "value_unit": null,
+          "time": "five-year",
+          "qualifications": "does not establish"
+        },
+        "qualifier_anchors": [
+          {
+            "kind": "negation_attribution",
+            "quote": "The retrieved evidence does not establish",
+            "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+            "parent_binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 0,
+                "end": 101,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 0,
+                  "end": 101,
+                  "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false
+            },
+            "binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 0,
+                "end": 41,
+                "text": "The retrieved evidence does not establish",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 0,
+                  "end": 41,
+                  "text": "The retrieved evidence does not establish",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "quote": "The retrieved evidence does not establish",
+              "search_scope": {
+                "start": 0,
+                "end": 101,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "binding_version": "parent-exact-v1"
+            }
+          },
+          {
+            "kind": "outcome",
+            "quote": "all-cause mortality reduction",
+            "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+            "parent_binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 0,
+                "end": 101,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 0,
+                  "end": 101,
+                  "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false
+            },
+            "binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 53,
+                "end": 82,
+                "text": "all-cause mortality reduction",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 53,
+                  "end": 82,
+                  "text": "all-cause mortality reduction",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "quote": "all-cause mortality reduction",
+              "search_scope": {
+                "start": 0,
+                "end": 101,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "binding_version": "parent-exact-v1"
+            }
+          },
+          {
+            "kind": "time_denominator",
+            "quote": "five-year",
+            "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+            "parent_binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 0,
+                "end": 101,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 0,
+                  "end": 101,
+                  "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false
+            },
+            "binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 43,
+                "end": 52,
+                "text": "five-year",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 43,
+                  "end": 52,
+                  "text": "five-year",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "quote": "five-year",
+              "search_scope": {
+                "start": 0,
+                "end": 101,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "binding_version": "parent-exact-v1"
+            }
+          }
+        ],
+        "fidelity_diagnostic": {
+          "status": "no_mechanical_issue_detected",
+          "flags": [],
+          "numbers_absent_from_interpretation": [],
+          "scope": "Literal anchors and numeric tokens only. Paraphrases/conversions may trigger review; absence of a warning does not establish semantic fidelity or complete extraction.",
+          "overrides_relation": false
+        },
+        "duplicate_of": null,
+        "binding_version": "parent-exact-v1",
+        "decomposition_status": "atomic",
+        "explanation": "The vegan-diet source reports only 12-week glycemic outcomes and explicitly states that further studies are needed to evaluate long-term effects, so it does not establish five-year all-cause mortality reduction.",
+        "relation": "supported",
+        "evidence": [
+          {
+            "start": 256,
+            "end": 411,
+            "text": "However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-1",
+            "source_sha256": "919fca6984eb62dd1c4d4e419303793bfbec4602423396b7bcf86824e948e451"
+          },
+          {
+            "start": 0,
+            "end": 155,
+            "text": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-2",
+            "source_sha256": "683dc9e6bf32afc40e76cb97593a3847a7adc2dccbfc813cd9ca5dfe013f00e5"
+          }
+        ],
+        "status": "ok",
+        "answer_bindings": [
+          {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 0,
+              "end": 41,
+              "text": "The retrieved evidence does not establish",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 0,
+                "end": 41,
+                "text": "The retrieved evidence does not establish",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false,
+            "quote": "The retrieved evidence does not establish",
+            "search_scope": {
+              "start": 0,
+              "end": 101,
+              "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "binding_version": "parent-exact-v1"
+          },
+          {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 43,
+              "end": 82,
+              "text": "five-year all-cause mortality reduction",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 43,
+                "end": 82,
+                "text": "five-year all-cause mortality reduction",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false,
+            "quote": "five-year all-cause mortality reduction",
+            "search_scope": {
+              "start": 0,
+              "end": 101,
+              "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "binding_version": "parent-exact-v1"
+          },
+          {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 83,
+              "end": 100,
+              "text": "with a vegan diet",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 83,
+                "end": 100,
+                "text": "with a vegan diet",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false,
+            "quote": "with a vegan diet",
+            "search_scope": {
+              "start": 0,
+              "end": 101,
+              "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "binding_version": "parent-exact-v1"
+          }
+        ],
+        "parent_binding": {
+          "status": "unique",
+          "match_count": 1,
+          "span": {
+            "start": 0,
+            "end": 101,
+            "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+            "offset_unit": "unicode_codepoint"
+          },
+          "candidates": [
+            {
+              "start": 0,
+              "end": 101,
+              "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+              "offset_unit": "unicode_codepoint"
+            }
+          ],
+          "candidates_truncated": false
+        },
+        "checker_results": {
+          "flash": {
+            "fact_id": "fact-1",
+            "relation": "supported",
+            "evidence": [
+              {
+                "source_id": "evidence-1",
+                "quote": "However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+              },
+              {
+                "source_id": "evidence-2",
+                "quote": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively."
+              }
+            ],
+            "explanation": "The vegan-diet source reports only 12-week glycemic outcomes and explicitly states that further studies are needed to evaluate long-term effects, so it does not establish five-year all-cause mortality reduction."
+          }
+        },
+        "evidence_bindings": [
+          {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 256,
+              "end": 411,
+              "text": "However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 256,
+                "end": 411,
+                "text": "However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms.",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false,
+            "source_id": "evidence-1",
+            "quote": "However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+          },
+          {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 0,
+              "end": 155,
+              "text": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 0,
+                "end": 155,
+                "text": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively.",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false,
+            "source_id": "evidence-2",
+            "quote": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively."
+          }
+        ],
+        "numeric_diagnostic": {
+          "status": "not_applicable",
+          "overrides_relation": false,
+          "scope": "Single explicit quantity with shared named subject/outcome/time; advisory only"
+        }
+      },
+      {
+        "id": "fact-2",
+        "parent_claim_id": "parent-2",
+        "quote": "The retrieved evidence does not establish",
+        "answer_span": {
+          "start": 102,
+          "end": 143,
+          "text": "The retrieved evidence does not establish",
+          "offset_unit": "unicode_codepoint"
+        },
+        "answer_spans": [
+          {
+            "start": 102,
+            "end": 143,
+            "text": "The retrieved evidence does not establish",
+            "offset_unit": "unicode_codepoint"
+          },
+          {
+            "start": 145,
+            "end": 184,
+            "text": "five-year all-cause mortality reduction",
+            "offset_unit": "unicode_codepoint"
+          },
+          {
+            "start": 185,
+            "end": 218,
+            "text": "with aerobic or combined exercise",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "context_span": {
+          "start": 102,
+          "end": 219,
+          "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "context_spans": [
+          {
+            "start": 102,
+            "end": 219,
+            "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+            "offset_unit": "unicode_codepoint"
+          }
+        ],
+        "normalized_claim": "The retrieved evidence does not establish a five-year all-cause mortality reduction with aerobic or combined exercise.",
+        "slots": {
+          "subject": "retrieved evidence",
+          "population": null,
+          "intervention": "aerobic or combined exercise",
+          "comparator": null,
+          "outcome": "five-year all-cause mortality reduction",
+          "value_unit": null,
+          "time": "five-year",
+          "qualifications": "does not establish"
+        },
+        "qualifier_anchors": [
+          {
+            "kind": "negation_attribution",
+            "quote": "The retrieved evidence does not establish",
+            "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+            "parent_binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 102,
+                "end": 219,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 102,
+                  "end": 219,
+                  "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false
+            },
+            "binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 102,
+                "end": 143,
+                "text": "The retrieved evidence does not establish",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 102,
+                  "end": 143,
+                  "text": "The retrieved evidence does not establish",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "quote": "The retrieved evidence does not establish",
+              "search_scope": {
+                "start": 102,
+                "end": 219,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "binding_version": "parent-exact-v1"
+            }
+          },
+          {
+            "kind": "outcome",
+            "quote": "all-cause mortality reduction",
+            "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+            "parent_binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 102,
+                "end": 219,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 102,
+                  "end": 219,
+                  "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false
+            },
+            "binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 155,
+                "end": 184,
+                "text": "all-cause mortality reduction",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 155,
+                  "end": 184,
+                  "text": "all-cause mortality reduction",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "quote": "all-cause mortality reduction",
+              "search_scope": {
+                "start": 102,
+                "end": 219,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "binding_version": "parent-exact-v1"
+            }
+          },
+          {
+            "kind": "time_denominator",
+            "quote": "five-year",
+            "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+            "parent_binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 102,
+                "end": 219,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 102,
+                  "end": 219,
+                  "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false
+            },
+            "binding": {
+              "status": "unique",
+              "match_count": 1,
+              "span": {
+                "start": 145,
+                "end": 154,
+                "text": "five-year",
+                "offset_unit": "unicode_codepoint"
+              },
+              "candidates": [
+                {
+                  "start": 145,
+                  "end": 154,
+                  "text": "five-year",
+                  "offset_unit": "unicode_codepoint"
+                }
+              ],
+              "candidates_truncated": false,
+              "quote": "five-year",
+              "search_scope": {
+                "start": 102,
+                "end": 219,
+                "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+                "offset_unit": "unicode_codepoint"
+              },
+              "binding_version": "parent-exact-v1"
+            }
+          }
+        ],
+        "fidelity_diagnostic": {
+          "status": "no_mechanical_issue_detected",
+          "flags": [],
+          "numbers_absent_from_interpretation": [],
+          "scope": "Literal anchors and numeric tokens only. Paraphrases/conversions may trigger review; absence of a warning does not establish semantic fidelity or complete extraction.",
+          "overrides_relation": false
+        },
+        "duplicate_of": null,
+        "binding_version": "parent-exact-v1",
+        "decomposition_status": "atomic",
+        "explanation": "The exercise sources report only short-term glucose responses (e.g., a 24-hour period) and do not report five-year all-cause mortality, so the retrieved evidence does not establish that outcome.",
+        "relation": "supported",
+        "evidence": [
+          {
+            "start": 0,
+            "end": 97,
+            "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-4",
+            "source_sha256": "444909c5406f77af26202f361ee1bce4f63d715762fe7ec44930d122c56d9471"
+          },
+          {
+            "start": 224,
+            "end": 359,
+            "text": "responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-3",
+            "source_sha256": "96d4b4a46e565db471319bded2a9739e97553cc5af52d3365f11046e3f815a10"
+          }
+        ],
+        "status": "ok",
+        "answer_bindings": [
+          {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 102,
+              "end": 143,
+              "text": "The retrieved evidence does not establish",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 102,
+                "end": 143,
+                "text": "The retrieved evidence does not establish",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false,
+            "quote": "The retrieved evidence does not establish",
+            "search_scope": {
+              "start": 102,
+              "end": 219,
+              "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "binding_version": "parent-exact-v1"
+          },
+          {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 145,
+              "end": 184,
+              "text": "five-year all-cause mortality reduction",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 145,
+                "end": 184,
+                "text": "five-year all-cause mortality reduction",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false,
+            "quote": "five-year all-cause mortality reduction",
+            "search_scope": {
+              "start": 102,
+              "end": 219,
+              "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "binding_version": "parent-exact-v1"
+          },
+          {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 185,
+              "end": 218,
+              "text": "with aerobic or combined exercise",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 185,
+                "end": 218,
+                "text": "with aerobic or combined exercise",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false,
+            "quote": "with aerobic or combined exercise",
+            "search_scope": {
+              "start": 102,
+              "end": 219,
+              "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "binding_version": "parent-exact-v1"
+          }
+        ],
+        "parent_binding": {
+          "status": "unique",
+          "match_count": 1,
+          "span": {
+            "start": 102,
+            "end": 219,
+            "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+            "offset_unit": "unicode_codepoint"
+          },
+          "candidates": [
+            {
+              "start": 102,
+              "end": 219,
+              "text": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+              "offset_unit": "unicode_codepoint"
+            }
+          ],
+          "candidates_truncated": false
+        },
+        "checker_results": {
+          "flash": {
+            "fact_id": "fact-2",
+            "relation": "supported",
+            "evidence": [
+              {
+                "source_id": "evidence-4",
+                "quote": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time."
+              },
+              {
+                "source_id": "evidence-3",
+                "quote": "responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation."
+              }
+            ],
+            "explanation": "The exercise sources report only short-term glucose responses (e.g., a 24-hour period) and do not report five-year all-cause mortality, so the retrieved evidence does not establish that outcome."
+          }
+        },
+        "evidence_bindings": [
+          {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 0,
+              "end": 97,
+              "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 0,
+                "end": 97,
+                "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time.",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false,
+            "source_id": "evidence-4",
+            "quote": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time."
+          },
+          {
+            "status": "unique",
+            "match_count": 1,
+            "span": {
+              "start": 224,
+              "end": 359,
+              "text": "responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.",
+              "offset_unit": "unicode_codepoint"
+            },
+            "candidates": [
+              {
+                "start": 224,
+                "end": 359,
+                "text": "responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.",
+                "offset_unit": "unicode_codepoint"
+              }
+            ],
+            "candidates_truncated": false,
+            "source_id": "evidence-3",
+            "quote": "responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation."
+          }
+        ],
+        "numeric_diagnostic": {
+          "status": "not_applicable",
+          "overrides_relation": false,
+          "scope": "Single explicit quantity with shared named subject/outcome/time; advisory only"
+        }
+      }
+    ],
+    "summary": {
+      "supported": 2,
+      "contradicted": 0,
+      "insufficient": 0,
+      "needs_review": 0,
+      "failed_or_unchecked": 0
+    },
+    "calls": [
+      {
+        "stage": "atomic_v2_extract",
+        "status": "ok",
+        "raw_output": "{\"facts\":[{\"parent_quote\":\"The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.\",\"answer_quotes\":[\"The retrieved evidence does not establish\",\"five-year all-cause mortality reduction\",\"with a vegan diet\"],\"normalized_claim\":\"The retrieved evidence does not establish a five-year all-cause mortality reduction with a vegan diet.\",\"slots\":{\"subject\":\"retrieved evidence\",\"population\":null,\"intervention\":\"vegan diet\",\"comparator\":null,\"outcome\":\"five-year all-cause mortality reduction\",\"value_unit\":null,\"time\":\"five-year\",\"qualifications\":\"does not establish\"},\"decomposition_status\":\"atomic\",\"qualifiers\":[{\"kind\":\"negation_attribution\",\"quote\":\"The retrieved evidence does not establish\",\"parent_quote\":\"The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.\"},{\"kind\":\"outcome\",\"quote\":\"all-cause mortality reduction\",\"parent_quote\":\"The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.\"},{\"kind\":\"time_denominator\",\"quote\":\"five-year\",\"parent_quote\":\"The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.\"}]},{\"parent_quote\":\"The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.\",\"answer_quotes\":[\"The retrieved evidence does not establish\",\"five-year all-cause mortality reduction\",\"with aerobic or combined exercise\"],\"normalized_claim\":\"The retrieved evidence does not establish a five-year all-cause mortality reduction with aerobic or combined exercise.\",\"slots\":{\"subject\":\"retrieved evidence\",\"population\":null,\"intervention\":\"aerobic or combined exercise\",\"comparator\":null,\"outcome\":\"five-year all-cause mortality reduction\",\"value_unit\":null,\"time\":\"five-year\",\"qualifications\":\"does not establish\"},\"decomposition_status\":\"atomic\",\"qualifiers\":[{\"kind\":\"negation_attribution\",\"quote\":\"The retrieved evidence does not establish\",\"parent_quote\":\"The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.\"},{\"kind\":\"outcome\",\"quote\":\"all-cause mortality reduction\",\"parent_quote\":\"The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.\"},{\"kind\":\"time_denominator\",\"quote\":\"five-year\",\"parent_quote\":\"The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.\"}]}],\"completeness_note\":\"The answer contains two negative evidence-attribution claims. No population, comparator, effect size, confidence interval, or additional outcomes are stated. Interventions are recorded in slots and normalized_claim; the allowed qualifier kinds do not include an intervention kind.\"}",
+        "usage": {
+          "input_tokens": 547,
+          "output_tokens": 3283,
+          "total_tokens": 3830
+        },
+        "transport_metadata": {
+          "model": "deepseek-v4.1-flash",
+          "model_identifiers": [
+            "deepseek-v4.1-flash"
+          ],
+          "finish_reason": "stop",
+          "usage_snapshots": [
+            {
+              "input_tokens": 547,
+              "output_tokens": 3283,
+              "total_tokens": 3830
+            }
+          ],
+          "reasoning_characters": 13163
+        },
+        "elapsed_seconds": 29.93
+      },
+      {
+        "stage": "atomic_v2_verify",
+        "status": "ok",
+        "raw_output": "{\"judgments\": [{\"fact_id\": \"fact-1\", \"relation\": \"supported\", \"evidence\": [{\"source_id\": \"evidence-1\", \"quote\": \"However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms.\"}, {\"source_id\": \"evidence-2\", \"quote\": \"The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively.\"}], \"explanation\": \"The vegan-diet source reports only 12-week glycemic outcomes and explicitly states that further studies are needed to evaluate long-term effects, so it does not establish five-year all-cause mortality reduction.\"}, {\"fact_id\": \"fact-2\", \"relation\": \"supported\", \"evidence\": [{\"source_id\": \"evidence-4\", \"quote\": \"Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time.\"}, {\"source_id\": \"evidence-3\", \"quote\": \"responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.\"}], \"explanation\": \"The exercise sources report only short-term glucose responses (e.g., a 24-hour period) and do not report five-year all-cause mortality, so the retrieved evidence does not establish that outcome.\"}]}",
+        "usage": {
+          "input_tokens": 1763,
+          "output_tokens": 5253,
+          "total_tokens": 7016
+        },
+        "transport_metadata": {
+          "model": "deepseek-v4.1-flash",
+          "model_identifiers": [
+            "deepseek-v4.1-flash"
+          ],
+          "finish_reason": "stop",
+          "usage_snapshots": [
+            {
+              "input_tokens": 1763,
+              "output_tokens": 5253,
+              "total_tokens": 7016
+            }
+          ],
+          "reasoning_characters": 23706
+        },
+        "elapsed_seconds": 23.522
+      }
+    ],
+    "claims_at_cap": false,
+    "extraction": {
+      "facts": [
+        {
+          "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet.",
+          "answer_quotes": [
+            "The retrieved evidence does not establish",
+            "five-year all-cause mortality reduction",
+            "with a vegan diet"
+          ],
+          "normalized_claim": "The retrieved evidence does not establish a five-year all-cause mortality reduction with a vegan diet.",
+          "slots": {
+            "subject": "retrieved evidence",
+            "population": null,
+            "intervention": "vegan diet",
+            "comparator": null,
+            "outcome": "five-year all-cause mortality reduction",
+            "value_unit": null,
+            "time": "five-year",
+            "qualifications": "does not establish"
+          },
+          "decomposition_status": "atomic",
+          "qualifiers": [
+            {
+              "kind": "negation_attribution",
+              "quote": "The retrieved evidence does not establish",
+              "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet."
+            },
+            {
+              "kind": "outcome",
+              "quote": "all-cause mortality reduction",
+              "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet."
+            },
+            {
+              "kind": "time_denominator",
+              "quote": "five-year",
+              "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet."
+            }
+          ]
+        },
+        {
+          "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+          "answer_quotes": [
+            "The retrieved evidence does not establish",
+            "five-year all-cause mortality reduction",
+            "with aerobic or combined exercise"
+          ],
+          "normalized_claim": "The retrieved evidence does not establish a five-year all-cause mortality reduction with aerobic or combined exercise.",
+          "slots": {
+            "subject": "retrieved evidence",
+            "population": null,
+            "intervention": "aerobic or combined exercise",
+            "comparator": null,
+            "outcome": "five-year all-cause mortality reduction",
+            "value_unit": null,
+            "time": "five-year",
+            "qualifications": "does not establish"
+          },
+          "decomposition_status": "atomic",
+          "qualifiers": [
+            {
+              "kind": "negation_attribution",
+              "quote": "The retrieved evidence does not establish",
+              "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise."
+            },
+            {
+              "kind": "outcome",
+              "quote": "all-cause mortality reduction",
+              "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise."
+            },
+            {
+              "kind": "time_denominator",
+              "quote": "five-year",
+              "parent_quote": "The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise."
+            }
+          ]
+        }
+      ],
+      "completeness_note": "The answer contains two negative evidence-attribution claims. No population, comparator, effect size, confidence interval, or additional outcomes are stated. Interventions are recorded in slots and normalized_claim; the allowed qualifier kinds do not include an intervention kind."
+    },
+    "parent_count": 2,
+    "extraction_coverage": {
+      "covered_nonspace_characters": 187,
+      "total_nonspace_characters": 191,
+      "uncovered": [
+        {
+          "start": 41,
+          "end": 43,
+          "text": ": "
+        },
+        {
+          "start": 100,
+          "end": 102,
+          "text": ". "
+        },
+        {
+          "start": 143,
+          "end": 145,
+          "text": ": "
+        },
+        {
+          "start": 218,
+          "end": 219,
+          "text": "."
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "checked_coverage": {
+      "covered_nonspace_characters": 187,
+      "total_nonspace_characters": 191,
+      "uncovered": [
+        {
+          "start": 41,
+          "end": 43,
+          "text": ": "
+        },
+        {
+          "start": 100,
+          "end": 102,
+          "text": ". "
+        },
+        {
+          "start": 143,
+          "end": 145,
+          "text": ": "
+        },
+        {
+          "start": 218,
+          "end": 219,
+          "text": "."
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "elapsed_seconds": 53.453,
+    "scope": "Model-parsed facts, not exhaustive semantic coverage. Textual support, not clinical validity or calibrated confidence."
+  },
+  "mode": "saved",
+  "provenance": {
+    "note": "Saved actual Ask → audit. Three-paper abstract demonstration, not independent clinical gold.",
+    "run": "data/demo/conversations/run04",
+    "conversation_id": "v08-evidence-limits",
+    "turn_id": "v08-evidence-limits-turn-1",
+    "revision_id": "v08-evidence-limits-turn-1-revision-1",
+    "handoff": {
+      "kind": "live_ask",
+      "question": "Do the supplied 2016 vegan diet and 2013 aerobic/combined exercise abstracts show that either intervention reduces five-year all-cause mortality?",
+      "thread_id": "v08-evidence-limits",
+      "citations": [],
+      "input": {
+        "answer": "The retrieved evidence does not establish: five-year all-cause mortality reduction with a vegan diet. The retrieved evidence does not establish: five-year all-cause mortality reduction with aerobic or combined exercise.",
+        "strategy": "direct",
+        "sources": [
+          {
+            "id": "evidence-1",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "Both diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+          },
+          {
+            "id": "evidence-2",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks."
+          },
+          {
+            "id": "evidence-3",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+          },
+          {
+            "id": "evidence-4",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises."
+          },
+          {
+            "id": "evidence-5",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "Several intervention studies have suggested that vegetarian or vegan diets have clinical benefits, particularly in terms of glycemic control, in patients with type 2 diabetes (T2D); however, no randomized controlled trial has been conducted in Asians who more commonly depend on plant-based foods, as compared to Western populations. Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals."
+          }
+        ]
+      },
+      "source_map": [
+        {
+          "id": "evidence-1",
+          "chunk_id": "pmc:PMC4890770:3",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Conclusion"
+        },
+        {
+          "id": "evidence-2",
+          "chunk_id": "pmc:PMC4890770:2",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Results"
+        },
+        {
+          "id": "evidence-3",
+          "chunk_id": "pmc:PMC3594238:2",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Results"
+        },
+        {
+          "id": "evidence-4",
+          "chunk_id": "pmc:PMC3594238:3",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Conclusions"
+        },
+        {
+          "id": "evidence-5",
+          "chunk_id": "pmc:PMC4890770:0",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Objective"
+        }
+      ]
+    }
+  }
+}

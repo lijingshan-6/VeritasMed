@@ -1,0 +1,228 @@
+{
+  "input": {
+    "answer": "The abstract sentence on persistence of the glucose decrease reads: \"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\" [PMC:PMC3594238]. The retrieved evidence does not establish: five-year mortality result.",
+    "sources": [
+      {
+        "id": "evidence-1",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nBaseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+      },
+      {
+        "id": "evidence-2",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nFourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days. Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart. Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods)."
+      },
+      {
+        "id": "evidence-3",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nAerobic training, aerobic-resistance training and glucose profile (CGMS) in type 2 diabetes (CGMS exercise). ClinicalTrials.gov ID: NCT00887094."
+      },
+      {
+        "id": "evidence-4",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nBoth AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises."
+      },
+      {
+        "id": "evidence-5",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nTo evaluate the effects of aerobic (AER) or aerobic plus resistance exercise (COMB) sessions on glucose levels and glucose variability in patients with type 2 diabetes. Additionally, we assessed conventional and non-conventional methods to analyze glucose variability derived from multiple measurements performed with continuous glucose monitoring system (CGMS)."
+      }
+    ],
+    "strategy": "direct"
+  },
+  "audit": {
+    "id": "1c3857b6-a7c5-40cf-9fc3-3e71ca5b3d78",
+    "created_utc": "2026-10-04T19:34:36.757741+00:00",
+    "strategy": "direct",
+    "status": "ok",
+    "answer_sha256": "3817a2547f61250a2a871b95c2f17e0986ce0b09a2bfdd004f8b8d478c33335a",
+    "source_hashes": {
+      "evidence-1": "abd6478e54cf31346a2c5aa97527cb3f2b2461b9c85159c0fdd060ef83858474",
+      "evidence-2": "60717d4dc14562da440e9ea8bb8c6101cbace0b3e971135dae98924c79f219ed",
+      "evidence-3": "c9e1d44790620af9526b15dd3eac8079516175d596320bcc1575b6caa67ec759",
+      "evidence-4": "b78a79e8302c7da75883aa997a4cbb999fda2ed9374913a0ba516c67a50d3b93",
+      "evidence-5": "39f1c35d7d012eea44ddf0d5f4097a50db0a452f950d7d3647ac790d2e3445fb"
+    },
+    "claims": [
+      {
+        "id": "claim-1",
+        "quote": "The abstract sentence on persistence of the glucose decrease reads: \"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\" [PMC:PMC3594238].",
+        "relation": "supported",
+        "explanation": "The source contains the exact quoted sentence, and the source title identifies PMC:PMC3594238.",
+        "status": "ok",
+        "answer_span": {
+          "start": 0,
+          "end": 209,
+          "text": "The abstract sentence on persistence of the glucose decrease reads: \"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\" [PMC:PMC3594238].",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 194,
+            "end": 315,
+            "text": "Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-1",
+            "source_sha256": "abd6478e54cf31346a2c5aa97527cb3f2b2461b9c85159c0fdd060ef83858474"
+          }
+        ]
+      },
+      {
+        "id": "claim-2",
+        "quote": "The retrieved evidence does not establish: five-year mortality result.",
+        "relation": "supported",
+        "explanation": "The supplied sources focus on glucose levels and variability and do not report a five-year mortality result.",
+        "status": "ok",
+        "answer_span": {
+          "start": 210,
+          "end": 280,
+          "text": "The retrieved evidence does not establish: five-year mortality result.",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 131,
+            "end": 299,
+            "text": "To evaluate the effects of aerobic (AER) or aerobic plus resistance exercise (COMB) sessions on glucose levels and glucose variability in patients with type 2 diabetes.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-5",
+            "source_sha256": "39f1c35d7d012eea44ddf0d5f4097a50db0a452f950d7d3647ac790d2e3445fb"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "supported": 2,
+      "contradicted": 0,
+      "insufficient": 0,
+      "failed_or_unchecked": 0
+    },
+    "extraction_coverage": {
+      "covered_nonspace_characters": 243,
+      "total_nonspace_characters": 243,
+      "uncovered": [],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "checked_coverage": {
+      "covered_nonspace_characters": 243,
+      "total_nonspace_characters": 243,
+      "uncovered": [],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "claims_at_cap": false,
+    "calls": [
+      {
+        "stage": "direct",
+        "status": "ok",
+        "raw_output": "{\n  \"claims\": [\n    {\n      \"quote\": \"The abstract sentence on persistence of the glucose decrease reads: \\\"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\\\" [PMC:PMC3594238].\",\n      \"occurrence\": 0,\n      \"relation\": \"supported\",\n      \"evidence\": [\n        {\n          \"source_id\": \"evidence-1\",\n          \"quote\": \"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\",\n          \"occurrence\": 0\n        }\n      ],\n      \"explanation\": \"The source contains the exact quoted sentence, and the source title identifies PMC:PMC3594238.\"\n    },\n    {\n      \"quote\": \"The retrieved evidence does not establish: five-year mortality result.\",\n      \"occurrence\": 0,\n      \"relation\": \"supported\",\n      \"evidence\": [\n        {\n          \"source_id\": \"evidence-5\",\n          \"quote\": \"To evaluate the effects of aerobic (AER) or aerobic plus resistance exercise (COMB) sessions on glucose levels and glucose variability in patients with type 2 diabetes.\",\n          \"occurrence\": 0\n        }\n      ],\n      \"explanation\": \"The supplied sources focus on glucose levels and variability and do not report a five-year mortality result.\"\n    }\n  ]\n}",
+        "usage": {
+          "input_tokens": 1165,
+          "output_tokens": 8413,
+          "total_tokens": 9578
+        },
+        "transport_metadata": {
+          "model": "deepseek-v4.1-flash",
+          "model_identifiers": [
+            "deepseek-v4.1-flash"
+          ],
+          "finish_reason": "stop",
+          "usage_snapshots": [
+            {
+              "input_tokens": 1165,
+              "output_tokens": 8413,
+              "total_tokens": 9578
+            }
+          ],
+          "reasoning_characters": 39280
+        },
+        "elapsed_seconds": 38.179
+      }
+    ],
+    "elapsed_seconds": 38.18,
+    "scope": "Textual support in provided sources; not calibrated confidence or clinical evidence grading."
+  },
+  "mode": "saved",
+  "provenance": {
+    "note": "Saved actual Ask → audit. Three-paper abstract demonstration, not independent clinical gold.",
+    "run": "data/demo/conversations/run06",
+    "conversation_id": "v08-evidence-limits",
+    "turn_id": "v08-evidence-limits-turn-3",
+    "revision_id": "v08-evidence-limits-turn-3-revision-1",
+    "handoff": {
+      "kind": "live_ask",
+      "question": "Quote the abstract sentence describing how long the glucose decrease persisted, and state whether that sentence supplies a five-year mortality result.",
+      "thread_id": "v08-evidence-limits",
+      "citations": [
+        "PMC:PMC3594238"
+      ],
+      "input": {
+        "answer": "The abstract sentence on persistence of the glucose decrease reads: \"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\" [PMC:PMC3594238]. The retrieved evidence does not establish: five-year mortality result.",
+        "strategy": "direct",
+        "sources": [
+          {
+            "id": "evidence-1",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nBaseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+          },
+          {
+            "id": "evidence-2",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nFourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days. Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart. Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods)."
+          },
+          {
+            "id": "evidence-3",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nAerobic training, aerobic-resistance training and glucose profile (CGMS) in type 2 diabetes (CGMS exercise). ClinicalTrials.gov ID: NCT00887094."
+          },
+          {
+            "id": "evidence-4",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nBoth AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises."
+          },
+          {
+            "id": "evidence-5",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\n\nTo evaluate the effects of aerobic (AER) or aerobic plus resistance exercise (COMB) sessions on glucose levels and glucose variability in patients with type 2 diabetes. Additionally, we assessed conventional and non-conventional methods to analyze glucose variability derived from multiple measurements performed with continuous glucose monitoring system (CGMS)."
+          }
+        ]
+      },
+      "source_map": [
+        {
+          "id": "evidence-1",
+          "chunk_id": "pmc:PMC3594238:2",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Results"
+        },
+        {
+          "id": "evidence-2",
+          "chunk_id": "pmc:PMC3594238:1",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Methods"
+        },
+        {
+          "id": "evidence-3",
+          "chunk_id": "pmc:PMC3594238:4",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Trial Registration"
+        },
+        {
+          "id": "evidence-4",
+          "chunk_id": "pmc:PMC3594238:3",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Conclusions"
+        },
+        {
+          "id": "evidence-5",
+          "chunk_id": "pmc:PMC3594238:0",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Purpose"
+        }
+      ]
+    }
+  }
+}

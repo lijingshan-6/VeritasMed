@@ -1,0 +1,641 @@
+{
+  "input": {
+    "answer": "The 2016 brown-rice-based vegan diet trial enrolled participants diagnosed with type 2 diabetes and randomly assigned them to either a vegan diet excluding animal-based food including fish (n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks; the trial measured HbA1c levels at weeks 0, 4, and 12, with the primary study endpoint being the change in HbA1c levels over 12 weeks [PMC:PMC4890770]. The 2013 aerobic versus combined exercise trial studied fourteen patients with type 2 diabetes (56±2 years) who wore a continuous glucose monitoring system (CGMS) during 3 days and randomly performed aerobic (AER) and combined (COMB) exercise sessions, both in the morning 24 h after CGMS placement and at least 7 days apart; the trial measured glucose variability using glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE) and glucose coefficient of variation (conventional methods) as well as spectral and symbolic analysis (non-conventional methods) [PMC:PMC3594238]. In that trial, glucose levels decreased immediately after both the AER and COMB protocols by approximately 16%, a reduction sustained for approximately 3 hours, and over the 24-h period after the sessions the two exercise modalities showed similar responses for glucose levels, glucose variance and glucose coefficient of variation [PMC:PMC3594238].",
+    "sources": [
+      {
+        "id": "evidence-1",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+      },
+      {
+        "id": "evidence-2",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks. HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks."
+      },
+      {
+        "id": "evidence-3",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises."
+      },
+      {
+        "id": "evidence-4",
+        "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+        "text": "Both diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+      },
+      {
+        "id": "evidence-5",
+        "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+        "text": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days. Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart. Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods)."
+      }
+    ],
+    "strategy": "direct"
+  },
+  "audit": {
+    "id": "74f4f761-d388-4745-b74c-e153ddbc4fdf",
+    "created_utc": "2026-10-04T18:53:54.189051+00:00",
+    "strategy": "direct",
+    "status": "partial_error",
+    "answer_sha256": "214b2d44f0f64bd784ee8913ca6ca7eee6ce1fb0c78fc08f3a6ad6d4b29d1f74",
+    "source_hashes": {
+      "evidence-1": "96d4b4a46e565db471319bded2a9739e97553cc5af52d3365f11046e3f815a10",
+      "evidence-2": "0912029346629933aad1a05b2a919d87e4c85fcc12b0c627f57bd463979fcbe0",
+      "evidence-3": "444909c5406f77af26202f361ee1bce4f63d715762fe7ec44930d122c56d9471",
+      "evidence-4": "919fca6984eb62dd1c4d4e419303793bfbec4602423396b7bcf86824e948e451",
+      "evidence-5": "c09a9b02fb69cb11e1f04d8841f739822fc5f3f042c730c4a63112ee752f9541"
+    },
+    "claims": [
+      {
+        "id": "claim-1",
+        "quote": "2016",
+        "relation": "insufficient",
+        "explanation": "No supplied source states the year 2016 for this trial.",
+        "status": "ok",
+        "answer_span": {
+          "start": 4,
+          "end": 8,
+          "text": "2016",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      {
+        "id": "claim-2",
+        "quote": "brown-rice-based vegan diet trial",
+        "relation": "supported",
+        "explanation": "Source title identifies a brown rice based vegan diet trial.",
+        "status": "invalid_reference",
+        "answer_span": {
+          "start": 9,
+          "end": 42,
+          "text": "brown-rice-based vegan diet trial",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [],
+        "error_type": "QuoteNotFound"
+      },
+      {
+        "id": "claim-3",
+        "quote": "enrolled participants diagnosed with type 2 diabetes",
+        "relation": "supported",
+        "explanation": "Text states participants diagnosed with T2D were assigned; title identifies type 2 diabetes.",
+        "status": "invalid_reference",
+        "answer_span": {
+          "start": 43,
+          "end": 95,
+          "text": "enrolled participants diagnosed with type 2 diabetes",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 0,
+            "end": 235,
+            "text": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-2",
+            "source_sha256": "0912029346629933aad1a05b2a919d87e4c85fcc12b0c627f57bd463979fcbe0"
+          }
+        ],
+        "error_type": "QuoteNotFound"
+      },
+      {
+        "id": "claim-4",
+        "quote": "randomly assigned them to either a vegan diet excluding animal-based food including fish (n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks",
+        "relation": "supported",
+        "explanation": "Matches the randomization, diet arms, sample sizes, and 12-week duration.",
+        "status": "ok",
+        "answer_span": {
+          "start": 100,
+          "end": 294,
+          "text": "randomly assigned them to either a vegan diet excluding animal-based food including fish (n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 0,
+            "end": 235,
+            "text": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-2",
+            "source_sha256": "0912029346629933aad1a05b2a919d87e4c85fcc12b0c627f57bd463979fcbe0"
+          }
+        ]
+      },
+      {
+        "id": "claim-5",
+        "quote": "the trial measured HbA1c levels at weeks 0, 4, and 12",
+        "relation": "supported",
+        "explanation": "Source states HbA1c was measured at weeks 0, 4, and 12.",
+        "status": "ok",
+        "answer_span": {
+          "start": 296,
+          "end": 349,
+          "text": "the trial measured HbA1c levels at weeks 0, 4, and 12",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 236,
+            "end": 362,
+            "text": "HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-2",
+            "source_sha256": "0912029346629933aad1a05b2a919d87e4c85fcc12b0c627f57bd463979fcbe0"
+          }
+        ]
+      },
+      {
+        "id": "claim-6",
+        "quote": "with the primary study endpoint being the change in HbA1c levels over 12 weeks",
+        "relation": "supported",
+        "explanation": "Source states the primary endpoint was change in HbA1c over 12 weeks.",
+        "status": "ok",
+        "answer_span": {
+          "start": 351,
+          "end": 429,
+          "text": "with the primary study endpoint being the change in HbA1c levels over 12 weeks",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 286,
+            "end": 362,
+            "text": "and the primary study endpoint was the change in HbA1c levels over 12 weeks.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-2",
+            "source_sha256": "0912029346629933aad1a05b2a919d87e4c85fcc12b0c627f57bd463979fcbe0"
+          }
+        ]
+      },
+      {
+        "id": "claim-7",
+        "quote": "2013",
+        "relation": "insufficient",
+        "explanation": "No supplied source states the year 2013 for this trial.",
+        "status": "ok",
+        "answer_span": {
+          "start": 452,
+          "end": 456,
+          "text": "2013",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": []
+      },
+      {
+        "id": "claim-8",
+        "quote": "aerobic versus combined exercise trial",
+        "relation": "supported",
+        "explanation": "Source title and text describe an aerobic and combined exercise comparison.",
+        "status": "invalid_reference",
+        "answer_span": {
+          "start": 457,
+          "end": 495,
+          "text": "aerobic versus combined exercise trial",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [],
+        "error_type": "QuoteNotFound"
+      },
+      {
+        "id": "claim-9",
+        "quote": "studied fourteen patients with type 2 diabetes (56±2 years)",
+        "relation": "supported",
+        "explanation": "Source states fourteen patients with type 2 diabetes aged 56±2 years.",
+        "status": "ok",
+        "answer_span": {
+          "start": 496,
+          "end": 555,
+          "text": "studied fourteen patients with type 2 diabetes (56±2 years)",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 0,
+            "end": 78,
+            "text": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-5",
+            "source_sha256": "c09a9b02fb69cb11e1f04d8841f739822fc5f3f042c730c4a63112ee752f9541"
+          }
+        ]
+      },
+      {
+        "id": "claim-10",
+        "quote": "who wore a continuous glucose monitoring system (CGMS) during 3 days",
+        "relation": "insufficient",
+        "explanation": "Source states they wore a CGMS during 3 days, but does not expand CGMS to continuous glucose monitoring system.",
+        "status": "ok",
+        "answer_span": {
+          "start": 556,
+          "end": 624,
+          "text": "who wore a continuous glucose monitoring system (CGMS) during 3 days",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 0,
+            "end": 78,
+            "text": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-5",
+            "source_sha256": "c09a9b02fb69cb11e1f04d8841f739822fc5f3f042c730c4a63112ee752f9541"
+          }
+        ]
+      },
+      {
+        "id": "claim-11",
+        "quote": "randomly performed aerobic (AER) and combined (COMB) exercise sessions",
+        "relation": "supported",
+        "explanation": "Source states random AER and COMB sessions; title identifies aerobic and combined exercise.",
+        "status": "invalid_reference",
+        "answer_span": {
+          "start": 629,
+          "end": 699,
+          "text": "randomly performed aerobic (AER) and combined (COMB) exercise sessions",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 79,
+            "end": 209,
+            "text": "Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-5",
+            "source_sha256": "c09a9b02fb69cb11e1f04d8841f739822fc5f3f042c730c4a63112ee752f9541"
+          }
+        ],
+        "error_type": "QuoteNotFound"
+      },
+      {
+        "id": "claim-12",
+        "quote": "both in the morning 24 h after CGMS placement and at least 7 days apart",
+        "relation": "supported",
+        "explanation": "Source states both sessions were in the morning 24 h after CGMS placement and at least 7 days apart.",
+        "status": "ok",
+        "answer_span": {
+          "start": 701,
+          "end": 772,
+          "text": "both in the morning 24 h after CGMS placement and at least 7 days apart",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 79,
+            "end": 209,
+            "text": "Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-5",
+            "source_sha256": "c09a9b02fb69cb11e1f04d8841f739822fc5f3f042c730c4a63112ee752f9541"
+          }
+        ]
+      },
+      {
+        "id": "claim-13",
+        "quote": "the trial measured glucose variability using glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE) and glucose coefficient of variation (conventional methods) as well as spectral and symbolic analysis (non-conventional methods)",
+        "relation": "supported",
+        "explanation": "Source lists these conventional and non-conventional measures of glucose variability.",
+        "status": "ok",
+        "answer_span": {
+          "start": 774,
+          "end": 1038,
+          "text": "the trial measured glucose variability using glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE) and glucose coefficient of variation (conventional methods) as well as spectral and symbolic analysis (non-conventional methods)",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 210,
+            "end": 471,
+            "text": "Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods).",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-5",
+            "source_sha256": "c09a9b02fb69cb11e1f04d8841f739822fc5f3f042c730c4a63112ee752f9541"
+          }
+        ]
+      },
+      {
+        "id": "claim-14",
+        "quote": "glucose levels decreased immediately after both the AER and COMB protocols by approximately 16%",
+        "relation": "supported",
+        "explanation": "Source states glucose decreased immediately after AER and COMB by ∼16%.",
+        "status": "ok",
+        "answer_span": {
+          "start": 1072,
+          "end": 1167,
+          "text": "glucose levels decreased immediately after both the AER and COMB protocols by approximately 16%",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 63,
+            "end": 184,
+            "text": "Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-1",
+            "source_sha256": "96d4b4a46e565db471319bded2a9739e97553cc5af52d3365f11046e3f815a10"
+          }
+        ]
+      },
+      {
+        "id": "claim-15",
+        "quote": "a reduction sustained for approximately 3 hours",
+        "relation": "supported",
+        "explanation": "Source states the reduction was sustained for approximately 3 hours.",
+        "status": "ok",
+        "answer_span": {
+          "start": 1169,
+          "end": 1216,
+          "text": "a reduction sustained for approximately 3 hours",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 63,
+            "end": 184,
+            "text": "Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-1",
+            "source_sha256": "96d4b4a46e565db471319bded2a9739e97553cc5af52d3365f11046e3f815a10"
+          }
+        ]
+      },
+      {
+        "id": "claim-16",
+        "quote": "over the 24-h period after the sessions the two exercise modalities showed similar responses for glucose levels, glucose variance and glucose coefficient of variation",
+        "relation": "supported",
+        "explanation": "Source states similar 24-h responses for these measures.",
+        "status": "ok",
+        "answer_span": {
+          "start": 1222,
+          "end": 1388,
+          "text": "over the 24-h period after the sessions the two exercise modalities showed similar responses for glucose levels, glucose variance and glucose coefficient of variation",
+          "offset_unit": "unicode_codepoint"
+        },
+        "evidence": [
+          {
+            "start": 185,
+            "end": 359,
+            "text": "Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.",
+            "offset_unit": "unicode_codepoint",
+            "source_id": "evidence-1",
+            "source_sha256": "96d4b4a46e565db471319bded2a9739e97553cc5af52d3365f11046e3f815a10"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "supported": 9,
+      "contradicted": 0,
+      "insufficient": 3,
+      "failed_or_unchecked": 4
+    },
+    "extraction_coverage": {
+      "covered_nonspace_characters": 1114,
+      "total_nonspace_characters": 1198,
+      "uncovered": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "The "
+        },
+        {
+          "start": 95,
+          "end": 100,
+          "text": " and "
+        },
+        {
+          "start": 294,
+          "end": 296,
+          "text": "; "
+        },
+        {
+          "start": 349,
+          "end": 351,
+          "text": ", "
+        },
+        {
+          "start": 429,
+          "end": 452,
+          "text": " [PMC:PMC4890770]. The "
+        },
+        {
+          "start": 624,
+          "end": 629,
+          "text": " and "
+        },
+        {
+          "start": 699,
+          "end": 701,
+          "text": ", "
+        },
+        {
+          "start": 772,
+          "end": 774,
+          "text": "; "
+        },
+        {
+          "start": 1038,
+          "end": 1072,
+          "text": " [PMC:PMC3594238]. In that trial, "
+        },
+        {
+          "start": 1167,
+          "end": 1169,
+          "text": ", "
+        },
+        {
+          "start": 1216,
+          "end": 1222,
+          "text": ", and "
+        },
+        {
+          "start": 1388,
+          "end": 1406,
+          "text": " [PMC:PMC3594238]."
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "checked_coverage": {
+      "covered_nonspace_characters": 942,
+      "total_nonspace_characters": 1198,
+      "uncovered": [
+        {
+          "start": 0,
+          "end": 4,
+          "text": "The "
+        },
+        {
+          "start": 8,
+          "end": 100,
+          "text": " brown-rice-based vegan diet trial enrolled participants diagnosed with type 2 diabetes and "
+        },
+        {
+          "start": 294,
+          "end": 296,
+          "text": "; "
+        },
+        {
+          "start": 349,
+          "end": 351,
+          "text": ", "
+        },
+        {
+          "start": 429,
+          "end": 452,
+          "text": " [PMC:PMC4890770]. The "
+        },
+        {
+          "start": 456,
+          "end": 496,
+          "text": " aerobic versus combined exercise trial "
+        },
+        {
+          "start": 624,
+          "end": 701,
+          "text": " and randomly performed aerobic (AER) and combined (COMB) exercise sessions, "
+        },
+        {
+          "start": 772,
+          "end": 774,
+          "text": "; "
+        },
+        {
+          "start": 1038,
+          "end": 1072,
+          "text": " [PMC:PMC3594238]. In that trial, "
+        },
+        {
+          "start": 1167,
+          "end": 1169,
+          "text": ", "
+        },
+        {
+          "start": 1216,
+          "end": 1222,
+          "text": ", and "
+        },
+        {
+          "start": 1388,
+          "end": 1406,
+          "text": " [PMC:PMC3594238]."
+        }
+      ],
+      "meaning": "Lexical coverage only; it does not prove all semantic assertions were extracted or correctly checked."
+    },
+    "claims_at_cap": false,
+    "calls": [
+      {
+        "stage": "direct",
+        "status": "ok",
+        "raw_output": "{\"claims\":[{\"quote\":\"2016\",\"occurrence\":0,\"relation\":\"insufficient\",\"evidence\":[],\"explanation\":\"No supplied source states the year 2016 for this trial.\"},{\"quote\":\"brown-rice-based vegan diet trial\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-2\",\"quote\":\"Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\",\"occurrence\":0}],\"explanation\":\"Source title identifies a brown rice based vegan diet trial.\"},{\"quote\":\"enrolled participants diagnosed with type 2 diabetes\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-2\",\"quote\":\"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\",\"occurrence\":0},{\"source_id\":\"evidence-2\",\"quote\":\"Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial\",\"occurrence\":0}],\"explanation\":\"Text states participants diagnosed with T2D were assigned; title identifies type 2 diabetes.\"},{\"quote\":\"randomly assigned them to either a vegan diet excluding animal-based food including fish (n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-2\",\"quote\":\"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\",\"occurrence\":0}],\"explanation\":\"Matches the randomization, diet arms, sample sizes, and 12-week duration.\"},{\"quote\":\"the trial measured HbA1c levels at weeks 0, 4, and 12\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-2\",\"quote\":\"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.\",\"occurrence\":0}],\"explanation\":\"Source states HbA1c was measured at weeks 0, 4, and 12.\"},{\"quote\":\"with the primary study endpoint being the change in HbA1c levels over 12 weeks\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-2\",\"quote\":\"and the primary study endpoint was the change in HbA1c levels over 12 weeks.\",\"occurrence\":0}],\"explanation\":\"Source states the primary endpoint was change in HbA1c over 12 weeks.\"},{\"quote\":\"2013\",\"occurrence\":0,\"relation\":\"insufficient\",\"evidence\":[],\"explanation\":\"No supplied source states the year 2013 for this trial.\"},{\"quote\":\"aerobic versus combined exercise trial\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\",\"occurrence\":0},{\"source_id\":\"evidence-5\",\"quote\":\"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\",\"occurrence\":0}],\"explanation\":\"Source title and text describe an aerobic and combined exercise comparison.\"},{\"quote\":\"studied fourteen patients with type 2 diabetes (56±2 years)\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-5\",\"quote\":\"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\",\"occurrence\":0}],\"explanation\":\"Source states fourteen patients with type 2 diabetes aged 56±2 years.\"},{\"quote\":\"who wore a continuous glucose monitoring system (CGMS) during 3 days\",\"occurrence\":0,\"relation\":\"insufficient\",\"evidence\":[{\"source_id\":\"evidence-5\",\"quote\":\"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\",\"occurrence\":0}],\"explanation\":\"Source states they wore a CGMS during 3 days, but does not expand CGMS to continuous glucose monitoring system.\"},{\"quote\":\"randomly performed aerobic (AER) and combined (COMB) exercise sessions\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-5\",\"quote\":\"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\",\"occurrence\":0},{\"source_id\":\"evidence-1\",\"quote\":\"Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial\",\"occurrence\":0}],\"explanation\":\"Source states random AER and COMB sessions; title identifies aerobic and combined exercise.\"},{\"quote\":\"both in the morning 24 h after CGMS placement and at least 7 days apart\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-5\",\"quote\":\"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\",\"occurrence\":0}],\"explanation\":\"Source states both sessions were in the morning 24 h after CGMS placement and at least 7 days apart.\"},{\"quote\":\"the trial measured glucose variability using glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE) and glucose coefficient of variation (conventional methods) as well as spectral and symbolic analysis (non-conventional methods)\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-5\",\"quote\":\"Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods).\",\"occurrence\":0}],\"explanation\":\"Source lists these conventional and non-conventional measures of glucose variability.\"},{\"quote\":\"glucose levels decreased immediately after both the AER and COMB protocols by approximately 16%\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\",\"occurrence\":0}],\"explanation\":\"Source states glucose decreased immediately after AER and COMB by ∼16%.\"},{\"quote\":\"a reduction sustained for approximately 3 hours\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\",\"occurrence\":0}],\"explanation\":\"Source states the reduction was sustained for approximately 3 hours.\"},{\"quote\":\"over the 24-h period after the sessions the two exercise modalities showed similar responses for glucose levels, glucose variance and glucose coefficient of variation\",\"occurrence\":0,\"relation\":\"supported\",\"evidence\":[{\"source_id\":\"evidence-1\",\"quote\":\"Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.\",\"occurrence\":0}],\"explanation\":\"Source states similar 24-h responses for these measures.\"}]}",
+        "usage": {
+          "input_tokens": 1363,
+          "output_tokens": 17558,
+          "total_tokens": 18921
+        },
+        "transport_metadata": {
+          "model": "deepseek-v4.1-flash",
+          "model_identifiers": [
+            "deepseek-v4.1-flash"
+          ],
+          "finish_reason": "stop",
+          "usage_snapshots": [
+            {
+              "input_tokens": 1363,
+              "output_tokens": 17558,
+              "total_tokens": 18921
+            }
+          ],
+          "reasoning_characters": 69971
+        },
+        "elapsed_seconds": 64.584
+      }
+    ],
+    "elapsed_seconds": 64.588,
+    "scope": "Textual support in provided sources; not calibrated confidence or clinical evidence grading."
+  },
+  "mode": "saved",
+  "provenance": {
+    "note": "Saved actual Ask → audit. Three-paper abstract demonstration, not independent clinical gold.",
+    "run": "data/demo/conversations/run04",
+    "conversation_id": "v08-diet-exercise",
+    "turn_id": "v08-diet-exercise-turn-1",
+    "revision_id": "v08-diet-exercise-turn-1-revision-1",
+    "handoff": {
+      "kind": "live_ask",
+      "question": "From the 2016 brown-rice-based vegan diet trial and the 2013 aerobic versus combined exercise trial, separately describe what each study measured and over what time period. Do not rank their clinical effectiveness.",
+      "thread_id": "v08-diet-exercise",
+      "citations": [
+        "PMC:PMC4890770",
+        "PMC:PMC3594238"
+      ],
+      "input": {
+        "answer": "The 2016 brown-rice-based vegan diet trial enrolled participants diagnosed with type 2 diabetes and randomly assigned them to either a vegan diet excluding animal-based food including fish (n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks; the trial measured HbA1c levels at weeks 0, 4, and 12, with the primary study endpoint being the change in HbA1c levels over 12 weeks [PMC:PMC4890770]. The 2013 aerobic versus combined exercise trial studied fourteen patients with type 2 diabetes (56±2 years) who wore a continuous glucose monitoring system (CGMS) during 3 days and randomly performed aerobic (AER) and combined (COMB) exercise sessions, both in the morning 24 h after CGMS placement and at least 7 days apart; the trial measured glucose variability using glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE) and glucose coefficient of variation (conventional methods) as well as spectral and symbolic analysis (non-conventional methods) [PMC:PMC3594238]. In that trial, glucose levels decreased immediately after both the AER and COMB protocols by approximately 16%, a reduction sustained for approximately 3 hours, and over the 24-h period after the sessions the two exercise modalities showed similar responses for glucose levels, glucose variance and glucose coefficient of variation [PMC:PMC3594238].",
+        "strategy": "direct",
+        "sources": [
+          {
+            "id": "evidence-1",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session."
+          },
+          {
+            "id": "evidence-2",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks. HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks."
+          },
+          {
+            "id": "evidence-3",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises."
+          },
+          {
+            "id": "evidence-4",
+            "title": "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+            "text": "Both diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms."
+          },
+          {
+            "id": "evidence-5",
+            "title": "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+            "text": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days. Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart. Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods)."
+          }
+        ]
+      },
+      "source_map": [
+        {
+          "id": "evidence-1",
+          "chunk_id": "pmc:PMC3594238:2",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Results"
+        },
+        {
+          "id": "evidence-2",
+          "chunk_id": "pmc:PMC4890770:1",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Materials and Methods"
+        },
+        {
+          "id": "evidence-3",
+          "chunk_id": "pmc:PMC3594238:3",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Conclusions"
+        },
+        {
+          "id": "evidence-4",
+          "chunk_id": "pmc:PMC4890770:3",
+          "citation": "PMC:PMC4890770",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+          "section": "Abstract / Conclusion"
+        },
+        {
+          "id": "evidence-5",
+          "chunk_id": "pmc:PMC3594238:1",
+          "citation": "PMC:PMC3594238",
+          "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+          "section": "Abstract / Methods"
+        }
+      ]
+    }
+  }
+}

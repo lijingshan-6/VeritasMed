@@ -6,8 +6,8 @@ import { attachAudit, validateConversation, exportConversation, importConversati
 
 const root = fileURLToPath(new URL('../../data/demo/conversations/', import.meta.url))
 const protocol = JSON.parse(await fs.readFile(path.join(root, 'protocol.json'), 'utf8'))
-// Recording to package: run02 (current code) by default; run01 is the original v0.8 recording.
-const run = process.argv[2] ?? 'run02'
+// Recording to package: run06 (current code) by default. Earlier runs stay as records.
+const run = process.argv[2] ?? 'run06'
 const catalogue = []
 const exports = []
 for (const spec of protocol.conversations) {

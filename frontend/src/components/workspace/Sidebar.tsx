@@ -50,11 +50,12 @@ export function Sidebar() {
     return () => { alive = false }
   }, [])
 
-  // A first-time visitor of the replay should land on an answer, not on an empty page.
+  // Replay: land on an answer, and always show the bundled recording, replacing any copy a
+  // previous visit stored (replay holds no user work).
   useEffect(() => {
     if (!isReplayOnly || autoOpened.current || !hydrated || !examples.length) return
     autoOpened.current = true
-    if (!current?.turns.length) void open(examples[0])
+    void open(examples.find(e => e.id === current?.id) ?? examples[0])
   }, [hydrated, examples.length]) // eslint-disable-line react-hooks/exhaustive-deps
 
   async function download() {
@@ -80,7 +81,7 @@ export function Sidebar() {
           const active = threadId === entry.id
           return <div key={entry.id}>
             <button className={`ws-convo${active ? ' is-active' : ''}`} disabled={!hydrated || !!pending}
-              onClick={() => loaded ? setThreadId(entry.id) : void open(entry)}>
+              onClick={() => loaded && !isReplayOnly ? setThreadId(entry.id) : void open(entry)}>
               <span className="ws-convo-title">{pending === entry.id ? 'Opening…' : entry.label}</span>
               <span className="ws-convo-meta">{entry.turns} questions · real model output</span>
             </button>

@@ -296,3 +296,5 @@ button.ws-status-item:hover { border-color: var(--faint); }
 .ws-inline-sources .ws-sources-head { position: static; background: transparent; padding-left: 0; }
 .ws-inline-sources .ws-sources-list { padding: 14px 0; }
 .ws-coverage li button { padding: 8px 16px; }
+.audit-text-link { cursor: pointer; text-decoration-line: underline; text-underline-offset: 4px; }
+.audit-page--tab .audit-text-link.selected { border-radius: 3px; }

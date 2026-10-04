@@ -49,8 +49,10 @@ export function LinkedText({ text, spans, selected, onSelect }: {
     const matches = spans.filter(s => s.start <= start && s.end >= end)
     const hit = matches.find(s => s.claimId === selected) ?? matches[0]
     const part = chars.slice(start, end).join('')
-    return hit ? <button key={start} data-span-start={start} className={`audit-text-link ${hit.category} ${hit.claimId === selected ? 'selected' : ''}`}
-      title={`${labels[hit.category] ?? 'Not checked'} · select claim`} onClick={() => onSelect(hit.claimId)}>{part}</button>
+    // An inline span (not a <button>, which renders as an inline block) keeps the prose flowing.
+    return hit ? <span key={start} role="button" tabIndex={0} data-span-start={start} className={`audit-text-link ${hit.category} ${hit.claimId === selected ? 'selected' : ''}`}
+      title={`${labels[hit.category] ?? 'Not checked'} · select claim`} onClick={() => onSelect(hit.claimId)}
+      onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSelect(hit.claimId) } }}>{part}</span>
       : <span key={start} className="audit-unlinked">{part}</span>
   })}</>
 }

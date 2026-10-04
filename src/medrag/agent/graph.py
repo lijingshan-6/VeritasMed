@@ -16,9 +16,10 @@ Graph topology
 
 Conditional edges
 ─────────────────
-  after grade   : score ≥ 0.75 → generate  |  else → rewrite (or generate if MAX hit)
-  after check   : faithful → END            |  regen_count < MAX_REGEN → inc_regen → generate
-                                            |  cap hit → END (faithful=False, issues preserved)
+  after grade   : score ≥ threshold (0.6/0.75/0.8 by query type) → generate
+                                            |  else → rewrite (or generate if MAX hit)
+  after check   : faithful → append_history |  regen_count < MAX_REGEN → inc_regen → generate
+                                            |  cap hit → append_history (faithful=False, issues kept)
 
 Memory
 ──────

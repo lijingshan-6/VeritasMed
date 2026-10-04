@@ -52,6 +52,8 @@ SCOPE
 - Each component includes question_span: copy the exact words from the original question that
   request this aspect. The requirement must not expand beyond those words. Search suggestions
   are only retrieval aids, not additional requirements.
+- Instructions about how to write the answer ("do not rank them", "be brief", "in one sentence")
+  are not components. Follow them; never mark them missing or report them as evidence gaps.
 - Requests for what a study reports are answered by its actual reported results, including
   qualitative validation. Do not demand unrequested numeric metrics, training hyperparameters,
   subgroup analyses, head-to-head superiority, clinical validation or future-study designs.

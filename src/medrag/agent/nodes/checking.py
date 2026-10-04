@@ -24,8 +24,9 @@ def _check_schema(components: list[dict]) -> dict | bool:
         "unsupported_source_inference": {"type": "boolean"},
         "evidence_status": {"type": "string", "enum": ["supported", "partial", "missing"]},
         "gap": {"type": "string"}, "missing_outcome": {"type": "string"},
-        "requirement_requested": {"type": "boolean"}},
-        "required": ["passed", "correction", "unsupported_source_inference", "evidence_status", "gap", "missing_outcome", "requirement_requested"],
+        "requirement_requested": {"type": "boolean"}, "answer_constraint": {"type": "boolean"}},
+        "required": ["passed", "correction", "unsupported_source_inference", "evidence_status", "gap", "missing_outcome",
+                     "requirement_requested", "answer_constraint"],
         "additionalProperties": False}
     properties = {key: {"type": "boolean"} for key in ("supported", "complete", "boundary_correct")}
     properties.update({"issues": {"type": "string"}, "component_checks": {
@@ -65,8 +66,10 @@ def check_faithfulness(state: AgentState) -> dict:
                    "speaker, including first-person pronouns inside quotation marks. "
                    "Return component_checks as an OBJECT keyed by every supplied C-ID, not an array. "
                    "For each ID give passed, correction, unsupported_source_inference, evidence_status, gap, "
-                   "missing_outcome (only the actually absent requested part, a short noun phrase), and "
-                   "requirement_requested (false only for an extra requirement not asked by the ORIGINAL user). "
+                   "missing_outcome (only the actually absent requested part, a short noun phrase), "
+                   "requirement_requested (false only for an extra requirement not asked by the ORIGINAL user), and "
+                   "answer_constraint (true only when the item is an instruction about how to write the answer, "
+                   "such as 'do not rank them' or 'be brief', rather than a question needing evidence). "
                    "A correct explanation that a requested result is missing passes that component.\n")
         if isinstance(schema, dict):
             system += "Required output schema: " + json.dumps(schema)
@@ -112,9 +115,10 @@ def check_faithfulness(state: AgentState) -> dict:
     for component in components:
         component = dict(component)
         check = next((c for c in checks if isinstance(c, dict) and c.get("id") == component["id"]), {})
-        if check.get("requirement_requested") is False:
-            # The planner is not allowed to expand the original user's task.
-            # Removing that extra component also removes its invented gap.
+        if check.get("requirement_requested") is False or check.get("answer_constraint") is True:
+            # The planner is not allowed to expand the original user's task, and a
+            # writing instruction is followed, not reported as missing evidence.
+            # Removing such a component also removes its invented gap.
             continue
         revised_status = check.get("evidence_status")
         if revised_status == "supported" and component["evidence"]:

@@ -82,7 +82,13 @@ def preserve_result_context(components: list[dict], claims: list[dict]) -> list[
     was measured. For numerical/method components render the selected complete
     source sentences. Other components retain their generated explanation.
     This is extractive presentation, not an additional semantic judgment.
+
+    A sentence already rendered for another component is not rendered again:
+    a second copy is deduplicated away and would erase this component's own
+    answer (e.g. "state whether that sentence reports five-year mortality").
     """
+    projected_ids = {component["id"] for component in components}
+    rendered = {c.get("text") for c in claims if c.get("component_id") not in projected_ids}
     result = []
     for component in components:
         own = [c for c in claims if c.get("component_id") == component["id"]]
@@ -103,12 +109,15 @@ def preserve_result_context(components: list[dict], claims: list[dict]) -> list[
             if any(normalized(d) in normalized(span["quote"]) for d in component["required_details"]):
                 if span not in selected:
                     selected.append(span)
-        if not selected:
-            result.extend(own)
-            continue
         # Preserve the source's text (including "we") inside explicit quotation
         # marks. The answer therefore does not impersonate the study authors.
-        result.extend({"component_id": component["id"],
-                       "text": f'The study reports: "{span["quote"]}"',
-                       "cite": [span["citation"]]} for span in selected)
+        quotes = [{"component_id": component["id"],
+                   "text": f'The study reports: "{span["quote"]}"',
+                   "cite": [span["citation"]]} for span in selected]
+        quotes = [q for q in quotes if q["text"] not in rendered]
+        if not quotes:
+            result.extend(own)
+            continue
+        rendered.update(q["text"] for q in quotes)
+        result.extend(quotes)
     return result

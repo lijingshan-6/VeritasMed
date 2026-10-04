@@ -113,14 +113,13 @@ def _node_event(
         data = NodeEndData(
             faithful=output.get("faithful", False),
             issues=output.get("faithfulness_issues", ""),
-            confidence=output.get("confidence", 0.0),
         )
 
     elif node_name == "resolve_context":
         data = NodeEndData(new_query=output.get("new_query"), reason=output.get("reason"))
 
     elif node_name == "route":
-        data = NodeEndData(route=output.get("route", ""))
+        data = NodeEndData(route=output.get("query_type", ""))
 
     else:
         data = NodeEndData()

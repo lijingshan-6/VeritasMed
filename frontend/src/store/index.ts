@@ -15,9 +15,9 @@ export interface AppState extends View {
   conversations: Conversation[]; hydrated: boolean; storageError: string | null
   threadId: string; selectedTurnId: string | null; selectedRevisionId: string | null
   activeRequest: Target | null; useContext: boolean
-  query: string; selectedChunkId: string | null; pipeline: 'p2' | 'p3'
+  query: string; selectedChunkId: string | null
   setQuery: (query: string) => void; setSelectedChunkId: (id: string | null) => void
-  setPipeline: (pipeline: 'p2' | 'p3') => void; setUseContext: (use: boolean) => void
+  setUseContext: (use: boolean) => void
   setThreadId: (id: string) => void; newThread: () => void
   selectRevision: (turnId: string, revisionId: string) => void
   begin: (query: string, origin: Revision['origin'], regenerate?: boolean) => Target | null
@@ -43,9 +43,9 @@ function updateView(state: AppState, conversations: Conversation[]) {
 export const useStore = create<AppState>((set, get) => ({
   ...emptyView, conversations: [], hydrated: false, storageError: null,
   threadId: '', selectedTurnId: null, selectedRevisionId: null, activeRequest: null, useContext: true,
-  query: '', selectedChunkId: null, pipeline: 'p2',
+  query: '', selectedChunkId: null,
   setQuery: query => set({ query }), setSelectedChunkId: selectedChunkId => set({ selectedChunkId }),
-  setPipeline: pipeline => set({ pipeline }), setUseContext: useContext => set({ useContext }),
+  setUseContext: useContext => set({ useContext }),
   setThreadId: id => {
     const conversation = get().conversations.find(c => c.id === id)
     if (!conversation) return

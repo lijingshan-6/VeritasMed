@@ -1,4 +1,4 @@
-"""Shared lifecycle for the three local demo launchers."""
+"""Shared lifecycle for the local demo launchers."""
 import os
 from pathlib import Path
 import shutil
@@ -26,8 +26,7 @@ def require_frontend(*ports: int) -> str:
 def demo_environment(**overrides: str) -> dict[str, str]:
     # Explicit flags also override stale Vite settings in frontend/.env.local.
     return {**os.environ, "PYTHONPATH": str(ROOT / "src"), "PYTHONIOENCODING": "utf-8",
-            "PYTHONNOUSERSITE": "1", "VITE_API_URL": "", "VITE_AUDIT_ONLY": "0",
-            "VITE_REPLAY_ONLY": "0", "VITE_CONVERSATION_DEMO": "0", "VITE_MEDICAL_DEMO": "0",
+            "PYTHONNOUSERSITE": "1", "VITE_API_URL": "", "VITE_REPLAY_ONLY": "0",
             **overrides}
 
 

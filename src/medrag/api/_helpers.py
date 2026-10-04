@@ -88,19 +88,6 @@ def external_url(source: str, doc_id: str, pmid: str | None) -> str:
     return ""
 
 
-# ── Highlight ────────────────────────────────────────────────────────────────
-
-def compute_highlights(text: str, query: str) -> list[tuple[int, int]]:
-    """Return character ranges of query keywords found in text."""
-    ranges: list[tuple[int, int]] = []
-    for token in re.split(r"\s+", query.lower()):
-        if len(token) < 4:
-            continue
-        for m in re.finditer(re.escape(token), text, re.IGNORECASE):
-            ranges.append((m.start(), m.end()))
-    return ranges
-
-
 # ── Qdrant helpers ───────────────────────────────────────────────────────────
 
 def scroll_by_chunk_ids(chunk_ids: list[str]) -> list[dict]:

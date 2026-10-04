@@ -4,7 +4,6 @@ export type { components, paths, operations } from './api.gen'
 import type { components } from './api.gen'
 
 export type ChunkOut             = components['schemas']['ChunkOut']
-export type SearchResponse       = components['schemas']['SearchResponse']
 export type DocumentResponse     = components['schemas']['DocumentResponse']
 export type DocumentChunkSlim    = components['schemas']['DocumentChunkSlim']
 export type ChunkSlim            = components['schemas']['ChunkSlim']

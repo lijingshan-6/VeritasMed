@@ -1,7 +1,7 @@
 """MedRAG-Agent MCP Server (Week 5 — LangGraph + Security).
 
 Tools exposed to Claude Desktop / Claude Code:
-  1. search_literature   — hybrid retrieval (P2/P3), returns document snippets
+  1. search_literature   — hybrid dense+sparse retrieval with optional reranking
   2. ask_agent           — full LangGraph agentic loop with rewrite + faithfulness check
   3. evaluate_query      — grade how well a set of chunks answers a query (no generation)
   4. search_visual       — stub for future visual / image search capability
@@ -146,7 +146,7 @@ mcp = FastMCP(
     instructions=(
         "MedRAG-Agent provides retrieval-augmented QA over a PubMed/PMC medical corpus. "
         "Tools: "
-        "'search_literature' — retrieve relevant document snippets (fast, P2/P3); "
+        "'search_literature' — retrieve relevant document snippets (fast); "
         "'ask_agent' — full agentic loop: retrieves, grades, rewrites if needed, "
         "generates a grounded answer with inline citations and faithfulness check; "
         "'evaluate_query' — grade how well given context answers a query; "
@@ -201,7 +201,7 @@ async def search_literature(
     """Retrieve top-k relevant medical document chunks from PubMed/PMC.
 
     Performs hybrid dense+sparse RRF retrieval (P2), optionally followed
-    by BGE cross-encoder reranking (P3 quality).
+    by BGE cross-encoder reranking.
 
     First call loads BGE models (GPU ~30–90s, CPU much longer). Inspector users:
     set Configuration → Maximum Total Timeout to 300000 (5 min), or uncheck

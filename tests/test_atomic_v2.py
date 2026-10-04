@@ -2,7 +2,7 @@ import json
 from types import SimpleNamespace
 
 from medrag.verification.atomic_v2 import audit_atomic_v2
-from medrag.verification.atomic_v2_schema import AtomicV2Request
+from medrag.verification.answer_audit import AuditRequest as AtomicV2Request
 
 
 class QueueLLM:

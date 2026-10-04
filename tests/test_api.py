@@ -230,11 +230,6 @@ def test_concurrent_public_thread_requests_keep_their_own_answers(monkeypatch):
     assert first_events[-1]["data"]["thread_id"] == "shared"
 
 
-def test_legacy_pipeline_is_accepted_as_ignored_input():
-    with pytest.warns(DeprecationWarning):
-        assert AskRequest(query="question", pipeline="p3").pipeline == "p3"
-
-
 def test_health_401_is_degraded(monkeypatch):
     class Qdrant:
         def get_collection(self, _name):
@@ -244,8 +239,8 @@ def test_health_401_is_degraded(monkeypatch):
         return httpx.Response(401)
 
     monkeypatch.setattr(corpus, "get_qdrant", lambda: Qdrant())
-    monkeypatch.setenv("LLM_BACKEND", "mimo")
-    monkeypatch.setenv("OPENAI_BASE_URL", "https://example.invalid/v1")
+    monkeypatch.setenv("LLM_BACKEND", "openhub")
+    monkeypatch.setenv("OPENHUB_BASE_URL", "https://example.invalid/v1")
     client_class = httpx.AsyncClient
     monkeypatch.setattr(corpus.httpx, "AsyncClient", lambda **kwargs: client_class(transport=httpx.MockTransport(responder)))
 
@@ -281,3 +276,12 @@ def test_liveness_does_not_depend_on_external_services(monkeypatch):
     monkeypatch.setattr(corpus, "get_qdrant", lambda: (_ for _ in ()).throw(RuntimeError("offline")))
     response = _client(corpus.router).get("/api/live")
     assert response.status_code == 200
+
+
+def test_full_app_exposes_only_current_routes():
+    from medrag.api.app import app
+
+    paths = set(app.openapi()["paths"])
+    assert {"/api/audit", "/api/chunk/{chunk_id}", "/api/document/{citation}",
+            "/api/conversations/examples", "/api/health"} <= paths
+    assert not any(p.startswith(("/api/search", "/api/history", "/api/research", "/api/audit/examples")) for p in paths)

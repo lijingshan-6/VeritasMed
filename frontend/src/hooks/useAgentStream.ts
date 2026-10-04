@@ -1,4 +1,4 @@
-import { isGuidedDemo, isReplayOnly, playDemo, cancelDemo } from '../demo'
+import { isReplayOnly } from '../demo'
 import { useCallback } from 'react'
 import { connectStream, cancelStream } from '../api/streamConnection.js'
 import { wsAskUrl } from '../api/client'
@@ -29,20 +29,15 @@ export function useAgentStream() {
   const send = useCallback((overrideQuery?: string, regenerate = false) => {
     if (isReplayOnly) return
     const q = overrideQuery !== undefined ? overrideQuery : query
-    const target = begin(q, isGuidedDemo ? 'authored_demo' : 'live', regenerate)
+    const target = begin(q, 'live', regenerate)
     if (!target) return
     cancelStream()
-    cancelDemo()
     const revision = useStore.getState().conversations.find(c => c.id === target.conversationId)!.turns.find(t => t.id === target.turnId)!.revisions.at(-1)!
     const pushNode = (node) => patchRequest(target, r => ({ ...r, timeline: [...r.timeline, node] }))
     const updateNode = (name, patch) => patchRequest(target, r => ({ ...r, timeline: r.timeline.map((n, i) =>
       i === r.timeline.findLastIndex(v => v.name === name && v.status === 'running')
         ? { ...n, ...patch, elapsed_ms: n.timestamp ? Date.now() - n.timestamp : undefined } : n) }))
 
-    if (isGuidedDemo) {
-      playDemo(q, target.conversationId, handleEvent)
-      return
-    }
     connectStream(wsAskUrl(), { query: q, thread_id: target.conversationId, context: revision.context, omitted_context: revision.omitted_context }, {
       onEvent: handleEvent,
       onError: (message: string) => {
@@ -57,7 +52,7 @@ export function useAgentStream() {
           label: NODE_LABELS[ev.node] ?? ev.node,
           status: 'running',
           summary: '',
-          timestamp: isGuidedDemo ? undefined : Date.now(),
+          timestamp: Date.now(),
         })
       }
 
@@ -82,8 +77,8 @@ export function useAgentStream() {
 
         updateNode(ev.node, {
           status: ev.node === 'rewrite' ? 'rewrite' : 'done',
-          summary: isGuidedDemo ? "illustrative step" : summary,
-          detail: isGuidedDemo ? undefined : d,
+          summary,
+          detail: d,
         })
       }
 
@@ -122,7 +117,6 @@ export function useAgentStream() {
 
   const cancel = useCallback(() => {
     cancelStream()
-    cancelDemo()
     const target = useStore.getState().activeRequest
     if (target) void finish(target, undefined, undefined, true)
   }, [finish])

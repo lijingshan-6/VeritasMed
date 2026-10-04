@@ -1,4 +1,3 @@
-import { demoSuffix } from '../demo'
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ArrowLeft, ExternalLink, Zap } from 'lucide-react'
@@ -105,7 +104,7 @@ export function DocumentPage() {
         <button
           onClick={() => {
             setQuery(`Based on ${doc.citation}: ${doc.title} — `)
-            navigate('/' + demoSuffix)
+            navigate('/')
           }}
           className="vm-document-ask"
         >

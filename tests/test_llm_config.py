@@ -44,10 +44,12 @@ def test_unknown_backend_fails_before_creating_client(monkeypatch):
 
 
 def test_cloud_request_is_bounded(monkeypatch):
-    monkeypatch.setenv("LLM_BACKEND", "mimo")
-    monkeypatch.setenv("OPENAI_BASE_URL", "http://example.invalid/v1")
-    monkeypatch.setenv("OPENAI_API_KEY", "unit-test-placeholder")
+    monkeypatch.delenv("LLM_BACKEND", raising=False)
+    monkeypatch.setenv("OPENHUB_BASE_URL", "http://example.invalid/v1")
+    monkeypatch.setenv("OPENHUB_API_KEY", "unit-test-placeholder")
+    monkeypatch.setenv("OPENHUB_MODEL", "unit-test-model")
     model = llms.make_llm_fast()
+    assert model.model_name == "unit-test-model"
     assert model.request_timeout == 60.0
     assert model.max_retries == 1
 

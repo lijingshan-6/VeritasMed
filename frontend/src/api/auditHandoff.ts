@@ -2,7 +2,7 @@ import type { AnswerOut } from '../types/ws'
 import type { AuditInput } from './audit'
 
 export type AuditHandoff = {
-  kind: 'live_ask' | 'authored_demo' | 'research_workflow'
+  kind: 'live_ask' | 'authored_demo'
   question: string
   thread_id: string
   citations: string[]

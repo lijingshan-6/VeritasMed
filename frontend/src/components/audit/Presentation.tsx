@@ -10,7 +10,10 @@ export const labels: Record<string, string> = {
   needs_review: 'Needs review · parsing unresolved',
   not_source_checked: 'Presentation text · not source-checked',
 }
-export const methodLabels: Record<Strategy, string> = { direct: 'Direct Flash', split: 'Extract → verify each claim', context: 'Context + meta · experimental', quote_v2: 'Exact quotes v2 · experimental', atomic_v1: 'Atomic v1 · historical baseline', atomic_v2: 'Atomic v2 · qualifier anchors · experimental' }
+export const methodLabels: Record<string, string> = { direct: 'Direct Flash', atomic_v2: 'Atomic v2 · qualifier anchors · experimental',
+  // Labels for runs saved by retired methods, which can still appear in imported conversations.
+  split: 'Extract → verify (retired)', context: 'Context + meta (retired)', quote_v2: 'Exact quotes v2 (retired)', atomic_v1: 'Atomic v1 (retired)' }
+export const newRunMethods: Strategy[] = ['direct', 'atomic_v2']
 export const qualifierLabels: Record<string, string> = {
   population: 'Population', group_comparison: 'Group / comparison', outcome: 'Outcome',
   value_unit: 'Quantity / unit', time_denominator: 'Time / denominator', negation_attribution: 'Negation / attribution',
@@ -22,7 +25,7 @@ export const fidelityLabels: Record<string, string> = {
   duplicate_interpretation: 'This interpretation duplicates an earlier parsed fact.',
 }
 export function handoffLabel(kind: AuditHandoff['kind']) {
-  return kind === 'live_ask' ? 'Actual Ask answer' : kind === 'research_workflow' ? 'Actual controlled research answer' : 'Authored demo · not a real Agent answer'
+  return kind === 'live_ask' ? 'Actual Ask answer' : 'Authored demo · not a real Agent answer'
 }
 export function BindingDetail({ binding, label }: { binding: QuoteBinding; label: string }) {
   const description: Record<string, string> = { unique: 'Unique exact passage', ambiguous: 'Repeated passage; no location chosen',

@@ -15,7 +15,7 @@ paraphrased in the corpus. Offsets refer to these normalized passages.
 1. Seaquist ER et al.; GRADE Research Group (2024).
    [Glycemia reduction in type 2 diabetes—Hypoglycemia outcomes: A randomized clinical trial](https://doi.org/10.1371/journal.pone.0309907).
    PMID 39546502; PMC11567630. [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
-   Snapshot reused from `../medical/article.xml`, without changing it.
+   Publisher XML snapshot unchanged (`sources/PMC11567630.xml`).
 2. Lee YM et al. (2016).
    [Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial](https://doi.org/10.1371/journal.pone.0155918).
    PMID 27253526; PMC4890770. [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

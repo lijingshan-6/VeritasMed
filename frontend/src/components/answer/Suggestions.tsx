@@ -1,4 +1,3 @@
-import { isConversationDemo, isMedicalDemo } from '../../demo'
 import { IconSparkle, IconArrowUp, IconChevRight } from './Icons'
 
 export function FollowUps({ items, onPick }: { items: string[]; onPick: (q: string) => void }) {
@@ -65,7 +64,7 @@ export function EmptyState({ suggestedQueries, onPickQuery }: {
         }}>
           Ask a literature question, then follow up. Inspect retrieved passages,
           follow citations to their sources, and review the model’s evidence check.
-          {' '}{isConversationDemo ? 'This demo searches 15 original abstract passages from three papers: GRADE hypoglycemia, a vegan diet trial and an exercise trial. This small collection cannot answer arbitrary medical questions.' : isMedicalDemo ? 'This demo searches the original GRADE hypoglycemia trial abstract (Seaquist et al., 2024; CC0). It is a single-paper demonstration, not a literature review.' : 'The bundled examples use labelled summaries, not original article text.'}
+          {' '}This demo searches 15 original abstract passages from three papers: GRADE hypoglycemia, a vegan diet trial and an exercise trial. This small collection cannot answer arbitrary medical questions.
         </p>
 
         <div className="vm-eyebrow" style={{ marginBottom: 12 }}>Try a query</div>

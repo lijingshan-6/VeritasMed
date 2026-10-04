@@ -1,9 +1,0 @@
-{
-  "case_ids": [
-    "scifact-train-643-15535511",
-    "scifact-train-899-5572127",
-    "scifact-train-346-11902109"
-  ],
-  "rule": "First three development cases ordered by seeded hash, selected before workflow inference; not selected by performance",
-  "manifest_sha256": "48f0f17e6871b79a2de37df06eda5d8bb0ca651d5b6e1c480e8c25e2efc32478"
-}

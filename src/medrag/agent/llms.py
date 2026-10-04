@@ -1,30 +1,16 @@
-"""LLM factory for the configured gateway, Ollama or legacy MiMo backend.
+"""LLM factory for the Flash gateway (default) or a local Ollama model.
 
-Backend selection via environment variable LLM_BACKEND (default: mimo):
+Backend selection via LLM_BACKEND (default: openhub):
 
-  LLM_BACKEND=mimo    → ChatOpenAI pointing at MiMo-V2.5 API
+  LLM_BACKEND=openhub → OpenAI-compatible gateway (Flash), reasoning enabled
   LLM_BACKEND=ollama  → ChatOllama pointing at the configured local model
-  LLM_BACKEND=openhub → OpenAI-compatible gateway, with thinking enabled
 
-Two graph roles (not necessarily different models):
+Two graph roles; both use the same model for openhub:
   make_llm_fast()   → route, source identity selection, generate, summarize
   make_llm_think()  → grade, rewrite, check
   make_llm_think(reasoning=True) → optional Ollama reasoning, not used by default
 
-The current research profile uses openhub with Flash for both roles and enabled
-reasoning. There is no automatic Pro fallback. Only the legacy MiMo adapter
-selects separate fast/Pro names and disables internal reasoning on both.
-
-MiMo env vars (read from .env):
-  OPENAI_BASE_URL   — MiMo API base URL
-  OPENAI_API_KEY    — MiMo API key
-  MIMO_MODEL_FAST   — override fast model name  (default: mimo-v2.5)
-  MIMO_MODEL_THINK  — override think model name (default: mimo-v2.5-pro)
-
-Ollama env vars:
-  OLLAMA_MODEL      — override model name (default: qwen3.5:9b)
-
-See docs/decisions/2026-09-23-flash-research-baseline.md for the model decision.
+There is no automatic fallback to another model.
 """
 from __future__ import annotations
 
@@ -35,44 +21,15 @@ from medrag.config import DEFAULT_OLLAMA_MODEL, ollama_base_url
 
 logger = logging.getLogger(__name__)
 
-# ── MiMo model names ───────────────────────────────────────────────────────────
-_MIMO_FAST  = os.environ.get("MIMO_MODEL_FAST",  "mimo-v2.5")
-_MIMO_THINK = os.environ.get("MIMO_MODEL_THINK", "mimo-v2.5-pro")
-
-# ── Ollama model name ──────────────────────────────────────────────────────────
 _OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", DEFAULT_OLLAMA_MODEL)
 
 
-def _mimo_base_url() -> str:
-    url = (
-        os.environ.get("OPENAI_BASE_URL")
-        or os.environ.get("OPENAI_API_BASE", "")
-    ).rstrip("/")
-    if not url:
-        raise EnvironmentError(
-            "MiMo backend requires OPENAI_BASE_URL (or OPENAI_API_BASE) in .env"
-        )
-    return url
-
-
-def _mimo_api_key() -> str:
-    key = os.environ.get("OPENAI_API_KEY", "")
-    if not key:
-        raise EnvironmentError("MiMo backend requires OPENAI_API_KEY in .env")
-    return key
-
-
-# ── Internal factory ───────────────────────────────────────────────────────────
-
 def _make_llm(thinking: bool, *, reasoning: bool = False, structured: bool | dict = False):
-    """Shared factory; graph role selects a separate model only for legacy MiMo."""
-    temp = 0.6 if thinking else 0.2
-    model = _MIMO_THINK if thinking else _MIMO_FAST
-
-    backend = os.environ.get("LLM_BACKEND", "mimo").strip().lower()
+    """Shared factory; both graph roles use the configured model."""
+    backend = os.environ.get("LLM_BACKEND", "openhub").strip().lower()
     timeout = float(os.environ.get("LLM_TIMEOUT_SECONDS", "60"))
-    if backend not in {"mimo", "ollama", "openhub"}:
-        raise ValueError("LLM_BACKEND must be mimo, ollama or openhub")
+    if backend not in {"ollama", "openhub"}:
+        raise ValueError("LLM_BACKEND must be openhub or ollama")
     if backend == "openhub":
         from langchain_openai import ChatOpenAI
         from langgraph.config import get_config
@@ -87,8 +44,7 @@ def _make_llm(thinking: bool, *, reasoning: bool = False, structured: bool | dic
                           or os.environ.get("OPENHUB_MODEL", "")).strip()
         if not base_url or not api_key or not selected_model:
             raise EnvironmentError("OpenHub requires OPENHUB_BASE_URL, OPENHUB_API_KEY and OPENHUB_MODEL")
-        # Both tiers use the selected model. Do not silently disable reasoning
-        # or inherit MiMo's small final-output budget in a model comparison.
+        # Both tiers use the selected model with reasoning enabled.
         return ChatOpenAI(
             model=selected_model,
             base_url=base_url,
@@ -131,37 +87,16 @@ def _make_llm(thinking: bool, *, reasoning: bool = False, structured: bool | dic
             num_predict=4096,
         )
 
-    # Default: mimo
-    from langchain_openai import ChatOpenAI
-    logger.debug("[llm] %s → MiMo %s", "think" if thinking else "fast", model)
-
-    # MiMo models always reason internally unless explicitly disabled.
-    # With thinking enabled and max_tokens=4096, the model burns 1000-5000+
-    # reasoning tokens before producing content → 15-27 s for grade/check calls.
-    # budget_tokens has no effect on this API; the only working control is
-    # {"type": "disabled"}.  Grade/check quality stays high using the pro model
-    # (mimo-v2.5-pro) even without explicit CoT; the fast model uses v2.5.
-    return ChatOpenAI(
-        model=model,
-        base_url=_mimo_base_url(),
-        api_key=_mimo_api_key(),
-        temperature=temp,
-        timeout=timeout,
-        max_retries=1,
-        max_tokens=4096 if thinking else 1024,
-        extra_body={"thinking": {"type": "disabled"}},
-    )
-
 
 # ── Public factories ───────────────────────────────────────────────────────────
 
 def make_llm_fast(*, structured: bool | dict = False):
-    """Low-latency LLM — thinking OFF. Used by: route_query, generate_answer_node, summarize_history."""
+    """Generation role: route, source matching, generate, summarize."""
     return _make_llm(False, structured=structured)
 
 
 def make_llm_think(*, reasoning: bool = False, structured: bool | dict = False):
-    """Pro-tier LLM (mimo-v2.5-pro, thinking disabled). Used by: grade_relevance, rewrite_query, check_faithfulness."""
+    """Review role: grade, rewrite, check."""
     return _make_llm(True, reasoning=reasoning, structured=structured)
 
 

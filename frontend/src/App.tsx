@@ -1,16 +1,11 @@
-import { isGuidedDemo, isReplayOnly, demoSuffix } from './demo'
+import { isReplayOnly } from './demo'
 import React, { useEffect, useRef, useState } from 'react'
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import { AnswerPage } from './pages/AnswerPage'
-import { ExplorerPage } from './pages/ExplorerPage'
 import { DocumentPage } from './pages/DocumentPage'
-import { AuditPage } from './pages/AuditPage'
-import { ResearchPage } from './pages/ResearchPage'
 import { fetchCorpusStats, fetchHealth } from './api/client'
 import { useStore, initializeConversations } from './store'
 
-const auditOnly = import.meta.env.VITE_AUDIT_ONLY === '1'
-const askAppUrl = (import.meta.env.VITE_ASK_APP_URL as string) || 'http://127.0.0.1:5173/'
 
 // ── SVG base ───────────────────────────────────────────────────────────────
 function I({ size = 16, sw = 1.6, children, style }: {
@@ -26,8 +21,6 @@ function I({ size = 16, sw = 1.6, children, style }: {
 }
 const IconBook      = (p: { size?: number; sw?: number; style?: React.CSSProperties }) =>
   <I {...p}><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></I>
-const IconCompass   = (p: { size?: number; sw?: number; style?: React.CSSProperties }) =>
-  <I {...p}><circle cx="12" cy="12" r="9"/><path d="m15 9-4 1.5L9.5 15l4-1.5L15 9Z"/></I>
 const IconHistory   = (p: { size?: number; sw?: number; style?: React.CSSProperties }) =>
   <I {...p}><path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/><path d="M12 7v5l3 2"/></I>
 const IconSettings  = (p: { size?: number; sw?: number; style?: React.CSSProperties }) =>
@@ -123,13 +116,13 @@ function ThreadHistoryButton() {
 
 // ── StatusPill ──────────────────────────────────────────────────────────────
 function StatusPill() {
-  const [text, setText] = useState(isReplayOnly ? 'saved inference · no API calls' : isGuidedDemo ? 'fixed examples · no live model' : 'checking…')
+  const [text, setText] = useState(isReplayOnly ? 'saved inference · no API calls' : 'checking…')
   const [healthy, setHealthy] = useState<boolean | null>(null)
 
   useEffect(() => {
     let cancelled = false
     async function poll() {
-      if (isGuidedDemo || isReplayOnly) { setHealthy(null); return }
+      if (isReplayOnly) { setHealthy(null); return }
       try {
         const [health, stats] = await Promise.all([
           fetchHealth().catch(() => null),
@@ -138,7 +131,7 @@ function StatusPill() {
         if (cancelled) return
         if (health) {
           setHealthy(health.status === 'ok')
-          const model = stats?.embedding_model ?? health.llm ?? 'mimo-v2.5'
+          const model = stats?.embedding_model ?? health.llm ?? 'unknown'
           setText(health.status === 'ok' ? `ready · ${model}` : `needs setup · ${health.qdrant} / ${health.llm}`)
         } else {
           setHealthy(false)
@@ -249,7 +242,6 @@ function Header({ theme, setTheme }: { theme: Theme; setTheme: (t: Theme) => voi
   const navigate = useNavigate()
   const location = useLocation()
   const isAsk     = location.pathname === '/'
-  const isExplore = location.pathname === '/explore'
 
   return (
     <header className="vm-header" style={{
@@ -260,52 +252,29 @@ function Header({ theme, setTheme }: { theme: Theme; setTheme: (t: Theme) => voi
       borderBottom: '1px solid var(--rule)',
     }}>
       <BrandMark />
-      {!auditOnly && !isReplayOnly && <a href={isGuidedDemo ? "/" : "/?demo=1"} style={{fontSize: 12, color: "var(--accent)"}}>{isGuidedDemo ? "Live mode" : "Guided demo"}</a>}
       <span className="vm-research-label" style={{ fontSize: 11, color: "var(--muted)" }}>Research demo · not clinical advice</span>
 
       <span style={{ width: 1, height: 22, background: 'var(--rule)', margin: '0 2px' }} />
 
       <nav style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-        <NavTab
-          active={isAsk && !auditOnly}
-          label="Ask"
-          sub={auditOnly ? '↗' : '⌘K'}
-          icon={IconBook}
-          onClick={() => auditOnly ? window.location.assign(askAppUrl) : navigate('/' + demoSuffix)}
-        />
-        {!auditOnly && !isReplayOnly && <NavTab
-          active={isExplore}
-          label="Explore"
-          icon={IconCompass}
-          onClick={() => navigate('/explore' + demoSuffix)}
-        />}
-        <NavTab active={location.pathname === '/audit' || (auditOnly && location.pathname === '/')} label="Audit lab" icon={IconBook}
-          onClick={() => navigate('/audit')} />
-        <NavTab active={location.pathname === '/research'} label="Research" icon={IconCompass}
-          onClick={() => navigate('/research')} />
+        <NavTab active={isAsk} label="Ask" sub="⌘K" icon={IconBook} onClick={() => navigate('/')} />
       </nav>
 
       <span style={{ flex: 1 }} />
 
-      {isAsk && !auditOnly && <StatusPill />}
+      {isAsk && <StatusPill />}
 
-      {!auditOnly && <ThreadHistoryButton />}
+      <ThreadHistoryButton />
 
       <ThemePopover theme={theme} setTheme={setTheme} />
     </header>
   )
 }
 
-// ── App ─────────────────────────────────────────────────────────────────────
-function GuidedBanner() {
-  const location = useLocation()
-  if (!isGuidedDemo || location.pathname !== '/') return null
-  return <div role="status" style={{padding: '8px 16px', background: 'var(--accent-soft)', color: 'var(--ink)', fontSize: 12, textAlign: 'center'}}>GUIDED ASK · Authored answers and illustrative steps; no live retrieval or answer generation. Run audit uses the configured model.</div>
-}
-
+// ── App ───────────────────────────────────────────────────────────────────────
 export default function App() {
   const [theme, setTheme] = useState<Theme>('paper')
-  useEffect(() => { if (!auditOnly) void initializeConversations() }, [initializeConversations])
+  useEffect(() => { void initializeConversations() }, [])
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme === 'paper' ? '' : theme
@@ -317,8 +286,7 @@ export default function App() {
     function onKey(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault()
-        if (auditOnly) window.location.assign(askAppUrl)
-        else window.location.pathname !== '/' && (window.location.href = '/' + demoSuffix)
+        if (window.location.pathname !== '/') window.location.href = '/'
       }
     }
     window.addEventListener('keydown', onKey)
@@ -329,14 +297,9 @@ export default function App() {
     <BrowserRouter>
       <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', background: 'var(--canvas)' }}>
         <Header theme={theme} setTheme={setTheme} />
-        {auditOnly && <div className="vm-workspace-notice" role="note">Audit & research workspace · <a href={askAppUrl}>Open Ask for questions and follow-ups ↗</a>. Ask uses the full app described in the <a href="https://github.com/lijingshan-6/medrag-agent#run-the-full-medical-ask--audit-flow" target="_blank" rel="noreferrer">startup guide</a>.</div>}
-        <GuidedBanner />
         <main style={{ flex: 1, overflow: 'hidden' }}>
           <Routes>
-            <Route path="/"                   element={auditOnly ? <AuditPage /> : <AnswerPage />} />
-            <Route path="/audit"              element={<AuditPage />} />
-            <Route path="/research"           element={<ResearchPage />} />
-            <Route path="/explore"            element={<ExplorerPage />} />
+            <Route path="/"                   element={<AnswerPage />} />
             <Route path="/document/:citation" element={<DocumentPage />} />
           </Routes>
         </main>

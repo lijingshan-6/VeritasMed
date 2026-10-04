@@ -4,23 +4,6 @@
  */
 
 export interface paths {
-    "/api/search": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Search */
-        get: operations["search_api_search_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/api/document/{citation}": {
         parameters: {
             query?: never;
@@ -50,27 +33,6 @@ export interface paths {
          * @description Return the chunk and its neighbouring chunks.
          */
         get: operations["get_chunk_api_chunk__chunk_id__get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/history/{thread_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Get History
-         * @deprecated
-         * @description Legacy raw checkpoint lookup, not browser conversation history. Public Ask IDs are not checkpoint IDs; use conversation export/import in the browser.
-         */
-        get: operations["get_history_api_history__thread_id__get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -130,40 +92,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/api/audit/examples": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Examples */
-        get: operations["examples_api_audit_examples_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/audit/examples/{response_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Replay */
-        get: operations["replay_api_audit_examples__response_id__get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/api/audit": {
         parameters: {
             query?: never;
@@ -215,80 +143,12 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/api/research/examples": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Examples */
-        get: operations["examples_api_research_examples_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/research/examples/{case_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Replay */
-        get: operations["replay_api_research_examples__case_id__get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/research/results": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Results */
-        get: operations["results_api_research_results_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/research": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Live */
-        post: operations["live_api_research_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        /** AtomicV2Request */
-        AtomicV2Request: {
+        /** AuditRequest */
+        AuditRequest: {
             /** Answer */
             answer: string;
             /** Sources */
@@ -298,7 +158,7 @@ export interface components {
              * @default direct
              * @enum {string}
              */
-            strategy: "direct" | "split" | "context" | "quote_v2" | "atomic_v1" | "atomic_v2";
+            strategy?: "direct" | "atomic_v2";
         };
         /** AuditSource */
         AuditSource: {
@@ -318,56 +178,6 @@ export interface components {
             document: {
                 [key: string]: unknown;
             };
-        };
-        /** ChunkOut */
-        ChunkOut: {
-            /**
-             * Chunk Id
-             * @description e.g. 'pubmed:12345:0' or 'pmc:doc196:3'
-             */
-            chunk_id: string;
-            /**
-             * Citation
-             * @description e.g. 'PMID:12345' or 'PMC:doc196'
-             */
-            citation: string;
-            /**
-             * Source
-             * @description 'pubmed' or 'pmc'
-             */
-            source: string;
-            /** Doc Id */
-            doc_id: string;
-            /** Title */
-            title: string;
-            /** Section */
-            section?: string | null;
-            /** Pmid */
-            pmid?: string | null;
-            /** Chunk Idx */
-            chunk_idx: number;
-            /** Total Chunks */
-            total_chunks: number;
-            /** Text */
-            text: string;
-            /** Score */
-            score?: number | null;
-            /** Highlight Ranges */
-            highlight_ranges?: [
-                number,
-                number
-            ][];
-            /**
-             * External Url
-             * @default
-             */
-            external_url: string;
-            /** Authors */
-            authors?: string | null;
-            /** Journal */
-            journal?: string | null;
-            /** Year */
-            year?: number | null;
         };
         /** ChunkSlim */
         ChunkSlim: {
@@ -421,15 +231,6 @@ export interface components {
             /** Chunks */
             chunks: components["schemas"]["DocumentChunkSlim"][];
         };
-        /** EvidenceDocument */
-        EvidenceDocument: {
-            /** Document Id */
-            document_id: string;
-            /** Title */
-            title: string;
-            /** Sentences */
-            sentences: string[];
-        };
         /** HTTPValidationError */
         HTTPValidationError: {
             /** Detail */
@@ -444,54 +245,6 @@ export interface components {
             /** Llm */
             llm: string;
         };
-        /** HistoryResponse */
-        HistoryResponse: {
-            /** Thread Id */
-            thread_id: string;
-            /** Turns */
-            turns: components["schemas"]["HistoryTurn"][];
-            /** Summary */
-            summary: string;
-        };
-        /** HistoryTurn */
-        HistoryTurn: {
-            /** Query */
-            query: string;
-            /** Answer */
-            answer: string;
-            /** Citations */
-            citations: string[];
-            /** Timestamp */
-            timestamp: string;
-        };
-        /** ResearchRequest */
-        ResearchRequest: {
-            /** Question */
-            question: string;
-            /** Target Title */
-            target_title: string;
-            /** Claim */
-            claim: string;
-            /** Documents */
-            documents: components["schemas"]["EvidenceDocument"][];
-            /**
-             * Method
-             * @default structured_workflow
-             * @enum {string}
-             */
-            method: "direct_reader" | "autonomous_tools" | "structured_workflow";
-        };
-        /** SearchResponse */
-        SearchResponse: {
-            /** Query */
-            query: string;
-            /** Pipeline */
-            pipeline: string;
-            /** Latency Ms */
-            latency_ms: number;
-            /** Chunks */
-            chunks: components["schemas"]["ChunkOut"][];
-        };
         /** ValidationError */
         ValidationError: {
             /** Location */
@@ -505,6 +258,74 @@ export interface components {
             /** Context */
             ctx?: Record<string, never>;
         };
+        /** ChunkOut */
+        ChunkOut: {
+            /**
+             * Chunk Id
+             * @description e.g. 'pubmed:12345:0' or 'pmc:doc196:3'
+             */
+            chunk_id: string;
+            /**
+             * Citation
+             * @description e.g. 'PMID:12345' or 'PMC:doc196'
+             */
+            citation: string;
+            /**
+             * Source
+             * @description 'pubmed' or 'pmc'
+             */
+            source: string;
+            /** Doc Id */
+            doc_id: string;
+            /** Title */
+            title: string;
+            /**
+             * Section
+             * @default null
+             */
+            section?: string | null;
+            /**
+             * Pmid
+             * @default null
+             */
+            pmid?: string | null;
+            /** Chunk Idx */
+            chunk_idx: number;
+            /** Total Chunks */
+            total_chunks: number;
+            /** Text */
+            text: string;
+            /**
+             * Score
+             * @default null
+             */
+            score?: number | null;
+            /** Highlight Ranges */
+            highlight_ranges?: [
+                number,
+                number
+            ][];
+            /**
+             * External Url
+             * @default
+             */
+            external_url?: string;
+            /**
+             * Authors
+             * @default null
+             */
+            authors?: string | null;
+            /**
+             * Journal
+             * @default null
+             */
+            journal?: string | null;
+            /**
+             * Year
+             * @default null
+             */
+            year?: number | null;
+        };
     };
     responses: never;
     parameters: never;
@@ -514,40 +335,6 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    search_api_search_get: {
-        parameters: {
-            query: {
-                q: string;
-                k?: number;
-                pipeline?: string;
-                highlight?: boolean;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["SearchResponse"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
     get_document_api_document__citation__get: {
         parameters: {
             query?: never;
@@ -599,37 +386,6 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["ChunkContextResponse"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    get_history_api_history__thread_id__get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                thread_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HistoryResponse"];
                 };
             };
             /** @description Validation Error */
@@ -705,59 +461,6 @@ export interface operations {
             };
         };
     };
-    examples_api_audit_examples_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": unknown;
-                };
-            };
-        };
-    };
-    replay_api_audit_examples__response_id__get: {
-        parameters: {
-            query?: {
-                strategy?: "direct" | "split" | "context" | "quote_v2" | "atomic_v1" | "atomic_v2";
-            };
-            header?: never;
-            path: {
-                response_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": unknown;
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
     live_audit_api_audit_post: {
         parameters: {
             query?: never;
@@ -767,7 +470,7 @@ export interface operations {
         };
         requestBody: {
             content: {
-                "application/json": components["schemas"]["AtomicV2Request"];
+                "application/json": components["schemas"]["AuditRequest"];
             };
         };
         responses: {
@@ -821,110 +524,6 @@ export interface operations {
             cookie?: never;
         };
         requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": unknown;
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    examples_api_research_examples_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": unknown;
-                };
-            };
-        };
-    };
-    replay_api_research_examples__case_id__get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                case_id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": unknown;
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
-    };
-    results_api_research_results_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": unknown;
-                };
-            };
-        };
-    };
-    live_api_research_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["ResearchRequest"];
-            };
-        };
         responses: {
             /** @description Successful Response */
             200: {

@@ -118,11 +118,6 @@ class AskRequest(BaseModel):
         if len({c.turn_id for c in self.context}) != len(self.context):
             raise ValueError("Context must contain distinct turns")
         return self
-    pipeline: str | None = Field(
-        default=None,
-        deprecated=True,
-        description="Legacy input accepted for compatibility; ask always runs the full agent.",
-    )
 
 
 # ── Full answer (inside "done" event data) ──────────────────────────────────
@@ -159,15 +154,6 @@ AgentEvent = Annotated[
 ]
 
 
-# ── /api/search ──────────────────────────────────────────────────────────────
-
-class SearchResponse(BaseModel):
-    query: str
-    pipeline: str
-    latency_ms: float
-    chunks: list[ChunkOut]
-
-
 # ── /api/document/{citation} ─────────────────────────────────────────────────
 
 class DocumentChunkSlim(BaseModel):
@@ -201,21 +187,6 @@ class ChunkContextResponse(BaseModel):
     prev_chunk: ChunkSlim | None = None
     next_chunk: ChunkSlim | None = None
     document: dict  # {title, citation, external_url}
-
-
-# ── /api/history/{thread_id} ─────────────────────────────────────────────────
-
-class HistoryTurn(BaseModel):
-    query: str
-    answer: str
-    citations: list[str]
-    timestamp: str
-
-
-class HistoryResponse(BaseModel):
-    thread_id: str
-    turns: list[HistoryTurn]
-    summary: str
 
 
 # ── /api/corpus/stats ────────────────────────────────────────────────────────

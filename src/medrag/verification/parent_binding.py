@@ -2,9 +2,22 @@
 
 from copy import deepcopy
 
-from .quote_audit import locate_quote
-
 BINDING_VERSION = "parent-exact-v1"
+
+
+def locate_quote(text: str, quote: str) -> dict:
+    """Only unique exact text is bound. Include overlapping occurrences and never guess."""
+    if not quote or not quote.strip():
+        return {"status": "empty_quote", "match_count": 0, "span": None, "candidates": []}
+    starts, cursor = [], 0
+    while (start := text.find(quote, cursor)) >= 0:
+        starts.append(start)
+        cursor = start + 1
+    spans = [{"start": s, "end": s + len(quote), "text": quote, "offset_unit": "unicode_codepoint"}
+             for s in starts[:8]]
+    return {"status": "unique" if len(starts) == 1 else "ambiguous" if starts else "not_found",
+            "match_count": len(starts), "span": spans[0] if len(starts) == 1 else None,
+            "candidates": spans, "candidates_truncated": len(starts) > len(spans)}
 
 
 def bind_parent_fragments(answer: str, parent_quote: str, quotes: list[str]) -> dict:

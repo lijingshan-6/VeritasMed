@@ -4,7 +4,6 @@ from fastapi.responses import JSONResponse
 
 from medrag.api.routes.audit import router as audit_router
 from medrag.api.routes.conversations import router as conversation_router
-from medrag.api.routes.research import router as research_router
 from medrag.api.routes.replay_chunks import router as chunk_router
 
 app = FastAPI(title="VeritasMed saved conversation replay", version="0.8.0")
@@ -21,5 +20,4 @@ async def saved_only(request, call_next):
 
 app.include_router(conversation_router)
 app.include_router(audit_router)
-app.include_router(research_router)
 app.include_router(chunk_router)

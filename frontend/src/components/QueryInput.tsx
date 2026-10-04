@@ -4,7 +4,7 @@ import { useAgentStream } from '../hooks/useAgentStream'
 import { fetchCorpusStats } from '../api/client'
 import type { CorpusStats } from '../types'
 import { contextFor } from '../conversation/model'
-import { isGuidedDemo, isReplayOnly } from '../demo'
+import { isReplayOnly } from '../demo'
 
 // ── SVG icons ─────────────────────────────────────────────────────────────
 function I({ size = 16, sw = 1.6, children }: { size?: number; sw?: number; children: React.ReactNode }) {
@@ -107,7 +107,7 @@ export function QueryInput() {
           borderTop: '1px solid var(--rule-soft)',
         }}>
           <span className="vm-mono" style={{ fontSize: 11, color: "var(--muted)" }}>Evidence + self-check</span>
-          {!isGuidedDemo && <label className="vm-context-toggle"><input type="checkbox" checked={useContext} onChange={e => setUseContext(e.target.checked)} /> Use selected history ({history.context.length} turns)</label>}
+          {<label className="vm-context-toggle"><input type="checkbox" checked={useContext} onChange={e => setUseContext(e.target.checked)} /> Use selected history ({history.context.length} turns)</label>}
           {useContext && history.omitted > 0 && <span role="note">{history.omitted} older turns omitted; no partial turns</span>}
 
           {stats && (

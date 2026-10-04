@@ -72,15 +72,11 @@ async def health() -> HealthResponse:
 
     # Check the selected LLM backend, including successful authentication.
     llm_status = "disconnected"
-    backend = os.environ.get("LLM_BACKEND", "mimo").strip().lower()
+    backend = os.environ.get("LLM_BACKEND", "openhub").strip().lower()
     if backend == "ollama":
         base_url = ollama_base_url()
         endpoint = "/api/tags"
         headers = {}
-    elif backend == "mimo":
-        base_url = os.environ.get("OPENAI_BASE_URL") or os.environ.get("OPENAI_API_BASE", "")
-        endpoint = "/models"
-        headers = {"Authorization": f"Bearer {os.environ.get('OPENAI_API_KEY', '')}"}
     elif backend == "openhub":
         base_url = os.environ.get("OPENHUB_BASE_URL", "")
         endpoint = "/models"

@@ -1,67 +1,38 @@
 import { ClaimList } from '../components/audit/ClaimList'
 import { SourceList } from '../components/audit/SourceList'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import type { FormEvent } from 'react'
-import { useLocation } from 'react-router-dom'
 import { inputProblem } from '../api/auditHandoff'
 import type { AuditHandoff } from '../api/auditHandoff'
-import { auditExamples, replayAudit, runAudit } from '../api/audit'
-import type { AuditInput, AuditRecord, Catalogue, Strategy } from '../api/audit'
+import { runAudit } from '../api/audit'
+import type { AuditInput, AuditRecord, Strategy } from '../api/audit'
 import type { SavedAudit } from '../conversation/model'
 import { newId, now, sha256 } from '../conversation/model'
-import { labels, methodLabels, handoffLabel, BindingDetail, category, LinkedText } from '../components/audit/Presentation'
+import { labels, methodLabels, newRunMethods, handoffLabel, BindingDetail, category, LinkedText } from '../components/audit/Presentation'
 import './audit.css'
 import { isReplayOnly } from '../demo'
 
 function message(error: unknown) {
   const detail = (error as { response?: { data?: { detail?: unknown } } })?.response?.data?.detail
-  return typeof detail === 'string' ? detail : 'Audit service unavailable or input rejected. Start python scripts/run_audit_demo.py and check the input limits.'
+  return typeof detail === 'string' ? detail : 'Audit service unavailable or input rejected. Check the Flash configuration and the input limits.'
 }
 
-const emptyInput = (): AuditInput => ({ answer: '', strategy: 'direct', sources: [{ id: 'source-1', title: 'Source 1', text: '' }] })
-
-export function AuditPage({ context, onClose, saved = [], onRecord }: { context?: AuditHandoff; onClose?: () => void; saved?: SavedAudit[]; onRecord?: (record: AuditRecord) => Promise<void> } = {}) {
-  const location = useLocation()
-  const incoming = context ?? (location.state as { handoff?: AuditHandoff } | null)?.handoff
-  const embedded = !!context
-  const [handoff, setHandoff] = useState<AuditHandoff | null>(incoming ?? null)
-  const [catalogue, setCatalogue] = useState<Catalogue | null>(null)
-  const [example, setExample] = useState('')
-  const [strategy, setStrategy] = useState<Strategy>('direct')
+// The audit view of one Ask answer revision. It never rewrites the answer.
+export function AuditPage({ context, onClose, saved = [], onRecord }: { context: AuditHandoff; onClose: () => void; saved?: SavedAudit[]; onRecord?: (record: AuditRecord) => Promise<void> }) {
+  const [handoff, setHandoff] = useState<AuditHandoff | null>(context)
   const initialSaved = saved.find(r => r.record.audit.strategy === 'direct' && !r.edited) ?? saved[0]
   const [record, setRecord] = useState<AuditRecord | null>(initialSaved?.record ?? null)
   const [selected, setSelected] = useState(initialSaved?.record.audit.claims[0]?.id ?? '')
   const [pending, setPending] = useState('')
   const [error, setError] = useState('')
-  const [formOpen, setFormOpen] = useState(!!incoming && !embedded)
-  const [draft, setDraft] = useState<AuditInput>(() => incoming?.input ?? emptyInput())
+  const [formOpen, setFormOpen] = useState(false)
+  const [draft, setDraft] = useState<AuditInput>(() => context.input)
 
   function show(value: AuditRecord) {
     setRecord(value)
     setSelected(value.audit.claims[0]?.id ?? '')
     setError('')
   }
-  async function load(id: string, mode: Strategy) {
-    setPending('Loading saved audit…'); setRecord(null); setError('')
-    try { show(await replayAudit(id, mode)) } catch (e) { setError(message(e)) }
-    finally { setPending('') }
-  }
-  useEffect(() => {
-    if (embedded) return
-    let alive = true
-    auditExamples().then(async data => {
-      if (!alive) return
-      setCatalogue(data)
-      const first = data.examples.find(e => e.strategies.direct && (!e.requires_download || data.sources_downloaded))
-      if (!incoming && first) {
-        setExample(first.id); setPending('Loading saved audit…')
-        try { const value = await replayAudit(first.id, 'direct'); if (alive) show(value) }
-        catch (e) { if (alive) setError(message(e)) }
-        finally { if (alive) setPending('') }
-      }
-    }).catch(e => { if (alive) setError(message(e)) })
-    return () => { alive = false }
-  }, [])
 
   async function submit(event?: FormEvent) {
     event?.preventDefault()
@@ -117,38 +88,20 @@ export function AuditPage({ context, onClose, saved = [], onRecord }: { context?
     ...(audit?.meta_text?.flatMap(m => m.answer_span ? [{ ...m.answer_span, claimId: m.id, category: m.status }] : []) ?? [])]
   const models = [...new Set(audit?.calls.flatMap(c => c.transport_metadata?.model_identifiers ?? []) ?? [])]
   const metaFailures = audit?.meta_text?.filter(m => m.status !== 'not_source_checked').length ?? 0
-  const available = catalogue?.examples.filter(e => e.strategies[strategy]) ?? []
 
-  return <div className={`audit-page${embedded ? ' audit-page-embedded' : ''}`}>
+  return <div className="audit-page audit-page-embedded">
     <div className="audit-heading">
-      <div><div className="vm-eyebrow">{embedded ? 'Ask / Audit this answer' : 'VeritasMed / Textual evidence'}</div><h1>{embedded ? 'Review the answer and its evidence.' : 'Inspect the answer. Follow the evidence.'}</h1>
-        <p>{embedded ? context.question : 'Every judgment belongs to a passage. Unchecked text remains visible.'}</p></div>
-      {embedded ? <button className="audit-button" onClick={onClose}>Back to answer</button>
-        : <button className="audit-button primary" disabled={!!pending} onClick={() => { if (isReplayOnly && record) setDraft(record.input); setFormOpen(v => !v) }}>{formOpen ? 'Close input' : isReplayOnly ? 'Inspect saved inputs' : 'Audit your own answer'}</button>}
+      <div><div className="vm-eyebrow">Ask / Audit this answer</div><h1>Review the answer and its evidence.</h1>
+        <p>{context.question}</p></div>
+      <button className="audit-button" onClick={onClose}>Back to answer</button>
     </div>
-    {embedded && <div className="audit-toolbar">
+    <div className="audit-toolbar">
       {saved.length > 0 && <label>Saved runs <select aria-label="Saved audit run" value={saved.find(r => r.record.audit.id === record?.audit.id)?.id ?? ''} onChange={e => { const run = saved.find(r => r.id === e.target.value); if (run) show(run.record) }}><option value="" disabled>Select run</option>{saved.map((r, i) => <option key={r.id} value={r.id}>{i + 1} · {r.record.audit.strategy} · {r.edited ? 'Edited experiment' : 'Original answer'} · {r.record.audit.status}</option>)}</select></label>}
-      {!isReplayOnly && <label>New run method <select aria-label="Answer audit method" disabled={!!pending} value={draft.strategy} onChange={e => setDraft({ ...draft, strategy: e.target.value as Strategy })}>{Object.entries(methodLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>}
+      {!isReplayOnly && <label>New run method <select aria-label="Answer audit method" disabled={!!pending} value={draft.strategy} onChange={e => setDraft({ ...draft, strategy: e.target.value as Strategy })}>{newRunMethods.map(value => <option key={value} value={value}>{methodLabels[value]}</option>)}</select></label>}
       <button className="audit-button primary" disabled={!!pending || isReplayOnly} onClick={() => void submit()}>{isReplayOnly ? 'Saved runs only' : record ? 'Run audit again' : 'Run audit'}</button>
       <button className="audit-button" disabled={!!pending} onClick={() => setFormOpen(v => !v)}>{formOpen ? 'Close inputs' : 'Inspect inputs'}</button>
       <span className="audit-muted">{handoffLabel(context.kind)} · {context.input.sources.length} source passages · original answer retained</span>
-    </div>}
-    {!embedded && <div className="audit-toolbar">
-      <span className="vm-eyebrow">Real saved runs</span>
-      <label>Method <select aria-label="Audit method" disabled={!!pending} value={strategy} onChange={e => {
-        const value = e.target.value as Strategy; setStrategy(value)
-        const ready = catalogue?.examples.filter(c => !c.requires_download || catalogue.sources_downloaded)
-        const next = ready?.find(c => c.id === example && c.strategies[value]) ?? ready?.find(c => c.strategies[value])
-        setExample(next?.id ?? ''); setRecord(null)
-        if (next) void load(next.id, value)
-      }}>{Object.entries(methodLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
-      <label>Answer <select aria-label="Saved answer" disabled={!!pending || !available.length} value={example} onChange={e => {
-        setExample(e.target.value); void load(e.target.value, strategy)
-      }}><option value="" disabled>Select a saved answer</option>{available.map(e => <option key={e.id} value={e.id} disabled={e.requires_download && !catalogue?.sources_downloaded}>{e.label} · {e.strategies[strategy]}</option>)}</select></label>
-      <span className="audit-muted">Real saved inference · no new API call</span>
-    </div>}
-    {catalogue && !catalogue.sources_downloaded && <div className="audit-notice">The medical demo is bundled and ready to replay. Optional nonmedical RAGTruth research examples require <code>python scripts/verification/answer_benchmark.py download</code>, then reload.</div>}
-    {catalogue && !catalogue.examples.length && <div className="audit-notice">No saved run is available yet. You can audit supplied texts using the input below.</div>}
+    </div>
     {error && <div role="alert" className="audit-notice error">{error}</div>}
     {handoff && formOpen && <div className="audit-notice">
       <strong>{handoffLabel(handoff.kind)}</strong>
@@ -164,10 +117,10 @@ export function AuditPage({ context, onClose, saved = [], onRecord }: { context?
       </fieldset>)}
       <div className="audit-toolbar">
         <button type="button" className="audit-button" disabled={draft.sources.length >= 40 || !!pending} onClick={() => setDraft({ ...draft, sources: [...draft.sources, { id: `source-${Date.now()}`, title: `Source ${draft.sources.length + 1}`, text: '' }] })}>+ Add source</button>
-        <label>Method <select aria-label="New audit method" value={draft.strategy} onChange={e => setDraft({ ...draft, strategy: e.target.value as Strategy })}>{Object.entries(methodLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label>
+        <label>Method <select aria-label="New audit method" value={draft.strategy} onChange={e => setDraft({ ...draft, strategy: e.target.value as Strategy })}>{newRunMethods.map(value => <option key={value} value={value}>{methodLabels[value]}</option>)}</select></label>
         <button className="audit-button primary" disabled={!!pending || isReplayOnly}>{isReplayOnly ? 'Saved runs only' : 'Run new audit'}</button>
       </div>
-      <p className="audit-muted">Sends these texts to the Flash endpoint configured in your local .env. Split mode makes one extraction call plus a call per claim and can take several minutes. The server does not save this input. Up to 40 sources / 80,000 source characters; no automatic search. Exact quotes v2 binds only unique original passages and exposes repeated or missing quotations. Direct remains the baseline.</p>
+      <p className="audit-muted">Sends these texts to the Flash endpoint configured in your local .env. Atomic v2 makes up to three calls. The server does not save this input. Up to 40 sources / 80,000 source characters; no automatic search. Direct remains the default.</p>
     </form>}
     {pending && <div className="audit-pending" role="status"><span className="audit-pulse" />{pending}<span className="audit-muted">The full result appears when the run finishes.</span></div>}
     {record && audit && <>
@@ -181,7 +134,7 @@ export function AuditPage({ context, onClose, saved = [], onRecord }: { context?
       <p className="audit-muted">{record.provenance.note}</p>
       {record.provenance.paper && /^https?:\/\//i.test(record.provenance.paper) && <p><a href={record.provenance.paper} target="_blank" rel="noreferrer">Open original paper ↗</a></p>}
       {audit.supplemental_checkers && <div className="audit-notice">Separate local checker: {audit.supplemental_checkers.judgments}/{audit.supplemental_checkers.attempts} standalone fact checks completed in {audit.supplemental_checkers.elapsed_seconds.toFixed(1)} s, in addition to the recorded Flash calls. Disagreements remain visible; no vote or combined confidence score is applied.</div>}
-      {record.provenance.handoff && (!embedded || record.provenance.input_edited) && <div className="audit-notice"><strong>{handoffLabel(record.provenance.handoff.kind)}</strong> · {record.provenance.input_edited ? 'Inputs edited after transfer; originals retained in export.' : 'Original answer and source passages preserved.'}<p>{record.provenance.handoff.question}</p></div>}
+      {record.provenance.handoff && record.provenance.input_edited && <div className="audit-notice"><strong>{handoffLabel(record.provenance.handoff.kind)}</strong> · {record.provenance.input_edited ? 'Inputs edited after transfer; originals retained in export.' : 'Original answer and source passages preserved.'}<p>{record.provenance.handoff.question}</p></div>}
       <div className="audit-layout">
         <section className="audit-answer-column">
           <div className="vm-eyebrow">Original answer · click an underlined passage</div>
@@ -202,11 +155,10 @@ export function AuditPage({ context, onClose, saved = [], onRecord }: { context?
         <SourceList record={record} selected={selected} onSelect={selectClaim} />
       </div>
     </>}
-    {embedded && !record && !formOpen && <>
+    {!record && !formOpen && <>
       {!pending && <p className="audit-muted">{isReplayOnly ? 'No audit is saved for this answer. Replay does not create a judgment. Return to the answer to inspect its recorded sources.' : 'Run audit to check this answer against its retrieved passages. Opening this view makes no model call. You can return to the answer or continue asking below.'}</p>}
       <div className="audit-layout"><section className="audit-answer-column"><div className="vm-eyebrow">Answer to audit · not yet checked</div><div className="audit-answer-text">{draft.answer}</div></section>
         <aside className="audit-sources-column"><h2>Answer sources</h2>{draft.sources.map(source => <article className="audit-source" key={source.id}><h3>{source.title}</h3><div className="audit-source-text">{source.text}</div></article>)}</aside></div>
     </>}
-    {!embedded && !record && !pending && <div className="audit-empty"><div className="vm-eyebrow">A traceable judgment starts with the text</div><h2>Bring an answer and its sources.</h2><p>Load a real saved run above, or audit a new answer. Each claim links to exact passages; missing evidence and unfinished checks stay visible.</p></div>}
   </div>
 }

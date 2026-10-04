@@ -1,6 +1,7 @@
 import { api } from './client'
 
-export type Strategy = 'direct' | 'split' | 'context' | 'quote_v2' | 'atomic_v1' | 'atomic_v2'
+// Methods a new run can use. Saved runs may carry retired method names.
+export type Strategy = 'direct' | 'atomic_v2'
 export type Span = { start: number; end: number; text: string }
 export type QuoteBinding = { status: string; match_count: number; span: Span | null; candidates: Span[]; candidates_truncated?: boolean }
 export type Source = { id: string; title: string; text: string }
@@ -31,7 +32,7 @@ export type AuditClaim = {
 export type AuditRecord = {
   input: AuditInput; mode: 'saved' | 'live'; provenance: { note: string; paper?: string; response_id?: string; run?: string; handoff?: import('./auditHandoff').AuditHandoff; input_edited?: boolean }
   audit: {
-    id: string; status: string; created_utc: string; strategy: Strategy; elapsed_seconds: number
+    id: string; status: string; created_utc: string; strategy: string; elapsed_seconds: number
     claims: AuditClaim[]; summary: Record<string, number>; claims_at_cap: boolean
     parent_count?: number
     extraction?: { completeness_note: string } | null
@@ -43,10 +44,5 @@ export type AuditRecord = {
     calls: { stage: string; status: string; elapsed_seconds: number; usage: { total_tokens?: number } | null
       transport_metadata?: { model_identifiers?: string[] }; error_type?: string }[]
   }
-}
-export type Catalogue = { examples: { id: string; label: string; requires_download: boolean; strategies: Partial<Record<Strategy, string>> }[]; sources_downloaded: boolean }
-export async function auditExamples(): Promise<Catalogue> { return (await api.get('/api/audit/examples')).data }
-export async function replayAudit(id: string, strategy: Strategy): Promise<AuditRecord> {
-  return (await api.get(`/api/audit/examples/${encodeURIComponent(id)}`, { params: { strategy } })).data
 }
 export async function runAudit(input: AuditInput): Promise<AuditRecord> { return (await api.post('/api/audit', input)).data }

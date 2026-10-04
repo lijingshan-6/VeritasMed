@@ -57,7 +57,7 @@ export function QueryInput() {
   if (isReplayOnly) return <div className="vm-replay-composer">
     <strong>Saved conversation replay</strong>
     <span>Select a recorded question above. Answers, sources and audits belong to that original run.</span>
-    <a href="https://github.com/lijingshan-6/medrag-agent#run-the-full-medical-ask--audit-flow" target="_blank" rel="noreferrer">Set up live questions and follow-ups ↗</a>
+    <a href="https://github.com/lijingshan-6/medrag-agent#ask-your-own-questions" target="_blank" rel="noreferrer">Set up live questions and follow-ups ↗</a>
   </div>
 
   return (

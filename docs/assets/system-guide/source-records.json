@@ -54,7 +54,7 @@
       "symbol": "check_faithfulness",
       "source": {
         "path": "src/medrag/agent/nodes/checking.py",
-        "line": 37
+        "line": 38
       }
     },
     {
@@ -62,7 +62,7 @@
       "symbol": "increment_regen",
       "source": {
         "path": "src/medrag/agent/nodes/checking.py",
-        "line": 191
+        "line": 195
       }
     },
     {
@@ -78,7 +78,7 @@
       "symbol": "lambda",
       "source": {
         "path": "src/medrag/agent/graph.py",
-        "line": 155
+        "line": 156
       }
     },
     {
@@ -218,26 +218,26 @@
   "predicates": {
     "_after_grade": {
       "path": "src/medrag/agent/graph.py",
-      "line": 84
+      "line": 85
     },
     "_after_check": {
       "path": "src/medrag/agent/graph.py",
-      "line": 103
+      "line": 104
     },
     "_maybe_summarize": {
       "path": "src/medrag/agent/graph.py",
-      "line": 132
+      "line": 133
     }
   },
   "fingerprint_format": "sha256-utf8-lf",
   "fingerprints": {
-    "src/medrag/agent/graph.py": "d9101e5afd16b47c6c6d3200bfd8a43c644e210710bb7649cc9936cb13f693e0",
+    "src/medrag/agent/graph.py": "8ba7b4c8e67c9960961e26b76892013558eecc0d3116d561bc6b31518ee8705d",
     "src/medrag/agent/nodes/constants.py": "831fcae2a69de8841181c50fbca4be88ec92652c9d1ba97fd782c31824f49de4",
     "src/medrag/agent/state.py": "91ac108c661d791aa04d4578a3d004f18989917ee539476c199f7c2958bd11a6"
   },
   "record": {
     "path": "data/demo/conversations/run01/v08-evidence-limits-turn-3-events.jsonl",
-    "sha256": "e9ffb75415db8c45f0e05a7623337a774e4bf2fa987f9af00ced5e2904cb33d9",
+    "sha256": "c4e87ad7cda62d812927cc6dba5ef52ef6706a246d296fd16c55d611308b23ad",
     "observed_nodes": [
       {
         "node": "resolve_context",

@@ -32,7 +32,7 @@ from medrag.api.routes import ask, audit, chunk, conversations, corpus, document
 app = FastAPI(
     title="VeritasMed API",
     description="Self-verifying medical literature QA backend",
-    version="0.8.0",
+    version="0.9.0",
 )
 
 # ── CORS ─────────────────────────────────────────────────────────────────────

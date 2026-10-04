@@ -6,7 +6,7 @@ from medrag.api.routes.audit import router as audit_router
 from medrag.api.routes.conversations import router as conversation_router
 from medrag.api.routes.replay_chunks import router as chunk_router
 
-app = FastAPI(title="VeritasMed saved conversation replay", version="0.8.0")
+app = FastAPI(title="VeritasMed saved conversation replay", version="0.9.0")
 
 
 @app.middleware("http")

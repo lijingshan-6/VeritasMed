@@ -139,8 +139,10 @@ def main():
                 audit_path = run / (turn_id + "-" + method + ".json")
                 if audit_path.exists():
                     continue
+                # Same hand-off as the browser (format v2): title line, blank line, passage.
                 item = {"answer": result["answer"], "strategy": method, "sources": [
-                    {"id": f"evidence-{j + 1}", "title": f"{c['citation']} · {c['title']}", "text": c["text"]}
+                    {"id": f"evidence-{j + 1}", "title": f"{c['citation']} · {c['title']}",
+                     "text": f"{c['citation']} · {c['title']}\n\n{c['text']}"}
                     for j, c in enumerate(result["chunks"])
                 ]}
                 save(audit_path, {"status": "started", "input": item, "created_utc": now()})

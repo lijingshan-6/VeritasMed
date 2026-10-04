@@ -59,9 +59,19 @@ def test_provider_failure_is_recorded_without_exposing_body():
     assert "secret" not in json.dumps(audit)
 
 
-def test_invalid_schema_is_not_no_claims():
-    audit = audit_answer(item(), Stub([{"claims": [{"quote": "A 😀."}]}]))
+def test_one_unusable_claim_does_not_discard_the_others():
+    unusable = {"quote": "B is false.", "occurrence": 0, "relation": "supported", "evidence": [], "explanation": "Absent."}
+    audit = audit_answer(item(), Stub([{"claims": [claim(), unusable]}]))
     assert audit["status"] == "partial_error"
+    assert [c["status"] for c in audit["claims"]] == ["ok", "invalid_output"]
+    assert audit["summary"]["supported"] == 1 and audit["summary"]["failed_or_unchecked"] == 1
+    assert audit["claims"][1]["answer_span"]["text"] == "B is false."
+    assert audit["claims"][1]["relation"] is None
+
+
+def test_wrong_output_shape_is_a_schema_failure_not_no_claims():
+    audit = audit_answer(item(), Stub([{"claims": "none", "extra": 1}]))
+    assert audit["status"] == "partial_error" and audit["claims"] == []
     assert audit["calls"][0]["error_type"] == "InvalidAuditSchema"
 
 

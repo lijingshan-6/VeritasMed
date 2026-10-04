@@ -21,9 +21,17 @@ export function inputProblem(input: AuditInput): string | null {
   return null
 }
 
-export function makeAuditHandoff(answer: AnswerOut, question: string, guided: boolean): AuditHandoff {
+// v2 starts each source text with the same title line the checker is shown (identifier and
+// title), so it can quote either when an answer names the study. v1 (saved audits before
+// v0.9) passed passages only.
+export type HandoffFormat = 'v1' | 'v2'
+export const sourceTitle = (c: { citation: string; title: string }) => `${c.citation} · ${c.title}`
+export const sourceText = (c: { citation: string; title: string; text: string }, format: HandoffFormat) =>
+  format === 'v2' ? `${sourceTitle(c)}\n\n${c.text}` : c.text
+
+export function makeAuditHandoff(answer: AnswerOut, question: string, guided: boolean, format: HandoffFormat = 'v2'): AuditHandoff {
   const input: AuditInput = { answer: answer.answer, strategy: 'direct', sources: answer.chunks.map((c, i) => ({
-    id: `evidence-${i + 1}`, title: `${c.citation} · ${c.title}`, text: c.text,
+    id: `evidence-${i + 1}`, title: sourceTitle(c), text: sourceText(c, format),
   })) }
   const problem = inputProblem(input)
   if (problem) throw new Error(problem)

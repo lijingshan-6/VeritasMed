@@ -54,8 +54,12 @@ export function contextLength(item: ContextTurn) {
 
 export async function attachAudit(revision: Revision, record: AuditRecord): Promise<SavedAudit> {
   if (!revision.result || revision.status !== 'complete') throw new Error('Only a complete answer can be audited.')
-  const expected = makeAuditHandoff(revision.result, '', revision.origin === 'authored_demo').input
-  const edited = expected.answer !== record.input.answer || JSON.stringify(expected.sources) !== JSON.stringify(record.input.sources)
+  // An audit is unedited if its inputs match the answer's hand-off in either supported format.
+  const matches = (['v2', 'v1'] as const).some(format => {
+    const expected = makeAuditHandoff(revision.result!, '', revision.origin === 'authored_demo', format).input
+    return expected.answer === record.input.answer && JSON.stringify(expected.sources) === JSON.stringify(record.input.sources)
+  })
+  const edited = !matches
   if (await sha256(record.input.answer) !== record.audit.answer_sha256) throw new Error('Audit answer fingerprint does not match its input.')
   for (const source of record.input.sources) {
     if (await sha256(source.text) !== record.audit.source_hashes[source.id]) throw new Error('Audit source fingerprint does not match its input.')

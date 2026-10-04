@@ -57,8 +57,6 @@ class ClaimAudit(Anchor):
         return self
 
 
-class DirectOutput(Record):
-    claims: list[ClaimAudit] = Field(max_length=24)
 
 
 
@@ -156,30 +154,57 @@ def bind_claim(item: AuditRequest, parsed: ClaimAudit, index: int) -> dict:
     return result
 
 
-def audit_answer(item: AuditRequest, llm) -> dict:
-    started = time.perf_counter()
-    calls, claims = [], []
-    payload = {"answer": item.answer, "sources": [s.model_dump() for s in item.sources]}
-    value, call = call_json(llm, DIRECT_PROMPT, payload, "direct", calls)
-    if value is not None:
+def bind_output(item: AuditRequest, value) -> list[dict] | None:
+    """Validate each claim on its own: one malformed judgment never discards the others.
+
+    Returns None when the output as a whole is not {"claims": [...]} with at most 24 items.
+    """
+    if not isinstance(value, dict) or set(value) != {"claims"} or not isinstance(value["claims"], list)             or len(value["claims"]) > 24:
+        return None
+    claims = []
+    for index, raw in enumerate(value["claims"]):
         try:
-            output = DirectOutput.model_validate(value)
-            claims = [bind_claim(item, c, i) for i, c in enumerate(output.claims)]
+            claims.append(bind_claim(item, ClaimAudit.model_validate(raw), index))
         except ValueError:
-            call.update(status="invalid_output", error_type="InvalidAuditSchema")
+            quote = raw.get("quote") if isinstance(raw, dict) and isinstance(raw.get("quote"), str) else ""
+            row = {"id": f"claim-{index+1}", "quote": quote, "relation": None, "status": "invalid_output",
+                   "error_type": "InvalidClaimSchema", "answer_span": None, "evidence": [],
+                   "explanation": "The checker returned an unusable judgment for this statement; no relation is inferred."}
+            occurrence = raw.get("occurrence") if isinstance(raw, dict) else None
+            if quote and type(occurrence) is int and occurrence >= 0:
+                try:
+                    row["answer_span"] = resolve_anchor(item.answer, Anchor(quote=quote, occurrence=occurrence))
+                except ValueError:
+                    pass
+            claims.append(row)
+    return claims
+
+
+def summarize_audit(item: AuditRequest, calls: list[dict], claims: list[dict]) -> dict:
     extracted = [c["answer_span"] for c in claims if c["answer_span"]]
     valid = [c["answer_span"] for c in claims if c["status"] == "ok"]
     has_error = any(c["status"] != "ok" for c in calls) or any(c["status"] != "ok" for c in claims)
     statuses = {name: sum(c["status"] == "ok" and c["relation"] == name for c in claims)
                 for name in ("supported", "contradicted", "insufficient")}
     statuses["failed_or_unchecked"] = sum(c["status"] != "ok" for c in claims)
-    return {"id": str(uuid4()), "created_utc": datetime.now(timezone.utc).isoformat(),
-            "strategy": "direct", "status": "partial_error" if has_error else "ok" if claims else "no_claims",
+    return {"strategy": "direct", "status": "partial_error" if has_error else "ok" if claims else "no_claims",
             "answer_sha256": text_hash(item.answer),
             "source_hashes": {s.id: text_hash(s.text) for s in item.sources},
             "claims": claims, "summary": statuses,
             "extraction_coverage": coverage(item.answer, extracted),
             "checked_coverage": coverage(item.answer, valid),
             "claims_at_cap": len(claims) >= 24, "calls": calls,
-            "elapsed_seconds": round(time.perf_counter()-started, 3),
             "scope": "Textual support in provided sources; not calibrated confidence or clinical evidence grading."}
+
+
+def audit_answer(item: AuditRequest, llm) -> dict:
+    started = time.perf_counter()
+    calls: list[dict] = []
+    payload = {"answer": item.answer, "sources": [s.model_dump() for s in item.sources]}
+    value, call = call_json(llm, DIRECT_PROMPT, payload, "direct", calls)
+    claims = bind_output(item, value) if value is not None else []
+    if claims is None:
+        claims = []
+        call.update(status="invalid_output", error_type="InvalidAuditSchema")
+    return {"id": str(uuid4()), "created_utc": datetime.now(timezone.utc).isoformat(),
+            **summarize_audit(item, calls, claims), "elapsed_seconds": round(time.perf_counter() - started, 3)}

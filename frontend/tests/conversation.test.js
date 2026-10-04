@@ -93,3 +93,16 @@ test('a newer bundled recording replaces the stored copy only when replacement i
   assert.equal(useStore.getState().conversations.find(c => c.id === id).title, 'Re-recorded')
   assert.equal(useStore.getState().conversations.filter(c => c.id === id).length, 1)
 })
+
+test('audits with the title-prefixed (v2) or passage-only (v1) hand-off both count as unedited', async () => {
+  reset(); const target = await complete('Question?', 'Answer')
+  const make = async text => ({ mode: 'live', provenance: { note: 'Constructed protocol test' }, input: { answer: 'Answer', strategy: 'direct', sources: [{ id: 'evidence-1', title: 'PMID:1 · Study A', text }] },
+    audit: { id: crypto.randomUUID(), strategy: 'direct', status: 'ok', created_utc: new Date().toISOString(), elapsed_seconds: 1,
+      answer_sha256: await sha256('Answer'), source_hashes: { 'evidence-1': await sha256(text) }, claims: [], calls: [], summary: {}, claims_at_cap: false,
+      checked_coverage: { covered_nonspace_characters: 0, total_nonspace_characters: 6, uncovered: [] } } })
+  await useStore.getState().saveAudit(target, await make('PMID:1 · Study A\n\nOriginal evidence.'))
+  await useStore.getState().saveAudit(target, await make('Original evidence.'))
+  await useStore.getState().saveAudit(target, await make('PMID:1 · Study B\n\nOriginal evidence.'))
+  const revision = useStore.getState().conversations[0].turns[0].revisions[0]
+  assert.deepEqual(revision.audits.map(r => r.edited), [false, false, true])
+})

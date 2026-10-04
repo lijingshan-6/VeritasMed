@@ -6,9 +6,6 @@ import json
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-from medrag.agent.evidence import bind_components, preserve_result_context
-from medrag.agent.utils import build_answer_from_claims
-from medrag.retrieval.retriever import RetrievedChunk
 
 RUN = Path(__file__).resolve().parents[1] / "data/demo/conversations/run01"
 
@@ -21,39 +18,10 @@ def saved_answer(name):
     raise AssertionError("No completed answer recorded")
 
 
-def test_shared_source_sentence_keeps_the_second_requested_answer():
-    # Evidence limits, turn 3: both components were bound to the same duration sentence.
-    # Projecting it twice erased the mortality answer in all three regenerations.
-    components = [{**c, "answer": ""} for c in saved_answer("v08-evidence-limits-turn-3")["answer_components"]]
-    cite = components[0]["evidence"][0]["citation"]
-    mortality = "That sentence does not report any five-year mortality result."
-    claims = [{"component_id": "C1", "text": "Glucose fell for about 3 hours.", "cite": [cite]},
-              {"component_id": "C2", "text": mortality, "cite": [cite]}]
-    answer, _ = build_answer_from_claims(preserve_result_context(components, claims))
-    assert "sustained for approximately 3 hours" in answer
-    assert mortality.rstrip(".") in answer
 
 
-def test_shared_sentence_is_not_reprojected_during_repair():
-    # During repair only C2 is projected; C1's retained quotation is already rendered.
-    components = [{**c, "answer": ""} for c in saved_answer("v08-evidence-limits-turn-3")["answer_components"]]
-    cite = components[0]["evidence"][0]["citation"]
-    retained = preserve_result_context(components[:1], [{"component_id": "C1", "text": "x", "cite": [cite]}])
-    repair = {"component_id": "C2", "text": "No five-year mortality result is reported.", "cite": [cite]}
-    assert preserve_result_context(components[1:], [*retained, repair]) == [repair]
 
 
-def test_distinct_numeric_components_are_still_quoted():
-    source = RetrievedChunk("pubmed:1:0", "Arm A improved by 5%. Arm B improved by 2%.", 0.9,
-                            {"source": "pubmed", "doc_id": "1", "pmid": "1"})
-    components = bind_components([
-        {"requirement": "Arm A result", "status": "supported", "evidence_ids": ["E1"], "required_details": ["5%"]},
-        {"requirement": "Arm B result", "status": "supported", "evidence_ids": ["E2"], "required_details": ["2%"]},
-    ], [], [source])
-    claims = [{"component_id": "C1", "text": "A was better.", "cite": ["PMID:1"]},
-              {"component_id": "C2", "text": "B was smaller.", "cite": ["PMID:1"]}]
-    texts = [c["text"] for c in preserve_result_context(components, claims)]
-    assert texts == ['The study reports: "Arm A improved by 5%."', 'The study reports: "Arm B improved by 2%."']
 
 
 def test_writing_instruction_is_dropped_instead_of_reported_as_missing_evidence():

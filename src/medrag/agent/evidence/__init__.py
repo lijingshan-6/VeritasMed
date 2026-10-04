@@ -21,6 +21,4 @@ from .binding import (
 )
 from .restoration import (
     missing_numeric_details as missing_numeric_details,
-    restore_numeric_quotes as restore_numeric_quotes,
-    preserve_result_context as preserve_result_context,
 )

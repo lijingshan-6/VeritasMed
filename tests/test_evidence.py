@@ -3,7 +3,7 @@ import json
 from unittest.mock import MagicMock, patch
 
 from medrag.agent.evidence import (
-    bind_claims, bind_components, missing_numeric_details, outline_status, repair_gaps, restore_numeric_quotes,
+    bind_claims, bind_components, missing_numeric_details, outline_status, repair_gaps,
 )
 from medrag.retrieval.retriever import RetrievedChunk
 
@@ -58,29 +58,8 @@ def test_a_preceding_numeric_method_detail_is_not_an_answer_requirement():
     assert len(result[0]["evidence"]) == 1
 
 
-def test_explicit_cohort_counts_survive_an_omitted_model_population_field():
-    source = chunk(text="We enrolled 31 patients and 29 controls. Sensitivity was 92% versus 84%.")
-    result = bind_components([{
-        "requirement": "Diagnostic comparison", "status": "supported", "evidence_ids": ["E2"],
-    }], [], [source])
-    assert "We enrolled 31 patients and 29 controls." in result[0]["required_details"]
-    assert "Sensitivity was 92% versus 84%." in result[0]["required_details"]
-    repaired = restore_numeric_quotes(result, [{
-        "component_id": "C1", "text": "Sensitivity was 92% versus 84%", "cite": ["PMID:1"],
-    }])
-    assert "31 patients and 29 controls" in repaired[-1]["text"]
 
 
-def test_html_isotopes_and_thousands_separators_do_not_trigger_duplicate_quotes():
-    source = chunk(text="[<sup>64</sup>Cu]Cu-probe uptake was 4.2%. We enrolled 1,234 patients.")
-    components = bind_components([{
-        "requirement": "Uptake", "status": "supported", "evidence_ids": ["E1"],
-        "required_details": ["[<sup>64</sup>Cu]Cu-probe uptake was 4.2%."],
-    }], [], [source])
-    claims = [{"component_id": "C1", "text": "[64Cu]Cu-probe uptake was 4.2% in 1234 patients.", "cite": ["PMID:1"]}]
-    assert restore_numeric_quotes(components, claims) == claims
-    claims[0]["text"] = "[64Cu]Cu-probe uptake was 4.2%."
-    assert "1,234 patients" in restore_numeric_quotes(components, claims)[-1]["text"]
 
 
 def test_model_population_field_cannot_add_unrelated_method_sentences():
@@ -194,14 +173,6 @@ def test_comparator_number_missing_from_answer_requests_component_repair():
     assert missing == {"C1": ["92% vs. 84%"]}
 
 
-def test_last_numeric_repair_quotes_only_the_bound_source():
-    claims = [{"component_id": "C1", "text": "Sensitivity was 92% in 30 participants; P < .001", "cite": ["PMID:1"]}]
-    repaired = restore_numeric_quotes(outline(), claims)
-    assert repaired[0] == claims[0]
-    assert repaired[-1]["text"] == f'The study reports: "{chunk().text}"'
-    assert repaired[-1]["cite"] == ["PMID:1"]
-    assert not missing_numeric_details(outline(), repaired)
-    assert not any(c["component_id"] == "C2" for c in repaired)
 
 
 def test_targeted_repair_retains_the_other_component():
@@ -226,19 +197,6 @@ def test_targeted_repair_retains_the_other_component():
     assert "30 participants" in result["answer"]
 
 
-def test_development_count_cannot_be_used_as_validation_denominator():
-    source = chunk(text="We developed the model using 820 images from 71 patients. Validation AUC was 0.87.")
-    components = bind_components([{
-        "requirement": "Model development and performance", "status": "supported",
-        "evidence_ids": ["E1", "E2"], "required_details": ["Validation AUC was 0.87."],
-    }], [], [source])
-    wrong, issues = bind_claims([{"component_id": "C1", "text": "Validation on 820 images from 71 patients yielded AUC 0.87.", "cite": ["PMID:1"]}], components)
-    assert not wrong and issues
-    repaired = restore_numeric_quotes(components, wrong)
-    assert any("developed the model using 820 images" in c["text"] for c in repaired)
-    assert any("Validation AUC was 0.87" in c["text"] for c in repaired)
-    correct, issues = bind_claims(repaired, components)
-    assert correct and not issues
 
 
 def test_validation_cannot_claim_same_cohort_without_a_bound_basis():
@@ -266,11 +224,12 @@ def test_quote_recovery_does_not_hide_rejected_explanation():
     with patch("medrag.agent.nodes.generation.make_llm_fast", return_value=llm):
         result = generate_answer_node({"query": "Explain the design's causal limit",
             "retrieved_chunks": [source], "answer_components": components})
-    assert '2020' in result['answer']
+    # The rejected timing claim is removed and flagged for repair; no quotation is pasted in its place.
+    assert 'simultaneous' not in result['answer']
     assert any('unreported timing' in issue for issue in result['binding_issues'])
 
 
-def test_critical_facts_cannot_gain_an_unreported_mechanism_in_paraphrasing():
+def test_synthesized_answer_keeps_its_source_sentence_as_attached_evidence():
     from medrag.agent.nodes import generate_answer_node
     source = chunk(text="The area increased by 0.4 units at 6 months, P = .02.")
     components = bind_components([{"requirement": "Measured area change", "status": "supported",
@@ -282,30 +241,16 @@ def test_critical_facts_cannot_gain_an_unreported_mechanism_in_paraphrasing():
     with patch("medrag.agent.nodes.generation.make_llm_fast", return_value=llm):
         result = generate_answer_node({"query": "What was the measured change?",
             "retrieved_chunks": [source], "answer_components": components})
-    assert "dissolved" not in result['answer']
-    assert source.text in result['answer']
-    assert result['repair_history'][0]['kind'] == 'source_projection'
+    # Answers stay in the model's words. An unsupported addition such as this mechanism is
+    # left for the check node and the claim audit to catch; the exact source sentence stays
+    # attached to the component so the reader can compare.
+    assert "0.4 units" in result['answer']
+    assert result['answer_components'][0]['evidence'][0]['quote'] == source.text
+    assert result['repair_history'] == []
 
 
-def test_nonnumeric_control_contrast_is_not_lost():
-    source = chunk(text="Signal was high in positive tumor models, whereas uptake in negative tumors was lower.")
-    components = bind_components([{"requirement": "Compare localization", "status": "supported",
-        "evidence_ids": ["E1"]}], [], [source])
-    claim = {"component_id": "C1", "text": "Signal was high in positive tumor models.", "cite": ["PMID:1"]}
-    restored = restore_numeric_quotes(components, [claim])
-    assert any("negative tumors was lower" in c["text"] for c in restored)
 
 
-def test_null_comparison_and_nonnumeric_method_are_restored():
-    source = chunk(text="Pressure correlated with mass (P = 0.02), whereas exposure duration did not (P = 0.7). The method combined rotated sampling with Hadamard encoding.")
-    components = bind_components([{
-        "requirement": "Methods and associations", "status": "supported", "evidence_ids": ["E1", "E2"],
-        "required_details": ["Pressure correlated with mass (P = 0.02)"],
-    }], [], [source])
-    claims = [{"component_id": "C1", "text": "Pressure correlated with mass (P = 0.02). The method used sampling.", "cite": ["PMID:1"]}]
-    repaired = restore_numeric_quotes(components, claims)
-    assert any("duration did not (P = 0.7)" in c["text"] for c in repaired)
-    assert any("Hadamard encoding" in c["text"] for c in repaired)
 
 
 def test_missing_outcome_does_not_invent_absent_patient_data():
@@ -349,16 +294,6 @@ def test_boundary_distinguishes_measured_outcome_from_requested_comparison():
         assert result["answer_components"][0]["status"] == ("supported" if comparison_supported else "missing")
 
 
-def test_complete_digits_do_not_erase_who_was_assisted():
-    from medrag.agent.evidence import preserve_result_context
-    source = chunk(text="With model assistance, readers increased sensitivity from 80% to 92%.")
-    components = bind_components([{"requirement": "Diagnostic result", "status": "supported",
-                                  "evidence_ids": ["E1"], "required_details": ["80% to 92%"]}], [], [source])
-    claims = [{"component_id": "C1", "text": "The model increased sensitivity from 80% to 92%.", "cite": ["PMID:1"]}]
-    result = preserve_result_context(components, claims)
-    assert len(result) == 1
-    assert 'With model assistance, readers' in result[0]["text"]
-    assert "The model increased" not in result[0]["text"]
 
 
 def test_joint_study_plan_keeps_both_sources_and_original_question():
@@ -468,30 +403,8 @@ def test_review_reads_and_repairs_the_displayed_gap_with_the_answer():
     assert "quantitative" not in result["answer"]
 
 
-def test_design_quote_does_not_replace_causal_explanation():
-    from medrag.agent.evidence import preserve_result_context
-    source = chunk(text="The 2020 study was cross-sectional and used a surrogate marker.")
-    components = bind_components([{"requirement": "Why causality cannot be established", "status": "supported",
-                                  "evidence_ids": ["E1"], "required_details": [source.text]}], [], [source])
-    claims = [{"component_id": "C1", "text": "The cross-sectional design cannot establish a causal treatment benefit.", "cite": ["PMID:1"]}]
-    assert preserve_result_context(components, claims) == claims
 
 
-def test_generator_recovers_actual_result_only_from_its_bound_study():
-    from medrag.agent.evidence import bind_additional_evidence, preserve_result_context
-    source = chunk(text="The endpoint was volume change. Volume increased by 2.3 units at 6 months; P = .02.")
-    neighbor = chunk("2", "Survival improved by 30%.")
-    components = bind_components([{"requirement": "Measured volume change", "status": "supported",
-                                  "evidence_ids": ["E1"]}], [], [source, neighbor])
-    claim = {"component_id": "C1", "text": "Volume increased.", "cite": ["PMID:1"],
-             "evidence_ids": ["E2", "E3", "E999"]}
-    recovered = bind_additional_evidence([claim], components, [source, neighbor])
-    quotes = [s["quote"] for s in recovered[0]["evidence"]]
-    assert source.text.split('. ', 1)[1] in quotes
-    assert neighbor.text not in quotes
-    assert any("2.3 units at 6 months" in c["text"] for c in preserve_result_context(recovered, [claim]))
-    missing = [dict(components[0], status="missing")]
-    assert bind_additional_evidence([claim], missing, [source, neighbor]) == missing
 
 
 def test_named_identifier_is_not_crowded_out_or_matched_in_references():

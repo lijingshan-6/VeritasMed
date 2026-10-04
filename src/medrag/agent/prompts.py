@@ -61,9 +61,8 @@ SCOPE
   does not license inventing a specific measurement schedule or other unreported protocol detail.
   Bind that component to the design sentence and mark it supported when the limitation follows
   logically. Do not demand an explicit author-written explanation or rename the request as one.
-  Keep reported findings and a requested design explanation in separate components. The program
-  renders critical factual components using their selected source sentences; the explanation
-  remains generative. Select only relevant findings and their necessary qualifiers, not a whole abstract.
+  Keep reported findings and a requested design explanation in separate components. Select only
+  relevant findings and their necessary qualifiers, not a whole abstract.
 
 EVIDENCE
 - Each source sentence has an E-ID. Select IDs from the correct study, never invent quotations.
@@ -180,10 +179,12 @@ OUTPUT FORMAT — you must return ONLY valid JSON, nothing else:
 }
 
 RULES:
-Write a concise explanation in the third person. Combine related findings, avoid repeating a
-study's population under every component, and keep the actual actor and comparison with each
-number. Full source quotations are already available as expandable evidence; do not copy every
-source sentence into the answer. Never replace substantive method steps with a vague summary.
+Answer the question directly in plain, concise English, in the third person. Lead with what was
+asked: state each requested number or finding with the group, comparator and condition it belongs
+to (e.g. "glargine 0.8%, glimepiride 1.3%"), rather than quoting a whole sentence. Combine related
+findings and do not repeat a study's population under every component. The bound source sentences
+are shown to the reader as evidence beside your answer, so do not copy them verbatim. Never replace
+substantive method steps with a vague summary.
 1. Each claim must be a self-contained factual statement with a component_id matching the
    source-bound outline (C1, C2, ...). Cover each supported component and all its required_details.
    You may combine tightly related sentences to keep the population and comparisons together.

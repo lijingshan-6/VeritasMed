@@ -4,7 +4,7 @@ from __future__ import annotations
 import logging
 import json
 from langchain_core.messages import HumanMessage, SystemMessage
-from medrag.agent.evidence import bind_claims, outline_status, repair_gaps, restore_numeric_quotes, bind_additional_evidence, preserve_result_context, repair_design_scope, source_spans
+from medrag.agent.evidence import bind_claims, outline_status, repair_gaps, bind_additional_evidence, repair_design_scope, source_spans
 from medrag.agent.llms import make_llm_fast
 from medrag.agent.prompts import GENERATE_SYSTEM, GENERATE_USER, REGEN_SYSTEM, REGEN_USER
 from medrag.agent.state import AgentState
@@ -102,7 +102,6 @@ def generate_answer_node(state: AgentState) -> dict:
             logger.warning("[generate] LLM returned no claims and no legacy answer")
 
     binding_issues = []
-    source_projections = []
     design_repairs = []
     if components:
         if regen_count > 0:
@@ -111,32 +110,16 @@ def generate_answer_node(state: AgentState) -> dict:
             retained = [c for c in state.get("answer_claims", []) if c.get("component_id") not in repair_ids]
             claims_raw = retained + [c for c in claims_raw if isinstance(c, dict) and c.get("component_id") in repair_ids]
         components = bind_additional_evidence(claims_raw, components, chunks)
-        projection_components = [c for c in components if not regen_count or c["id"] in repair_ids]
-        projection_ids = {c["id"] for c in projection_components}
-        scoped = repair_design_scope(projection_components, claims_raw)
+        repair_scope = [c for c in components if not regen_count or c["id"] in repair_ids]
+        scoped = repair_design_scope(repair_scope, claims_raw)
         design_repairs = [c for c in scoped if c not in claims_raw]
-        claims_raw = scoped
-        projected = preserve_result_context(projection_components, claims_raw)
-        source_projections = [c for c in projected if c not in claims_raw]
-        claims_raw = [c for c in claims_raw if c.get("component_id") not in projection_ids] + projected
-        claims_raw, binding_issues = bind_claims(claims_raw, components)
+        claims_raw, binding_issues = bind_claims(scoped, components)
         evidence_status, evidence_gap = outline_status(components)
 
+    # Answers are written in the model's own words; the bound source sentences stay
+    # attached to each component as evidence. Omitted numbers are caught by the
+    # check node (missing_numeric_details) and repaired there, not pasted in.
     validated_claims = validate_citations(claims_raw, chunks)
-    quote_repairs = []
-    if components:
-        original_claims = list(validated_claims)
-        # Critical facts use bound source sentences; requested explanations
-        # remain generative. Recover any remaining numeric/method omissions.
-        validated_claims = restore_numeric_quotes(components, validated_claims)
-        quote_repairs = [c for c in validated_claims if c not in original_claims]
-        validated_claims, remaining_issues = bind_claims(validated_claims, components)
-        # A quotation can fill a missing number, but cannot make a rejected
-        # explanation correct. Preserve its repair instruction for the checker.
-        binding_issues = list(dict.fromkeys([
-            *(issue for issue in binding_issues if ": answer omitted " not in issue),
-            *remaining_issues,
-        ]))
     component_order = {component["id"]: index for index, component in enumerate(components)}
     validated_claims.sort(key=lambda claim: component_order.get(claim.get("component_id"), len(components)))
     answer, citations = build_answer_from_claims(validated_claims)
@@ -189,13 +172,7 @@ def generate_answer_node(state: AgentState) -> dict:
         "repair_history": ([{"attempt": regen_count, "kind": "design_scope",
                              "component_ids": list(dict.fromkeys(c["component_id"] for c in design_repairs)),
                              "issues": "Replaced unsupported measurement timing with the bound design and an association-versus-intervention limit."}]
-                           if design_repairs else []) + ([{"attempt": regen_count, "kind": "source_projection",
-                             "component_ids": list(dict.fromkeys(c["component_id"] for c in source_projections)),
-                             "issues": "Rendered critical factual components from bound source sentences."}]
-                           if source_projections else []) + ([{"attempt": regen_count, "kind": "source_quote",
-                             "component_ids": list(dict.fromkeys(c["component_id"] for c in quote_repairs)),
-                             "issues": "Restored omitted numerical details by quoting bound source sentences."}]
-                           if quote_repairs else []),
+                           if design_repairs else []),
         "answer_components": rendered_components,
         "answer_claims": validated_claims,
         "binding_issues": binding_issues,

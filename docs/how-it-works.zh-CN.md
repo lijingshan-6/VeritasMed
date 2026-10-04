@@ -109,6 +109,17 @@ v0.9 已修复（见 [研究总结](research.zh-CN.md#5-这些迭代的意义)�
 `openapi.json` 和 `frontend/src/types/api.gen.ts` 是生成文件：先运行 `python scripts/export_openapi.py`，
 再运行 `npm --prefix frontend run generate-types`。
 
+## 设计决策
+
+| 决策 | 理由 |
+|---|---|
+| 所有角色使用同一个模型（Flash），不自动切换 | 比较过更强的 Pro 模型，但 token 成本过高而放弃；混用模型也会让每个结果测的是什么变得模糊 |
+| Ask 是入口，审计在回答内打开 | 早期版本把审计做成独立工作台，产品被拆成了两个工具 |
+| 审计默认用 Direct | 它完成的审计远多于细粒度方法（47/48 对 26/48）。在小规模构造集上细粒度方法多发现了少量植入错误，但优势不明确，且留下大量未完成项（[研究](research.zh-CN.md#4-细粒度审计信息更细未完成的也更多)） |
+| 不显示可信度百分比 | 校准实验没有找到能把错误接受率控制在 5% 以内的分数阈值（[研究](research.zh-CN.md#2-模型作为陈述核查器有多可靠)） |
+| 审计从不改写回答 | 核查器出错会把正确回答改错；原回答与审计结果并排保留 |
+| 旧回答是上下文，不是证据 | 引用自己之前的回答等于自我引用；每一轮都重新检索来源 |
+
 ## MCP 工具
 
 [`mcp_server/server.py`](../src/medrag/mcp_server/server.py) 通过本地 stdio 提供 `search_literature`、

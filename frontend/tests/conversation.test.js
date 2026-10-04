@@ -82,3 +82,14 @@ test('oversized context is omitted whole, authored demos are never used as live 
   s = useStore.getState()
   assert.equal(contextFor(s.conversations[0], s.selectedTurnId, s.selectedRevisionId).context.length, 0)
 })
+
+test('a newer bundled recording replaces the stored copy only when replacement is allowed', async () => {
+  const id = reset()
+  await complete('Question?', 'Original recorded answer.')
+  const stored = useStore.getState().conversations.find(c => c.id === id)
+  const newer = { ...structuredClone(stored), title: 'Re-recorded' }
+  assert.throws(() => useStore.getState().addConversation(newer), /different version/)
+  useStore.getState().addConversation(newer, true)
+  assert.equal(useStore.getState().conversations.find(c => c.id === id).title, 'Re-recorded')
+  assert.equal(useStore.getState().conversations.filter(c => c.id === id).length, 1)
+})

@@ -1,0 +1,1289 @@
+{
+  "schema": 1,
+  "id": "v08-diet-exercise",
+  "title": "Two studies: explicit follow-up and ambiguous reference",
+  "created_at": "2026-10-04T16:25:20.522256+00:00",
+  "updated_at": "2026-10-04T16:31:45.874995+00:00",
+  "turns": [
+    {
+      "id": "v08-diet-exercise-turn-1",
+      "question": "From the 2016 brown-rice-based vegan diet trial and the 2013 aerobic versus combined exercise trial, separately describe what each study measured and over what time period. Do not rank their clinical effectiveness.",
+      "parent_turn_id": null,
+      "revisions": [
+        {
+          "id": "v08-diet-exercise-turn-1-revision-1",
+          "created_at": "2026-10-04T16:25:20.522256+00:00",
+          "status": "complete",
+          "origin": "live",
+          "context": [],
+          "omitted_context": 0,
+          "result": {
+            "conversation_context": {
+              "original_query": "From the 2016 brown-rice-based vegan diet trial and the 2013 aerobic versus combined exercise trial, separately describe what each study measured and over what time period. Do not rank their clinical effectiveness.",
+              "resolved_query": "From the 2016 brown-rice-based vegan diet trial and the 2013 aerobic versus combined exercise trial, separately describe what each study measured and over what time period. Do not rank their clinical effectiveness.",
+              "supplied_turn_ids": [],
+              "context_turn_ids": [],
+              "referent_entities": [],
+              "needs_clarification": false,
+              "clarification": "",
+              "omitted_context": 0,
+              "elapsed_ms": 0,
+              "model": null,
+              "usage": null,
+              "status": "independent",
+              "raw_output": ""
+            },
+            "evidence_status": "complete",
+            "evidence_gap": "",
+            "answer_components": [
+              {
+                "id": "C1",
+                "requirement": "What the 2016 brown-rice-based vegan diet trial measured",
+                "question_span": "what each study measured",
+                "source_hint": "PMC4890770",
+                "status": "supported",
+                "evidence": [
+                  {
+                    "chunk_id": "pmc:PMC4890770:1",
+                    "citation": "PMC:PMC4890770",
+                    "quote": "HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks."
+                  }
+                ],
+                "required_details": [
+                  "HbA1c levels were measured at weeks 0, 4, and 12",
+                  "the primary study endpoint was the change in HbA1c levels over 12 weeks"
+                ],
+                "missing_outcome": "",
+                "gap": "",
+                "answer": "The study reports: \"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.\" [PMC:PMC4890770]."
+              },
+              {
+                "id": "C2",
+                "requirement": "Over what time period the 2016 brown-rice-based vegan diet trial was conducted and measured",
+                "question_span": "over what time period",
+                "source_hint": "PMC4890770",
+                "status": "supported",
+                "evidence": [
+                  {
+                    "chunk_id": "pmc:PMC4890770:1",
+                    "citation": "PMC:PMC4890770",
+                    "quote": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC4890770:1",
+                    "citation": "PMC:PMC4890770",
+                    "quote": "HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks."
+                  }
+                ],
+                "required_details": [
+                  "for 12 weeks",
+                  "HbA1c levels were measured at weeks 0, 4, and 12",
+                  "change in HbA1c levels over 12 weeks"
+                ],
+                "missing_outcome": "",
+                "gap": "",
+                "answer": "The study reports: \"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\" [PMC:PMC4890770]."
+              },
+              {
+                "id": "C3",
+                "requirement": "What the 2013 aerobic versus combined exercise trial measured",
+                "question_span": "what each study measured",
+                "source_hint": "PMC3594238",
+                "status": "supported",
+                "evidence": [
+                  {
+                    "chunk_id": "pmc:PMC3594238:1",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC3594238:1",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods)."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC3594238:2",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation."
+                  }
+                ],
+                "required_details": [
+                  "wore a CGMS during 3 days",
+                  "Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods)",
+                  "responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation"
+                ],
+                "missing_outcome": "",
+                "gap": "",
+                "answer": "The study reports: \"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\" [PMC:PMC3594238]. The study reports: \"Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods).\" [PMC:PMC3594238]. The study reports: \"Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.\" [PMC:PMC3594238]."
+              },
+              {
+                "id": "C4",
+                "requirement": "Over what time period the 2013 aerobic versus combined exercise trial was conducted and measured",
+                "question_span": "over what time period",
+                "source_hint": "PMC3594238",
+                "status": "supported",
+                "evidence": [
+                  {
+                    "chunk_id": "pmc:PMC3594238:1",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC3594238:1",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC3594238:2",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC3594238:2",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation."
+                  }
+                ],
+                "required_details": [
+                  "wore a CGMS during 3 days",
+                  "both in the morning (24 h after CGMS placement)",
+                  "at least 7 days apart",
+                  "sustained for approximately 3 hours",
+                  "over a 24-h period after the sessions"
+                ],
+                "missing_outcome": "",
+                "gap": "",
+                "answer": "The study reports: \"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\" [PMC:PMC3594238]. The study reports: \"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\" [PMC:PMC3594238]."
+              }
+            ],
+            "answer": "The study reports: \"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.\" [PMC:PMC4890770]. The study reports: \"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\" [PMC:PMC4890770]. The study reports: \"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\" [PMC:PMC3594238]. The study reports: \"Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods).\" [PMC:PMC3594238]. The study reports: \"Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.\" [PMC:PMC3594238]. The study reports: \"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\" [PMC:PMC3594238]. The study reports: \"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\" [PMC:PMC3594238].",
+            "citations": [
+              "PMC:PMC4890770",
+              "PMC:PMC3594238"
+            ],
+            "confidence": 0.9,
+            "faithful": true,
+            "faithfulness_issues": "",
+            "iterations": 0,
+            "regen_count": 0,
+            "rewritten_queries": [],
+            "chunks": [
+              {
+                "chunk_id": "pmc:PMC3594238:2",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Results",
+                "pmid": "23536769",
+                "chunk_idx": 2,
+                "total_chunks": 5,
+                "text": "Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session.",
+                "score": 0.7426072955131531,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              },
+              {
+                "chunk_id": "pmc:PMC4890770:1",
+                "citation": "PMC:PMC4890770",
+                "source": "pmc",
+                "doc_id": "PMC4890770",
+                "title": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "section": "Abstract / Materials and Methods",
+                "pmid": "27253526",
+                "chunk_idx": 1,
+                "total_chunks": 5,
+                "text": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks. HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.",
+                "score": 0.36295318603515625,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+                "authors": "Lee Yu-Mi; Kim Se-A; Lee In-Kyu; Kim Jung-Guk; Park Keun-Gyu; Jeong Ji-Yun; Jeon Jae-Han; Shin Ji-Yeon; Lee Duk-Hee",
+                "journal": "PLOS ONE",
+                "year": 2016
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:3",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Conclusions",
+                "pmid": "23536769",
+                "chunk_idx": 3,
+                "total_chunks": 5,
+                "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises.",
+                "score": 0.7574979662895203,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              },
+              {
+                "chunk_id": "pmc:PMC4890770:3",
+                "citation": "PMC:PMC4890770",
+                "source": "pmc",
+                "doc_id": "PMC4890770",
+                "title": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "section": "Abstract / Conclusion",
+                "pmid": "27253526",
+                "chunk_idx": 3,
+                "total_chunks": 5,
+                "text": "Both diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms.",
+                "score": 0.49946221709251404,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+                "authors": "Lee Yu-Mi; Kim Se-A; Lee In-Kyu; Kim Jung-Guk; Park Keun-Gyu; Jeong Ji-Yun; Jeon Jae-Han; Shin Ji-Yeon; Lee Duk-Hee",
+                "journal": "PLOS ONE",
+                "year": 2016
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:1",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Methods",
+                "pmid": "23536769",
+                "chunk_idx": 1,
+                "total_chunks": 5,
+                "text": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days. Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart. Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods).",
+                "score": 0.44416543841362,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              }
+            ],
+            "thread_id": "v08-diet-exercise",
+            "latency_ms": 82439.0
+          },
+          "timeline": [
+            {
+              "name": "route",
+              "label": "Route",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131120531,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": "synthesis"
+              },
+              "elapsed_ms": 8584
+            },
+            {
+              "name": "retrieve",
+              "label": "Retrieve",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131129115,
+              "detail": {
+                "count": 14,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 730
+            },
+            {
+              "name": "rerank",
+              "label": "Rerank",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131129845,
+              "detail": {
+                "count": 5,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 23513
+            },
+            {
+              "name": "grade",
+              "label": "Grade",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131153358,
+              "detail": {
+                "count": null,
+                "relevance_score": 0.9,
+                "relevant": true,
+                "reason": "Supplied evidence identifies the vegan trial's HbA1c measurement over 12 weeks and the exercise trial's CGMS glucose/variability measures over 3 days and post-session 24-h/3-h periods; no clinical effectiveness ranking is made.",
+                "rewrite_hint": "",
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 25205
+            },
+            {
+              "name": "generate",
+              "label": "Generate",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131178564,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": "The study reports: \"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in H",
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 6968
+            },
+            {
+              "name": "check",
+              "label": "Check",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131185533,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": true,
+                "issues": "",
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 17416
+            },
+            {
+              "name": "append_history",
+              "label": "Append History",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131202950,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 1
+            }
+          ],
+          "liveChunks": [],
+          "error": null,
+          "audits": [],
+          "answer_sha256": "8b274b90561d8e00becf3657d0786eda9130287722d72d4563d4f346d95004ac",
+          "source_hashes": {
+            "pmc:PMC3594238:2": "96d4b4a46e565db471319bded2a9739e97553cc5af52d3365f11046e3f815a10",
+            "pmc:PMC4890770:1": "0912029346629933aad1a05b2a919d87e4c85fcc12b0c627f57bd463979fcbe0",
+            "pmc:PMC3594238:3": "444909c5406f77af26202f361ee1bce4f63d715762fe7ec44930d122c56d9471",
+            "pmc:PMC4890770:3": "919fca6984eb62dd1c4d4e419303793bfbec4602423396b7bcf86824e948e451",
+            "pmc:PMC3594238:1": "c09a9b02fb69cb11e1f04d8841f739822fc5f3f042c730c4a63112ee752f9541"
+          }
+        }
+      ]
+    },
+    {
+      "id": "v08-diet-exercise-turn-2",
+      "question": "In the vegan diet trial specifically, what HbA1c changes were reported for the two groups?",
+      "parent_turn_id": "v08-diet-exercise-turn-1",
+      "revisions": [
+        {
+          "id": "v08-diet-exercise-turn-2-revision-1",
+          "created_at": "2026-10-04T16:28:45.608018+00:00",
+          "status": "complete",
+          "origin": "live",
+          "context": [
+            {
+              "turn_id": "v08-diet-exercise-turn-1",
+              "revision_id": "v08-diet-exercise-turn-1-revision-1",
+              "question": "From the 2016 brown-rice-based vegan diet trial and the 2013 aerobic versus combined exercise trial, separately describe what each study measured and over what time period. Do not rank their clinical effectiveness.",
+              "answer": "The study reports: \"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.\" [PMC:PMC4890770]. The study reports: \"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\" [PMC:PMC4890770]. The study reports: \"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\" [PMC:PMC3594238]. The study reports: \"Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods).\" [PMC:PMC3594238]. The study reports: \"Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.\" [PMC:PMC3594238]. The study reports: \"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\" [PMC:PMC3594238]. The study reports: \"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\" [PMC:PMC3594238].",
+              "source_titles": [
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial"
+              ]
+            }
+          ],
+          "omitted_context": 0,
+          "result": {
+            "conversation_context": {
+              "original_query": "In the vegan diet trial specifically, what HbA1c changes were reported for the two groups?",
+              "resolved_query": "In the vegan diet trial specifically, what HbA1c changes were reported for the two groups?\n\nReference context for interpreting this question (not evidence):\nThe brown-rice-based vegan diet trial discussed in the prior turn, specifically the reported HbA1c changes for its two diet groups.",
+              "supplied_turn_ids": [
+                "v08-diet-exercise-turn-1"
+              ],
+              "context_turn_ids": [
+                "v08-diet-exercise-turn-1"
+              ],
+              "referent_entities": [
+                "brown-rice-based vegan diet trial",
+                "vegan diet group",
+                "conventional diet group",
+                "HbA1c changes"
+              ],
+              "needs_clarification": false,
+              "clarification": "",
+              "omitted_context": 0,
+              "elapsed_ms": 4533.2,
+              "model": "deepseek-v4.1-flash",
+              "usage": {
+                "completion_tokens": 440,
+                "prompt_tokens": 1007,
+                "total_tokens": 1447,
+                "completion_tokens_details": {
+                  "accepted_prediction_tokens": 0,
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 336,
+                  "rejected_prediction_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": null,
+                  "cached_tokens": 0,
+                  "accepted_prediction_tokens": 0,
+                  "reasoning_tokens": 0,
+                  "rejected_prediction_tokens": 0
+                },
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cached_tokens": 0,
+                "completion_thinking_tokens": 336,
+                "credit": 0,
+                "prompt_cache_hit_tokens": 0,
+                "prompt_cache_miss_tokens": 1007,
+                "prompt_cache_write_tokens": 0
+              },
+              "status": "follow_up",
+              "raw_output": "{\n  \"mode\": \"follow_up\",\n  \"reference_context\": \"The brown-rice-based vegan diet trial discussed in the prior turn, specifically the reported HbA1c changes for its two diet groups.\",\n  \"context_turn_ids\": [\"v08-diet-exercise-turn-1\"],\n  \"referent_entities\": [\"brown-rice-based vegan diet trial\", \"vegan diet group\", \"conventional diet group\", \"HbA1c changes\"],\n  \"clarification\": \"\"\n}"
+            },
+            "evidence_status": "complete",
+            "evidence_gap": "",
+            "answer_components": [
+              {
+                "id": "C1",
+                "requirement": "HbA1c changes reported for the vegan and conventional diet groups",
+                "question_span": "what HbA1c changes were reported for the two groups?",
+                "source_hint": "PMC4890770",
+                "status": "supported",
+                "evidence": [
+                  {
+                    "chunk_id": "pmc:PMC4890770:2",
+                    "citation": "PMC:PMC4890770",
+                    "quote": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC4890770:2",
+                    "citation": "PMC:PMC4890770",
+                    "quote": "Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017)."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC4890770:2",
+                    "citation": "PMC:PMC4890770",
+                    "quote": "When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%)."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC4890770:1",
+                    "citation": "PMC:PMC4890770",
+                    "quote": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC4890770:1",
+                    "citation": "PMC:PMC4890770",
+                    "quote": "HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks."
+                  }
+                ],
+                "required_details": [
+                  "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively.",
+                  "Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017).",
+                  "When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%).",
+                  "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.",
+                  "HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks."
+                ],
+                "missing_outcome": "",
+                "gap": "",
+                "answer": "The study reports: \"The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively.\" [PMC:PMC4890770]. The study reports: \"Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017).\" [PMC:PMC4890770]. The study reports: \"When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%).\" [PMC:PMC4890770]. The study reports: \"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\" [PMC:PMC4890770]. The study reports: \"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.\" [PMC:PMC4890770]."
+              }
+            ],
+            "answer": "The study reports: \"The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively.\" [PMC:PMC4890770]. The study reports: \"Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017).\" [PMC:PMC4890770]. The study reports: \"When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%).\" [PMC:PMC4890770]. The study reports: \"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\" [PMC:PMC4890770]. The study reports: \"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.\" [PMC:PMC4890770].",
+            "citations": [
+              "PMC:PMC4890770"
+            ],
+            "confidence": 0.95,
+            "faithful": true,
+            "faithfulness_issues": "",
+            "iterations": 0,
+            "regen_count": 0,
+            "rewritten_queries": [],
+            "chunks": [
+              {
+                "chunk_id": "pmc:PMC4890770:2",
+                "citation": "PMC:PMC4890770",
+                "source": "pmc",
+                "doc_id": "PMC4890770",
+                "title": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "section": "Abstract / Results",
+                "pmid": "27253526",
+                "chunk_idx": 2,
+                "total_chunks": 5,
+                "text": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks.",
+                "score": 0.9994657635688782,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+                "authors": "Lee Yu-Mi; Kim Se-A; Lee In-Kyu; Kim Jung-Guk; Park Keun-Gyu; Jeong Ji-Yun; Jeon Jae-Han; Shin Ji-Yeon; Lee Duk-Hee",
+                "journal": "PLOS ONE",
+                "year": 2016
+              },
+              {
+                "chunk_id": "pmc:PMC4890770:1",
+                "citation": "PMC:PMC4890770",
+                "source": "pmc",
+                "doc_id": "PMC4890770",
+                "title": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "section": "Abstract / Materials and Methods",
+                "pmid": "27253526",
+                "chunk_idx": 1,
+                "total_chunks": 5,
+                "text": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks. HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.",
+                "score": 0.9933567643165588,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+                "authors": "Lee Yu-Mi; Kim Se-A; Lee In-Kyu; Kim Jung-Guk; Park Keun-Gyu; Jeong Ji-Yun; Jeon Jae-Han; Shin Ji-Yeon; Lee Duk-Hee",
+                "journal": "PLOS ONE",
+                "year": 2016
+              },
+              {
+                "chunk_id": "pmc:PMC4890770:3",
+                "citation": "PMC:PMC4890770",
+                "source": "pmc",
+                "doc_id": "PMC4890770",
+                "title": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "section": "Abstract / Conclusion",
+                "pmid": "27253526",
+                "chunk_idx": 3,
+                "total_chunks": 5,
+                "text": "Both diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms.",
+                "score": 0.9917454123497009,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+                "authors": "Lee Yu-Mi; Kim Se-A; Lee In-Kyu; Kim Jung-Guk; Park Keun-Gyu; Jeong Ji-Yun; Jeon Jae-Han; Shin Ji-Yeon; Lee Duk-Hee",
+                "journal": "PLOS ONE",
+                "year": 2016
+              },
+              {
+                "chunk_id": "pmc:PMC4890770:0",
+                "citation": "PMC:PMC4890770",
+                "source": "pmc",
+                "doc_id": "PMC4890770",
+                "title": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "section": "Abstract / Objective",
+                "pmid": "27253526",
+                "chunk_idx": 0,
+                "total_chunks": 5,
+                "text": "Several intervention studies have suggested that vegetarian or vegan diets have clinical benefits, particularly in terms of glycemic control, in patients with type 2 diabetes (T2D); however, no randomized controlled trial has been conducted in Asians who more commonly depend on plant-based foods, as compared to Western populations. Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals.",
+                "score": 0.8416130542755127,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+                "authors": "Lee Yu-Mi; Kim Se-A; Lee In-Kyu; Kim Jung-Guk; Park Keun-Gyu; Jeong Ji-Yun; Jeon Jae-Han; Shin Ji-Yeon; Lee Duk-Hee",
+                "journal": "PLOS ONE",
+                "year": 2016
+              }
+            ],
+            "thread_id": "v08-diet-exercise",
+            "latency_ms": 54131.7
+          },
+          "timeline": [
+            {
+              "name": "resolve_context",
+              "label": "Resolve Context",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131325613,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": "follow_up",
+                "rewrite_hint": null,
+                "new_query": "In the vegan diet trial specifically, what HbA1c changes were reported for the two groups?\n\nReference context for interpreting this question (not evidence):\nThe brown-rice-based vegan diet trial discussed in the prior turn, specifically the reported HbA1c changes for its two diet groups.",
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 4534
+            },
+            {
+              "name": "route",
+              "label": "Route",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131330151,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": "factual"
+              },
+              "elapsed_ms": 8823
+            },
+            {
+              "name": "retrieve",
+              "label": "Retrieve",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131338975,
+              "detail": {
+                "count": 12,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 991
+            },
+            {
+              "name": "rerank",
+              "label": "Rerank",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131339966,
+              "detail": {
+                "count": 4,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 19868
+            },
+            {
+              "name": "grade",
+              "label": "Grade",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131359834,
+              "detail": {
+                "count": null,
+                "relevance_score": 0.95,
+                "relevant": true,
+                "reason": "The supplied single study reports HbA1c changes for both the vegan and conventional diet groups, including mean levels over time and between-group reduction comparisons.",
+                "rewrite_hint": "",
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 10295
+            },
+            {
+              "name": "generate",
+              "label": "Generate",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131370130,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": "The study reports: \"The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, ",
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 6173
+            },
+            {
+              "name": "check",
+              "label": "Check",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131376304,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": true,
+                "issues": "",
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 3418
+            },
+            {
+              "name": "append_history",
+              "label": "Append History",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131379722,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 2
+            }
+          ],
+          "liveChunks": [],
+          "error": null,
+          "audits": [],
+          "answer_sha256": "1f703d2f705e2643ad4e77940caeb5b28e404ca39b855355cc6cb15abff760aa",
+          "source_hashes": {
+            "pmc:PMC4890770:2": "683dc9e6bf32afc40e76cb97593a3847a7adc2dccbfc813cd9ca5dfe013f00e5",
+            "pmc:PMC4890770:1": "0912029346629933aad1a05b2a919d87e4c85fcc12b0c627f57bd463979fcbe0",
+            "pmc:PMC4890770:3": "919fca6984eb62dd1c4d4e419303793bfbec4602423396b7bcf86824e948e451",
+            "pmc:PMC4890770:0": "af342cbaa7a8d8c526074605f3edc5f2bf03f5694825685ff6cb39fec4e7250a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "v08-diet-exercise-turn-3",
+      "question": "Returning to both the vegan diet study and the exercise study, how long did it last?",
+      "parent_turn_id": "v08-diet-exercise-turn-2",
+      "revisions": [
+        {
+          "id": "v08-diet-exercise-turn-3-revision-1",
+          "created_at": "2026-10-04T16:30:08.755960+00:00",
+          "status": "complete",
+          "origin": "live",
+          "context": [
+            {
+              "turn_id": "v08-diet-exercise-turn-1",
+              "revision_id": "v08-diet-exercise-turn-1-revision-1",
+              "question": "From the 2016 brown-rice-based vegan diet trial and the 2013 aerobic versus combined exercise trial, separately describe what each study measured and over what time period. Do not rank their clinical effectiveness.",
+              "answer": "The study reports: \"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.\" [PMC:PMC4890770]. The study reports: \"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\" [PMC:PMC4890770]. The study reports: \"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\" [PMC:PMC3594238]. The study reports: \"Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods).\" [PMC:PMC3594238]. The study reports: \"Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.\" [PMC:PMC3594238]. The study reports: \"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\" [PMC:PMC3594238]. The study reports: \"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\" [PMC:PMC3594238].",
+              "source_titles": [
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial"
+              ]
+            },
+            {
+              "turn_id": "v08-diet-exercise-turn-2",
+              "revision_id": "v08-diet-exercise-turn-2-revision-1",
+              "question": "In the vegan diet trial specifically, what HbA1c changes were reported for the two groups?",
+              "answer": "The study reports: \"The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively.\" [PMC:PMC4890770]. The study reports: \"Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017).\" [PMC:PMC4890770]. The study reports: \"When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%).\" [PMC:PMC4890770]. The study reports: \"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\" [PMC:PMC4890770]. The study reports: \"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.\" [PMC:PMC4890770].",
+              "source_titles": [
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial"
+              ]
+            }
+          ],
+          "omitted_context": 0,
+          "result": {
+            "conversation_context": {
+              "original_query": "Returning to both the vegan diet study and the exercise study, how long did it last?",
+              "resolved_query": "Returning to both the vegan diet study and the exercise study, how long did it last?\n\nReference context for interpreting this question (not evidence):\nThe current question asks how long each of the two previously identified studies lasted: the brown-rice-based vegan diet trial and the aerobic versus combined exercise trial.",
+              "supplied_turn_ids": [
+                "v08-diet-exercise-turn-1",
+                "v08-diet-exercise-turn-2"
+              ],
+              "context_turn_ids": [
+                "v08-diet-exercise-turn-1"
+              ],
+              "referent_entities": [
+                "brown-rice-based vegan diet trial",
+                "aerobic versus combined exercise trial"
+              ],
+              "needs_clarification": false,
+              "clarification": "",
+              "omitted_context": 0,
+              "elapsed_ms": 6628.3,
+              "model": "deepseek-v4.1-flash",
+              "usage": {
+                "completion_tokens": 953,
+                "prompt_tokens": 1553,
+                "total_tokens": 2506,
+                "completion_tokens_details": {
+                  "accepted_prediction_tokens": 0,
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 852,
+                  "rejected_prediction_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": null,
+                  "cached_tokens": 0,
+                  "accepted_prediction_tokens": 0,
+                  "reasoning_tokens": 0,
+                  "rejected_prediction_tokens": 0
+                },
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cached_tokens": 0,
+                "completion_thinking_tokens": 852,
+                "credit": 0,
+                "prompt_cache_hit_tokens": 0,
+                "prompt_cache_miss_tokens": 1553,
+                "prompt_cache_write_tokens": 0
+              },
+              "status": "follow_up",
+              "raw_output": "{\n  \"mode\": \"follow_up\",\n  \"reference_context\": \"The current question asks how long each of the two previously identified studies lasted: the brown-rice-based vegan diet trial and the aerobic versus combined exercise trial.\",\n  \"context_turn_ids\": [\"v08-diet-exercise-turn-1\"],\n  \"referent_entities\": [\n    \"brown-rice-based vegan diet trial\",\n    \"aerobic versus combined exercise trial\"\n  ],\n  \"clarification\": \"\"\n}"
+            },
+            "evidence_status": "complete",
+            "evidence_gap": "",
+            "answer_components": [
+              {
+                "id": "C1",
+                "requirement": "Duration of the vegan diet study",
+                "question_span": "how long did it last?",
+                "source_hint": "PMC4890770",
+                "status": "supported",
+                "evidence": [
+                  {
+                    "chunk_id": "pmc:PMC4890770:1",
+                    "citation": "PMC:PMC4890770",
+                    "quote": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC4890770:1",
+                    "citation": "PMC:PMC4890770",
+                    "quote": "HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC4890770:2",
+                    "citation": "PMC:PMC4890770",
+                    "quote": "The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks."
+                  }
+                ],
+                "required_details": [
+                  "for 12 weeks",
+                  "change in HbA1c levels over 12 weeks",
+                  "over the 12 weeks"
+                ],
+                "missing_outcome": "",
+                "gap": "",
+                "answer": "The study reports: \"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\" [PMC:PMC4890770]. The study reports: \"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.\" [PMC:PMC4890770]. The study reports: \"The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks.\" [PMC:PMC4890770]."
+              },
+              {
+                "id": "C2",
+                "requirement": "Duration of the exercise study",
+                "question_span": "how long did it last?",
+                "source_hint": "PMC3594238",
+                "status": "supported",
+                "evidence": [
+                  {
+                    "chunk_id": "pmc:PMC3594238:2",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC3594238:3",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises."
+                  }
+                ],
+                "required_details": [
+                  "over a 24-h period after the sessions",
+                  "after a single session of combined exercises"
+                ],
+                "missing_outcome": "",
+                "gap": "",
+                "answer": "The study reports: \"Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.\" [PMC:PMC3594238]. The study reports: \"The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises.\" [PMC:PMC3594238]."
+              }
+            ],
+            "answer": "The study reports: \"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks.\" [PMC:PMC4890770]. The study reports: \"HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.\" [PMC:PMC4890770]. The study reports: \"The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks.\" [PMC:PMC4890770]. The study reports: \"Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation.\" [PMC:PMC3594238]. The study reports: \"The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises.\" [PMC:PMC3594238].",
+            "citations": [
+              "PMC:PMC4890770",
+              "PMC:PMC3594238"
+            ],
+            "confidence": 0.9,
+            "faithful": true,
+            "faithfulness_issues": "",
+            "iterations": 0,
+            "regen_count": 0,
+            "rewritten_queries": [],
+            "chunks": [
+              {
+                "chunk_id": "pmc:PMC4890770:1",
+                "citation": "PMC:PMC4890770",
+                "source": "pmc",
+                "doc_id": "PMC4890770",
+                "title": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "section": "Abstract / Materials and Methods",
+                "pmid": "27253526",
+                "chunk_idx": 1,
+                "total_chunks": 5,
+                "text": "Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding animal-based food including fish; n = 46) or a conventional diet recommended by the Korean Diabetes Association 2011 (n = 47) for 12 weeks. HbA1c levels were measured at weeks 0, 4, and 12, and the primary study endpoint was the change in HbA1c levels over 12 weeks.",
+                "score": 0.9521085023880005,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+                "authors": "Lee Yu-Mi; Kim Se-A; Lee In-Kyu; Kim Jung-Guk; Park Keun-Gyu; Jeong Ji-Yun; Jeon Jae-Han; Shin Ji-Yeon; Lee Duk-Hee",
+                "journal": "PLOS ONE",
+                "year": 2016
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:2",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Results",
+                "pmid": "23536769",
+                "chunk_idx": 2,
+                "total_chunks": 5,
+                "text": "Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session.",
+                "score": 0.8881279230117798,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              },
+              {
+                "chunk_id": "pmc:PMC4890770:2",
+                "citation": "PMC:PMC4890770",
+                "source": "pmc",
+                "doc_id": "PMC4890770",
+                "title": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "section": "Abstract / Results",
+                "pmid": "27253526",
+                "chunk_idx": 2,
+                "total_chunks": 5,
+                "text": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks.",
+                "score": 0.8564829230308533,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+                "authors": "Lee Yu-Mi; Kim Se-A; Lee In-Kyu; Kim Jung-Guk; Park Keun-Gyu; Jeong Ji-Yun; Jeon Jae-Han; Shin Ji-Yeon; Lee Duk-Hee",
+                "journal": "PLOS ONE",
+                "year": 2016
+              },
+              {
+                "chunk_id": "pmc:PMC4890770:3",
+                "citation": "PMC:PMC4890770",
+                "source": "pmc",
+                "doc_id": "PMC4890770",
+                "title": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "section": "Abstract / Conclusion",
+                "pmid": "27253526",
+                "chunk_idx": 3,
+                "total_chunks": 5,
+                "text": "Both diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms.",
+                "score": 0.6398988366127014,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+                "authors": "Lee Yu-Mi; Kim Se-A; Lee In-Kyu; Kim Jung-Guk; Park Keun-Gyu; Jeong Ji-Yun; Jeon Jae-Han; Shin Ji-Yeon; Lee Duk-Hee",
+                "journal": "PLOS ONE",
+                "year": 2016
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:3",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Conclusions",
+                "pmid": "23536769",
+                "chunk_idx": 3,
+                "total_chunks": 5,
+                "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises.",
+                "score": 0.364860475063324,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              }
+            ],
+            "thread_id": "v08-diet-exercise",
+            "latency_ms": 97119.6
+          },
+          "timeline": [
+            {
+              "name": "resolve_context",
+              "label": "Resolve Context",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131408761,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": "follow_up",
+                "rewrite_hint": null,
+                "new_query": "Returning to both the vegan diet study and the exercise study, how long did it last?\n\nReference context for interpreting this question (not evidence):\nThe current question asks how long each of the two previously identified studies lasted: the brown-rice-based vegan diet trial and the aerobic versus combined exercise trial.",
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 6630
+            },
+            {
+              "name": "route",
+              "label": "Route",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131415395,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": "synthesis"
+              },
+              "elapsed_ms": 10611
+            },
+            {
+              "name": "retrieve",
+              "label": "Retrieve",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131426006,
+              "detail": {
+                "count": 14,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 861
+            },
+            {
+              "name": "rerank",
+              "label": "Rerank",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131426867,
+              "detail": {
+                "count": 5,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 31390
+            },
+            {
+              "name": "grade",
+              "label": "Grade",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131458257,
+              "detail": {
+                "count": null,
+                "relevance_score": 0.9,
+                "relevant": true,
+                "reason": "Both studies' durations are reported: the vegan diet trial ran 12 weeks, and the exercise study involved a single session with 24-hour post-session measurements.",
+                "rewrite_hint": "",
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 15147
+            },
+            {
+              "name": "generate",
+              "label": "Generate",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131473405,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": "The study reports: \"Participants diagnosed with T2D were randomly assigned to follow either a vegan diet (excluding anim",
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 4247
+            },
+            {
+              "name": "check",
+              "label": "Check",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131477653,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": true,
+                "issues": "",
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 28213
+            },
+            {
+              "name": "append_history",
+              "label": "Append History",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131505867,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 0
+            }
+          ],
+          "liveChunks": [],
+          "error": null,
+          "audits": [],
+          "answer_sha256": "7158388304b92b4f48f9cd3ac6647b6506e6d131c0505eedb06a409f9e216c39",
+          "source_hashes": {
+            "pmc:PMC4890770:1": "0912029346629933aad1a05b2a919d87e4c85fcc12b0c627f57bd463979fcbe0",
+            "pmc:PMC3594238:2": "96d4b4a46e565db471319bded2a9739e97553cc5af52d3365f11046e3f815a10",
+            "pmc:PMC4890770:2": "683dc9e6bf32afc40e76cb97593a3847a7adc2dccbfc813cd9ca5dfe013f00e5",
+            "pmc:PMC4890770:3": "919fca6984eb62dd1c4d4e419303793bfbec4602423396b7bcf86824e948e451",
+            "pmc:PMC3594238:3": "444909c5406f77af26202f361ee1bce4f63d715762fe7ec44930d122c56d9471"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -38,29 +38,32 @@ python scripts/prepare_conversation_demo.py
 
 ## Recorded behavior and limits
 
-| Conversation | Returned answers | Actual saved audits | Observed behavior |
-|---|---|---|---|
-| GRADE | 3 | 3 Direct + 1 Atomic v2 | Results → population/follow-up → original sentence. Direct completed; v2 retains extraction items for review. |
-| Diet / exercise | 3 | 3 Direct + 1 Atomic v2 | The first answer treats the instruction not to rank the trials as an evidence gap, producing an unnecessary partial label. The last question's singular reference did **not** trigger clarification; the model returned both study durations. |
-| Evidence limits | 3 | 3 Direct + 1 Atomic v2 | First answer refuses to establish five-year mortality; subsequent turns use measured exercise outcomes. The final answer quotes the duration but omits an explicit answer to the mortality clause and is marked partial. |
+There are two recordings of the same nine questions, each made with one request per question
+and no retries chosen by outcome:
 
-All nine Direct audits have status ok. Atomic v2 has two partial_error records and one ok.
-These are execution/anchoring states, **not nine correct answers or measured clinical accuracy**.
-A successfully audited quotation can still be an incomplete answer to the question. None of
-these recordings was replaced by a nicer retry. The intent resolver supports clarification,
-but this particular ambiguous scenario did not take that path.
+- **run02** (2026-10-04, v0.9 code) is what the replay shows.
+- **run01** (2026-09-27, v0.8.0 code) is kept as the original record. The regression tests, the
+  node-execution figure and the walkthrough video come from it.
 
-Open the catalogue in Ask, or import an individual conversation JSON. Each export contains
-its original answer/source fingerprints, actual traces, explicit context and attached audits.
-Raw streams and unchanged API responses remain in run01; record-summary.json lists every turn.
+| Conversation | run01 (v0.8) | run02 (v0.9, bundled) |
+|---|---|---|
+| GRADE | Results → population/follow-up → original sentence; Direct ok, Atomic v2 had items for review | Same answers. Atomic v2 extraction hit the 32,768-token output limit and returned truncated JSON (kept as a failure) |
+| Diet / exercise | Turn 1 treated "do not rank" as missing evidence (partial label). Turn 3 gave both study durations | Turn 1 answers the four requested aspects with no false gap (complete). Turn 3 still gives both durations; the question names both studies |
+| Evidence limits | Turn 3 quoted the duration but never answered the mortality clause after three repair attempts | Turn 3 answers both parts on the first attempt. The label shows partial because "no mortality result" is a stated evidence gap |
 
-Repackage the saved records without model calls:
+All nine Direct audits in both runs have status ok. These are execution and anchoring states,
+**not nine correct answers or measured clinical accuracy**. `record-summary.json` lists every
+turn of both runs.
+
+Open the catalogue in Ask, or import an individual conversation JSON. Each export contains its
+original answer/source fingerprints, actual traces, explicit context and attached audits.
+
+Repackage saved records without model calls (default `run02`; pass `run01` for the original):
 
 ~~~sh
 node --experimental-strip-types frontend/scripts/package-conversation-demo.mjs
 ~~~
 
-Recording fresh answers is different: scripts/record_conversation_demo.py sends the fixed
-questions to the full local Ask service and performs paid Flash audits. Use a new --run-dir
-for an intentional independent recording; do not replace run01. The current packager reads
-run01 and is intended to reproduce this milestone's bundled exports.
+Recording fresh answers calls the model: start the full Ask service, then run
+`python scripts/record_conversation_demo.py --run-dir data/demo/conversations/run03`.
+Always use a new run directory; existing runs are never overwritten.

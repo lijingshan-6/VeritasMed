@@ -1,0 +1,1183 @@
+{
+  "schema": 1,
+  "id": "v08-evidence-limits",
+  "title": "Evidence limits: a mortality question and available outcomes",
+  "created_at": "2026-10-04T16:32:20.878698+00:00",
+  "updated_at": "2026-10-04T16:37:07.106853+00:00",
+  "turns": [
+    {
+      "id": "v08-evidence-limits-turn-1",
+      "question": "Do the supplied 2016 vegan diet and 2013 aerobic/combined exercise abstracts show that either intervention reduces five-year all-cause mortality?",
+      "parent_turn_id": null,
+      "revisions": [
+        {
+          "id": "v08-evidence-limits-turn-1-revision-1",
+          "created_at": "2026-10-04T16:32:20.878698+00:00",
+          "status": "complete",
+          "origin": "live",
+          "context": [],
+          "omitted_context": 0,
+          "result": {
+            "conversation_context": {
+              "original_query": "Do the supplied 2016 vegan diet and 2013 aerobic/combined exercise abstracts show that either intervention reduces five-year all-cause mortality?",
+              "resolved_query": "Do the supplied 2016 vegan diet and 2013 aerobic/combined exercise abstracts show that either intervention reduces five-year all-cause mortality?",
+              "supplied_turn_ids": [],
+              "context_turn_ids": [],
+              "referent_entities": [],
+              "needs_clarification": false,
+              "clarification": "",
+              "omitted_context": 0,
+              "elapsed_ms": 0,
+              "model": null,
+              "usage": null,
+              "status": "independent",
+              "raw_output": ""
+            },
+            "evidence_status": "insufficient",
+            "evidence_gap": "The retrieved evidence does not establish: five-year all-cause mortality reduction.",
+            "answer_components": [
+              {
+                "id": "C1",
+                "requirement": "Whether either intervention reduces five-year all-cause mortality",
+                "question_span": "either intervention reduces five-year all-cause mortality",
+                "source_hint": "PMC4890770 (2016 vegan diet RCT) and PMC3594238 (2013 aerobic/combined exercise study)",
+                "status": "missing",
+                "evidence": [],
+                "required_details": [],
+                "missing_outcome": "five-year all-cause mortality reduction",
+                "gap": "The retrieved evidence does not establish: five-year all-cause mortality reduction.",
+                "answer": ""
+              }
+            ],
+            "answer": "The retrieved evidence does not establish: five-year all-cause mortality reduction.",
+            "citations": [],
+            "confidence": 0.0,
+            "faithful": true,
+            "faithfulness_issues": "",
+            "iterations": 0,
+            "regen_count": 0,
+            "rewritten_queries": [],
+            "chunks": [
+              {
+                "chunk_id": "pmc:PMC4890770:3",
+                "citation": "PMC:PMC4890770",
+                "source": "pmc",
+                "doc_id": "PMC4890770",
+                "title": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "section": "Abstract / Conclusion",
+                "pmid": "27253526",
+                "chunk_idx": 3,
+                "total_chunks": 5,
+                "text": "Both diets led to reductions in HbA1c levels; however, glycemic control was better with the vegan diet than with the conventional diet. Thus, the dietary guidelines for patients with T2D should include a vegan diet for the better management and treatment. However, further studies are needed to evaluate the long-term effects of a vegan diet, and to identify potential explanations of the underlying mechanisms.",
+                "score": 0.07538610696792603,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+                "authors": "Lee Yu-Mi; Kim Se-A; Lee In-Kyu; Kim Jung-Guk; Park Keun-Gyu; Jeong Ji-Yun; Jeon Jae-Han; Shin Ji-Yeon; Lee Duk-Hee",
+                "journal": "PLOS ONE",
+                "year": 2016
+              },
+              {
+                "chunk_id": "pmc:PMC4890770:2",
+                "citation": "PMC:PMC4890770",
+                "source": "pmc",
+                "doc_id": "PMC4890770",
+                "title": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "section": "Abstract / Results",
+                "pmid": "27253526",
+                "chunk_idx": 2,
+                "total_chunks": 5,
+                "text": "The mean HbA1c levels at weeks 0, 4, and 12 were 7.7%, 7.2%, and 7.1% in the vegan group, and 7.4%, 7.2%, and 7.2% in the conventional group, respectively. Although both groups showed significant reductions in HbA1C levels, the reductions were larger in the vegan group than in the conventional group (-0.5% vs. -0.2%; p-for-interaction = 0.017). When only considering participants with high compliance, the difference in HbA1c level reduction between the groups was found to be larger (-0.9% vs. -0.3%). The beneficial effect of vegan diets was noted even after adjusting for changes in total energy intake or waist circumference over the 12 weeks.",
+                "score": 0.029702305793762207,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+                "authors": "Lee Yu-Mi; Kim Se-A; Lee In-Kyu; Kim Jung-Guk; Park Keun-Gyu; Jeong Ji-Yun; Jeon Jae-Han; Shin Ji-Yeon; Lee Duk-Hee",
+                "journal": "PLOS ONE",
+                "year": 2016
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:2",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Results",
+                "pmid": "23536769",
+                "chunk_idx": 2,
+                "total_chunks": 5,
+                "text": "Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session.",
+                "score": 0.04066435247659683,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:3",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Conclusions",
+                "pmid": "23536769",
+                "chunk_idx": 3,
+                "total_chunks": 5,
+                "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises.",
+                "score": 0.022989148274064064,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              },
+              {
+                "chunk_id": "pmc:PMC4890770:0",
+                "citation": "PMC:PMC4890770",
+                "source": "pmc",
+                "doc_id": "PMC4890770",
+                "title": "Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "section": "Abstract / Objective",
+                "pmid": "27253526",
+                "chunk_idx": 0,
+                "total_chunks": 5,
+                "text": "Several intervention studies have suggested that vegetarian or vegan diets have clinical benefits, particularly in terms of glycemic control, in patients with type 2 diabetes (T2D); however, no randomized controlled trial has been conducted in Asians who more commonly depend on plant-based foods, as compared to Western populations. Here, we aimed to compare the effect of a vegan diet and conventional diabetic diet on glycemic control among Korean individuals.",
+                "score": 0.011008081957697868,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4890770/",
+                "authors": "Lee Yu-Mi; Kim Se-A; Lee In-Kyu; Kim Jung-Guk; Park Keun-Gyu; Jeong Ji-Yun; Jeon Jae-Han; Shin Ji-Yeon; Lee Duk-Hee",
+                "journal": "PLOS ONE",
+                "year": 2016
+              }
+            ],
+            "thread_id": "v08-evidence-limits",
+            "latency_ms": 73813.7
+          },
+          "timeline": [
+            {
+              "name": "route",
+              "label": "Route",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131540911,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": "synthesis"
+              },
+              "elapsed_ms": 7763
+            },
+            {
+              "name": "retrieve",
+              "label": "Retrieve",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131548675,
+              "detail": {
+                "count": 12,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 775
+            },
+            {
+              "name": "rerank",
+              "label": "Rerank",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131549450,
+              "detail": {
+                "count": 5,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 24822
+            },
+            {
+              "name": "grade",
+              "label": "Grade",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131574273,
+              "detail": {
+                "count": null,
+                "relevance_score": 0.9,
+                "relevant": true,
+                "reason": "Both supplied abstracts were identified, but neither reports five-year all-cause mortality; the vegan trial reports 12-week HbA1c outcomes and the exercise study reports acute glucose responses.",
+                "rewrite_hint": "",
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 30428
+            },
+            {
+              "name": "generate",
+              "label": "Generate",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131604702,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": "The retrieved evidence does not establish: five-year all-cause mortality reduction for the vegan diet or aerobic/combine",
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 4172
+            },
+            {
+              "name": "check",
+              "label": "Check",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131608875,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": true,
+                "issues": "",
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 5831
+            },
+            {
+              "name": "append_history",
+              "label": "Append History",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131614707,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 3
+            }
+          ],
+          "liveChunks": [],
+          "error": null,
+          "audits": [],
+          "answer_sha256": "f49bcbffe81c1f61670e1eae30b3696a289dd5758fb0f4c0be0bda7fcb084bbf",
+          "source_hashes": {
+            "pmc:PMC4890770:3": "919fca6984eb62dd1c4d4e419303793bfbec4602423396b7bcf86824e948e451",
+            "pmc:PMC4890770:2": "683dc9e6bf32afc40e76cb97593a3847a7adc2dccbfc813cd9ca5dfe013f00e5",
+            "pmc:PMC3594238:2": "96d4b4a46e565db471319bded2a9739e97553cc5af52d3365f11046e3f815a10",
+            "pmc:PMC3594238:3": "444909c5406f77af26202f361ee1bce4f63d715762fe7ec44930d122c56d9471",
+            "pmc:PMC4890770:0": "af342cbaa7a8d8c526074605f3edc5f2bf03f5694825685ff6cb39fec4e7250a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "v08-evidence-limits-turn-2",
+      "question": "For the exercise study specifically, what did the participants actually undergo and how long were glucose measurements collected?",
+      "parent_turn_id": "v08-evidence-limits-turn-1",
+      "revisions": [
+        {
+          "id": "v08-evidence-limits-turn-2-revision-1",
+          "created_at": "2026-10-04T16:34:19.663680+00:00",
+          "status": "complete",
+          "origin": "live",
+          "context": [
+            {
+              "turn_id": "v08-evidence-limits-turn-1",
+              "revision_id": "v08-evidence-limits-turn-1-revision-1",
+              "question": "Do the supplied 2016 vegan diet and 2013 aerobic/combined exercise abstracts show that either intervention reduces five-year all-cause mortality?",
+              "answer": "The retrieved evidence does not establish: five-year all-cause mortality reduction.",
+              "source_titles": [
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial"
+              ]
+            }
+          ],
+          "omitted_context": 0,
+          "result": {
+            "conversation_context": {
+              "original_query": "For the exercise study specifically, what did the participants actually undergo and how long were glucose measurements collected?",
+              "resolved_query": "For the exercise study specifically, what did the participants actually undergo and how long were glucose measurements collected?\n\nReference context for interpreting this question (not evidence):\nThe exercise study referenced in the prior turn: PMC3594238, concerning aerobic and combined exercise sessions in type 2 diabetes. Current scope: what participants underwent in that exercise study and how long glucose measurements were collected.",
+              "supplied_turn_ids": [
+                "v08-evidence-limits-turn-1"
+              ],
+              "context_turn_ids": [
+                "v08-evidence-limits-turn-1"
+              ],
+              "referent_entities": [
+                "exercise study",
+                "PMC3594238",
+                "aerobic and combined exercise sessions",
+                "type 2 diabetes",
+                "glucose measurements"
+              ],
+              "needs_clarification": false,
+              "clarification": "",
+              "omitted_context": 0,
+              "elapsed_ms": 5717.2,
+              "model": "deepseek-v4.1-flash",
+              "usage": {
+                "completion_tokens": 933,
+                "prompt_tokens": 677,
+                "total_tokens": 1610,
+                "completion_tokens_details": {
+                  "accepted_prediction_tokens": 0,
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 813,
+                  "rejected_prediction_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": null,
+                  "cached_tokens": 0,
+                  "accepted_prediction_tokens": 0,
+                  "reasoning_tokens": 0,
+                  "rejected_prediction_tokens": 0
+                },
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cached_tokens": 0,
+                "completion_thinking_tokens": 813,
+                "credit": 0,
+                "prompt_cache_hit_tokens": 0,
+                "prompt_cache_miss_tokens": 677,
+                "prompt_cache_write_tokens": 0
+              },
+              "status": "follow_up",
+              "raw_output": "{\n  \"mode\": \"follow_up\",\n  \"reference_context\": \"The exercise study referenced in the prior turn: PMC3594238, concerning aerobic and combined exercise sessions in type 2 diabetes. Current scope: what participants underwent in that exercise study and how long glucose measurements were collected.\",\n  \"context_turn_ids\": [\"v08-evidence-limits-turn-1\"],\n  \"referent_entities\": [\"exercise study\", \"PMC3594238\", \"aerobic and combined exercise sessions\", \"type 2 diabetes\", \"glucose measurements\"],\n  \"clarification\": \"\"\n}"
+            },
+            "evidence_status": "complete",
+            "evidence_gap": "",
+            "answer_components": [
+              {
+                "id": "C1",
+                "requirement": "What the participants underwent in the exercise study",
+                "question_span": "what did the participants actually undergo",
+                "source_hint": "PMC3594238",
+                "status": "supported",
+                "evidence": [
+                  {
+                    "chunk_id": "pmc:PMC3594238:1",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days."
+                  },
+                  {
+                    "chunk_id": "pmc:PMC3594238:1",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart."
+                  }
+                ],
+                "required_details": [
+                  "wore a CGMS during 3 days",
+                  "Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart."
+                ],
+                "missing_outcome": "",
+                "gap": "",
+                "answer": "The study reports: \"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\" [PMC:PMC3594238]. The study reports: \"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\" [PMC:PMC3594238]."
+              },
+              {
+                "id": "C2",
+                "requirement": "How long glucose measurements were collected",
+                "question_span": "how long were glucose measurements collected?",
+                "source_hint": "PMC3594238",
+                "status": "supported",
+                "evidence": [
+                  {
+                    "chunk_id": "pmc:PMC3594238:1",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days."
+                  }
+                ],
+                "required_details": [
+                  "wore a CGMS during 3 days"
+                ],
+                "missing_outcome": "",
+                "gap": "",
+                "answer": "Glucose measurements in this study were collected with a CGMS worn by the participants during 3 days [PMC:PMC3594238]."
+              }
+            ],
+            "answer": "The study reports: \"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\" [PMC:PMC3594238]. The study reports: \"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\" [PMC:PMC3594238]. Glucose measurements in this study were collected with a CGMS worn by the participants during 3 days [PMC:PMC3594238].",
+            "citations": [
+              "PMC:PMC3594238"
+            ],
+            "confidence": 0.95,
+            "faithful": true,
+            "faithfulness_issues": "",
+            "iterations": 0,
+            "regen_count": 0,
+            "rewritten_queries": [],
+            "chunks": [
+              {
+                "chunk_id": "pmc:PMC3594238:1",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Methods",
+                "pmid": "23536769",
+                "chunk_idx": 1,
+                "total_chunks": 5,
+                "text": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days. Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart. Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods).",
+                "score": 0.9980547428131104,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:2",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Results",
+                "pmid": "23536769",
+                "chunk_idx": 2,
+                "total_chunks": 5,
+                "text": "Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session.",
+                "score": 0.33615633845329285,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:0",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Purpose",
+                "pmid": "23536769",
+                "chunk_idx": 0,
+                "total_chunks": 5,
+                "text": "To evaluate the effects of aerobic (AER) or aerobic plus resistance exercise (COMB) sessions on glucose levels and glucose variability in patients with type 2 diabetes. Additionally, we assessed conventional and non-conventional methods to analyze glucose variability derived from multiple measurements performed with continuous glucose monitoring system (CGMS).",
+                "score": 0.992399275302887,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:4",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Trial Registration",
+                "pmid": "23536769",
+                "chunk_idx": 4,
+                "total_chunks": 5,
+                "text": "Aerobic training, aerobic-resistance training and glucose profile (CGMS) in type 2 diabetes (CGMS exercise). ClinicalTrials.gov ID: NCT00887094.",
+                "score": 0.9844565987586975,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:3",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Conclusions",
+                "pmid": "23536769",
+                "chunk_idx": 3,
+                "total_chunks": 5,
+                "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises.",
+                "score": 0.9804065227508545,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              }
+            ],
+            "thread_id": "v08-evidence-limits",
+            "latency_ms": 60005.0
+          },
+          "timeline": [
+            {
+              "name": "resolve_context",
+              "label": "Resolve Context",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131659698,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": "follow_up",
+                "rewrite_hint": null,
+                "new_query": "For the exercise study specifically, what did the participants actually undergo and how long were glucose measurements collected?\n\nReference context for interpreting this question (not evidence):\nThe exercise study referenced in the prior turn: PMC3594238, concerning aerobic and combined exercise sessions in type 2 diabetes. Current scope: what participants underwent in that exercise study and how long glucose measurements were collected.",
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 5719
+            },
+            {
+              "name": "route",
+              "label": "Route",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131665430,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": "factual"
+              },
+              "elapsed_ms": 10755
+            },
+            {
+              "name": "retrieve",
+              "label": "Retrieve",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131676192,
+              "detail": {
+                "count": 12,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 1257
+            },
+            {
+              "name": "rerank",
+              "label": "Rerank",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131677450,
+              "detail": {
+                "count": 5,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 19367
+            },
+            {
+              "name": "grade",
+              "label": "Grade",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131696817,
+              "detail": {
+                "count": null,
+                "relevance_score": 0.95,
+                "relevant": true,
+                "reason": "The supplied abstract directly describes the exercise study's participants, CGMS wear duration, and exercise sessions.",
+                "rewrite_hint": "",
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 14447
+            },
+            {
+              "name": "generate",
+              "label": "Generate",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131711265,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": "The study reports: \"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\" [PMC:PMC3594238]. Th",
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 4062
+            },
+            {
+              "name": "check",
+              "label": "Check",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131715329,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": true,
+                "issues": "",
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 4348
+            },
+            {
+              "name": "append_history",
+              "label": "Append History",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131719678,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 3
+            }
+          ],
+          "liveChunks": [],
+          "error": null,
+          "audits": [],
+          "answer_sha256": "c9c46b585b57c7798fe8a7e07e11b9ebc14fe3cea1c62f694dc294aabb8c358c",
+          "source_hashes": {
+            "pmc:PMC3594238:1": "c09a9b02fb69cb11e1f04d8841f739822fc5f3f042c730c4a63112ee752f9541",
+            "pmc:PMC3594238:2": "96d4b4a46e565db471319bded2a9739e97553cc5af52d3365f11046e3f815a10",
+            "pmc:PMC3594238:0": "9758b51b4a5013a90507b8087c9402d99c6d51502fb2b5aea11e2ba6362ccc8b",
+            "pmc:PMC3594238:4": "b41be9ce00d1886e4d4956c605127ab51800d15a3bb97237aff6f28580602ce8",
+            "pmc:PMC3594238:3": "444909c5406f77af26202f361ee1bce4f63d715762fe7ec44930d122c56d9471"
+          }
+        }
+      ]
+    },
+    {
+      "id": "v08-evidence-limits-turn-3",
+      "question": "Quote the abstract sentence describing how long the glucose decrease persisted, and state whether that sentence supplies a five-year mortality result.",
+      "parent_turn_id": "v08-evidence-limits-turn-2",
+      "revisions": [
+        {
+          "id": "v08-evidence-limits-turn-3-revision-1",
+          "created_at": "2026-10-04T16:35:48.781237+00:00",
+          "status": "complete",
+          "origin": "live",
+          "context": [
+            {
+              "turn_id": "v08-evidence-limits-turn-1",
+              "revision_id": "v08-evidence-limits-turn-1-revision-1",
+              "question": "Do the supplied 2016 vegan diet and 2013 aerobic/combined exercise abstracts show that either intervention reduces five-year all-cause mortality?",
+              "answer": "The retrieved evidence does not establish: five-year all-cause mortality reduction.",
+              "source_titles": [
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial",
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "PMC:PMC4890770 · Effect of a Brown Rice Based Vegan Diet and Conventional Diabetic Diet on Glycemic Control of Patients with Type 2 Diabetes: A 12-Week Randomized Clinical Trial"
+              ]
+            },
+            {
+              "turn_id": "v08-evidence-limits-turn-2",
+              "revision_id": "v08-evidence-limits-turn-2-revision-1",
+              "question": "For the exercise study specifically, what did the participants actually undergo and how long were glucose measurements collected?",
+              "answer": "The study reports: \"Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days.\" [PMC:PMC3594238]. The study reports: \"Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart.\" [PMC:PMC3594238]. Glucose measurements in this study were collected with a CGMS worn by the participants during 3 days [PMC:PMC3594238].",
+              "source_titles": [
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "PMC:PMC3594238 · Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial"
+              ]
+            }
+          ],
+          "omitted_context": 0,
+          "result": {
+            "conversation_context": {
+              "original_query": "Quote the abstract sentence describing how long the glucose decrease persisted, and state whether that sentence supplies a five-year mortality result.",
+              "resolved_query": "Quote the abstract sentence describing how long the glucose decrease persisted, and state whether that sentence supplies a five-year mortality result.\n\nReference context for interpreting this question (not evidence):\nThe exercise study PMC:PMC3594238 from the prior exchange, with the current request limited to quoting its abstract sentence on how long the glucose decrease persisted and assessing whether that sentence reports a five-year mortality result.",
+              "supplied_turn_ids": [
+                "v08-evidence-limits-turn-1",
+                "v08-evidence-limits-turn-2"
+              ],
+              "context_turn_ids": [
+                "v08-evidence-limits-turn-1",
+                "v08-evidence-limits-turn-2"
+              ],
+              "referent_entities": [
+                "PMC:PMC3594238",
+                "abstract sentence on duration of glucose decrease",
+                "five-year mortality result"
+              ],
+              "needs_clarification": false,
+              "clarification": "",
+              "omitted_context": 0,
+              "elapsed_ms": 12310.5,
+              "model": "deepseek-v4.1-flash",
+              "usage": {
+                "completion_tokens": 1776,
+                "prompt_tokens": 1004,
+                "total_tokens": 2780,
+                "completion_tokens_details": {
+                  "accepted_prediction_tokens": 0,
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 1664,
+                  "rejected_prediction_tokens": 0,
+                  "cached_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cache_write_tokens": null,
+                  "cached_tokens": 0,
+                  "accepted_prediction_tokens": 0,
+                  "reasoning_tokens": 0,
+                  "rejected_prediction_tokens": 0
+                },
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "cached_tokens": 0,
+                "completion_thinking_tokens": 1664,
+                "credit": 0,
+                "prompt_cache_hit_tokens": 0,
+                "prompt_cache_miss_tokens": 1004,
+                "prompt_cache_write_tokens": 0
+              },
+              "status": "follow_up",
+              "raw_output": "{\"mode\":\"follow_up\",\"reference_context\":\"The exercise study PMC:PMC3594238 from the prior exchange, with the current request limited to quoting its abstract sentence on how long the glucose decrease persisted and assessing whether that sentence reports a five-year mortality result.\",\"context_turn_ids\":[\"v08-evidence-limits-turn-1\",\"v08-evidence-limits-turn-2\"],\"referent_entities\":[\"PMC:PMC3594238\",\"abstract sentence on duration of glucose decrease\",\"five-year mortality result\"],\"clarification\":\"\"}"
+            },
+            "evidence_status": "partial",
+            "evidence_gap": "The retrieved evidence does not establish: a five-year mortality result in that abstract sentence.",
+            "answer_components": [
+              {
+                "id": "C1",
+                "requirement": "Quote the abstract sentence describing how long the glucose decrease persisted",
+                "question_span": "Quote the abstract sentence describing how long the glucose decrease persisted",
+                "source_hint": "PMC3594238",
+                "status": "supported",
+                "evidence": [
+                  {
+                    "chunk_id": "pmc:PMC3594238:2",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours."
+                  }
+                ],
+                "required_details": [
+                  "Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours."
+                ],
+                "missing_outcome": "",
+                "gap": "",
+                "answer": "The study reports: \"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\" [PMC:PMC3594238]."
+              },
+              {
+                "id": "C2",
+                "requirement": "State whether that sentence supplies a five-year mortality result",
+                "question_span": "state whether that sentence supplies a five-year mortality result",
+                "source_hint": "PMC3594238",
+                "status": "missing",
+                "evidence": [
+                  {
+                    "chunk_id": "pmc:PMC3594238:2",
+                    "citation": "PMC:PMC3594238",
+                    "quote": "Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours."
+                  }
+                ],
+                "required_details": [],
+                "missing_outcome": "a five-year mortality result in that abstract sentence",
+                "gap": "The retrieved evidence does not establish: a five-year mortality result in that abstract sentence.",
+                "answer": ""
+              }
+            ],
+            "answer": "The study reports: \"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours.\" [PMC:PMC3594238]. The retrieved evidence does not establish: a five-year mortality result in that abstract sentence.",
+            "citations": [
+              "PMC:PMC3594238"
+            ],
+            "confidence": 0.9,
+            "faithful": true,
+            "faithfulness_issues": "",
+            "iterations": 0,
+            "regen_count": 0,
+            "rewritten_queries": [],
+            "chunks": [
+              {
+                "chunk_id": "pmc:PMC3594238:2",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Results",
+                "pmid": "23536769",
+                "chunk_idx": 2,
+                "total_chunks": 5,
+                "text": "Baseline fasting glycemia was 139±05 mg/dL and HbA1c 7.9±0.7%. Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for approximately 3 hours. Comparing the two exercise modalities, responses over a 24-h period after the sessions were similar for glucose levels, glucose variance and glucose coefficient of variation. In the symbolic analysis, increases in 0 V pattern (COMB, 67.0±7.1 vs. 76.0±6.3, P = 0.003) and decreases in 1 V pattern (COMB, 29.1±5.3 vs. 21.5±5.1, P = 0.004) were observed only after the COMB session.",
+                "score": 0.9796285033226013,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:1",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Methods",
+                "pmid": "23536769",
+                "chunk_idx": 1,
+                "total_chunks": 5,
+                "text": "Fourteen patients with type 2 diabetes (56±2 years) wore a CGMS during 3 days. Participants randomly performed AER and COMB sessions, both in the morning (24 h after CGMS placement), and at least 7 days apart. Glucose variability was evaluated by glucose standard deviation, glucose variance, mean amplitude of glycemic excursions (MAGE), and glucose coefficient of variation (conventional methods) as well as by spectral and symbolic analysis (non-conventional methods).",
+                "score": 0.8529268503189087,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:3",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Conclusions",
+                "pmid": "23536769",
+                "chunk_idx": 3,
+                "total_chunks": 5,
+                "text": "Both AER and COMB exercise modalities reduce glucose levels similarly for a short period of time. The use of non-conventional analysis indicates reduction of glucose variability after a single session of combined exercises.",
+                "score": 0.8103984594345093,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:4",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Trial Registration",
+                "pmid": "23536769",
+                "chunk_idx": 4,
+                "total_chunks": 5,
+                "text": "Aerobic training, aerobic-resistance training and glucose profile (CGMS) in type 2 diabetes (CGMS exercise). ClinicalTrials.gov ID: NCT00887094.",
+                "score": 0.805661141872406,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              },
+              {
+                "chunk_id": "pmc:PMC3594238:0",
+                "citation": "PMC:PMC3594238",
+                "source": "pmc",
+                "doc_id": "PMC3594238",
+                "title": "Aerobic and Combined Exercise Sessions Reduce Glucose Variability in Type 2 Diabetes: Crossover Randomized Trial",
+                "section": "Abstract / Purpose",
+                "pmid": "23536769",
+                "chunk_idx": 0,
+                "total_chunks": 5,
+                "text": "To evaluate the effects of aerobic (AER) or aerobic plus resistance exercise (COMB) sessions on glucose levels and glucose variability in patients with type 2 diabetes. Additionally, we assessed conventional and non-conventional methods to analyze glucose variability derived from multiple measurements performed with continuous glucose monitoring system (CGMS).",
+                "score": 0.6242777705192566,
+                "highlight_ranges": [],
+                "external_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3594238/",
+                "authors": "Figueira Franciele R.; Umpierre Daniel; Casali Karina R.; Tetelbom Pedro S.; Henn Nicoli T.; Ribeiro Jorge P.; Schaan Beatriz D.",
+                "journal": "PLOS ONE",
+                "year": 2013
+              }
+            ],
+            "thread_id": "v08-evidence-limits",
+            "latency_ms": 78321.5
+          },
+          "timeline": [
+            {
+              "name": "resolve_context",
+              "label": "Resolve Context",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131748791,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": "follow_up",
+                "rewrite_hint": null,
+                "new_query": "Quote the abstract sentence describing how long the glucose decrease persisted, and state whether that sentence supplies a five-year mortality result.\n\nReference context for interpreting this question (not evidence):\nThe exercise study PMC:PMC3594238 from the prior exchange, with the current request limited to quoting its abstract sentence on how long the glucose decrease persisted and assessing whether that sentence reports a five-year mortality result.",
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 12312
+            },
+            {
+              "name": "route",
+              "label": "Route",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131761108,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": "factual"
+              },
+              "elapsed_ms": 12536
+            },
+            {
+              "name": "retrieve",
+              "label": "Retrieve",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131773645,
+              "detail": {
+                "count": 13,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 1582
+            },
+            {
+              "name": "rerank",
+              "label": "Rerank",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131775227,
+              "detail": {
+                "count": 5,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 26365
+            },
+            {
+              "name": "grade",
+              "label": "Grade",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131801592,
+              "detail": {
+                "count": null,
+                "relevance_score": 0.9,
+                "relevant": true,
+                "reason": "The abstract sentence on glucose decrease duration is present; it does not report a five-year mortality result.",
+                "rewrite_hint": "",
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 10820
+            },
+            {
+              "name": "generate",
+              "label": "Generate",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131812413,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": "The study reports: \"Glucose levels decreased immediately after AER and COMB protocols by ∼16%, which was sustained for a",
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 6124
+            },
+            {
+              "name": "check",
+              "label": "Check",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131818539,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": true,
+                "issues": "",
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 8557
+            },
+            {
+              "name": "append_history",
+              "label": "Append History",
+              "status": "done",
+              "summary": "Recorded node output",
+              "timestamp": 1791131827096,
+              "detail": {
+                "count": null,
+                "relevance_score": null,
+                "relevant": null,
+                "reason": null,
+                "rewrite_hint": null,
+                "new_query": null,
+                "rewritten_queries": null,
+                "answer_preview": null,
+                "faithful": null,
+                "issues": null,
+                "confidence": null,
+                "route": null
+              },
+              "elapsed_ms": 2
+            }
+          ],
+          "liveChunks": [],
+          "error": null,
+          "audits": [],
+          "answer_sha256": "7025ea368e821d6a100a5b42a682ab5fc54ddefa721693312f0d139bd09284f6",
+          "source_hashes": {
+            "pmc:PMC3594238:2": "96d4b4a46e565db471319bded2a9739e97553cc5af52d3365f11046e3f815a10",
+            "pmc:PMC3594238:1": "c09a9b02fb69cb11e1f04d8841f739822fc5f3f042c730c4a63112ee752f9541",
+            "pmc:PMC3594238:3": "444909c5406f77af26202f361ee1bce4f63d715762fe7ec44930d122c56d9471",
+            "pmc:PMC3594238:4": "b41be9ce00d1886e4d4956c605127ab51800d15a3bb97237aff6f28580602ce8",
+            "pmc:PMC3594238:0": "9758b51b4a5013a90507b8087c9402d99c6d51502fb2b5aea11e2ba6362ccc8b"
+          }
+        }
+      ]
+    }
+  ]
+}

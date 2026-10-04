@@ -120,6 +120,17 @@ after **Stop** is pressed.
 `openapi.json` and `frontend/src/types/api.gen.ts` are generated: run
 `python scripts/export_openapi.py`, then `npm --prefix frontend run generate-types`.
 
+## Design decisions
+
+| Decision | Reason |
+|---|---|
+| One model (Flash) for every role, no automatic fallback | A stronger Pro model was compared and rejected for its token cost; mixing models would also blur what each result measures |
+| Ask is the entry point; audit opens inside an answer | An earlier version made the audit a separate workspace, which split the product into two tools |
+| Direct is the default audit | It completes far more audits (47/48 vs 26/48). Finer methods caught slightly more planted errors in small constructed sets, but the gain was not clear and left many unfinished items ([research](research.md#4-fine-grained-audits-more-detail-more-unfinished-work)) |
+| No confidence percentages | Calibration found no score threshold that kept acceptance errors at or below 5% ([research](research.md#2-how-reliable-is-a-model-as-a-claim-checker)) |
+| The audit never rewrites the answer | Checker errors would turn correct answers into wrong ones; the original answer and the audit stay side by side |
+| Earlier answers are context, never evidence | An answer citing a previous answer would be citing itself; every turn retrieves fresh sources |
+
 ## MCP tools
 
 [`mcp_server/server.py`](../src/medrag/mcp_server/server.py) exposes `search_literature`,

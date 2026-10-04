@@ -24,7 +24,7 @@ export interface AppState extends View {
   patchRequest: (target: Target, patch: (revision: Revision) => Revision) => void
   finish: (target: Target, result?: AnswerOut, error?: string, cancelled?: boolean) => Promise<void>
   saveAudit: (target: Target, record: AuditRecord) => Promise<void>
-  addConversation: (conversation: Conversation) => void
+  addConversation: (conversation: Conversation, replaceExisting?: boolean) => void
 }
 function view(conversations: Conversation[], cid: string, tid: string | null, rid: string | null): View {
   const turn = conversations.find(c => c.id === cid)?.turns.find(t => t.id === tid)
@@ -99,10 +99,14 @@ export const useStore = create<AppState>((set, get) => ({
     const audit = await attachAudit(revision, record)
     set(s => updateView(s, mutate(s.conversations, target, r => ({ ...r, audits: [...r.audits, audit] }))))
   },
-  addConversation: conversation => {
+  addConversation: (conversation, replaceExisting = false) => {
     if (unreadableIds.has(conversation.id)) throw new Error('An unreadable local record has this ID. Import in another browser profile to avoid overwriting it.')
     const existing = get().conversations.find(c => c.id === conversation.id)
-    if (existing && JSON.stringify(existing) !== JSON.stringify(conversation)) throw new Error('A different version of this conversation already exists here. Import in another browser profile to preserve both.')
+    if (existing && JSON.stringify(existing) !== JSON.stringify(conversation)) {
+      // Read-only replay holds no user work, so a newer bundled recording replaces the stored copy.
+      if (!replaceExisting) throw new Error('A different version of this conversation already exists here. Import in another browser profile to preserve both.')
+      set(s => ({ conversations: s.conversations.map(c => c.id === conversation.id ? conversation : c) }))
+    }
     if (!existing) set(s => ({ conversations: [...s.conversations, conversation] }))
     get().setThreadId(conversation.id)
   },

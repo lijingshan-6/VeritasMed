@@ -25,7 +25,7 @@ export function SavedConversations() {
       const data = isReplayOnly ? await replayConversation(example)
         : (await api.get('/api/conversations/examples/' + encodeURIComponent(example.id))).data
       const conversation = await importConversation(JSON.stringify(data))
-      addConversation(conversation)
+      addConversation(conversation, isReplayOnly)
       const first = conversation.turns[0]
       if (first) selectRevision(first.id, first.revisions[0].id)
       setOpen(false)

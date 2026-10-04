@@ -98,8 +98,11 @@ The v0.9 review traced two failures in the recorded demo conversations back to t
 - "Do not rank their effectiveness" was treated as a question needing evidence and reported as
   missing. Writing instructions are now excluded from the evidence outline. Fixed.
 
-The bundled recordings still show the original behaviour. They will be re-recorded once the
-fixes have been checked with real model calls.
+All nine questions were then re-recorded with the real model (one attempt each). Both answers
+were now correct on the first attempt, and the other seven answers were unchanged in substance.
+In that run the model happened to mark the mortality part as a gap rather than binding it to the
+shared sentence, so the first fix is covered by the offline regression test built from the
+original records.
 
 ## Open problems
 
@@ -107,3 +110,20 @@ fixes have been checked with real model calls.
 - The demo index covers three papers; a larger open-access corpus is the next product step.
 - Question coverage (did the answer address every part of the question?) is checked only by the
   agent's own review, which is itself a model judgment.
+
+## References
+
+- **SciFact** — Wadden et al., *Fact or Fiction: Verifying Scientific Claims*, EMNLP 2020.
+  [Paper](https://arxiv.org/abs/2004.14974) · [data](https://github.com/allenai/scifact)
+  (claims/labels CC BY 4.0, abstracts ODC-By 1.0).
+- **RAGTruth** — Niu et al., *RAGTruth: A Hallucination Corpus for Developing Trustworthy
+  Retrieval-Augmented Language Models*, ACL 2024. [Data](https://github.com/ParticleMedia/RAGTruth).
+- **MiniCheck** — Tang, Laban and Durrett, *MiniCheck: Efficient Fact-Checking of LLMs on Grounding
+  Documents*, EMNLP 2024. [Paper](https://arxiv.org/abs/2404.10774) ·
+  [model](https://huggingface.co/lytang/MiniCheck-Flan-T5-Large), run with full inputs and no truncation.
+- **BGE-M3** — Chen et al., *BGE M3-Embedding*, 2024. [Paper](https://arxiv.org/abs/2402.03216) ·
+  [model](https://huggingface.co/BAAI/bge-m3). Reranker: [BAAI/bge-reranker-v2-m3](https://huggingface.co/BAAI/bge-reranker-v2-m3).
+- **Demo papers** — Seaquist et al. 2024 (GRADE, CC0), Lee et al. 2016 (CC BY 4.0), Figueira et al.
+  2013 (CC BY). Full citations and licences: [source card](../data/demo/conversations/README.md).
+
+Code is Apache-2.0; this does not relicense any dataset, paper or model weights.

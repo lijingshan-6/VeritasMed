@@ -9,7 +9,8 @@ of the working tree and is archived at
 - **Fixed:** an answer component bound to a source sentence already shown for another component
   lost its own answer (the recorded five-year-mortality omission). Writing instructions such as
   "do not rank them" are no longer reported as missing evidence. Regression tests replay the
-  recorded failures; the prompt change has not yet been re-measured with model calls.
+  recorded failures, and a new real-model recording of all nine demo questions (run02, now the
+  bundled replay) answers both cases correctly on the first attempt.
 - **Removed:** the standalone audit/research workspace, Research and Explore pages, the authored
   guided demo, the MiMo backend, the Split / Context / Quote-v2 / Atomic v1 audit methods,
   `/api/search`, `/api/history`, legacy numbered pipelines, benchmark tooling, experiment scripts

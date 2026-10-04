@@ -1,0 +1,5 @@
+{
+  "protocol_sha256": "f4f7d33d1a0b1f848258d3c6380a067bf43ae90e60cb6e19522b0e2a0ad8346e",
+  "corpus_sha256": "783e6ae89ac3c7e4e92ecefbb8024dadcf9be44b7bdd55e3e38acc8cfae7c39f",
+  "scope": "Saved actual Ask output. One request per scheduled question; no output-selected retry."
+}

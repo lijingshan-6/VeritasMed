@@ -56,7 +56,8 @@ def main() -> None:
         src = run / f"{args.split}-{arm}.jsonl"
         if not src.exists():
             continue
-        rows = [json.loads(line) for line in src.read_text(encoding="utf8").splitlines()]
+        # The last attempt per question is the one that counts (as in run.py and report.py).
+        rows = list({r["pmid"]: r for r in map(json.loads, src.read_text(encoding="utf8").splitlines())}.values())
         out = run / f"{args.split}-{arm}.scored.jsonl"
         with out.open("w", encoding="utf8") as f:
             for row in rows:

@@ -1,0 +1,114 @@
+{
+ "run": "main",
+ "split": "test_full",
+ "arms": {
+  "A0": {
+   "name": "Closed-book",
+   "questions": 500,
+   "completed": 500,
+   "accuracy": 0.522,
+   "macro_f1": 0.4306710754985801,
+   "unsupported_rate": null,
+   "paper_consistency": 0.17900485436893204,
+   "retrieval_hit": null,
+   "sentences_per_answer": 3.296,
+   "absence_statements": 15,
+   "usd_per_question": 0.001391166,
+   "calls_per_question": 1,
+   "median_seconds": 7.175
+  },
+  "A1": {
+   "name": "Plain RAG",
+   "questions": 500,
+   "completed": 500,
+   "accuracy": 0.638,
+   "macro_f1": 0.5801469389536488,
+   "unsupported_rate": 0.4452877925363694,
+   "paper_consistency": 0.5667299177735611,
+   "retrieval_hit": 0.982,
+   "sentences_per_answer": 3.162,
+   "absence_statements": 153,
+   "usd_per_question": 0.001237044,
+   "calls_per_question": 1,
+   "median_seconds": 10.434999999999999
+  },
+  "A2": {
+   "name": "VeritasMed",
+   "questions": 500,
+   "completed": 500,
+   "accuracy": 0.636,
+   "macro_f1": 0.5648702017083462,
+   "unsupported_rate": 0.21525503041647165,
+   "paper_consistency": 0.7758540009358914,
+   "retrieval_hit": 0.984,
+   "sentences_per_answer": 4.274,
+   "absence_statements": 240,
+   "usd_per_question": 0.010544526,
+   "calls_per_question": 4.662,
+   "median_seconds": 59.28
+  },
+  "A4": {
+   "name": "Gold abstract",
+   "questions": 500,
+   "completed": 500,
+   "accuracy": 0.656,
+   "macro_f1": 0.6009697263687076,
+   "unsupported_rate": 0.38885329916720046,
+   "paper_consistency": 0.6540679051889814,
+   "retrieval_hit": null,
+   "sentences_per_answer": 3.122,
+   "absence_statements": 92,
+   "usd_per_question": 0.000932988,
+   "calls_per_question": 1,
+   "median_seconds": 6.615
+  }
+ },
+ "paired_vs_A1": {
+  "A0-A1": {
+   "accuracy": {
+    "diff": -0.11599999999999999,
+    "low": -0.16800000000000004,
+    "high": -0.06399999999999995
+   },
+   "paper_consistency": {
+    "diff": -0.38772506340462903,
+    "low": -0.4205897037027198,
+    "high": -0.35567531621894954
+   }
+  },
+  "A2-A1": {
+   "accuracy": {
+    "diff": -0.0020000000000000018,
+    "low": -0.040000000000000036,
+    "high": 0.03600000000000003
+   },
+   "paper_consistency": {
+    "diff": 0.20912408316233033,
+    "low": 0.17933891027075533,
+    "high": 0.23837486277677666
+   },
+   "unsupported_rate": {
+    "diff": -0.23003276211989776,
+    "low": -0.2585074170829704,
+    "high": -0.20174130382909095
+   }
+  },
+  "A4-A1": {
+   "accuracy": {
+    "diff": 0.018000000000000016,
+    "low": -0.014000000000000012,
+    "high": 0.052000000000000046
+   },
+   "paper_consistency": {
+    "diff": 0.08733798741542032,
+    "low": 0.05945815034874713,
+    "high": 0.1152689465543908
+   },
+   "unsupported_rate": {
+    "diff": -0.05643449336916895,
+    "low": -0.08656599811504828,
+    "high": -0.025790968679905713
+   }
+  }
+ }
+}

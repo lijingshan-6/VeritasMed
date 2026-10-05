@@ -225,6 +225,36 @@ def report(path: Path) -> None:
     statuses = Counter((r["clean_audit_status"], r["planted_audit_status"]) for r in ok)
     lines += ["", f"Audit statuses (clean, planted): {dict(statuses)}",
               "Flagged = an audit claim overlapping the target sentence is contradicted or insufficient; 95% Wilson intervals."]
+    # Strict paired view: of targets the audit accepted when clean, how many does it flag once planted?
+    accepted = [r for r in ok if not r["clean"]["flagged"]]
+    newly = sum(r["planted"]["flagged"] for r in accepted)
+    lo, hi = wilson(newly, len(accepted))
+    lines += ["", f"Newly flagged after planting (targets accepted when clean): {newly}/{len(accepted)} = "
+              f"{100 * newly / len(accepted):.1f}% [{100 * lo:.0f}, {100 * hi:.0f}]"]
+    summary["newly_flagged"] = {"k": newly, "n": len(accepted)}
+    adj_path = OUT / "adjudication.json"
+    if adj_path.exists():
+        adj = json.loads(adj_path.read_text(encoding="utf8"))
+        flags = {r["pmid"] for r in ok if r["clean"]["flagged"]}
+        misses = {r["pmid"] for r in ok if not r["planted"]["flagged"]}
+        if flags != set(adj["clean_flags"]) or misses != set(adj["planted_misses"]):
+            raise SystemExit("adjudication.json does not cover exactly the flagged/missed items")
+        fl = Counter(v[0] for v in adj["clean_flags"].values())
+        ms = Counter(v[0] for v in adj["planted_misses"].values())
+        n = len(ok)
+        real_fa = fl["audit_wrong"] + fl["source_artifact"] + fl["debatable"]
+        valid = n - ms["plant_invalid"]
+        material = valid - ms["plant_weak"]
+        lines += ["", "After manual adjudication (labels and reasons in adjudication.json; adjudicator: Claude, not a blinded expert):",
+                  f"- clean-sentence flags: {dict(fl)} -> unwarranted flags {real_fa}/{n} = {100 * real_fa / n:.1f}% "
+                  f"[{100 * wilson(real_fa, n)[0]:.0f}, {100 * wilson(real_fa, n)[1]:.0f}]; the rest point at content the cited passages do not state",
+                  f"- misses: {dict(ms)} -> detection of valid plants {valid - ms['plant_weak'] - ms['true_miss']}/{valid} = "
+                  f"{100 * (valid - ms['plant_weak'] - ms['true_miss']) / valid:.1f}%; of material errors "
+                  f"{material - ms['true_miss']}/{material} = {100 * (material - ms['true_miss']) / material:.1f}% "
+                  f"[{100 * wilson(material - ms['true_miss'], material)[0]:.0f}, {100 * wilson(material - ms['true_miss'], material)[1]:.0f}]"]
+        summary["adjudicated"] = {"clean_flags": dict(fl), "misses": dict(ms), "unwarranted_flags": real_fa, "n": n,
+                                  "valid_plants": valid, "material_plants": material, "true_misses": ms["true_miss"]}
+        (OUT / "summary.json").write_text(json.dumps(summary, indent=1) + "\n", encoding="utf8")
     (OUT / "summary.json").write_text(json.dumps(summary, indent=1) + "\n", encoding="utf8")
     (OUT / "summary.md").write_text("\n".join(lines) + "\n", encoding="utf8")
     print("\n".join(lines))

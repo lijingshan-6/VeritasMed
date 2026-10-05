@@ -1,0 +1,60 @@
+{
+ "number": {
+  "n": 50,
+  "detected": 50,
+  "contradicted": 48,
+  "false_alarm": 4,
+  "not_covered": 0
+ },
+ "direction": {
+  "n": 50,
+  "detected": 50,
+  "contradicted": 48,
+  "false_alarm": 7,
+  "not_covered": 0
+ },
+ "population": {
+  "n": 50,
+  "detected": 48,
+  "contradicted": 41,
+  "false_alarm": 3,
+  "not_covered": 1
+ },
+ "overreach": {
+  "n": 50,
+  "detected": 39,
+  "contradicted": 4,
+  "false_alarm": 6,
+  "not_covered": 0
+ },
+ "all": {
+  "n": 200,
+  "detected": 187,
+  "contradicted": 141,
+  "false_alarm": 20,
+  "not_covered": 1
+ },
+ "newly_flagged": {
+  "k": 167,
+  "n": 180
+ },
+ "adjudicated": {
+  "clean_flags": {
+   "audit_wrong": 2,
+   "audit_right": 13,
+   "source_artifact": 1,
+   "audit_right_strict": 3,
+   "debatable": 1
+  },
+  "misses": {
+   "plant_weak": 5,
+   "plant_invalid": 4,
+   "true_miss": 4
+  },
+  "unwarranted_flags": 4,
+  "n": 200,
+  "valid_plants": 196,
+  "material_plants": 191,
+  "true_misses": 4
+ }
+}

@@ -1,0 +1,54 @@
+{
+ "adjudicator": "Claude (the assistant that built the harness), not a blinded clinical expert. Each label was decided by reading the sentence, the audit's explanation and, where marked, the source abstract.",
+ "labels": {
+  "clean_flag": {
+   "audit_right": "the clean sentence asserts something its cited passages do not state (often an added study-design label or causal limitation)",
+   "audit_right_strict": "the sentence turns a non-significant result into 'no effect'; the audit's rule (nonsignificance is not no effect) is applied correctly",
+   "source_artifact": "the supplied source text is corrupted, so the audit is right about the text but the sentence is right about the paper",
+   "audit_wrong": "the sentence is supported; the flag is pedantic or mistaken",
+   "debatable": "reasonable readers could disagree"
+  },
+  "planted_miss": {
+   "plant_invalid": "the rewritten sentence is still supported by the source (checked against the abstract)",
+   "plant_weak": "only the wording strength changed (showed -> proved, adds 'all') with no material change in content",
+   "true_miss": "a material error the audit should have flagged"
+  }
+ },
+ "clean_flags": {
+  "9363244": ["audit_wrong", "Source spells the city 'Griefswald'; the audit objects to the correct spelling."],
+  "26113007": ["audit_right", "Adds 'cross-sectional', 'longitudinal or interventional' and a causal limitation not in the abstract."],
+  "26561905": ["audit_right", "Adds a causal-equivalence limitation the abstract does not discuss."],
+  "17192736": ["audit_right", "Labels both reports single-arm case series without comparator; not stated in the sources."],
+  "24340838": ["source_artifact", "Abstract text reads '(35 years old' - the '<' was lost in the dataset; the answer's '<35' is right about the paper."],
+  "12040336": ["audit_right", "Adds 'rather than randomized allocation to a tertiary center' and a causal limit not in the abstract."],
+  "22876568": ["audit_right", "Abstract compares mean 25(OH)D, not deficiency; 'deficiency was not a distinguishing feature' goes beyond it."],
+  "23539689": ["audit_wrong", "'Concerns still existed' restates the question's framing of 72% incorrect dosing; flag is pedantic."],
+  "23761381": ["audit_right", "Adds an inferential limitation the abstract does not state."],
+  "25604390": ["audit_right", "Calls the series retrospective and adds an evidence-quality conclusion; neither is in the abstract."],
+  "12632437": ["audit_right", "Adds a claim about whether changing exposures prevents disease."],
+  "15919266": ["audit_right_strict", "Non-significant DSS difference (p=0.21) rendered as 'did not alter' survival."],
+  "12070552": ["debatable", "'Did not decrease morbidity' summarises 'no role' in four morbidity outcomes; strict but arguable."],
+  "12846929": ["audit_right_strict", "Non-significant follow-up difference rendered as 'did not matter'."],
+  "27217036": ["audit_right", "Abstract says 'longer duration' is not based on tumour biology; dropping 'longer' changes the claim."],
+  "22266735": ["audit_right", "Adds a contrast with observed clinical outcomes not in the abstract."],
+  "23149821": ["audit_right", "Abstract says myocardial SPECT; 'gated perfusion' is an added technical detail."],
+  "23677366": ["audit_right_strict", "Non-significant difference rendered as 'did not improve diagnostic performance'."],
+  "24698298": ["audit_right", "Abstract labels B as control and C only as group C."],
+  "20187289": ["audit_right", "Adds 'under critical review rather than established', which the abstract does not say."]
+ },
+ "planted_misses": {
+  "24516646": ["plant_weak", "'was reported as reproducible' -> 'proved to be reproducible'; content unchanged."],
+  "24622801": ["plant_weak", "'showed' -> 'proved' an in-vitro effect; content unchanged."],
+  "23806388": ["plant_invalid", "Abstract result: 'each nomogram could predict ... PCSM'. The original answer sentence quoted background; the plant is correct."],
+  "23992109": ["plant_invalid", "Percentages are of patients with acquired SK; adding 'all patients with acquired SK' changes nothing."],
+  "16971978": ["plant_weak", "Adds 'all' to angiograms examined; no material change."],
+  "9582182": ["true_miss", "'indicating' -> 'proving' a causal-sounding interpretation of correlations."],
+  "11481172": ["plant_invalid", "Abstract reports significantly more consistent episodes than chance; 'differed significantly' is supported."],
+  "8566975": ["plant_weak", "Adds 'all' to patients analysed; no material change."],
+  "25756710": ["plant_invalid", "Abstract: 'a convenience sample of adult patients'; adding 'in adults' is correct."],
+  "26536001": ["plant_weak", "'detected' -> 'confirmed' by IHC; no material change."],
+  "22758782": ["true_miss", "Non-significant difference (P=0.96) rendered as 'equivalent'; the audit's own rule should flag it."],
+  "26864326": ["true_miss", "Discrimination AUC turned into 'capable of determining whether patients should be admitted'."],
+  "16772913": ["true_miss", "Implant brand changed (Mentor -> Allergan); no audit claim covered the sentence."]
+ }
+}

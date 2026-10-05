@@ -1,0 +1,228 @@
+diff --git a/src/medrag/agent/evidence/__init__.py b/src/medrag/agent/evidence/__init__.py
+index 6788552..aa29ec5 100644
+--- a/src/medrag/agent/evidence/__init__.py
++++ b/src/medrag/agent/evidence/__init__.py
+@@ -21,4 +21,6 @@ from .binding import (
+ )
+ from .restoration import (
+     missing_numeric_details as missing_numeric_details,
++    restore_numeric_quotes as restore_numeric_quotes,
++    preserve_result_context as preserve_result_context,
+ )
+diff --git a/src/medrag/agent/evidence/restoration.py b/src/medrag/agent/evidence/restoration.py
+index 17cf8a3..8fe2b21 100644
+--- a/src/medrag/agent/evidence/restoration.py
++++ b/src/medrag/agent/evidence/restoration.py
+@@ -1,4 +1,4 @@
+-"""Detect bound numbers that an answer omitted; repair happens in the check node."""
++"""Restore omitted numbers and result context from bound quotations."""
+ from __future__ import annotations
+ 
+ import re
+@@ -30,3 +30,94 @@ def missing_numeric_details(components: list[dict], claims: list[dict]) -> dict[
+         if absent:
+             missing[component["id"]] = absent
+     return missing
++
++
++def restore_numeric_quotes(components: list[dict], claims: list[dict]) -> list[dict]:
++    """Restore omitted bound numbers without another generative call.
++
++    Prefer a full source sentence over a disconnected number or an invented
++    paraphrase. This does not infer an outcome or repair semantic contradictions.
++    """
++    missing = missing_numeric_details(components, claims)
++    for component in components:
++        if component["status"] == "missing":
++            continue
++        rendered = normalized(" ".join(c.get("text", "") for c in claims if c.get("component_id") == component["id"]))
++        for detail in component["required_details"]:
++            # A vague 'used sampling' must not replace the actual method. Allow
++            # concise paraphrases; quote only substantial lexical omissions.
++            terms = set(re.findall(r"\b[a-z][a-z0-9-]{4,}\b", normalized(detail)))
++            if (_METHOD_STEPS.search(normalized(detail)) and terms
++                    and sum(term in rendered for term in terms) / len(terms) < 0.5):
++                if detail not in missing.setdefault(component["id"], []):
++                    missing[component["id"]].append(detail)
++            # Preserve a selected contrast even if its second arm has no number.
++            # This lexical fallback may quote a valid paraphrase unnecessarily;
++            # it does not claim to establish semantic equivalence.
++            contrast = re.search(r"\b(?:whereas|while|but)\b(.+)", normalized(detail))
++            if contrast:
++                tail_terms = set(re.findall(r"\b[a-z][a-z0-9-]{3,}\b", contrast[1])) - {
++                    "with", "that", "this", "were", "remained", "substantially", "significantly",
++                }
++                if tail_terms and sum(t in rendered for t in tail_terms) / len(tail_terms) < 0.75:
++                    if detail not in missing.setdefault(component["id"], []):
++                        missing[component["id"]].append(detail)
++    result = list(claims)
++    for component in components:
++        used = set()
++        for detail in missing.get(component["id"], []):
++            span = next((s for s in component["evidence"] if normalized(detail) in normalized(s["quote"])), None)
++            if span and span["quote"] not in used:
++                result.append({"component_id": component["id"],
++                               "text": f'The study reports: "{span["quote"]}"',
++                               "cite": [span["citation"]]})
++                used.add(span["quote"])
++    return result
++
++
++def preserve_result_context(components: list[dict], claims: list[dict]) -> list[dict]:
++    """Keep actors, denominators and qualifiers together in critical results.
++
++    A paraphrase containing all the digits can still change whose performance
++    was measured. For numerical/method components render the selected complete
++    source sentences. Other components retain their generated explanation.
++    This is extractive presentation, not an additional semantic judgment.
++
++    A sentence already rendered for another component is not rendered again:
++    a second copy is deduplicated away and would erase this component's own
++    answer (e.g. "state whether that sentence reports five-year mortality").
++    """
++    projected_ids = {component["id"] for component in components}
++    rendered = {c.get("text") for c in claims if c.get("component_id") not in projected_ids}
++    result = []
++    for component in components:
++        own = [c for c in claims if c.get("component_id") == component["id"]]
++        if component["status"] == "missing":
++            continue
++        if re.search(r"\b(causal\w*|limitation\w*|why|prevent\w*|cannot)\b", normalized(component["requirement"])):
++            # A design quotation supports an explanation but cannot replace it.
++            # The semantic checker still reviews that generated explanation.
++            result.extend(own)
++            continue
++        critical = any(re.search(r"\d", d) or _METHOD_STEPS.search(normalized(d))
++                       for d in component["required_details"])
++        if not critical:
++            result.extend(own)
++            continue
++        selected = []
++        for span in component["evidence"]:
++            if any(normalized(d) in normalized(span["quote"]) for d in component["required_details"]):
++                if span not in selected:
++                    selected.append(span)
++        # Preserve the source's text (including "we") inside explicit quotation
++        # marks. The answer therefore does not impersonate the study authors.
++        quotes = [{"component_id": component["id"],
++                   "text": f'The study reports: "{span["quote"]}"',
++                   "cite": [span["citation"]]} for span in selected]
++        quotes = [q for q in quotes if q["text"] not in rendered]
++        if not quotes:
++            result.extend(own)
++            continue
++        rendered.update(q["text"] for q in quotes)
++        result.extend(quotes)
++    return result
+diff --git a/src/medrag/agent/nodes/generation.py b/src/medrag/agent/nodes/generation.py
+index cec7357..ad46f5d 100644
+--- a/src/medrag/agent/nodes/generation.py
++++ b/src/medrag/agent/nodes/generation.py
+@@ -4,7 +4,7 @@ from __future__ import annotations
+ import logging
+ import json
+ from langchain_core.messages import HumanMessage, SystemMessage
+-from medrag.agent.evidence import bind_claims, outline_status, repair_gaps, bind_additional_evidence, repair_design_scope, source_spans
++from medrag.agent.evidence import bind_claims, outline_status, repair_gaps, restore_numeric_quotes, bind_additional_evidence, preserve_result_context, repair_design_scope, source_spans
+ from medrag.agent.llms import make_llm_fast
+ from medrag.agent.prompts import GENERATE_SYSTEM, GENERATE_USER, REGEN_SYSTEM, REGEN_USER
+ from medrag.agent.state import AgentState
+@@ -102,6 +102,7 @@ def generate_answer_node(state: AgentState) -> dict:
+             logger.warning("[generate] LLM returned no claims and no legacy answer")
+ 
+     binding_issues = []
++    source_projections = []
+     design_repairs = []
+     if components:
+         if regen_count > 0:
+@@ -110,16 +111,32 @@ def generate_answer_node(state: AgentState) -> dict:
+             retained = [c for c in state.get("answer_claims", []) if c.get("component_id") not in repair_ids]
+             claims_raw = retained + [c for c in claims_raw if isinstance(c, dict) and c.get("component_id") in repair_ids]
+         components = bind_additional_evidence(claims_raw, components, chunks)
+-        repair_scope = [c for c in components if not regen_count or c["id"] in repair_ids]
+-        scoped = repair_design_scope(repair_scope, claims_raw)
++        projection_components = [c for c in components if not regen_count or c["id"] in repair_ids]
++        projection_ids = {c["id"] for c in projection_components}
++        scoped = repair_design_scope(projection_components, claims_raw)
+         design_repairs = [c for c in scoped if c not in claims_raw]
+-        claims_raw, binding_issues = bind_claims(scoped, components)
++        claims_raw = scoped
++        projected = preserve_result_context(projection_components, claims_raw)
++        source_projections = [c for c in projected if c not in claims_raw]
++        claims_raw = [c for c in claims_raw if c.get("component_id") not in projection_ids] + projected
++        claims_raw, binding_issues = bind_claims(claims_raw, components)
+         evidence_status, evidence_gap = outline_status(components)
+ 
+-    # Answers are written in the model's own words; the bound source sentences stay
+-    # attached to each component as evidence. Omitted numbers are caught by the
+-    # check node (missing_numeric_details) and repaired there, not pasted in.
+     validated_claims = validate_citations(claims_raw, chunks)
++    quote_repairs = []
++    if components:
++        original_claims = list(validated_claims)
++        # Critical facts use bound source sentences; requested explanations
++        # remain generative. Recover any remaining numeric/method omissions.
++        validated_claims = restore_numeric_quotes(components, validated_claims)
++        quote_repairs = [c for c in validated_claims if c not in original_claims]
++        validated_claims, remaining_issues = bind_claims(validated_claims, components)
++        # A quotation can fill a missing number, but cannot make a rejected
++        # explanation correct. Preserve its repair instruction for the checker.
++        binding_issues = list(dict.fromkeys([
++            *(issue for issue in binding_issues if ": answer omitted " not in issue),
++            *remaining_issues,
++        ]))
+     component_order = {component["id"]: index for index, component in enumerate(components)}
+     validated_claims.sort(key=lambda claim: component_order.get(claim.get("component_id"), len(components)))
+     answer, citations = build_answer_from_claims(validated_claims)
+@@ -172,7 +189,13 @@ def generate_answer_node(state: AgentState) -> dict:
+         "repair_history": ([{"attempt": regen_count, "kind": "design_scope",
+                              "component_ids": list(dict.fromkeys(c["component_id"] for c in design_repairs)),
+                              "issues": "Replaced unsupported measurement timing with the bound design and an association-versus-intervention limit."}]
+-                           if design_repairs else []),
++                           if design_repairs else []) + ([{"attempt": regen_count, "kind": "source_projection",
++                             "component_ids": list(dict.fromkeys(c["component_id"] for c in source_projections)),
++                             "issues": "Rendered critical factual components from bound source sentences."}]
++                           if source_projections else []) + ([{"attempt": regen_count, "kind": "source_quote",
++                             "component_ids": list(dict.fromkeys(c["component_id"] for c in quote_repairs)),
++                             "issues": "Restored omitted numerical details by quoting bound source sentences."}]
++                           if quote_repairs else []),
+         "answer_components": rendered_components,
+         "answer_claims": validated_claims,
+         "binding_issues": binding_issues,
+diff --git a/src/medrag/agent/prompts.py b/src/medrag/agent/prompts.py
+index 3f0858a..03942f4 100644
+--- a/src/medrag/agent/prompts.py
++++ b/src/medrag/agent/prompts.py
+@@ -61,8 +61,9 @@ SCOPE
+   does not license inventing a specific measurement schedule or other unreported protocol detail.
+   Bind that component to the design sentence and mark it supported when the limitation follows
+   logically. Do not demand an explicit author-written explanation or rename the request as one.
+-  Keep reported findings and a requested design explanation in separate components. Select only
+-  relevant findings and their necessary qualifiers, not a whole abstract.
++  Keep reported findings and a requested design explanation in separate components. The program
++  renders critical factual components using their selected source sentences; the explanation
++  remains generative. Select only relevant findings and their necessary qualifiers, not a whole abstract.
+ 
+ EVIDENCE
+ - Each source sentence has an E-ID. Select IDs from the correct study, never invent quotations.
+@@ -179,14 +180,12 @@ OUTPUT FORMAT — you must return ONLY valid JSON, nothing else:
+ }
+ 
+ RULES:
+-Answer the question directly in plain, concise English, in the third person. If the question can
+-be answered yes or no, make the first claim a one-sentence bottom line - yes, no, or that the cited
+-evidence is mixed or insufficient - naming the finding it rests on, with its citation. Lead with what was
+-asked: state each requested number or finding with the group, comparator and condition it belongs
+-to (e.g. "glargine 0.8%, glimepiride 1.3%"), rather than quoting a whole sentence. Combine related
+-findings and do not repeat a study's population under every component. The bound source sentences
+-are shown to the reader as evidence beside your answer, so do not copy them verbatim. Never replace
+-substantive method steps with a vague summary.
++Write a concise explanation in the third person. If the question can be answered yes or no, make
++the first claim a one-sentence bottom line - yes, no, or that the cited evidence is mixed or
++insufficient - naming the finding it rests on, with its citation. Combine related findings, avoid repeating a
++study's population under every component, and keep the actual actor and comparison with each
++number. Full source quotations are already available as expandable evidence; do not copy every
++source sentence into the answer. Never replace substantive method steps with a vague summary.
+ 1. Each claim must be a self-contained factual statement with a component_id matching the
+    source-bound outline (C1, C2, ...). Cover each supported component and all its required_details.
+    You may combine tightly related sentences to keep the population and comparisons together.

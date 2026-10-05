@@ -25,7 +25,8 @@ RUNTIME = ROOT / ".exp-runtime" / "pubmedqa"
 os.environ.setdefault("QDRANT_PATH", str(RUNTIME / "qdrant"))
 os.environ.setdefault("QDRANT_COLLECTION", "pubmedqa_exp")
 os.environ.setdefault("MEDRAG_DATA_DIR", str(RUNTIME))
-sys.path.insert(0, str(ROOT / "src"))
+# A3 runs the same harness against another source tree (the verbatim variant, see a3-verbatim.patch).
+sys.path.insert(0, os.environ.get("MEDRAG_SRC", str(ROOT / "src")))
 sys.path.insert(0, str(HERE))
 
 import pyarrow  # noqa: E402,F401  -- native runtimes must load before Qdrant on Windows
@@ -35,7 +36,7 @@ import arms  # noqa: E402
 
 PRICE = {"input": 0.256849, "output": 0.770548}  # USD per 1M tokens, default group
 SHANGHAI = timezone(timedelta(hours=8))
-ARMS = {"A0": "closed_book", "A1": "vanilla_rag", "A2": "veritasmed", "A4": "gold_context"}
+ARMS = {"A0": "closed_book", "A1": "vanilla_rag", "A2": "veritasmed", "A3": "veritasmed_verbatim", "A4": "gold_context"}
 LEDGER = RUNTIME / "ledger.jsonl"
 _lock = threading.Lock()
 
@@ -105,6 +106,8 @@ def main() -> None:
     ap.add_argument("--allow-peak", action="store_true")
     ap.add_argument("--retry-errors", action="store_true", help="re-run items whose last attempt failed (kept in the file)")
     args = ap.parse_args()
+    if ("A3" in args.arms.split(",")) != ("MEDRAG_SRC" in os.environ):
+        sys.exit("A3 must run alone with MEDRAG_SRC pointing at the verbatim source tree")
 
     manifest = json.loads((HERE / "manifest.json").read_text(encoding="utf8"))
     questions = json.loads((RUNTIME / "questions.json").read_text(encoding="utf8"))
@@ -115,7 +118,7 @@ def main() -> None:
     from medrag.verification.gateway import FlashGateway
     gateway = FlashGateway()
     retrieve = None
-    if args.stage == "answer" and ({"A1", "A2"} & set(args.arms.split(","))):
+    if args.stage == "answer" and ({"A1", "A2", "A3"} & set(args.arms.split(","))):
         # Open the embedded store and load models once, before worker threads race to do it.
         from medrag.agent.nodes.retrieval import _get_reranker, _get_retriever
         _get_retriever(); _get_reranker()
@@ -148,7 +151,7 @@ def main() -> None:
                     row = {"pmid": pmid, "arm": arm, "verdict": None, "label": q["label"], "usage": [], "status": "error", "error_type": type(exc).__name__}
             else:
                 fn = {"A0": lambda: arms.closed_book(gateway, q), "A1": lambda: arms.vanilla_rag(gateway, q, retrieve),
-                      "A2": lambda: arms.veritasmed(q), "A4": lambda: arms.gold_context(gateway, q)}[arm]
+                      "A2": lambda: arms.veritasmed(q), "A3": lambda: arms.veritasmed(q), "A4": lambda: arms.gold_context(gateway, q)}[arm]
                 row = {"pmid": pmid, "arm": arm, "question": q["question"], **arms.timed(fn)}
             row["usd"] = round(charge(args.key, f"{args.split}/{arm}/{args.stage}/{pmid}", row["usage"]), 6)
             append(path, row)

@@ -110,5 +110,31 @@
     "high": -0.025790968679905713
    }
   }
+ },
+ "robustness": {
+  "A1": {
+   "sentences": 1581,
+   "uncited": 149,
+   "cited_only_support": 0.6124301675977654,
+   "copied_share": 0.011385199240986717,
+   "support_copied": 0.8333333333333334,
+   "support_own_words": 0.5515035188739603
+  },
+  "A2": {
+   "sentences": 2137,
+   "uncited": 74,
+   "cited_only_support": 0.8128938439166262,
+   "copied_share": 0.18156293869911092,
+   "support_copied": 0.8969072164948454,
+   "support_own_words": 0.7598627787307033
+  },
+  "A4": {
+   "sentences": 1561,
+   "uncited": 132,
+   "cited_only_support": 0.6675997200839748,
+   "copied_share": 0.009609224855861628,
+   "support_copied": 0.6,
+   "support_own_words": 0.611254851228978
+  }
  }
 }

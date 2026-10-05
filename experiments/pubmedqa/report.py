@@ -113,7 +113,6 @@ def main() -> None:
         if arm != "A0":
             paired[f"{arm}-{ref}"]["unsupported_rate"] = bootstrap(rows_by_arm[arm], rows_by_arm[ref], uns)
     summary = {"run": args.run, "split": args.split, "arms": table, "paired_vs_" + ref: paired}
-    (run / f"{args.split}-summary.json").write_text(json.dumps(summary, indent=1) + "\n", encoding="utf8")
 
     pct = lambda x: "—" if x is None else f"{100 * x:.1f}%"  # noqa: E731
     lines = ["| Method | Accuracy | Macro-F1 | Unsupported sentences | Consistent with paper | Retrieval hit | $ / question | Median s |",
@@ -125,8 +124,56 @@ def main() -> None:
     for key, d in paired.items():
         parts = [f"{m}: {100 * v['diff']:+.1f} [{100 * v['low']:+.1f}, {100 * v['high']:+.1f}]" for m, v in d.items()]
         lines.append(f"- {key}: " + "; ".join(parts))
+    robust = robustness(run, args.split, [a for a in rows_by_arm if a != "A0"])
+    summary["robustness"] = robust
+    (run / f"{args.split}-summary.json").write_text(json.dumps(summary, indent=1) + "\n", encoding="utf8")
+    lines += ["", "Robustness (support among cited sentences only; and split by near-verbatim copying, "
+              ">=80% of a sentence's 8-grams found in its passages):", "",
+              "| Method | Uncited sentences | Supported, cited only | Copied sentences | Supported, copied | Supported, own words |",
+              "|---|---|---|---|---|---|"]
+    for arm, r in robust.items():
+        lines.append(f"| {NAMES[arm]} | {r['uncited']}/{r['sentences']} | {pct(r['cited_only_support'])} | {pct(r['copied_share'])} | "
+                     f"{pct(r['support_copied'])} | {pct(r['support_own_words'])} |")
     (run / f"{args.split}-summary.md").write_text("\n".join(lines) + "\n", encoding="utf8")
     print("\n".join(lines))
+
+
+def robustness(run: Path, split: str, arms: list[str]) -> dict:
+    """Rule out two easy explanations of a support gap: missing citations, and copying the source."""
+    import re
+    cite, splitter = re.compile(r"\[(PMID:\d+)\]"), re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9])")
+    toks = lambda s: re.findall(r"[a-z0-9]+", s.lower())  # noqa: E731
+    grams = lambda t: {tuple(t[i:i + 8]) for i in range(len(t) - 7)}  # noqa: E731
+    out = {}
+    for arm in arms:
+        answers, scored = load(run / f"{split}-{arm}.jsonl"), load(run / f"{split}-{arm}.scored.jsonl")
+        n = uncited = cited_n = cited_ok = copied = 0
+        split_counts = {True: [0, 0], False: [0, 0]}
+        for pmid, row in answers.items():
+            if row["status"] != "ok" or pmid not in scored:
+                continue
+            source = grams(toks(" ".join(c["text"] for c in row.get("chunks", []))))
+            raw = [s for s in splitter.split(" ".join(row["answer"].split())) if s.strip()]
+            for text, s in zip(raw, scored[pmid]["sentences"]):
+                g = grams(toks(cite.sub("", text)))
+                is_copy = bool(g) and len(g & source) / len(g) >= 0.8
+                if s["absence"]:
+                    continue
+                n += 1
+                copied += is_copy
+                supported = s.get("cited") == 1
+                split_counts[is_copy][0] += supported
+                split_counts[is_copy][1] += 1
+                if s["cites"]:
+                    cited_n += 1
+                    cited_ok += supported
+                else:
+                    uncited += 1
+        out[arm] = {"sentences": n, "uncited": uncited, "cited_only_support": cited_ok / cited_n if cited_n else None,
+                    "copied_share": copied / n if n else None,
+                    "support_copied": split_counts[True][0] / split_counts[True][1] if split_counts[True][1] else None,
+                    "support_own_words": split_counts[False][0] / split_counts[False][1] if split_counts[False][1] else None}
+    return out
 
 
 if __name__ == "__main__":

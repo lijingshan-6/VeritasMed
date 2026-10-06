@@ -9,9 +9,16 @@
 Paired differences vs Plain RAG (percentage points, 95% bootstrap interval):
 
 - A0-A1: accuracy: -11.6 [-16.8, -6.4]
-- A2-A1: accuracy: -0.2 [-4.0, +3.6]; unsupported_flash: -7.3 [-9.6, -4.9]; unsupported_minicheck: -23.0 [-25.9, -20.2]
-- A3-A1: accuracy: +3.8 [+0.2, +7.4]; unsupported_flash: -18.5 [-20.6, -16.4]; unsupported_minicheck: -37.1 [-39.7, -34.4]
-- A4-A1: accuracy: +1.8 [-1.4, +5.2]; unsupported_flash: -1.9 [-4.6, +0.6]; unsupported_minicheck: -5.6 [-8.7, -2.6]
+- A2-A1: accuracy: -0.2 [-4.0, +3.6]; unsupported_flash: -7.3 [-9.6, -4.9]; bottom_line_unsupported: -21.3 [-26.6, -16.1]; unsupported_minicheck: -23.0 [-25.9, -20.2]
+- A3-A1: accuracy: +3.8 [+0.2, +7.4]; unsupported_flash: -18.5 [-20.6, -16.4]; bottom_line_unsupported: -34.4 [-39.2, -29.5]; unsupported_minicheck: -37.1 [-39.7, -34.4]
+- A4-A1: accuracy: +1.8 [-1.4, +5.2]; unsupported_flash: -1.9 [-4.6, +0.6]; bottom_line_unsupported: -3.6 [-9.0, +1.8]; unsupported_minicheck: -5.6 [-8.7, -2.6]
+
+Bottom line (first sentence) unsupported - uncited or rejected by Flash; exploratory, found after the main analysis:
+
+- Plain RAG: 40.1% of 474 answers
+- VeritasMed: 15.8% of 450 answers
+- VeritasMed (verbatim): 4.2% of 480 answers
+- Gold abstract: 36.3% of 465 answers
 
 Support detail (Flash): cited sentences only / sentences in the method's own words (<80% of 8-grams found in its passages):
 

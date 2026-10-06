@@ -3,6 +3,7 @@
 A0 closed_book   no retrieval
 A1 vanilla_rag   hybrid search + rerank, top 5 passages, one cited answer
 A2 veritasmed    the full Ask graph (current default)
+A5 strict_rag    plain RAG with a strict grounding prompt (follow-up E1)
 A4 gold_context  the question's own abstract, one cited answer (upper bound)
 judge            maps any answer text to yes / no / maybe, identically for every arm
 """
@@ -21,6 +22,18 @@ numbers it rests on. Use only the supplied
 passages. Put the citation key in square brackets after every sentence that uses a passage, e.g.
 [PMID:12345]. Do not cite keys that are not supplied. If the passages do not settle the question,
 say what they do and do not show. Return JSON only: {"answer": "..."}"""
+
+STRICT_RULES = """Answer the biomedical research question in 2-5 plain sentences, using only the
+supplied passages. If the question can be answered yes or no, open with a one-sentence bottom line.
+Rules:
+- End every sentence, including the bottom line, with the citation key in square brackets of the
+  passage that supports it, e.g. [PMID:12345]. Do not cite keys that are not supplied.
+- The bottom line must be no stronger than the cited results: say yes or no only if the results
+  directly show it; an association is not an effect; a non-significant difference is not evidence
+  of no difference; if the passages do not settle the question, say so and say what they show.
+- Then give the population, comparison and numbers the bottom line rests on.
+- Do not add study-design labels, limitations or interpretations the passages do not state.
+Return JSON only: {"answer": "..."}"""
 
 CLOSED_BOOK = """Answer the biomedical research question in 2-5 plain sentences from your own
 knowledge. If it can be answered yes or no, open with a one-sentence bottom line (yes, no, or that
@@ -53,6 +66,13 @@ def closed_book(gateway, q: dict) -> dict:
 def vanilla_rag(gateway, q: dict, retrieve) -> dict:
     chunks = retrieve(q["question"])
     out, usage = _call(gateway, ANSWER_RULES, {"question": q["question"], "passages": _passages(chunks)})
+    return {"answer": str(out.get("answer", "")), "chunks": chunks, "usage": [usage]}
+
+
+def strict_rag(gateway, q: dict, retrieve) -> dict:
+    """E1 (A5): the plain-RAG arm with a stricter prompt; see PREREGISTRATION-followup.md."""
+    chunks = retrieve(q["question"])
+    out, usage = _call(gateway, STRICT_RULES, {"question": q["question"], "passages": _passages(chunks)})
     return {"answer": str(out.get("answer", "")), "chunks": chunks, "usage": [usage]}
 
 

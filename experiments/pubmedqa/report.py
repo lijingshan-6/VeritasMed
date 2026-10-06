@@ -22,7 +22,7 @@ import statistics
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-NAMES = {"A0": "Closed-book", "A1": "Plain RAG", "A2": "VeritasMed", "A3": "VeritasMed (verbatim)", "A4": "Gold abstract"}
+NAMES = {"A0": "Closed-book", "A1": "Plain RAG", "A2": "VeritasMed", "A3": "VeritasMed (verbatim)", "A4": "Gold abstract", "A5": "Strict-prompt RAG"}
 CITE, SPLIT = re.compile(r"\[(PMID:\d+)\]"), re.compile(r"(?<=[.!?])\s+(?=[A-Z0-9])")
 
 
@@ -60,7 +60,11 @@ def per_question(arm: str, answers: dict, judged: dict, scored: dict, flash: dic
             "minicheck_cited": sum(x.get("cited") == 1 for _, x in cited) if arm != "A0" else None,
             "flash": sum(fl.get(i) == 1 for i, _ in cited) if judged_all else None,
             "flash_own": (sum(fl.get(i) == 1 for i, _ in cited if i not in copied), sum(i not in copied for i, _ in sents)) if judged_all else None,
-            "hit": float(pmid in {c["doc_id"] for c in a.get("chunks", [])}) if arm in ("A1", "A2", "A3") else None,
+            # Bottom line = the answer's first sentence (all questions are yes/no). Unsupported if it carries no
+            # citation or Flash rejects it; None if it is an absence statement or was not judged.
+            "bottom": (None if not s.get("sentences") or s["sentences"][0]["absence"] else
+                       1 if not s["sentences"][0]["cites"] else (1 - fl[0] if 0 in fl else None)) if arm != "A0" else None,
+            "hit": float(pmid in {c["doc_id"] for c in a.get("chunks", [])}) if arm in ("A1", "A2", "A3", "A5") else None,
             "usd": a.get("usd", 0.0), "calls": len(a.get("usage", [])), "seconds": a.get("seconds", 0.0),
             "ok": a.get("status") == "ok",
         }
@@ -123,6 +127,8 @@ def main() -> None:
             "unsupported_flash_cited_only": unsupported(v, "flash", "n_cited"),
             "unsupported_flash_own_words": 1 - sum(a for a, _ in own) / sum(b for _, b in own) if own and sum(b for _, b in own) else None,
             "unsupported_minicheck": unsupported(v, "minicheck"),
+            "bottom_line_unsupported": (lambda b: sum(b) / len(b) if b else None)([r["bottom"] for r in v if r["bottom"] is not None]),
+            "bottom_line_judged": sum(r["bottom"] is not None for r in v),
             "uncited_share": (lambda n: 1 - sum(r["n_cited"] for r in v) / n if n else None)(sum(r["n_sent"] for r in v)),
             "copied_share": (lambda n: sum(r["n_copied"] for r in v) / n if n else None)(sum(r["n_sent"] for r in v)),
             "retrieval_hit": statistics.mean(r["hit"] for r in v) if v[0]["hit"] is not None else None,
@@ -143,6 +149,11 @@ def main() -> None:
             if both:
                 paired[f"{arm}-{ref}"]["unsupported_flash"] = bootstrap({p: rows_by_arm[arm][p] for p in both},
                                                                         {p: rows_by_arm[ref][p] for p in both}, judged)
+            bl = {p for p in rows_by_arm[arm] if rows_by_arm[arm][p]["bottom"] is not None and rows_by_arm[ref][p]["bottom"] is not None}
+            if bl:
+                rate = lambda rs: statistics.mean(r["bottom"] for r in rs)  # noqa: E731
+                paired[f"{arm}-{ref}"]["bottom_line_unsupported"] = bootstrap({p: rows_by_arm[arm][p] for p in bl},
+                                                                              {p: rows_by_arm[ref][p] for p in bl}, rate)
             paired[f"{arm}-{ref}"]["unsupported_minicheck"] = bootstrap(rows_by_arm[arm], rows_by_arm[ref], lambda rs: unsupported(rs, "minicheck"))
     summary = {"run": args.run, "split": args.split, "arms": table, "paired_vs_" + ref: paired,
                "note": "unsupported_minicheck is the original pre-registered metric, rejected by the blinded calibration (runs/agreement/)."}
@@ -158,6 +169,10 @@ def main() -> None:
     for key, d in paired.items():
         parts = [f"{m}: {100 * v['diff']:+.1f} [{100 * v['low']:+.1f}, {100 * v['high']:+.1f}]" for m, v in d.items()]
         lines.append(f"- {key}: " + "; ".join(parts))
+    lines += ["", "Bottom line (first sentence) unsupported - uncited or rejected by Flash; exploratory, found after the main analysis:", ""]
+    for t in table.values():
+        if t["bottom_line_unsupported"] is not None:
+            lines.append(f"- {t['name']}: {pct(t['bottom_line_unsupported'])} of {t['bottom_line_judged']} answers")
     lines += ["", "Support detail (Flash): cited sentences only / sentences in the method's own words "
               "(<80% of 8-grams found in its passages):", ""]
     for t in table.values():

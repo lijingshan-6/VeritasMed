@@ -13,6 +13,8 @@
    "unsupported_flash_cited_only": null,
    "unsupported_flash_own_words": null,
    "unsupported_minicheck": null,
+   "bottom_line_unsupported": null,
+   "bottom_line_judged": 0,
    "uncited_share": 1.0,
    "copied_share": 0.0,
    "retrieval_hit": null,
@@ -32,6 +34,8 @@
    "unsupported_flash_cited_only": 0.13687150837988826,
    "unsupported_flash_own_words": 0.22072936660268716,
    "unsupported_minicheck": 0.4452877925363694,
+   "bottom_line_unsupported": 0.4008438818565401,
+   "bottom_line_judged": 474,
    "uncited_share": 0.09424414927261227,
    "copied_share": 0.011385199240986717,
    "retrieval_hit": 0.982,
@@ -51,6 +55,8 @@
    "unsupported_flash_cited_only": 0.11439650993698502,
    "unsupported_flash_own_words": 0.16580903373356204,
    "unsupported_minicheck": 0.21525503041647165,
+   "bottom_line_unsupported": 0.15777777777777777,
+   "bottom_line_judged": 450,
    "uncited_share": 0.0346279831539541,
    "copied_share": 0.18156293869911092,
    "retrieval_hit": 0.984,
@@ -70,6 +76,8 @@
    "unsupported_flash_cited_only": 0.004809233728759188,
    "unsupported_flash_own_words": 0.03869969040247678,
    "unsupported_minicheck": 0.07440846824408465,
+   "bottom_line_unsupported": 0.041666666666666664,
+   "bottom_line_judged": 480,
    "uncited_share": 0.028953922789539233,
    "copied_share": 0.597758405977584,
    "retrieval_hit": 0.988,
@@ -89,6 +97,8 @@
    "unsupported_flash_cited_only": 0.12062812276945034,
    "unsupported_flash_own_words": 0.19696969696969702,
    "unsupported_minicheck": 0.38885329916720046,
+   "bottom_line_unsupported": 0.3634408602150538,
+   "bottom_line_judged": 465,
    "uncited_share": 0.08456117873158231,
    "copied_share": 0.009609224855861628,
    "retrieval_hit": null,
@@ -117,6 +127,11 @@
     "low": -0.0961910306622914,
     "high": -0.049244140229762756
    },
+   "bottom_line_unsupported": {
+    "diff": -0.21261682242990657,
+    "low": -0.26635514018691586,
+    "high": -0.16121495327102803
+   },
    "unsupported_minicheck": {
     "diff": -0.23003276211989776,
     "low": -0.2585074170829704,
@@ -134,6 +149,11 @@
     "low": -0.20573106755782677,
     "high": -0.16360827617169116
    },
+   "bottom_line_unsupported": {
+    "diff": -0.3435448577680525,
+    "low": -0.39168490153172864,
+    "high": -0.29540481400437635
+   },
    "unsupported_minicheck": {
     "diff": -0.37087932429228476,
     "low": -0.3972991054670011,
@@ -150,6 +170,11 @@
     "diff": -0.019383731258916348,
     "low": -0.04550932671379493,
     "high": 0.005780095610603997
+   },
+   "bottom_line_unsupported": {
+    "diff": -0.0358744394618834,
+    "low": -0.08968609865470856,
+    "high": 0.0179372197309417
    },
    "unsupported_minicheck": {
     "diff": -0.05643449336916895,

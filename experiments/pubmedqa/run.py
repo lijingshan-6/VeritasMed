@@ -36,7 +36,7 @@ import arms  # noqa: E402
 
 PRICE = {"input": 0.256849, "output": 0.770548}  # USD per 1M tokens, default group
 SHANGHAI = timezone(timedelta(hours=8))
-ARMS = {"A0": "closed_book", "A1": "vanilla_rag", "A2": "veritasmed", "A3": "veritasmed_verbatim", "A4": "gold_context"}
+ARMS = {"A0": "closed_book", "A1": "vanilla_rag", "A2": "veritasmed", "A3": "veritasmed_verbatim", "A4": "gold_context", "A5": "strict_rag"}
 LEDGER = RUNTIME / "ledger.jsonl"
 _lock = threading.Lock()
 
@@ -118,7 +118,7 @@ def main() -> None:
     from medrag.verification.gateway import FlashGateway
     gateway = FlashGateway()
     retrieve = None
-    if args.stage == "answer" and ({"A1", "A2", "A3"} & set(args.arms.split(","))):
+    if args.stage == "answer" and ({"A1", "A2", "A3", "A5"} & set(args.arms.split(","))):
         # Open the embedded store and load models once, before worker threads race to do it.
         from medrag.agent.nodes.retrieval import _get_reranker, _get_retriever
         _get_retriever(); _get_reranker()
@@ -151,7 +151,8 @@ def main() -> None:
                     row = {"pmid": pmid, "arm": arm, "verdict": None, "label": q["label"], "usage": [], "status": "error", "error_type": type(exc).__name__}
             else:
                 fn = {"A0": lambda: arms.closed_book(gateway, q), "A1": lambda: arms.vanilla_rag(gateway, q, retrieve),
-                      "A2": lambda: arms.veritasmed(q), "A3": lambda: arms.veritasmed(q), "A4": lambda: arms.gold_context(gateway, q)}[arm]
+                      "A2": lambda: arms.veritasmed(q), "A3": lambda: arms.veritasmed(q), "A4": lambda: arms.gold_context(gateway, q),
+                      "A5": lambda: arms.strict_rag(gateway, q, retrieve)}[arm]
                 row = {"pmid": pmid, "arm": arm, "question": q["question"], **arms.timed(fn)}
             row["usd"] = round(charge(args.key, f"{args.split}/{arm}/{args.stage}/{pmid}", row["usage"]), 6)
             append(path, row)

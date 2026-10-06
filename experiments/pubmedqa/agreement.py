@@ -31,7 +31,7 @@ from langchain_core.messages import HumanMessage, SystemMessage  # noqa: E402
 SEED = 20261005
 N = 100
 ARMS = ["A1", "A2", "A4"]
-NAMES = {"A1": "Plain RAG", "A2": "VeritasMed", "A3": "VeritasMed (verbatim)", "A4": "Gold abstract"}
+NAMES = {"A1": "Plain RAG", "A2": "VeritasMed", "A3": "VeritasMed (verbatim)", "A4": "Gold abstract", "A5": "Strict-prompt RAG"}
 OUT = HERE / "runs" / "agreement"
 JUDGE = """You check citations. For each numbered sentence, decide whether its cited passages
 establish all of its material content (numbers, direction of findings, population, comparison,

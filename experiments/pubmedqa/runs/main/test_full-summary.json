@@ -8,11 +8,15 @@
    "completed": 500,
    "accuracy": 0.522,
    "macro_f1": 0.4306710754985801,
-   "unsupported_rate": null,
-   "paper_consistency": 0.17900485436893204,
+   "unsupported_flash": null,
+   "flash_judged_questions": 0,
+   "unsupported_flash_cited_only": null,
+   "unsupported_flash_own_words": null,
+   "unsupported_minicheck": null,
+   "uncited_share": 1.0,
+   "copied_share": 0.0,
    "retrieval_hit": null,
    "sentences_per_answer": 3.296,
-   "absence_statements": 15,
    "usd_per_question": 0.001391166,
    "calls_per_question": 1,
    "median_seconds": 7.175
@@ -23,11 +27,15 @@
    "completed": 500,
    "accuracy": 0.638,
    "macro_f1": 0.5801469389536488,
-   "unsupported_rate": 0.4452877925363694,
-   "paper_consistency": 0.5667299177735611,
+   "unsupported_flash": 0.2182163187855788,
+   "flash_judged_questions": 500,
+   "unsupported_flash_cited_only": 0.13687150837988826,
+   "unsupported_flash_own_words": 0.22072936660268716,
+   "unsupported_minicheck": 0.4452877925363694,
+   "uncited_share": 0.09424414927261227,
+   "copied_share": 0.011385199240986717,
    "retrieval_hit": 0.982,
    "sentences_per_answer": 3.162,
-   "absence_statements": 153,
    "usd_per_question": 0.001237044,
    "calls_per_question": 1,
    "median_seconds": 10.434999999999999
@@ -38,14 +46,37 @@
    "completed": 500,
    "accuracy": 0.636,
    "macro_f1": 0.5648702017083462,
-   "unsupported_rate": 0.21525503041647165,
-   "paper_consistency": 0.7758540009358914,
+   "unsupported_flash": 0.14506317267197,
+   "flash_judged_questions": 500,
+   "unsupported_flash_cited_only": 0.11439650993698502,
+   "unsupported_flash_own_words": 0.16580903373356204,
+   "unsupported_minicheck": 0.21525503041647165,
+   "uncited_share": 0.0346279831539541,
+   "copied_share": 0.18156293869911092,
    "retrieval_hit": 0.984,
    "sentences_per_answer": 4.274,
-   "absence_statements": 240,
    "usd_per_question": 0.010544526,
    "calls_per_question": 4.662,
    "median_seconds": 59.28
+  },
+  "A3": {
+   "name": "VeritasMed (verbatim)",
+   "questions": 500,
+   "completed": 500,
+   "accuracy": 0.676,
+   "macro_f1": 0.5862630066215527,
+   "unsupported_flash": 0.03362391033623913,
+   "flash_judged_questions": 500,
+   "unsupported_flash_cited_only": 0.004809233728759188,
+   "unsupported_flash_own_words": 0.03869969040247678,
+   "unsupported_minicheck": 0.07440846824408465,
+   "uncited_share": 0.028953922789539233,
+   "copied_share": 0.597758405977584,
+   "retrieval_hit": 0.988,
+   "sentences_per_answer": 6.424,
+   "usd_per_question": 0.009971738,
+   "calls_per_question": 4.386,
+   "median_seconds": 58.905
   },
   "A4": {
    "name": "Gold abstract",
@@ -53,11 +84,15 @@
    "completed": 500,
    "accuracy": 0.656,
    "macro_f1": 0.6009697263687076,
-   "unsupported_rate": 0.38885329916720046,
-   "paper_consistency": 0.6540679051889814,
+   "unsupported_flash": 0.19582245430809397,
+   "flash_judged_questions": 491,
+   "unsupported_flash_cited_only": 0.12062812276945034,
+   "unsupported_flash_own_words": 0.19696969696969702,
+   "unsupported_minicheck": 0.38885329916720046,
+   "uncited_share": 0.08456117873158231,
+   "copied_share": 0.009609224855861628,
    "retrieval_hit": null,
    "sentences_per_answer": 3.122,
-   "absence_statements": 92,
    "usd_per_question": 0.000932988,
    "calls_per_question": 1,
    "median_seconds": 6.615
@@ -69,11 +104,6 @@
     "diff": -0.11599999999999999,
     "low": -0.16800000000000004,
     "high": -0.06399999999999995
-   },
-   "paper_consistency": {
-    "diff": -0.38772506340462903,
-    "low": -0.4205897037027198,
-    "high": -0.35567531621894954
    }
   },
   "A2-A1": {
@@ -82,15 +112,32 @@
     "low": -0.040000000000000036,
     "high": 0.03600000000000003
    },
-   "paper_consistency": {
-    "diff": 0.20912408316233033,
-    "low": 0.17933891027075533,
-    "high": 0.23837486277677666
+   "unsupported_flash": {
+    "diff": -0.07315314611360879,
+    "low": -0.0961910306622914,
+    "high": -0.049244140229762756
    },
-   "unsupported_rate": {
+   "unsupported_minicheck": {
     "diff": -0.23003276211989776,
     "low": -0.2585074170829704,
     "high": -0.20174130382909095
+   }
+  },
+  "A3-A1": {
+   "accuracy": {
+    "diff": 0.038000000000000034,
+    "low": 0.0020000000000000018,
+    "high": 0.07400000000000007
+   },
+   "unsupported_flash": {
+    "diff": -0.18459240844933966,
+    "low": -0.20573106755782677,
+    "high": -0.16360827617169116
+   },
+   "unsupported_minicheck": {
+    "diff": -0.37087932429228476,
+    "low": -0.3972991054670011,
+    "high": -0.3437814968974984
    }
   },
   "A4-A1": {
@@ -99,42 +146,17 @@
     "low": -0.014000000000000012,
     "high": 0.052000000000000046
    },
-   "paper_consistency": {
-    "diff": 0.08733798741542032,
-    "low": 0.05945815034874713,
-    "high": 0.1152689465543908
+   "unsupported_flash": {
+    "diff": -0.019383731258916348,
+    "low": -0.04550932671379493,
+    "high": 0.005780095610603997
    },
-   "unsupported_rate": {
+   "unsupported_minicheck": {
     "diff": -0.05643449336916895,
     "low": -0.08656599811504828,
     "high": -0.025790968679905713
    }
   }
  },
- "robustness": {
-  "A1": {
-   "sentences": 1581,
-   "uncited": 149,
-   "cited_only_support": 0.6124301675977654,
-   "copied_share": 0.011385199240986717,
-   "support_copied": 0.8333333333333334,
-   "support_own_words": 0.5515035188739603
-  },
-  "A2": {
-   "sentences": 2137,
-   "uncited": 74,
-   "cited_only_support": 0.8128938439166262,
-   "copied_share": 0.18156293869911092,
-   "support_copied": 0.8969072164948454,
-   "support_own_words": 0.7598627787307033
-  },
-  "A4": {
-   "sentences": 1561,
-   "uncited": 132,
-   "cited_only_support": 0.6675997200839748,
-   "copied_share": 0.009609224855861628,
-   "support_copied": 0.6,
-   "support_own_words": 0.611254851228978
-  }
- }
+ "note": "unsupported_minicheck is the original pre-registered metric, rejected by the blinded calibration (runs/agreement/)."
 }

@@ -31,7 +31,7 @@ from langchain_core.messages import HumanMessage, SystemMessage  # noqa: E402
 SEED = 20261005
 N = 100
 ARMS = ["A1", "A2", "A4"]
-NAMES = {"A1": "Plain RAG", "A2": "VeritasMed", "A4": "Gold abstract"}
+NAMES = {"A1": "Plain RAG", "A2": "VeritasMed", "A3": "VeritasMed (verbatim)", "A4": "Gold abstract"}
 OUT = HERE / "runs" / "agreement"
 JUDGE = """You check citations. For each numbered sentence, decide whether its cited passages
 establish all of its material content (numbers, direction of findings, population, comparison,
@@ -76,17 +76,19 @@ def main() -> None:
     ap.add_argument("--workers", type=int, default=3)
     ap.add_argument("--allow-peak", action="store_true")
     ap.add_argument("--report", action="store_true")
+    ap.add_argument("--n", type=int, default=N, help="questions to judge; 500 = the whole test split (the first 100 are kept)")
+    ap.add_argument("--arms", default=",".join(ARMS))
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     ids = sorted(json.loads((HERE / "manifest.json").read_text())["splits"]["test_full"])
-    pmids = sorted(random.Random(SEED).sample(ids, N))
+    pmids = sorted(random.Random(SEED).sample(ids, N)) if args.n == N else ids[:args.n] if args.n < len(ids) else ids
     if args.report:
-        return report(pmids)
+        return report(sorted(random.Random(SEED).sample(ids, N)))
 
     from medrag.verification.gateway import FlashGateway
     gateway = FlashGateway()
     guard = run.Guard(args.key, args.budget, 0.03, args.allow_peak)
-    for arm in ARMS:
+    for arm in args.arms.split(","):
         path = OUT / f"test_full-{arm}.jsonl"
         previous = run.done(path)
         todo = [(p, u) for p, u in units(arm, pmids).items() if u["sentences"] and p not in previous]

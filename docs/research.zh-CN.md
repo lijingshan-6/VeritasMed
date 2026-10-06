@@ -86,9 +86,14 @@ v0.9 复盘把录制演示中的两个失败追溯到了代码：
 
 之后用真实模型把九个问题重新录制了一遍（每题一次）。这两处回答首次生成即正确，其余七个回答实质不变。那次运行中模型恰好把死亡率部分直接标为证据缺口，没有绑定到同一句原文，所以第一处修复由基于原始记录的离线回归测试覆盖。
 
+## 6. 实验 A：PubMedQA 上的"结论是否有据"
+
+第一次在公开评测集上与简单基线对照（PubMedQA 500 道测试题，所有方法使用同一模型和检索器）。VeritasMed 的准确率并不比普通 RAG 高（63.6% 对 63.8%），但它的 yes/no 结论只有 16% 未引用或无依据，普通 RAG 为 40%；一条更严格的单次提示词要做到同样效果，准确率会跌到闭卷水平（51.0%）。审计检出 191 处植入实质性错误中的 187 处，不当标记 2.0%。基于 MiniCheck 的"减半"结论经盲标校准后撤回。完整报告：[experiment-a.zh-CN.md](experiment-a.zh-CN.md)。
+
 ## 尚未解决的问题
 
 - 没有临床专家标注的整段回答数据；公开标签只覆盖单条陈述或非医学文本。
+- PubMedQA 只检验单篇论文的 yes/no 题；跨研究综合、证据缺失和适用范围错误（流水线的设计目标）仍缺评测集。
 - 演示索引只有三篇论文；下一步产品工作是扩大到更大的开放获取语料。
 - 问题覆盖（回答是否照顾到问题的每个部分）目前只由 Agent 自身复核检查，而这本身也是模型判断。
 
@@ -101,7 +106,7 @@ v0.9 复盘把录制演示中的两个失败追溯到了代码：
   Retrieval-Augmented Language Models*，ACL 2024。[数据](https://github.com/ParticleMedia/RAGTruth)。
 - **MiniCheck**：Tang、Laban、Durrett，*MiniCheck: Efficient Fact-Checking of LLMs on Grounding
   Documents*，EMNLP 2024。[论文](https://arxiv.org/abs/2404.10774) ·
-  [模型](https://huggingface.co/lytang/MiniCheck-Flan-T5-Large)，以完整输入运行，不截断。
+  [模型](https://huggingface.co/lytang/MiniCheck-Flan-T5-Large)，以完整输入运行，不截断；在实验 A 中这种设置对完整摘要判断失准（与盲标标签一致率 77.3%），因此不再作为引用裁判。
 - **BGE-M3**：Chen 等，*BGE M3-Embedding*，2024。[论文](https://arxiv.org/abs/2402.03216) ·
   [模型](https://huggingface.co/BAAI/bge-m3)。重排模型：[BAAI/bge-reranker-v2-m3](https://huggingface.co/BAAI/bge-reranker-v2-m3)。
 - **演示论文**：Seaquist 等 2024（GRADE，CC0）、Lee 等 2016（CC BY 4.0）、Figueira 等 2013（CC BY）。

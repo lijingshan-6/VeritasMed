@@ -2,9 +2,10 @@
 
 **English** | [简体中文](README.zh-CN.md)
 
-**A medical literature Q&A agent that shows its work.** Ask about a paper, get an answer in which
-every statement cites an original sentence, then open an audit that checks each claim against the
-source and marks what is unsupported or unchecked.
+**Verifiable medical Q&A: conclusions held to the evidence, every sentence auditable.** Ask about
+the literature, get a plain-language answer whose conclusion and claims are each bound to an
+original sentence, then open an audit that checks every claim against the source and marks what is
+unsupported or unchecked.
 
 ![Recorded walkthrough: conversation, answer, claim audit](docs/assets/showcase/preview.gif)
 
@@ -12,10 +13,28 @@ source and marks what is unsupported or unchecked.
 
 React · FastAPI · LangGraph · BGE-M3 hybrid retrieval · Python 3.12 · Apache-2.0
 
+## The result in one chart
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/experiment-a/tradeoff-dark.png">
+  <img alt="On 500 PubMedQA questions, plain RAG is accurate but its conclusions are often unsupported, a strict prompt grounds conclusions but drops to closed-book accuracy, and VeritasMed does both" src="docs/assets/experiment-a/tradeoff-light.png">
+</picture>
+
+On all 500 PubMedQA test questions, with the same model and retriever for every method:
+
+- **Plain RAG's yes/no conclusion is uncited or unsupported in 40% of answers; VeritasMed's in 16%**
+  (-21.3 pp, 95% CI [-26.6, -16.1]), at the same accuracy (63.6% vs 63.8%).
+- **A stricter single prompt grounds conclusions only by withholding them**: accuracy falls to 51.0%,
+  the closed-book level.
+- **The audit flags 97.9% of planted material errors** and wrongly flags 2.0% of correct sentences.
+- The cost: about 1 cent and 50 seconds more per question. An earlier "halved" claim based on
+  MiniCheck was withdrawn after calibration. [Full report →](docs/experiment-a.md)
+
 ## What it does
 
-- **Answers with citations to exact sentences.** Each part of the question is bound to a sentence
-  from a retrieved paper; a missing result is reported as a gap rather than guessed.
+- **States conclusions only as strongly as the evidence allows.** Each part of the question is bound
+  to a sentence from a retrieved paper and the answer is written in plain words beside it; a missing
+  result is reported as a gap rather than guessed.
 - **Checks itself before replying.** The agent grades the evidence, rewrites the search when it is weak, and
   reviews its own draft, with at most two retries of each.
 - **Lets you audit any answer.** One click checks every claim against the source passages, with
@@ -64,8 +83,9 @@ audits always use the Flash endpoint.
    Match the paper the question names before picking passages.
 3. **Plan the answer** by binding each requested part to sentence IDs in the retrieved text. Code checks
    that every quotation exists and belongs to the right paper.
-4. **Generate and check.** Key numbers are quoted verbatim. A model review checks support,
-   completeness and evidence boundaries, and asks for targeted repairs.
+4. **Generate and check.** The answer is written in plain words, with the bound source sentences shown
+   beside each claim. A model review checks support, completeness and evidence boundaries, and asks
+   for targeted repairs.
 
 Details: [how it works](docs/how-it-works.md) · [agent graph source](src/medrag/agent/graph.py).
 
@@ -73,17 +93,23 @@ Details: [how it works](docs/how-it-works.md) · [agent graph source](src/medrag
 
 | Question | Result | Decision |
 |---|---|---|
+| Does VeritasMed ground its conclusions better than plain RAG? (500 PubMedQA questions) | Conclusion uncited or unsupported: **40.1% vs 15.8%**; accuracy 63.8% vs 63.6% | The pipeline's measurable value; [report](docs/experiment-a.md) |
+| Can one strict prompt do the same? | Grounds conclusions (15.1%) but accuracy drops to **51.0%** | Keep the multi-step generator |
+| Does the audit catch errors? | Planted: **187/191** material errors flagged, 4/200 unwarranted flags; it also catches overstatements in real plain-RAG answers | Audit as the second line of defence |
+| Paste source sentences verbatim (v0.8) or write in plain words? | Verbatim scores higher only because quotes pass a citation judge and it answers "maybe" less; its answers are lists of quotations | Plain words, sources shown beside them |
 | Does the agent answer correctly from the right evidence? | Development questions: 5/15 strict passes in v0.2, 15/15 in v0.4 (pipeline and model changed). Held-out set, run once after freezing: **31/35** | Current answer pipeline |
 | How reliable is a model as a claim checker? | On 339 public SciFact pairs, Flash wrongly accepted **6/201** unsupported claims; MiniCheck 14/201 | Flash as the default checker |
 | Does a prescribed tool workflow beat simply reading the papers? | 31/40 vs 35/40 for direct reading and for free tool use | Keep the simpler flow |
 | Does fine-grained (atomic) auditing keep qualifiers? | Keeps more conditions (101/104 vs 91/104) but completes fewer audits (26/48 vs 47/48) | Direct by default, Atomic v2 optional |
 
-The full numbers, intervals and what each version changed are in the [research summary](docs/research.md).
+Experiment A is reported in full in [docs/experiment-a.md](docs/experiment-a.md); earlier experiments and
+what each version changed are in the [research summary](docs/research.md).
 
 ## Limitations
 
 - This is a research demo, not clinical advice. Labels come from public datasets and AI-assisted
   review, not clinicians.
+- PubMedQA questions are single-paper yes/no questions; it does not test synthesis across studies.
 - The bundled index has three papers, so it cannot answer arbitrary medical questions.
 - A green check means a model judged the quoted text to support the claim. It is not a calibrated
   probability, and the audit does not grade study quality or resolve conflicts between papers.
@@ -101,6 +127,7 @@ The full numbers, intervals and what each version changed are in the [research s
 | `src/medrag/mcp_server/` | Optional local MCP tools (search, ask, evaluate) |
 | `frontend/` | React app: conversations, answers, sources, audit view; `npm run replay` needs no backend |
 | `data/demo/conversations/` | Three source papers, corpus, and the recorded conversations |
+| `experiments/pubmedqa/` | Experiment A: scripts, registrations and every raw output |
 
 Checks: `python -m pytest -q`, `ruff check src/`, `npm --prefix frontend test`,
 `npm --prefix frontend run build`. None of them calls a model.

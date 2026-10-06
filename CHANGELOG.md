@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.10.0 — unreleased (Experiment A)
+
+- **Experiment A** on all 500 PubMedQA test questions, five methods plus two registered follow-ups,
+  planted-error and natural-error audit studies, and a blinded judge calibration
+  ([report](docs/experiment-a.md)). The project is now positioned as verifiable medical Q&A:
+  VeritasMed grounds its yes/no conclusions (16% uncited or unsupported vs 40% for plain RAG) without
+  losing accuracy; the audit flags 97.9% of planted material errors.
+- **Withdrawn:** a MiniCheck-based "unsupported sentences halved" result; MiniCheck failed calibration
+  (77.3% vs 94.0% for the Flash judge) and is kept only as a rejected measure.
+- **Changed:** answers are written in plain words with the bound source sentences kept beside each
+  claim, instead of pasting key facts verbatim (supported by the A3 comparison). Answers open with a
+  one-sentence conclusion for yes/no questions. Evidence uses whole abstracts; token usage is metered
+  per request.
+- **Frontend:** the Ask workspace was redesigned around the answer, with sidebar, process view and an
+  evidence panel; the replay was re-recorded.
+
 ## 0.9.0 — unreleased (consolidation)
 
 The project is now one product: Ask with an audit inside each answer. Research history moved out

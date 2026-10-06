@@ -28,7 +28,7 @@
 | rerank | 每个查询分别重排，由模型匹配问题点名的论文，保留最好的 5 段 | [retrieval.py](../src/medrag/agent/nodes/retrieval.py) |
 | grade | 把问题拆成组成项并绑定句子编号；程序把编号解析为精确原文 | [grading.py](../src/medrag/agent/nodes/grading.py) |
 | rewrite | 证据评分低于阈值（按问题类型为 0.6 / 0.75 / 0.8）时改写并重新检索（≤2 次） | [planning.py](../src/medrag/agent/nodes/planning.py) |
-| generate | 按组成项写出带引用的陈述；关键数字和方法以原文句子逐字呈现 | [generation.py](../src/medrag/agent/nodes/generation.py) |
+| generate | 按组成项用平实语言写出带引用的陈述；绑定的原文句子作为证据附在每条陈述旁边 | [generation.py](../src/medrag/agent/nodes/generation.py) |
 | check | 按组成项复核支持关系、完整性与证据边界；要求定向修复（≤2 次） | [checking.py](../src/medrag/agent/nodes/checking.py) |
 
 ![grade、generate、check 中哪些由模型判断、哪些由程序保证](assets/system-guide/node-logic-zh.svg)
@@ -118,6 +118,7 @@ v0.9 已修复（见 [研究总结](research.zh-CN.md#5-这些迭代的意义)�
 | 审计默认用 Direct | 它完成的审计远多于细粒度方法（47/48 对 26/48）。在小规模构造集上细粒度方法多发现了少量植入错误，但优势不明确，且留下大量未完成项（[研究](research.zh-CN.md#4-细粒度审计信息更细未完成的也更多)） |
 | 不显示可信度百分比 | 校准实验没有找到能把错误接受率控制在 5% 以内的分数阈值（[研究](research.zh-CN.md#2-模型作为陈述核查器有多可靠)） |
 | 审计从不改写回答 | 核查器出错会把正确回答改错；原回答与审计结果并排保留 |
+| 用平实语言回答，原文句子附在旁边 | 把原文句子直接粘贴进回答（v0.8 做法）得分更高，只是因为引文必然通过引用核查；它产出的是一串引文而不是回答（[实验 A](experiment-a.zh-CN.md#6-其他发现)） |
 | 旧回答是上下文，不是证据 | 引用自己之前的回答等于自我引用；每一轮都重新检索来源 |
 
 ## MCP 工具

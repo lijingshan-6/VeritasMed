@@ -2,6 +2,27 @@
  "run": "main",
  "split": "test_full",
  "arms": {
+  "A0": {
+   "name": "Closed-book",
+   "questions": 500,
+   "completed": 500,
+   "accuracy": 0.522,
+   "macro_f1": 0.4306710754985801,
+   "unsupported_flash": null,
+   "flash_judged_questions": 0,
+   "unsupported_flash_cited_only": null,
+   "unsupported_flash_own_words": null,
+   "unsupported_minicheck": null,
+   "bottom_line_unsupported": null,
+   "bottom_line_judged": 0,
+   "uncited_share": 1.0,
+   "copied_share": 0.0,
+   "retrieval_hit": null,
+   "sentences_per_answer": 3.296,
+   "usd_per_question": 0.001391166,
+   "calls_per_question": 1,
+   "median_seconds": 7.175
+  },
   "A1": {
    "name": "Plain RAG",
    "questions": 500,
@@ -44,6 +65,48 @@
    "calls_per_question": 4.662,
    "median_seconds": 59.28
   },
+  "A3": {
+   "name": "VeritasMed (verbatim)",
+   "questions": 500,
+   "completed": 500,
+   "accuracy": 0.676,
+   "macro_f1": 0.5862630066215527,
+   "unsupported_flash": 0.03362391033623913,
+   "flash_judged_questions": 500,
+   "unsupported_flash_cited_only": 0.004809233728759188,
+   "unsupported_flash_own_words": 0.03869969040247678,
+   "unsupported_minicheck": 0.07440846824408465,
+   "bottom_line_unsupported": 0.041666666666666664,
+   "bottom_line_judged": 480,
+   "uncited_share": 0.028953922789539233,
+   "copied_share": 0.597758405977584,
+   "retrieval_hit": 0.988,
+   "sentences_per_answer": 6.424,
+   "usd_per_question": 0.009971738,
+   "calls_per_question": 4.386,
+   "median_seconds": 58.905
+  },
+  "A4": {
+   "name": "Gold abstract",
+   "questions": 500,
+   "completed": 500,
+   "accuracy": 0.656,
+   "macro_f1": 0.6009697263687076,
+   "unsupported_flash": 0.19582245430809397,
+   "flash_judged_questions": 491,
+   "unsupported_flash_cited_only": 0.12062812276945034,
+   "unsupported_flash_own_words": 0.19696969696969702,
+   "unsupported_minicheck": 0.38885329916720046,
+   "bottom_line_unsupported": 0.3634408602150538,
+   "bottom_line_judged": 465,
+   "uncited_share": 0.08456117873158231,
+   "copied_share": 0.009609224855861628,
+   "retrieval_hit": null,
+   "sentences_per_answer": 3.122,
+   "usd_per_question": 0.000932988,
+   "calls_per_question": 1,
+   "median_seconds": 6.615
+  },
   "A5": {
    "name": "Strict-prompt RAG",
    "questions": 500,
@@ -66,49 +129,100 @@
    "median_seconds": 13.28
   }
  },
- "paired_vs_A2": {
-  "A1-A2": {
+ "paired_vs_A1": {
+  "A0-A1": {
    "accuracy": {
-    "diff": 0.0020000000000000018,
-    "low": -0.03600000000000003,
-    "high": 0.040000000000000036
-   },
-   "unsupported_flash": {
-    "diff": 0.07315314611360879,
-    "low": 0.049244140229762756,
-    "high": 0.0961910306622914
-   },
-   "bottom_line_unsupported": {
-    "diff": 0.21261682242990657,
-    "low": 0.16121495327102803,
-    "high": 0.26635514018691586
-   },
-   "unsupported_minicheck": {
-    "diff": 0.23003276211989776,
-    "low": 0.20174130382909095,
-    "high": 0.2585074170829704
+    "diff": -0.11599999999999999,
+    "low": -0.16800000000000004,
+    "high": -0.06399999999999995
    }
   },
-  "A5-A2": {
+  "A2-A1": {
    "accuracy": {
-    "diff": -0.126,
-    "low": -0.16600000000000004,
-    "high": -0.08399999999999996
+    "diff": -0.0020000000000000018,
+    "low": -0.040000000000000036,
+    "high": 0.03600000000000003
    },
    "unsupported_flash": {
-    "diff": -0.0559110529712219,
-    "low": -0.07582139460862947,
-    "high": -0.03562010286753181
+    "diff": -0.07315314611360879,
+    "low": -0.0961910306622914,
+    "high": -0.049244140229762756
    },
    "bottom_line_unsupported": {
-    "diff": -0.023866348448687347,
-    "low": -0.0668257756563246,
-    "high": 0.021479713603818618
+    "diff": -0.21261682242990657,
+    "low": -0.26635514018691586,
+    "high": -0.16121495327102803
    },
    "unsupported_minicheck": {
-    "diff": 0.09023125387280517,
-    "low": 0.06315275102475093,
-    "high": 0.11757262869193452
+    "diff": -0.23003276211989776,
+    "low": -0.2585074170829704,
+    "high": -0.20174130382909095
+   }
+  },
+  "A3-A1": {
+   "accuracy": {
+    "diff": 0.038000000000000034,
+    "low": 0.0020000000000000018,
+    "high": 0.07400000000000007
+   },
+   "unsupported_flash": {
+    "diff": -0.18459240844933966,
+    "low": -0.20573106755782677,
+    "high": -0.16360827617169116
+   },
+   "bottom_line_unsupported": {
+    "diff": -0.3435448577680525,
+    "low": -0.39168490153172864,
+    "high": -0.29540481400437635
+   },
+   "unsupported_minicheck": {
+    "diff": -0.37087932429228476,
+    "low": -0.3972991054670011,
+    "high": -0.3437814968974984
+   }
+  },
+  "A4-A1": {
+   "accuracy": {
+    "diff": 0.018000000000000016,
+    "low": -0.014000000000000012,
+    "high": 0.052000000000000046
+   },
+   "unsupported_flash": {
+    "diff": -0.019383731258916348,
+    "low": -0.04550932671379493,
+    "high": 0.005780095610603997
+   },
+   "bottom_line_unsupported": {
+    "diff": -0.0358744394618834,
+    "low": -0.08968609865470856,
+    "high": 0.0179372197309417
+   },
+   "unsupported_minicheck": {
+    "diff": -0.05643449336916895,
+    "low": -0.08656599811504828,
+    "high": -0.025790968679905713
+   }
+  },
+  "A5-A1": {
+   "accuracy": {
+    "diff": -0.128,
+    "low": -0.17000000000000004,
+    "high": -0.08599999999999997
+   },
+   "unsupported_flash": {
+    "diff": -0.1290641990848307,
+    "low": -0.15254589652716966,
+    "high": -0.10477686754198923
+   },
+   "bottom_line_unsupported": {
+    "diff": -0.24541284403669722,
+    "low": -0.2981651376146789,
+    "high": -0.19036697247706422
+   },
+   "unsupported_minicheck": {
+    "diff": -0.1398015082470926,
+    "low": -0.16910206144234485,
+    "high": -0.11042169871010354
    }
   }
  },

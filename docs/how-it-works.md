@@ -28,7 +28,7 @@ The figure is generated from [`graph.py`](../src/medrag/agent/graph.py) by
 | rerank | Rerank per query, let the model match the paper the question names, keep the best 5 passages | [retrieval.py](../src/medrag/agent/nodes/retrieval.py) |
 | grade | Split the question into components and bind each to sentence IDs; code resolves IDs to exact quotes | [grading.py](../src/medrag/agent/nodes/grading.py) |
 | rewrite | If the evidence score is below the threshold (0.6 / 0.75 / 0.8 by question type), rewrite and retrieve again (≤2 times) | [planning.py](../src/medrag/agent/nodes/planning.py) |
-| generate | Write cited claims per component; key numbers and methods are shown as verbatim source sentences | [generation.py](../src/medrag/agent/nodes/generation.py) |
+| generate | Write cited claims per component in plain words; the bound source sentences are kept as evidence beside each claim | [generation.py](../src/medrag/agent/nodes/generation.py) |
 | check | Review support, completeness and evidence boundaries per component; request targeted repairs (≤2 times) | [checking.py](../src/medrag/agent/nodes/checking.py) |
 
 ![What the model decides and what code enforces inside grade, generate and check](assets/system-guide/node-logic-en.svg)
@@ -129,6 +129,7 @@ after **Stop** is pressed.
 | Direct is the default audit | It completes far more audits (47/48 vs 26/48). Finer methods caught slightly more planted errors in small constructed sets, but the gain was not clear and left many unfinished items ([research](research.md#4-fine-grained-audits-more-detail-more-unfinished-work)) |
 | No confidence percentages | Calibration found no score threshold that kept acceptance errors at or below 5% ([research](research.md#2-how-reliable-is-a-model-as-a-claim-checker)) |
 | The audit never rewrites the answer | Checker errors would turn correct answers into wrong ones; the original answer and the audit stay side by side |
+| Answers in plain words, sources shown beside them | Pasting source sentences into the answer (v0.8) scored higher only because quotations pass a citation check by construction, and produced lists of quotes rather than answers ([Experiment A](experiment-a.md#6-other-findings)) |
 | Earlier answers are context, never evidence | An answer citing a previous answer would be citing itself; every turn retrieves fresh sources |
 
 ## MCP tools

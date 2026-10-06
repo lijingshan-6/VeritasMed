@@ -104,9 +104,21 @@ In that run the model happened to mark the mortality part as a gap rather than b
 shared sentence, so the first fix is covered by the offline regression test built from the
 original records.
 
+## 6. Experiment A: grounded conclusions on PubMedQA
+
+The first comparison against simple baselines on a public benchmark (500 PubMedQA test questions,
+same model and retriever for every method). VeritasMed is not more accurate than plain RAG
+(63.6% vs 63.8%), but its yes/no conclusion is uncited or unsupported in 16% of answers against
+40% for plain RAG; a stricter single prompt matches that only by dropping to closed-book accuracy
+(51.0%). The audit flags 187 of 191 planted material errors with 2.0% unwarranted flags. A
+MiniCheck-based "halved" claim was withdrawn after a blinded calibration. Full report:
+[experiment-a.md](experiment-a.md).
+
 ## Open problems
 
 - No clinician-labelled data for whole answers. Public labels cover single claims or non-medical text.
+- PubMedQA tests single-paper yes/no questions. Synthesis across studies, missing evidence and scope
+  errors - what the pipeline was designed for - still need a benchmark.
 - The demo index covers three papers; a larger open-access corpus is the next product step.
 - Question coverage (did the answer address every part of the question?) is checked only by the
   agent's own review, which is itself a model judgment.
@@ -120,7 +132,7 @@ original records.
   Retrieval-Augmented Language Models*, ACL 2024. [Data](https://github.com/ParticleMedia/RAGTruth).
 - **MiniCheck** — Tang, Laban and Durrett, *MiniCheck: Efficient Fact-Checking of LLMs on Grounding
   Documents*, EMNLP 2024. [Paper](https://arxiv.org/abs/2404.10774) ·
-  [model](https://huggingface.co/lytang/MiniCheck-Flan-T5-Large), run with full inputs and no truncation.
+  [model](https://huggingface.co/lytang/MiniCheck-Flan-T5-Large), run with full inputs and no truncation; in Experiment A this setting misjudged full abstracts (77.3% agreement with blinded labels) and MiniCheck was replaced as citation judge.
 - **BGE-M3** — Chen et al., *BGE M3-Embedding*, 2024. [Paper](https://arxiv.org/abs/2402.03216) ·
   [model](https://huggingface.co/BAAI/bge-m3). Reranker: [BAAI/bge-reranker-v2-m3](https://huggingface.co/BAAI/bge-reranker-v2-m3).
 - **Demo papers** — Seaquist et al. 2024 (GRADE, CC0), Lee et al. 2016 (CC BY 4.0), Figueira et al.

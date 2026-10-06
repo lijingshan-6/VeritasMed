@@ -32,9 +32,10 @@ On all 500 PubMedQA test questions, with the same model and retriever for every 
 
 ## What it does
 
-- **States conclusions only as strongly as the evidence allows.** Each part of the question is bound
-  to a sentence from a retrieved paper and the answer is written in plain words beside it; a missing
-  result is reported as a gap rather than guessed.
+- **Holds its conclusion to the evidence.** The answer opens with a one-sentence conclusion, and each
+  part of the question is bound to a sentence from a retrieved paper and answered in plain words beside
+  it. A missing result is reported as a gap rather than guessed. (On PubMedQA, 84% of its conclusions
+  were cited and supported, against 60% for plain RAG; the rest are what the audit is for.)
 - **Checks itself before replying.** The agent grades the evidence, rewrites the search when it is weak, and
   reviews its own draft, with at most two retries of each.
 - **Lets you audit any answer.** One click checks every claim against the source passages, with

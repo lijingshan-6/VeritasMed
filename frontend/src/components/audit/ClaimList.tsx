@@ -11,9 +11,14 @@ type Props = {
 export function ClaimList({ record, selected, onSelect, locateEvidence }: Props) {
   return <div className="audit-claims">{record.audit.claims.map((claim, index) => <article key={claim.id} id={`audit-${claim.id}`} className={`audit-claim ${selected === claim.id ? 'active' : ''}`}>
             <button className="audit-claim-toggle" aria-expanded={selected === claim.id} onClick={() => onSelect(selected === claim.id ? '' : claim.id, false)}>
-              <span className="audit-claim-number">{String(index + 1).padStart(2, '0')}</span><span><span className="audit-claim-quote">{claim.normalized_claim ?? claim.quote}</span>{claim.normalized_claim && <small className="audit-muted">Model-parsed fact · {claim.parent_claim_id}</small>}<span className={`audit-verdict ${category(claim)}`}>{labels[category(claim)] ?? claim.status}</span>{claim.checker_disagreement && <span className="audit-verdict insufficient">Checkers disagree</span>}</span><span aria-hidden="true">{selected === claim.id ? '−' : '+'}</span>
+              <span className="audit-claim-number">{String(index + 1).padStart(2, '0')}</span><span><span className="audit-claim-quote">{claim.normalized_claim ?? claim.quote}</span>{claim.normalized_claim && <small className="audit-muted">Model-parsed fact · {claim.parent_claim_id}</small>}<span className={`audit-verdict ${category(claim)}`}>{labels[category(claim)] ?? claim.status}</span>{claim.checker_disagreement && <span className="audit-verdict insufficient">Checkers disagree</span>}{claim.significance_diagnostic && <span className="audit-verdict needs_review">⚠ Non-significant ≠ no difference</span>}</span><span aria-hidden="true">{selected === claim.id ? '−' : '+'}</span>
             </button>
             {selected === claim.id && <div className="audit-claim-body"><p>{claim.explanation || 'No usable judgment was returned.'}</p>
+              {claim.significance_diagnostic && <div className="audit-notice">
+                <strong>⚠ A non-significant result is not "no difference"</strong>
+                <p>The claim says <q>{claim.significance_diagnostic.claim_phrase}</q>; the source reports <q>{claim.significance_diagnostic.evidence_phrase}</q>. The study could not show a difference, which is not the same as showing there is none.</p>
+                <small>Text rule on this claim and its quoted evidence. It does not change the judgment above.</small>
+              </div>}
               {claim.fidelity_diagnostic && <div className="audit-notice">
                 <strong>Model relation: {claim.relation ? labels[claim.relation] : 'Not judged'}</strong>
                 <p>{claim.fidelity_diagnostic.flags.length ? 'Extraction needs review; this fact is not counted as a completed check.' : 'No mechanical extraction issue detected. Meaning and completeness are not guaranteed.'}</p>

@@ -83,6 +83,14 @@ by SHA-256 fingerprints of the answer and sources.
 | Needs review | Atomic v2 parsing is compound, duplicated or missing an exact condition |
 | Not checked / Execution failed | No judgment was made |
 
+**Non-significant is not "no difference".** When a claim states no difference or no effect
+("did not differ", "was not better", "equivalent") and its quoted evidence reports a non-significant
+result (`p = 0.33`, "no significant difference", "no evidence of a difference"), the claim is marked
+with a warning and the summary counts it. It is a text rule that never changes the checker's relation.
+In Experiment A this was the most common overstatement the audit caught and a general model judge
+accepted ([report](experiment-a.md#4-the-audit-catches-planted-and-natural-errors)); on the 500
+recorded audits from that experiment the rule flags 23 of 5,573 claims, all of this kind.
+
 Quotes are bound only when the exact text occurs once; the code never picks the first of
 several matches. Text that no completed judgment covers is listed separately. Code:
 [`verification/`](../src/medrag/verification/).

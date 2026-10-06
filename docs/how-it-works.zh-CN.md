@@ -76,6 +76,8 @@ v0.9 已修复（见 [研究总结](research.zh-CN.md#5-这些迭代的意义)�
 | Needs review | Atomic v2 的拆分仍是复合、重复，或缺少精确的条件锚点 |
 | Not checked / Execution failed | 没有作出判断 |
 
+**"不显著"不等于"没有区别"。** 如果一条陈述断言没有区别或没有作用（"did not differ"、"was not better"、"equivalent"），而它引用的原文证据报告的是不显著的结果（`p = 0.33`、"no significant difference"、"no evidence of a difference"），这条陈述会被加上警示，汇总中也会计数。这是一条文本规则，从不改变核查模型给出的判定。实验 A 中，这是审计抓到、而通用大模型裁判放过的最常见的"说过头"（[报告](experiment-a.zh-CN.md#4-审计能抓到植入错误和自然错误)）；在该实验记录的 500 次审计中，这条规则在 5,573 条陈述里标出了 23 条，全部属于这一类。
+
 只有当原文恰好出现一次时才绑定引文，程序从不在多处匹配中挑第一处。没有被任何已完成判断覆盖的文字会单独列出。
 代码：[`verification/`](../src/medrag/verification/)。
 

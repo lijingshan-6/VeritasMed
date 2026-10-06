@@ -24,6 +24,7 @@ export type AuditClaim = {
   parent_binding?: QuoteBinding
   evidence_bindings?: (QuoteBinding & { source_id: string; quote: string })[]
   numeric_diagnostic?: { status: string; reason?: string; scope: string; overrides_relation: boolean }
+  significance_diagnostic?: { status: 'flagged'; claim_phrase: string; evidence_phrase: string; note: string; scope: string; overrides_relation: false }
   checker_results?: Record<string, unknown>
   checker_disagreement?: boolean
   bindings?: { answer: QuoteBinding; evidence: (QuoteBinding & { source_id: string; quote: string })[] }

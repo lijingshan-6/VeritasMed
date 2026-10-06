@@ -13,6 +13,9 @@
   claim, instead of pasting key facts verbatim (supported by the A3 comparison). Answers open with a
   one-sentence conclusion for yes/no questions. Evidence uses whole abstracts; token usage is metered
   per request.
+- **Added:** a "non-significant is not no difference" advisory on audited claims. A text rule flags a
+  claim that states no difference or no effect when its quoted evidence reports a non-significant
+  result; the relation is never changed. Shown on the claim and counted in the audit summary.
 - **Frontend:** the Ask workspace was redesigned around the answer, with sidebar, process view and an
   evidence panel; the replay was re-recorded.
 

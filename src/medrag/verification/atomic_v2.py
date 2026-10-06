@@ -8,6 +8,7 @@ from .answer_audit import call_json, coverage, text_hash
 from .atomic_v2_schema import AnchoredExtraction as AtomicExtraction, AtomicJudgments
 from .fidelity import bind_qualifiers, fidelity_diagnostic
 from .numeric_checks import numeric_diagnostic
+from .significance import nonsignificance_diagnostic
 from .parent_binding import bind_parent_fragments, locate_quote
 
 EXTRACT_PROMPT = """Extract independently checkable assertions from the ANSWER ONLY; never judge or repair them.
@@ -201,6 +202,9 @@ def audit_atomic_v2(item, llm, *, max_calls=3):
             c["numeric_diagnostic"] = numeric_diagnostic(
                 c["normalized_claim"], c["evidence"], c["slots"]
             )
+            diagnostic = nonsignificance_diagnostic(c["normalized_claim"], [e["text"] for e in c["evidence"]])
+            if diagnostic["status"] == "flagged":
+                c["significance_diagnostic"] = diagnostic
     checked = [s for c in claims if c["status"] == "ok" for s in c["answer_spans"]]
     summary = {
         r: sum(c["status"] == "ok" and c["relation"] == r for c in claims)
@@ -208,6 +212,7 @@ def audit_atomic_v2(item, llm, *, max_calls=3):
     }
     summary.update(
         needs_review=sum(c["status"] == "needs_review" for c in claims),
+        nonsignificance_flags=sum("significance_diagnostic" in c for c in claims),
         failed_or_unchecked=sum(c["status"] != "ok" for c in claims),
     )
     return {

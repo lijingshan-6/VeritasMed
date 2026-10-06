@@ -176,5 +176,6 @@ function VerdictBar({ summary, total, status }: { summary: Record<string, number
       {parts.map(([key, n]) => n > 0 && <span key={key} className={`seg-${key}`} style={{ flexGrow: n }} />)}
     </div>
     <p>{parts.filter(([, n]) => n > 0).map(([key, n, label]) => <span key={key} className={`legend-${key}`}><b>{n}</b> {label}</span>)}</p>
+    {(summary.nonsignificance_flags ?? 0) > 0 && <p className="audit-verdictbar-note">⚠ {summary.nonsignificance_flags} {summary.nonsignificance_flags === 1 ? 'claim states' : 'claims state'} a non-significant result as "no difference". Flagged claims are marked below.</p>}
   </div>
 }

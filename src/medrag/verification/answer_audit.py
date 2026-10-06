@@ -12,6 +12,7 @@ from uuid import uuid4
 from pydantic import Field, StrictInt, model_validator
 
 from .schema import Record, Relation
+from .significance import nonsignificance_diagnostic
 
 
 class AuditSource(Record):
@@ -151,6 +152,9 @@ def bind_claim(item: AuditRequest, parsed: ClaimAudit, index: int) -> dict:
                                        "source_sha256": text_hash(source.text)})
     except (ValueError, KeyError):
         result.update(status="invalid_reference", error_type="QuoteNotFound")
+    diagnostic = nonsignificance_diagnostic(parsed.quote, [e["text"] for e in result["evidence"]])
+    if diagnostic["status"] == "flagged":
+        result["significance_diagnostic"] = diagnostic
     return result
 
 
@@ -187,6 +191,7 @@ def summarize_audit(item: AuditRequest, calls: list[dict], claims: list[dict]) -
     statuses = {name: sum(c["status"] == "ok" and c["relation"] == name for c in claims)
                 for name in ("supported", "contradicted", "insufficient")}
     statuses["failed_or_unchecked"] = sum(c["status"] != "ok" for c in claims)
+    statuses["nonsignificance_flags"] = sum("significance_diagnostic" in c for c in claims)
     return {"strategy": "direct", "status": "partial_error" if has_error else "ok" if claims else "no_claims",
             "answer_sha256": text_hash(item.answer),
             "source_hashes": {s.id: text_hash(s.text) for s in item.sources},

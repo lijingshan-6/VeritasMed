@@ -94,3 +94,16 @@ def test_numeric_absence_and_multi_arm_remain_unknown():
     assert mismatch["status"] == "possible_mismatch" and mismatch["overrides_relation"] is False
     same = numeric_diagnostic(claim_text, [{"text": "drug A response was 40%"}], slots)
     assert same["status"] == "equivalent"
+
+
+def test_nonsignificance_advisory_is_attached_without_changing_the_relation():
+    request = AuditRequest(answer="HFNC were not noisier than CPAP.", sources=[{"id": "s1", "title": "Noise trial",
+                           "text": "There was no evidence of a difference in average noise levels."}])
+    out = audit_answer(request, Stub([{"claims": [{
+        "quote": "HFNC were not noisier than CPAP.", "occurrence": 0, "relation": "supported",
+        "evidence": [{"source_id": "s1", "quote": "There was no evidence of a difference in average noise levels.",
+                      "occurrence": 0}], "explanation": "Same finding."}]}]))
+    claim_out = out["claims"][0]
+    assert claim_out["relation"] == "supported"
+    assert claim_out["significance_diagnostic"]["status"] == "flagged"
+    assert out["summary"]["nonsignificance_flags"] == 1

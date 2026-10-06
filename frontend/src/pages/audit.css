@@ -109,3 +109,5 @@
 .research-table thead { color: #58665f; }
 .audit-qualifier { margin: 12px 0; padding: 10px 12px; border-left: 2px solid var(--rule); background: var(--panel); }
 .audit-text-link.needs_review { border-bottom-color: #996011; color: #996011; }
+
+.audit-verdictbar-note { margin: 10px 0 0; font-size: 13px; color: #996011; }

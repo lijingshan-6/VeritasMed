@@ -1,0 +1,42 @@
+{
+ "all": {
+  "unsupported": [
+   30,
+   64
+  ],
+  "supported": [
+   20,
+   253
+  ]
+ },
+ "bottom lines": {
+  "unsupported": [
+   11,
+   30
+  ],
+  "supported": [
+   8,
+   68
+  ]
+ },
+ "cited only": {
+  "unsupported": [
+   26,
+   37
+  ],
+  "supported": [
+   20,
+   253
+  ]
+ },
+ "other sentences": {
+  "unsupported": [
+   19,
+   34
+  ],
+  "supported": [
+   12,
+   185
+  ]
+ }
+}

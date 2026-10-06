@@ -1,0 +1,146 @@
+{
+ "adjudicator": "Claude, reading the sentence, the audit explanation and the cited abstract; not blinded to which judge said what.",
+ "labels": {
+  "content_supported": "uncited bottom line whose content the passages do support (reference counts it unsupported only for lacking a citation)",
+  "audit_right": "the audit's judgment is correct and the Flash reference is wrong",
+  "audit_pedantic": "the audit flags a defensible sentence",
+  "debatable": "reasonable readers could disagree"
+ },
+ "items": {
+  "10548670": [
+   "miss",
+   "content_supported",
+   "Uncited; volume differences and NIHSS weighting support it."
+  ],
+  "11481172": [
+   "miss",
+   "content_supported",
+   "Uncited; consistency greater than chance supports it."
+  ],
+  "11867487": [
+   "miss",
+   "content_supported",
+   "Uncited; passages are about attitudes, not prevention."
+  ],
+  "15597845": [
+   "miss",
+   "audit_right",
+   "Cited; in-vitro only, so 'insufficient for clinical dosing' is supported."
+  ],
+  "17355582": [
+   "miss",
+   "content_supported",
+   "Uncited; only a study aim is shown."
+  ],
+  "17598882": [
+   "miss",
+   "content_supported",
+   "Uncited; familial HR 1.6 supports the hedged 'appears inherited'."
+  ],
+  "18284441": [
+   "miss",
+   "audit_right",
+   "Cited; no diagnostic metrics reported, so insufficiency is supported."
+  ],
+  "18322741": [
+   "miss",
+   "content_supported",
+   "Uncited; laparoscopy associated with lower AF risk (p=0.004)."
+  ],
+  "18435678": [
+   "miss",
+   "content_supported",
+   "Uncited; no clinically significant thrombocytopenia in Kell fetuses."
+  ],
+  "19108857": [
+   "miss",
+   "content_supported",
+   "Uncited; single case, link called putative."
+  ],
+  "19836806": [
+   "miss",
+   "debatable",
+   "Uncited; 'should not be adjusted' rests on a non-significant association (p=0.06)."
+  ],
+  "20064872": [
+   "miss",
+   "content_supported",
+   "Uncited; retrieved passages do not address PMR prognosis."
+  ],
+  "21789019": [
+   "miss",
+   "audit_right",
+   "Cited; few differences except intimacy/support - 'mixed' is supported."
+  ],
+  "22227642": [
+   "miss",
+   "content_supported",
+   "Uncited; neither mesopic nor cobalt blue light is mentioned."
+  ],
+  "22668712": [
+   "miss",
+   "content_supported",
+   "Uncited; considerably lower sensitivity than MRI."
+  ],
+  "22683044": [
+   "miss",
+   "audit_right",
+   "Cited; non-significant median, significant adjusted effect - 'mixed' is supported."
+  ],
+  "24013712": [
+   "miss",
+   "content_supported",
+   "Uncited; listed as an independent prognostic factor."
+  ],
+  "24995509": [
+   "miss",
+   "content_supported",
+   "Uncited; no significant difference for the other SNPs, incl. HIF1A."
+  ],
+  "27050489": [
+   "miss",
+   "content_supported",
+   "Uncited; prevalence only, no causal analysis."
+  ],
+  "11926574": [
+   "flag",
+   "audit_right",
+   "No significance test is reported for TTV (1 vs 2 subjects)."
+  ],
+  "15052394": [
+   "flag",
+   "audit_right",
+   "'The one direct test' is not established by the passages."
+  ],
+  "14872327": [
+   "flag",
+   "audit_right",
+   "Patients are not stated to be inpatients."
+  ],
+  "18041059": [
+   "flag",
+   "audit_pedantic",
+   "Early-breast-cancer AI vs tamoxifen trials are adjuvant; the passage does not say so."
+  ],
+  "22302761": [
+   "flag",
+   "audit_right",
+   "The study's Er:YAG laser is not stated to be fractional."
+  ],
+  "24625433": [
+   "flag",
+   "audit_right",
+   "'Not noisier' from 'no evidence of a difference' (CI -4.0 to 0.9)."
+  ],
+  "27096199": [
+   "flag",
+   "audit_right",
+   "'Did not influence severity' from 'number of viruses did not correlate'."
+  ],
+  "8910148": [
+   "flag",
+   "audit_pedantic",
+   "Flags the evaluative 'mixed/insufficient' summary itself."
+  ]
+ }
+}

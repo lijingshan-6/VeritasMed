@@ -82,7 +82,10 @@ python scripts/run_demo.py  # 之后启动可加 --skip-index
 
 ## 工作原理
 
-![系统总览](docs/assets/showcase/system-overview.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/showcase/flow-dark.svg">
+  <img alt="一个问题如何变成可核查的回答：理解、检索、把问题的每个部分绑定到原文句子或报告缺口、撰写并自检；每条陈述链接到原文句子，一键审计逐条核对" src="docs/assets/showcase/flow-light.svg">
+</picture>
 
 1. **理解追问**：结合最多六轮选中的历史对话。旧回答只用于理解"它""这些结果"指什么，不作为证据。
 2. **检索**：BGE-M3 稠密与稀疏检索，融合后重排；先确认问题点名的是哪篇论文，再挑选段落。

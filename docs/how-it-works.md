@@ -4,7 +4,10 @@
 
 ## Components
 
-![System overview](assets/showcase/system-overview.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/showcase/flow-dark.svg">
+  <img alt="How a question becomes a checkable answer: understand, retrieve, bind each part to exact source sentences or report a gap, write and self-check; each claim links to its sentence, and a one-click audit checks every claim" src="assets/showcase/flow-light.svg">
+</picture>
 
 | Part | Responsibility |
 |---|---|

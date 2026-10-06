@@ -99,7 +99,10 @@ always use the Flash endpoint.
 
 ## How it works
 
-![System overview](docs/assets/showcase/system-overview.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/showcase/flow-dark.svg">
+  <img alt="How a question becomes a checkable answer: understand, retrieve, bind each part to exact source sentences or report a gap, write and self-check; each claim links to its sentence, and a one-click audit checks every claim" src="docs/assets/showcase/flow-light.svg">
+</picture>
 
 1. **Resolve** a follow-up against up to six selected earlier turns. Earlier answers help interpret
    "it" or "those results" but are never used as evidence.

@@ -4,7 +4,10 @@
 
 ## 组成部分
 
-![系统总览](assets/showcase/system-overview.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/showcase/flow-dark.svg">
+  <img alt="一个问题如何变成可核查的回答：理解、检索、把问题的每个部分绑定到原文句子或报告缺口、撰写并自检；每条陈述链接到原文句子，一键审计逐条核对" src="assets/showcase/flow-light.svg">
+</picture>
 
 | 部分 | 职责 |
 |---|---|

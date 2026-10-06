@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VeritasMed · 深蓝徽标与双色字标</title>
+<link rel="icon" type="image/svg+xml" href="reference/veritasmed-reference-small-light.svg">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fffdf8;color:#061c2c;font:15px/1.8 system-ui,sans-serif}main{max-width:1200px;padding:0 30px;margin:36px auto}header{display:flex;justify-content:space-between;gap:18px;align-items:center;border-bottom:1px solid #dce2e5;padding-bottom:18px}header span{font-size:11px;letter-spacing:1.8px}button{border:1px solid #b6c3cd;background:transparent;color:inherit;border-radius:20px;padding:6px 14px;font:inherit;font-size:12px;cursor:pointer}h1{font-weight:500;font-size:30px;line-height:1.4;margin:30px 0 10px}p{color:#465662;max-width:900px}figure{margin:28px 0;padding:20px;background:#fff;border:1px solid #e1e6e8;border-radius:3px}.hero{display:flex;align-items:center;justify-content:center;min-height:250px}.hero picture,.hero img{display:block;width:100%;height:auto}figcaption{border-top:1px solid #e1e6e8;margin-top:14px;padding-top:13px;display:flex;justify-content:space-between;gap:16px;font-size:12px;color:#536775}a{color:inherit}.marks{display:flex;align-items:center;gap:34px;min-height:140px}.marks img{object-fit:contain}.dark{background:#101c26;color:#f3f6f7}.dark p,.dark figcaption,.dark footer{color:#bbcbd4}.dark figure{background:#172735;border-color:#354a5b}.dark header,.dark figcaption{border-color:#354a5b}footer{margin:20px 0 36px;font-size:13px;color:#536775}@media(max-width:600px){main{padding:0 16px;margin-top:24px}header{align-items:flex-start}header span{max-width:210px}h1{font-size:25px}figure{padding:14px}.hero{min-height:130px}figcaption{flex-direction:column;gap:5px}.marks{gap:26px;min-height:110px}.marks img:first-child{width:80px;height:80px}}
+</style>
+<main>
+<header><span>VERITASMED / NAVY BADGE / VISUAL IDENTITY</span><button id="theme">切换深色</button></header>
+<h1>同一款衬线字标，深色与青蓝。</h1>
+<p>Veritas 与 Med 统一字体、字号和字形比例，只用颜色区分。圆角方块中的白色引用 V 加粗，标语恢复为 “Medical answers. Evidence you can inspect.”，方块与完整文字块上下等距对齐。</p>
+<figure id="logoFigure"><div class="hero"><picture><source id="compact" media="(max-width:600px)" srcset="reference/veritasmed-reference-compact-light.svg"><img id="logo" src="reference/veritasmed-reference-logo-light.svg" alt="VeritasMed：深色圆角徽标内的白色引用 V；Veritas 与 Med 使用同一款衬线字体，分别为深色与青蓝"></picture></div><figcaption><span>同一款衬线字体 · 深色 Veritas / 青蓝 Med</span><span><a id="download" href="reference/veritasmed-reference-logo-light.svg">透明 SVG</a> · <a id="downloadPng" href="reference/veritasmed-reference-header-light.png">高清 PNG</a></span></figcaption></figure>
+<figure><div class="marks"><img id="mark" src="reference/veritasmed-reference-small-light.svg" width="110" height="110" alt="独立徽标"><img id="mark48" src="reference/veritasmed-reference-small-light.svg" width="40" height="40" alt="40 像素徽标"><img id="mark24" src="reference/veritasmed-reference-small-light.svg" width="24" height="24" alt="24 像素徽标"></div><figcaption><span>独立图标 · 110 / 40 / 24px</span><a id="downloadAvatar" href="reference/veritasmed-reference-avatar-light.png">头像 PNG</a></figcaption></figure>
+<footer><a href="README-reference.md">设计与使用说明</a> · <a href="reference/asset-manifest.json">资源清单</a><p>Medical answers. Evidence you can inspect. —— 医学问答，证据可查。</p></footer>
+</main>
+<script>
+let dark=false;
+document.getElementById('theme').onclick=()=>{
+  dark=!dark;const tone=dark?'dark':'light';
+  document.body.classList.toggle('dark',dark);
+  document.getElementById('theme').textContent=dark?'切换浅色':'切换深色';
+  document.getElementById('logo').src=`reference/veritasmed-reference-logo-${tone}.svg`;
+  document.getElementById('compact').srcset=`reference/veritasmed-reference-compact-${tone}.svg`;
+  for(const id of ['mark','mark48','mark24'])document.getElementById(id).src=`reference/veritasmed-reference-small-${tone}.svg`;
+  document.getElementById('download').href=`reference/veritasmed-reference-logo-${tone}.svg`;
+  document.getElementById('downloadPng').href=`reference/veritasmed-reference-header-${tone}.png`;
+  document.getElementById('downloadAvatar').href=`reference/veritasmed-reference-avatar-${tone}.png`;
+};
+</script>
+</html>

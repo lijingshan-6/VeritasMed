@@ -1,0 +1,230 @@
+{
+  "created": "2026-10-06",
+  "concept": "Unified serif in dark ink / teal with a sturdy citation V badge",
+  "assets": [
+    {
+      "file": "veritasmed-reference-avatar-dark.svg",
+      "width": 512,
+      "height": 512,
+      "bytes": 756,
+      "sha256": "000130c0dc86e09829302d44fea7144b0fd2db4d42b9a6c1fa88f233b833d0a3",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-avatar-dark.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 52866,
+      "sha256": "090f0f00bb06aabeab4463c2edc138b31cb5ccda0e77d9ff53d69ec902e41b0f",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-avatar-light.svg",
+      "width": 512,
+      "height": 512,
+      "bytes": 699,
+      "sha256": "ae4856b5e82f08b59791d108e35dcb13a11c98c7cb6d1902a0a9acfe60d6f31d",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-avatar-light.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 45770,
+      "sha256": "a58a35c9c9b2dbd942fbfeafdc82bd14d97785ffcccd262e2834eaca1633a599",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-compact-dark.svg",
+      "width": 2160,
+      "height": 560,
+      "bytes": 5584,
+      "sha256": "130fc98132f4d5465a84d40f6255e2cdd2ec919d8cf29ec770c345ac230a5618",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-compact-dark.png",
+      "width": 4320,
+      "height": 1120,
+      "bytes": 107744,
+      "sha256": "6f74164703e668d98f1d8bafe1b04a1aef6938e98f350ae36c03268717751686",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-compact-light.svg",
+      "width": 2160,
+      "height": 560,
+      "bytes": 5527,
+      "sha256": "be1d1db5405a49f6e940482169ce64aa27c5f612d8eefbdc915c6accdaa865e3",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-compact-light.png",
+      "width": 4320,
+      "height": 1120,
+      "bytes": 106155,
+      "sha256": "540e05e74ef5c27fd5e313a245f5ea7af89af17afb8f0193572747c948b81178",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-header-dark.svg",
+      "width": 2160,
+      "height": 720,
+      "bytes": 23819,
+      "sha256": "bacebe564e6ad01e457224d5f39aa1ab70b6aabf6d72d3bca05e3faeaf4125e7",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-header-dark.png",
+      "width": 4320,
+      "height": 1440,
+      "bytes": 242951,
+      "sha256": "9b90cc62d02d657357af37b7fca877a76df57aeea09e4c998490c1542a1f2b62",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-header-light.svg",
+      "width": 2160,
+      "height": 720,
+      "bytes": 23762,
+      "sha256": "98b926de3f9bd7ff0efc250f2c82ecbb7e2c197cf9c8477aaddb9e124a1412fb",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-header-light.png",
+      "width": 4320,
+      "height": 1440,
+      "bytes": 238913,
+      "sha256": "cf54b13510bab1922d0ac8c3cefbefe379c6dde72d68ce01a95e67e5247e22dc",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-logo-dark.svg",
+      "width": 2160,
+      "height": 720,
+      "bytes": 23771,
+      "sha256": "06ac6621b3e5db4d9188a4ca62365c38d3b520e0d49804a80967e7b2228d38eb",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-logo-dark.png",
+      "width": 4320,
+      "height": 1440,
+      "bytes": 149774,
+      "sha256": "3dad73b4b356f11979ca8ff5a42ad8e05efa87a6804311bef05b2e52207fec33",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-logo-light.svg",
+      "width": 2160,
+      "height": 720,
+      "bytes": 23714,
+      "sha256": "f64a2c3d7c124f3b072199f7f24335c9d3e2123da8dcba7b1cae1bfaf5b15f23",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-logo-light.png",
+      "width": 4320,
+      "height": 1440,
+      "bytes": 147903,
+      "sha256": "d32de08b872c86b1abfb14952dc5ba633d2eb5d5705b6d54c8e15fa51f33726e",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-logo-mono.svg",
+      "width": 2160,
+      "height": 720,
+      "bytes": 23652,
+      "sha256": "eb1c2c50b81b0dd729415e6c6e5d713d32d4756ffb73fff34ef0ff205a0eee3f",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-logo-mono.png",
+      "width": 4320,
+      "height": 1440,
+      "bytes": 143775,
+      "sha256": "68c7b9bcda94b07f015806ba1a6db0646e5bcfecaa622ed47e0d70d987bfb173",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-mark-dark.svg",
+      "width": 512,
+      "height": 512,
+      "bytes": 757,
+      "sha256": "bc2e58d0b86e16965f5d1a6e035c6799319e4829ad9ba4dfdc14ed2021f3fa24",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-mark-dark.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 53426,
+      "sha256": "8e62175789c73628852fe4e459c0458d60eee6c9699329a2e9c1323c887f0eff",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-mark-light.svg",
+      "width": 512,
+      "height": 512,
+      "bytes": 700,
+      "sha256": "de82c1fc6a3e3479685bce54a1ab49695d1412e042e570541b8a9f8ca1ebf110",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-mark-light.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 45354,
+      "sha256": "b4a13db3f45e4630678f4d1e8597e709517787514e6695230944e8eb38fc6bbd",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-mark-mono.svg",
+      "width": 512,
+      "height": 512,
+      "bytes": 675,
+      "sha256": "e5fbe819be0092f7ba12306e29c5258eb1d1344d0969ba46678eb09f741811f8",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-mark-mono.png",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 45087,
+      "sha256": "fd2d0a14a51530ca095eac21b7be409dcc0a3b62cba7fdd6de09c1da66893b98",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-small-dark.svg",
+      "width": 120,
+      "height": 120,
+      "bytes": 761,
+      "sha256": "22d3f3bbfcc0a6a4a3d72072a7245140692bf714f178ea6cee44c3363758d559",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-small-dark.png",
+      "width": 240,
+      "height": 240,
+      "bytes": 5822,
+      "sha256": "9752c852cd5756c8942ef007f358fe9f0ca0a127d0c2e894cb5206654a0a8edf",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-small-light.svg",
+      "width": 120,
+      "height": 120,
+      "bytes": 704,
+      "sha256": "a5a29acb57fcf8293a3989690f333f2264fd6fa1b23da8ed962cbe5f526c8440",
+      "alpha": true
+    },
+    {
+      "file": "veritasmed-reference-small-light.png",
+      "width": 240,
+      "height": 240,
+      "bytes": 5271,
+      "sha256": "efcca091ffdb2f1ba724a06ef9456ce9d9f7e62e16712932008615a132b77015",
+      "alpha": true
+    }
+  ]
+}

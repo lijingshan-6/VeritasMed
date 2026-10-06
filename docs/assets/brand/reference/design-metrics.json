@@ -1,0 +1,41 @@
+{
+  "revision": 2,
+  "wordmark": "DM Serif Display Regular, uniform size / scale / weight for all ten letters",
+  "wordmark_size": 240,
+  "wordmark_tracking": -1.5,
+  "word_boundary_extra_space": 7,
+  "tagline": "Inter 400",
+  "tagline_text": "Medical answers. Evidence you can inspect.",
+  "tagline_size": 42,
+  "tagline_tracking": 0.3,
+  "text_top": 236.51183593750002,
+  "text_bottom": 483.4881640625,
+  "badge_top": 224.51183593750002,
+  "badge_bottom": 495.4881640625,
+  "badge_padding_top": 12,
+  "badge_padding_bottom": 12,
+  "wordmark_width": 1199.98,
+  "bracket_stroke_in_120_canvas": 8,
+  "V_arm_widths_near_terminals": [
+    13,
+    8
+  ],
+  "light": {
+    "ink_and_tagline": "#17323B",
+    "Med": "#246F80",
+    "badge_colors": [
+      "#17262F",
+      "#1F6F7A",
+      "#F4F2EE"
+    ]
+  },
+  "dark": {
+    "ink_and_tagline": "#F4F5F1",
+    "Med": "#8CC5D0",
+    "badge_colors": [
+      "#E9EEF0",
+      "#5FB3BF",
+      "#0D1117"
+    ]
+  }
+}

@@ -1,8 +1,9 @@
 <div align="center">
 
-<img src="docs/assets/showcase/logo.svg" width="64" height="64" alt="VeritasMed logo">
-
-# VeritasMed
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/brand/reference/veritasmed-reference-logo-dark.svg">
+  <img src="docs/assets/brand/reference/veritasmed-reference-logo-light.svg" width="720" alt="VeritasMed — Medical answers. Evidence you can inspect.">
+</picture>
 
 **Verifiable medical Q&A: conclusions held to the evidence, every sentence auditable.**
 
@@ -150,6 +151,7 @@ Details in the [research log](docs/research.md).
 | `frontend/` | React app; `npm run replay` needs no backend |
 | `data/demo/conversations/` | Three source papers, corpus and recorded conversations |
 | `experiments/pubmedqa/` | Experiment A: scripts, registrations and every raw output |
+| `docs/assets/brand/` | Logo set (light, dark, mono, compact, icon, avatar; SVG and PNG), fonts and build scripts |
 
 Checks (none calls a model): `python -m pytest -q`, `ruff check src/`, `npm --prefix frontend test`,
 `npm --prefix frontend run build`.

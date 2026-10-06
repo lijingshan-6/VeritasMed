@@ -1,0 +1,23 @@
+{
+  "recolored_svg_assets": 12,
+  "palette": {
+    "light": [
+      "#17262F",
+      "#1F6F7A",
+      "#F4F2EE"
+    ],
+    "dark": [
+      "#E9EEF0",
+      "#5FB3BF",
+      "#0D1117"
+    ]
+  },
+  "geometry_and_non_icon_svg_content_unchanged": true,
+  "all_non_icon_png_pixels_unchanged": true,
+  "monochrome_assets_unchanged": [
+    "veritasmed-reference-logo-mono.svg",
+    "veritasmed-reference-logo-mono.png",
+    "veritasmed-reference-mark-mono.svg",
+    "veritasmed-reference-mark-mono.png"
+  ]
+}

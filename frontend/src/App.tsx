@@ -24,36 +24,12 @@ const IconSettings  = (p: { size?: number; sw?: number; style?: React.CSSPropert
 
 // ── BrandMark ───────────────────────────────────────────────────────────────
 function BrandMark() {
+  const base = import.meta.env.BASE_URL
   return (
-    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 9 }}>
-      <span style={{
-        width: 28, height: 28, borderRadius: 6,
-        background: 'var(--ink)', color: 'var(--canvas)',
-        display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-        fontFamily: 'var(--serif)', fontStyle: 'italic', fontWeight: 400,
-        fontSize: 19, lineHeight: 1, paddingBottom: 1,
-        letterSpacing: '-0.04em',
-        position: 'relative',
-      }}>
-        V
-        <span style={{
-          position: 'absolute', bottom: 5, left: '50%', transform: 'translateX(-50%)',
-          width: 12, height: 1, background: 'var(--accent)',
-        }} />
-      </span>
-      <span style={{ display: 'inline-flex', alignItems: 'baseline', gap: 0 }}>
-        <span style={{
-          fontFamily: 'var(--serif)', fontStyle: 'italic',
-          fontSize: 22, lineHeight: 1, color: 'var(--ink)',
-          letterSpacing: '-0.025em',
-        }}>Veritas</span>
-        <span style={{
-          fontFamily: 'var(--sans)', fontWeight: 600,
-          fontSize: 18, color: 'var(--accent)',
-          letterSpacing: '-0.005em',
-        }}>Med</span>
-      </span>
-    </div>
+    <span className="ws-brand-mark">
+      <img className="brand-light" src={`${base}brand/veritasmed-header-light.svg`} alt="VeritasMed" height={28} />
+      <img className="brand-dark" src={`${base}brand/veritasmed-header-dark.svg`} alt="" aria-hidden="true" height={28} />
+    </span>
   )
 }
 
@@ -185,7 +161,7 @@ function Header({ theme, setTheme }: { theme: Theme; setTheme: (t: Theme) => voi
   return (
     <header className="ws-header">
       <a href={import.meta.env.BASE_URL} className="ws-brand" aria-label="VeritasMed home"><BrandMark /></a>
-      <span className="ws-tagline">Medical literature answers you can check</span>
+      <span className="ws-tagline">Medical answers. Evidence you can inspect.</span>
       <span style={{ flex: 1 }} />
       <StatusPill />
       <ThemePopover theme={theme} setTheme={setTheme} />

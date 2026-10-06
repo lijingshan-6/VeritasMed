@@ -20,6 +20,11 @@
 .ws-header { height: 52px; flex-shrink: 0; display: flex; align-items: center; gap: 16px; padding: 0 20px;
   border-bottom: 1px solid var(--rule); background: var(--canvas); }
 .ws-brand { text-decoration: none; display: inline-flex; }
+.ws-brand-mark { display: inline-flex; align-items: center; }
+.ws-brand-mark img { height: 28px; width: auto; display: block; }
+.ws-brand-mark .brand-dark { display: none; }
+[data-theme="midnight"] .ws-brand-mark .brand-light { display: none; }
+[data-theme="midnight"] .ws-brand-mark .brand-dark { display: block; }
 .ws-tagline { font-size: 12.5px; color: var(--muted); padding-left: 16px; border-left: 1px solid var(--rule); }
 .vm-backend-status { font-size: 11px !important; }
 

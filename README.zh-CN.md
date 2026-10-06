@@ -1,8 +1,9 @@
 <div align="center">
 
-<img src="docs/assets/showcase/logo.svg" width="64" height="64" alt="VeritasMed 标志">
-
-# VeritasMed
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/brand/reference/veritasmed-reference-logo-dark.svg">
+  <img src="docs/assets/brand/reference/veritasmed-reference-logo-light.svg" width="720" alt="VeritasMed — Medical answers. Evidence you can inspect.">
+</picture>
 
 **可核查的医学问答：结论受证据约束，每句话都能被审计。**
 
@@ -126,6 +127,7 @@ python scripts/run_demo.py  # 之后启动可加 --skip-index
 | `frontend/` | React 应用；`npm run replay` 无需后端 |
 | `data/demo/conversations/` | 三篇来源论文、语料与录制的对话 |
 | `experiments/pubmedqa/` | 实验 A：脚本、预注册文件与全部原始输出 |
+| `docs/assets/brand/` | Logo 全套（浅色、深色、单色、紧凑版、图标、头像；SVG 与 PNG）、字体与生成脚本 |
 
 检查命令（都不调用模型）：`python -m pytest -q`、`ruff check src/`、`npm --prefix frontend test`、`npm --prefix frontend run build`。
 

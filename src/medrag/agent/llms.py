@@ -57,7 +57,7 @@ def _make_llm(thinking: bool, *, reasoning: bool = False, structured: bool | dic
             extra_body={"thinking": {"type": "enabled"}},
             model_kwargs={"response_format": {"type": "json_object"}} if structured else {},
             # This gateway rejects urllib's default UA before API dispatch.
-            default_headers={"User-Agent": "Mozilla/5.0 MedRAG-Agent"},
+            default_headers={"User-Agent": "Mozilla/5.0 VeritasMed"},
             use_responses_api=False,
             # Receive reasoning/output incrementally so a long completion does
             # not hit the gateway's 120s non-streaming proxy timeout. invoke()

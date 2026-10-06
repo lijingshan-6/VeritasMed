@@ -1,4 +1,4 @@
-"""Local token authentication for MedRAG-Agent MCP server.
+"""Local token authentication for VeritasMed MCP server.
 
 The default MCP transport is local stdio. MEDRAG_LOCAL_TOKEN is an optional
 pre-shared tool argument, not a public deployment authentication system.

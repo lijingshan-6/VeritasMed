@@ -1,4 +1,4 @@
-"""Prompt injection guard for MedRAG-Agent MCP server.
+"""Prompt injection guard for VeritasMed MCP server.
 
 Defends against adversarial content embedded in user queries that could
 hijack the LLM into ignoring retrieved documents or exfiltrating data.

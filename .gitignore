@@ -220,7 +220,7 @@ __marimo__/
 # Frontend local env (contains dev URLs, never commit)
 frontend/.env.local
 
-# ── MedRAG-Agent project-specific ─────────────────────────────────────────────
+# ── VeritasMed project-specific ─────────────────────────────────────────────
 
 # Raw corpus data (large JSON/XML files from PubMed/PMC, not reproducible via git)
 data/raw/

@@ -3,7 +3,7 @@ requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "medrag-agent"
+name = "veritasmed"
 version = "0.9.0"
 description = "VeritasMed medical literature RAG agent — install deps with pip install -e ."
 readme = "README.md"

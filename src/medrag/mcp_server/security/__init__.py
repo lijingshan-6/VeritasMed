@@ -1,4 +1,4 @@
-"""Security middleware for MedRAG-Agent MCP server.
+"""Security middleware for VeritasMed MCP server.
 
 Five-layer defense:
   1. auth            — MEDRAG_LOCAL_TOKEN verification

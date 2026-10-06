@@ -1,1 +1,1 @@
-"""MedRAG-Agent core package."""
+"""VeritasMed core package."""

@@ -43,7 +43,7 @@ authlib==1.8.0
 beartype==0.22.9
     # via py-key-value-aio
 biopython==1.88
-    # via medrag-agent (pyproject.toml)
+    # via veritasmed (pyproject.toml)
 cachetools==7.2.0
     # via py-key-value-aio
 caio==0.12.4
@@ -93,9 +93,9 @@ email-validator==2.3.0
 exceptiongroup==1.3.1
     # via fastmcp-slim
 fastapi==0.141.1
-    # via medrag-agent (pyproject.toml)
+    # via veritasmed (pyproject.toml)
 fastmcp==3.4.7
-    # via medrag-agent (pyproject.toml)
+    # via veritasmed (pyproject.toml)
 fastmcp-slim==3.4.7
     # via fastmcp
 filelock==4.0.0
@@ -105,7 +105,7 @@ filelock==4.0.0
     #   torch
     #   transformers
 flagembedding==1.4.0
-    # via medrag-agent (pyproject.toml)
+    # via veritasmed (pyproject.toml)
 frozenlist==1.8.0
     # via
     #   aiohttp
@@ -138,7 +138,7 @@ httptools==0.8.0
     # via uvicorn
 httpx==0.28.1
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   datasets
     #   fastmcp-slim
     #   langchain-core
@@ -211,27 +211,27 @@ keyring==25.7.0
     # via py-key-value-aio
 langchain-core==1.6.3
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   langchain-ollama
     #   langchain-openai
     #   langgraph
     #   langgraph-checkpoint
     #   langgraph-prebuilt
 langchain-ollama==1.1.0
-    # via medrag-agent (pyproject.toml)
+    # via veritasmed (pyproject.toml)
 langchain-openai==1.6.2
-    # via medrag-agent (pyproject.toml)
+    # via veritasmed (pyproject.toml)
 langchain-protocol==0.0.19
     # via langchain-core
 langgraph==1.2.1
-    # via medrag-agent (pyproject.toml)
+    # via veritasmed (pyproject.toml)
 langgraph-checkpoint==4.2.0
     # via
     #   langgraph
     #   langgraph-checkpoint-sqlite
     #   langgraph-prebuilt
 langgraph-checkpoint-sqlite==3.0.3
-    # via medrag-agent (pyproject.toml)
+    # via veritasmed (pyproject.toml)
 langgraph-prebuilt==1.1.0
     # via langgraph
 langgraph-sdk==0.3.15
@@ -268,7 +268,7 @@ networkx==3.6.1
     # via torch
 numpy==2.5.3
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   accelerate
     #   biopython
     #   datasets
@@ -284,7 +284,7 @@ ollama==0.6.2
     # via langchain-ollama
 openai==2.54.0
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   langchain-openai
 openapi-pydantic==0.5.1
     # via fastmcp-slim
@@ -335,13 +335,13 @@ py-key-value-aio==0.4.5
     # via fastmcp-slim
 pyarrow==25.0.1
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   datasets
 pycparser==3.0 ; implementation_name != 'PyPy' and platform_python_implementation != 'PyPy'
     # via cffi
 pydantic==2.13.5
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   fastapi
     #   fastmcp-slim
     #   langchain-core
@@ -369,12 +369,12 @@ pyjwt==2.14.0
 pyperclip==1.11.0
     # via fastmcp-slim
 pytest==9.1.1
-    # via medrag-agent (pyproject.toml)
+    # via veritasmed (pyproject.toml)
 python-dateutil==2.9.0.post0
     # via pandas
 python-dotenv==1.2.3
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   fastmcp-slim
     #   pydantic-settings
     #   uvicorn
@@ -401,7 +401,7 @@ pyyaml==6.0.3
     #   transformers
     #   uvicorn
 qdrant-client==1.17.1
-    # via medrag-agent (pyproject.toml)
+    # via veritasmed (pyproject.toml)
 referencing==0.37.0
     # via
     #   jsonschema
@@ -434,7 +434,7 @@ rpds-py==2026.6.3
     #   jsonschema
     #   referencing
 ruff==0.16.8
-    # via medrag-agent (pyproject.toml)
+    # via veritasmed (pyproject.toml)
 safetensors==0.8.0
     # via
     #   accelerate
@@ -450,7 +450,7 @@ secretstorage==3.5.0 ; sys_platform == 'linux'
     # via keyring
 sentence-transformers==5.7.0
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   flagembedding
 sentencepiece==0.2.2
     # via flagembedding
@@ -476,7 +476,7 @@ sympy==1.13.1
     # via torch
 tenacity==9.1.4
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   langchain-core
 threadpoolctl==3.7.0
     # via scikit-learn
@@ -488,21 +488,21 @@ tokenizers==0.22.2
     #   transformers
 torch==2.6.0 ; python_full_version < '3.14' and sys_platform == 'darwin'
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   accelerate
     #   flagembedding
     #   peft
     #   sentence-transformers
 torch==2.6.0+cpu ; python_full_version >= '3.14' or sys_platform != 'darwin'
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   accelerate
     #   flagembedding
     #   peft
     #   sentence-transformers
 tqdm==4.70.1
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   datasets
     #   huggingface-hub
     #   ir-datasets
@@ -512,7 +512,7 @@ tqdm==4.70.1
     #   transformers
 transformers==4.57.6
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   flagembedding
     #   peft
     #   sentence-transformers
@@ -565,7 +565,7 @@ uuid-utils==0.17.1
     #   langsmith
 uvicorn==0.53.0
     # via
-    #   medrag-agent (pyproject.toml)
+    #   veritasmed (pyproject.toml)
     #   fastmcp-slim
     #   mcp
 uvloop==0.22.1 ; platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'

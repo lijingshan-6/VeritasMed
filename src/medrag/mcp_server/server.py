@@ -1,4 +1,4 @@
-"""MedRAG-Agent MCP Server (Week 5 — LangGraph + Security).
+"""VeritasMed MCP Server (Week 5 — LangGraph + Security).
 
 Tools exposed to Claude Desktop / Claude Code:
   1. search_literature   — hybrid dense+sparse retrieval with optional reranking
@@ -17,7 +17,7 @@ Run for local development (FastMCP 3.x — use fastmcp CLI, not mcp CLI):
     fastmcp dev inspector src/medrag/mcp_server/server.py --with-editable .
 
 Install into Claude Desktop (run once):
-    fastmcp install claude-desktop src/medrag/mcp_server/server.py --name MedRAG-Agent --with-editable .
+    fastmcp install claude-desktop src/medrag/mcp_server/server.py --name VeritasMed --with-editable .
 """
 from __future__ import annotations
 
@@ -142,9 +142,9 @@ def _audit_tool(name: str, query: str, success_status: str = "ok"):
 # ── MCP server ─────────────────────────────────────────────────────────────────
 
 mcp = FastMCP(
-    "MedRAG-Agent",
+    "VeritasMed",
     instructions=(
-        "MedRAG-Agent provides retrieval-augmented QA over a PubMed/PMC medical corpus. "
+        "VeritasMed provides retrieval-augmented QA over a PubMed/PMC medical corpus. "
         "Tools: "
         "'search_literature' — retrieve relevant document snippets (fast); "
         "'ask_agent' — full agentic loop: retrieves, grades, rewrites if needed, "

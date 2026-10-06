@@ -1,4 +1,4 @@
-"""Token-bucket rate limiter for MedRAG-Agent MCP server.
+"""Token-bucket rate limiter for VeritasMed MCP server.
 
 Limits:
   - Global:   30 requests / minute  (all tools combined)

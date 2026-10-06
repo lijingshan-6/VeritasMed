@@ -82,7 +82,7 @@ async def health() -> HealthResponse:
         endpoint = "/models"
         headers = {
             "Authorization": f"Bearer {os.environ.get('OPENHUB_API_KEY', '')}",
-            "User-Agent": "Mozilla/5.0 MedRAG-Agent",
+            "User-Agent": "Mozilla/5.0 VeritasMed",
         }
     else:
         base_url = ""

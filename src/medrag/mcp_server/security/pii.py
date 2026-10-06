@@ -1,4 +1,4 @@
-"""PII redaction middleware for MedRAG-Agent MCP server.
+"""PII redaction middleware for VeritasMed MCP server.
 
 Redacts common personally identifiable information patterns from
 user queries before they are logged or stored.

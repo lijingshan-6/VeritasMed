@@ -1,4 +1,4 @@
-"""Unit tests for MedRAG-Agent MCP server security middleware.
+"""Unit tests for VeritasMed MCP server security middleware.
 
 Tests cover:
   - injection_guard: pattern detection, token escaping, XML wrapping

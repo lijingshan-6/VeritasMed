@@ -6,12 +6,12 @@
 
 **可核查的医学问答：结论受证据约束，每句话都能被审计。**
 
-[![CI](https://github.com/lijingshan-6/medrag-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/lijingshan-6/medrag-agent/actions/workflows/ci.yml)
-[![Live demo](https://github.com/lijingshan-6/medrag-agent/actions/workflows/pages.yml/badge.svg)](https://lijingshan-6.github.io/medrag-agent/)
+[![CI](https://github.com/lijingshan-6/VeritasMed/actions/workflows/ci.yml/badge.svg)](https://github.com/lijingshan-6/VeritasMed/actions/workflows/ci.yml)
+[![Live demo](https://github.com/lijingshan-6/VeritasMed/actions/workflows/pages.yml/badge.svg)](https://lijingshan-6.github.io/VeritasMed/)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 ![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)
 
-[**在线演示**](https://lijingshan-6.github.io/medrag-agent/) · [**实验报告**](docs/experiment-a.zh-CN.md) · [工作原理](docs/how-it-works.zh-CN.md) · [研究记录](docs/research.zh-CN.md) · [English](README.md)
+[**在线演示**](https://lijingshan-6.github.io/VeritasMed/) · [**实验报告**](docs/experiment-a.zh-CN.md) · [工作原理](docs/how-it-works.zh-CN.md) · [研究记录](docs/research.zh-CN.md) · [English](README.md)
 
 </div>
 
@@ -53,11 +53,11 @@ VeritasMed 把结论和每条陈述都绑定到原文句子，用平实的语言
 
 ## 快速开始
 
-回放模式在浏览器中运行录制好的对话（9 个真实回答、12 次审计），不需要模型、API 密钥、Python 或 GPU。直接打开[在线演示](https://lijingshan-6.github.io/medrag-agent/)，或用 Node.js 22.12+ 在本地运行：
+回放模式在浏览器中运行录制好的对话（9 个真实回答、12 次审计），不需要模型、API 密钥、Python 或 GPU。直接打开[在线演示](https://lijingshan-6.github.io/VeritasMed/)，或用 Node.js 22.12+ 在本地运行：
 
 ```sh
-git clone https://github.com/lijingshan-6/medrag-agent.git
-cd medrag-agent/frontend && npm ci && npm run replay
+git clone https://github.com/lijingshan-6/VeritasMed.git
+cd VeritasMed/frontend && npm ci && npm run replay
 ```
 
 打开 http://127.0.0.1:5173，选择一段对话，再打开 **Claim check**。
@@ -129,7 +129,7 @@ python scripts/run_demo.py  # 之后启动可加 --skip-index
 
 检查命令（都不调用模型）：`python -m pytest -q`、`ruff check src/`、`npm --prefix frontend test`、`npm --prefix frontend run build`。
 
-更早的研究数据归档在 [commit 81a1519](https://github.com/lijingshan-6/medrag-agent/tree/81a1519)。另见 [变更记录](CHANGELOG.md) 与 [来源归属](data/demo/conversations/README.md)。
+更早的研究数据归档在 [commit 81a1519](https://github.com/lijingshan-6/VeritasMed/tree/81a1519)。另见 [变更记录](CHANGELOG.md) 与 [来源归属](data/demo/conversations/README.md)。
 
 </details>
 

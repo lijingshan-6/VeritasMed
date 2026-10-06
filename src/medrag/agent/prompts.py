@@ -1,4 +1,4 @@
-"""All LangGraph node prompt templates for MedRAG-Agent.
+"""All LangGraph node prompt templates for VeritasMed.
 
 Each prompt is a plain string with {}-style placeholders filled at runtime.
 Keeping prompts in one file makes them easy to audit, version, and test.

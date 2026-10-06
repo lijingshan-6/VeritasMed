@@ -1,4 +1,4 @@
-"""Audit logging middleware for MedRAG-Agent MCP server.
+"""Audit logging middleware for VeritasMed MCP server.
 
 Writes structured JSON-Lines to data/logs/audit.jsonl.
 Each entry records: timestamp, tool, query_hash, latency_ms, status,

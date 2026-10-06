@@ -23,7 +23,7 @@ class FlashGateway:
                          "streaming": True, "sdk_max_retries": 1, "transport": "openai_sdk_raw_stream"}
         self.client = OpenAI(api_key=os.environ["OPENHUB_API_KEY"], base_url=endpoint.geturl(),
                              timeout=self.settings["timeout_seconds"], max_retries=1,
-                             default_headers={"User-Agent": "Mozilla/5.0 MedRAG-Agent"})
+                             default_headers={"User-Agent": "Mozilla/5.0 VeritasMed"})
 
     def invoke(self, messages):
         roles = {"system": "system", "human": "user", "ai": "assistant"}

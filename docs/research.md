@@ -5,7 +5,7 @@
 VeritasMed was built alongside a series of experiments. Each one was frozen before it ran, and
 failures and unfavourable results were kept. This page summarizes what was learned. All
 datasets, raw model outputs and full reports are archived at
-[commit 81a1519](https://github.com/lijingshan-6/medrag-agent/tree/81a1519) (`data/` and `docs/reports/`).
+[commit 81a1519](https://github.com/lijingshan-6/VeritasMed/tree/81a1519) (`data/` and `docs/reports/`).
 
 The experiments answer different questions with different labels, so their numbers should not be
 added together into one "accuracy".

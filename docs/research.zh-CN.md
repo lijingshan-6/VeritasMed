@@ -4,7 +4,7 @@
 
 VeritasMed 是边做产品边做实验发展起来的。每个实验都在运行前冻结方法，失败和不利结果全部保留。
 本页总结学到了什么。全部数据集、模型原始输出和完整报告归档在
-[commit 81a1519](https://github.com/lijingshan-6/medrag-agent/tree/81a1519)（`data/` 与 `docs/reports/`）。
+[commit 81a1519](https://github.com/lijingshan-6/VeritasMed/tree/81a1519)（`data/` 与 `docs/reports/`）。
 
 各实验回答的问题不同、标签来源不同，数字不能相加成一个“准确率”。
 

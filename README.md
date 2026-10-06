@@ -6,12 +6,12 @@
 
 **Verifiable medical Q&A: conclusions held to the evidence, every sentence auditable.**
 
-[![CI](https://github.com/lijingshan-6/medrag-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/lijingshan-6/medrag-agent/actions/workflows/ci.yml)
-[![Live demo](https://github.com/lijingshan-6/medrag-agent/actions/workflows/pages.yml/badge.svg)](https://lijingshan-6.github.io/medrag-agent/)
+[![CI](https://github.com/lijingshan-6/VeritasMed/actions/workflows/ci.yml/badge.svg)](https://github.com/lijingshan-6/VeritasMed/actions/workflows/ci.yml)
+[![Live demo](https://github.com/lijingshan-6/VeritasMed/actions/workflows/pages.yml/badge.svg)](https://lijingshan-6.github.io/VeritasMed/)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 ![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)
 
-[**Live demo**](https://lijingshan-6.github.io/medrag-agent/) · [**Experiment report**](docs/experiment-a.md) · [How it works](docs/how-it-works.md) · [Research log](docs/research.md) · [简体中文](README.zh-CN.md)
+[**Live demo**](https://lijingshan-6.github.io/VeritasMed/) · [**Experiment report**](docs/experiment-a.md) · [How it works](docs/how-it-works.md) · [Research log](docs/research.md) · [简体中文](README.zh-CN.md)
 
 </div>
 
@@ -66,12 +66,12 @@ Full design, statistics, adjudications and limits: [**Experiment A report**](doc
 ## Quick start
 
 The replay runs the recorded conversations (nine real answers, twelve audits) in the browser - no
-model, API key, Python or GPU. Use the [live demo](https://lijingshan-6.github.io/medrag-agent/), or
+model, API key, Python or GPU. Use the [live demo](https://lijingshan-6.github.io/VeritasMed/), or
 with Node.js 22.12+:
 
 ```sh
-git clone https://github.com/lijingshan-6/medrag-agent.git
-cd medrag-agent/frontend && npm ci && npm run replay
+git clone https://github.com/lijingshan-6/VeritasMed.git
+cd VeritasMed/frontend && npm ci && npm run replay
 ```
 
 Open http://127.0.0.1:5173, pick a conversation and open **Claim check**.
@@ -154,7 +154,7 @@ Details in the [research log](docs/research.md).
 Checks (none calls a model): `python -m pytest -q`, `ruff check src/`, `npm --prefix frontend test`,
 `npm --prefix frontend run build`.
 
-Earlier research data is archived at [commit 81a1519](https://github.com/lijingshan-6/medrag-agent/tree/81a1519).
+Earlier research data is archived at [commit 81a1519](https://github.com/lijingshan-6/VeritasMed/tree/81a1519).
 See the [changelog](CHANGELOG.md) and [source attribution](data/demo/conversations/README.md).
 
 </details>

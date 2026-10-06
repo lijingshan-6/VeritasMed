@@ -23,7 +23,7 @@
 
 The project is now one product: Ask with an audit inside each answer. Research history moved out
 of the working tree and is archived at
-[commit 81a1519](https://github.com/lijingshan-6/medrag-agent/tree/81a1519) and tag `v0.8.0`.
+[commit 81a1519](https://github.com/lijingshan-6/VeritasMed/tree/81a1519) and tag `v0.8.0`.
 
 - **Fixed:** an answer component bound to a source sentence already shown for another component
   lost its own answer (the recorded five-year-mortality omission). Writing instructions such as

@@ -31,7 +31,7 @@ export function QueryInput() {
 
   if (isReplayOnly) return <div className="ws-replay-note">
     Replay of recorded answers — no new questions here.{' '}
-    <a href="https://github.com/lijingshan-6/medrag-agent#ask-your-own-questions" target="_blank" rel="noreferrer">Run it locally to ask your own ↗</a>
+    <a href="https://github.com/lijingshan-6/VeritasMed#quick-start" target="_blank" rel="noreferrer">Run it locally to ask your own ↗</a>
   </div>
 
   const followUp = useContext && history.context.length > 0

@@ -1,4 +1,4 @@
-"""LangGraph AgentState definition for MedRAG-Agent.
+"""LangGraph AgentState definition for VeritasMed.
 
 The graph has checkpoint/history reducers for explicit programmatic reuse.
 The Ask API deliberately starts a fresh checkpoint per request; conversation

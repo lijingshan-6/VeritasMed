@@ -1,4 +1,4 @@
-"""LangGraph StateGraph assembly for MedRAG-Agent.
+"""LangGraph StateGraph assembly for VeritasMed.
 
 Graph topology
 ──────────────

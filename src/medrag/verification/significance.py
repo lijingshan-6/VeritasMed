@@ -15,8 +15,10 @@ ABSENCE = re.compile(
     r"\bno (?:statistically )?(?:difference|differences|effect|impact|influence|association|role|benefit|advantage)\b"
     r"|\b(?:did|does|do|was|were|is|are|had|has) not (?:differ|affect|influence|change|alter|improve|reduce|increase|decrease"
     r"|matter|predict|worsen|help|benefit)\b"
-    r"|\bnot (?:noisier|better|worse|more effective|less effective|superior|inferior|different|associated|related|linked)\b"
-    r"|\b(?:equivalent|equally effective|no better|no worse|did not make a difference)\b",
+    r"|\b(?:not|no) (?:more|less) \w+|\b(?:not|no) (?:noisier|louder|quieter|safer|riskier|higher|lower|greater|smaller"
+    r"|larger|faster|slower|shorter|better|worse|superior|inferior|different)\b"
+    r"|\bnot (?:associated|related|linked)\b"
+    r"|\b(?:equivalent|equally \w+|did not make a difference)\b",
     re.I,
 )
 # ... unless it already says the result was non-significant or not shown.

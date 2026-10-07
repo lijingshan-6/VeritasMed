@@ -9,6 +9,15 @@ def test_flags_no_difference_from_nonsignificant_source():
     assert out["overrides_relation"] is False
 
 
+def test_flags_comparatives_and_equivalence_claims():
+    src = ["There was no evidence of a difference in average noise levels."]
+    for claim in ["HFNC is no noisier than bubble CPAP for preterm infants",
+                  "so the two devices are equally safe for hearing",
+                  "Readmission was no more frequent with early discharge"]:
+        assert check(claim, src)["status"] == "flagged", claim
+    assert check("The benefit was no longer present at one year", src)["status"] == "not_applicable"
+
+
 def test_flags_p_value_above_threshold():
     assert check("Survival did not differ between groups", ["68.6 vs. 58.8 %, P = 0.085"])["status"] == "flagged"
     assert check("Cost was equivalent between the arms", ["$16,789 vs $16,815; P = 0.9557"])["status"] == "flagged"

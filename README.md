@@ -63,6 +63,9 @@ Full design, statistics, adjudications and limits: [**Experiment A report**](doc
   unchecked text and "non-significant read as no difference" are flagged, never hidden.
 - **Conversations you keep.** Follow-ups, answer versions and audits stay in the browser and export
   as one file.
+- **An audit other AI tools can call.** As an MCP server, `audit_answer` checks any answer, from any
+  model, against the sources you give it; `ask` and `search_literature` expose the rest
+  ([setup](docs/how-it-works.md#mcp-tools)).
 
 ## Quick start
 
@@ -150,7 +153,7 @@ Details in the [research log](docs/research.md).
 | `src/medrag/verification/` | Direct and Atomic v2 audits, exact-quote binding, numeric and significance checks |
 | `src/medrag/retrieval/`, `index/` | Hybrid retrieval, reranking, Qdrant indexing |
 | `src/medrag/api/` | FastAPI app: Ask WebSocket, audit, passages, saved conversations |
-| `src/medrag/mcp_server/` | Optional local MCP tools (search, ask, evaluate) |
+| `src/medrag/mcp_server/` | MCP tools: `audit_answer` (check any answer against sources), `ask`, `search_literature` |
 | `frontend/` | React app; `npm run replay` needs no backend |
 | `data/demo/conversations/` | Three source papers, corpus and recorded conversations |
 | `experiments/pubmedqa/` | Experiment A: scripts, registrations and every raw output |

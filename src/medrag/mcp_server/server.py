@@ -1,484 +1,186 @@
-"""VeritasMed MCP Server (Week 5 — LangGraph + Security).
+"""VeritasMed as MCP tools, for Claude Desktop, Claude Code or any MCP client (local, stdio).
 
-Tools exposed to Claude Desktop / Claude Code:
-  1. search_literature   — hybrid dense+sparse retrieval with optional reranking
-  2. ask_agent           — full LangGraph agentic loop with rewrite + faithfulness check
-  3. evaluate_query      — grade how well a set of chunks answers a query (no generation)
-  4. search_visual       — stub for future visual / image search capability
+    audit_answer       check any answer, from any model, against the source texts you supply
+    ask                answer a question from the indexed literature, with each part bound to sentences
+    search_literature  return the passages the retriever finds for a query
 
-Request controls (MCP only, not the web API):
-  1. auth            — MEDRAG_LOCAL_TOKEN env var (disabled if not set → dev mode)
-  2. rate_limit      — 30 rpm global, 10 rpm for ask_agent
-  3. pii             — pattern-based query redaction before retrieval
-  4. injection_guard — pattern detection / query wrapping, not complete protection
-  Audit logging wraps execution: query hash, outcome and timing; not raw query text.
+`ask` returns its sources in the same shape `audit_answer` takes, so a client can ask and then
+audit. `audit_answer` needs only the Flash endpoint in .env; `ask` and `search_literature` also need
+the local index (python scripts/run_demo.py builds it). Run:
 
-Run for local development (FastMCP 3.x — use fastmcp CLI, not mcp CLI):
-    fastmcp dev inspector src/medrag/mcp_server/server.py --with-editable .
-
-Install into Claude Desktop (run once):
-    fastmcp install claude-desktop src/medrag/mcp_server/server.py --name VeritasMed --with-editable .
+    fastmcp run src/medrag/mcp_server/server.py                       # stdio, for a client config
+    fastmcp dev inspector src/medrag/mcp_server/server.py --with-editable .   # interactive inspector
 """
 from __future__ import annotations
 
-# Windows + CUDA: preload pyarrow before torch to avoid access violation (0xC0000005)
-import pyarrow.dataset  # noqa: F401
-
 import asyncio
-import contextlib
-import io
-import logging
-import sys
-import threading
-import time
-from typing import Any
+from threading import BoundedSemaphore
+from typing import Annotated
 from uuid import uuid4
 
-# Force UTF-8 for Windows terminals
-if sys.stdout.encoding and sys.stdout.encoding.lower() not in ("utf-8", "utf-8-sig"):
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
-
-from fastmcp import Context, FastMCP
-from langchain_core.callbacks import BaseCallbackHandler
+from fastmcp import FastMCP
+from fastmcp.exceptions import ToolError
+from pydantic import Field, ValidationError
 
 from medrag.config import load_project_env
+from medrag.verification.answer_audit import AuditRequest, audit_answer as run_direct_audit
 
 load_project_env()
-
-from medrag.agent.nodes.retrieval import _get_retriever, _get_reranker
-from medrag.agent.invocation import build_initial_state
-from medrag.mcp_server.security import (
-    AuthError,
-    InjectionGuardError,
-    RateLimitError,
-    check_rate_limit,
-    log_tool_call,
-    sanitise_query,
-    verify_token,
-)
-
-logging.basicConfig(level=logging.INFO, format="%(name)s %(levelname)s %(message)s")
-logger = logging.getLogger(__name__)
-
-
-# ── Token usage accumulator (LangChain callback) ───────────────────────────────
-
-class _UsageAccumulator(BaseCallbackHandler):
-    """Lightweight LangChain callback that sums prompt/completion tokens.
-
-    Works with both ChatOpenAI (OpenAI-compatible) and ChatOllama responses.
-    Pass an instance via config["callbacks"] when calling app.invoke().
-    """
-
-    raise_error: bool = False
-
-    def __init__(self) -> None:
-        super().__init__()
-        self.prompt_tokens: int = 0
-        self.completion_tokens: int = 0
-
-    # LangChain v0.1+ interface
-    def on_llm_end(self, response, **kwargs) -> None:  # type: ignore[override]
-        try:
-            for gen_list in response.generations:
-                for gen in gen_list:
-                    # ChatOpenAI stores usage in generation_info
-                    info = getattr(gen, "generation_info", {}) or {}
-                    usage = info.get("usage", {}) or {}
-                    self.prompt_tokens     += usage.get("prompt_tokens", 0)
-                    self.completion_tokens += usage.get("completion_tokens", 0)
-            # Also try llm_output (older format)
-            llm_out = getattr(response, "llm_output", {}) or {}
-            token_usage = llm_out.get("token_usage", {}) or {}
-            if token_usage:
-                self.prompt_tokens     += token_usage.get("prompt_tokens", 0)
-                self.completion_tokens += token_usage.get("completion_tokens", 0)
-        except Exception:
-            pass  # never let logging break the pipeline
-
-    # Required stub so LangChain doesn't complain
-    def on_llm_start(self, *args, **kwargs) -> None:  # noqa: D401
-        pass
-
-    def on_llm_error(self, *args, **kwargs) -> None:
-        pass
-
-
-# ── Security helpers ───────────────────────────────────────────────────────────
-
-def _security_check(query: str, token: str, is_generate: bool = False) -> str:
-    """Run auth → rate_limit → pii_redact → injection_guard; return sanitised query.
-
-    Pattern-based redaction happens before retrieval or generation. It can miss
-    identifying text and is not a privacy/compliance guarantee. The audit log
-    hashes the original query (caller's responsibility) for correlation.
-
-    Raises AuthError, RateLimitError, or InjectionGuardError on violation.
-    """
-    from medrag.mcp_server.security.pii import redact
-    verify_token(token)
-    check_rate_limit(is_generate=is_generate)
-    return sanitise_query(redact(query))
-
-
-@contextlib.contextmanager
-def _audit_tool(name: str, query: str, success_status: str = "ok"):
-    """Context manager: measures latency and calls log_tool_call on exit."""
-    t0 = time.perf_counter()
-    status = success_status
-    try:
-        yield
-    except (AuthError, RateLimitError, InjectionGuardError) as exc:
-        status = f"rejected:{type(exc).__name__}"
-        raise
-    except Exception as exc:
-        status = f"error:{type(exc).__name__}"
-        raise
-    finally:
-        log_tool_call(name, query, status, (time.perf_counter() - t0) * 1000)
-
-
-# ── MCP server ─────────────────────────────────────────────────────────────────
 
 mcp = FastMCP(
     "VeritasMed",
     instructions=(
-        "VeritasMed provides retrieval-augmented QA over a PubMed/PMC medical corpus. "
-        "Tools: "
-        "'search_literature' — retrieve relevant document snippets (fast); "
-        "'ask_agent' — full agentic loop: retrieves, grades, rewrites if needed, "
-        "generates a grounded answer with inline citations and faithfulness check; "
-        "'evaluate_query' — grade how well given context answers a query; "
-        "'search_visual' — stub for image/figure search (not yet implemented). "
-        "All tools require MEDRAG_LOCAL_TOKEN if set in server environment."
+        "VeritasMed checks medical answers against their sources. Use audit_answer to verify any answer "
+        "(yours or another model's) against the exact source texts it relies on: every claim comes back "
+        "supported, contradicted or insufficient, with the quoted evidence. Use ask for answers grounded "
+        "in the indexed literature; its sources can be passed straight to audit_answer. Verdicts are model "
+        "judgments about the supplied text, not clinical advice."
     ),
 )
+_audits = BoundedSemaphore(3)  # each audit is one paid model call; keep a runaway client in check
 
 
-async def _report_progress(
-    ctx: Context | None,
-    progress: float,
-    total: float,
-    message: str,
-) -> None:
-    if ctx is not None:
-        await ctx.report_progress(progress, total, message)
-
-
-def _search_literature_sync(
-    sanitised: str,
-    k: int,
-    rerank: bool,
-) -> list[dict]:
-    retriever = _get_retriever()
-    chunks = retriever.retrieve(sanitised, k=20 if rerank else k)
-    if rerank and chunks:
-        chunks = _get_reranker().rerank(sanitised, chunks, top_k=k)
-    else:
-        chunks = chunks[:k]
-    return [
-        {
-            "rank": i + 1,
-            "citation": c.citation,
-            "score": round(float(c.score), 4),
-            "snippet": c.text[:500],
-            "source": c.payload.get("source", ""),
-            "doc_id": c.payload.get("doc_id", ""),
-        }
-        for i, c in enumerate(chunks)
-    ]
-
-
-@mcp.tool(timeout=600)
-async def search_literature(
-    query: str,
-    k: int = 5,
-    rerank: bool = True,
-    token: str = "",
-    ctx: Context | None = None,
-) -> list[dict]:
-    """Retrieve top-k relevant medical document chunks from PubMed/PMC.
-
-    Performs hybrid dense+sparse RRF retrieval (P2), optionally followed
-    by BGE cross-encoder reranking.
-
-    First call loads BGE models (GPU ~30–90s, CPU much longer). Inspector users:
-    set Configuration → Maximum Total Timeout to 300000 (5 min), or uncheck
-    rerank for a faster smoke test.
-
-    Args:
-        query: Medical question or search query.
-        k: Number of documents to return (1–10, default 5).
-        rerank: If True (default), apply cross-encoder reranking for highest precision.
-        token: Optional auth token (MEDRAG_LOCAL_TOKEN).
-
-    Returns:
-        List of dicts: rank, citation, score, snippet (500 chars), source, doc_id.
-    """
-    with _audit_tool("search_literature", query):
-        await _report_progress(ctx, 5, 100, "Validating request…")
-        sanitised = _security_check(query, token, is_generate=False)
-        k = max(1, min(k, 10))
-
-        await _report_progress(
-            ctx, 15, 100,
-            "Loading BGE embedder (first run can take 1–2 min; see terminal logs)…",
-        )
-        await _report_progress(ctx, 45, 100, "Searching Qdrant…")
-        if rerank:
-            await _report_progress(ctx, 70, 100, "Reranking with cross-encoder…")
-
-        result = await asyncio.to_thread(_search_literature_sync, sanitised, k, rerank)
-        await _report_progress(ctx, 100, 100, "Done")
-        return result
-
-
-def _ask_agent_sync(
-    sanitised: str,
-    thread_id: str,
-    usage: _UsageAccumulator,
-) -> dict:
-    from medrag.agent.graph import app
-
-    config = {
-        "configurable": {"thread_id": str(uuid4())},
-        "metadata": {"public_thread_id": thread_id},
-        "callbacks": [usage],
-    }
-    result = app.invoke(build_initial_state(sanitised), config=config)
+def _source_audit(item: AuditRequest, result: dict) -> dict:
+    """Keep what a client needs to act on; drop raw model output and transport metadata."""
+    sources = {s.id: s for s in item.sources}
+    claims = []
+    for c in result["claims"]:
+        claims.append({
+            "claim": c.get("quote", ""),
+            "verdict": c.get("relation") if c["status"] == "ok" else "unchecked",
+            "explanation": c.get("explanation", ""),
+            "evidence": [{"source_id": e["source_id"], "title": sources[e["source_id"]].title, "quote": e["text"]}
+                         for e in c.get("evidence", [])],
+            **({"warning": c["significance_diagnostic"]["note"]} if c.get("significance_diagnostic") else {}),
+            **({"problem": c.get("error_type")} if c["status"] != "ok" else {}),
+        })
+    uncovered = [g["text"] for g in result["checked_coverage"]["uncovered"]]
+    usage = [c.get("usage") or {} for c in result["calls"]]
     return {
-        "answer": result.get("answer", ""),
-        "evidence_status": result.get("evidence_status", "insufficient"),
-        "evidence_gap": result.get("evidence_gap", ""),
-        "answer_components": result.get("answer_components", []),
-        "citations": result.get("citations", []),
-        "confidence": result.get("confidence", 0.0),
-        "faithful": result.get("faithful", False),
-        "faithfulness_issues": result.get("faithfulness_issues", ""),
-        "iterations": result.get("iterations", 0),
-        "regen_count": result.get("regen_count", 0),
+        "status": result["status"],
+        "summary": result["summary"],
+        "claims": claims,
+        "unchecked_text": uncovered,
+        "claims_at_cap": result["claims_at_cap"],
+        "tokens": {"input": sum(u.get("input_tokens") or 0 for u in usage),
+                   "output": sum(u.get("output_tokens") or 0 for u in usage)},
+        "scope": result["scope"],
     }
 
 
-async def _run_with_progress_heartbeat(
-    ctx: Context | None,
-    fn,
-    *args,
-    message: str = "Agent running (retrieve → grade → generate)…",
-):
-    """Run blocking agent work in a thread; pulse progress so Inspector resets timeouts."""
-
-    if ctx is None:
-        return await asyncio.to_thread(fn, *args)
-
-    done = asyncio.Event()
-    result: list[Any] = []
-    error: list[BaseException] = []
-
-    async def heartbeat() -> None:
-        progress = 10.0
-        while not done.is_set():
-            await ctx.report_progress(progress, 100, message)
-            progress = min(progress + 8.0, 92.0)
-            try:
-                await asyncio.wait_for(done.wait(), timeout=12.0)
-            except asyncio.TimeoutError:
-                continue
-
-    async def worker() -> None:
-        try:
-            result.append(await asyncio.to_thread(fn, *args))
-        except BaseException as exc:
-            error.append(exc)
-        finally:
-            done.set()
-
-    await asyncio.gather(heartbeat(), worker())
-    if error:
-        raise error[0]
-    return result[0]
-
-
-@mcp.tool(timeout=600)
-async def ask_agent(
-    query: str,
-    thread_id: str = "default",
-    token: str = "",
-    ctx: Context | None = None,
-) -> dict:
-    """Answer a medical question using the full LangGraph agentic loop.
-
-    Typical runtime: 1–3 min (several LLM + reranker calls). MCP Inspector: set
-    Configuration → Maximum Total Timeout to 300000+ and keep
-    Reset Timeout on Progress enabled.
-
-    Args:
-        query: Medical question to answer.
-        thread_id: Caller label for tracing (default: "default"). Each call is
-            isolated; this does not supply conversation history. Use web Ask
-            for bounded contextual follow-ups.
-        token: Optional auth token (MEDRAG_LOCAL_TOKEN).
-
-    Returns:
-        Dict with keys: answer, citations, confidence, faithful, faithfulness_issues,
-        iterations (rewrites performed), regen_count.
-    """
-    t0 = time.perf_counter()
-    status = "ok"
-    usage: _UsageAccumulator | None = None
+def _gateway():
+    from medrag.verification.gateway import FlashGateway
     try:
-        await _report_progress(ctx, 5, 100, "Validating request…")
-        sanitised = _security_check(query, token, is_generate=True)
-        usage = _UsageAccumulator()
-        await _report_progress(
-            ctx, 10, 100,
-            "Starting agent (route → retrieve → rerank → grade → generate)…",
-        )
-        out = await _run_with_progress_heartbeat(
-            ctx,
-            _ask_agent_sync,
-            sanitised,
-            thread_id,
-            usage,
-        )
-        await _report_progress(ctx, 100, 100, "Done")
-        return out
-    except (AuthError, RateLimitError, InjectionGuardError) as exc:
-        status = f"rejected:{type(exc).__name__}"
+        return FlashGateway()
+    except Exception as exc:  # missing key or wrong profile: say what to fix, not a stack trace
+        raise ToolError("Set LLM_BACKEND=openhub, OPENHUB_API_KEY and the Flash model in .env to run audits.") from exc
+
+
+def _audit_sync(answer: str, sources: list[dict], gateway=None) -> dict:
+    try:
+        item = AuditRequest(answer=answer, sources=sources, strategy="direct")
+    except ValidationError as exc:
+        raise ToolError(f"Invalid input: {exc.errors()[0]['msg']}") from exc
+    if not _audits.acquire(blocking=False):
+        raise ToolError("Three audits are already running; try again when one finishes.")
+    try:
+        return _source_audit(item, run_direct_audit(item, gateway or _gateway()))
+    finally:
+        _audits.release()
+
+
+@mcp.tool(timeout=300, annotations={"readOnlyHint": True, "openWorldHint": True})
+async def audit_answer(
+    answer: Annotated[str, Field(description="The answer to check, exactly as written (up to 12,000 characters).")],
+    sources: Annotated[list[dict], Field(description=(
+        "The texts the answer should rest on: a list of {id, title, text}, at most 40, ids unique. "
+        "Put the citation key the answer uses (for example PMID:12345) in the id or title."))],
+) -> dict:
+    """Check every factual claim in an answer against the supplied source texts.
+
+    Each claim comes back as supported, contradicted or insufficient, with exact quotes from the
+    sources; text no judgment covers is listed under unchecked_text. A claim that states "no
+    difference" for a non-significant result carries a warning. The answer is never rewritten.
+    One Flash model call, usually 20-60 seconds.
+    """
+    return await asyncio.to_thread(_audit_sync, answer, sources)
+
+
+def _load_retrieval_stack() -> None:
+    # Windows + CUDA: pyarrow must load before torch, or the process can crash on first use.
+    import pyarrow.dataset  # noqa: F401
+
+
+def _ask_sync(question: str) -> dict:
+    _load_retrieval_stack()
+    from medrag.agent.graph import app
+    from medrag.agent.invocation import build_initial_state
+
+    final = app.invoke(build_initial_state(question), config={"configurable": {"thread_id": str(uuid4())}})
+    sources = []
+    for i, c in enumerate(final.get("retrieved_chunks", [])):
+        payload = c.payload if hasattr(c, "payload") else c
+        citation = f"PMID:{payload['pmid']}" if payload.get("pmid") else f"PMC:{payload.get('doc_id', '')}"
+        title = f"{citation} · {payload.get('title', '')}"
+        sources.append({"id": f"evidence-{i + 1}", "title": title, "text": f"{title}\n\n{payload.get('text', '')}"})
+    parts = [{
+        "asked": comp.get("requirement", ""),
+        "status": comp.get("status", ""),
+        "answer": comp.get("answer", ""),
+        "evidence": [{"citation": e.get("citation", ""), "sentence": e.get("quote", "")} for e in comp.get("evidence", [])],
+        **({"gap": comp["gap"]} if comp.get("gap") else {}),
+    } for comp in final.get("answer_components", [])]
+    return {
+        "answer": final.get("answer", ""),
+        "evidence_status": final.get("evidence_status", "insufficient"),
+        "parts": parts,
+        "sources": sources,
+        "next": "Pass answer and sources to audit_answer to check every claim.",
+    }
+
+
+@mcp.tool(timeout=600, annotations={"readOnlyHint": True, "openWorldHint": True})
+async def ask(
+    question: Annotated[str, Field(description="A question about the indexed medical literature.")],
+) -> dict:
+    """Answer from the indexed literature, binding each part of the question to source sentences.
+
+    Returns the answer, each part of the question with its status and bound sentences (or a
+    reported gap when the sources do not contain it), and the passages used, formatted for
+    audit_answer. Several model calls, typically one to two minutes; the first call also loads
+    the retrieval models.
+    """
+    try:
+        return await asyncio.to_thread(_ask_sync, question)
+    except ToolError:
         raise
     except Exception as exc:
-        status = f"error:{type(exc).__name__}"
-        raise
-    finally:
-        pt = usage.prompt_tokens if usage else None
-        ct = usage.completion_tokens if usage else None
-        log_tool_call(
-            "ask_agent", query, status,
-            (time.perf_counter() - t0) * 1000,
-            prompt_tokens=pt or None,
-            completion_tokens=ct or None,
-        )
+        raise ToolError(f"Ask failed ({type(exc).__name__}). Is the index built and the model endpoint set in .env?") from exc
 
 
-@mcp.tool()
-def evaluate_query(
-    query: str,
-    context_chunks: list[str],
-    token: str = "",
-) -> dict:
-    """Grade whether provided context chunks can fully answer a query.
+def _search_sync(query: str, k: int) -> list[dict]:
+    _load_retrieval_stack()
+    from medrag.agent.nodes.retrieval import _get_reranker, _get_retriever
 
-    Useful for debugging retrieval quality or testing custom contexts.
-    Uses the same LLM grader as the agentic loop (thinking mode ON).
+    chunks = _get_reranker().rerank(query, _get_retriever().retrieve(query, k=20), top_k=k)
+    return [{"rank": i + 1, "citation": c.citation, "title": c.payload.get("title", ""),
+             "section": c.payload.get("section", ""), "text": c.text} for i, c in enumerate(chunks)]
 
-    Args:
-        query: The medical question to evaluate against.
-        context_chunks: List of document text strings to evaluate.
-        token: Optional auth token (MEDRAG_LOCAL_TOKEN).
 
-    Returns:
-        Dict: relevant (bool), score (0–1), reason (str), rewrite_hint (str).
+@mcp.tool(timeout=300, annotations={"readOnlyHint": True})
+async def search_literature(
+    query: Annotated[str, Field(description="Search query.")],
+    k: Annotated[int, Field(ge=1, le=10, description="Number of passages, 1-10.")] = 5,
+) -> list[dict]:
+    """Return the top passages for a query: hybrid dense + sparse retrieval, then reranking.
+
+    No language model is called. The first call loads the retrieval models.
     """
-    with _audit_tool("evaluate_query", query):
-        sanitised = _security_check(query, token, is_generate=False)
-
-        from medrag.agent.nodes import grade_relevance
-        from medrag.retrieval.retriever import RetrievedChunk
-
-        # Wrap plain strings as minimal RetrievedChunk objects
-        chunks = [
-            RetrievedChunk(
-                chunk_id=f"user-{i}",
-                text=c,
-                score=1.0,
-                payload={"source": "user", "doc_id": f"user-{i}"},
-            )
-            for i, c in enumerate(context_chunks[:10])  # cap at 10
-        ]
-
-        # Build minimal state for the grade node
-        state = {
-            "query": sanitised,
-            "original_query": sanitised,
-            "retrieved_chunks": chunks,
-            "relevance_score": 0.0,
-            "relevant": False,
-            "grade_reason": "",
-            "rewrite_hint": "",
-            "query_type": "",       # defaults to "synthesis" inside grade_relevance
-            "iterations": 0,
-            "rewritten_queries": [],
-            "answer": "",
-            "citations": [],
-            "confidence": 0.0,
-            "faithful": False,
-            "faithfulness_issues": "",
-            "regen_count": 0,
-            "history": [],
-            "summary": "",
-        }
-
-        result = grade_relevance(state)
-        return {
-            "relevant": result["relevant"],   # LLM boolean judgment, threshold-aware
-            "score": result["relevance_score"],
-            "reason": result["grade_reason"],
-            "rewrite_hint": result["rewrite_hint"],
-        }
-
-
-@mcp.tool()
-def search_visual(
-    query: str,
-    modality: str = "figure",
-    k: int = 5,
-    token: str = "",
-) -> dict:
-    """[STUB] Search for medical images, figures, or tables.
-
-    This tool is not yet implemented. It will support searching PMC
-    Open Access figures, radiology images, and anatomical diagrams
-    when the visual index is built in a future release.
-
-    Args:
-        query: Description of the image or figure to search for.
-        modality: Type of visual content: "figure", "table", "radiology".
-        k: Number of results to return (1–10).
-        token: Optional auth token (MEDRAG_LOCAL_TOKEN).
-
-    Returns:
-        Dict with status="not_implemented" and a message.
-    """
-    with _audit_tool("search_visual", query, success_status="stub"):
-        _security_check(query, token, is_generate=False)
-    return {
-        "status": "not_implemented",
-        "message": (
-            "Visual search is not yet available. "
-            "The PMC figure index is planned for a future release. "
-            "Use search_literature for text-based retrieval."
-        ),
-        "modality": modality,
-        "k": k,
-    }
-
-
-def _start_mcp_warmup() -> None:
-    """Load embedder + reranker in background so the first tool call is faster."""
-
-    def _run() -> None:
-        try:
-            logger.info("[mcp] background warmup: loading retriever + reranker …")
-            _get_retriever()
-            _get_reranker()
-            logger.info("[mcp] background warmup: ready")
-        except Exception as exc:
-            logger.warning("[mcp] background warmup failed (first tool call will retry): %s", exc)
-
-    threading.Thread(target=_run, daemon=True, name="medrag-mcp-warmup").start()
+    try:
+        return await asyncio.to_thread(_search_sync, query, k)
+    except Exception as exc:
+        raise ToolError(f"Search failed ({type(exc).__name__}). Build the index first: python scripts/run_demo.py") from exc
 
 
 if __name__ == "__main__":
-    _start_mcp_warmup()
-    mcp.run()
+    mcp.run(show_banner=False)

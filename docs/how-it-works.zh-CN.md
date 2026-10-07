@@ -128,8 +128,20 @@ v0.9 已修复（见 [研究总结](research.zh-CN.md#5-这些迭代的意义)�
 
 ## MCP 工具
 
-[`mcp_server/server.py`](../src/medrag/mcp_server/server.py) 通过本地 stdio 提供 `search_literature`、
-`ask_agent` 和 `evaluate_query`，例如供 Claude Desktop 使用：
-`fastmcp dev inspector src/medrag/mcp_server/server.py --with-editable .`。设置了 `MEDRAG_LOCAL_TOKEN`
-时，每次调用都必须带上它。调用按进程限流，查询会经过正则 PII 脱敏和提示注入筛查，JSONL 日志只记录查询的哈希。
-这些控制只作用于 MCP，不保护网页 API，也不构成合规保证。
+[`mcp_server/server.py`](../src/medrag/mcp_server/server.py) 通过本地 stdio 提供三个工具，可供 Claude Desktop、Claude Code 或任何 MCP 客户端使用：
+
+| 工具 | 作用 | 依赖 |
+|---|---|---|
+| `audit_answer(answer, sources)` | 把任意回答（来自任何模型）的每条陈述与所给原文核对：返回判定、精确引文、未核查的文字，以及"不显著 ≠ 没有区别"提示。从不改写回答 | Flash 端点 |
+| `ask(question)` | 基于已索引的文献作答；返回问题的每个部分及其绑定的原文句子或证据缺口，并附上可直接传给 `audit_answer` 的原文段落 | Flash 端点与本地索引 |
+| `search_literature(query, k)` | 混合检索并重排后的前若干段落，不调用语言模型 | 本地索引 |
+
+因此，客户端既可以用自己的模型作答再审计，也可以先调用 VeritasMed 的 `ask`，再审计这份回答。用项目的 Python 环境注册服务器，例如在 Claude Desktop 的 `claude_desktop_config.json` 中：
+
+```json
+{ "mcpServers": { "veritasmed": {
+    "command": "/path/to/VeritasMed/.venv/bin/python",
+    "args": ["-m", "medrag.mcp_server.server"] } } }
+```
+
+或在 Claude Code 中：`claude mcp add veritasmed -- /path/to/VeritasMed/.venv/bin/python -m medrag.mcp_server.server`（Windows 上解释器为 `.venv\Scripts\python.exe`）。服务器读取仓库中的 `.env`。同时最多运行三次审计，每次是一次付费模型调用。这是一个没有身份认证的本地工具，不要把它暴露到网络上。

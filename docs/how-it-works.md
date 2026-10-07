@@ -145,9 +145,26 @@ after **Stop** is pressed.
 
 ## MCP tools
 
-[`mcp_server/server.py`](../src/medrag/mcp_server/server.py) exposes `search_literature`,
-`ask_agent` and `evaluate_query` over local stdio, for example to Claude Desktop:
-`fastmcp dev inspector src/medrag/mcp_server/server.py --with-editable .`. When
-`MEDRAG_LOCAL_TOKEN` is set, every call must pass it. Calls are rate-limited per process, queries
-pass through regex PII redaction and prompt-injection screening, and a JSONL log stores hashed
-queries. These controls apply only to MCP, not to the web API, and are not a compliance guarantee.
+[`mcp_server/server.py`](../src/medrag/mcp_server/server.py) exposes three tools over local stdio,
+for Claude Desktop, Claude Code or any MCP client:
+
+| Tool | What it does | Needs |
+|---|---|---|
+| `audit_answer(answer, sources)` | Checks every claim in any answer, from any model, against the supplied texts: verdict, exact quotes, unchecked text, and the non-significance warning. Never rewrites the answer | Flash endpoint |
+| `ask(question)` | Answers from the indexed literature; returns each part of the question with its bound sentences or reported gap, plus the passages in the shape `audit_answer` takes | Flash endpoint and local index |
+| `search_literature(query, k)` | Top passages from hybrid retrieval and reranking; no language model | Local index |
+
+A client can therefore answer with its own model and audit the result, or ask VeritasMed and then
+audit that answer. Register the server with the project's Python environment, for example in Claude
+Desktop's `claude_desktop_config.json`:
+
+```json
+{ "mcpServers": { "veritasmed": {
+    "command": "/path/to/VeritasMed/.venv/bin/python",
+    "args": ["-m", "medrag.mcp_server.server"] } } }
+```
+
+or in Claude Code: `claude mcp add veritasmed -- /path/to/VeritasMed/.venv/bin/python -m medrag.mcp_server.server`
+(on Windows the interpreter is `.venv\Scripts\python.exe`). The server reads `.env` from the
+repository. At most three audits run at once; each is one paid model call. It is a local tool with
+no authentication: do not expose it over a network.

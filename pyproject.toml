@@ -58,7 +58,6 @@ select = ["E4", "E7", "E9", "F"]
 [tool.ruff.lint.per-file-ignores]
 # These modules deliberately load native runtimes/env before downstream imports.
 "src/medrag/api/app.py" = ["E402"]
-"src/medrag/mcp_server/server.py" = ["E402"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

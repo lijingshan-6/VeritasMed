@@ -51,6 +51,7 @@ VeritasMed 把结论和每条陈述都绑定到原文句子，用平实的语言
 - **自检与修复。** 回复前先评估证据，证据不足就改写检索，并复核自己的草稿；改写和重写各最多两次。
 - **一键逐条审计。** 每条陈述都与原文精确引文核对；无法定位的引文、未核查的文字，以及"把不显著说成没有区别"都会标出，不会被隐藏。
 - **对话可以保存。** 追问、答案版本和审计都保存在浏览器中，可作为一个文件导出。
+- **其他 AI 工具也能调用审计。** 作为 MCP 服务器，`audit_answer` 可以把任意模型的回答与你提供的原文逐条核对；`ask` 和 `search_literature` 提供其余能力（[配置方法](docs/how-it-works.zh-CN.md#mcp-工具)）。
 
 ## 快速开始
 
@@ -126,7 +127,7 @@ python scripts/run_demo.py  # 之后启动可加 --skip-index
 | `src/medrag/verification/` | Direct 与 Atomic v2 审计、精确引文绑定、数值与显著性检查 |
 | `src/medrag/retrieval/`、`index/` | 混合检索、重排、Qdrant 索引 |
 | `src/medrag/api/` | FastAPI 应用：Ask WebSocket、审计、原文段落、录制对话 |
-| `src/medrag/mcp_server/` | 可选的本地 MCP 工具（检索、问答、评估） |
+| `src/medrag/mcp_server/` | MCP 工具：`audit_answer`（把任意回答与原文核对）、`ask`、`search_literature` |
 | `frontend/` | React 应用；`npm run replay` 无需后端 |
 | `data/demo/conversations/` | 三篇来源论文、语料与录制的对话 |
 | `experiments/pubmedqa/` | 实验 A：脚本、预注册文件与全部原始输出 |

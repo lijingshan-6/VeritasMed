@@ -16,6 +16,10 @@
 - **Added:** a "non-significant is not no difference" advisory on audited claims. A text rule flags a
   claim that states no difference or no effect when its quoted evidence reports a non-significant
   result; the relation is never changed. Shown on the claim and counted in the audit summary.
+- **MCP, rebuilt:** three tools - `audit_answer` (check any answer, from any model, against supplied
+  sources), `ask` (returns bound parts, gaps and audit-ready sources) and `search_literature`. The
+  visual-search stub, the internal `evaluate_query` grader and the regex PII / injection layer were
+  removed; the server is documented as a local, unauthenticated stdio tool.
 - **Brand:** the VeritasMed logo set (28 SVG/PNG assets, OFL fonts and build scripts) in
   `docs/assets/brand/`; the README header, the app header, the favicon and the walkthrough GIF use it.
 - **Frontend:** the Ask workspace was redesigned around the answer, with sidebar, process view and an

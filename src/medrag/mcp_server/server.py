@@ -106,13 +106,7 @@ async def audit_answer(
     return await asyncio.to_thread(_audit_sync, answer, sources)
 
 
-def _load_retrieval_stack() -> None:
-    # Windows + CUDA: pyarrow must load before torch, or the process can crash on first use.
-    import pyarrow.dataset  # noqa: F401
-
-
 def _ask_sync(question: str) -> dict:
-    _load_retrieval_stack()
     from medrag.agent.graph import app
     from medrag.agent.invocation import build_initial_state
 
@@ -159,7 +153,6 @@ async def ask(
 
 
 def _search_sync(query: str, k: int) -> list[dict]:
-    _load_retrieval_stack()
     from medrag.agent.nodes.retrieval import _get_reranker, _get_retriever
 
     chunks = _get_reranker().rerank(query, _get_retriever().retrieve(query, k=20), top_k=k)
@@ -182,5 +175,23 @@ async def search_literature(
         raise ToolError(f"Search failed ({type(exc).__name__}). Build the index first: python scripts/run_demo.py") from exc
 
 
+def _preload_native_stack() -> None:
+    """Load native libraries on the main thread before serving.
+
+    Tools run in worker threads, and on Windows a first native import (numpy, torch) from a worker
+    thread of a stdio server can deadlock. The order matters too: pyarrow before torch, and
+    sentence_transformers before qdrant_client, or the process can crash. Without the retrieval
+    extras installed, audit_answer still works.
+    """
+    try:
+        import pyarrow.dataset  # noqa: F401
+        import sentence_transformers  # noqa: F401
+        import qdrant_client  # noqa: F401
+        from FlagEmbedding.inference.embedder.encoder_only.m3 import M3Embedder  # noqa: F401
+    except ImportError:
+        pass
+
+
 if __name__ == "__main__":
+    _preload_native_stack()
     mcp.run(show_banner=False)

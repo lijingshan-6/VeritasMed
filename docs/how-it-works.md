@@ -154,6 +154,8 @@ for Claude Desktop, Claude Code or any MCP client:
 | `ask(question)` | Answers from the indexed literature; returns each part of the question with its bound sentences or reported gap, plus the passages in the shape `audit_answer` takes | Flash endpoint and local index |
 | `search_literature(query, k)` | Top passages from hybrid retrieval and reranking; no language model | Local index |
 
+![Claude Desktop calling audit_answer on another model's summary: one claim supported, two insufficient, one contradicted, with a non-significance warning](assets/showcase/mcp-audit.png)
+
 A client can therefore answer with its own model and audit the result, or ask VeritasMed and then
 audit that answer. Register the server with the project's Python environment, for example in Claude
 Desktop's `claude_desktop_config.json`:

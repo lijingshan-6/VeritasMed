@@ -100,6 +100,19 @@ always use the Flash endpoint.
 
 </details>
 
+<details>
+<summary><b>Audit any AI answer from Claude Desktop (MCP)</b></summary>
+
+Run as an MCP server, VeritasMed lets Claude (or any MCP client) check an answer against its sources.
+Here Claude audits another model's summary of a study: three of four claims fail, and the tool flags
+"no noisier" as a non-significant result read as no difference.
+
+<img src="docs/assets/showcase/mcp-audit.png" width="640" alt="Claude Desktop calling VeritasMed audit_answer on a summary: one claim supported, two insufficient, one contradicted, with a non-significance warning">
+
+Setup: [MCP tools](docs/how-it-works.md#mcp-tools).
+
+</details>
+
 ## How it works
 
 <picture>

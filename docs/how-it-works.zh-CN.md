@@ -136,6 +136,8 @@ v0.9 已修复（见 [研究总结](research.zh-CN.md#5-这些迭代的意义)�
 | `ask(question)` | 基于已索引的文献作答；返回问题的每个部分及其绑定的原文句子或证据缺口，并附上可直接传给 `audit_answer` 的原文段落 | Flash 端点与本地索引 |
 | `search_literature(query, k)` | 混合检索并重排后的前若干段落，不调用语言模型 | 本地索引 |
 
+![Claude Desktop 调用 audit_answer 审计另一个模型的总结：一条有依据、两条证据不足、一条与原文矛盾，并给出不显著警示](assets/showcase/mcp-audit.png)
+
 因此，客户端既可以用自己的模型作答再审计，也可以先调用 VeritasMed 的 `ask`，再审计这份回答。用项目的 Python 环境注册服务器，例如在 Claude Desktop 的 `claude_desktop_config.json` 中：
 
 ```json

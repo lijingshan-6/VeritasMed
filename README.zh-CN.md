@@ -81,6 +81,17 @@ python scripts/run_demo.py  # 之后启动可加 --skip-index
 
 </details>
 
+<details>
+<summary><b>在 Claude Desktop 中审计任意 AI 的回答（MCP）</b></summary>
+
+作为 MCP 服务器运行时，Claude（或任何 MCP 客户端）可以调用 VeritasMed，把回答与原文逐条核对。下图中，Claude 审计了另一个模型对一篇研究的总结：四条陈述里有三条不成立，工具还把 "no noisier" 标为"把不显著说成没有区别"。
+
+<img src="docs/assets/showcase/mcp-audit.png" width="640" alt="Claude Desktop 调用 VeritasMed 的 audit_answer 审计一段总结：一条有依据、两条证据不足、一条与原文矛盾，并给出不显著警示">
+
+配置方法：[MCP 工具](docs/how-it-works.zh-CN.md#mcp-工具)。
+
+</details>
+
 ## 工作原理
 
 <picture>

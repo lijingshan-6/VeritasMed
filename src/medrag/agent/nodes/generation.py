@@ -27,7 +27,7 @@ def generate_answer_node(state: AgentState) -> dict:
          with inline [PMID:xxx] / [PMC:xxx] markers.
       4. If 0 claims survive validation, the answer is set to a disclaimer
          and confidence=0.0; check_faithfulness will mark it unfaithful,
-         triggering one regen attempt via the graph's inc_regen path.
+         triggering a regeneration via the graph's inc_regen path (at most MAX_REGEN = 2).
     """
     llm = make_llm_fast(structured=True)
     query = state.get("original_query") or state["query"]

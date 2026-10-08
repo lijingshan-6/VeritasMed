@@ -28,11 +28,15 @@ The figure is generated from [`graph.py`](../src/medrag/agent/graph.py) by
 |---|---|---|
 | route | Classify the question; propose up to three focused search questions; decide single- vs multi-study scope | [planning.py](../src/medrag/agent/nodes/planning.py) |
 | retrieve | Hybrid search for the original question, the latest rewrite and the planned searches (≤4 queries × 12 candidates) | [retrieval.py](../src/medrag/agent/nodes/retrieval.py) |
-| rerank | Rerank per query, let the model match the paper the question names, keep the best 5 passages | [retrieval.py](../src/medrag/agent/nodes/retrieval.py) |
+| rerank | Rerank per query, let the model match the paper the question names, keep the top 5 passages, then complete the leading paper(s) with their other sections (up to 8 passages) | [retrieval.py](../src/medrag/agent/nodes/retrieval.py) |
 | grade | Split the question into components and bind each to sentence IDs; code resolves IDs to exact quotes | [grading.py](../src/medrag/agent/nodes/grading.py) |
 | rewrite | If the evidence score is below the threshold (0.6 / 0.75 / 0.8 by question type), rewrite and retrieve again (≤2 times) | [planning.py](../src/medrag/agent/nodes/planning.py) |
 | generate | Write cited claims per component in plain words; the bound source sentences are kept as evidence beside each claim | [generation.py](../src/medrag/agent/nodes/generation.py) |
 | check | Review support, completeness and evidence boundaries per component; request targeted repairs (≤2 times) | [checking.py](../src/medrag/agent/nodes/checking.py) |
+| append_history, summarize_gate, summarize | Record the turn, then compress the history once it grows long. Web and MCP requests start from a fresh state, so summarize itself only runs for programmatic callers that reuse a checkpoint | [graph.py](../src/medrag/agent/graph.py) |
+
+Questions that only ask what the evidence does or does not establish (`evidence_boundary`) skip the
+0.6 / 0.75 / 0.8 thresholds: grade scores them 0.9 when passages were retrieved and 0 when none were.
 
 ![What the model decides and what code enforces inside grade, generate and check](assets/system-guide/node-logic-en.svg)
 
@@ -94,7 +98,7 @@ In Experiment A this was the most common overstatement the audit caught and a ge
 accepted ([report](experiment-a.md#4-the-audit-catches-planted-and-natural-errors)); on the 500
 recorded audits from that experiment the rule flags 23 of 5,573 claims, all of this kind.
 
-Quotes are bound only when the exact text occurs once; the code never picks the first of
+In both Direct and Atomic v2, quotes are bound only when the exact text occurs once; the code never picks the first of
 several matches. Text that no completed judgment covers is listed separately. Code:
 [`verification/`](../src/medrag/verification/).
 
@@ -127,6 +131,8 @@ after **Stop** is pressed.
 | `GET /api/chunk/{id}`, `GET /api/document/{citation}` | Original passages and neighbouring context |
 | `GET /api/conversations/examples[/{id}]` | Recorded conversations |
 | `GET /api/health`, `GET /api/corpus/stats` | Readiness |
+
+The answer's `confidence` field is deprecated: it is still returned for older clients and saved files, but nothing uses it and imports no longer require it.
 
 `openapi.json` and `frontend/src/types/api.gen.ts` are generated: run
 `python scripts/export_openapi.py`, then `npm --prefix frontend run generate-types`.

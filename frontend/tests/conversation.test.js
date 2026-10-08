@@ -106,3 +106,13 @@ test('audits with the title-prefixed (v2) or passage-only (v1) hand-off both cou
   const revision = useStore.getState().conversations[0].turns[0].revisions[0]
   assert.deepEqual(revision.audits.map(r => r.edited), [false, false, true])
 })
+
+test('imports a conversation whose answers lack the deprecated confidence field', async () => {
+  reset()
+  const target = useStore.getState().begin('A question?', 'live')
+  const { confidence, ...withoutConfidence } = answer(target.conversationId)
+  await useStore.getState().finish(target, withoutConfidence)
+  const c = useStore.getState().conversations[0]
+  assert.equal(c.turns[0].revisions[0].result.confidence, undefined)
+  assert.deepEqual(await importConversation(await exportConversation(c)), c)
+})

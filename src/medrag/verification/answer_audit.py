@@ -68,8 +68,9 @@ conversions, but not unprovided world knowledge. Supported means all material co
 claim is established. Contradicted needs incompatible source evidence about the same entity and
 conditions. Missing information is insufficient, not contradiction. Do not equate nonsignificance
 with no effect. An actual-world truth absent from the sources is still insufficient here.
-Quotes must be exact contiguous substrings, preserving Unicode and punctuation. occurrence is the
-zero-based occurrence of the quote in its original text (usually 0). Cite full evidence sentences
+Quotes must be exact contiguous substrings, preserving Unicode and punctuation. Make each quote long
+enough to occur only once in its text: a repeated quote cannot be located and is not counted as
+checked. Set occurrence to 0. Cite full evidence sentences
 where practical. Do not rewrite quotations, invent source IDs, or give confidence percentages.
 """
 DIRECT_PROMPT = BOUNDARIES + """
@@ -87,13 +88,22 @@ def text_hash(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
-def resolve_anchor(text: str, anchor: Anchor) -> dict:
-    starts = [m.start() for m in re.finditer(re.escape(anchor.quote), text)]
-    if anchor.occurrence >= len(starts):
-        raise ValueError("Quote occurrence not found exactly")
-    start = starts[anchor.occurrence]
-    return {"start": start, "end": start + len(anchor.quote), "text": anchor.quote,
-            "offset_unit": "unicode_codepoint"}
+class AmbiguousQuote(ValueError):
+    """The quote occurs more than once, so its location cannot be determined."""
+
+
+def bind_quote(text: str, quote: str) -> dict:
+    """Bind an exact quote only when it occurs exactly once; never pick one of several matches.
+
+    The checker's `occurrence` index is ignored: a model-chosen occurrence of a repeated string
+    cannot be verified, so a repeated quote is left unresolved rather than guessed.
+    """
+    starts = [m.start() for m in re.finditer(re.escape(quote), text)]
+    if not starts:
+        raise ValueError("Quote not found exactly")
+    if len(starts) > 1:
+        raise AmbiguousQuote(f"Quote occurs {len(starts)} times")
+    return {"start": starts[0], "end": starts[0] + len(quote), "text": quote, "offset_unit": "unicode_codepoint"}
 
 
 def coverage(answer: str, spans: list[dict]) -> dict:
@@ -144,12 +154,14 @@ def bind_claim(item: AuditRequest, parsed: ClaimAudit, index: int) -> dict:
     result = {"id": f"claim-{index+1}", "quote": parsed.quote, "relation": parsed.relation.value,
               "explanation": parsed.explanation, "status": "ok", "answer_span": None, "evidence": []}
     try:
-        result["answer_span"] = resolve_anchor(item.answer, parsed)
+        result["answer_span"] = bind_quote(item.answer, parsed.quote)
         sources = {s.id: s for s in item.sources}
         for ref in parsed.evidence:
             source = sources[ref.source_id]
-            result["evidence"].append({**resolve_anchor(source.text, ref), "source_id": source.id,
+            result["evidence"].append({**bind_quote(source.text, ref.quote), "source_id": source.id,
                                        "source_sha256": text_hash(source.text)})
+    except AmbiguousQuote:
+        result.update(status="ambiguous_reference", error_type="RepeatedQuote", answer_span=None, evidence=[])
     except (ValueError, KeyError):
         result.update(status="invalid_reference", error_type="QuoteNotFound")
     diagnostic = nonsignificance_diagnostic(parsed.quote, [e["text"] for e in result["evidence"]])
@@ -174,10 +186,9 @@ def bind_output(item: AuditRequest, value) -> list[dict] | None:
             row = {"id": f"claim-{index+1}", "quote": quote, "relation": None, "status": "invalid_output",
                    "error_type": "InvalidClaimSchema", "answer_span": None, "evidence": [],
                    "explanation": "The checker returned an unusable judgment for this statement; no relation is inferred."}
-            occurrence = raw.get("occurrence") if isinstance(raw, dict) else None
-            if quote and type(occurrence) is int and occurrence >= 0:
+            if quote:
                 try:
-                    row["answer_span"] = resolve_anchor(item.answer, Anchor(quote=quote, occurrence=occurrence))
+                    row["answer_span"] = bind_quote(item.answer, quote)
                 except ValueError:
                     pass
             claims.append(row)

@@ -16,6 +16,12 @@
 - **Added:** a "non-significant is not no difference" advisory on audited claims. A text rule flags a
   claim that states no difference or no effect when its quoted evidence reports a non-significant
   result; the relation is never changed. Shown on the claim and counted in the audit summary.
+- **Fixed (issue #1):** the Direct audit now binds a quote only when it occurs exactly once in its
+  text, as the docs always said; a repeated quote is marked "repeated quote, location unresolved"
+  and not counted as checked, instead of trusting the checker's occurrence index. In the 500
+  Experiment A audits this affects 16 of 5,573 claims (0.3%); those recorded results are unchanged.
+  Conversation imports no longer require the deprecated `confidence` field, and the docs now say the
+  reranker keeps 5 passages and then completes the leading paper(s), up to 8.
 - **MCP, rebuilt:** three tools - `audit_answer` (check any answer, from any model, against supplied
   sources), `ask` (returns bound parts, gaps and audit-ready sources) and `search_literature`. The
   visual-search stub, the internal `evaluate_query` grader and the regex PII / injection layer were

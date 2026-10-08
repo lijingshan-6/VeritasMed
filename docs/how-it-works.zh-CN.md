@@ -28,11 +28,14 @@
 |---|---|---|
 | route | 判断问题类型；提出最多三个聚焦的检索问题；判断涉及单篇还是多篇研究 | [planning.py](../src/medrag/agent/nodes/planning.py) |
 | retrieve | 对原问题、最新改写和规划出的检索问题做混合检索（≤4 个查询 × 12 个候选） | [retrieval.py](../src/medrag/agent/nodes/retrieval.py) |
-| rerank | 每个查询分别重排，由模型匹配问题点名的论文，保留最好的 5 段 | [retrieval.py](../src/medrag/agent/nodes/retrieval.py) |
+| rerank | 每个查询分别重排，由模型匹配问题点名的论文，先保留前 5 段，再用排名靠前论文的其余部分补全（最多 8 段） | [retrieval.py](../src/medrag/agent/nodes/retrieval.py) |
 | grade | 把问题拆成组成项并绑定句子编号；程序把编号解析为精确原文 | [grading.py](../src/medrag/agent/nodes/grading.py) |
 | rewrite | 证据评分低于阈值（按问题类型为 0.6 / 0.75 / 0.8）时改写并重新检索（≤2 次） | [planning.py](../src/medrag/agent/nodes/planning.py) |
 | generate | 按组成项用平实语言写出带引用的陈述；绑定的原文句子作为证据附在每条陈述旁边 | [generation.py](../src/medrag/agent/nodes/generation.py) |
 | check | 按组成项复核支持关系、完整性与证据边界；要求定向修复（≤2 次） | [checking.py](../src/medrag/agent/nodes/checking.py) |
+| append_history、summarize_gate、summarize | 记录本轮对话，历史变长后再压缩。网页和 MCP 的请求每次都从全新状态开始，所以 summarize 本身只会在复用检查点的程序化调用中运行 | [graph.py](../src/medrag/agent/graph.py) |
+
+只问"证据能否支持某个结论"的问题（`evidence_boundary`）不使用 0.6 / 0.75 / 0.8 的阈值：检索到段落时 grade 直接给 0.9，没有段落时为 0。
 
 ![grade、generate、check 中哪些由模型判断、哪些由程序保证](assets/system-guide/node-logic-zh.svg)
 
@@ -81,7 +84,7 @@ v0.9 已修复（见 [研究总结](research.zh-CN.md#5-这些迭代的意义)�
 
 **"不显著"不等于"没有区别"。** 如果一条陈述断言没有区别或没有作用（"did not differ"、"was not better"、"equivalent"），而它引用的原文证据报告的是不显著的结果（`p = 0.33`、"no significant difference"、"no evidence of a difference"），这条陈述会被加上警示，汇总中也会计数。这是一条文本规则，从不改变核查模型给出的判定。实验 A 中，这是审计抓到、而通用大模型裁判放过的最常见的"说过头"（[报告](experiment-a.zh-CN.md#4-审计能抓到植入错误和自然错误)）；在该实验记录的 500 次审计中，这条规则在 5,573 条陈述里标出了 23 条，全部属于这一类。
 
-只有当原文恰好出现一次时才绑定引文，程序从不在多处匹配中挑第一处。没有被任何已完成判断覆盖的文字会单独列出。
+Direct 与 Atomic v2 都只在原文恰好出现一次时才绑定引文，程序从不在多处匹配中挑一处。没有被任何已完成判断覆盖的文字会单独列出。
 代码：[`verification/`](../src/medrag/verification/)。
 
 ## 保存与导出
@@ -110,6 +113,8 @@ v0.9 已修复（见 [研究总结](research.zh-CN.md#5-这些迭代的意义)�
 | `GET /api/chunk/{id}`、`GET /api/document/{citation}` | 原文段落及其上下文 |
 | `GET /api/conversations/examples[/{id}]` | 录制的对话 |
 | `GET /api/health`、`GET /api/corpus/stats` | 就绪状态 |
+
+回答中的 `confidence` 字段已废弃：为兼容旧客户端和已保存的文件仍会返回，但没有任何功能使用它，导入对话时也不再要求它。
 
 `openapi.json` 和 `frontend/src/types/api.gen.ts` 是生成文件：先运行 `python scripts/export_openapi.py`，
 再运行 `npm --prefix frontend run generate-types`。

@@ -4,7 +4,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from medrag.verification.answer_audit import Anchor, AuditRequest, audit_answer, resolve_anchor
+from medrag.verification.answer_audit import AmbiguousQuote, AuditRequest, audit_answer, bind_quote
 from medrag.verification.numeric_checks import numeric_diagnostic
 
 
@@ -28,11 +28,24 @@ def claim(quote="A 😀.", evidence="A 😀."):
         {"source_id": "s1", "quote": evidence, "occurrence": 0}], "explanation": "Source says this."}
 
 
-def test_unicode_and_duplicate_anchors():
-    span = resolve_anchor("😀 x 😀 x", Anchor(quote="😀 x", occurrence=1))
-    assert (span["start"], span["end"]) == (4, 7)
+def test_quotes_bind_only_when_unique():
+    span = bind_quote("😀 x 😀 y", "😀 y")
+    assert (span["start"], span["end"]) == (4, 7)  # code points, not UTF-16 units
+    with pytest.raises(AmbiguousQuote):
+        bind_quote("😀 x 😀 x", "😀 x")  # never picks one of several matches
     with pytest.raises(ValueError):
-        resolve_anchor("x", Anchor(quote="invented", occurrence=0))
+        bind_quote("x", "invented")
+
+
+def test_repeated_quote_is_unresolved_and_not_counted():
+    request = AuditRequest(answer="Rates fell. Rates fell again later.",
+                           sources=[{"id": "s1", "title": "Source", "text": "Rates fell in both arms."}])
+    out = audit_answer(request, Stub([{"claims": [{
+        "quote": "Rates fell", "occurrence": 1, "relation": "supported", "explanation": "Same.",
+        "evidence": [{"source_id": "s1", "quote": "Rates fell in both arms.", "occurrence": 0}]}]}]))
+    claim = out["claims"][0]
+    assert claim["status"] == "ambiguous_reference" and claim["answer_span"] is None
+    assert out["summary"]["supported"] == 0 and out["summary"]["failed_or_unchecked"] == 1
 
 
 def test_unextracted_text_stays_visible():

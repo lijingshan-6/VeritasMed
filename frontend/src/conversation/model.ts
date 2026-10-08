@@ -108,7 +108,7 @@ export async function validateConversation(value: unknown): Promise<Conversation
       if (revision.result !== null) {
         const result = revision.result
         assert(object(result) && string(result.answer) && strings(result.citations) && strings(result.rewritten_queries)
-          && typeof result.confidence === 'number' && typeof result.faithful === 'boolean' && string(result.faithfulness_issues)
+          && (result.confidence === undefined || typeof result.confidence === 'number') && typeof result.faithful === 'boolean' && string(result.faithfulness_issues)
           && Number.isInteger(result.iterations) && Number.isInteger(result.regen_count) && typeof result.latency_ms === 'number'
           && result.thread_id === value.id && Array.isArray(result.chunks), 'Invalid answer or conversation identity.')
         const chunkIds = new Set<string>()

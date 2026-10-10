@@ -153,6 +153,13 @@ E1 预注册时只定了一条规则：如果强提示词 RAG 的结论不合格
 
 整个实验（含开发轮、追加实验和两个裁判）的模型费用合计 **$25.18**（按网关标价）。VeritasMed 回答 500 题的费用为 $5.47。
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/experiment-a/cost-dark.png">
+  <img alt="500 道题每题的成本与耗时，边缘为各自的分布：普通 RAG 和强提示词 RAG 集中在 10 秒、$0.001 附近；VeritasMed 集中在 59 秒、$0.009 附近，且尾部更长" src="assets/experiment-a/cost-light.png">
+</picture>
+
+每道题 VeritasMed 调用模型的中位数为 4 次（4 到 11 次），普通 RAG 调用 1 次（中位数 59 秒、$0.0093，对 10 秒、$0.0011）。VeritasMed 的分布更宽：80% 的题在 39 到 105 秒之间，最慢的一题 271 秒。长尾来自草稿重写：被重写的 96 个回答，中位耗时为 92 秒（重写一次，88 个）或 144 秒（重写两次，8 个），而一次通过的 404 个回答为 55 秒。
+
 ```sh
 python experiments/pubmedqa/prepare.py                  # 下载数据、冻结划分、构建语料
 python experiments/pubmedqa/index.py                    # 索引 36,550 段（GPU，约 5 分钟）

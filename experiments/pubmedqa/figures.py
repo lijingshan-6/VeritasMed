@@ -151,6 +151,65 @@ def fig_judges(plt, t, calib):
     return fig
 
 
+def density(np, values, grid):
+    """Gaussian kernel density with Silverman's bandwidth, on log10 values."""
+    v = np.log10(values)
+    h = 1.06 * v.std() * len(v) ** -0.2
+    return np.exp(-0.5 * ((grid[:, None] - v[None, :]) / h) ** 2).sum(axis=1) / (len(v) * h * (2 * np.pi) ** 0.5)
+
+
+def fig_cost(plt, t, usage):
+    """Per-question cost vs time, with the distribution of each on the margins."""
+    import numpy as np
+
+    fig = plt.figure(figsize=(8.6, 6.6), facecolor=t["surface"])
+    ax = fig.add_axes([0.10, 0.09, 0.70, 0.62])
+    top = fig.add_axes([0.10, 0.72, 0.70, 0.11], sharex=ax)
+    side = fig.add_axes([0.81, 0.09, 0.14, 0.62], sharey=ax)
+    style(ax, t, "both")
+    xlim, ylim = (4, 320), (0.0004, 0.06)
+    gx, gy = np.linspace(*np.log10(xlim), 300), np.linspace(*np.log10(ylim), 300)
+    looks = {"A1": (t["neutral"], "-", 0.55), "A5": (t["muted"], (0, (4, 2)), 0.0), "A2": (t["blue"], "-", 0.30)}
+    for arm, (color, dash, fill) in looks.items():
+        sec, usd = (np.array(v) for v in usage[arm])
+        hero = arm == "A2"
+        ax.scatter(sec, usd, s=11, alpha=0.5, linewidths=0.6 if arm == "A5" else 0, zorder=3 if hero else 2,
+                   facecolors="none" if arm == "A5" else color, edgecolors=color)
+        mx, my = float(np.median(sec)), float(np.median(usd))
+        ax.scatter([mx], [my], s=90 if hero else 60, color=color, edgecolor=t["surface"], linewidth=2, zorder=5)
+        dx, dy, ha = {"A1": (1.55, 0.50, "left"), "A5": (0.92, 2.6, "right"), "A2": (1.25, 0.60, "left")}[arm]
+        ax.annotate(f"{ARMS[arm]}\nmedian {mx:.0f} s · ${my:.4f}", (mx, my), xytext=(mx * dx, my * dy), ha=ha, va="center",
+                    fontsize=9, color=t["ink"] if hero else t["ink2"], fontweight="bold" if hero else "normal", zorder=6)
+        for margin, grid, values, horizontal in ((top, gx, sec, True), (side, gy, usd, False)):
+            d = density(np, values, grid)
+            d[d < 0.02] = np.nan
+            if horizontal:
+                margin.fill_between(10 ** grid, d, color=color, alpha=fill, linewidth=0)
+                margin.plot(10 ** grid, d, color=color, lw=1.4, linestyle=dash)
+            else:
+                margin.fill_betweenx(10 ** grid, d, color=color, alpha=fill, linewidth=0)
+                margin.plot(d, 10 ** grid, color=color, lw=1.4, linestyle=dash)
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    ax.set_xlim(*xlim)
+    ax.set_ylim(*ylim)
+    ax.set_xticks([5, 10, 20, 50, 100, 200], ["5", "10", "20", "50", "100", "200"])
+    ax.set_yticks([0.001, 0.003, 0.01, 0.03], ["$0.001", "$0.003", "$0.01", "$0.03"])
+    ax.minorticks_off()
+    ax.set_xlabel("Seconds per question (log scale)", color=t["ink2"], fontsize=9.5)
+    ax.set_ylabel("Model cost per question (log scale)", color=t["ink2"], fontsize=9.5)
+    for margin in (top, side):
+        margin.set_facecolor(t["surface"])
+        margin.tick_params(length=0, labelbottom=False, labelleft=False)
+        for s in margin.spines.values():
+            s.set_visible(False)
+    top.set_ylim(0)
+    side.set_xlim(0)
+    title(fig, t, "Checking costs about 1 cent and 50 seconds more per question",
+          "Each dot is one of 500 questions; curves show how time and cost are spread. VeritasMed's long tail is its draft repairs.")
+    return fig
+
+
 def report_wilson(k: int, n: int) -> tuple[float, float]:
     z, p = 1.96, k / n
     c, h = (p + z * z / (2 * n)) / (1 + z * z / n), z * ((p * (1 - p) / n + z * z / (4 * n * n)) ** 0.5) / (1 + z * z / n)
@@ -204,10 +263,15 @@ def main() -> None:
     calib = [("MiniCheck-Flan-T5 (pre-registered)", hits["minicheck"], len(items), False),
              ("Flash citation judge (adopted)", hits["flash"], len(items), True)]
 
+    usage = {}
+    for arm in ("A1", "A5", "A2"):
+        r = report.load(HERE / "runs" / "main" / f"test_full-{arm}.jsonl").values()
+        usage[arm] = ([x["seconds"] for x in r], [x["usd"] for x in r])
+
     OUT.mkdir(parents=True, exist_ok=True)
     for theme, t in THEMES.items():
         for name, fn, arg in [("tradeoff", fig_tradeoff, (data, closed)), ("bottom-lines", fig_bottom_lines, (decomp,)),
-                              ("audit", fig_audit, (planted,)), ("judges", fig_judges, (calib,))]:
+                              ("audit", fig_audit, (planted,)), ("judges", fig_judges, (calib,)), ("cost", fig_cost, (usage,))]:
             fig = fn(plt, t, *arg)
             fig.savefig(OUT / f"{name}-{theme}.png", dpi=170, facecolor=t["surface"])
             plt.close(fig)

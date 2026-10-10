@@ -240,6 +240,16 @@ which goes beyond the reported results.
 Total model spend for the whole experiment, including development runs, the follow-ups and both
 judges: **$25.18** (gateway list prices). VeritasMed answers cost $5.47 for 500 questions.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/experiment-a/cost-dark.png">
+  <img alt="Cost against time for each of 500 questions, with the distribution of each on the margins: plain RAG and strict-prompt RAG cluster near 10 seconds and $0.001; VeritasMed near 59 seconds and $0.009, with a longer tail" src="assets/experiment-a/cost-light.png">
+</picture>
+
+Per question, VeritasMed makes a median of four model calls (4 to 11) where plain RAG makes one (median 59 s and $0.0093
+against 10 s and $0.0011). Its spread is wider: 80% of questions take 39 to 105 s, the slowest 271 s.
+The tail is the draft repairs. The 96 answers that were rewritten took a median of 92 s (one
+rewrite, 88 answers) or 144 s (two rewrites, 8 answers), against 55 s for the 404 that passed first time.
+
 ```sh
 python experiments/pubmedqa/prepare.py                  # download, freeze splits, build corpus
 python experiments/pubmedqa/index.py                    # index 36,550 passages (GPU, ~5 min)
